@@ -22,7 +22,7 @@ $au-button-disabled-color    : $au-neutral-darker !default;
 $au-button-disabled-fg-color : $au-neutral-dark !default;
 
 /* Component
-   ========================================================================== */
+  ========================================================================== */
 
 .au-c-button {
   @include au-font-size($au-button-font-size);
@@ -77,7 +77,7 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   color: $au-button-color;
   border: $au-button-border solid tint($au-button-color,20);
   transition: color $au-transition, border-color $au-transition, box-shadow $au-transition;
-  line-height: $au-button-height - $au-button-border * 2;
+  line-height: $au-button-height - #{$au-button-border} * 2;
 
   &:visited {
     color: $au-button-color;

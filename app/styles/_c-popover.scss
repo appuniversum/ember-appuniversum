@@ -58,14 +58,15 @@ $au-popover-underline-hover   : $au-primary-lighter !default;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: $au-unit-large;
+    max-width: $au-unit-large;
 
     @include mq(xsmall) {
-      width: $au-unit-huge;
+      max-width: $au-unit-huge;
     }
 
     @include mq(small) {
       width: auto;
+      max-width: $au-unit-huge*4;
     }
   }
 
