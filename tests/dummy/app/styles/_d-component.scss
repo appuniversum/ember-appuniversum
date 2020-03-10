@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #COMPONENT HOLDER
+   ========================================================================== */
+
+.au-d-component {
+  border: 1px solid $au-neutral-lightest;
+  background-color: tint($au-neutral-lightest,50);
+  border-radius: $au-radius;
+}
+
+  .au-d-component__contrast {
+    box-shadow: 0 0 $au-unit-small rgba($au-neutral-darkest,.1);
+  }

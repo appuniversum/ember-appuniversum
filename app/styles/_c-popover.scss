@@ -1,0 +1,201 @@
+/* ==================================
+   #POPOVER
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-popover-color             : $au-primary !default;
+$au-popover-hover-color       : $au-primary-light !default;
+$au-popover-active-color      : $au-primary-light !default;
+$au-popover-visited-color     : $au-primary-dark !default;
+$au-popover-active-color      : $au-primary-dark !default;
+$au-popover-underline         : $au-primary-light !default;
+$au-popover-underline-hover   : $au-primary-lighter !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-popover {
+  position: relative;
+  display: inline-block;
+}
+
+  .au-c-popover__toggle {
+    @include au-font-size($au-base);
+    font-weight: $au-regular;
+    color: $au-popover-color;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: $au-unit-tiny/2 $au-unit-tiny;
+    border-radius: $au-radius;
+
+    &:focus-within {
+      outline: $au-outline;
+    }
+
+    &,
+    &:visited {
+      color: $au-popover-color;
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      color: $au-popover-hover-color;
+      background-color: $au-neutral-lightest;
+    }
+
+    &:focus,
+    &:focus-within {
+      outline: $au-outline;
+    }
+  }
+
+  .au-c-popover__name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: $au-unit-large;
+
+    @include mq(xsmall) {
+      width: $au-unit-huge;
+    }
+
+    @include mq(small) {
+      width: auto;
+    }
+  }
+
+  .au-c-popover__button {
+    border: 0;
+    padding: 0;
+    margin-left: $au-unit-tiny;
+    display: inline-flex;
+    align-items: center;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &,
+    &:visited,
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .au-c-popover__menu {
+    position: absolute;
+    z-index: $au-z-index-beta;
+    right: 0;
+    top: $au-unit;
+    background-color: $au-white;
+    min-width: 100%;
+    border-radius: $au-radius;
+    box-shadow: 0 0 $au-unit-tiny rgba($au-neutral-dark,.2), 0 0 $au-unit rgba($au-neutral-dark,.1);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    right: 0;
+    left: auto;
+    min-width: 100%;
+    width: auto;
+    top: $au-unit + $au-unit-tiny;
+    box-shadow: 0 0 12px rgba($au-neutral-darkest,.15), 0 0 2px rgba($au-neutral-darkest,.1);
+    border-radius: $au-radius;
+
+    &:after, &:before {
+      bottom: 100%;
+      right: $au-unit-tiny;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      border-color: rgba($au-white, 0);
+      border-bottom-color: $au-white;
+      border-width: 4px;
+      margin-left: -4px;
+    }
+
+    &:before {
+      border-color: rgba($au-white, 0);
+      border-bottom-color: $au-neutral-lighter;
+      border-width: 4px;
+      margin-left: -4px;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  .au-c-popover__menu.is-hidden {
+    display: none;
+  }
+
+  .au-c-popover__item {
+    @include au-font-size($au-base,1.5);
+    font-family: $au-font;
+    font-weight: $au-regular;
+    padding: $au-unit-tiny $au-unit-small;
+    border: 0;
+    appearance: none;
+    -webkit-appearance: none; // doesn't work without prefix on Safari iOS11
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    text-underline-offset: .3ex;
+    text-decoration: underline;
+    text-decoration-color: $au-neutral-light;
+    color: $au-neutral-darker;
+    background-color: transparent;
+    transition: color $au-transition;
+    cursor: pointer;
+
+    &:hover {
+      color: $au-popover-hover-color;
+      background-color: transparent;
+      text-decoration: underline;
+      text-decoration-color: $au-popover-underline-hover;
+    }
+
+    &:focus {
+      outline: .1rem dashed $au-neutral-light;
+      outline-offset: -$au-unit-tiny/2;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: 0;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+
+    &:visited {
+      background-color: transparent;
+    }
+  }

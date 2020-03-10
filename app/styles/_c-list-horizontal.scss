@@ -1,0 +1,29 @@
+/* ==================================
+   #HORIZONTAL LIST
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-list-horizontal-spacing    : $au-unit-tiny !default;
+$au-list-horizontal-divider    : 1px dotted $au-neutral-light !default;
+
+
+/* Component
+   ========================================================================== */
+
+.au-c-list-horizontal {
+  display: flex;
+  align-items: center;
+}
+
+  .au-c-list-horizontal__item {
+    display: flex;
+    align-items: center;
+
+    & + & {
+      margin-left: $au-list-horizontal-spacing;
+      padding-left: $au-list-horizontal-spacing;
+      border-left: $au-list-horizontal-divider;
+    }
+  }

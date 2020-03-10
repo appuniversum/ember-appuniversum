@@ -1,0 +1,344 @@
+/* ==================================
+   #EDITOR
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-editor-link-color             : $au-primary !default;
+$au-editor-link-hover-color       : $au-primary-light !default;
+$au-editor-link-active-color      : $au-primary-dark !default;
+$au-editor-link-underline         : $au-primary-light !default;
+$au-editor-link-underline-hover   : $au-primary-lighter !default;
+
+
+/* Component
+   ========================================================================== */
+
+.au-d-editor {
+  > * {
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: $au-unit-small;
+  }
+
+  > h1 + *,
+  > h2 + *,
+  > h3 + *,
+  > h4 + *,
+  > h5 + *,
+  > h6 + * {
+    margin-top: $au-unit-tiny;
+  }
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    font-family: $au-font-secondary;
+  }
+
+  > h1 {
+    @include au-font-size($au-h3);
+  }
+
+  > h2 {
+    @include au-font-size($au-h4);
+    font-weight: $au-medium;
+  }
+
+  > h3 {
+    @include au-font-size($au-h5);
+    font-weight: $au-medium;
+  }
+
+  > ul h3 {
+    @include au-font-size($au-h6);
+    font-weight: $au-medium;
+  }
+
+  > h4,
+  > h5,
+  > h6 {
+    @include au-font-size($au-h6);
+  }
+
+  > p,
+  > ul,
+  > ol {
+    @include au-font-size($au-base,1.5);
+  }
+
+  hr {
+    margin: 0;
+    margin-top: $au-unit;
+    margin-bottom: $au-unit;
+    border: 0;
+    border-bottom: 3px solid $au-neutral-lighter;
+  }
+
+  > * + blockquote {
+    margin-top: $au-unit-large;
+  }
+
+  > blockquote + * {
+    margin-top: $au-unit-large;
+  }
+
+  > blockquote {
+    padding-top: $au-unit;
+    padding-bottom: $au-unit;
+    border-top: 2px solid $au-neutral-lighter;
+    border-bottom: 2px solid $au-neutral-lighter;
+  }
+
+  > blockquote p {
+    @include au-font-size($au-h5,1.5);
+    margin-bottom: 0;
+  }
+
+  > blockquote p:first-child {
+    &:before {
+      content: "“"
+    }
+
+    &:after {
+      content: "”"
+    }
+  }
+
+  > blockquote p + p {
+    @include au-font-size($au-base,1.5);
+    margin-top: $au-unit-small;
+    font-weight: $au-medium;
+  }
+
+  > ul,
+  > ol {
+    list-style: none;
+    margin-left: $au-unit-small;
+  }
+
+  > ol {
+    margin-left: $au-unit + $au-unit-tiny/2;
+  }
+
+  > ul ul {
+    margin-left: $au-unit;
+  }
+
+  > ol ol {
+    margin-left: $au-unit + $au-unit-small;
+  }
+
+  > ul li,
+  > ol li {
+    position: relative;
+  }
+
+  > ul li:before {
+    content: '•';
+    position: absolute;
+    top: .3ex;
+    left: -$au-unit-small;
+    font-size: .8em;
+    color: $au-neutral;
+  }
+
+  > ul li + li,
+  > ol li + li {
+    margin-top: $au-unit-tiny;
+  }
+
+  > ol {
+    counter-reset: numbered-list;
+  }
+
+  > ol li:before {
+    content: counter(numbered-list);
+    counter-increment: numbered-list;
+    position: absolute;
+    top: .3ex;
+    left: -$au-unit - $au-unit-tiny/2;
+    font-size: .8em;
+    color: $au-neutral;
+    background-color: $au-neutral-lightest;
+    display: block;
+    padding: 0 $au-unit-tiny;
+    border-radius: $au-radius;
+  }
+
+  code {
+    font-family: $au-font-tertiary;
+    font-weight: $au-light;
+    padding-top: $au-unit-tiny;
+    padding-bottom: $au-unit-tiny/2;
+    padding-left: $au-unit-tiny/2;
+    padding-right: $au-unit-tiny/2;
+    background-color: $au-neutral-lightest;
+    border-radius: $au-radius;
+    border: 1px solid $au-neutral-lighter;
+
+    &::-moz-selection {
+      background-color: $au-neutral-lighter;
+      color: $au-neutral-dark;
+    }
+
+    &::selection {
+      background-color: $au-neutral-lighter;
+      color: $au-neutral-dark;
+    }
+  }
+
+  > pre {
+    background-color: $au-neutral-darker;
+    color: $au-white;
+    padding: $au-unit-small;
+    border-radius: $au-radius;
+    margin-bottom: $au-unit;
+
+    display: block;
+
+    overflow-x: auto;
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+  }
+
+  > pre code {
+    background-color: transparent;
+    border: 0;
+  }
+
+  > * + pre {
+    margin-top: $au-unit;
+  }
+
+  strong {
+    font-weight: $au-medium;
+  }
+
+  > a:not(.au-c-button),
+  > ul a:not(.au-c-button),
+  > ol a:not(.au-c-button),
+  > p a:not(.au-c-button) {
+    transition: color $au-transition, text-decoration $au-transition;
+    font-weight: $au-regular;
+    text-decoration-color: $au-editor-link-underline;
+
+    &,
+    &:visited {
+      color: $au-editor-link-color;
+    }
+
+    &:hover,
+    &:focus {
+      color: $au-editor-link-hover-color;
+      text-decoration-color: $au-editor-link-underline-hover;
+    }
+
+    &:focus {
+      outline: $au-outline;
+      outline-offset: $au-unit-tiny/2;
+    }
+
+    .is-active > & {
+      color: $au-editor-link-active-color;
+      text-decoration: none;
+    }
+  }
+
+  @include mq(small) {
+    > * + * {
+      margin-top: $au-unit;
+    }
+
+    > h1 + *,
+    > h2 + *,
+    > h3 + *,
+    > h4 + *,
+    > h5 + *,
+    > h6 + * {
+      margin-top: $au-unit-tiny;
+    }
+
+    > h1 {
+      @include au-font-size($au-h2);
+    }
+
+    > h2 {
+      @include au-font-size($au-h4);
+    }
+
+    > h3 {
+      @include au-font-size($au-h5);
+    }
+
+    > h4,
+    > h5,
+    > h6 {
+      @include au-font-size($au-h6);
+    }
+
+    > p,
+    > ul,
+    > ol {
+      @include au-font-size($au-base,1.5);
+    }
+
+    > blockquote p {
+      @include au-font-size($au-h5,1.5);
+    }
+
+    > ul {
+      margin-left: $au-unit - $au-unit-tiny;
+    }
+
+    > ol {
+      margin-left: $au-unit + $au-unit-tiny
+    }
+
+    > ul li:before {
+      left: -$au-unit + $au-unit-tiny;
+    }
+
+    > ol li:before {
+      left: -$au-unit - $au-unit-tiny;
+    }
+  }
+
+  @include mq(medium) {
+    > h1 + *,
+    > h2 + *,
+    > h3 + *,
+    > h4 + *,
+    > h5 + *,
+    > h6 + * {
+      margin-top: $au-unit-small;
+    }
+
+    > h1 {
+      @include au-font-size($au-h1);
+    }
+
+    > p,
+    > ul,
+    > ol {
+      @include au-font-size($au-h6);
+    }
+
+    > blockquote p {
+      @include au-font-size($au-h4);
+    }
+  }
+}

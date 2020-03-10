@@ -1,0 +1,40 @@
+/* ==================================
+   #SIDEBAR
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+
+/* Component
+   ========================================================================== */
+
+.au-c-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $au-neutral-lightest;
+  border-bottom: 1px solid $au-neutral-lighter;
+
+  @include mq(small) {
+    height: 100%;
+    border-bottom: 0;
+    border-right: 1px solid $au-neutral-lighter;
+  }
+}
+
+  .au-c-sidebar__header {
+    padding: $au-unit-small;
+  }
+
+  .au-c-sidebar__content {
+    @include mq(small) {
+      flex-grow: 1;
+    }
+  }
+
+  .au-c-sidebar__footer {
+    @include au-font-size($au-base);
+    text-align: center;
+    padding: $au-unit;
+  }

@@ -1,0 +1,79 @@
+/* ==================================
+   #BUTTON LINK
+   Button styled as a link
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-button-link-color             : $au-primary !default;
+$au-button-link-hover-color       : $au-primary-light !default;
+$au-button-link-active-color      : $au-primary-light !default;
+$au-button-link-visited-color     : $au-primary-dark !default;
+$au-button-link-active-color      : $au-primary-dark !default;
+$au-button-link-underline         : $au-primary-light !default;
+$au-button-link-underline-hover   : $au-primary-lighter !default;
+
+
+/* Component
+   ========================================================================== */
+
+.au-c-button-link {
+  @include au-font-size($au-base,.7);
+  font-family: $au-font;
+  font-weight: $au-regular;
+  padding: $au-unit-tiny;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none; // doesn't work without prefix on Safari iOS11
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  text-underline-offset: .3ex;
+  text-decoration: underline;
+  text-decoration-color: $au-button-link-underline;
+  color: $au-button-link-color;
+  background-color: transparent;
+  transition: color $au-transition;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: $au-button-link-hover-color;
+    background-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-underline-hover;
+  }
+
+  &:focus {
+    outline: $au-outline;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &:visited {
+    background-color: transparent;
+  }
+}
+
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-button-link--neutral {
+  color: $au-neutral-darker;
+  text-decoration-color: $au-neutral-light;
+
+  &:hover,
+  &:focus {
+    color: $au-button-link-hover-color;
+    text-decoration-color: $au-button-link-underline-hover;
+  }
+}
+
+.au-c-button-link--block {
+  width: 100%;
+}

@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #BRAND
+   ========================================================================== */
+
+.au-d-brand {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $au-neutral-lighter;
+  background-color: $au-white;
+}
+
+  .au-d-brand__logo {
+    position: relative;
+    width: $au-unit-large - $au-unit-tiny;
+    height: $au-unit-large - $au-unit-tiny;
+    padding: $au-unit-tiny $au-unit $au-unit-tiny $au-unit-tiny;
+    background-color: $au-yellow;
+    margin-right: $au-unit - $au-unit-tiny;
+    overflow: hidden;
+
+    svg {
+      fill: $au-neutral-darkest;
+      height: 100%;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border-top: 9rem solid
+      $au-white;
+      border-left: 3.07818rem solid
+      transparent;
+    }
+  }
+
+  .au-d-brand__title {
+    @include au-font-size($au-h6);
+    font-family: "Flanders Art Sans", sans-serif;
+    font-weight: $au-medium;
+    color: $au-neutral-darkest;
+    margin-left: -$au-unit-small;
+    padding-bottom: .1ex;
+  }

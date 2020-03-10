@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #NAV
+   ========================================================================== */
+
+.au-d-nav {
+  @include au-font-size($au-base);
+  width: 100%;
+}
+
+  .au-d-nav__intro {
+    @include au-font-size($au-h6);
+    font-family: $au-font-secondary;
+    color: $au-neutral-dark;
+    margin-bottom: $au-unit-tiny;
+    margin-bottom: $au-unit;
+  }
+
+  .au-d-nav__title {
+    @include au-font-size($au-base);
+    color: $au-neutral-dark;
+    font-weight: $au-medium;
+    margin-bottom: $au-unit-tiny;
+  }
+
+  .au-d-nav__item {
+    @include au-font-size(1.5rem);
+
+    & + & {
+      margin-top: $au-unit-tiny;
+      padding-top: $au-unit-tiny;
+      border-top: 1px dotted $au-neutral-light;
+    }
+  }

@@ -1,0 +1,84 @@
+/* ==================================
+   #LINKS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-link-color             : $au-primary !default;
+$au-link-hover-color       : $au-primary-light !default;
+$au-link-active-color      : $au-primary-light !default;
+$au-link-visited-color     : $au-primary-dark !default;
+$au-link-active-color      : $au-primary-dark !default;
+$au-link-underline         : $au-primary-lighter !default;
+$au-link-underline-hover   : $au-primary-lighter !default;
+
+
+/* Component
+  ========================================================================== */
+
+.au-c-link {
+  font-family: $au-font;
+  transition: color $au-transition, text-decoration $au-transition;
+  font-weight: $au-regular;
+  text-decoration-color: $au-link-underline;
+
+  &,
+  &:visited {
+    color: $au-link-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-link-hover-color;
+    text-decoration-color: $au-link-underline-hover;
+  }
+
+  &:focus {
+    outline: $au-outline;
+    outline-offset: $au-unit-tiny/2;
+  }
+
+  .is-active > & {
+    color: $au-link-active-color;
+    text-decoration: none;
+  }
+}
+
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-link--neutral {
+  &,
+  &:visited {
+    color: $au-neutral-dark;
+    text-decoration-color: $au-neutral-light;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-neutral;
+    text-decoration-color: $au-neutral-lighter;
+  }
+
+  .is-active > & {
+    color: $au-link-active-color;
+    text-decoration: none;
+  }
+}
+
+.au-c-link--icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.au-c-link--bare {
+  &,
+  &:visited,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}

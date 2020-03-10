@@ -1,0 +1,37 @@
+/* ==================================
+   #ICONS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-icon-size        : .75em !default;
+$au-icon-size-large  : 1.5rem !default;
+
+
+/* Component
+   ========================================================================== */
+
+.au-c-icon {
+  display: inline-block;
+  width: $au-icon-size;
+  height: $au-icon-size;
+  position: relative;
+  vertical-align: baseline;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-icon--large {
+  width: $au-icon-size-large;
+  height: $au-icon-size-large;
+}
+
+.au-c-icon--left {
+  margin-right: $au-unit-tiny;
+}

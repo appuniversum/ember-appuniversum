@@ -1,0 +1,111 @@
+/* ==================================
+   #BRAND
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-brand-color                : $au-neutral-darkest !default;
+$au-brand-bg                   : $au-white !default;
+$au-brand-text                 : $au-neutral-darkest !default;
+$au-brand-border               : $au-neutral-light !default;
+$au-brand-height               : $au-unit-large - $au-unit-tiny !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.au-c-brand--link {
+  &:focus {
+    outline: none;
+  }
+}
+
+  .au-c-brand__logo {
+    position: relative;
+    width: $au-unit-large - $au-unit-tiny;
+    height: $au-brand-height;
+    padding: $au-unit-tiny $au-unit-tiny $au-unit-tiny $au-unit-tiny*1.4;
+    margin-right: $au-unit - $au-unit-tiny;
+    overflow: hidden;
+    background-color: $au-brand-bg;
+    transition: background-color $au-transition;
+
+    svg {
+      fill: $au-brand-color;
+      height: 100%;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: -.3rem;
+      border-top: 9rem solid
+      $au-brand-border;
+      border-left: 3.07818rem solid
+      transparent;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -.1rem;
+      bottom: -.3rem;
+      border-top: 9rem solid
+      $au-white;
+      border-left: 3.07818rem solid
+      transparent;
+    }
+
+    .au-c-brand--link:hover &,
+    .au-c-brand--link:focus & {
+      background-color: $au-neutral-lightest;
+    }
+  }
+
+  .au-c-brand__logotype {
+    @include au-font-size(1.8rem,1);
+    display: none;
+    position: relative;
+    font-family: "Flanders Art Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: $au-regular;
+    color: $au-brand-text;
+    margin-left: -$au-unit-small + $au-unit-tiny/2;
+    margin-right: $au-unit-small;
+    padding-right: $au-unit-small + $au-unit-tiny/2;
+    transition: color $au-transition;
+    bottom: .1rem;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -.1rem;
+      right: 0;
+      transform: rotate($au-rotation);
+      width: 1px;
+      height: 2.3rem;
+      background-color: $au-neutral-light;
+    }
+
+    .au-c-brand--link:hover &,
+    .au-c-brand--link:focus & {
+      color: $au-primary-light;
+    }
+
+    .au-c-brand--link:focus & {
+      outline: $au-outline;
+    }
+
+    @include mq(small) {
+      display: block;
+    }
+  }

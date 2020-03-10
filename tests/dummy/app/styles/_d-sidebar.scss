@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #SIDEBAR
+   ========================================================================== */
+
+.au-d-sidebar {
+  background-color: $au-neutral-lightest;
+  border-top: 1px solid $au-neutral-lighter;
+
+  @include mq(small) {
+    border-top: 0;
+    border-right: 1px solid $au-neutral-lighter;
+    position: fixed;
+    left: 0;
+    height: 100%;
+    overflow: auto;
+  }
+}

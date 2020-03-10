@@ -1,7 +1,7 @@
-ember-appuniversum
+@appuniversum/ember-appuniversum
 ==============================================================================
 
-[Short description of the addon.]
+Ember addon wrapping [the appuniversum components](https://appuniversum.github.io/).
 
 
 Compatibility

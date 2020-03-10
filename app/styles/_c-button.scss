@@ -1,0 +1,160 @@
+/* ==================================
+   #BUTTONS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-button-height            : $au-unit-large - $au-unit-small !default;
+$au-button-font-size         : $au-h6 !default;
+$au-button-border            : .2rem !default;
+$au-button-color             : $au-primary !default;
+$au-button-fg-color          : $au-white !default;
+$au-button-hover-color       : $au-primary-light !default;
+$au-button-active-color      : $au-primary-light !default;
+$au-button-visited-color     : $au-primary-dark !default;
+$au-button-active-color      : $au-primary-dark !default;
+$au-button-underline         : $au-primary-light !default;
+$au-button-underline-hover   : $au-primary-lighter !default;
+$au-button-error-color       : $au-error-dark !default;
+$au-button-error-hover-color : $au-error !default;
+$au-button-disabled-color    : $au-neutral-darker !default;
+$au-button-disabled-fg-color : $au-neutral-dark !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-button {
+  @include au-font-size($au-button-font-size);
+  font-family: $au-font;
+  font-weight: $au-regular;
+  height: $au-button-height;
+  text-decoration: none;
+  text-align: center;
+  appearance: none;
+  -webkit-appearance: none; // doesn't work without prefix on Safari iOS11
+  display: inline-flex;
+  align-items: center;
+  padding: 0 $au-unit .1ex; // Visually center the text in the button
+  border: 0;
+  border-radius: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $au-button-fg-color;
+  background-color: $au-button-color;
+  transition: background-color $au-transition;
+  cursor: default;
+
+  &:hover,
+  &:focus {
+    color: $au-button-fg-color;
+    background-color: $au-button-hover-color;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: $au-outline;
+    outline-offset: $au-unit-tiny/2;
+  }
+
+  &:active {
+    background-color: $au-button-active-color;
+  }
+
+  &:visited {
+    background-color: $au-button-visited-color;
+  }
+}
+
+
+/* Modifiers
+  ========================================================================== */
+
+// Ghost button
+.au-c-button--ghost {
+  background-color: transparent;
+  color: $au-button-color;
+  border: $au-button-border solid tint($au-button-color,20);
+  transition: color $au-transition, border-color $au-transition, box-shadow $au-transition;
+  line-height: $au-button-height - $au-button-border * 2;
+
+  &:visited {
+    color: $au-button-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $au-button-hover-color;
+    background-color: transparent;
+    border-color: tint($au-button-hover-color,20);
+    box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-hover-color,20);
+  }
+}
+
+// Error button
+.au-c-button--error {
+  background-color: $au-button-error-color;
+  border-color:  $au-button-error-color;
+  color: $au-page-bg;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $au-page-bg;
+    background-color: $au-button-error-hover-color;
+    border-color: $au-button-error-color;
+    color: $au-page-bg;
+    box-shadow: none;
+  }
+
+  &.au-c-button--ghost {
+    background-color: transparent;
+
+    &,
+    &:visited {
+      color: $au-button-error-color;
+      border-color: tint($au-button-error-color,20);
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $au-button-error-hover-color;
+      border-color: tint($au-button-error-hover-color,20);
+      box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-error-hover-color,20);
+    }
+  }
+}
+
+
+// Disabled button
+.au-c-button--disabled {
+  cursor: not-allowed;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $au-button-disabled-fg-color;
+    border-color: $au-button-disabled-fg-color;
+    color: $au-page-bg;
+    box-shadow: none;
+  }
+
+  &.au-c-button--ghost {
+    background-color: transparent;
+    color: $au-button-disabled-color;
+    border-color: tint($au-button-disabled-color,20);
+
+    &:visited {
+      color: $au-button-disabled-color;
+    }
+  }
+}
+
+.au-c-button--block {
+  display: block;
+  width: 100%;
+}
