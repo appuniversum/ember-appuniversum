@@ -25,12 +25,13 @@
   }
 
   .au-c-list-navigation__link {
+    @include au-font-size($au-base,.7);
     display: flex;
     align-items: center;
     font-family: $au-font;
     transition: color $au-transition, text-decoration $au-transition;
     font-weight: $au-regular;
-    padding: $au-unit-tiny $au-unit-small;
+    padding: $au-unit-tiny $au-unit-large;
     text-decoration-color: $au-primary-lighter !important; // @TODO: remove important when webuniversum is removed
     text-decoration: underline;
     text-underline-offset: .3ex;
@@ -57,6 +58,7 @@
 
     // @TODO: change to state class > is-active
     &.active {
+      font-weight: $au-medium;
       color: $au-neutral-darkest;
       text-decoration: none;
       box-shadow: inset -.3rem 0 0 $au-neutral-light;
@@ -64,6 +66,6 @@
     }
 
     @include mq(small) {
-      padding: $au-unit-tiny*1.5 $au-unit-small;
+      padding: $au-unit-small * 1.5 $au-unit-small;
     }
   }
