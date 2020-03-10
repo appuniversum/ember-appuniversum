@@ -1,7 +1,7 @@
-import Component from "@ember/component";
+import Component from "@glimmer/component";
 import { action } from "@ember/object";
 
-export default class navigationLink extends Component {
+export default class AuNavigationLink extends Component {
   @action
   linkFocus() {
     // Focus content window

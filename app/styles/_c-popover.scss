@@ -22,7 +22,7 @@ $au-popover-underline-hover   : $au-primary-lighter !default;
 }
 
   .au-c-popover__toggle {
-    @include au-font-size($au-base);
+    @include au-font-size(1.5rem);
     font-weight: $au-regular;
     color: $au-popover-color;
     display: flex;

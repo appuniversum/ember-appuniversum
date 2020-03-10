@@ -1,8 +1,8 @@
-import Component from "@ember/component";
+import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 
-export default class popover extends Component {
+export default class AuPopover extends Component {
   // Track Popover state
   @tracked popoverOpen = false;
   // Check for keyboard access

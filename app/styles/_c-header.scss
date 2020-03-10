@@ -19,7 +19,6 @@ $au-header-underline-hover   : $au-primary-lighter !default;
 .au-c-header {
   position: relative;
   z-index: $au-z-index-alpha;
-  font-family: $au-font;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,7 +34,7 @@ $au-header-underline-hover   : $au-primary-lighter !default;
   }
 
   .au-c-header__title {
-    @include au-font-size($au-base,.7);
+    @include au-font-size($au-base,1);
     font-weight: $au-medium;
     text-transform: uppercase;
     position: relative;
@@ -77,8 +76,8 @@ $au-header-underline-hover   : $au-primary-lighter !default;
   }
 
   .au-c-header__skiplink {
-    @include au-font-size($au-base,.7);
-    font-weight: $au-light;
+    @include au-font-size($au-base,1);
+    font-weight: $au-regular;
     position: absolute;
     transition: color $au-transition;
     letter-spacing: .03ex;
@@ -114,9 +113,8 @@ $au-header-underline-hover   : $au-primary-lighter !default;
     }
   }
 
-
   .au-c-header__actions {
-    @include au-font-size($au-base);
+    @include au-font-size($au-base,.7);
     display: flex;
     align-items: center;
     padding: $au-unit-tiny $au-unit-small ;

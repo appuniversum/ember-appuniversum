@@ -75,14 +75,14 @@ $au-brand-height               : $au-unit-large - $au-unit-tiny !default;
     @include au-font-size(1.8rem,1);
     display: none;
     position: relative;
-    font-family: "Flanders Art Sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-weight: $au-regular;
+    font-family: $au-font;
+    font-weight: $au-medium;
     color: $au-brand-text;
     margin-left: -$au-unit-small + $au-unit-tiny/2;
     margin-right: $au-unit-small;
     padding-right: $au-unit-small + $au-unit-tiny/2;
     transition: color $au-transition;
-    bottom: .1rem;
+    bottom: 1px;
 
     &::after {
       content: "";
