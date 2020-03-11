@@ -21,7 +21,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "@appuniversum/appuniversum": "0.0.2",
+    "@appuniversum/appuniversum": "0.0.3",
     "ember-cli-babel": "^7.17.2",
     "ember-cli-htmlbars": "^4.2.2"
   },
