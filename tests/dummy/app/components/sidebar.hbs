@@ -1,0 +1,15 @@
+<aside class="au-o-grid__item au-d-sidebar au-u-1-4@small au-u-1-6@medium">
+  {{#docs-viewer as |viewer|}}
+    {{#viewer.nav as |nav|}}
+      {{nav.item "Introduction" "index"}}
+      {{nav.section "Guidelines"}}
+      {{nav.item "Contributing" "docs.contributing"}}
+      {{nav.section "Atoms"}}
+      {{nav.item "Button" "docs.atoms.au-button"}}
+      {{nav.section "Components"}}
+      {{nav.item "Popover" "docs.components.au-popover"}}
+      {{nav.section "Patterns"}}
+      {{nav.item "Header" "docs.patterns.au-header"}}
+    {{/viewer.nav}}
+  {{/docs-viewer}}
+</aside>

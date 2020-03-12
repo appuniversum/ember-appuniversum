@@ -1,0 +1,15 @@
+/* ==================================
+   #CONTAINER
+   ================================== */
+
+.au-c-container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+  .au-c-container__content {
+    position: relative;
+    height: calc(100vh - #{$au-unit-large - $au-unit-tiny});
+    overflow: auto;
+  }

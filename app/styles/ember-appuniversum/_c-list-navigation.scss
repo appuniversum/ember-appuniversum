@@ -24,6 +24,18 @@
     }
   }
 
+  .au-c-list-navigation__item--section {
+    @include au-font-size(1.4rem,.7);
+    padding: $au-unit-tiny $au-unit-large;
+    font-weight: $au-medium;
+    color: $au-neutral;
+    text-transform: uppercase;
+
+    @include mq(small) {
+      padding: $au-unit-small * 1.5 $au-unit-small;
+    }
+  }
+
   .au-c-list-navigation__link {
     @include au-font-size($au-base,.7);
     display: flex;

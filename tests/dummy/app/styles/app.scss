@@ -2,13 +2,19 @@
 @import 'app/styles/ember-appuniversum.scss';
 
 // Dummy styles
-@import "d-docs";
-// @import "d-swatch";
-// @import "d-component";
-// @import "d-divider";
-// @import "d-editor";
-// @import "d-theme";
-// @import "d-brand";
-// @import "d-sidebar";
-// @import "d-nav";
-// @import "d-syntax";
+@import "d-swatch";
+@import "d-component";
+@import "d-pagination";
+@import "d-divider";
+@import "d-editor";
+@import "d-theme";
+@import "d-brand";
+@import "d-sidebar";
+@import "d-nav";
+@import "d-syntax";
+
+
+.au-d-small {
+  @include au-font-size($au-base);
+  font-weight: $au-medium;
+}

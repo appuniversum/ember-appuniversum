@@ -1,0 +1,11 @@
+<li class="
+  {{if (eq style "regular") "au-c-list-navigation__item au-c-list-navigation__item--section"}}
+  {{if (eq style "large") "au-c-list-navigation__item au-c-list-navigation__item--section"}}
+  {{if (eq style "subsection") "au-c-list-navigation__item au-c-list-navigation__item--section"}}
+">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{@label}}
+  {{/if}}
+</li>

@@ -15,7 +15,8 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
 /* Component
    ========================================================================== */
 
-.au-d-editor {
+.au-d-editor,
+.au-d-editor > .docs-md {
   > * {
     margin-bottom: 0;
   }
@@ -40,6 +41,33 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
   > h5,
   > h6 {
     font-family: $au-font-secondary;
+  }
+
+  > h1 a,
+  > h2 a,
+  > h3 a,
+  > h4 a,
+  > h5 a,
+  > h6 a {
+    transition: color $au-transition, text-decoration $au-transition;
+    font-weight: $au-regular;
+    text-decoration-color: $au-neutral-light;
+
+    &,
+    &:visited {
+      color: $au-neutral-darker;
+    }
+
+    &:hover,
+    &:focus {
+      color: $au-neutral-dark;
+      text-decoration-color: $au-neutral-light;
+    }
+
+    &:focus {
+      outline: $au-outline;
+      outline-offset: $au-unit-tiny/2;
+    }
   }
 
   > h1 {

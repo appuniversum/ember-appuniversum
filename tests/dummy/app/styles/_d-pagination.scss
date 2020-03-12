@@ -1,0 +1,11 @@
+.au-d-pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: $au-unit;
+  padding-top: $au-unit;
+  border-top: 2px solid $au-neutral-lighter;
+}
+
+  .au-d-pagination__right {
+    text-align: right;
+  }
