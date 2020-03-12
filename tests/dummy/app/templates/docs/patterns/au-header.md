@@ -1,0 +1,9 @@
+# Header
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-header.hbs'}}
+    <AuHeader>
+    </AuHeader>
+  {{/demo.example}}
+  {{demo.snippet 'au-header.hbs'}}
+{{/docs-demo}}

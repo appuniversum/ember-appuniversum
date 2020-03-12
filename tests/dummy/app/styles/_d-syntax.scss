@@ -1,139 +1,95 @@
-/* ==================================
-   #SYNTAX
-   Prism syntax theme for syntax highlighter
-   ================================== */
+/*
+Original: Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+Modified for AddonDocs.
+*/
 
-pre {
+$base:    #282c34;
+$mono-1:  #abb2bf;
+$mono-2:  #818896;
+$mono-3:  #5c6370;
+$hue-1:   #56b6c2;
+$hue-2:   #61aeee;
+$hue-3:   #c678dd;
+$hue-4:   #98c379;
+$hue-5:   #e06c75;
+$hue-5-2: #be5046;
+$hue-6:   #e06c75; // original #d19a66
+$hue-6-2: #e6c07b;
+
+.hljs {
   display: block;
-
   overflow-x: auto;
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
-
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
+  padding: 0.5em;
+  color: $mono-1;
+  background: $base;
 }
 
-
-/**
-  * a11y-dark theme for JavaScript, CSS, and HTML
-  * Based on the okaidia theme: https://github.com/PrismJS/prism/blob/gh-pages/themes/prism-okaidia.css
-  * @author ericwbailey
-  */
-
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #d4d0ab;
-}
-
-.token.punctuation {
-  color: #fefefe;
-}
-
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #ffa07a;
-}
-
-.token.boolean,
-.token.number {
-  color: #00e0e0;
-}
-
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #abe338;
-}
-
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #00e0e0;
-}
-
-.token.atrule,
-.token.attr-value,
-.token.function {
-  color: #ffd700;
-}
-
-.token.keyword {
-  color: #00e0e0;
-}
-
-.token.regex,
-.token.important {
-  color: #ffd700;
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-.token.italic {
+.hljs-comment,
+.hljs-quote {
+  color: $mono-3;
   font-style: italic;
 }
 
-.token.entity {
-  cursor: help;
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: $hue-3;
 }
 
-@media screen and (-ms-high-contrast: active) {
-  code[class*="language-"],
-  pre[class*="language-"] {
-    color: windowText;
-    background: window;
-  }
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: $hue-5;
+}
 
-  :not(pre) > code[class*="language-"],
-  pre[class*="language-"] {
-    background: window;
-  }
+.hljs-literal {
+  color: $hue-1;
+}
 
-  .token.important {
-    background: highlight;
-    color: window;
-    font-weight: normal;
-  }
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: $hue-4;
+}
 
-  .token.atrule,
-  .token.attr-value,
-  .token.function,
-  .token.keyword,
-  .token.operator,
-  .token.selector {
-    font-weight: bold;
-  }
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: $hue-6-2;
+}
 
-  .token.attr-value,
-  .token.comment,
-  .token.doctype,
-  .token.function,
-  .token.keyword,
-  .token.operator,
-  .token.property,
-  .token.string {
-    color: highlight;
-  }
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: $hue-6;
+}
 
-  .token.attr-value,
-  .token.url {
-    font-weight: normal;
-  }
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: $hue-2;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-link {
+  text-decoration: underline;
 }
