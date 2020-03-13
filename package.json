@@ -6,8 +6,8 @@
     "ember-addon"
   ],
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/appuniversum/ember-appuniversum"
+    "type": "git",
+    "url": "https://github.com/appuniversum/ember-appuniversum"
   },
   "license": "MIT",
   "author": "",
@@ -24,7 +24,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "@appuniversum/appuniversum": "0.0.3",
+    "@appuniversum/appuniversum": "0.0.4",
     "ember-cli-babel": "^7.17.2",
     "ember-cli-htmlbars": "^4.2.2"
   },

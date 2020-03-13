@@ -97,15 +97,15 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
 .au-c-button--error {
   background-color: $au-button-error-color;
   border-color:  $au-button-error-color;
-  color: $au-page-bg;
+  color: $au-white;
 
   &:hover,
   &:focus,
   &:active {
-    color: $au-page-bg;
+    color: $au-white;
     background-color: $au-button-error-hover-color;
     border-color: $au-button-error-color;
-    color: $au-page-bg;
+    color: $au-white;
     box-shadow: none;
   }
 
@@ -139,7 +139,7 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   &:active {
     background-color: $au-button-disabled-fg-color;
     border-color: $au-button-disabled-fg-color;
-    color: $au-page-bg;
+    color: $au-white;
     box-shadow: none;
   }
 

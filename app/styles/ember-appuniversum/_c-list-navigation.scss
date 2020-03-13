@@ -5,13 +5,15 @@
 /* Variables
    ========================================================================== */
 
+$au-list-navigation-border-color: $au-neutral-lighter !default;
+
 
 /* Component
    ========================================================================== */
 
 .au-c-list-navigation {
   @include au-font-size($au-base);
-  border-top: 1px solid $au-neutral-lighter;
+  border-top: 1px solid $au-list-navigation-border-color;
 
   @include mq(small) {
     @include au-font-size(1.5rem);
@@ -20,7 +22,7 @@
 
   .au-c-list-navigation__item {
     & + & {
-      border-top: 1px solid $au-neutral-lighter;
+      border-top: 1px solid $au-list-navigation-border-color;
     }
   }
 
@@ -43,7 +45,7 @@
     font-family: $au-font;
     transition: color $au-transition, text-decoration $au-transition;
     font-weight: $au-regular;
-    padding: $au-unit-tiny $au-unit-large;
+    padding: $au-unit-small * 1.5 $au-unit-small;
     text-decoration-color: $au-primary-lighter !important; // @TODO: remove important when webuniversum is removed
     text-decoration: underline;
     text-underline-offset: .3ex;

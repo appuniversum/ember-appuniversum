@@ -5,6 +5,10 @@
 /* Variables
    ========================================================================== */
 
+$au-sidebar-background    : $au-neutral-lightest !default;
+$au-sidebar-border        : $au-neutral-lighter !default;
+$au-sidebar-header-padding: $au-unit-small !default;
+$au-sidebar-footer-padding: $au-unit !default;
 
 /* Component
    ========================================================================== */
@@ -13,18 +17,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: $au-neutral-lightest;
-  border-bottom: 1px solid $au-neutral-lighter;
+  background-color: $au-sidebar-background;
+  border-bottom: 1px solid $au-sidebar-border;
 
   @include mq(small) {
     height: 100%;
     border-bottom: 0;
-    border-right: 1px solid $au-neutral-lighter;
+    border-right: 1px solid $au-sidebar-border;
   }
 }
 
   .au-c-sidebar__header {
-    padding: $au-unit-small;
+    padding: $au-sidebar-header-padding;
   }
 
   .au-c-sidebar__content {
@@ -36,5 +40,5 @@
   .au-c-sidebar__footer {
     @include au-font-size($au-base);
     text-align: center;
-    padding: $au-unit;
+    padding: $au-sidebar-footer-padding;
   }

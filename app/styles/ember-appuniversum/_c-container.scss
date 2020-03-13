@@ -2,14 +2,22 @@
    #CONTAINER
    ================================== */
 
+/* Variables
+   ========================================================================== */
+
+$au-container-height: calc(100vh - #{$au-unit-large - $au-unit-tiny}) !default;
+
+/* Component
+   ========================================================================== */
+
 .au-c-container {
-  height: 100%;
+  height: $au-container-height;
   overflow: hidden;
   position: relative;
 }
 
   .au-c-container__content {
     position: relative;
-    height: calc(100vh - #{$au-unit-large - $au-unit-tiny});
+    height: 100%;
     overflow: auto;
   }
