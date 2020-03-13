@@ -83,3 +83,7 @@ $au-list-navigation-border-color: $au-neutral-lighter !default;
       padding: $au-unit-small * 1.5 $au-unit-small;
     }
   }
+
+  .au-c-list-navigation__link--highlight {
+    font-weight: $au-medium;
+  }

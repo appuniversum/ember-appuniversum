@@ -19,7 +19,7 @@ $au-button-link-underline-hover   : $au-primary-lighter !default;
    ========================================================================== */
 
 .au-c-button-link {
-  @include au-font-size($au-base,.7);
+  @include au-font-size($au-base,1);
   font-family: $au-font;
   font-weight: $au-regular;
   padding: $au-unit-tiny;

@@ -18,6 +18,7 @@ $au-icon-size-large  : 1.5rem !default;
   height: $au-icon-size;
   position: relative;
   vertical-align: baseline;
+  bottom: .05ex;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
@@ -34,4 +35,8 @@ $au-icon-size-large  : 1.5rem !default;
 
 .au-c-icon--left {
   margin-right: $au-unit-tiny;
+}
+
+.au-c-icon--right {
+  margin-left: $au-unit-tiny;
 }
