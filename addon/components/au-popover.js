@@ -44,7 +44,7 @@ export default class AuPopover extends Component {
   }
 
   @action
-  popoverFocus(element) {
+  focusPopover(element) {
     let menuItems = element.querySelectorAll('button');
 
     if (this.keyboardAccess) {

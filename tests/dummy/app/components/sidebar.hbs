@@ -1,35 +1,47 @@
 <aside class="au-o-grid__item au-u-1-4@small au-u-1-6@medium">
   <div class="au-c-sidebar">
-    {{#docs-viewer as |viewer|}}
-      {{#viewer.nav as |nav|}}
-        {{nav.section "Foundation"}}
-        <li class="au-c-list-navigation__item">
-          <a href="https://appuniversum.github.io/" class="au-c-list-navigation__link">Appuniversum</a>
-        </li>
-        {{nav.section "Atoms"}}
-        <li class="au-c-list-navigation__item">
-          <AuNavigationLink @linkRoute="docs.atoms.au-button">
-            Button
-          </AuNavigationLink>
-        </li>
-        <li class="au-c-list-navigation__item">
-          <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
-            Navigation link
-          </AuNavigationLink>
-        </li>
-        {{nav.section "Components"}}
-        <li class="au-c-list-navigation__item">
-          <AuNavigationLink @linkRoute="docs.components.au-popover">
-            Popover
-          </AuNavigationLink>
-        </li>
-        {{nav.section "Patterns"}}
-        <li class="au-c-list-navigation__item">
-          <AuNavigationLink @linkRoute="docs.patterns.au-header">
-            Header
-          </AuNavigationLink>
-        </li>
-      {{/viewer.nav}}
-    {{/docs-viewer}}
+    <div class="au-c-sidebar__content">
+      {{#docs-viewer as |viewer|}}
+        {{#viewer.nav as |nav|}}
+          <li class="au-c-list-navigation__item">
+            <a href="https://appuniversum.github.io/" class="au-c-list-navigation__link au-c-list-navigation__link--highlight">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="au-c-icon au-c-icon--left" aria-hidden="true">
+                <polygon fill-rule="evenodd" points="44 21.976 35 15 35 21 0 21 0 23 35 23 35 29" transform="matrix(-1 0 0 1 44 0)"/>
+              </svg>
+              Appuniversum
+            </a>
+          </li>
+          {{nav.section "Atoms"}}
+          <li class="au-c-list-navigation__item">
+            <AuNavigationLink @linkRoute="docs.atoms.au-button">
+              Button
+            </AuNavigationLink>
+          </li>
+          <li class="au-c-list-navigation__item">
+            <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
+              Navigation link
+            </AuNavigationLink>
+          </li>
+          {{nav.section "Components"}}
+          <li class="au-c-list-navigation__item">
+            <AuNavigationLink @linkRoute="docs.components.au-popover">
+              Popover
+            </AuNavigationLink>
+          </li>
+          {{nav.section "Patterns"}}
+          <li class="au-c-list-navigation__item">
+            <AuNavigationLink @linkRoute="docs.patterns.au-header">
+              Header
+            </AuNavigationLink>
+          </li>
+        {{/viewer.nav}}
+      {{/docs-viewer}}
+    </div>
+    <div class="au-c-sidebar__footer au-d-small">
+      <a href="https://github.com/ember-learn/ember-cli-addon-docs"
+        class="au-c-link au-c-link--neutral">
+        Powered by AddonDocs
+      </a>
+    </div>
   </div>
 </aside>
