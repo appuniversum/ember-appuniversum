@@ -21,9 +21,10 @@ $au-sidebar-footer-padding: $au-unit !default;
   border-bottom: 1px solid $au-sidebar-border;
 
   @include mq(small) {
-    height: 100%;
+    height: calc(100vh - #{$au-unit-large - $au-unit-tiny});
     border-bottom: 0;
     border-right: 1px solid $au-sidebar-border;
+    overflow: auto;
   }
 }
 
