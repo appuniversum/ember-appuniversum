@@ -17,10 +17,38 @@ $hue-5-2: #be5046;
 $hue-6:   #e06c75; // original #d19a66
 $hue-6-2: #e6c07b;
 
+
+.docs-demo__snippet-wrapper {
+  @include au-font-size($au-base);
+  font-family: $au-font-tertiary;
+  position: relative;
+  border-bottom-left-radius: $au-radius;
+  border-bottom-right-radius: $au-radius;
+  overflow: hidden;
+
+  button {
+    @include au-font-size($au-base);
+    padding: $au-unit-tiny $au-unit-small;
+    outline: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $au-neutral-lighter;
+    background-color: $au-neutral-darker;
+    transition: $au-transition;
+
+    &:hover,
+    &:focus {
+      background-color: $au-neutral-dark;
+    }
+  }
+}
+
 .hljs {
   display: block;
   overflow-x: auto;
-  padding: 0.5em;
+  padding: $au-unit;
   color: $mono-1;
   background: $base;
 }

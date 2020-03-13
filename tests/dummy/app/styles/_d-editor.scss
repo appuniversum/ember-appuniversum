@@ -257,9 +257,9 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
   }
 
   > a:not(.au-c-button),
-  > ul a:not(.au-c-button),
-  > ol a:not(.au-c-button),
-  > p a:not(.au-c-button) {
+  > ul > li > a:not(.au-c-button),
+  > ol > li > a:not(.au-c-button),
+  > p > a:not(.au-c-button) {
     transition: color $au-transition, text-decoration $au-transition;
     font-weight: $au-regular;
     text-decoration-color: $au-editor-link-underline;

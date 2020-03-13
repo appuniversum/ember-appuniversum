@@ -82,13 +82,12 @@ $au-brand-height               : $au-unit-large - $au-unit-tiny !default;
     margin-right: $au-unit-small;
     padding-right: $au-unit-small + $au-unit-tiny/2;
     transition: color $au-transition;
-    bottom: 1px;
 
     &::after {
       content: "";
       display: block;
       position: absolute;
-      top: -.1rem;
+      top: -.2rem;
       right: 0;
       transform: rotate($au-rotation);
       width: 1px;

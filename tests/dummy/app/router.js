@@ -8,10 +8,9 @@ const Router = AddonDocsRouter.extend({
 
 Router.map(function() {
   docsRoute(this, function() {
-    this.route('contributing');
-
     this.route("atoms", function() {
       this.route("au-button");
+      this.route("au-navigation-link");
     });
 
     this.route("components", function() {

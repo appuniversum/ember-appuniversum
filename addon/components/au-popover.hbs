@@ -1,7 +1,7 @@
-<div class="au-c-popover">
+<div class="au-c-popover" ...attributes>
   <div class="au-c-popover__toggle">
     <div class="au-c-popover__name">
-      {{@popover-title}}
+      {{@popoverTitle}}
     </div>
     {{#if this.popoverOpen}}
     <button {{on "click" this.closePopover}} class="au-c-popover__button" aria-haspopup="true" aria-expanded="{{if this.popoverOpen "true" "false"}}">

@@ -18,3 +18,8 @@
   @include au-font-size($au-base);
   font-weight: $au-medium;
 }
+
+
+#content {
+  outline: 0;
+}
