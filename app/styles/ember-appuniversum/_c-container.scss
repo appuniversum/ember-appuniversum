@@ -18,6 +18,6 @@ $au-container-height: calc(100vh - #{$au-unit-large - $au-unit-tiny}) !default;
 
   .au-c-container__content {
     position: relative;
-    height: 100%;
+    height: $au-container-height;
     overflow: auto;
   }
