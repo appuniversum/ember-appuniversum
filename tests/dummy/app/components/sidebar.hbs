@@ -1,33 +1,35 @@
-<aside class="au-o-grid__item au-d-sidebar au-u-1-4@small au-u-1-6@medium">
-  {{#docs-viewer as |viewer|}}
-    {{#viewer.nav as |nav|}}
-      {{nav.section "Foundation"}}
-      <li class="au-c-list-navigation__item">
-        <a href="https://appuniversum.github.io/" class="au-c-list-navigation__link">Appuniversum</a>
-      </li>
-      {{nav.section "Atoms"}}
-      <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.atoms.au-button">
-          Button
-        </AuNavigationLink>
-      </li>
-      <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
-          Navigation link
-        </AuNavigationLink>
-      </li>
-      {{nav.section "Components"}}
-      <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.components.au-popover">
-          Popover
-        </AuNavigationLink>
-      </li>
-      {{nav.section "Patterns"}}
-      <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.patterns.au-header">
-          Header
-        </AuNavigationLink>
-      </li>
-    {{/viewer.nav}}
-  {{/docs-viewer}}
+<aside class="au-o-grid__item au-u-1-4@small au-u-1-6@medium">
+  <div class="au-c-sidebar">
+    {{#docs-viewer as |viewer|}}
+      {{#viewer.nav as |nav|}}
+        {{nav.section "Foundation"}}
+        <li class="au-c-list-navigation__item">
+          <a href="https://appuniversum.github.io/" class="au-c-list-navigation__link">Appuniversum</a>
+        </li>
+        {{nav.section "Atoms"}}
+        <li class="au-c-list-navigation__item">
+          <AuNavigationLink @linkRoute="docs.atoms.au-button">
+            Button
+          </AuNavigationLink>
+        </li>
+        <li class="au-c-list-navigation__item">
+          <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
+            Navigation link
+          </AuNavigationLink>
+        </li>
+        {{nav.section "Components"}}
+        <li class="au-c-list-navigation__item">
+          <AuNavigationLink @linkRoute="docs.components.au-popover">
+            Popover
+          </AuNavigationLink>
+        </li>
+        {{nav.section "Patterns"}}
+        <li class="au-c-list-navigation__item">
+          <AuNavigationLink @linkRoute="docs.patterns.au-header">
+            Header
+          </AuNavigationLink>
+        </li>
+      {{/viewer.nav}}
+    {{/docs-viewer}}
+  </div>
 </aside>
