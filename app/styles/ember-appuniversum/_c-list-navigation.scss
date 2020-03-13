@@ -27,25 +27,21 @@ $au-list-navigation-border-color: $au-neutral-lighter !default;
   }
 
   .au-c-list-navigation__item--section {
-    @include au-font-size(1.4rem,.7);
-    padding: $au-unit-tiny $au-unit-large;
+    @include au-font-size(1.4rem);
+    padding: $au-unit-tiny * 1.5 $au-unit-small;
     font-weight: $au-medium;
     color: $au-neutral;
     text-transform: uppercase;
-
-    @include mq(small) {
-      padding: $au-unit-small * 1.5 $au-unit-small;
-    }
   }
 
   .au-c-list-navigation__link {
-    @include au-font-size($au-base,.7);
+    @include au-font-size($au-base);
     display: flex;
     align-items: center;
     font-family: $au-font;
     transition: color $au-transition, text-decoration $au-transition;
     font-weight: $au-regular;
-    padding: $au-unit-small * 1.5 $au-unit-small;
+    padding: $au-unit-tiny * 1.5 $au-unit-small;
     text-decoration-color: $au-primary-lighter !important; // @TODO: remove important when webuniversum is removed
     text-decoration: underline;
     text-underline-offset: .3ex;
@@ -77,10 +73,6 @@ $au-list-navigation-border-color: $au-neutral-lighter !default;
       text-decoration: none;
       box-shadow: inset -.3rem 0 0 $au-neutral-light;
       background-color: $au-neutral-lighter;
-    }
-
-    @include mq(small) {
-      padding: $au-unit-small * 1.5 $au-unit-small;
     }
   }
 
