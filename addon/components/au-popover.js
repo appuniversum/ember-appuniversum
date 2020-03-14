@@ -19,6 +19,9 @@ export default class AuPopover extends Component {
   closePopover() {
     // Toggle Popover view state
     this.popoverOpen = false;
+
+    // Reset keyboardAccess
+    this.keyboardAccess = false;
   }
 
   @action
@@ -58,16 +61,6 @@ export default class AuPopover extends Component {
     } else {
       // Focus popover
       element.focus();
-    }
-  }
-
-  @action
-  buttonFocus(element) {
-    if (this.keyboardAccess) {
-      // Focus button on insert
-      element.focus();
-      // Disable keyboardAccess
-      this.keyboardAccess = false;
     }
   }
 }

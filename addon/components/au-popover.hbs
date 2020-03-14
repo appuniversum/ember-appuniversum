@@ -3,21 +3,12 @@
     <div class="au-c-popover__name">
       {{@popoverTitle}}
     </div>
-    {{#if this.popoverOpen}}
-    <button {{on "click" this.closePopover}} class="au-c-popover__button" aria-haspopup="true" aria-expanded="{{if this.popoverOpen "true" "false"}}">
+    <button {{on "click" this.openPopover}} {{on "keydown" this.tabPopover}} class="au-c-popover__button" aria-haspopup="true" aria-expanded="{{if this.popoverOpen "true" "false"}}">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="au-c-icon" aria-hidden="true">
         <path d="M32.8714921,25.9083684 L36.2265981,29.3383369 L22,43.8823727 L7.77340188,29.3383369 L11.1285079,25.9083684 L22,37.0224358 L32.8714921,25.9083684 Z M22,-0.117627267 L36.2265981,14.4264086 L32.8714921,17.8563771 L22,6.74230965 L11.1285079,17.8563771 L7.77340188,14.4264086 L22,-0.117627267 Z"/>
       </svg>
       <span class="au-u-hidden-visually">{{@popoverButtonLabel}}</span>
     </button>
-    {{else}}
-    <button {{on "click" this.openPopover}} {{on "keydown" this.tabPopover}} {{did-insert this.buttonFocus}} class="au-c-popover__button" aria-haspopup="true" aria-expanded="{{if this.popoverOpen "true" "false"}}">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="au-c-icon" aria-hidden="true">
-        <path d="M32.8714921,25.9083684 L36.2265981,29.3383369 L22,43.8823727 L7.77340188,29.3383369 L11.1285079,25.9083684 L22,37.0224358 L32.8714921,25.9083684 Z M22,-0.117627267 L36.2265981,14.4264086 L32.8714921,17.8563771 L22,6.74230965 L11.1285079,17.8563771 L7.77340188,14.4264086 L22,-0.117627267 Z"/>
-      </svg>
-      <span class="au-u-hidden-visually">{{@popoverButtonLabel}}</span>
-    </button>
-    {{/if}}
   </div>
   {{#if this.popoverOpen}}
   <ClickOutside @onClickOutside={{this.closePopover}} id="account" class="au-c-popover__menu" role="menu" tabindex="-1" {{on "keydown" this.escapePopover}} {{did-insert this.focusPopover}}>
