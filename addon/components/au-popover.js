@@ -41,11 +41,16 @@ export default class AuPopover extends Component {
     if (event.keyCode === 13) {
       this.keyboardAccess = true;
     }
+
+    // Enable keyboardAccess on space keydown
+    if (event.keyCode === 32) {
+      this.keyboardAccess = true;
+    }
   }
 
   @action
   focusPopover(element) {
-    let menuItems = element.querySelectorAll('button');
+    let menuItems = element.querySelectorAll('[role="menuitem"]');
 
     if (this.keyboardAccess) {
       // Focus first button
