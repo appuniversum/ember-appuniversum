@@ -1,0 +1,27 @@
+/* ==================================
+   #LABELS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-label-color             : $au-gray-darker !default;
+$au-label-error-color       : $au-error !default;
+
+
+/* Component
+  ========================================================================== */
+
+.au-c-label {
+  color: $au-label-color;
+  font-family: $au-font;
+  font-weight: $au-medium;
+}
+
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-label--error {
+  color: $au-label-error-color;
+}
