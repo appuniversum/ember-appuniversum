@@ -1,0 +1,26 @@
+/* ==================================
+   #LINKS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-label-color             : $au-primary !default;
+$au-label-error-color       : $au-error !default;
+
+
+/* Component
+  ========================================================================== */
+
+.au-c-label {
+  font-family: $au-font;
+  font-weight: $au-regular;
+}
+
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-label--error {
+  color: $au-label-error-color;
+}
