@@ -9,6 +9,15 @@ module.exports = function(defaults) {
       includePaths: [
         'node_modules/@appuniversum/appuniversum'
       ]
+    },
+    // SVG ICONS
+    svgstore: {
+      excludeSourceFiles: true, // exclude all processed source files
+      files: {
+        sourceDirs: [ 'addon/icons' ],
+        outputFile: '/assets/appuniversum-symbolset.svg',
+        excludeSourceFiles: true // exclude source files only for this master SVG
+      }
     }
   });
 
