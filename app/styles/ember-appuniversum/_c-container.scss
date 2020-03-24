@@ -12,12 +12,19 @@ $au-container-height: calc(100vh - #{$au-unit-large - $au-unit-tiny}) !default;
 
 .au-c-container {
   height: $au-container-height;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
+
+  @include mq(small) {
+    overflow: hidden;
+  }
 }
 
   .au-c-container__content {
     position: relative;
-    height: $au-container-height;
     overflow: auto;
+
+    @include mq(small) {
+      height: $au-container-height;
+    }
   }
