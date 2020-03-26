@@ -1,0 +1,56 @@
+/* ==================================
+   #PILLS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-pill-color             : $au-neutral-dark !default;
+$au-pill-background-color  : $au-neutral-lighter !default;
+$au-pill-border-color      : $au-neutral-light !default;
+$au-pill-font-size         : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
+
+$au-pill-background-color-success     : $au-success-dark !default;
+$au-pill-color-success                : $au-white !default;
+$au-pill-border-color-success         : $au-success-dark;
+$au-pill-background-color-warning     : $au-warning !default;
+$au-pill-color-warning                : $au-black !default;
+$au-pill-border-color-warning         : $au-warning;
+$au-pill-background-color-error       : $au-error !default;
+$au-pill-color-error                  : $au-white !default;
+$au-pill-border-color-error           : $au-error;
+
+/* Component
+  ========================================================================== */
+
+.au-c-pill {
+  color: $au-pill-color;
+  background-color: $au-pill-background-color;
+  font-family: $au-font;
+  font-weight: $au-medium;
+  font-size: $au-pill-font-size;
+  border: 1px solid $au-pill-border-color;
+  padding: $au-unit-tiny*.5 $au-unit-tiny $au-unit-tiny*.25;  // Visually center the text in the pill
+  border-radius: $au-unit-tiny;
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-pill--success {
+  color: $au-pill-color-success;
+  background-color: $au-pill-background-color-success;
+  border-color: $au-pill-border-color-success;
+}
+
+.au-c-pill--warning {
+  color: $au-pill-color-warning;
+  background-color: $au-pill-background-color-warning;
+  border-color: $au-pill-border-color-warning;
+}
+
+.au-c-pill--error {
+  color: $au-pill-color-error;
+  background-color: $au-pill-background-color-error;
+  border-color: $au-pill-border-color-error;
+}
