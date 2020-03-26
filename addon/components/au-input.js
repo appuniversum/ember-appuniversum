@@ -4,9 +4,9 @@ import Component from '@glimmer/component';
 export default class AuInput extends Component {
 
   get widthClass() {
-      if (this.args.width == "block") {
-          return "au-c-input--block";
-     }
+    if (this.args.width == "block") {
+      return "au-c-input--block";
+   }
   }
 
   get errorClass() {
