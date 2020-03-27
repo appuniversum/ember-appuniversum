@@ -1,0 +1,61 @@
+/* ==================================
+   #LINKS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+// $au-label-color             : $au-primary !default;
+// $au-label-error-color       : $au-error !default;
+
+$au-textarea-height                : $au-unit-large - $au-unit-small !default;
+$au-textarea-color                 : $au-black !default;
+$au-textarea-border-color          : $au-neutral-light !default;
+$au-textarea-font-size             : $au-h6 !default;
+
+$au-button-font-size         : $au-h6 !default;
+$au-button-border            : .2rem !default;
+$au-button-color             : $au-primary !default;
+$au-button-fg-color          : $au-white !default;
+$au-button-hover-color       : $au-primary-light !default;
+$au-button-active-color      : $au-primary-light !default;
+$au-button-visited-color     : $au-primary-dark !default;
+$au-button-active-color      : $au-primary-dark !default;
+$au-button-underline         : $au-primary-light !default;
+$au-button-underline-hover   : $au-primary-lighter !default;
+$au-button-error-color       : $au-error-dark !default;
+$au-button-error-hover-color : $au-error !default;
+$au-button-disabled-color    : $au-neutral-darker !default;
+$au-button-disabled-fg-color : $au-neutral-dark !default;
+
+
+/* Component
+  ========================================================================== */
+
+.au-c-textarea {
+  border: 1px solid $au-textarea-border-color;
+  color: $au-textarea-color;
+  font-family: $au-font;
+  max-width: 100%;
+  padding: $au-unit-tiny $au-unit-small;
+  font-size: $au-textarea-font-size;
+  font-weight: $au-regular;
+}
+
+.au-c-textarea:focus {
+  outline: none;
+  border-color: $orange;
+  box-shadow: inset 0 0 0 1px $orange;
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-textarea--block {
+  display: block;
+  width: 100%;
+}
+
+.au-c-textarea--error {
+  border-bottom-color: $au-red;
+}

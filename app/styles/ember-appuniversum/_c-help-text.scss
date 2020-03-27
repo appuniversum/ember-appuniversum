@@ -1,0 +1,28 @@
+/* ==================================
+   #HELP TEXT
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-help-text-color             : $au-gray-darker !default;
+$au-help-text-error-color       : $au-error !default;
+$au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-small variable in appuniversum;
+
+
+/* Component
+  ========================================================================== */
+
+.au-c-help-text {
+  @include au-font-size($au-help-text-font-size);
+  color: $au-help-text-color;
+  margin-top: $au-unit-tiny;
+}
+
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-help-text--error {
+  color: $au-help-text-error-color;
+}
