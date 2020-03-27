@@ -10,7 +10,7 @@ export default class AuButton extends Component {
   }
 
   get styleClass() {
-    if( this.args.style == "ghost" ){
+    if( this.args.skin == "ghost" ){
       return "au-c-button--ghost";
     }
   }
