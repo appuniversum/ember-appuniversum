@@ -7,8 +7,10 @@
 
 $au-pill-color             : $au-neutral-dark !default;
 $au-pill-background-color  : $au-neutral-lighter !default;
+$au-pill-border-width      : .1rem;
 $au-pill-border-color      : $au-neutral-light !default;
 $au-pill-font-size         : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
+
 
 $au-pill-background-color-success     : $au-success-dark !default;
 $au-pill-color-success                : $au-white !default;
@@ -29,7 +31,7 @@ $au-pill-border-color-error           : $au-error;
   font-family: $au-font;
   font-weight: $au-medium;
   font-size: $au-pill-font-size;
-  border: 1px solid $au-pill-border-color;
+  border: $au-pill-border-width solid $au-pill-border-color;
   padding: $au-unit-tiny*.5 $au-unit-tiny $au-unit-tiny*.25;  // Visually center the text in the pill
   border-radius: $au-unit-tiny;
 }
