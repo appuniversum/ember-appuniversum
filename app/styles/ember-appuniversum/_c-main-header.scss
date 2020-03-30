@@ -5,35 +5,35 @@
 /* Variables
    ========================================================================== */
 
-$au-header-bg                : $au-white !default;
-$au-header-border            : $au-neutral-lighter !default;
-$au-header-color             : $au-primary !default;
-$au-header-hover-color       : $au-primary-light !default;
-$au-header-active-color      : $au-primary-dark !default;
-$au-header-underline         : $au-primary-light !default;
-$au-header-underline-hover   : $au-primary-lighter !default;
+$au-main-header-bg                : $au-white !default;
+$au-main-header-border            : $au-neutral-lighter !default;
+$au-main-header-color             : $au-primary !default;
+$au-main-header-hover-color       : $au-primary-light !default;
+$au-main-header-active-color      : $au-primary-dark !default;
+$au-main-header-underline         : $au-primary-light !default;
+$au-main-header-underline-hover   : $au-primary-lighter !default;
 
 /* Component
    ========================================================================== */
 
-.au-c-header {
+.au-c-main-header {
   position: relative;
   z-index: $au-z-index-alpha;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $au-header-bg;
+  background-color: $au-main-header-bg;
   box-shadow: 0 1px 3px rgba($au-neutral-darkest, .1), 0 4px 20px rgba($au-neutral-darkest, .035), 0 1px 1px rgba($au-neutral-darkest, .025);
 }
 
-  .au-c-header__title-group {
+  .au-c-main-header__title-group {
     display: flex;
     align-items: center;
     color: $au-neutral-darkest;
     text-decoration: none;
   }
 
-  .au-c-header__title {
+  .au-c-main-header__title {
     @include au-font-size($au-base,1);
     font-weight: $au-medium;
     text-transform: uppercase;
@@ -58,16 +58,16 @@ $au-header-underline-hover   : $au-primary-lighter !default;
     }
   }
 
-  .au-c-header__title--link {
+  .au-c-main-header__title--link {
     text-decoration: underline;
     text-decoration-color: $au-neutral-light;
     text-underline-offset: .3ex;
 
     &:hover,
     &:focus {
-      color: $au-header-hover-color;
+      color: $au-main-header-hover-color;
       text-decoration: underline;
-      text-decoration-color: $au-header-underline-hover;
+      text-decoration-color: $au-main-header-underline-hover;
     }
 
     &:focus {
@@ -75,7 +75,7 @@ $au-header-underline-hover   : $au-primary-lighter !default;
     }
   }
 
-  .au-c-header__skiplink {
+  .au-c-main-header__skiplink {
     @include au-font-size($au-base,1);
     font-weight: $au-regular;
     position: absolute;
@@ -113,7 +113,7 @@ $au-header-underline-hover   : $au-primary-lighter !default;
     }
   }
 
-  .au-c-header__actions {
+  .au-c-main-header__actions {
     @include au-font-size($au-base,.7);
     display: flex;
     align-items: center;

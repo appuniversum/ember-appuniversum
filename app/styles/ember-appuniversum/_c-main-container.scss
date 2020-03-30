@@ -1,0 +1,30 @@
+/* ==================================
+   #CONTAINER
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-main-container-height: calc(100vh - #{$au-unit-large - $au-unit-tiny}) !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-main-container {
+  height: $au-main-container-height;
+  overflow: auto;
+  position: relative;
+
+  @include mq(small) {
+    overflow: hidden;
+  }
+}
+
+    .au-c-main-container__content {
+      position: relative;
+      overflow: auto;
+
+      @include mq(small) {
+        height: $au-main-container-height;
+      }
+    }
