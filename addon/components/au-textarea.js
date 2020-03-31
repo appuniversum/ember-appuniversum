@@ -1,17 +1,17 @@
-import { computed } from '@ember/object';
 import Component from '@glimmer/component';
 
 export default class AuTextarea extends Component {
-
   get widthClass() {
-    if (this.args.width == "block") {
-      return "au-c-textarea--block";
-    }
+    if (this.args.width == "block")
+      return "au-c-input--block";
+    else
+      return "";
   }
 
   get errorClass() {
-    if( this.args.error == "error" ){
-      return "au-c-textarea--error";
-    }
+    if (this.args.error == "error")
+      return "au-c-input--error";
+    else
+      return "";
   }
-};
+}
