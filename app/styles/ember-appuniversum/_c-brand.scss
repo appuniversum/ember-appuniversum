@@ -10,6 +10,7 @@ $au-brand-bg                   : $au-white !default;
 $au-brand-text                 : $au-neutral-darkest !default;
 $au-brand-border               : $au-neutral-light !default;
 $au-brand-height               : $au-unit-large - $au-unit-tiny !default;
+$au-brand-divider-rotation     : -20deg !default;
 
 /* Component
    ========================================================================== */
@@ -89,7 +90,7 @@ $au-brand-height               : $au-unit-large - $au-unit-tiny !default;
       position: absolute;
       top: -.2rem;
       right: 0;
-      transform: rotate($au-rotation);
+      transform: rotate($au-brand-divider-rotation);
       width: 1px;
       height: 2.3rem;
       background-color: $au-neutral-light;

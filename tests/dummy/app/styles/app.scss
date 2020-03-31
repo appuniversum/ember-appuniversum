@@ -1,7 +1,7 @@
-// Import app styles
+// IMPORT APP STYLES
 @import 'app/styles/ember-appuniversum.scss';
 
-// Dummy styles
+// DUMMY STYLES
 @import "d-swatch";
 @import "d-component";
 @import "d-editor";
@@ -12,13 +12,5 @@
 @import "d-syntax";
 @import "d-popover";
 
-// Temporary styles
-.au-d-small {
-  @include au-font-size(1.4rem);
-}
-
-#content {
-  &:focus {
-    outline: 0;
-  }
-}
+// QUICK FIXES AND HACKS
+@import "shame";
