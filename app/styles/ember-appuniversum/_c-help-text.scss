@@ -19,6 +19,10 @@ $au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-smal
   margin-top: $au-unit-tiny;
 }
 
+.au-c-help-text + .au-c-help-text {
+  margin-top: 0;
+}
+
 
 /* Modifiers
   ========================================================================== */
