@@ -1,0 +1,18 @@
+<div class="au-c-alert au-c-alert{{this.alertSkin}} au-c-alert{{this.alertSize}}" role="alert" ...attributes>
+  <div class="au-c-alert__icon" aria-hidden="{{if @iconVisible "false" "true"}}">
+    <svg role="img" class="au-c-icon au-c-icon{{this.alertSkin}}" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 48 48" width="48">
+      <path d="m0 0h48v48h-48z" fill="none"></path><path d="m22 34h4v-12h-4zm2-30c-11.05 0-20 8.95-20 20s8.95 20 20 20 20-8.95 20-20-8.95-20-20-20zm0 36c-8.82 0-16-7.18-16-16s7.18-16 16-16 16 7.18 16 16-7.18 16-16 16zm-2-22h4v-4h-4z"></path>
+    </svg>
+  </div>
+  <div class="au-c-alert__content">
+    <h1 class="au-c-alert__title">{{@alertTitle}}</h1>
+    <p class="au-c-alert__message">{{@alertMessage}}</p>
+  </div>
+  {{#if @closable}}
+    <div class="au-c-alert__close">
+      <AuButtonLink>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>
+      </AuButtonLink>
+    </div>
+  {{/if}}
+</div>
