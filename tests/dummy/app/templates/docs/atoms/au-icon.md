@@ -51,6 +51,10 @@ Add your icons to the `addon/icons` folder as `.svg`. Export your svg's without 
     <pre>bin</pre>
   </li>
   <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="bold" @size="large" />
+    <pre>bold</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
     <AuIcon @icon="calendar" @size="large" />
     <pre>calendar</pre>
   </li>
