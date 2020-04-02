@@ -40,3 +40,10 @@ $au-textarea-font-size             : $au-h6 !default;
 .au-c-textarea--error {
   border: .2rem solid $au-red;
 }
+
+.au-c-textarea--disabled {
+  background-color: $au-input-disabled-background-color;
+  border-color: $au-input-disabled-border-color;
+  color: $au-input-disabled-color;
+  cursor: not-allowed;
+}

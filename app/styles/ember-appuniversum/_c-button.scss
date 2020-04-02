@@ -21,6 +21,8 @@ $au-button-error-hover-color : $au-error !default;
 $au-button-disabled-color    : $au-neutral-darker !default;
 $au-button-disabled-fg-color : $au-neutral-dark !default;
 
+// @TODO: simplify loading state
+
 /* Component
   ========================================================================== */
 
@@ -71,6 +73,40 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
 /* Modifiers
   ========================================================================== */
 
+// Loading button
+.au-c-button--loading {
+  position: relative;
+}
+
+.au-c-button--loading:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: inherit;
+}
+
+.au-c-button--loading:after {
+  content: " ";
+  position: absolute;
+  text-align: center;
+  border: .3rem solid $au-white;
+  border-top: .3rem solid $au-primary-light;
+  border-radius: 50%;
+  width: $au-unit - $au-unit-tiny;
+  height: $au-unit - $au-unit-tiny;
+  left: 50%;
+  margin-left: -$au-unit-small;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 // Ghost button
 .au-c-button--ghost {
   background-color: transparent;
@@ -90,6 +126,17 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
     background-color: transparent;
     border-color: tint($au-button-hover-color,20);
     box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-hover-color,20);
+  }
+
+  &.au-c-button--loading {
+    &:before {
+      background-color: $au-white;
+    }
+
+    &:after {
+      border: .3rem solid $au-primary-light;
+      border-top: .3rem solid $au-white;
+    }
   }
 }
 
@@ -126,6 +173,11 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
       box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-error-hover-color,20);
     }
   }
+
+  &.au-c-button--loading:after {
+    border: .3rem solid $au-red;
+    border-top: .3rem solid $au-white;
+  }
 }
 
 
@@ -151,9 +203,26 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
     &:visited {
       color: $au-button-disabled-color;
     }
+
+    &.au-c-button--loading {
+      &:before {
+        background-color: $au-white;
+      }
+
+      &:after {
+        border: .3rem solid $au-gray-dark;
+        border-top: .3rem solid $au-white;
+      }
+    }
+  }
+
+  &.au-c-button--loading:after {
+    border: .3rem solid $au-white;
+    border-top: .3rem solid $au-gray-dark;
   }
 }
 
+// Block button
 .au-c-button--block {
   display: block;
   width: 100%;

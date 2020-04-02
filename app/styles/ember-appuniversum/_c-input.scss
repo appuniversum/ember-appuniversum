@@ -5,10 +5,13 @@
 /* Variables
    ========================================================================== */
 
-$au-input-height                : $au-unit-large - $au-unit-small !default;
-$au-input-color                 : $au-black !default;
-$au-input-border-color          : $au-neutral-light !default;
-$au-input-font-size             : $au-h6 !default;
+$au-input-height                    : $au-unit-large - $au-unit-small !default;
+$au-input-color                     : $au-black !default;
+$au-input-border-color              : $au-neutral-light !default;
+$au-input-disabled-background-color : $au-neutral-lightest !default;
+$au-input-disabled-border-color     : $au-neutral !default;
+$au-input-disabled-color            : $au-gray-dark !default;
+$au-input-font-size                 : $au-h6 !default;
 
 
 /* Component
@@ -40,5 +43,12 @@ $au-input-font-size             : $au-h6 !default;
 }
 
 .au-c-input--error {
-  border: .2rem solid $au-red;
+  border: .3rem solid $au-red;
+}
+
+.au-c-input--disabled {
+  background-color: $au-input-disabled-background-color;
+  border-color: $au-input-disabled-border-color;
+  color: $au-input-disabled-color;
+  cursor: not-allowed;
 }
