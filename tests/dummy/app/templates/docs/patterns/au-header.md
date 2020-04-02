@@ -7,7 +7,7 @@
     <AuHeader @appTitle="App title" @contactLink="#!">
       <AuPopover @popoverTitle="Demo popover" @popoverButtonLabel="Account settings">
         <button class="au-c-popover__item">
-          <AuIcon @icon="powerdown" @iconLeft="true" />Afmelden
+          <AuIcon @icon="logout" @alignment="left" />Afmelden
         </button>
       </AuPopover>
     </AuHeader>
