@@ -1,0 +1,132 @@
+/* ==================================
+   #ALERT
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-alert-font-size                     : $au-h6 !default;
+
+$au-alert-color                         : $au-gray-darker !default;
+$au-alert-background-color              : $au-neutral-lighter !default;
+
+$au-alert-success-background-color      : $au-success-lighter !default;
+$au-alert-warning-background-color      : $au-warning-lightest !default;
+$au-alert-error-background-color        : $au-error-lighter !default;
+
+$au-alert-success-icon-background-color : $au-success !default;
+$au-alert-warning-icon-background-color : $au-warning !default;
+$au-alert-error-icon-background-color   : $au-error !default;
+
+$au-alert-success-icon-color            : $au-white !default;
+$au-alert-error-icon-color              : $au-white !default;
+
+$au-alert-icon-size                     : 2rem !default;
+$au-alert-small-icon-size               : 1.5rem !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-alert {
+  color: $au-alert-color;
+  display: flex;
+  font-family: $au-font;
+  font-size: $au-alert-font-size;
+  padding: $au-unit;
+  margin-bottom: $au-unit;
+  background-color: $au-alert-background-color;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  .au-c-button-link {
+    flex-shrink: 0;
+  }
+}
+
+.au-c-alert__icon {
+  background-color: $au-white;
+  border-radius: $au-unit-large;
+  height: $au-unit-large - .1rem; // compensate for visual distortion of perfect circle
+  width: $au-unit-large;
+  margin-right: $au-unit-large / 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  .au-c-icon {
+    height: $au-alert-icon-size - .1rem; // compensate for visual distortion of perfect circle
+    width: $au-alert-icon-size;
+  }
+}
+.au-c-alert__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.au-c-alert__title {
+  font-weight: $au-medium;
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-alert--tiny {
+  padding: $au-unit-small;
+
+  .au-c-alert__icon {
+    display: none;
+  }
+}
+
+.au-c-alert--small {
+  padding: $au-unit-small;
+
+  .au-c-alert__icon {
+    height: $au-unit - .1rem; // compensate for visual distortion of perfect circle
+    width: $au-unit;
+    margin-right: $au-unit / 2;
+  }
+
+  .au-c-icon {
+    height: $au-alert-small-icon-size - .1rem; // compensate for visual distortion of perfect circle
+    width: $au-alert-small-icon-size;
+  }
+}
+
+.au-c-alert--success {
+  background-color: $au-alert-success-background-color;
+
+  .au-c-alert__icon {
+    background-color: $au-alert-success-icon-background-color;
+
+    .au-c-icon {
+      fill: $au-alert-success-icon-color;
+    }
+  }
+}
+
+.au-c-alert--warning {
+  background-color: $au-alert-warning-background-color;
+
+  .au-c-alert__icon {
+    background-color: $au-alert-warning-icon-background-color;
+  }
+}
+
+.au-c-alert--error {
+  background-color: $au-alert-error-background-color;
+
+  .au-c-alert__icon {
+    background-color: $au-alert-error-icon-background-color;
+
+    .au-c-icon {
+      fill: $au-alert-error-icon-color;
+    }
+  }
+}

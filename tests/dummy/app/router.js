@@ -16,6 +16,7 @@ Router.map(function() {
     });
 
     this.route("components", function() {
+      this.route("au-alert");
       this.route("au-popover");
     });
 
