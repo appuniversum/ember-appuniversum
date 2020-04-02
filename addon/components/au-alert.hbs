@@ -6,7 +6,7 @@
   </div>
   <div class="au-c-alert__content">
     <h1 class="au-c-alert__title">{{@alertTitle}}</h1>
-    <p class="au-c-alert__message">{{@alertMessage}}</p>
+    <p class="au-c-alert__message">{{yield}}</p>
   </div>
   {{#if @closable}}
     <div class="au-c-alert__close">
