@@ -17,6 +17,10 @@ module.exports = function(defaults) {
         sourceDirs: ['addon/icons'],
         outputFile: '/assets/appuniversum-symbolset.svg',
         excludeSourceFiles: true // exclude source files only for this master SVG
+      },
+      svgstoreOpts: {
+        cleanDefs: true,
+        cleanSymbols: true
       }
     }
   });
