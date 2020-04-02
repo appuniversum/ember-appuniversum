@@ -9,7 +9,7 @@ export default class AuButton extends Component {
   }
 
   get widthClass() {
-    if (this.args.width == "neutral")
+    if (this.args.width == "block")
       return "au-c-button-link--block";
     else
       return "";
