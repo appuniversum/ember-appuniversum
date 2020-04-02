@@ -21,22 +21,170 @@ Add your icons to the `addon/icons` folder as `.svg`. Export your svg's without 
 ## Included icons
 
 <div class="au-o-box au-d-component">
-<ul class="au-o-grid">
+<ul class="au-o-grid au-u-text-center">
   <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
-    <AuIcon @icon="arrows-up-down" @size="large" />
-    <pre>arrows-up-down</pre>
+    <AuIcon @icon="add" @size="large" />
+    <pre>add</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="alert-triangle" @size="large" />
+    <pre>alert-triangle</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="arrow-down" @size="large" />
+    <pre>arrow-down</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="arrow-left" @size="large" />
+    <pre>arrow-left</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="arrow-right" @size="large" />
+    <pre>arrow-right</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="arrow-up" @size="large" />
+    <pre>arrow-up</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="bin" @size="large" />
+    <pre>bin</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="calendar" @size="large" />
+    <pre>calendar</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="check" @size="large" />
+    <pre>check</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="cross" @size="large" />
+    <pre>cross</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="document" @size="large" />
+    <pre>document</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="documents" @size="large" />
+    <pre>documents</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="github" @size="large" />
+    <pre>github</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="hierarchal-back" @size="large" />
+    <pre>hierarchal-back</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="indent" @size="large" />
+    <pre>indent</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="italic" @size="large" />
+    <pre>italic</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="info-circle" @size="large" />
+    <pre>info-circle</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="login" @size="large" />
+    <pre>login</pre>
   </li>
   <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
     <AuIcon @icon="logout" @size="large" />
     <pre>logout</pre>
   </li>
   <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
-    <AuIcon @icon="help" @size="large" />
-    <pre>arrows-up-down</pre>
+    <AuIcon @icon="manual" @size="large" />
+    <pre>manual</pre>
   </li>
   <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
-    <AuIcon @icon="arrow-back" @size="large" />
-    <pre>arrows-up-down</pre>
+    <AuIcon @icon="message" @size="large" />
+    <pre>message</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="nav-down" @size="large" />
+    <pre>nav-down</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="nav-left" @size="large" />
+    <pre>nav-left</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="nav-right" @size="large" />
+    <pre>nav-right</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="nav-up" @size="large" />
+    <pre>nav-up</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="nav-up-down" @size="large" />
+    <pre>nav-up-down</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="ordered-list" @size="large" />
+    <pre>ordered-list</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="pencil" @size="large" />
+    <pre>pencil</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="question-circle" @size="large" />
+    <pre>question-circle</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="redo" @size="large" />
+    <pre>redo</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="reverse-indent" @size="large" />
+    <pre>reverse-indent</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="search" @size="large" />
+    <pre>search</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="search-folder" @size="large" />
+    <pre>search-folder</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="sitemap" @size="large" />
+    <pre>sitemap</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="strikethrough" @size="large" />
+    <pre>strikethrough</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="underlined" @size="large" />
+    <pre>underlined</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="unordered-list" @size="large" />
+    <pre>unordered-list</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="user" @size="large" />
+    <pre>user</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="user-fill" @size="large" />
+    <pre>user-fill</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="user-popup" @size="large" />
+    <pre>user-popup</pre>
+  </li>
+  <li class="au-o-grid__item au-u-1-4 au-u-1-6@medium">
+    <AuIcon @icon="users" @size="large" />
+    <pre>users</pre>
   </li>
 </ul>
 </div>
