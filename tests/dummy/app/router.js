@@ -10,7 +10,9 @@ Router.map(function() {
   docsRoute(this, function() {
     this.route("atoms", function() {
       this.route("au-button");
+      this.route('au-input');
       this.route("au-navigation-link");
+      this.route('au-textarea');
     });
 
     this.route("components", function() {
