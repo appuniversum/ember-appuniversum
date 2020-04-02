@@ -6,21 +6,45 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-alert-skins.hbs'}}
-    <AuAlert @alertTitle="Informatie" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"info"}} />
-    <AuAlert @alertTitle="Success" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"success"}} />
-    <AuAlert @alertTitle="Waarschuwing" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It " @alertskin={{"warning"}} />
-    <AuAlert @alertTitle="Error" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"error"}} />
+    <AuAlert @alertTitle="Informatie" @alertskin={{"info"}}>
+      <p class="au-u-margin-bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </AuAlert>
+    <AuAlert @alertTitle="Success" @alertskin={{"success"}}>
+      <p class="au-u-margin-bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </AuAlert>
+    <AuAlert @alertTitle="Waarschuwing" @alertskin={{"warning"}}>
+      <p class="au-u-margin-bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </AuAlert>
+    <AuAlert @alertTitle="Error" @alertskin={{"error"}}>
+      <p class="au-u-margin-bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </AuAlert>
   {{/demo.example}}
   {{demo.snippet 'au-alert-skins.hbs'}}
 {{/docs-demo}}
 
+## Alert Action
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-alert-action.hbs'}}
+    <AuAlert @alertTitle="Informatie" @alertskin={{"info"}}>
+      <p class="au-u-margin-bottom">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <AuButton>Primary action</AuButton>
+      <AuButton @skin="ghost">Secondary action</AuButton>
+    </AuAlert>
+  {{/demo.example}}
+  {{demo.snippet 'au-alert-action.hbs'}}
+{{/docs-demo}}
 
 ## Alert Smaller Sizes
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-alert-sizes.hbs'}}
-    <AuAlert @alertTitle="Success" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"info"}} @alertsize={{"small"}} />
-    <AuAlert @alertTitle="Waarschuwing" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It " @alertskin={{"info"}} @alertsize={{"tiny"}} />
+    <AuAlert @alertTitle="Success" @alertskin={{"info"}} @alertsize={{"small"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
+    <AuAlert @alertTitle="Waarschuwing" @alertskin={{"info"}} @alertsize={{"tiny"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
 
   {{/demo.example}}
   {{demo.snippet 'au-alert-sizes.hbs'}}
@@ -31,9 +55,15 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-alert-closable.hbs'}}
-    <AuAlert @alertTitle="Success" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"info"}} @closable="true" />
-    <AuAlert @alertTitle="Success" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"info"}} @alertsize={{"small"}} @closable="true" />
-    <AuAlert @alertTitle="Waarschuwing" @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It " @alertskin={{"info"}} @alertsize={{"tiny"}} @closable="true" />
+    <AuAlert @alertTitle="Success" @alertskin={{"info"}} @closable="true">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
+    <AuAlert @alertTitle="Success" @alertskin={{"info"}} @alertsize={{"small"}} @closable="true">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
+    <AuAlert @alertTitle="Waarschuwing" @alertskin={{"info"}} @alertsize={{"tiny"}} @closable="true">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
 
   {{/demo.example}}
   {{demo.snippet 'au-alert-closable.hbs'}}
@@ -44,13 +74,25 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-alert-content.hbs'}}
-    <AuAlert @alertTitle="Success" @alertskin={{"info"}} />
-    <AuAlert @alertTitle="Success" @alertskin={{"info"}} @alertsize={{"small"}} />
-    <AuAlert @alertTitle="Success" @alertskin={{"info"}} @alertsize={{"tiny"}} />
+    <AuAlert @alertTitle="Success" @alertskin={{"info"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
+    <AuAlert @alertTitle="Success" @alertskin={{"info"}} @alertsize={{"small"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
+    <AuAlert @alertTitle="Success" @alertskin={{"info"}} @alertsize={{"tiny"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
 
-    <AuAlert @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"info"}} />
-    <AuAlert @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"info"}} @alertsize={{"small"}} />
-    <AuAlert @alertMessage="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book." @alertskin={{"info"}} @alertsize={{"tiny"}} />
+    <AuAlert @alertskin={{"info"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
+    <AuAlert @alertskin={{"info"}} @alertsize={{"small"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
+    <AuAlert @alertskin={{"info"}} @alertsize={{"tiny"}}>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+    </AuAlert>
   {{/demo.example}}
   {{demo.snippet 'au-alert-content.hbs'}}
 {{/docs-demo}}
