@@ -25,4 +25,5 @@ $au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-smal
 
 .au-c-help-text--error {
   color: $au-help-text-error-color;
+  font-weight: $au-medium;
 }
