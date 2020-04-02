@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <g class="nav-up-down">
+    <path d="M12 23l-8-8.571L5.333 13 12 20.143 18.667 13 20 14.429 12 23z" class="Vector"/>
+    <path d="M18.667 10L12 3.571 5.333 10 4 8.714 12 1l8 7.714L18.667 10z" class="Vector_2"/>
+  </g>
+</svg>

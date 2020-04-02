@@ -14,7 +14,7 @@ module.exports = function(defaults) {
     svgstore: {
       excludeSourceFiles: true, // exclude all processed source files
       files: {
-        sourceDirs: ['addon/icons','node_modules/@appuniversum/icon-font/svg'],
+        sourceDirs: ['addon/icons'],
         outputFile: '/assets/appuniversum-symbolset.svg',
         excludeSourceFiles: true // exclude source files only for this master SVG
       }

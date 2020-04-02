@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <g class="indent">
+    <path d="M2 22h20v-2.222H2V22zM2 7.556v8.888L6.444 12 2 7.556zm8.889 10H22v-2.223H10.889v2.223zM2 2v2.222h20V2H2zm8.889 6.667H22V6.444H10.889v2.223zm0 4.444H22V10.89H10.889v2.222z" class="Vector"/>
+  </g>
+</svg>
