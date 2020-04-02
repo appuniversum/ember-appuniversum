@@ -4,7 +4,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button.hbs'}}
-    <AuIcon @icon="arrows-up-down" />
+    <AuIcon @icon="info-circle" @alignment="left" @size="large" @ariaHidden="false" />
   {{/demo.example}}
   {{demo.snippet 'au-button.hbs'}}
 {{/docs-demo}}
@@ -14,7 +14,7 @@ Add your icons to the `addon/icons` folder as `.svg`. Export your svg's without 
 
 ## Properties
 - `@icon`: pass the svg name to select the icon
-- `@size`: [ large ]
+- `@size`: [ medium | large ]
 - `@alignment`: add [ left | right ] margin to the icon - default is none
 - `@ariaHidden`: [ true | false ] - default is true
 

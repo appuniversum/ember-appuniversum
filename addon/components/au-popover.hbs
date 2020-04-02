@@ -4,7 +4,7 @@
       {{@popoverTitle}}
     </div>
     <button {{on "click" this.openPopover}} {{on "keydown" this.tabPopover}} class="au-c-popover__button" aria-haspopup="true" aria-expanded="{{if this.popoverOpen "true" "false"}}">
-      <AuIcon @icon="arrows-up-down" />
+      <AuIcon @icon="nav-up-down" />
       <span class="au-u-hidden-visually">{{@popoverButtonLabel}}</span>
     </button>
   </div>

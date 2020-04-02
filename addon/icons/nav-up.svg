@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
   <g class="nav-up">
-    <path d="M19.4 16.8l-7-7-7 7L4 15.4 12.4 7l8.4 8.4-1.4 1.4z" class="Vector"/>
+    <path d="M19.5 18L12 10.143 4.5 18 3 16.429 12 7l9 9.429L19.5 18z" class="Vector"/>
   </g>
 </svg>
