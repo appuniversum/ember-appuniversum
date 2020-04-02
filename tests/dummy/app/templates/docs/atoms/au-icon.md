@@ -3,10 +3,10 @@
 ---
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-button.hbs'}}
+  {{#demo.example name='au-icon.hbs'}}
     <AuIcon @icon="info-circle" @alignment="left" @size="large" @ariaHidden="false" />
   {{/demo.example}}
-  {{demo.snippet 'au-button.hbs'}}
+  {{demo.snippet 'au-icon.hbs'}}
 {{/docs-demo}}
 
 ## Usage
