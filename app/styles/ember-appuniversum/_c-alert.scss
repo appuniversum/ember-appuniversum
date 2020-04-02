@@ -60,6 +60,7 @@ $au-alert-small-icon-size               : 1.5rem !default;
   .au-c-icon {
     height: $au-alert-icon-size - .1rem; // compensate for visual distortion of perfect circle
     width: $au-alert-icon-size;
+    bottom: 0;
   }
 }
 .au-c-alert__content {
