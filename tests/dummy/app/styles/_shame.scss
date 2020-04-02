@@ -1,0 +1,16 @@
+/* ==================================
+   #SHAME
+   ================================== */
+
+// Temporary styles
+.au-d-small {
+  @include au-font-size(1.4rem);
+}
+
+// Disable focus on content and main element
+#content,
+#main {
+  &:focus {
+    outline: 0 !important;
+  }
+}

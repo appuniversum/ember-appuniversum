@@ -1,0 +1,42 @@
+/* ==================================
+   #LINKS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-textarea-height                : $au-unit-large - $au-unit-small !default;
+$au-textarea-color                 : $au-black !default;
+$au-textarea-border-color          : $au-neutral-light !default;
+$au-textarea-font-size             : $au-h6 !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-textarea {
+  border: 1px solid $au-textarea-border-color;
+  color: $au-textarea-color;
+  font-family: $au-font;
+  max-width: 100%;
+  padding: $au-unit-tiny $au-unit-small;
+  font-size: $au-textarea-font-size;
+  font-weight: $au-regular;
+}
+
+.au-c-textarea:focus {
+  outline: none;
+  border-color: $au-outline-color;
+  box-shadow: inset 0 0 0 1px $au-outline-color;
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-textarea--block {
+  display: block;
+  width: 100%;
+}
+
+.au-c-textarea--error {
+  border-bottom-color: $au-red;
+}
