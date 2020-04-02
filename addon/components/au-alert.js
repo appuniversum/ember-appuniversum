@@ -20,4 +20,6 @@ export default class AuAlertComponent extends Component {
       return "au-c-alert--small";
     return "";
   }
+
+  // @TODO: add icon switching functionality
 }
