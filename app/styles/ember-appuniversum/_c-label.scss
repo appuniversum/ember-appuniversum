@@ -5,9 +5,9 @@
 /* Variables
    ========================================================================== */
 
-$au-label-color             : $au-gray-darker !default;
-$au-label-error-color       : $au-error !default;
-
+$au-label-color                   : $au-gray-darker !default;
+$au-label-error-badge-color       : $au-error !default;
+$au-label-error-badge-font-size   : 1.2rem !default;
 
 /* Component
   ========================================================================== */
@@ -16,6 +16,8 @@ $au-label-error-color       : $au-error !default;
   color: $au-label-color;
   font-family: $au-font;
   font-weight: $au-medium;
+  margin-bottom: $au-unit-tiny;
+  display: block;
 }
 
 
@@ -23,5 +25,21 @@ $au-label-error-color       : $au-error !default;
   ========================================================================== */
 
 .au-c-label--error {
-  color: $au-label-error-color;
+  position: relative;
+
+  &:before {
+    font-size: $au-label-error-badge-font-size;
+    line-height: 1.7;
+    content: "!";
+    padding: 0;
+    color: $au-white;
+    position: absolute;
+    top: .2rem;
+    left: -$au-unit;
+    background-color: $au-label-error-badge-color;
+    width: $au-unit-small * 1.5;
+    height: $au-unit-small * 1.5 - .05rem;
+    border-radius: $au-unit-small;
+    text-align: center;
+  }
 }

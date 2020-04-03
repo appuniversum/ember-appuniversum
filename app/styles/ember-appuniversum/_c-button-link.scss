@@ -63,6 +63,7 @@ $au-button-link-underline-hover   : $au-primary-lighter !default;
 /* Modifiers
   ========================================================================== */
 
+// Neutral
 .au-c-button-link--neutral {
   color: $au-neutral-darker;
   text-decoration-color: $au-neutral-light;
@@ -74,6 +75,51 @@ $au-button-link-underline-hover   : $au-primary-lighter !default;
   }
 }
 
+// Loading
+.au-c-button-link--loading {
+  position: relative;
+}
+
+.au-c-button-link--loading:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $au-gray-lighter;
+}
+
+.au-c-button-link--loading:after {
+  content: " ";
+  position: absolute;
+  text-align: center;
+  border: .3rem solid $au-gray-dark;
+  border-top: .3rem solid $au-gray-lighter;
+  border-radius: 50%;
+  width: $au-unit - $au-unit-tiny;
+  height: $au-unit - $au-unit-tiny;
+  left: 50%;
+  margin-left: -$au-unit-small;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Block
+.au-c-button-link--disabled {
+  background-color: $au-gray-lighter;
+  color: $au-gray;
+}
+
+// Block
 .au-c-button-link--block {
   width: 100%;
 }
+
+
+
+

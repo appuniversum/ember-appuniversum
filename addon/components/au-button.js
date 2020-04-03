@@ -14,4 +14,18 @@ export default class AuButton extends Component {
     else
       return "";
   }
+
+  get errorClass() {
+    if (this.args.error == "error")
+      return "au-c-button--error";
+    else
+      return "";
+  }
+
+  get disabledClass() {
+    if (this.args.disabled == "disabled")
+      return "au-c-button--disabled";
+    else
+      return "";
+  }
 }
