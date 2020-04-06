@@ -1,19 +1,11 @@
 import Component from '@glimmer/component';
 import { getOwner } from '@ember/application';
-const config = getOwner(this).resolveRegistration('config:environment');
 
 export default class AuButton extends Component {
-  // Variables
-  iconURL = null
+  get iconPrefix(){
+    const config = getOwner(this).resolveRegistration('config:environment');
 
-  constructor() {
-    super(...arguments);
-
-    // Set wormhole destination
-    if (!this.iconURL) {
-      this.iconURL = config.ENV.rootURL;
-      ;
-    }
+    return config.rootURL || "/";
   }
 
   get size() {
