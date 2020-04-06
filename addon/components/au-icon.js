@@ -1,6 +1,21 @@
 import Component from '@glimmer/component';
+import { getOwner } from '@ember/application';
+const config = getOwner(this).resolveRegistration('config:environment');
 
 export default class AuButton extends Component {
+  // Variables
+  iconURL = null
+
+  constructor() {
+    super(...arguments);
+
+    // Set wormhole destination
+    if (!this.iconURL) {
+      this.iconURL = config.ENV.rootURL;
+      ;
+    }
+  }
+
   get size() {
     if (this.args.size == "large")
       return "au-c-icon--large";
