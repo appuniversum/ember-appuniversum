@@ -9,17 +9,6 @@ module.exports = function(defaults) {
       includePaths: [
         'node_modules/@appuniversum/appuniversum'
       ]
-    },
-    // SVG ICONS
-    svgstore: {
-      files: {
-        sourceDirs: ['public/icons'],
-        outputFile: 'assets/appuniversum-symbolset.svg',
-      },
-      svgstoreOpts: {
-        cleanDefs: true,
-        cleanSymbols: true
-      }
     }
   });
 
