@@ -11,7 +11,7 @@
     </button>
   </div>
   {{#if this.dropdownOpen}}
-  <ClickOutside @onClickOutside={{this.closeDropdown}} id="{{this.dropdownId}}" class="au-c-dropdown__menu" role="menu" tabindex="-1" {{on "keydown" this.escapeDropdown}} {{did-insert this.focusDropdown}}>
+  <ClickOutside @onClickOutside={{this.closeDropdown}} id="{{this.dropdownId}}" class="au-c-dropdown__menu" role="menu" tabindex="-1" {{on "keydown" this.escapeDropdown}} {{did-insert this.focusDropdown}} {{on-click-inside this.closeDropdown}}>
     {{yield}}
   </ClickOutside>
   {{/if}}
