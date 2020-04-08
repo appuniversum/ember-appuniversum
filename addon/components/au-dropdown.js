@@ -67,4 +67,13 @@ export default class AuDropdown extends Component {
       element.focus();
     }
   }
+
+  // Dropdown alignment
+  get alignment() {
+    if (this.args.alignment == "left")
+      return "au-c-dropdown--left";
+    if (this.args.alignment == "right")
+      return "au-c-dropdown--right";
+    return "";
+  }
 }
