@@ -164,8 +164,8 @@ $au-button-radius                : .2rem !default;
   }
 
   &.is-loading::after {
-    border-color: $au-button-ghost-color;
-    border-top-color: rgba($au-button-ghost-color,.3);
+    border-color: $au-button-color;
+    border-top-color: rgba($au-button-color,.3);
   }
 }
 
