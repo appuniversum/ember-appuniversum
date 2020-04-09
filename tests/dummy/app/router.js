@@ -9,6 +9,7 @@ const Router = AddonDocsRouter.extend({
 Router.map(function() {
   docsRoute(this, function() {
     this.route("atoms", function() {
+      this.route('au-icon');
       this.route("au-button");
       this.route('au-input');
       this.route("au-navigation-link");
@@ -23,6 +24,8 @@ Router.map(function() {
     this.route("patterns", function() {
       this.route("au-header");
     });
+
+    this.route("index");
   });
 
   this.route('not-found', { path: '/*path' });

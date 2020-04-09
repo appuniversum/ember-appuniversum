@@ -1,6 +1,6 @@
 {
   "name": "@appuniversum/ember-appuniversum",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Ember addon wrapping the appuniversum components.",
   "keywords": [
     "ember-addon"
@@ -21,10 +21,13 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
-    "test:all": "ember try:each"
+    "test:all": "ember try:each",
+    "icons": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
+    "prepare": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg"
   },
   "dependencies": {
     "@appuniversum/appuniversum": "0.0.6",
+    "@appuniversum/icon-font": "^1.1.0",
     "ember-cli-babel": "^7.17.2",
     "ember-cli-htmlbars": "^4.2.2"
   },
@@ -66,7 +69,8 @@
     "eslint-plugin-node": "^11.0.0",
     "loader.js": "^4.7.0",
     "qunit-dom": "^1.0.0",
-    "sass": "^1.26.2"
+    "sass": "^1.26.2",
+    "svg-symbols": "^1.0.5"
   },
   "engines": {
     "node": "10.* || >= 12"

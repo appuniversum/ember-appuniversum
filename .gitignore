@@ -3,6 +3,7 @@
 # compiled output
 /dist/
 /tmp/
+/public/appuniversum-symbolset.svg
 
 # dependencies
 /bower_components/
