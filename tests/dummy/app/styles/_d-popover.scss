@@ -27,7 +27,6 @@
 
   .au-d-popover__toggle {
     @include au-font-size($au-base,1);
-
     font-weight: $au-regular;
     color: $au-popover-color;
     display: flex;
@@ -142,9 +141,10 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  top: $au-unit-small !important;
-  right: -$au-unit-tiny !important;
-  left: auto;
+  top: $au-unit + $au-unit-small !important;
+  right: $au-unit-small + $au-unit-tiny/2 !important;
+  transform: none !important;
+  left: auto !important;
   width: auto;
   top: $au-unit + $au-unit-tiny;
   box-shadow: 0 0 12px rgba($au-neutral-darkest,.15), 0 0 2px rgba($au-neutral-darkest,.1);
