@@ -5,8 +5,9 @@
 /* Variables
    ========================================================================== */
 
-$au-icon-size        : .75em !default;
-$au-icon-size-large  : 1.5rem !default;
+$au-icon-size        : 1.3rem !default;
+$au-icon-size-medium : 1.6rem !default;
+$au-icon-size-large  : 1.9rem !default;
 
 
 /* Component
@@ -27,6 +28,11 @@ $au-icon-size-large  : 1.5rem !default;
 
 /* Modifiers
   ========================================================================== */
+
+.au-c-icon--medium {
+  width: $au-icon-size-medium;
+  height: $au-icon-size-medium;
+}
 
 .au-c-icon--large {
   width: $au-icon-size-large;
