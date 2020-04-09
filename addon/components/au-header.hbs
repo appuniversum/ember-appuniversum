@@ -21,9 +21,9 @@
       <p class="au-c-brand__logotype">Vlaanderen</p>
     </div>
     {{/if}}
-    <a href="/" class="au-c-main-header__title au-c-main-header__title--link">
+    <LinkTo @route="{{@homeRoute}}" class="au-c-main-header__title au-c-main-header__title--link">
       {{@appTitle}}
-    </a>
+    </LinkTo>
     <a href="#main" class="au-c-main-header__skiplink">Naar de hoofdinhoud</a>
   </div>
   <nav class="au-c-main-header__actions">
