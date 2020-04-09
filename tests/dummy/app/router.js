@@ -24,6 +24,8 @@ Router.map(function() {
     this.route("patterns", function() {
       this.route("au-header");
     });
+
+    this.route("index");
   });
 
   this.route('not-found', { path: '/*path' });
