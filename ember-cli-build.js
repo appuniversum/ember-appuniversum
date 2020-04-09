@@ -6,9 +6,15 @@ module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     // Add options here
     sassOptions: {
+      sourceMapEmbed: true,
       includePaths: [
         'node_modules/@appuniversum/appuniversum'
       ]
+    },
+    autoprefixer: {
+      enabled: true,
+      cascade: true,
+      sourcemap: true
     }
   });
 
