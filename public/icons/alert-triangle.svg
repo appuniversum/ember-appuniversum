@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <g class="alert-triangle">
+    <path d="M20.997 21.004h-18a1 1 0 01-.89-1.45l9-18a1 1 0 011.79 0l9 18a1 1 0 01-.9 1.45zm-16.38-2h14.76l-7.38-14.76-7.38 14.76zm6.38-10h2v6h-2v-6zm1 9.25a1.25 1.25 0 110-2.501 1.25 1.25 0 010 2.5z" class="Vector"/>
+  </g>
+</svg>

@@ -7,7 +7,7 @@
     <AuHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="App title" @contactRoute="docs.patterns.au-header">
       <AuPopover @popoverTitle="Demo popover" @popoverButtonLabel="Account settings">
         <button class="au-c-popover__item">
-          Afmelden
+          <AuIcon @icon="logout" @alignment="left" />Afmelden
         </button>
       </AuPopover>
     </AuHeader>

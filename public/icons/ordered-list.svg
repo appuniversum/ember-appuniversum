@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <g class="ordered-list">
+    <path d="M2 17.625h2.21v.563H3.106v1.125h1.106v.562H2V21h3.316v-4.5H2v1.125zM3.105 7.5h1.106V3H2v1.125h1.105V7.5zM2 10.875h1.99L2 13.238v1.012h3.316v-1.125h-1.99l1.99-2.363V9.75H2v1.125zm5.526-6.75v2.25H23v-2.25H7.526zm0 15.75H23v-2.25H7.526v2.25zm0-6.75H23v-2.25H7.526v2.25z" class="Vector"/>
+  </g>
+</svg>
