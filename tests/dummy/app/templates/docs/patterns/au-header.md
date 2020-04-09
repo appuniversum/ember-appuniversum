@@ -4,7 +4,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-header.hbs'}}
-    <AuHeader @appTitle="App title" @contactLink="#!">
+    <AuHeader @brandLink="https://www.vlaanderen.be/nl" @appTitle="App title" @contactRoute="docs.patterns.au-header">
       <AuPopover @popoverTitle="Demo popover" @popoverButtonLabel="Account settings">
         <button class="au-c-popover__item">
           Afmelden
@@ -16,5 +16,6 @@
 {{/docs-demo}}
 
 ## Properties
+- `@brandLink`: pass a link to the logo (the logo has no link if this property is not present)
 - `@appTitle`: pass the header title to select the icon
-- `@contactLink`: pass the href for the contact link (no contact link is shown when this property is not present)
+- `@contactRoute`: pass a route for the contact route (no contact route is shown when this property is not present)
