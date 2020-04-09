@@ -18,6 +18,7 @@ $au-button-active-color          : $au-primary-dark !default;
 $au-button-underline             : $au-primary-light !default;
 $au-button-underline-hover       : $au-primary-lighter !default;
 $au-button-error-color           : $au-error-dark !default;
+$au-button-error-fg-color        : $au-white !default;
 $au-button-error-hover-color     : $au-error !default;
 $au-button-disabled-color        : $au-neutral-dark !default;
 $au-button-disabled-border-color : $au-neutral !default;
@@ -37,10 +38,9 @@ $au-button-radius                : .2rem !default;
   text-decoration: none;
   text-align: center;
   appearance: none;
-  -webkit-appearance: none; // doesn't work without prefix on Safari iOS11
   display: inline-flex;
   align-items: center;
-  padding: 0 $au-unit .1rem; // Visually center the text in the button
+  padding: 0 $au-unit-small .1rem; // Visually center the text in the button
   border-radius: $au-button-radius;
   border: $au-button-border solid $au-button-color;
   white-space: nowrap;
@@ -49,7 +49,7 @@ $au-button-radius                : .2rem !default;
   color: $au-button-fg-color;
   background-color: $au-button-color;
   box-shadow: inset 0px 0px 0px $au-button-border transparent;
-  transition: color $au-transition, border-color $au-transition, box-shadow $au-transition;
+  transition: color $au-transition, background-color $au-transition, border-color $au-transition, box-shadow $au-transition;
 
   &:hover,
   &:focus {
@@ -70,13 +70,44 @@ $au-button-radius                : .2rem !default;
   &:visited {
     background-color: $au-button-visited-color;
   }
+
+  &.is-loading,
+  &.is-loading:hover {
+    position: relative;
+    color: $au-button-fg-color;
+    background-color: $au-button-hover-color;
+  }
+
+  &.is-loading:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
+  }
+
+  &.is-loading::after {
+    content: "";
+    position: absolute;
+    text-align: center;
+    border: .3rem solid $au-button-fg-color;
+    border-top: .3rem solid rgba($au-button-fg-color,.3);
+    border-radius: 50%;
+    width: $au-unit - $au-unit-tiny;
+    height: $au-unit - $au-unit-tiny;
+    left: 50%;
+    margin-left: -$au-unit-small;
+    animation: buttonLoading 2s linear infinite;
+  }
 }
 
 
 /* Modifiers
   ========================================================================== */
 
-  // Ghost button
+// Ghost button
 .au-c-button--ghost {
   background-color: transparent;
   color: $au-button-ghost-color;
@@ -95,15 +126,46 @@ $au-button-radius                : .2rem !default;
     box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-ghost-color,20);
   }
 
-  &.au-c-button--loading {
-    &:before {
-      background-color: $au-white;
-    }
+  &.is-loading,
+  &.is-loading:hover {
+    color: transparent;
+    background-color: transparent;
+  }
 
-    &:after {
-      border: .3rem solid $au-primary-light;
-      border-top: .3rem solid $au-white;
-    }
+  &.is-loading::after {
+    border-color: $au-button-ghost-color;
+    border-top-color: rgba($au-button-ghost-color,.3);
+  }
+}
+
+// Link button
+.au-c-button--link {
+  background-color: transparent;
+  color: $au-button-color;
+  border-color: transparent;
+
+  &:visited {
+    color: $au-button-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $au-button-hover-color;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &.is-loading,
+  &.is-loading:hover {
+    color: transparent;
+    background-color: transparent;
+  }
+
+  &.is-loading::after {
+    border-color: $au-button-ghost-color;
+    border-top-color: rgba($au-button-ghost-color,.3);
   }
 }
 
@@ -111,7 +173,7 @@ $au-button-radius                : .2rem !default;
 .au-c-button--error {
   background-color: $au-button-error-color;
   border-color:  $au-button-error-color;
-  color: $au-white;
+  color: $au-button-error-fg-color;
 
   &:hover,
   &:focus,
@@ -119,8 +181,47 @@ $au-button-radius                : .2rem !default;
     color: $au-white;
     background-color: $au-button-error-hover-color;
     border-color: $au-button-error-color;
-    color: $au-white;
+    color: $au-button-error-fg-color;
     box-shadow: none;
+  }
+
+  &.is-loading,
+  &.is-loading:hover {
+    color: transparent;
+    background-color: $au-button-error-color;
+  }
+
+  &.is-loading::after {
+    border-color: $au-button-error-fg-color;
+    border-top-color: rgba( $au-button-error-fg-color,.3);
+  }
+
+  &.au-c-button--link {
+    background-color: transparent;
+
+    &,
+    &:visited {
+      color: $au-button-error-color;
+      border-color: transparent;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $au-button-error-hover-color;
+      border-color: transparent;
+    }
+
+    &.is-loading,
+    &.is-loading:hover {
+      color: transparent;
+      background-color: transparent;
+    }
+
+    &.is-loading::after {
+      border-color: $au-button-error-color;
+      border-top-color: rgba($au-button-error-color,.3);
+    }
   }
 
   &.au-c-button--ghost {
@@ -139,11 +240,17 @@ $au-button-radius                : .2rem !default;
       border-color: tint($au-button-error-hover-color,20);
       box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-error-hover-color,20);
     }
-  }
 
-  &.au-c-button--loading:after {
-    border: .3rem solid $au-red;
-    border-top: .3rem solid $au-white;
+    &.is-loading,
+    &.is-loading:hover {
+      color: transparent;
+      background-color: transparent;
+    }
+
+    &.is-loading::after {
+      border-color: $au-button-error-color;
+      border-top-color: rgba($au-button-error-color,.3);
+    }
   }
 }
 
@@ -161,49 +268,20 @@ $au-button-radius                : .2rem !default;
     border: $au-button-border dashed $au-button-disabled-border-color;
     box-shadow: none;
   }
-
-  &.au-c-button--loading:after {
-    border: .3rem solid $au-white;
-    border-top: .3rem solid $au-gray-dark;
-  }
 }
 
-// Loading button
-.au-c-button--loading {
-  position: relative;
-
-  &:before {
-    content: " ";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color: inherit;
-  }
-
-  &:after {
-    content: " ";
-    position: absolute;
-    text-align: center;
-    border: .3rem solid $au-white;
-    border-top: .3rem solid $au-primary-light;
-    border-radius: 50%;
-    width: $au-unit - $au-unit-tiny;
-    height: $au-unit - $au-unit-tiny;
-    left: 50%;
-    margin-left: -$au-unit-small;
-    animation: spin 2s linear infinite;
-  }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
 
 // Block button
 .au-c-button--block {
   display: block;
   width: 100%;
+}
+
+
+/* Animations
+  ========================================================================== */
+
+@keyframes buttonLoading {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
