@@ -16,6 +16,7 @@
   </div>
   <nav class="au-c-main-header__actions">
     <ul class="au-c-list-horizontal">
+      {{#if @contactLink}}
       <li class="au-c-list-horizontal__item">
         <a href="{{@contactLink}}" class="au-c-button-link au-c-button-link--neutral">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="au-c-icon au-c-icon--left" aria-hidden="true">
@@ -24,6 +25,7 @@
           Contacteer ons
         </a>
       </li>
+      {{/if}}
       <li class="au-c-list-horizontal__item">
         {{yield}}
       </li>
