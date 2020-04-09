@@ -10,11 +10,11 @@
       Primary button
     </AuButton>
 
-    <AuButton class="au-c-button--error">
+    <AuButton @error="true">
       Primary button - error
     </AuButton>
 
-    <AuButton class="au-c-button--disabled" disabled="disabled">
+    <AuButton @disabled="true">
       Primary button - disabled
     </AuButton>
   {{/demo.example}}
@@ -25,15 +25,15 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button-ghost.hbs'}}
-    <AuButton class="au-c-button--ghost">
+    <AuButton @skin="ghost">
       Ghost button
     </AuButton>
 
-    <AuButton class="au-c-button--ghost au-c-button--error">
+    <AuButton @skin="ghost" @error="true">
       Ghost button - error
     </AuButton>
 
-    <AuButton class="au-c-button--ghost au-c-button--disabled" disabled="disabled">
+    <AuButton @skin="ghost" @disabled="true">
       Ghost button - disabled
     </AuButton>
   {{/demo.example}}

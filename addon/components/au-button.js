@@ -8,22 +8,22 @@ export default class AuButton extends Component {
       return "";
   }
 
-  get skinClass() {
+  get skin() {
     if (this.args.skin == "ghost")
       return "au-c-button--ghost";
     else
       return "";
   }
 
-  get errorClass() {
-    if (this.args.error == "error")
+  get error() {
+    if (this.args.error == "true")
       return "au-c-button--error";
     else
       return "";
   }
 
-  get disabledClass() {
-    if (this.args.disabled == "disabled")
+  get disabled() {
+    if (this.args.disabled == "true")
       return "au-c-button--disabled";
     else
       return "";

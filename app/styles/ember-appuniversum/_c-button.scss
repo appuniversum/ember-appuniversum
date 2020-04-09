@@ -5,21 +5,23 @@
 /* Variables
    ========================================================================== */
 
-$au-button-height            : $au-unit-large - $au-unit-small !default;
-$au-button-font-size         : $au-h6 !default;
-$au-button-border            : .2rem !default;
-$au-button-color             : $au-primary !default;
-$au-button-fg-color          : $au-white !default;
-$au-button-hover-color       : $au-primary-light !default;
-$au-button-active-color      : $au-primary-light !default;
-$au-button-visited-color     : $au-primary-dark !default;
-$au-button-active-color      : $au-primary-dark !default;
-$au-button-underline         : $au-primary-light !default;
-$au-button-underline-hover   : $au-primary-lighter !default;
-$au-button-error-color       : $au-error-dark !default;
-$au-button-error-hover-color : $au-error !default;
-$au-button-disabled-color    : $au-neutral-darker !default;
-$au-button-disabled-fg-color : $au-neutral-dark !default;
+$au-button-height                : $au-unit-large - $au-unit-small !default;
+$au-button-font-size             : $au-h6 !default;
+$au-button-border                : .1rem !default;
+$au-button-color                 : $au-primary !default;
+$au-button-ghost-color           : $au-neutral-dark !default;
+$au-button-fg-color              : $au-white !default;
+$au-button-hover-color           : $au-primary-light !default;
+$au-button-active-color          : $au-primary-light !default;
+$au-button-visited-color         : $au-primary-dark !default;
+$au-button-active-color          : $au-primary-dark !default;
+$au-button-underline             : $au-primary-light !default;
+$au-button-underline-hover       : $au-primary-lighter !default;
+$au-button-error-color           : $au-error-dark !default;
+$au-button-error-hover-color     : $au-error !default;
+$au-button-disabled-color        : $au-neutral-dark !default;
+$au-button-disabled-border-color : $au-neutral !default;
+$au-button-radius                : .2rem !default;
 
 // @TODO: simplify loading state
 
@@ -27,7 +29,8 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   ========================================================================== */
 
 .au-c-button {
-  @include au-font-size($au-button-font-size);
+  @include au-font-size($au-button-font-size, $au-button-height - $au-button-border * 2);
+  cursor: default;
   font-family: $au-font;
   font-weight: $au-regular;
   height: $au-button-height;
@@ -37,16 +40,16 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   -webkit-appearance: none; // doesn't work without prefix on Safari iOS11
   display: inline-flex;
   align-items: center;
-  padding: 0 $au-unit .1ex; // Visually center the text in the button
-  border: 0;
-  border-radius: 0;
+  padding: 0 $au-unit .1rem; // Visually center the text in the button
+  border-radius: $au-button-radius;
+  border: $au-button-border solid $au-button-color;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: $au-button-fg-color;
   background-color: $au-button-color;
-  transition: background-color $au-transition;
-  cursor: default;
+  box-shadow: inset 0px 0px 0px $au-button-border transparent;
+  transition: color $au-transition, border-color $au-transition, box-shadow $au-transition;
 
   &:hover,
   &:focus {
@@ -73,47 +76,11 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
 /* Modifiers
   ========================================================================== */
 
-// Loading button
-.au-c-button--loading {
-  position: relative;
-}
-
-.au-c-button--loading:before {
-  content: " ";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: inherit;
-}
-
-.au-c-button--loading:after {
-  content: " ";
-  position: absolute;
-  text-align: center;
-  border: .3rem solid $au-white;
-  border-top: .3rem solid $au-primary-light;
-  border-radius: 50%;
-  width: $au-unit - $au-unit-tiny;
-  height: $au-unit - $au-unit-tiny;
-  left: 50%;
-  margin-left: -$au-unit-small;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-// Ghost button
+  // Ghost button
 .au-c-button--ghost {
   background-color: transparent;
-  color: $au-button-color;
-  border: $au-button-border solid tint($au-button-color,20);
-  transition: color $au-transition, border-color $au-transition, box-shadow $au-transition;
-  line-height: $au-button-height - $au-button-border * 2;
+  color: $au-button-ghost-color;
+  border-color: tint($au-button-ghost-color,20);
 
   &:visited {
     color: $au-button-color;
@@ -122,10 +89,10 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   &:hover,
   &:focus,
   &:active {
-    color: $au-button-hover-color;
+    color: $au-button-ghost-color;
     background-color: transparent;
-    border-color: tint($au-button-hover-color,20);
-    box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-hover-color,20);
+    border-color: tint($au-button-ghost-color,20);
+    box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-ghost-color,20);
   }
 
   &.au-c-button--loading {
@@ -189,37 +156,50 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   &:hover,
   &:focus,
   &:active {
-    background-color: $au-button-disabled-fg-color;
-    border-color: $au-button-disabled-fg-color;
-    color: $au-white;
-    box-shadow: none;
-  }
-
-  &.au-c-button--ghost {
-    background-color: transparent;
     color: $au-button-disabled-color;
-    border-color: tint($au-button-disabled-color,20);
-
-    &:visited {
-      color: $au-button-disabled-color;
-    }
-
-    &.au-c-button--loading {
-      &:before {
-        background-color: $au-white;
-      }
-
-      &:after {
-        border: .3rem solid $au-gray-dark;
-        border-top: .3rem solid $au-white;
-      }
-    }
+    background-color: transparent;
+    border: $au-button-border dashed $au-button-disabled-border-color;
+    box-shadow: none;
   }
 
   &.au-c-button--loading:after {
     border: .3rem solid $au-white;
     border-top: .3rem solid $au-gray-dark;
   }
+}
+
+// Loading button
+.au-c-button--loading {
+  position: relative;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: inherit;
+  }
+
+  &:after {
+    content: " ";
+    position: absolute;
+    text-align: center;
+    border: .3rem solid $au-white;
+    border-top: .3rem solid $au-primary-light;
+    border-radius: 50%;
+    width: $au-unit - $au-unit-tiny;
+    height: $au-unit - $au-unit-tiny;
+    left: 50%;
+    margin-left: -$au-unit-small;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 // Block button
