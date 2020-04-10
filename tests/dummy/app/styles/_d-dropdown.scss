@@ -1,22 +1,22 @@
 /* ==========================================================================
-   #DOC POPOVER
+   #DOC DROPDOWN
    ========================================================================== */
 
 
-.au-d-popover {
+.au-d-dropdown {
   position: relative;
   display: inline-block;
 
   &,
   &:visited {
-    color: $au-popover-color;
+    color: $au-dropdown-color;
     text-decoration: none;
   }
 
   &:hover,
   &:focus,
   &:focus-within {
-    color: $au-popover-hover-color;
+    color: $au-dropdown-hover-color;
     background-color: $au-neutral-lightest;
   }
 
@@ -25,10 +25,10 @@
   }
 }
 
-  .au-d-popover__toggle {
+  .au-d-dropdown__toggle {
     @include au-font-size($au-base,1);
     font-weight: $au-regular;
-    color: $au-popover-color;
+    color: $au-dropdown-color;
     display: flex;
     align-items: center;
     position: relative;
@@ -36,7 +36,7 @@
     border-radius: $au-radius;
   }
 
-  .au-d-popover__name {
+  .au-d-dropdown__name {
     display: block;
     white-space: nowrap;
     overflow: hidden;
@@ -53,7 +53,7 @@
     }
   }
 
-  .au-d-popover__button {
+  .au-d-dropdown__button {
     @include au-font-size($au-base,1);
     border: 0;
     padding: 0;
@@ -82,12 +82,12 @@
     }
   }
 
-.au-d-popover-list {
+.au-d-dropdown-list {
   display: flex;
   flex-direction: column;
 }
 
-  .au-d-popover-list__link {
+  .au-d-dropdown-list__link {
     @include au-font-size($au-base,1.5);
     font-family: $au-font;
     font-weight: $au-regular;
@@ -108,10 +108,10 @@
     cursor: pointer;
 
     &:hover {
-      color: $au-popover-hover-color;
+      color: $au-dropdown-hover-color;
       background-color: transparent;
       text-decoration: underline;
-      text-decoration-color: $au-popover-underline-hover;
+      text-decoration-color: $au-dropdown-underline-hover;
     }
 
     &:focus {

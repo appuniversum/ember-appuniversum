@@ -4,12 +4,12 @@
   clickOutsideToClose=true
   onClose=(action on-close)
   targetAttachment="bottom right"}}
-  <ul class="au-d-popover-list">
+  <ul class="au-d-dropdown-list">
     {{#each sortedVersions as |version|}}
-      <li data-test-id="version" class="au-d-popover-list__item">
+      <li data-test-id="version" class="au-d-dropdown-list__item">
         <a {{action "changeVersion" version}} href="#"
           class={{concat
-            "au-d-popover-list__link"
+            "au-d-dropdown-list__link"
             (if (eq version sortedVersions.firstObject) "docs-rounded-t")
             (if (eq version sortedVersions.lastObject) "docs-rounded-b")
           }}>

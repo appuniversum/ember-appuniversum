@@ -1,0 +1,225 @@
+/* ==================================
+   #DROPDOWN
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-dropdown-color             : $au-primary !default;
+$au-dropdown-hover-color       : $au-primary-light !default;
+$au-dropdown-active-color      : $au-primary-light !default;
+$au-dropdown-visited-color     : $au-primary-dark !default;
+$au-dropdown-active-color      : $au-primary-dark !default;
+$au-dropdown-underline         : $au-primary-light !default;
+$au-dropdown-underline-hover   : $au-primary-lighter !default;
+$au-dropdown-caret-size        : .4rem !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.au-c-dropdown__toggle {
+  @include au-font-size($au-base,1);
+  font-weight: $au-regular;
+  color: $au-dropdown-color;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: $au-unit-tiny;
+  border-radius: $au-radius;
+
+  &:focus-within {
+    outline: $au-outline;
+  }
+
+  &,
+  &:visited {
+    color: $au-dropdown-color;
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    color: $au-dropdown-hover-color;
+    background-color: $au-neutral-lightest;
+  }
+
+  &:focus,
+  &:focus-within {
+    outline: $au-outline;
+  }
+
+  .au-c-dropdown--left & {
+    flex-direction: row-reverse;
+  }
+}
+
+.au-c-dropdown__name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: $au-unit-large;
+
+  @include mq(xsmall) {
+    max-width: $au-unit-huge;
+  }
+
+  @include mq(small) {
+    width: auto;
+    max-width: $au-unit-huge*4;
+  }
+}
+
+.au-c-dropdown__button {
+  @include au-font-size($au-base,1);
+  border: 0;
+  padding: 0;
+  margin-left: $au-unit-tiny;
+  display: inline-flex;
+  align-items: center;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &,
+  &:visited,
+  &:hover,
+  &:focus {
+    color: inherit;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  .au-c-dropdown--left & {
+    margin-left: 0;
+    margin-right: $au-unit-tiny;
+  }
+}
+
+.au-c-dropdown__menu {
+  position: absolute;
+  z-index: $au-z-index-beta;
+  background-color: $au-white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 100%;
+  width: auto;
+  top: $au-unit + $au-unit-tiny;
+  box-shadow: 0 0 12px rgba($au-neutral-darkest,.15), 0 0 2px rgba($au-neutral-darkest,.1);
+  border-radius: $au-radius;
+
+  &:before,
+  &:after {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-width: $au-dropdown-caret-size;
+    margin-left: -$au-dropdown-caret-size/2;
+  }
+
+  &:before {
+    border-color: rgba($au-white, 0);
+    border-bottom-color: $au-neutral-lighter;
+  }
+
+  &:after {
+    border-color: rgba($au-white, 0);
+    border-bottom-color: $au-white;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  // Modify the menu position
+  .au-c-dropdown--left &,
+  .au-c-dropdown--right & {
+    transform: none;
+    text-align: left;
+  }
+
+  .au-c-dropdown--left & {
+    left: 0;
+  }
+
+  .au-c-dropdown--right & {
+    left: auto;
+    right: 0;
+  }
+
+  .au-c-dropdown--left &:before,
+  .au-c-dropdown--left &:after {
+    left: $au-unit-tiny + $au-dropdown-caret-size;
+  }
+
+  .au-c-dropdown--right &:before,
+  .au-c-dropdown--right &:after {
+    left: calc(100% - #{$au-unit-small + $au-dropdown-caret-size/2});
+  }
+}
+
+.au-c-dropdown__item {
+  @include au-font-size($au-base,1.5);
+  font-family: $au-font;
+  font-weight: $au-regular;
+  padding: $au-unit-tiny $au-unit-small;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none; // doesn't work without prefix on Safari iOS11
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  text-underline-offset: .3ex;
+  text-decoration: underline;
+  text-decoration-color: $au-neutral-light;
+  color: $au-neutral-darker;
+  background-color: transparent;
+  transition: color $au-transition;
+  cursor: pointer;
+
+  &:hover {
+    color: $au-dropdown-hover-color;
+    background-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: $au-dropdown-underline-hover;
+  }
+
+  &:focus {
+    outline: .1rem dashed $au-neutral-light;
+    outline-offset: -$au-unit-tiny/2;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &:visited {
+    background-color: transparent;
+  }
+}
