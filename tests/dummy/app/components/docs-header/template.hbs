@@ -24,8 +24,8 @@
       </li>
       <li class="au-c-list-horizontal__item">
         {{#docs-header/link on-click=(action (toggle "isShowingVersionSelector" this))}}
-          <div class="au-d-popover__toggle">
-            <div class="au-d-popover__name">
+          <div class="au-d-dropdown__toggle">
+            <div class="au-d-dropdown__name">
               {{#if (eq currentVersion.key latestVersionName)}}
                 {{#if currentVersion.tag}}
                   {{currentVersion.tag}}
@@ -36,7 +36,7 @@
                 {{currentVersion.name}}
               {{/if}}
             </div>
-            <div class="au-d-popover__button" data-version-selector>
+            <div class="au-d-dropdown__button" data-version-selector>
               <AuIcon @icon="nav-up-down" />
               <span class="au-u-hidden-visually">Version</span>
             </div>

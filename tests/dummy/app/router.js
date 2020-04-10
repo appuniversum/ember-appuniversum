@@ -18,7 +18,7 @@ Router.map(function() {
 
     this.route("components", function() {
       this.route("au-alert");
-      this.route("au-popover");
+      this.route("au-dropdown");
     });
 
     this.route("patterns", function() {
