@@ -9,8 +9,8 @@ export default class AuButton extends Component {
   }
 
   get skin() {
-    if (this.args.skin == "ghost")
-      return "au-c-button--ghost";
+    if (this.args.skin == "secondary")
+      return "au-c-button--secondary";
     if (this.args.skin == "link")
       return "au-c-button--link";
     else
@@ -26,7 +26,7 @@ export default class AuButton extends Component {
 
   get disabled() {
     if (this.args.disabled == "true")
-      return "au-c-button--disabled";
+      return "is-disabled";
     else
       return "";
   }

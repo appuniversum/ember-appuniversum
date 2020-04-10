@@ -4,6 +4,8 @@
 
 ## Primary button
 
+Indicates the main action of the view (only one should be used per view).
+
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button.hbs'}}
     <AuButton>
@@ -44,49 +46,53 @@
   {{demo.snippet 'au-button.hbs'}}
 {{/docs-demo}}
 
-## Ghost button
+## Secondary button
+
+Addon to a primary action (should not be used without the presence of a primary button).
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-button-ghost.hbs'}}
-    <AuButton @skin="ghost">
-      Ghost button
+  {{#demo.example name='au-button-secondary.hbs'}}
+    <AuButton @skin="secondary">
+      Secondary button
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="ghost">
+    <AuButton @skin="secondary">
       <AuIcon @icon="pencil" @alignment="left" />
-      Ghost button - icon
+      secondary button - icon
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="ghost" @width="block">
-      Ghost button - block
+    <AuButton @skin="secondary" @width="block">
+      secondary button - block
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="ghost" @error="true">
-      Ghost button - error
+    <AuButton @skin="secondary" @error="true">
+      Secondary button - error
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="ghost" @loading="true">
-      Ghost button - loading
+    <AuButton @skin="secondary" @loading="true">
+      Secondary button - loading
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="ghost" @disabled="true">
-      Ghost button - disabled
+    <AuButton @skin="secondary" @disabled="true">
+      Secondary button - disabled
     </AuButton>
   {{/demo.example}}
-  {{demo.snippet 'au-button-ghost.hbs'}}
+  {{demo.snippet 'au-button-secondary.hbs'}}
 {{/docs-demo}}
 
 ## Link button
+
+Can be used as a standalone secondary action.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button-link.hbs'}}
@@ -126,15 +132,8 @@
   {{demo.snippet 'au-button-link.hbs'}}
 {{/docs-demo}}
 
-## Usage
-Button usage should follow the following rules:
-
-- **Primary button**: indicates the main action of the view (only one should be used per view)
-- **Ghost button**: addon to a primary action (should not be used on it's own)
-- **Link button**: can be used as a standalone secondary action
-
 ## Properties
-- `@skin`: [ ghost | link ] - default is primary
+- `@skin`: [ secondary | link ] - default is primary
 - `@width`: [ block ] - makes a button behave like a block element
 - `@error`: [ true ] - adds an error state to the button
 - `@disabled`: [ true ] - adds a disabled state to the button
