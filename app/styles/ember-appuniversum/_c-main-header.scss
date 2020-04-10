@@ -26,96 +26,96 @@ $au-main-header-underline-hover   : $au-primary-lighter !default;
   box-shadow: 0 1px 3px rgba($au-neutral-darkest, .1), 0 4px 20px rgba($au-neutral-darkest, .035), 0 1px 1px rgba($au-neutral-darkest, .025);
 }
 
-  .au-c-main-header__title-group {
-    display: flex;
-    align-items: center;
-    color: $au-neutral-darkest;
-    text-decoration: none;
+.au-c-main-header__title-group {
+  display: flex;
+  align-items: center;
+  color: $au-neutral-darkest;
+  text-decoration: none;
+}
+
+.au-c-main-header__title {
+  @include au-font-size($au-base,1);
+  font-weight: $au-medium;
+  text-transform: uppercase;
+  position: relative;
+  display: block;
+  padding: $au-unit-tiny;
+  color: $au-neutral-darker;
+  transition: color $au-transition;
+  letter-spacing: .03ex;
+  margin-left: -$au-unit-small - $au-unit-tiny;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: $au-unit-huge;
+
+  @include mq(xsmall) {
+    width: auto;
   }
 
-  .au-c-main-header__title {
-    @include au-font-size($au-base,1);
-    font-weight: $au-medium;
-    text-transform: uppercase;
-    position: relative;
-    display: block;
-    padding: $au-unit-tiny;
+  @include mq(small) {
+    margin-left: 0;
+  }
+}
+
+.au-c-main-header__title--link {
+  text-decoration: underline;
+  text-decoration-color: $au-neutral-light;
+  text-underline-offset: .3ex;
+
+  &:hover,
+  &:focus {
+    color: $au-main-header-hover-color;
+    text-decoration: underline;
+    text-decoration-color: $au-main-header-underline-hover;
+  }
+
+  &:focus {
+    outline: $au-outline;
+  }
+}
+
+.au-c-main-header__skiplink {
+  @include au-font-size($au-base,1);
+  font-weight: $au-regular;
+  position: absolute;
+  transition: color $au-transition;
+  letter-spacing: .03ex;
+  margin-left: $au-unit-small;
+  padding: $au-unit-tiny;
+  background-color: $au-neutral-lightest;
+  border-radius: $au-radius;
+  z-index: $au-z-index-alpha;
+  top: -1000px;
+  left: -1000px;
+
+  &,
+  &:hover,
+  &:focus {
     color: $au-neutral-darker;
-    transition: color $au-transition;
-    letter-spacing: .03ex;
-    margin-left: -$au-unit-small - $au-unit-tiny;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: $au-unit-huge;
-
-    @include mq(xsmall) {
-      width: auto;
-    }
-
-    @include mq(small) {
-      margin-left: 0;
-    }
-  }
-
-  .au-c-main-header__title--link {
     text-decoration: underline;
     text-decoration-color: $au-neutral-light;
-    text-underline-offset: .3ex;
-
-    &:hover,
-    &:focus {
-      color: $au-main-header-hover-color;
-      text-decoration: underline;
-      text-decoration-color: $au-main-header-underline-hover;
-    }
-
-    &:focus {
-      outline: $au-outline;
-    }
   }
 
-  .au-c-main-header__skiplink {
-    @include au-font-size($au-base,1);
-    font-weight: $au-regular;
-    position: absolute;
-    transition: color $au-transition;
-    letter-spacing: .03ex;
-    margin-left: $au-unit-small;
-    padding: $au-unit-tiny;
-    background-color: $au-neutral-lightest;
-    border-radius: $au-radius;
-    z-index: $au-z-index-alpha;
-    top: -1000px;
-    left: -1000px;
-
-    &,
-    &:hover,
-    &:focus {
-      color: $au-neutral-darker;
-      text-decoration: underline;
-      text-decoration-color: $au-neutral-light;
-    }
-
-    &:focus {
-      outline: $au-outline;
-      top: $au-unit-large;
-      left: -$au-unit-tiny;
-    }
-
-    @include mq(medium) {
-      position: relative;
-
-      &:focus {
-        top: 0;
-        left: 0;
-      }
-    }
+  &:focus {
+    outline: $au-outline;
+    top: $au-unit-large;
+    left: -$au-unit-tiny;
   }
 
-  .au-c-main-header__actions {
-    @include au-font-size($au-base,.7);
-    display: flex;
-    align-items: center;
-    padding: $au-unit-tiny $au-unit-small ;
+  @include mq(medium) {
+    position: relative;
+
+    &:focus {
+      top: 0;
+      left: 0;
+    }
   }
+}
+
+.au-c-main-header__actions {
+  @include au-font-size($au-base,.7);
+  display: flex;
+  align-items: center;
+  padding: $au-unit-tiny $au-unit-small ;
+}
