@@ -42,6 +42,7 @@
     "ember-cli": "~3.16.0",
     "ember-cli-addon-docs": "^0.6.16",
     "ember-cli-addon-docs-yuidoc": "^0.2.4",
+    "ember-cli-autoprefixer": "^1.0.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-deploy": "^1.0.2",
     "ember-cli-deploy-build": "^2.0.0",
@@ -81,5 +82,14 @@
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
-  "homepage": "https://appuniversum.github.io/ember-appuniversum"
+  "homepage": "https://appuniversum.github.io/ember-appuniversum",
+  "browserslist": [
+    "last 1 Chrome version",
+    "last 1 Android version",
+    "last 1 Firefox version",
+    "last 1 FirefoxAndroid version",
+    "last 1 Safari version",
+    "last 1 iOS version",
+    "last 1 Edge version"
+  ]
 }
