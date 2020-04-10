@@ -38,11 +38,6 @@
           Secondary button
         </AuButton>
       </div>
-      <div>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-          Secondary link
-        </AuLink>
-      </div>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-reverse.hbs'}}
