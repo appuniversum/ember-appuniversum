@@ -5,19 +5,24 @@
 /* Variables
    ========================================================================== */
 
-$au-link-color             : $au-primary !default;
-$au-link-hover-color       : $au-primary-light !default;
-$au-link-active-color      : $au-primary-light !default;
-$au-link-visited-color     : $au-primary-dark !default;
-$au-link-active-color      : $au-primary-dark !default;
-$au-link-underline         : $au-primary-lighter !default;
-$au-link-underline-hover   : $au-primary-lighter !default;
+$au-link-color                       : $au-primary !default;
+$au-link-hover-color                 : $au-primary-light !default;
+$au-link-active-color                : $au-neutral-darkest !default;
+$au-link-underline                   : $au-primary-lighter !default;
+$au-link-underline-hover             : $au-primary-lighter !default;
+$au-link-secondary-color             : $au-neutral-dark !default;
+$au-link-secondary-hover-color       : $au-neutral !default;
+$au-link-secondary-active-color      : $au-neutral-darkest !default;
+$au-link-secondary-underline         : $au-neutral-light !default;
+$au-link-secondary-underline-hover   : $au-neutral-lighter !default;
 
 
 /* Component
   ========================================================================== */
 
 .au-c-link {
+  display: inline-flex;
+  align-items: center;
   font-family: $au-font;
   transition: color $au-transition, text-decoration $au-transition;
   font-weight: $au-regular;
@@ -39,9 +44,11 @@ $au-link-underline-hover   : $au-primary-lighter !default;
     outline-offset: $au-unit-tiny/2;
   }
 
-  .is-active > & {
+  &.is-active {
+    font-weight: $au-medium;
     color: $au-link-active-color;
     text-decoration: none;
+    pointer-events: none;
   }
 }
 
@@ -49,36 +56,20 @@ $au-link-underline-hover   : $au-primary-lighter !default;
 /* Modifiers
   ========================================================================== */
 
-.au-c-link--neutral {
+.au-c-link--secondary {
   &,
   &:visited {
-    color: $au-neutral-dark;
-    text-decoration-color: $au-neutral-light;
+    color: $au-link-secondary-color;
+    text-decoration-color: $au-link-secondary-underline;
   }
 
   &:hover,
   &:focus {
-    color: $au-neutral;
-    text-decoration-color: $au-neutral-lighter;
+    color: $au-link-secondary-hover-color;
+    text-decoration-color: $au-link-secondary-underline-hover;
   }
 
-  .is-active > & {
-    color: $au-link-active-color;
-    text-decoration: none;
-  }
-}
-
-.au-c-link--icon {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-.au-c-link--bare {
-  &,
-  &:visited,
-  &:hover,
-  &:focus {
-    text-decoration: none;
+  &.is-active {
+    color: $au-link-secondary-active-color;
   }
 }

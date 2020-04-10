@@ -12,6 +12,7 @@ Router.map(function() {
       this.route('au-icon');
       this.route("au-button");
       this.route('au-input');
+      this.route('au-link');
       this.route("au-navigation-link");
       this.route('au-textarea');
     });
