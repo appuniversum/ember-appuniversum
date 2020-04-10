@@ -27,7 +27,7 @@ Indicates the main action of the view (only one should be used per view).
 
     <hr>
 
-    <AuButton @error="true">
+    <AuButton @alert="true">
       Primary button - error
     </AuButton>
 
@@ -60,18 +60,18 @@ Addon to a primary action (should not be used without the presence of a primary 
 
     <AuButton @skin="secondary">
       <AuIcon @icon="pencil" @alignment="left" />
-      secondary button - icon
+      Secondary button - icon
     </AuButton>
 
     <hr>
 
     <AuButton @skin="secondary" @width="block">
-      secondary button - block
+      Secondary button - block
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="secondary" @error="true">
+    <AuButton @skin="secondary" @alert="true">
       Secondary button - error
     </AuButton>
 
@@ -96,35 +96,35 @@ Can be used as a standalone secondary action.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button-link.hbs'}}
-    <AuButton @skin="link">
+    <AuButton @link="true">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="link" @width="block">
+    <AuButton @link="true" @width="block">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - block
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="link" @error="true">
+    <AuButton @link="true" @alert="true" >
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - error
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="link" @loading="true" >
+    <AuButton @link="true" @loading="true"  >
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - loading
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="link" @disabled="true">
+    <AuButton @link="true" @disabled="true">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - disabled
     </AuButton>
@@ -134,6 +134,7 @@ Can be used as a standalone secondary action.
 
 ## Properties
 - `@skin`: [ secondary | link ] - default is primary
+- `@link`: [ true ] - style button as a link
 - `@width`: [ block ] - makes a button behave like a block element
 - `@error`: [ true ] - adds an error state to the button
 - `@disabled`: [ true ] - adds a disabled state to the button

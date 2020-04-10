@@ -110,6 +110,9 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown__menu {
+  @include au-font-size($au-base,1.5);
+  font-family: $au-font;
+  font-weight: $au-regular;
   position: absolute;
   z-index: $au-z-index-beta;
   background-color: $au-white;

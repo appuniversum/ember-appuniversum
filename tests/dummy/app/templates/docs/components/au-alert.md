@@ -29,7 +29,7 @@
     <AuAlert @alertIcon="info-circle" @alertTitle="Sunt in culpa qui officia deserunt mollit" @alertskin={{"info"}}>
       <p class="au-u-margin-bottom">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
       <AuButton>Primary action</AuButton>
-      <AuButton @skin="ghost">Secondary action</AuButton>
+      <AuButton @skin="secondary">Secondary action</AuButton>
     </AuAlert>
   {{/demo.example}}
   {{demo.snippet 'au-alert-action.hbs'}}
