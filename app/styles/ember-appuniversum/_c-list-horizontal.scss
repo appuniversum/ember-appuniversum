@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$au-list-horizontal-spacing    : $au-unit-tiny !default;
+$au-list-horizontal-spacing    : $au-unit-small !default;
 $au-list-horizontal-divider    : 1px dotted $au-neutral-light !default;
 
 
@@ -25,5 +25,15 @@ $au-list-horizontal-divider    : 1px dotted $au-neutral-light !default;
       margin-left: $au-list-horizontal-spacing;
       padding-left: $au-list-horizontal-spacing;
       border-left: $au-list-horizontal-divider;
+    }
+
+    // Fix spacing for dropdowns and button links
+    // @TODO: find cleaner solution to make spacing consistent
+    .au-c-dropdown {
+      margin-left: -$au-list-horizontal-spacing/2;
+    }
+
+    .au-c-button--link {
+      margin-left: -$au-list-horizontal-spacing;
     }
   }
