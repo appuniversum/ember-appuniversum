@@ -24,6 +24,7 @@ Router.map(function() {
 
     this.route("patterns", function() {
       this.route("au-header");
+      this.route("au-toolbar");
     });
 
     this.route("index");
