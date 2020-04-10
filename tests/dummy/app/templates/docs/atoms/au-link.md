@@ -20,7 +20,7 @@
     <hr>
 
     <AuLink @linkRoute="docs.atoms.au-link" @active="true">
-      Primary link
+      Primary link - active
     </AuLink>
   {{/demo.example}}
   {{demo.snippet 'au-link.hbs'}}
@@ -44,7 +44,7 @@
     <hr>
 
     <AuLink @skin="secondary" @linkRoute="docs.atoms.au-link" @active="true">
-      Secondary link
+      Secondary link - active
     </AuLink>
   {{/demo.example}}
   {{demo.snippet 'au-link-secondary.hbs'}}
