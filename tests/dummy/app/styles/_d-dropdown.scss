@@ -101,17 +101,17 @@
     white-space: nowrap;
     text-underline-offset: .3ex;
     text-decoration: underline;
-    text-decoration-color: $au-neutral-light;
+    text-decoration-color: tint($au-neutral-darker,70);
     color: $au-neutral-darker;
     background-color: transparent;
     transition: color $au-transition;
     cursor: pointer;
 
     &:hover {
-      color: $au-dropdown-hover-color;
+      color: $au-neutral-dark;
       background-color: transparent;
       text-decoration: underline;
-      text-decoration-color: $au-dropdown-underline-hover;
+      text-decoration-color: tint($au-neutral-dark,80);
     }
 
     &:focus {
