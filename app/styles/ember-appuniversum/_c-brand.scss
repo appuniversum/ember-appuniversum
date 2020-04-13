@@ -5,10 +5,10 @@
 /* Variables
    ========================================================================== */
 
-$au-brand-color                : $au-neutral-darkest !default;
+$au-brand-color                : $au-gray-900 !default;
 $au-brand-bg                   : $au-white !default;
-$au-brand-text                 : $au-neutral-darkest !default;
-$au-brand-border               : $au-neutral-light !default;
+$au-brand-text                 : $au-gray-900 !default;
+$au-brand-border               : $au-gray-300 !default;
 $au-brand-height               : $au-unit-large - $au-unit-tiny !default;
 $au-brand-divider-rotation     : -20deg !default;
 
@@ -68,7 +68,7 @@ $au-brand-divider-rotation     : -20deg !default;
 
   .au-c-brand--link:hover &,
   .au-c-brand--link:focus & {
-    background-color: $au-neutral-lightest;
+    background-color: $au-gray-100;
   }
 }
 
@@ -91,14 +91,14 @@ $au-brand-divider-rotation     : -20deg !default;
     top: -.2rem;
     right: 0;
     transform: rotate($au-brand-divider-rotation);
-    width: 1px;
+    width: .1rem;
     height: 2.3rem;
-    background-color: $au-neutral-light;
+    background-color: $au-gray-300;
   }
 
   .au-c-brand--link:hover &,
   .au-c-brand--link:focus & {
-    color: $au-primary-light;
+    color: $au-blue-600;
   }
 
   .au-c-brand--link:focus & {

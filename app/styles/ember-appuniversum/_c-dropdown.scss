@@ -5,13 +5,13 @@
 /* Variables
    ========================================================================== */
 
-$au-dropdown-color             : $au-primary !default;
-$au-dropdown-hover-color       : $au-primary-light !default;
-$au-dropdown-active-color      : $au-primary-light !default;
-$au-dropdown-visited-color     : $au-primary-dark !default;
-$au-dropdown-active-color      : $au-primary-dark !default;
-$au-dropdown-underline         : $au-primary-light !default;
-$au-dropdown-underline-hover   : $au-primary-lighter !default;
+$au-dropdown-color             : $au-blue-700 !default;
+$au-dropdown-hover-color       : $au-blue-600 !default;
+$au-dropdown-active-color      : $au-blue-600 !default;
+$au-dropdown-visited-color     : $au-blue-900 !default;
+$au-dropdown-active-color      : $au-blue-900 !default;
+$au-dropdown-underline         : $au-blue-600 !default;
+$au-dropdown-underline-hover   : $au-blue-300 !default;
 $au-dropdown-caret-size        : .4rem !default;
 
 /* Component
@@ -45,7 +45,7 @@ $au-dropdown-caret-size        : .4rem !default;
   &:focus,
   &:focus-within {
     color: $au-dropdown-hover-color;
-    background-color: $au-neutral-lightest;
+    background-color: $au-gray-100;
   }
 
   &:focus,
@@ -124,7 +124,7 @@ $au-dropdown-caret-size        : .4rem !default;
   min-width: 100%;
   width: auto;
   top: $au-unit + $au-unit-tiny;
-  box-shadow: 0 0 12px rgba($au-neutral-darkest,.15), 0 0 2px rgba($au-neutral-darkest,.1);
+  box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
   border-radius: $au-radius;
 
   &:before,
@@ -143,7 +143,7 @@ $au-dropdown-caret-size        : .4rem !default;
 
   &:before {
     border-color: rgba($au-white, 0);
-    border-bottom-color: $au-neutral-lighter;
+    border-bottom-color: $au-gray-200;
   }
 
   &:after {
@@ -196,8 +196,8 @@ $au-dropdown-caret-size        : .4rem !default;
   white-space: nowrap;
   text-underline-offset: .3ex;
   text-decoration: underline;
-  text-decoration-color: $au-neutral-light;
-  color: $au-neutral-darker;
+  text-decoration-color: $au-gray-300;
+  color: $au-gray-800;
   background-color: transparent;
   transition: color $au-transition;
   cursor: pointer;
@@ -210,7 +210,7 @@ $au-dropdown-caret-size        : .4rem !default;
   }
 
   &:focus {
-    outline: .1rem dashed $au-neutral-light;
+    outline: .1rem dashed $au-gray-300;
     outline-offset: -$au-unit-tiny/2;
   }
 

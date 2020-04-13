@@ -5,11 +5,11 @@
 /* Variables
    ========================================================================== */
 
-$au-editor-link-color             : $au-primary !default;
-$au-editor-link-hover-color       : $au-primary-light !default;
-$au-editor-link-active-color      : $au-primary-dark !default;
-$au-editor-link-underline         : $au-primary-light !default;
-$au-editor-link-underline-hover   : $au-primary-lighter !default;
+$au-editor-link-color             : $au-blue-700 !default;
+$au-editor-link-hover-color       : $au-blue-600 !default;
+$au-editor-link-active-color      : $au-blue-900 !default;
+$au-editor-link-underline         : $au-blue-600 !default;
+$au-editor-link-underline-hover   : $au-blue-300 !default;
 
 
 /* Component
@@ -51,17 +51,17 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
   > h6 a {
     transition: color $au-transition, text-decoration $au-transition;
     font-weight: $au-regular;
-    text-decoration-color: $au-neutral-light;
+    text-decoration-color: $au-gray-300;
 
     &,
     &:visited {
-      color: $au-neutral-darker;
+      color: $au-gray-800;
     }
 
     &:hover,
     &:focus {
-      color: $au-neutral-dark;
-      text-decoration-color: $au-neutral-light;
+      color: $au-gray-700;
+      text-decoration-color: $au-gray-300;
     }
 
     &:focus {
@@ -106,7 +106,7 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
     margin-top: $au-unit;
     margin-bottom: $au-unit;
     border: 0;
-    border-bottom: 3px solid $au-neutral-lighter;
+    border-bottom: 3px solid $au-gray-200;
   }
 
   > * + blockquote {
@@ -120,8 +120,8 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
   > blockquote {
     padding-top: $au-unit;
     padding-bottom: $au-unit;
-    border-top: 2px solid $au-neutral-lighter;
-    border-bottom: 2px solid $au-neutral-lighter;
+    border-top: 2px solid $au-gray-200;
+    border-bottom: 2px solid $au-gray-200;
   }
 
   > blockquote p {
@@ -174,7 +174,7 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
     top: .3ex;
     left: -$au-unit-small;
     font-size: .8em;
-    color: $au-neutral;
+    color: $au-gray-600;
   }
 
   > ul li + li,
@@ -193,8 +193,8 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
     top: .3ex;
     left: -$au-unit - $au-unit-tiny/2;
     font-size: .8em;
-    color: $au-neutral;
-    background-color: $au-neutral-lightest;
+    color: $au-gray-600;
+    background-color: $au-gray-100;
     display: block;
     padding: 0 $au-unit-tiny;
     border-radius: $au-radius;
@@ -207,23 +207,23 @@ $au-editor-link-underline-hover   : $au-primary-lighter !default;
     padding-bottom: $au-unit-tiny/2;
     padding-left: $au-unit-tiny/2;
     padding-right: $au-unit-tiny/2;
-    background-color: $au-neutral-lightest;
+    background-color: $au-gray-100;
     border-radius: $au-radius;
-    border: 1px solid $au-neutral-lighter;
+    border: 1px solid $au-gray-200;
 
     &::-moz-selection {
-      background-color: $au-neutral-lighter;
-      color: $au-neutral-dark;
+      background-color: $au-gray-200;
+      color: $au-gray-700;
     }
 
     &::selection {
-      background-color: $au-neutral-lighter;
-      color: $au-neutral-dark;
+      background-color: $au-gray-200;
+      color: $au-gray-700;
     }
   }
 
   > pre {
-    background-color: $au-neutral-darker;
+    background-color: $au-gray-800;
     color: $au-white;
     padding: $au-unit-small;
     border-radius: $au-radius;

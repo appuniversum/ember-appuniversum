@@ -6,7 +6,7 @@
    ========================================================================== */
 
 $au-list-horizontal-spacing    : $au-unit-small !default;
-$au-list-horizontal-divider    : 1px dotted $au-neutral-light !default;
+$au-list-horizontal-divider    : 1px dotted $au-gray-300 !default;
 
 
 /* Component
@@ -31,9 +31,5 @@ $au-list-horizontal-divider    : 1px dotted $au-neutral-light !default;
   // @TODO: find cleaner solution to make spacing consistent
   > .au-c-dropdown {
     margin-left: -$au-list-horizontal-spacing/2;
-  }
-
-  > .au-c-button--link {
-    margin-left: -$au-list-horizontal-spacing;
   }
 }

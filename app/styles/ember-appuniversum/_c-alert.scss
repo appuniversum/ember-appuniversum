@@ -6,21 +6,16 @@
    ========================================================================== */
 
 $au-alert-font-size                     : $au-h6 !default;
-
-$au-alert-color                         : $au-gray-darker !default;
-$au-alert-background-color              : $au-neutral-lighter !default;
-
-$au-alert-success-background-color      : $au-success-lighter !default;
-$au-alert-warning-background-color      : $au-warning-lightest !default;
-$au-alert-error-background-color        : $au-error-lighter !default;
-
-$au-alert-success-icon-background-color : $au-success !default;
-$au-alert-warning-icon-background-color : $au-warning !default;
-$au-alert-error-icon-background-color   : $au-error !default;
-
+$au-alert-color                         : $au-gray-800 !default;
+$au-alert-background-color              : $au-gray-200 !default;
+$au-alert-success-background-color      : $au-green-200 !default;
+$au-alert-warning-background-color      : $au-yellow-100 !default;
+$au-alert-error-background-color        : $au-red-200 !default;
+$au-alert-success-icon-background-color : $au-green-500 !default;
+$au-alert-warning-icon-background-color : $au-yellow-400 !default;
+$au-alert-error-icon-background-color   : $au-red-600 !default;
 $au-alert-success-icon-color            : $au-white !default;
 $au-alert-error-icon-color              : $au-white !default;
-
 $au-alert-icon-size                     : 2rem !default;
 $au-alert-small-icon-size               : 1.5rem !default;
 
@@ -85,12 +80,12 @@ $au-alert-small-icon-size               : 1.5rem !default;
   height: $au-unit;
   width: $au-unit;
   text-align: center;
-  color: $au-neutral-dark;
+  color: $au-gray-700;
   transition: color $au-transition;
 
   &:hover,
   &:focus {
-    color: $au-neutral;
+    color: $au-gray-600;
   }
 }
 

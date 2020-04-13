@@ -5,13 +5,12 @@
 /* Variables
    ========================================================================== */
 
-$au-link-color                       : $au-primary !default;
-$au-link-hover-color                 : $au-primary-light !default;
-$au-link-active-color                : $au-neutral-darkest !default;
-$au-link-secondary-color             : $au-neutral-darker !default;
-$au-link-secondary-hover-color       : $au-neutral-dark !default;
-$au-link-secondary-active-color      : $au-neutral-darkest !default;
-
+$au-link-color                       : $au-blue-700 !default;
+$au-link-hover-color                 : $au-blue-600 !default;
+$au-link-active-color                : $au-gray-900 !default;
+$au-link-secondary-color             : $au-gray-800 !default;
+$au-link-secondary-hover-color       : $au-gray-700 !default;
+$au-link-secondary-active-color      : $au-gray-900 !default;
 
 /* Component
   ========================================================================== */
@@ -63,6 +62,11 @@ $au-link-secondary-active-color      : $au-neutral-darkest !default;
   &:focus {
     color: $au-link-secondary-hover-color;
     text-decoration-color: tint($au-link-secondary-hover-color,80);
+  }
+
+  .is-active > & {
+    color: $au-link-active-color;
+    text-decoration: none;
   }
 
   &.is-active {

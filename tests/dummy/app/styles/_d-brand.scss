@@ -5,7 +5,7 @@
 .au-d-brand {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid $au-neutral-lighter;
+  border-bottom: 1px solid $au-gray-200;
   background-color: $au-white;
 }
 
@@ -14,12 +14,12 @@
     width: $au-unit-large - $au-unit-tiny;
     height: $au-unit-large - $au-unit-tiny;
     padding: $au-unit-tiny $au-unit $au-unit-tiny $au-unit-tiny;
-    background-color: $au-yellow;
+    background-color: $au-yellow-300;
     margin-right: $au-unit - $au-unit-tiny;
     overflow: hidden;
 
     svg {
-      fill: $au-neutral-darkest;
+      fill: $au-gray-900;
       height: 100%;
     }
 
@@ -40,7 +40,7 @@
     @include au-font-size($au-h6);
     font-family: "Flanders Art Sans", sans-serif;
     font-weight: $au-medium;
-    color: $au-neutral-darkest;
+    color: $au-gray-900;
     margin-left: -$au-unit-small;
     padding-bottom: .1ex;
   }

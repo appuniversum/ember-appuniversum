@@ -10,12 +10,12 @@
   .au-d-nav__intro {
     @include au-font-size($au-base,1.2);
     font-family: $au-font;
-    color: $au-neutral-dark;
+    color: $au-gray-700;
   }
 
   .au-d-nav__title {
     @include au-font-size($au-base);
-    color: $au-neutral-dark;
+    color: $au-gray-700;
     font-weight: $au-medium;
     margin-bottom: $au-unit-tiny;
   }

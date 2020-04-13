@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$au-list-navigation-border-color: $au-neutral-lighter !default;
+$au-list-navigation-border-color: $au-gray-200 !default;
 
 
 /* Component
@@ -30,7 +30,7 @@ $au-list-navigation-border-color: $au-neutral-lighter !default;
   @include au-font-size(1.4rem);
   padding: $au-unit-tiny * 1.5 $au-unit-small;
   font-weight: $au-medium;
-  color: $au-neutral;
+  color: $au-gray-600;
   text-transform: uppercase;
 }
 
@@ -42,18 +42,19 @@ $au-list-navigation-border-color: $au-neutral-lighter !default;
   transition: color $au-transition, text-decoration $au-transition;
   font-weight: $au-regular;
   padding: $au-unit-tiny * 1.5 $au-unit-small;
+  text-decoration-color: $au-blue-300 !important; // @TODO: remove important when webuniversum is removed
   text-decoration: underline;
+  text-underline-offset: .3ex;
 
   &,
   &:visited {
-    color: $au-primary;
-    text-decoration-color: tint($au-primary,70) !important; // @TODO: remove important when webuniversum is removed
+    color: $au-blue-700;
   }
 
   &:hover,
   &:focus {
-    color: $au-primary-light;
-    text-decoration-color: tint($au-primary-light,80) !important; // @TODO: remove important when webuniversum is removed
+    color: $au-blue-600;
+    text-decoration-color: $au-blue-300 !important;
   }
 
   &:focus {
@@ -61,17 +62,13 @@ $au-list-navigation-border-color: $au-neutral-lighter !default;
     outline-offset: -.2rem;
   }
 
-  &:focus:not(:focus-visible) {
-    outline: none
-  }
-
   // @TODO: change to state class > is-active
   &.active {
     font-weight: $au-medium;
-    color: $au-neutral-darkest;
+    color: $au-gray-900;
     text-decoration: none;
-    box-shadow: inset -.3rem 0 0 $au-neutral-light;
-    background-color: $au-neutral-lighter;
+    box-shadow: inset -.3rem 0 0 $au-gray-300;
+    background-color: $au-gray-200;
   }
 }
 

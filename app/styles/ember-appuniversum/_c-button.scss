@@ -9,19 +9,19 @@ $au-button-height                         : $au-unit-large - $au-unit-small !def
 $au-button-font-size                      : $au-h6 !default;
 $au-button-border                         : .1rem !default;
 $au-button-color                          : $au-white !default;
-$au-button-contrast-color                 : $au-primary !default;
-$au-button-contrast-hover-color           : $au-primary-light !default;
-$au-button-contrast-active-color          : $au-primary-light !default;
-$au-button-contrast-visited-color         : $au-primary-dark !default;
-$au-button-secondary-color                : $au-neutral-dark !default;
-$au-button-secondary-hover-color          : $au-neutral !default;
-$au-button-tertiary-color                 : $au-primary !default;
-$au-button-tertiary-hover-color           : $au-primary-light !default;
-$au-button-tertiary-secondary-color       : $au-neutral-darker !default;
-$au-button-tertiary-secondary-hover-color : $au-neutral-dark !default;
+$au-button-contrast-color                 : $au-blue-700 !default;
+$au-button-contrast-hover-color           : $au-blue-600 !default;
+$au-button-contrast-active-color          : $au-blue-600 !default;
+$au-button-contrast-visited-color         : $au-blue-900 !default;
+$au-button-secondary-color                : $au-gray-700 !default;
+$au-button-secondary-hover-color          : $au-gray-600 !default;
+$au-button-tertiary-color                 : $au-blue-700 !default;
+$au-button-tertiary-hover-color           : $au-blue-600 !default;
+$au-button-tertiary-secondary-color       : $au-gray-800 !default;
+$au-button-tertiary-secondary-hover-color : $au-gray-700 !default;
 $au-button-alert-color                    : $au-white !default;
-$au-button-alert-contrast-color           : $au-error-dark !default;
-$au-button-alert-contrast-hover-color     : $au-error !default;
+$au-button-alert-contrast-color           : shade($au-red-600,10) !default; // @TODO: lighten red 700
+$au-button-alert-contrast-hover-color     : $au-red-600 !default;
 $au-button-radius                         : 0 !default;
 
 
