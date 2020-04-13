@@ -110,14 +110,14 @@ Can be used as a standalone secondary action.
 
     <hr>
 
-    <AuButton @link="true" @alert="true" >
+    <AuButton @link="true" @alert="true">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - error
     </AuButton>
 
     <hr>
 
-    <AuButton @link="true" @loading="true"  >
+    <AuButton @link="true" @loading="true">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - loading
     </AuButton>
@@ -136,6 +136,6 @@ Can be used as a standalone secondary action.
 - `@skin`: [ secondary | link ] - default is primary
 - `@link`: [ true ] - style button as a link
 - `@width`: [ block ] - makes a button behave like a block element
-- `@error`: [ true ] - adds an error state to the button
+- `@alert`: [ true ] - adds an error state to the button
 - `@disabled`: [ true ] - adds a disabled state to the button
 - `@loading`: [ true ] - adds a loading state to the button

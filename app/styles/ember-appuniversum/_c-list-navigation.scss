@@ -42,19 +42,18 @@ $au-list-navigation-border-color: $au-neutral-lighter !default;
   transition: color $au-transition, text-decoration $au-transition;
   font-weight: $au-regular;
   padding: $au-unit-tiny * 1.5 $au-unit-small;
-  text-decoration-color: $au-primary-lighter !important; // @TODO: remove important when webuniversum is removed
   text-decoration: underline;
-  text-underline-offset: .3ex;
 
   &,
   &:visited {
     color: $au-primary;
+    text-decoration-color: tint($au-primary,70) !important; // @TODO: remove important when webuniversum is removed
   }
 
   &:hover,
   &:focus {
     color: $au-primary-light;
-    text-decoration-color: $au-primary-lighter;
+    text-decoration-color: tint($au-primary-light,80) !important; // @TODO: remove important when webuniversum is removed
   }
 
   &:focus {

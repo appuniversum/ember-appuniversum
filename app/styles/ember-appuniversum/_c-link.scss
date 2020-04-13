@@ -32,7 +32,7 @@ $au-link-secondary-active-color      : $au-neutral-darkest !default;
   &:hover,
   &:focus {
     color: $au-link-hover-color;
-    text-decoration-color: tint($au-link-hover-color,70);
+    text-decoration-color: tint($au-link-hover-color,80);
   }
 
   &:focus {
@@ -62,7 +62,7 @@ $au-link-secondary-active-color      : $au-neutral-darkest !default;
   &:hover,
   &:focus {
     color: $au-link-secondary-hover-color;
-    text-decoration-color: tint($au-link-secondary-hover-color,70);
+    text-decoration-color: tint($au-link-secondary-hover-color,80);
   }
 
   &.is-active {
