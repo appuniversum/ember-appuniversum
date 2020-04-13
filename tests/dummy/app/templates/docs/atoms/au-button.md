@@ -136,6 +136,6 @@ Can be used as a standalone secondary action.
 - `@skin`: [ secondary | link ] - default is primary
 - `@link`: [ true ] - style button as a link
 - `@width`: [ block ] - makes a button behave like a block element
-- `@alert`: [ true ] - adds an error state to the button
+- `@alert`: [ true ] - adds an alert state to the button
 - `@disabled`: [ true ] - adds a disabled state to the button
 - `@loading`: [ true ] - adds a loading state to the button
