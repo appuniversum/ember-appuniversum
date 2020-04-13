@@ -7,11 +7,9 @@
     <div class="au-c-alert__message">{{yield}}</div>
   </div>
   {{#if @closable}}
-    <div class="au-c-alert__close">
-      <AuButton @link="true" @skin="secondary">
-        <AuIcon @icon="cross" @size="large" />
-        <span class="au-u-hidden-visually">Sluit alert</span>
-      </AuButton>
-    </div>
+    <button class="au-c-alert__close">
+      <AuIcon @icon="cross" @size="large" />
+      <span class="au-u-hidden-visually">Sluit alert</span>
+    </button>
   {{/if}}
 </div>

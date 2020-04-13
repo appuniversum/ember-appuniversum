@@ -63,6 +63,7 @@ $au-alert-small-icon-size               : 1.5rem !default;
     bottom: 0;
   }
 }
+
 .au-c-alert__content {
   display: flex;
   flex-direction: column;
@@ -72,6 +73,25 @@ $au-alert-small-icon-size               : 1.5rem !default;
 
 .au-c-alert__title {
   font-weight: $au-medium;
+}
+
+.au-c-alert__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  height: $au-unit;
+  width: $au-unit;
+  text-align: center;
+  color: $au-neutral-dark;
+  transition: color $au-transition;
+
+  &:hover,
+  &:focus {
+    color: $au-neutral;
+  }
 }
 
 /* Modifiers
