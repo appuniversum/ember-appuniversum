@@ -17,7 +17,7 @@
   &:focus,
   &:focus-within {
     color: $au-dropdown-hover-color;
-    background-color: $au-neutral-lightest;
+    background-color: $au-gray-100;
   }
 
   &:focus {
@@ -101,8 +101,8 @@
     white-space: nowrap;
     text-underline-offset: .3ex;
     text-decoration: underline;
-    text-decoration-color: $au-neutral-light;
-    color: $au-neutral-darker;
+    text-decoration-color: $au-gray-300;
+    color: $au-gray-800;
     background-color: transparent;
     transition: color $au-transition;
     cursor: pointer;
@@ -115,7 +115,7 @@
     }
 
     &:focus {
-      outline: .1rem dashed $au-neutral-light;
+      outline: .1rem dashed $au-gray-300;
       outline-offset: -$au-unit-tiny/2;
     }
 
@@ -137,7 +137,7 @@
   z-index: $au-z-index-beta;
   background-color: $au-white;
   border-radius: $au-radius;
-  box-shadow: 0 0 $au-unit-tiny rgba($au-neutral-dark,.2), 0 0 $au-unit rgba($au-neutral-dark,.1);
+  box-shadow: 0 0 $au-unit-tiny rgba($au-gray-700,.2), 0 0 $au-unit rgba($au-gray-700,.1);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -147,7 +147,7 @@
   left: auto !important;
   width: auto;
   top: $au-unit + $au-unit-tiny;
-  box-shadow: 0 0 12px rgba($au-neutral-darkest,.15), 0 0 2px rgba($au-neutral-darkest,.1);
+  box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
   border-radius: $au-radius;
 
   &:after, &:before {
@@ -170,7 +170,7 @@
 
   &:before {
     border-color: rgba($au-white, 0);
-    border-bottom-color: $au-neutral-lighter;
+    border-bottom-color: $au-gray-200;
     border-width: 4px;
     margin-left: -4px;
   }

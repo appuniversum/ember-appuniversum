@@ -6,12 +6,12 @@
    ========================================================================== */
 
 $au-main-header-bg                : $au-white !default;
-$au-main-header-border            : $au-neutral-lighter !default;
-$au-main-header-color             : $au-primary !default;
-$au-main-header-hover-color       : $au-primary-light !default;
-$au-main-header-active-color      : $au-primary-dark !default;
-$au-main-header-underline         : $au-primary-light !default;
-$au-main-header-underline-hover   : $au-primary-lighter !default;
+$au-main-header-border            : $au-gray-200 !default;
+$au-main-header-color             : $au-blue-700 !default;
+$au-main-header-hover-color       : $au-blue-600 !default;
+$au-main-header-active-color      : $au-blue-900 !default;
+$au-main-header-underline         : $au-blue-600 !default;
+$au-main-header-underline-hover   : $au-blue-300 !default;
 
 /* Component
    ========================================================================== */
@@ -23,13 +23,13 @@ $au-main-header-underline-hover   : $au-primary-lighter !default;
   justify-content: space-between;
   align-items: center;
   background-color: $au-main-header-bg;
-  box-shadow: 0 1px 3px rgba($au-neutral-darkest, .1), 0 4px 20px rgba($au-neutral-darkest, .035), 0 1px 1px rgba($au-neutral-darkest, .025);
+  box-shadow: 0 1px 3px rgba($au-gray-900, .1), 0 4px 20px rgba($au-gray-900, .035), 0 1px 1px rgba($au-gray-900, .025);
 }
 
   .au-c-main-header__title-group {
     display: flex;
     align-items: center;
-    color: $au-neutral-darkest;
+    color: $au-gray-900;
     text-decoration: none;
   }
 
@@ -40,7 +40,7 @@ $au-main-header-underline-hover   : $au-primary-lighter !default;
     position: relative;
     display: block;
     padding: $au-unit-tiny;
-    color: $au-neutral-darker;
+    color: $au-gray-800;
     transition: color $au-transition;
     letter-spacing: .03ex;
     margin-left: -$au-unit-small - $au-unit-tiny;
@@ -60,7 +60,7 @@ $au-main-header-underline-hover   : $au-primary-lighter !default;
 
   .au-c-main-header__title--link {
     text-decoration: underline;
-    text-decoration-color: $au-neutral-light;
+    text-decoration-color: $au-gray-300;
     text-underline-offset: .3ex;
 
     &:hover,
@@ -83,7 +83,7 @@ $au-main-header-underline-hover   : $au-primary-lighter !default;
     letter-spacing: .03ex;
     margin-left: $au-unit-small;
     padding: $au-unit-tiny;
-    background-color: $au-neutral-lightest;
+    background-color: $au-gray-100;
     border-radius: $au-radius;
     z-index: $au-z-index-alpha;
     top: -1000px;
@@ -92,9 +92,9 @@ $au-main-header-underline-hover   : $au-primary-lighter !default;
     &,
     &:hover,
     &:focus {
-      color: $au-neutral-darker;
+      color: $au-gray-800;
       text-decoration: underline;
-      text-decoration-color: $au-neutral-light;
+      text-decoration-color: $au-gray-300;
     }
 
     &:focus {

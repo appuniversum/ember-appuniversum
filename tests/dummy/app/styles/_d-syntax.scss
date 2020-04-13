@@ -34,13 +34,13 @@ $hue-6-2: #e6c07b;
     position: absolute;
     top: 0;
     right: 0;
-    color: $au-neutral-lighter;
-    background-color: $au-neutral-darker;
+    color: $au-gray-200;
+    background-color: $au-gray-800;
     transition: $au-transition;
 
     &:hover,
     &:focus {
-      background-color: $au-neutral-dark;
+      background-color: $au-gray-700;
     }
   }
 }

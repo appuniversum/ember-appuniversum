@@ -5,22 +5,22 @@
 /* Variables
    ========================================================================== */
 
-$au-pill-color             : $au-neutral-dark !default;
-$au-pill-background-color  : $au-neutral-lighter !default;
+$au-pill-color             : $au-gray-700 !default;
+$au-pill-background-color  : $au-gray-200 !default;
 $au-pill-border-width      : .1rem;
-$au-pill-border-color      : $au-neutral-light !default;
+$au-pill-border-color      : $au-gray-300 !default;
 $au-pill-font-size         : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
 
 
-$au-pill-background-color-success     : $au-success-dark !default;
+$au-pill-background-color-success     : $au-green-700 !default;
 $au-pill-color-success                : $au-white !default;
-$au-pill-border-color-success         : $au-success-dark;
-$au-pill-background-color-warning     : $au-warning !default;
-$au-pill-color-warning                : $au-black !default;
-$au-pill-border-color-warning         : $au-warning;
-$au-pill-background-color-error       : $au-error !default;
+$au-pill-border-color-success         : $au-green-700;
+$au-pill-background-color-warning     : $au-yellow-400 !default;
+$au-pill-color-warning                : $au-gray-1000 !default;
+$au-pill-border-color-warning         : $au-yellow-400;
+$au-pill-background-color-error       : $au-red-600 !default;
 $au-pill-color-error                  : $au-white !default;
-$au-pill-border-color-error           : $au-error;
+$au-pill-border-color-error           : $au-red-600;
 
 /* Component
   ========================================================================== */
