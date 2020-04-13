@@ -5,13 +5,13 @@
 /* Variables
    ========================================================================== */
 
-$au-link-color             : $au-primary !default;
-$au-link-hover-color       : $au-primary-light !default;
-$au-link-active-color      : $au-primary-light !default;
-$au-link-visited-color     : $au-primary-dark !default;
-$au-link-active-color      : $au-primary-dark !default;
-$au-link-underline         : $au-primary-lighter !default;
-$au-link-underline-hover   : $au-primary-lighter !default;
+$au-link-color             : $au-blue-700 !default;
+$au-link-hover-color       : $au-blue-600 !default;
+$au-link-active-color      : $au-blue-600 !default;
+$au-link-visited-color     : $au-blue-900 !default;
+$au-link-active-color      : $au-blue-900 !default;
+$au-link-underline         : $au-blue-300 !default;
+$au-link-underline-hover   : $au-blue-300 !default;
 
 
 /* Component
@@ -52,14 +52,14 @@ $au-link-underline-hover   : $au-primary-lighter !default;
 .au-c-link--neutral {
   &,
   &:visited {
-    color: $au-neutral-dark;
-    text-decoration-color: $au-neutral-light;
+    color: $au-gray-700;
+    text-decoration-color: $au-gray-300;
   }
 
   &:hover,
   &:focus {
-    color: $au-neutral;
-    text-decoration-color: $au-neutral-lighter;
+    color: $au-gray-600;
+    text-decoration-color: $au-gray-200;
   }
 
   .is-active > & {

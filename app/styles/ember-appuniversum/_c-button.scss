@@ -8,18 +8,18 @@
 $au-button-height            : $au-unit-large - $au-unit-small !default;
 $au-button-font-size         : $au-h6 !default;
 $au-button-border            : .2rem !default;
-$au-button-color             : $au-primary !default;
+$au-button-color             : $au-blue-700 !default;
 $au-button-fg-color          : $au-white !default;
-$au-button-hover-color       : $au-primary-light !default;
-$au-button-active-color      : $au-primary-light !default;
-$au-button-visited-color     : $au-primary-dark !default;
-$au-button-active-color      : $au-primary-dark !default;
-$au-button-underline         : $au-primary-light !default;
-$au-button-underline-hover   : $au-primary-lighter !default;
-$au-button-error-color       : $au-error-dark !default;
-$au-button-error-hover-color : $au-error !default;
-$au-button-disabled-color    : $au-neutral-darker !default;
-$au-button-disabled-fg-color : $au-neutral-dark !default;
+$au-button-hover-color       : $au-blue-600 !default;
+$au-button-active-color      : $au-blue-600 !default;
+$au-button-visited-color     : $au-blue-900 !default;
+$au-button-active-color      : $au-blue-900 !default;
+$au-button-underline         : $au-blue-600 !default;
+$au-button-underline-hover   : $au-blue-300 !default;
+$au-button-error-color       : $au-red-700 !default;
+$au-button-error-hover-color : $au-red-600 !default;
+$au-button-disabled-color    : $au-gray-800 !default;
+$au-button-disabled-fg-color : $au-gray-700 !default;
 
 // @TODO: simplify loading state
 
@@ -93,7 +93,7 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   position: absolute;
   text-align: center;
   border: .3rem solid $au-white;
-  border-top: .3rem solid $au-primary-light;
+  border-top: .3rem solid $au-blue-600;
   border-radius: 50%;
   width: $au-unit - $au-unit-tiny;
   height: $au-unit - $au-unit-tiny;
@@ -134,7 +134,7 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
     }
 
     &:after {
-      border: .3rem solid $au-primary-light;
+      border: .3rem solid $au-blue-600;
       border-top: .3rem solid $au-white;
     }
   }
@@ -175,7 +175,7 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
   }
 
   &.au-c-button--loading:after {
-    border: .3rem solid $au-red;
+    border: .3rem solid $au-red-600;
     border-top: .3rem solid $au-white;
   }
 }
@@ -210,7 +210,7 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
       }
 
       &:after {
-        border: .3rem solid $au-gray-dark;
+        border: .3rem solid $au-gray-700;
         border-top: .3rem solid $au-white;
       }
     }
@@ -218,7 +218,7 @@ $au-button-disabled-fg-color : $au-neutral-dark !default;
 
   &.au-c-button--loading:after {
     border: .3rem solid $au-white;
-    border-top: .3rem solid $au-gray-dark;
+    border-top: .3rem solid $au-gray-700;
   }
 }
 
