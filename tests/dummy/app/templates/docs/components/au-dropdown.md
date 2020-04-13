@@ -7,7 +7,7 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-dropdown.hbs'}}
     <AuDropdown @dropdownTitle="Demo dropdown" @dropdownButtonLabel="Account settings">
-      <AuButton @link="true" @skin="secondary" role="menuitem">
+      <AuButton @skin="tertiary" role="menuitem">
         <AuIcon @icon="logout" @alignment="left" />Afmelden
       </AuButton>
     </AuDropdown>
@@ -20,7 +20,7 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-dropdown-left.hbs'}}
     <AuDropdown @dropdownTitle="Demo dropdown | left alignment" @dropdownButtonLabel="Account settings" @alignment="left">
-      <AuButton @link="true" @skin="secondary" role="menuitem">
+      <AuButton @skin="tertiary" role="menuitem">
         <AuIcon @icon="logout" @alignment="left" />Afmelden
       </AuButton>
     </AuDropdown>
@@ -33,7 +33,7 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-dropdown-right.hbs'}}
     <AuDropdown @dropdownTitle="Demo dropdown | right alignment" @dropdownButtonLabel="Account settings" @alignment="right">
-      <AuButton @link="true" @skin="secondary" role="menuitem">
+      <AuButton @skin="tertiary" role="menuitem">
         <AuIcon @icon="logout" @alignment="left" />Afmelden
       </AuButton>
     </AuDropdown>

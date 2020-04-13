@@ -90,51 +90,50 @@ Addon to a primary action (should not be used without the presence of a primary 
   {{demo.snippet 'au-button-secondary.hbs'}}
 {{/docs-demo}}
 
-## Link button
+## Tertiary button
 
 Can be used as a standalone secondary action.
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-button-link.hbs'}}
-    <AuButton @link="true">
+  {{#demo.example name='au-button-tertiary.hbs'}}
+    <AuButton @skin="tertiary">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button
     </AuButton>
 
     <hr>
 
-    <AuButton @link="true" @width="block">
+    <AuButton @skin="tertiary" @width="block">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - block
     </AuButton>
 
     <hr>
 
-    <AuButton @link="true" @alert="true">
+    <AuButton @skin="tertiary" @alert="true">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - error
     </AuButton>
 
     <hr>
 
-    <AuButton @link="true" @loading="true">
+    <AuButton @skin="tertiary" @loading="true">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - loading
     </AuButton>
 
     <hr>
 
-    <AuButton @link="true" @disabled="true">
+    <AuButton @skin="tertiary" @disabled="true">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - disabled
     </AuButton>
   {{/demo.example}}
-  {{demo.snippet 'au-button-link.hbs'}}
+  {{demo.snippet 'au-button-tertiary.hbs'}}
 {{/docs-demo}}
 
 ## Properties
-- `@skin`: [ secondary | link ] - default is primary
-- `@link`: [ true ] - style button as a link
+- `@skin`: [ secondary | tertiary ] - default is primary
 - `@width`: [ block ] - makes a button behave like a block element
 - `@alert`: [ true ] - adds an alert state to the button
 - `@disabled`: [ true ] - adds a disabled state to the button
