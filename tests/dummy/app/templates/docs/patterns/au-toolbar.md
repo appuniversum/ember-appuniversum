@@ -7,19 +7,17 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-toolbar.hbs'}}
     <AuToolbar>
-      <div>
+      <AuToolbarGroup>
         <AuButton>
           Primary button
         </AuButton>
         <AuButton @skin="secondary">
           Secondary button
         </AuButton>
-      </div>
-      <div>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-          Secondary link
-        </AuLink>
-      </div>
+      </AuToolbarGroup>
+      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        Secondary link
+      </AuLink>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar.hbs'}}
@@ -30,14 +28,14 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-toolbar-reverse.hbs'}}
     <AuToolbar @reverse="true">
-      <div>
+      <AuToolbarGroup>
         <AuButton>
           Primary button
         </AuButton>
         <AuButton @skin="secondary">
           Secondary button
         </AuButton>
-      </div>
+      </AuToolbarGroup>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-reverse.hbs'}}
@@ -48,19 +46,17 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-toolbar-border-top.hbs'}}
     <AuToolbar @border="top">
-      <div>
+      <AuToolbarGroup>
         <AuButton>
           Primary button
         </AuButton>
         <AuButton @skin="secondary">
           Secondary button
         </AuButton>
-      </div>
-      <div>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-          Secondary link
-        </AuLink>
-      </div>
+      </AuToolbarGroup>
+      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        Secondary link
+      </AuLink>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-border-top.hbs'}}
@@ -71,19 +67,17 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-toolbar-border-bottom.hbs'}}
     <AuToolbar @border="bottom">
-      <div>
+      <AuToolbarGroup>
         <AuButton>
           Primary button
         </AuButton>
         <AuButton @skin="secondary">
           Secondary button
         </AuButton>
-      </div>
-      <div>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-          Secondary link
-        </AuLink>
-      </div>
+      </AuToolbarGroup>
+      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        Secondary link
+      </AuLink>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-border-bottom.hbs'}}
@@ -94,19 +88,17 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-toolbar-skint.hbs'}}
     <AuToolbar @border="bottom" @skin="tint">
-      <div>
+      <AuToolbarGroup>
         <AuButton>
           Primary button
         </AuButton>
         <AuButton @skin="secondary">
           Secondary button
         </AuButton>
-      </div>
-      <div>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-          Secondary link
-        </AuLink>
-      </div>
+      </AuToolbarGroup>
+      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        Secondary link
+      </AuLink>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-skint.hbs'}}

@@ -19,6 +19,15 @@ $au-toolbar-tint            : $au-neutral-lightest !default;
   justify-content: space-between;
 }
 
+.au-c-toolbar__group {
+  display: flex;
+  justify-content: flex-start;
+
+  > * + * {
+    margin-left: $au-toolbar-spacing/2;
+  }
+}
+
 /* Modifiers
   ========================================================================== */
 
