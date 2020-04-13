@@ -30,10 +30,10 @@
     <ul class="au-c-list-horizontal">
       {{#if @contactRoute}}
       <li class="au-c-list-horizontal__item">
-        <LinkTo @route="{{@contactRoute}}" class="au-c-link au-c-link--secondary">
+        <AuLink @route="{{@contactRoute}}" @skin="secondary">
           <AuIcon @icon="question-circle" @alignment="left" />
           Contacteer ons
-        </LinkTo>
+        </AuLink>
       </li>
       {{/if}}
       <li class="au-c-list-horizontal__item">
