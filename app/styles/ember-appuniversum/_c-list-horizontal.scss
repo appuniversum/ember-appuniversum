@@ -1,11 +1,11 @@
 /* ==================================
-   #HORIZONTAL LIST
+   #LIST HORIZONTAL
    ================================== */
 
 /* Variables
    ========================================================================== */
 
-$au-list-horizontal-spacing    : $au-unit-tiny !default;
+$au-list-horizontal-spacing    : $au-unit-small !default;
 $au-list-horizontal-divider    : 1px dotted $au-gray-300 !default;
 
 
@@ -17,13 +17,21 @@ $au-list-horizontal-divider    : 1px dotted $au-gray-300 !default;
   align-items: center;
 }
 
-  .au-c-list-horizontal__item {
-    display: flex;
-    align-items: center;
+.au-c-list-horizontal__item {
+  display: flex;
+  align-items: center;
 
-    & + & {
-      margin-left: $au-list-horizontal-spacing;
-      padding-left: $au-list-horizontal-spacing;
-      border-left: $au-list-horizontal-divider;
-    }
+  & + & {
+    margin-left: $au-list-horizontal-spacing;
+    padding-left: $au-list-horizontal-spacing;
+    border-left: $au-list-horizontal-divider;
   }
+
+  // Fix spacing for dropdowns and buttons
+  // @TODO: find cleaner solution to make spacing consistent
+  > .au-c-dropdown,
+  > .au-c-button,
+  > .ember-view > .au-c-button {
+    margin-left: -$au-list-horizontal-spacing/2;
+  }
+}

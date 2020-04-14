@@ -1,0 +1,53 @@
+/* ==================================
+   #TOOLBAR
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-toolbar-spacing         : $au-unit-small !default;
+$au-toolbar-border-width    : .2rem !default;
+$au-toolbar-border-color    : $au-gray-200 !default;
+$au-toolbar-tint            : $au-gray-100 !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.au-c-toolbar__group {
+  display: flex;
+  justify-content: flex-start;
+
+  > * + * {
+    margin-left: $au-toolbar-spacing/2;
+  }
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-toolbar--reverse {
+  flex-direction: row-reverse;
+}
+
+.au-c-toolbar--top {
+  padding-top: $au-toolbar-spacing;
+  margin-top: $au-toolbar-spacing;
+  border-top: $au-toolbar-border-width solid $au-toolbar-border-color;
+}
+
+.au-c-toolbar--bottom {
+  padding-bottom: $au-toolbar-spacing;
+  margin-bottom: $au-toolbar-spacing;
+  border-bottom: $au-toolbar-border-width solid $au-toolbar-border-color;
+}
+
+.au-c-toolbar--tint {
+  padding: $au-toolbar-spacing;
+  background-color: $au-toolbar-tint;
+}

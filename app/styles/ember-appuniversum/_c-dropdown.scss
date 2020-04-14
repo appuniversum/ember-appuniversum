@@ -110,6 +110,9 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown__menu {
+  @include au-font-size($au-base,1.5);
+  font-family: $au-font;
+  font-weight: $au-regular;
   position: absolute;
   z-index: $au-z-index-beta;
   background-color: $au-white;
@@ -191,19 +194,14 @@ $au-dropdown-caret-size        : .4rem !default;
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  text-underline-offset: .3ex;
-  text-decoration: underline;
-  text-decoration-color: $au-gray-300;
-  color: $au-gray-800;
+  color: $au-blue-700;
   background-color: transparent;
   transition: color $au-transition;
   cursor: pointer;
 
   &:hover {
-    color: $au-dropdown-hover-color;
+    color: $au-blue-600;
     background-color: transparent;
-    text-decoration: underline;
-    text-decoration-color: $au-dropdown-underline-hover;
   }
 
   &:focus {

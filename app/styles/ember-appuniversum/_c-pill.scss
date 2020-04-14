@@ -5,13 +5,11 @@
 /* Variables
    ========================================================================== */
 
-$au-pill-color             : $au-gray-700 !default;
-$au-pill-background-color  : $au-gray-200 !default;
-$au-pill-border-width      : .1rem;
-$au-pill-border-color      : $au-gray-300 !default;
-$au-pill-font-size         : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
-
-
+$au-pill-color                        : $au-gray-700 !default;
+$au-pill-background-color             : $au-gray-200 !default;
+$au-pill-border-width                 : .1rem;
+$au-pill-border-color                 : $au-gray-300 !default;
+$au-pill-font-size                    : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
 $au-pill-background-color-success     : $au-green-700 !default;
 $au-pill-color-success                : $au-white !default;
 $au-pill-border-color-success         : $au-green-700;

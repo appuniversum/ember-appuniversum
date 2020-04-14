@@ -51,7 +51,6 @@
 @import "ember-appuniversum/c-alert";
 @import "ember-appuniversum/c-brand";
 @import "ember-appuniversum/c-button";
-@import "ember-appuniversum/c-button-link";
 @import "ember-appuniversum/c-help-text";
 @import "ember-appuniversum/c-input";
 @import "ember-appuniversum/c-label";
@@ -65,6 +64,7 @@
 @import "ember-appuniversum/c-main-container";
 @import "ember-appuniversum/c-sidebar";
 @import "ember-appuniversum/c-textarea";
+@import "ember-appuniversum/c-toolbar";
 
 
 // UTILITIES
@@ -77,3 +77,4 @@
 @import "appuniversum/u-responsive-spacings";
 @import "appuniversum/u-print";
 @import "appuniversum/u-hide";
+@import "appuniversum/u-visible";

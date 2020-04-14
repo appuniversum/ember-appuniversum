@@ -28,18 +28,18 @@ $au-sidebar-footer-padding: $au-unit !default;
   }
 }
 
-  .au-c-sidebar__header {
-    padding: $au-sidebar-header-padding;
-  }
+.au-c-sidebar__header {
+  padding: $au-sidebar-header-padding;
+}
 
-  .au-c-sidebar__content {
-    @include mq(small) {
-      flex-grow: 1;
-    }
+.au-c-sidebar__content {
+  @include mq(small) {
+    flex-grow: 1;
   }
+}
 
-  .au-c-sidebar__footer {
-    @include au-font-size($au-base);
-    text-align: center;
-    padding: $au-sidebar-footer-padding;
-  }
+.au-c-sidebar__footer {
+  @include au-font-size($au-base);
+  text-align: center;
+  padding: $au-sidebar-footer-padding;
+}

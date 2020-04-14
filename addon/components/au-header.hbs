@@ -21,19 +21,25 @@
       <p class="au-c-brand__logotype">Vlaanderen</p>
     </div>
     {{/if}}
-    <LinkTo @route="{{@homeRoute}}" class="au-c-main-header__title au-c-main-header__title--link">
+    {{#if @homeRoute}}
+    <LinkTo {{on "click" this.headerLinkFocus}} @route="{{@homeRoute}}" class="au-c-main-header__title au-c-main-header__title--link">
       {{@appTitle}}
     </LinkTo>
+    {{else}}
+    <p class="au-c-main-header__title">
+      {{@appTitle}}
+    </p>
+    {{/if}}
     <a href="#main" class="au-c-main-header__skiplink">Naar de hoofdinhoud</a>
   </div>
   <nav class="au-c-main-header__actions">
     <ul class="au-c-list-horizontal">
       {{#if @contactRoute}}
       <li class="au-c-list-horizontal__item">
-        <LinkTo @route="{{@contactRoute}}" class="au-c-button-link au-c-button-link--neutral">
+        <AuLink @linkRoute="{{@contactRoute}}" @skin="secondary">
           <AuIcon @icon="question-circle" @alignment="left" />
           Contacteer ons
-        </LinkTo>
+        </AuLink>
       </li>
       {{/if}}
       <li class="au-c-list-horizontal__item">

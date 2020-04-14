@@ -1,30 +1,39 @@
 import Component from '@glimmer/component';
 
 export default class AuButton extends Component {
-  get widthClass() {
+  get width() {
     if (this.args.width == "block")
       return "au-c-button--block";
     else
       return "";
   }
 
-  get skinClass() {
-    if (this.args.skin == "ghost")
-      return "au-c-button--ghost";
+  get skin() {
+    if (this.args.skin == "secondary")
+      return "au-c-button--secondary";
+    if (this.args.skin == "tertiary")
+      return "au-c-button--tertiary";
     else
       return "";
   }
 
-  get errorClass() {
-    if (this.args.error == "error")
-      return "au-c-button--error";
+  get alert() {
+    if (this.args.alert == "true")
+      return "au-c-button--alert";
     else
       return "";
   }
 
-  get disabledClass() {
-    if (this.args.disabled == "disabled")
-      return "au-c-button--disabled";
+  get disabled() {
+    if (this.args.disabled == "true")
+      return "is-disabled";
+    else
+      return "";
+  }
+
+  get loading() {
+    if (this.args.loading == "true")
+      return "is-loading";
     else
       return "";
   }

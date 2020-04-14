@@ -26,6 +26,11 @@
             </AuNavigationLink>
           </li>
           <li class="au-c-list-navigation__item">
+            <AuNavigationLink @linkRoute="docs.atoms.au-link">
+              Link
+            </AuNavigationLink>
+          </li>
+          <li class="au-c-list-navigation__item">
             <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
               Navigation link
             </AuNavigationLink>
@@ -52,12 +57,17 @@
               Header
             </AuNavigationLink>
           </li>
+          <li class="au-c-list-navigation__item">
+            <AuNavigationLink @linkRoute="docs.patterns.au-toolbar">
+              Toolbar
+            </AuNavigationLink>
+          </li>
         {{/viewer.nav}}
       {{/docs-viewer}}
     </div>
     <div class="au-c-sidebar__footer au-d-small">
       <a href="https://github.com/ember-learn/ember-cli-addon-docs"
-        class="au-c-link au-c-link--neutral">
+        class="au-c-link au-c-link--secondary">
         Powered by AddonDocs
       </a>
     </div>

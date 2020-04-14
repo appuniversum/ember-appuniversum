@@ -6,21 +6,16 @@
    ========================================================================== */
 
 $au-alert-font-size                     : $au-h6 !default;
-
 $au-alert-color                         : $au-gray-800 !default;
 $au-alert-background-color              : $au-gray-200 !default;
-
 $au-alert-success-background-color      : $au-green-200 !default;
 $au-alert-warning-background-color      : $au-yellow-100 !default;
 $au-alert-error-background-color        : $au-red-200 !default;
-
 $au-alert-success-icon-background-color : $au-green-500 !default;
 $au-alert-warning-icon-background-color : $au-yellow-400 !default;
 $au-alert-error-icon-background-color   : $au-red-600 !default;
-
 $au-alert-success-icon-color            : $au-white !default;
 $au-alert-error-icon-color              : $au-white !default;
-
 $au-alert-icon-size                     : 2rem !default;
 $au-alert-small-icon-size               : 1.5rem !default;
 
@@ -40,7 +35,7 @@ $au-alert-small-icon-size               : 1.5rem !default;
     margin-bottom: 0;
   }
 
-  .au-c-button-link {
+  .au-c-link {
     flex-shrink: 0;
   }
 }
@@ -63,6 +58,7 @@ $au-alert-small-icon-size               : 1.5rem !default;
     bottom: 0;
   }
 }
+
 .au-c-alert__content {
   display: flex;
   flex-direction: column;
@@ -72,6 +68,25 @@ $au-alert-small-icon-size               : 1.5rem !default;
 
 .au-c-alert__title {
   font-weight: $au-medium;
+}
+
+.au-c-alert__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  height: $au-unit;
+  width: $au-unit;
+  text-align: center;
+  color: $au-gray-700;
+  transition: color $au-transition;
+
+  &:hover,
+  &:focus {
+    color: $au-gray-600;
+  }
 }
 
 /* Modifiers

@@ -14,3 +14,11 @@
     outline: 0 !important;
   }
 }
+
+// Fix spacing for dropdowns
+// @TODO: find cleaner solution to make spacing consistent
+.au-c-list-horizontal__item {
+  .au-d-dropdown {
+    margin-left: -$au-list-horizontal-spacing/2;
+  }
+}
