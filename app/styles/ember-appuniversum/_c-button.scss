@@ -15,6 +15,7 @@ $au-button-contrast-active-color          : $au-blue-600 !default;
 $au-button-contrast-visited-color         : $au-blue-900 !default;
 $au-button-secondary-color                : $au-gray-700 !default;
 $au-button-secondary-hover-color          : $au-gray-600 !default;
+$au-button-tertiary-height                : $au-unit !default;
 $au-button-tertiary-color                 : $au-blue-700 !default;
 $au-button-tertiary-hover-color           : $au-blue-600 !default;
 $au-button-tertiary-secondary-color       : $au-gray-800 !default;
@@ -164,6 +165,8 @@ $au-button-radius                         : 0 !default;
   line-height: inherit;
   border-color: transparent;
   padding: 0 $au-unit-tiny 0;
+  height: $au-button-tertiary-height;
+  line-height: $au-button-tertiary-height;
 
   &,
   &:visited {

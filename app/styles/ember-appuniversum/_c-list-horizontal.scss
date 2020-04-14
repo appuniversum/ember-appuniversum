@@ -29,7 +29,8 @@ $au-list-horizontal-divider    : 1px dotted $au-gray-300 !default;
 
   // Fix spacing for dropdowns and button links
   // @TODO: find cleaner solution to make spacing consistent
-  > .au-c-dropdown {
+  > .au-c-dropdown,
+  .au-c-button {
     margin-left: -$au-list-horizontal-spacing/2;
   }
 }
