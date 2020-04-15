@@ -15,6 +15,7 @@ Router.map(function() {
       this.route('au-link');
       this.route("au-navigation-link");
       this.route('au-textarea');
+      this.route("au-pill");
     });
 
     this.route("components", function() {

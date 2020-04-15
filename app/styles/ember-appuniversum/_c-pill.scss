@@ -24,13 +24,15 @@ $au-pill-border-color-error           : $au-red-600;
   ========================================================================== */
 
 .au-c-pill {
+  @include au-font-size($au-base);
+  display: inline-flex;
+  align-items: center;
   color: $au-pill-color;
   background-color: $au-pill-background-color;
   font-family: $au-font;
   font-weight: $au-medium;
-  font-size: $au-pill-font-size;
   border: $au-pill-border-width solid $au-pill-border-color;
-  padding: $au-unit-tiny*.5 $au-unit-tiny $au-unit-tiny*.25;  // Visually center the text in the pill
+  padding: 0 $au-unit-tiny;  // Visually center the text in the pill
   border-radius: $au-unit-tiny;
 }
 

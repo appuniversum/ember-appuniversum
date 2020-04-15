@@ -21,6 +21,7 @@ $au-toolbar-tint            : $au-gray-100 !default;
 
 .au-c-toolbar__group {
   display: flex;
+  align-items: center;
   justify-content: flex-start;
 
   > * + * {
