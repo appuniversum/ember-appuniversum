@@ -8,7 +8,10 @@
   {{#demo.example name='au-dropdown.hbs'}}
     <AuDropdown @dropdownTitle="Demo dropdown" @dropdownButtonLabel="Account settings">
       <AuButton @skin="tertiary" role="menuitem">
-        <AuIcon @icon="logout" @alignment="left" />Afmelden
+        <AuIcon @icon="switch" @alignment="left" />Switch profile
+      </AuButton>
+      <AuButton @skin="tertiary" role="menuitem">
+        <AuIcon @icon="logout" @alignment="left" />Logout
       </AuButton>
     </AuDropdown>
   {{/demo.example}}
@@ -20,6 +23,9 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-dropdown-left.hbs'}}
     <AuDropdown @dropdownTitle="Demo dropdown | left alignment" @dropdownButtonLabel="Account settings" @alignment="left">
+      <AuButton @skin="tertiary" role="menuitem">
+        <AuIcon @icon="switch" @alignment="left" />Switch profile
+      </AuButton>
       <AuButton @skin="tertiary" role="menuitem">
         <AuIcon @icon="logout" @alignment="left" />Afmelden
       </AuButton>
@@ -33,6 +39,9 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-dropdown-right.hbs'}}
     <AuDropdown @dropdownTitle="Demo dropdown | right alignment" @dropdownButtonLabel="Account settings" @alignment="right">
+      <AuButton @skin="tertiary" role="menuitem">
+        <AuIcon @icon="switch" @alignment="left" />Switch profile
+      </AuButton>
       <AuButton @skin="tertiary" role="menuitem">
         <AuIcon @icon="logout" @alignment="left" />Afmelden
       </AuButton>

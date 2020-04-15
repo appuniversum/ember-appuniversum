@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+  <g clip-path="url(#clip0)">
+    <path d="M17.738 18.07v-4.668H6.535v4.668L0 11.535 6.535 5v4.668h11.203V5l6.535 6.535-6.535 6.535z" class="Vector"/>
+  </g>
+  <defs>
+    <clipPath id="clip0" class="clip0">
+      <path d="M0 0h24v24H0z"/>
+    </clipPath>
+  </defs>
+</svg>
