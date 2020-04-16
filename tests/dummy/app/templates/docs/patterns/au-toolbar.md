@@ -86,7 +86,7 @@
 ## Skin: tint
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-toolbar-skint.hbs'}}
+  {{#demo.example name='au-toolbar-skin.hbs'}}
     <AuToolbar @border="bottom" @skin="tint">
       <AuToolbarGroup>
         <AuButton>
@@ -101,13 +101,13 @@
       </AuLink>
     </AuToolbar>
   {{/demo.example}}
-  {{demo.snippet 'au-toolbar-skint.hbs'}}
+  {{demo.snippet 'au-toolbar-skin.hbs'}}
 {{/docs-demo}}
 
 ## Size: large
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-toolbar-skint.hbs'}}
+  {{#demo.example name='au-toolbar-size.hbs'}}
     <AuToolbar @border="bottom" @skin="tint" @size="large">
       <AuToolbarGroup>
         <AuButton>
@@ -122,7 +122,7 @@
       </AuLink>
     </AuToolbar>
   {{/demo.example}}
-  {{demo.snippet 'au-toolbar-skint.hbs'}}
+  {{demo.snippet 'au-toolbar-size.hbs'}}
 {{/docs-demo}}
 
 ## Properties
