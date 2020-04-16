@@ -183,8 +183,9 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown__menu [role="menuitem"] {
-  padding-top: $au-unit-small + $au-unit-tiny;
-  padding-bottom: $au-unit-small + $au-unit-tiny;
+  padding-top: $au-unit-small;
+  padding-bottom: $au-unit-small;
+  height: auto;
 }
 
 .au-c-dropdown__menu [role="menuitem"] + [role="menuitem"] {
