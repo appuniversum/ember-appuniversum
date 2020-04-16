@@ -104,7 +104,29 @@
   {{demo.snippet 'au-toolbar-skint.hbs'}}
 {{/docs-demo}}
 
+## Size: large
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-toolbar-skint.hbs'}}
+    <AuToolbar @border="bottom" @skin="tint" @size="large">
+      <AuToolbarGroup>
+        <AuButton>
+          Primary button
+        </AuButton>
+        <AuButton @skin="secondary">
+          Secondary button
+        </AuButton>
+      </AuToolbarGroup>
+      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        Secondary link
+      </AuLink>
+    </AuToolbar>
+  {{/demo.example}}
+  {{demo.snippet 'au-toolbar-skint.hbs'}}
+{{/docs-demo}}
+
 ## Properties
 - `@reverse`: [ true ] - reverse the direction of the child components
 - `@border`: [ top | bottom ] - adds a border a padding to the top|bottom
 - `@skin`: [ tint ] - adds a background color
+- `@skin`: [ large ] - adds more padding
