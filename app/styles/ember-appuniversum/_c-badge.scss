@@ -5,16 +5,32 @@
 /* Variables
    ========================================================================== */
 
-$au-badge-info-color                 : $au-gray-900 !default;
-$au-badge-info-contrast-color        : $au-gray-200 !default;
 $au-badge-icon-size                     : 2rem !default;
-$au-badge-small-icon-size               : 1.5rem !default;
+
+$au-badge-icon-color                    : $au-gray-800 !default;
+$au-badge-contrast-color                : $au-white !default;
+$au-badge-border-color                  : $au-gray-300 !default;
+
+$au-badge-info-icon-color               : $au-gray-800 !default;
+$au-badge-info-contrast-color           : $au-gray-200 !default;
+
+$au-badge-action-icon-color            : $au-white !default;
+$au-badge-action-contrast-color        : $au-blue-700 !default;
+
+$au-badge-success-icon-color            : $au-white !default;
+$au-badge-success-contrast-color        : $au-green-700 !default;
+
+$au-badge-warning-icon-color            : $au-gray-1000 !default;
+$au-badge-warning-contrast-color        : $au-yellow-400 !default;
+
+$au-badge-error-icon-color              : $au-white !default;
+$au-badge-error-contrast-color          : $au-red-600 !default;
 
 /* Component
    ========================================================================== */
 
 .au-c-badge {
-  background-color: $au-badge-info-color;
+  background-color: $au-badge-contrast-color;
   border-radius: $au-unit-large;
   height: $au-unit-large - .1rem; // compensate for visual distortion of perfect circle
   width: $au-unit-large;
@@ -29,5 +45,53 @@ $au-badge-small-icon-size               : 1.5rem !default;
     height: $au-badge-icon-size - .1rem; // compensate for visual distortion of perfect circle
     width: $au-badge-icon-size;
     bottom: 0;
+    fill: $au-badge-icon-color;
+  }
+
+  &:not([class*="au-c-badge--"]) {
+    border: 0.1rem solid $au-badge-border-color;
+  }
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-badge--info {
+  background-color: $au-badge-info-contrast-color;
+
+  .au-c-icon {
+    fill: $au-badge-info-icon-color;
+  }
+}
+
+.au-c-badge--action {
+  background-color: $au-badge-action-contrast-color;
+
+  .au-c-icon {
+    fill: $au-badge-action-icon-color;
+  }
+}
+
+.au-c-badge--success {
+  background-color: $au-badge-success-contrast-color;
+
+  .au-c-icon {
+    fill: $au-badge-success-icon-color;
+  }
+}
+
+.au-c-badge--warning {
+  background-color: $au-badge-warning-contrast-color;
+
+  .au-c-badge__icon {
+    fill: $au-badge-warning-icon-color;
+  }
+}
+
+.au-c-badge--error {
+  background-color: $au-badge-error-contrast-color;
+
+  .au-c-icon {
+    fill: $au-badge-error-icon-color;
   }
 }

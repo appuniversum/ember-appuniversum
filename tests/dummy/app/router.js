@@ -9,13 +9,14 @@ const Router = AddonDocsRouter.extend({
 Router.map(function() {
   docsRoute(this, function() {
     this.route("atoms", function() {
-      this.route('au-icon');
+      this.route("au-badge");
       this.route("au-button");
+      this.route('au-icon');
       this.route('au-input');
       this.route('au-link');
       this.route("au-navigation-link");
-      this.route('au-textarea');
       this.route("au-pill");
+      this.route('au-textarea');
     });
 
     this.route("components", function() {
@@ -32,6 +33,10 @@ Router.map(function() {
   });
 
   this.route('not-found', { path: '/*path' });
+
+  this.route('atoms', function() {
+    this.route('au-badge');
+  });
 });
 
 export default Router;
