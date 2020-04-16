@@ -1,0 +1,33 @@
+/* ==================================
+   #BADGE
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-badge-info-color                 : $au-gray-900 !default;
+$au-badge-info-contrast-color        : $au-gray-200 !default;
+$au-badge-icon-size                     : 2rem !default;
+$au-badge-small-icon-size               : 1.5rem !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-badge {
+  background-color: $au-badge-info-color;
+  border-radius: $au-unit-large;
+  height: $au-unit-large - .1rem; // compensate for visual distortion of perfect circle
+  width: $au-unit-large;
+  margin-right: $au-unit-large / 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  .au-c-icon {
+    height: $au-badge-icon-size - .1rem; // compensate for visual distortion of perfect circle
+    width: $au-badge-icon-size;
+    bottom: 0;
+  }
+}
