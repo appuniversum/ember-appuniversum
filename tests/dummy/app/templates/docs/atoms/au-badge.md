@@ -4,17 +4,17 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-Badge.hbs'}}
-    <AuBadge @icon="search-folder"></AuBadge>
+    <AuBadge @icon="info-circle"></AuBadge>
     <hr>
-    <AuBadge @icon="search-folder" @skin="info"></AuBadge>
+    <AuBadge @icon="info-circle" @skin="info"></AuBadge>
     <hr>
-    <AuBadge @icon="search-folder" @skin="success"></AuBadge>
+    <AuBadge @icon="info-circle" @skin="success"></AuBadge>
     <hr>
-    <AuBadge @icon="search-folder" @skin="warning"></AuBadge>
+    <AuBadge @icon="info-circle" @skin="warning"></AuBadge>
     <hr>
-    <AuBadge @icon="search-folder" @skin="error"></AuBadge>
+    <AuBadge @icon="info-circle" @skin="error"></AuBadge>
     <hr>
-    <AuBadge @icon="search-folder" @skin="action"></AuBadge>
+    <AuBadge @icon="info-circle" @skin="action"></AuBadge>
   {{/demo.example}}
   {{demo.snippet 'au-Badge.hbs'}}
 {{/docs-demo}}
