@@ -6,11 +6,11 @@
    ========================================================================== */
 
 $au-main-header-bg                : $au-white !default;
-$au-main-header-border            : $au-gray-200 !default;
+$au-main-header-border            : $au-gray-300 !default;
 $au-main-header-color             : $au-gray-800 !default;
 $au-main-header-hover-color       : $au-gray-700 !default;
 $au-main-header-active-color      : $au-blue-900 !default;
-$au-header-divider-rotation       : -19deg !default;
+$au-main-header-divider-rotation  : -19deg !default;
 
 /* Component
    ========================================================================== */
@@ -61,10 +61,10 @@ $au-header-divider-rotation       : -19deg !default;
       position: absolute;
       top: 0;
       left: .5rem;
-      transform: rotate($au-header-divider-rotation);
+      transform: rotate($au-main-header-divider-rotation);
       width: .1rem;
       height: 3rem;
-      background-color: $au-brand-border;
+      background-color: $au-main-header-border;
     }
   }
 }

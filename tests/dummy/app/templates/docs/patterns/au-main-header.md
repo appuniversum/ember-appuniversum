@@ -1,18 +1,18 @@
-# Header
+# Main header
 
 ---
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-header.hbs'}}
-    <AuHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="App title" @contactRoute="docs.patterns.au-header">
+  {{#demo.example name='au-main-header.hbs'}}
+    <AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="App title" @contactRoute="docs.patterns.au-header">
       <AuDropdown @dropdownTitle="Demo dropdown" @dropdownButtonLabel="Account settings" @alignment="right">
         <AuButton @skin="tertiary" role="menuitem">
           <AuIcon @icon="logout" @alignment="left" />Afmelden
         </AuButton>
       </AuDropdown>
-    </AuHeader>
+    </AuMainHeader>
   {{/demo.example}}
-  {{demo.snippet 'au-header.hbs'}}
+  {{demo.snippet 'au-main-header.hbs'}}
 {{/docs-demo}}
 
 ## Properties

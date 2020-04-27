@@ -1,4 +1,4 @@
-<AuHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="Ember-appuniversum">
+<AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="Ember-appuniversum">
   <ul class="au-c-list-horizontal">
     <li class="au-c-list-horizontal__item">
       <a href="https://github.com/appuniversum/ember-appuniversum" class="au-c-link au-c-link--secondary" target="_blank" rel="noopener noreferrer">
@@ -28,7 +28,7 @@
       {{/docs-header/link}}
     </li>
   </ul>
-</AuHeader>
+</AuMainHeader>
 
 {{#if isShowingVersionSelector}}
   {{docs-header/version-selector on-close=(action (mut isShowingVersionSelector false))}}
