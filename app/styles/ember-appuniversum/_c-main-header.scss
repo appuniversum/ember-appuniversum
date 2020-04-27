@@ -10,6 +10,7 @@ $au-main-header-border            : $au-gray-200 !default;
 $au-main-header-color             : $au-gray-800 !default;
 $au-main-header-hover-color       : $au-gray-700 !default;
 $au-main-header-active-color      : $au-blue-900 !default;
+$au-header-divider-rotation       : -19deg !default;
 
 /* Component
    ========================================================================== */
@@ -41,7 +42,6 @@ $au-main-header-active-color      : $au-blue-900 !default;
   color: $au-main-header-color;
   transition: color $au-transition, text-decoration-color $au-transition;
   letter-spacing: .03ex;
-  margin-left: -$au-unit-small - $au-unit-tiny;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -53,6 +53,19 @@ $au-main-header-active-color      : $au-blue-900 !default;
 
   @include mq(small) {
     margin-left: 0;
+    padding-left: $au-unit;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: .5rem;
+      transform: rotate($au-header-divider-rotation);
+      width: .1rem;
+      height: 3rem;
+      background-color: $au-brand-border;
+    }
   }
 }
 
