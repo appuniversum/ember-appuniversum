@@ -77,7 +77,6 @@ $au-brand-divider-rotation     : -19deg !default;
   .au-c-brand--tagline & {
     width: $au-brand-size + $au-unit-tiny;
     height: $au-brand-size + $au-unit-tiny;
-    padding: .7rem 0 .7rem 1rem;
   }
 }
 
@@ -90,6 +89,14 @@ $au-brand-divider-rotation     : -19deg !default;
   color: $au-brand-text;
   margin-left: $au-unit-tiny;
   transition: color $au-transition;
+
+  .au-c-brand--tagline & {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: $au-brand-size;
+    padding-right: $au-unit-small;
+  }
 
   @include mq(small) {
     display: flex;

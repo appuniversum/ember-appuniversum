@@ -14,10 +14,10 @@
 ## Logo with link
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-brand.hbs'}}
+  {{#demo.example name='au-brand-link.hbs'}}
     <AuBrand @brandLink="https://www.vlaanderen.be/" />
   {{/demo.example}}
-  {{demo.snippet 'au-brand.hbs'}}
+  {{demo.snippet 'au-brand-link.hbs'}}
 {{/docs-demo}}
 
 ## Logo with tagline

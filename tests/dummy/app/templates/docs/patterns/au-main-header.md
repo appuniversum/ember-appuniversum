@@ -4,7 +4,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-main-header.hbs'}}
-    <AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="App title" @contactRoute="docs.patterns.au-header">
+    <AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="App title" @contactRoute="docs.patterns.au-main-header">
       <AuDropdown @dropdownTitle="Demo dropdown" @dropdownButtonLabel="Account settings" @alignment="right">
         <AuButton @skin="tertiary" role="menuitem">
           <AuIcon @icon="logout" @alignment="left" />Afmelden
