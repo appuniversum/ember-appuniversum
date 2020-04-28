@@ -10,8 +10,10 @@ Router.map(function() {
   docsRoute(this, function() {
     this.route("atoms", function() {
       this.route('au-brand');
-      this.route('au-icon');
+      this.route('au-content');
       this.route("au-button");
+      this.route('au-heading');
+      this.route('au-icon');
       this.route('au-input');
       this.route('au-link');
       this.route("au-navigation-link");
