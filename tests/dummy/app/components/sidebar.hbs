@@ -1,105 +1,120 @@
-<aside class="au-o-grid__item au-u-1-4@small au-u-1-6@medium">
-  <div class="au-c-sidebar">
-    <div class="au-c-sidebar__content">
-      {{#docs-viewer as |viewer|}}
-        {{#viewer.nav as |nav|}}
-          <li class="au-c-list-navigation__item">
-            <a href="https://appuniversum.github.io/appuniversum" class="au-c-list-navigation__link au-c-list-navigation__link--highlight">
-              <AuIcon @icon="hierarchal-back" @alignment="left" />
-              Appuniversum
-            </a>
-          </li>
+<aside class="au-c-sidebar">
+  <div class="au-c-sidebar__content">
+    {{#docs-viewer as |viewer|}}
+      {{#viewer.nav as |nav|}}
+        <li class="au-c-list-navigation__item au-c-list-navigation__item--section">
+          <a href="https://appuniversum.github.io/appuniversum" class="au-c-list-navigation__link au-c-list-navigation__link--highlight">
+            <AuIcon @icon="hierarchal-back" @alignment="left" />
+            Appuniversum
+          </a>
+        </li>
+        <li class="au-c-list-navigation__item au-c-list-navigation__item--section">
           {{nav.section "Atoms"}}
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-brand">
-              Brand
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-button">
-              Button
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-heading">
-              Heading
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-content">
-              Content
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-icon">
-              Icon
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-input">
-              Input
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-link">
-              Link
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
-              Navigation link
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-textarea">
-              Textarea
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.atoms.au-pill">
-              Pill
-            </AuNavigationLink>
-          </li>
+          <ul class="au-c-list-navigation">
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-brand">
+                Brand
+              </AuNavigationLink>
+            </li>
+             <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-button">
+                Button
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-heading">
+                Heading
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-content">
+                Content
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-icon">
+                Icon
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-input">
+                Input
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-link">
+                Link
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
+                Navigation link
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-textarea">
+                Textarea
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.atoms.au-pill">
+                Pill
+              </AuNavigationLink>
+            </li>
+          </ul>
+        </li>
+        <li class="au-c-list-navigation__item au-c-list-navigation__item--section">
           {{nav.section "Components"}}
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.components.au-alert">
-              Alert
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.components.au-dropdown">
-              Dropdown
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.components.au-modal">
-              Modal
-            </AuNavigationLink>
-          </li>
+          <ul class="au-c-list-navigation">
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.components.au-alert">
+                Alert
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.components.au-dropdown">
+                Dropdown
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.components.au-modal">
+                Modal
+              </AuNavigationLink>
+            </li>
+          </ul>
+        </li>
+        <li class="au-c-list-navigation__item au-c-list-navigation__item--section">
           {{nav.section "Patterns"}}
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.patterns.au-main-header">
-              Main header
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.patterns.au-main-footer">
-              Main footer
-            </AuNavigationLink>
-          </li>
-          <li class="au-c-list-navigation__item">
-            <AuNavigationLink @linkRoute="docs.patterns.au-toolbar">
-              Toolbar
-            </AuNavigationLink>
-          </li>
-        {{/viewer.nav}}
-      {{/docs-viewer}}
-    </div>
-    <div class="au-c-sidebar__footer au-d-small">
-      <a href="https://github.com/ember-learn/ember-cli-addon-docs"
-        class="au-c-link au-c-link--secondary">
-        Powered by AddonDocs
-      </a>
-    </div>
+          <ul class="au-c-list-navigation">
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.patterns.au-main-container">
+                Main container
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.patterns.au-main-header">
+                Main header
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.patterns.au-main-footer">
+                Main footer
+              </AuNavigationLink>
+            </li>
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="docs.patterns.au-toolbar">
+                Toolbar
+              </AuNavigationLink>
+            </li>
+          </ul>
+        </li>
+      {{/viewer.nav}}
+    {{/docs-viewer}}
+  </div>
+  <div class="au-c-sidebar__footer au-d-small">
+    <a href="https://github.com/ember-learn/ember-cli-addon-docs"
+      class="au-c-link au-c-link--secondary">
+      Powered by AddonDocs
+    </a>
   </div>
 </aside>

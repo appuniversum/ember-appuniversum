@@ -28,6 +28,7 @@ Router.map(function() {
     });
 
     this.route("patterns", function() {
+      this.route("au-main-container");
       this.route("au-main-header");
       this.route("au-main-footer");
       this.route("au-toolbar");
