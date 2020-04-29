@@ -30,5 +30,6 @@
 {{/docs-demo}}
 
 ## Properties
+
 - `@tagline`: [ string ] - adds a tagline underneath the logotype
 - `@brandLink`: [ url ] - adds a link.

@@ -47,4 +47,5 @@
 {{/docs-demo}}
 
 ## Properties
+
 - `@skin`: [ small ] - smaller text and vertical spacing

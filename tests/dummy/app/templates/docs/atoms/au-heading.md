@@ -32,5 +32,6 @@
 {{/docs-demo}}
 
 ## Properties
+
 - `@level`: [ 1 | 2 | 3 | 4 | 5 | 6 ] - changes the depth of the heading (h1 > h6) - default is 1 (h1)
 - `@skin`: [ 1 | 2 | 3 | 4 | 5 | 6 ] - changes the style and size of the heading - default is 1

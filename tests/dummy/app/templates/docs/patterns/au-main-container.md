@@ -2,7 +2,7 @@
 
 ---
 
-## Container demo
+## Main container
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-main-container.hbs'}}
@@ -22,7 +22,7 @@
   {{demo.snippet 'au-main-container.hbs'}}
 {{/docs-demo}}
 
-## Container with scroll
+## Main container with scroll
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-main-container-scroll.hbs'}}
