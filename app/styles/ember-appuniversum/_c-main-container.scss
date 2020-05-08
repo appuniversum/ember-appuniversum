@@ -5,26 +5,41 @@
 /* Variables
    ========================================================================== */
 
-$au-main-container-height: calc(100vh - #{$au-unit-large - $au-unit-tiny}) !default;
+$au-main-container-height: calc(100vh - 4.2rem) !default;
 
 /* Component
    ========================================================================== */
 
 .au-c-main-container {
-  height: $au-main-container-height;
-  overflow: auto;
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 
-  @include mq(small) {
-    overflow: hidden;
+  @include mq(medium) {
+    height: $au-main-container-height;
+  }
+}
+
+.au-c-main-container__sidebar {
+  flex-basis: 100%;
+
+  @include mq(medium) {
+    height: 100%;
+    flex-basis: 25rem;
+    flex-grow: 1;
   }
 }
 
 .au-c-main-container__content {
-  position: relative;
-  overflow: auto;
+  flex-basis: 100%;
 
-  @include mq(small) {
-    height: $au-main-container-height;
+  @include mq(medium) {
+    height: 100%;
+    flex-basis: 0;
+    flex-grow: 999;
   }
+}
+
+.au-c-main-container__content--scroll {
+  height: 100%;
+  overflow: auto;
 }

@@ -1,0 +1,120 @@
+/* ==================================
+   #CONTENT
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-content-heading-1     : $au-h1 !default;
+$au-content-heading-2     : $au-h2 !default;
+$au-content-heading-3     : $au-h3 !default;
+$au-content-heading-4     : $au-h4 !default;
+$au-content-heading-5     : $au-h5 !default;
+$au-content-heading-6     : $au-h6 !default;
+$au-content-base          : $au-h6 !default;
+$au-content-small         : $au-base !default;
+
+
+/* Component
+   ========================================================================== */
+
+// @TODO: add base styling for common elements (tables, hr, blockquote, ...)
+.au-c-content {
+  @include au-font-size($au-content-base);
+
+  h1 {
+    @include au-font-size($au-content-heading-1);
+    font-family: $au-font-secondary;
+    font-weight: $au-light;
+  }
+
+  h2 {
+    @include au-font-size($au-content-heading-2);
+    font-family: $au-font-secondary;
+    font-weight: $au-light;
+  }
+
+  h3 {
+    @include au-font-size($au-content-heading-3);
+    font-family: $au-font-secondary;
+    font-weight: $au-medium;
+  }
+
+  h4 {
+    @include au-font-size($au-content-heading-4);
+    font-weight: $au-medium;
+  }
+
+  h5 {
+    @include au-font-size($au-content-heading-5);
+    font-weight: $au-medium;
+  }
+
+  h6 {
+    @include au-font-size($au-content-heading-6);
+    font-weight: $au-medium;
+  }
+
+  > * + * {
+    margin-top: $au-unit;
+  }
+
+  > * + h1,
+  > * + h2,
+  > * + h3,
+  > * + h4,
+  > * + h5,
+  > * + h6 {
+    margin-top: $au-unit-large;
+  }
+}
+
+.au-c-content--small {
+  @include au-font-size($au-base);
+
+  h1 {
+    @include au-font-size($au-content-heading-2);
+    font-family: $au-font-secondary;
+    font-weight: $au-light;
+  }
+
+  h2 {
+    @include au-font-size($au-content-heading-3);
+    font-family: $au-font-secondary;
+    font-weight: $au-light;
+  }
+
+  h3 {
+    @include au-font-size($au-content-heading-4);
+    font-family: $au-font-secondary;
+    font-weight: $au-medium;
+  }
+
+  h4 {
+    @include au-font-size($au-content-heading-5);
+    font-weight: $au-medium;
+  }
+
+  h5 {
+    @include au-font-size($au-content-heading-6);
+    font-weight: $au-medium;
+  }
+
+  h6 {
+    @include au-font-size($au-content-heading-6);
+    font-weight: $au-medium;
+  }
+
+  > * + * {
+    margin-top: $au-unit-small;
+  }
+
+  > * + h1,
+  > * + h2,
+  > * + h3,
+  > * + h4,
+  > * + h5,
+  > * + h6 {
+    margin-top: $au-unit;
+  }
+}

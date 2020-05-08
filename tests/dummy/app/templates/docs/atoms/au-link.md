@@ -51,5 +51,7 @@
 {{/docs-demo}}
 
 ## Properties
+
 - `@skin`: [ secondary ] - default is primary
 - `@active`: [ true ] - adds an active state and disables pointer events
+- `@linkRoute`: the route that is passed to the link

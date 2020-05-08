@@ -20,8 +20,8 @@ $au-sidebar-footer-padding: $au-unit !default;
   background-color: $au-sidebar-background;
   border-bottom: 1px solid $au-sidebar-border;
 
-  @include mq(small) {
-    height: calc(100vh - #{$au-unit-large - $au-unit-tiny});
+  @include mq(medium) {
+    height: 100%;
     border-bottom: 0;
     border-right: 1px solid $au-sidebar-border;
     overflow: auto;
@@ -40,6 +40,10 @@ $au-sidebar-footer-padding: $au-unit !default;
 
 .au-c-sidebar__footer {
   @include au-font-size($au-base);
-  text-align: center;
-  padding: $au-sidebar-footer-padding;
+  padding: $au-sidebar-footer-padding/2;
+
+  @include mq(medium) {
+    text-align: center;
+    padding: $au-sidebar-footer-padding;
+  }
 }

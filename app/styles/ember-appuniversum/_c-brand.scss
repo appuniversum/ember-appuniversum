@@ -6,19 +6,22 @@
    ========================================================================== */
 
 $au-brand-color                : $au-gray-900 !default;
+$au-brand-highlight-color      : $au-gray-200 !default;
 $au-brand-bg                   : $au-white !default;
 $au-brand-text                 : $au-gray-900 !default;
 $au-brand-border               : $au-gray-300 !default;
-$au-brand-height               : $au-unit-large - $au-unit-tiny !default;
-$au-brand-divider-rotation     : -20deg !default;
+$au-brand-size                 : 4.2rem !default;
+$au-brand-divider-rotation     : -19deg !default;
 
 /* Component
    ========================================================================== */
 
 .au-c-brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   text-decoration: none;
+  position: relative;
+  background-color: $au-white;
 }
 
 .au-c-brand--link {
@@ -29,10 +32,9 @@ $au-brand-divider-rotation     : -20deg !default;
 
 .au-c-brand__logo {
   position: relative;
-  width: $au-unit-large - $au-unit-tiny;
-  height: $au-brand-height;
-  padding: $au-unit-tiny $au-unit-tiny $au-unit-tiny $au-unit-tiny*1.4;
-  margin-right: $au-unit - $au-unit-tiny;
+  width: $au-brand-size;
+  height: $au-brand-size;
+  padding-left: .75rem;
   overflow: hidden;
   background-color: $au-brand-bg;
   transition: background-color $au-transition;
@@ -40,21 +42,10 @@ $au-brand-divider-rotation     : -20deg !default;
   svg {
     fill: $au-brand-color;
     height: 100%;
+    width: 56%;
   }
 
   &::before {
-    content: "";
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: -.3rem;
-    border-top: 9rem solid
-    $au-brand-border;
-    border-left: 3.07818rem solid
-    transparent;
-  }
-
-  &::after {
     content: "";
     display: block;
     position: absolute;
@@ -66,9 +57,26 @@ $au-brand-divider-rotation     : -20deg !default;
     transparent;
   }
 
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -.2rem;
+    right: 17%;
+    transform: rotate($au-brand-divider-rotation);
+    width: .1rem;
+    height: calc(100% + .4rem);
+    background-color: $au-brand-border;
+  }
+
   .au-c-brand--link:hover &,
   .au-c-brand--link:focus & {
-    background-color: $au-gray-100;
+    background-color: $au-brand-highlight-color;
+  }
+
+  .au-c-brand--tagline & {
+    width: $au-brand-size + $au-unit-tiny;
+    height: $au-brand-size + $au-unit-tiny;
   }
 }
 
@@ -79,33 +87,43 @@ $au-brand-divider-rotation     : -20deg !default;
   font-family: $au-font;
   font-weight: $au-medium;
   color: $au-brand-text;
-  margin-left: -$au-unit-small + $au-unit-tiny/2;
-  margin-right: $au-unit-small;
-  padding-right: $au-unit-small + $au-unit-tiny/2;
+  margin-left: $au-unit-tiny;
   transition: color $au-transition;
 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: -.2rem;
-    right: 0;
-    transform: rotate($au-brand-divider-rotation);
-    width: .1rem;
-    height: 2.3rem;
-    background-color: $au-gray-300;
-  }
-
-  .au-c-brand--link:hover &,
-  .au-c-brand--link:focus & {
-    color: $au-blue-600;
-  }
-
-  .au-c-brand--link:focus & {
-    outline: $au-outline;
+  .au-c-brand--tagline & {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: $au-brand-size;
+    padding-right: $au-unit-small;
   }
 
   @include mq(small) {
-    display: block;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: $au-brand-size;
+    padding-right: $au-unit-small;
+
+    .au-c-brand--link:hover &,
+    .au-c-brand--link:focus & {
+      color: $au-blue-600;
+    }
+
+    .au-c-brand--link:focus & {
+      outline: $au-outline;
+    }
   }
+}
+
+.au-c-brand__main {
+  @include au-font-size($au-h5,1.2);
+  display: block;
+}
+
+.au-c-brand__tagline {
+  @include au-font-size(1.2rem,1.2);
+  font-weight: $au-regular;
+  display: block;
+  color: $au-gray-800;
 }

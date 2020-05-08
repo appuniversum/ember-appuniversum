@@ -1,0 +1,54 @@
+/* ==================================
+   #HEADINGS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-heading-1     : $au-h1 !default;
+$au-heading-2     : $au-h2 !default;
+$au-heading-3     : $au-h3 !default;
+$au-heading-4     : $au-h4 !default;
+$au-heading-5     : $au-h5 !default;
+$au-heading-6     : $au-h6 !default;
+
+
+/* Component
+   ========================================================================== */
+
+.au-c-heading {
+  // Placeholder
+}
+
+.au-c-heading--1 {
+  @include au-font-size($au-heading-1);
+  font-family: $au-font-secondary;
+  font-weight: $au-light;
+}
+
+.au-c-heading--2 {
+  @include au-font-size($au-heading-2);
+  font-family: $au-font-secondary;
+  font-weight: $au-light;
+}
+
+.au-c-heading--3 {
+  @include au-font-size($au-heading-3);
+  font-family: $au-font-secondary;
+  font-weight: $au-medium;
+}
+
+.au-c-heading--4 {
+  @include au-font-size($au-heading-4);
+  font-weight: $au-medium;
+}
+
+.au-c-heading--5 {
+  @include au-font-size($au-heading-5);
+  font-weight: $au-medium;
+}
+
+.au-c-heading--6 {
+  @include au-font-size($au-heading-6);
+  font-weight: $au-medium;
+}

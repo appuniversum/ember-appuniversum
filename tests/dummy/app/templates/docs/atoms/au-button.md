@@ -133,6 +133,7 @@ Can be used as a standalone secondary action.
 {{/docs-demo}}
 
 ## Properties
+
 - `@skin`: [ secondary | tertiary ] - default is primary
 - `@width`: [ block ] - makes a button behave like a block element
 - `@alert`: [ true ] - adds an alert state to the button

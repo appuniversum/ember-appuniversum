@@ -37,4 +37,5 @@
 {{/docs-demo}}
 
 ## Properties
+
 - `@skin`: [ success | warning | error ] - default is gray
