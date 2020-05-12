@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 
-export default class AuHeader extends Component {
+export default class AuMainHeader extends Component {
   @action
   headerLinkFocus() {
     // Focus content window

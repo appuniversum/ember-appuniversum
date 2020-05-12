@@ -1,3 +1,4 @@
+{{#if this.alertVisible}}
 <div class="au-c-alert {{this.alertSkin}} {{this.alertSize}}" role="alert" ...attributes>
   <div class="au-c-alert__icon" aria-hidden="{{if @iconVisible "false" "true"}}">
     <AuIcon @icon="{{@alertIcon}}" /> {{!-- @TODO: add icon switching functionality --}}
@@ -7,9 +8,10 @@
     <div class="au-c-alert__message">{{yield}}</div>
   </div>
   {{#if @closable}}
-    <button class="au-c-alert__close">
-      <AuIcon @icon="cross" @size="large" />
-      <span class="au-u-hidden-visually">Sluit alert</span>
-    </button>
+  <button type="button" {{on "click" this.closeAlert}} class="au-c-alert__close">
+    <AuIcon @icon="cross" @size="large" />
+    <span class="au-u-hidden-visually">Sluit alert</span>
+  </button>
   {{/if}}
 </div>
+{{/if}}

@@ -1,0 +1,31 @@
+/* ==================================
+   #MAIN FOOTER
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-footer-bg        : $au-white !default;
+$au-footer-border    : .1rem solid $au-gray-200 !default;
+$au-footer-padding   : $au-unit !default;
+
+
+/* Component
+   ========================================================================== */
+
+.au-c-main-footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $au-footer-padding;
+  background-color: $au-footer-bg;
+  border-top: $au-footer-border;
+}
+
+.au-c-main-footer__brand {
+  padding-right: $au-footer-padding;
+  padding-bottom: $au-footer-padding;
+
+  @include mq(large) {
+    padding-right: $au-footer-padding*2;
+  }
+}

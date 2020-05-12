@@ -53,10 +53,23 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-input-error.hbs'}}
     <div class="au-u-margin-left">
-      <AuLabel @error="error" for="input-error">Normal input</AuLabel>
+      <AuLabel @error="true" for="input-error">Normal input</AuLabel>
       <AuInput id="input-error" @error="error" @width="block"/>
-      <AuHelpText @error="error">Something is wrong.</AuHelpText>
+      <AuHelpText @error="true">Something is wrong.</AuHelpText>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-input-error.hbs'}}
 {{/docs-demo}}
+
+## Input Properties
+
+- `@error`: [ true ] - add an error state
+- `@width`: [ block ] - display the input as a block element
+
+## Label Properties
+
+- `@error`: [ true ] - add an error state
+
+## Helptext Properties
+
+- `@error`: [ true ] - add an error state

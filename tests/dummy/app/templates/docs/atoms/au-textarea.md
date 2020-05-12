@@ -49,10 +49,15 @@
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-textarea-error.hbs'}}
     <div class="au-u-margin-left">
-      <AuLabel @error="error" for="textarea-error">Normal textarea</AuLabel>
-      <AuTextarea id="textarea-error" @error="error" @width="block"></AuTextarea>
-      <AuHelpText @error="error">Something is wrong.</AuHelpText>
+      <AuLabel @error="true" for="textarea-error">Normal textarea</AuLabel>
+      <AuTextarea id="textarea-error" @error="true" @width="block"></AuTextarea>
+      <AuHelpText @error="true">Something is wrong.</AuHelpText>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-textarea-error.hbs'}}
 {{/docs-demo}}
+
+## Properties
+
+- `@error`: [ true ] - add an error state
+- `@width`: [ block ] - display the input as a block element

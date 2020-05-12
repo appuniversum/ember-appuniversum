@@ -1,0 +1,144 @@
+/* ==================================
+   #MODAL
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-modal-z-index          : 10 !default;
+$au-modal-backdrop-z-index : 9 !default;
+
+/* Component
+  ========================================================================== */
+
+// Disable scrolling when a modal is opened
+.au-c-modal-open {
+  overflow: hidden;
+}
+
+// Modal backdrop
+.au-c-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($au-gray-1000,.4);
+  z-index: $au-modal-backdrop-z-index;
+  display: none;
+
+  &.is-visible {
+    display: block;
+  }
+}
+
+// Modal Dialog base styling
+.au-c-modal {
+  background: $au-white;
+  margin: auto;
+  height: auto;
+  max-height: calc(100% - #{$au-unit});
+  width: calc(100% - #{$au-unit});
+  max-width: 760px;
+  opacity: 1;
+  overflow: auto;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  right: $au-unit-small;
+  left: $au-unit-small;
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  visibility: visible;
+  border-radius: $au-radius;
+  z-index: $au-modal-z-index;
+  box-shadow: 0 1px 3px rgba($au-gray-1000, .1), 0 4px 20px rgba($au-gray-1000, .035), 0 1px 1px rgba($au-gray-1000, .025);
+  transition: $au-transition;
+  display: none;
+
+  &:focus {
+    outline: 0 !important;
+  }
+
+  &.is-visible {
+    display: flex;
+  }
+}
+
+.au-c-modal--fullscreen {
+  max-width: calc(100% - #{$au-unit-small});
+  max-height: calc(100% - #{$au-unit-small});
+  width: calc(100% - #{$au-unit-small});
+  height: calc(100% - #{$au-unit-small});
+  left: $au-unit-tiny;
+}
+
+.au-c-modal__header {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $au-unit-small;
+  border-bottom: 1px solid $au-gray-300;
+
+  @include mq(medium) {
+    padding: $au-unit;
+  }
+}
+
+.au-c-modal__title {
+  @include au-font-size($au-h3);
+  font-family: $au-font-secondary;
+  font-weight: $au-medium;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.au-c-modal__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  text-align: center;
+  color: $au-gray-700;
+  transition: color $au-transition;
+
+  &:hover,
+  &:focus {
+    color: $au-gray-600;
+  }
+}
+
+.au-c-modal__body {
+  flex-grow: 1;
+  position: relative;
+  height: calc(100% - #{$au-unit-large + $au-unit-small});
+  background-color: $au-white;
+  overflow: auto;
+  padding: $au-unit-small;
+
+  &:focus {
+    outline: 0;
+  }
+
+  @include mq(medium) {
+    padding: $au-unit;
+  }
+}
+
+.au-c-modal__footer {
+  padding: $au-unit-small;
+  border-top: 1px solid $au-gray-300;
+
+  @include mq(medium) {
+    padding: $au-unit;
+  }
+}
