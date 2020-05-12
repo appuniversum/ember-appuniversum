@@ -6,7 +6,7 @@
   {{#demo.example name='au-Badge.hbs'}}
     <AuBadge @icon="info-circle" />
     <hr>
-    <AuBadge @icon="info-circle" @skin="info" />
+    <AuBadge @icon="info-circle" @skin="border" />
     <hr>
     <AuBadge @icon="info-circle" @skin="success" />
     <hr>
