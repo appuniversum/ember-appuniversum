@@ -3,9 +3,15 @@
 ---
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-ill.hbs'}}
+  {{#demo.example name='au-pill.hbs'}}
     <AuPill>
       Pill
+    </AuPill>
+
+    <hr>
+
+    <AuPill @skin="info">
+      Pill - info
     </AuPill>
 
     <hr>
@@ -32,9 +38,15 @@
       <AuIcon @icon="alert-triangle" @alignment="left" />
       Pill - error + icon
     </AuPill>
+
+    <hr>
+
+    <AuPill @skin="action">
+      Pill - action
+    </AuPill>
   {{/demo.example}}
   {{demo.snippet 'au-pill.hbs'}}
 {{/docs-demo}}
 
 ## Properties
-- `@skin`: [ success | warning | error ] - default is gray
+- `@skin`: [ none | info | success | warning | error | action ] - default is white

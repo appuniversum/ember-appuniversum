@@ -20,4 +20,4 @@
 {{/docs-demo}}
 
 ## Properties
-- `@skin`: [ none | info | success | warning | error | action ] - default is primary
+- `@skin`: [ none | info | success | warning | error | action ] - default is white

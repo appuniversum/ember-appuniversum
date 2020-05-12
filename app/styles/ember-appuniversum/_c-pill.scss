@@ -6,19 +6,25 @@
    ========================================================================== */
 
 $au-pill-color                        : $au-gray-700 !default;
-$au-pill-background-color             : $au-gray-200 !default;
-$au-pill-border-width                 : .1rem;
+$au-pill-background-color             : $au-white !default;
+$au-pill-border-width                 : .1rem !default;
 $au-pill-border-color                 : $au-gray-300 !default;
 $au-pill-font-size                    : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
-$au-pill-background-color-success     : $au-green-700 !default;
+$au-pill-color-info                   : $au-gray-700 !default;
+$au-pill-background-color-info        : $au-gray-200 !default;
+$au-pill-border-color-info            : $au-gray-300 !default;
 $au-pill-color-success                : $au-white !default;
-$au-pill-border-color-success         : $au-green-700;
+$au-pill-background-color-success     : $au-green-700 !default;
+$au-pill-border-color-success         : $au-green-700 !default;
+$au-pill-color-warning                : $au-yellow-900 !default;
 $au-pill-background-color-warning     : $au-yellow-400 !default;
-$au-pill-color-warning                : $au-gray-1000 !default;
-$au-pill-border-color-warning         : $au-yellow-400;
-$au-pill-background-color-error       : $au-red-600 !default;
+$au-pill-border-color-warning         : $au-yellow-400 !default;
 $au-pill-color-error                  : $au-white !default;
-$au-pill-border-color-error           : $au-red-600;
+$au-pill-background-color-error       : $au-red-600 !default;
+$au-pill-border-color-error           : $au-red-600 !default;
+$au-pill-color-action                 : $au-white !default;
+$au-pill-background-color-action      : $au-blue-700 !default;
+$au-pill-border-color-action          : $au-blue-700 !default;
 
 /* Component
   ========================================================================== */
@@ -39,6 +45,12 @@ $au-pill-border-color-error           : $au-red-600;
 /* Modifiers
   ========================================================================== */
 
+.au-c-pill--info {
+  color: $au-pill-color-info;
+  background-color: $au-pill-background-color-info;
+  border-color: $au-pill-border-color-info;
+}
+
 .au-c-pill--success {
   color: $au-pill-color-success;
   background-color: $au-pill-background-color-success;
@@ -55,4 +67,10 @@ $au-pill-border-color-error           : $au-red-600;
   color: $au-pill-color-error;
   background-color: $au-pill-background-color-error;
   border-color: $au-pill-border-color-error;
+}
+
+.au-c-pill--action {
+  color: $au-pill-color-action;
+  background-color: $au-pill-background-color-action;
+  border-color: $au-pill-border-color-action;
 }
