@@ -1,21 +1,22 @@
-# Header
+# Main header
 
 ---
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-header.hbs'}}
-    <AuHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="App title" @contactRoute="docs.patterns.au-header">
+  {{#demo.example name='au-main-header.hbs'}}
+    <AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="index" @appTitle="App title" @contactRoute="docs.patterns.au-main-header">
       <AuDropdown @dropdownTitle="Demo dropdown" @dropdownButtonLabel="Account settings" @alignment="right">
         <AuButton @skin="tertiary" role="menuitem">
           <AuIcon @icon="logout" @alignment="left" />Afmelden
         </AuButton>
       </AuDropdown>
-    </AuHeader>
+    </AuMainHeader>
   {{/demo.example}}
-  {{demo.snippet 'au-header.hbs'}}
+  {{demo.snippet 'au-main-header.hbs'}}
 {{/docs-demo}}
 
 ## Properties
+
 - `@brandLink`: pass a link to the logo (the logo has no link if this property is not present)
 - `@appTitle`: pass the header title
 - `@homeRoute`: pass a route for the appTitle link (expected behaviour is to link to the dashboard or homepage of the application)

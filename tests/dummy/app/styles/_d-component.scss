@@ -8,6 +8,20 @@
   border-radius: $au-radius;
 }
 
-  .au-d-component__contrast {
-    box-shadow: 0 0 $au-unit-small rgba($au-gray-900,.1);
-  }
+.au-d-component__contrast {
+  box-shadow: 0 0 $au-unit-small rgba($au-gray-900,.1);
+}
+
+.au-d-component-block {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: $au-gray-200;
+  border: $au-unit-tiny solid tint($au-gray-100,50);
+  padding: $au-unit;
+}
+
+.au-d-component-block--overflow {
+  height: 105%;
+}

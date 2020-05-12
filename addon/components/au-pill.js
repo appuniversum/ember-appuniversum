@@ -2,8 +2,8 @@ import Component from '@glimmer/component';
 
 export default class AuPillComponent extends Component {
   get skin() {
-    if (this.args.skin == "info")
-      return "au-c-pill--info";
+    if (this.args.skin == "border")
+      return "au-c-pill--border";
     if (this.args.skin == "action")
       return "au-c-pill--action";
     if (this.args.skin == "success")
@@ -12,6 +12,6 @@ export default class AuPillComponent extends Component {
       return "au-c-pill--warning";
     if (this.args.skin == "error")
       return "au-c-pill--error";
-    return "";
+    return "au-c-pill--default";
   }
 }

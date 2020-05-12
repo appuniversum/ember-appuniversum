@@ -6,13 +6,13 @@
    ========================================================================== */
 
 $au-pill-color                        : $au-gray-700 !default;
-$au-pill-background-color             : $au-white !default;
+$au-pill-background-color             : $au-gray-200 !default;
 $au-pill-border-width                 : .1rem !default;
 $au-pill-border-color                 : $au-gray-300 !default;
 $au-pill-font-size                    : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
-$au-pill-color-info                   : $au-gray-700 !default;
-$au-pill-background-color-info        : $au-gray-200 !default;
-$au-pill-border-color-info            : $au-gray-300 !default;
+$au-pill-color-border                 : $au-gray-700 !default;
+$au-pill-background-color-border      : $au-white !default;
+$au-pill-border-color-border          : $au-gray-300 !default;
 $au-pill-color-success                : $au-white !default;
 $au-pill-background-color-success     : $au-green-700 !default;
 $au-pill-border-color-success         : $au-green-700 !default;
@@ -33,8 +33,6 @@ $au-pill-border-color-action          : $au-blue-700 !default;
   @include au-font-size($au-base);
   display: inline-flex;
   align-items: center;
-  color: $au-pill-color;
-  background-color: $au-pill-background-color;
   font-family: $au-font;
   font-weight: $au-medium;
   border: $au-pill-border-width solid $au-pill-border-color;
@@ -45,10 +43,16 @@ $au-pill-border-color-action          : $au-blue-700 !default;
 /* Modifiers
   ========================================================================== */
 
-.au-c-pill--info {
-  color: $au-pill-color-info;
-  background-color: $au-pill-background-color-info;
-  border-color: $au-pill-border-color-info;
+.au-c-pill--default {
+  color: $au-pill-color;
+  background-color: $au-pill-background-color;
+  border-color: $au-pill-border-color;
+}
+
+.au-c-pill--border {
+  color: $au-pill-color-border;
+  background-color: $au-pill-background-color-border;
+  border-color: $au-pill-border-color-border;
 }
 
 .au-c-pill--success {

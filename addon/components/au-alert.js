@@ -1,4 +1,6 @@
 import Component from '@glimmer/component';
+import { action } from "@ember/object";
+import { tracked } from "@glimmer/tracking";
 
 export default class AuAlertComponent extends Component {
   get alertSkin() {
@@ -22,4 +24,12 @@ export default class AuAlertComponent extends Component {
   }
 
   // @TODO: add icon switching functionality
+
+  // Close alert
+  @tracked alertVisible = true;
+
+  @action
+  closeAlert() {
+    this.alertVisible = !this.alertVisible;
+  }
 }

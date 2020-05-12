@@ -2,8 +2,8 @@ import Component from '@glimmer/component';
 
 export default class AuBadgeComponent extends Component {
   get skin() {
-    if (this.args.skin == "info")
-      return "au-c-badge--info";
+    if (this.args.skin == "border")
+      return "au-c-badge--border";
     if (this.args.skin == "action")
       return "au-c-badge--action";
     if (this.args.skin == "success")
@@ -12,6 +12,6 @@ export default class AuBadgeComponent extends Component {
       return "au-c-badge--warning";
     if (this.args.skin == "error")
       return "au-c-badge--error";
-    return "";
+    return "au-c-badge--default";
   }
 }

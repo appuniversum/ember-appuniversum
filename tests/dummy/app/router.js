@@ -11,6 +11,9 @@ Router.map(function() {
     this.route("atoms", function() {
       this.route("au-badge");
       this.route("au-button");
+      this.route('au-brand');
+      this.route('au-content');
+      this.route('au-heading');
       this.route('au-icon');
       this.route('au-input');
       this.route('au-link');
@@ -22,10 +25,13 @@ Router.map(function() {
     this.route("components", function() {
       this.route("au-alert");
       this.route("au-dropdown");
+      this.route("au-modal");
     });
 
     this.route("patterns", function() {
-      this.route("au-header");
+      this.route("au-main-container");
+      this.route("au-main-header");
+      this.route("au-main-footer");
       this.route("au-toolbar");
     });
 

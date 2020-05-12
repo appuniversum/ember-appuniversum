@@ -10,8 +10,8 @@
 
     <hr>
 
-    <AuPill @skin="info">
-      Pill - info
+    <AuPill @skin="border">
+      Pill - border
     </AuPill>
 
     <hr>
@@ -49,4 +49,4 @@
 {{/docs-demo}}
 
 ## Properties
-- `@skin`: [ none | info | success | warning | error | action ] - default is white
+- `@skin`: [ none | border | success | warning | error | action ] - default is grey
