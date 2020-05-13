@@ -16,6 +16,12 @@
 
     <hr>
 
+    <AuPill @skin="action">
+      Pill - action
+    </AuPill>
+
+    <hr>
+
     <AuPill @skin="success">
       Pill - success
     </AuPill>
@@ -38,15 +44,9 @@
       <AuIcon @icon="alert-triangle" @alignment="left" />
       Pill - error + icon
     </AuPill>
-
-    <hr>
-
-    <AuPill @skin="action">
-      Pill - action
-    </AuPill>
   {{/demo.example}}
   {{demo.snippet 'au-pill.hbs'}}
 {{/docs-demo}}
 
 ## Properties
-- `@skin`: [ none | border | success | warning | error | action ] - default is grey
+- `@skin`: [ none | border | action | success | warning | error ] - default is grey
