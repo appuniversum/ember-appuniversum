@@ -6,6 +6,7 @@
    ========================================================================== */
 
 $au-badge-icon-size                     : 2rem !default;
+$au-badge-small-icon-size               : 1.5rem !default;
 $au-badge-icon-color                    : $au-gray-700 !default;
 $au-badge-contrast-color                : $au-white !default;
 $au-badge-border-color                  : $au-gray-300 !default;
@@ -31,7 +32,7 @@ $au-badge-error-contrast-color          : $au-red-600 !default;
   width: $au-unit-large;
   margin-right: $au-unit-large / 2;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
@@ -74,4 +75,15 @@ $au-badge-error-contrast-color          : $au-red-600 !default;
 .au-c-badge--error {
   color: $au-badge-error-icon-color;
   background-color: $au-badge-error-contrast-color;
+}
+
+.au-c-badge--small {
+  height: $au-unit-large - $au-unit; // compensate for visual distortion of perfect circle
+  width: $au-unit-large - $au-unit;
+  margin-right: 0;
+
+  .au-c-icon {
+    height: $au-badge-small-icon-size - .1rem; // compensate for visual distortion of perfect circle
+    width: $au-badge-small-icon-size;
+  }
 }
