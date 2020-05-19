@@ -14,6 +14,12 @@ Indicates the main action of the view (only one should be used per view).
 
     <hr>
 
+    <AuButton @size="large">
+      Primary button - large
+    </AuButton>
+
+    <hr>
+
     <AuButton>
       <AuIcon @icon="pencil" @alignment="left" />
       Primary button - icon
@@ -54,6 +60,11 @@ Addon to a primary action (should not be used without the presence of a primary 
   {{#demo.example name='au-button-secondary.hbs'}}
     <AuButton @skin="secondary">
       Secondary button
+    </AuButton>
+
+    <hr>
+    <AuButton @skin="secondary" @size="large">
+      Secondary button - large
     </AuButton>
 
     <hr>
@@ -103,6 +114,13 @@ Can be used as a standalone secondary action.
 
     <hr>
 
+    <AuButton @skin="tertiary" @size="large">
+      <AuIcon @icon="pencil" @alignment="left" />
+      Link button - large
+    </AuButton>
+
+    <hr>
+
     <AuButton @skin="tertiary" @width="block">
       <AuIcon @icon="pencil" @alignment="left" />
       Link button - block
@@ -135,7 +153,37 @@ Can be used as a standalone secondary action.
 ## Properties
 
 - `@skin`: [ secondary | tertiary ] - default is primary
+- `@size`: [ large ] - makes a button larger
 - `@width`: [ block ] - makes a button behave like a block element
 - `@alert`: [ true ] - adds an alert state to the button
 - `@disabled`: [ true ] - adds a disabled state to the button
 - `@loading`: [ true ] - adds a loading state to the button
+
+
+## Button Group
+
+Groups and spaces buttons
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-button-group.hbs'}}
+    <AuButtonGroup>
+      <AuButton>
+        Primary button in group
+      </AuButton>
+      <AuButton @skin="secondary">
+        Secondary button in group
+      </AuButton>
+    </AuButtonGroup>
+
+    <hr>
+    <AuButtonGroup>
+      <AuButton @size="large">
+        Large primary button in group
+      </AuButton>
+      <AuButton @skin="secondary" @size="large">
+        Large secondary button in group
+      </AuButton>
+    </AuButtonGroup>
+  {{/demo.example}}
+  {{demo.snippet 'au-button-group.hbs'}}
+{{/docs-demo}}
