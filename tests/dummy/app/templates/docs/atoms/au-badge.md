@@ -34,3 +34,4 @@
 
 ## Properties
 - `@skin`: [ none | border | success | warning | error | action ] - default is gray
+- `@size`: [ small ] - makes badge smaller
