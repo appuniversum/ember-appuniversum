@@ -6,7 +6,9 @@
    ========================================================================== */
 
 $au-button-height                         : $au-unit-large - $au-unit-small !default;
+$au-button-height-large                   : $au-unit-large !default;
 $au-button-font-size                      : $au-h6 !default;
+$au-button-font-size-large                : $au-h5 !default;
 $au-button-border                         : .1rem !default;
 $au-button-color                          : $au-white !default;
 $au-button-contrast-color                 : $au-blue-700 !default;
@@ -115,6 +117,12 @@ $au-button-radius                         : 0 !default;
 
 /* Modifiers
   ========================================================================== */
+
+.au-c-button--large {
+  @include au-font-size($au-button-font-size-large);
+  padding: $au-unit-small $au-unit-small .1rem+$au-unit-small;
+  height: $au-button-height-large;
+}
 
 // Secondary button
 .au-c-button--secondary {

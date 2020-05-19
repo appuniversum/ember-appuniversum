@@ -1,6 +1,13 @@
 import Component from '@glimmer/component';
 
 export default class AuButton extends Component {
+  get size() {
+    if (this.args.size == "large")
+      return "au-c-button--large";
+    else
+      return "";
+  }
+
   get width() {
     if (this.args.width == "block")
       return "au-c-button--block";
