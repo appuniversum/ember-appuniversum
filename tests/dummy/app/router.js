@@ -26,6 +26,7 @@ Router.map(function() {
       this.route("au-alert");
       this.route("au-dropdown");
       this.route("au-modal");
+      this.route("au-data-table");
     });
 
     this.route("patterns", function() {

@@ -1,0 +1,32 @@
+<div data-table class="au-c-data-table">
+  {{#if hasBlock}}
+    <div class="au-c-data-table__actions au-c-data-table__actions--top">
+      {{#if enableSearch}}
+        {{au-data-table-text-search filter=filter auto=autoSearch}}
+      {{/if}}
+      {{yield (hash
+        menu=(component "au-data-table-menu" data-table=this)
+          )
+          this}}
+    </div>
+    {{yield (hash
+      content=(component "au-data-table-content" content=content noDataMessage=noDataMessage enableSelection=enableSelection enableLineNumbers=enableLineNumbers onClickRow=(optional onClickRow) data-table=this)
+      )
+        this}}
+  {{else}}
+    <div class="au-c-data-table__actions au-c-data-table__actions--top">
+      {{#if enableSearch}}
+        {{au-data-table-text-search filter=filter auto=autoSearch}}
+      {{/if}}
+    </div>
+    {{component "au-data-table-content" content=content noDataMessage=noDataMessage enableSelection=enableSelection enableLineNumbers=enableLineNumbers onClickRow=(optional onClickRow) data-table=this}}
+  {{/if}}
+</div>
+
+{{#if content}}
+  <div class="au-c-data-table__actions au-c-data-table__actions--bottom">
+    {{au-data-table-pagination
+      page=page size=size nbOfItems=content.length sizeOptions=sizeOptions
+      total=content.meta.count links=content.meta.pagination}}
+  </div>
+{{/if}}

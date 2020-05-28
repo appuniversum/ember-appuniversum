@@ -1,0 +1,16 @@
+{{! template-lint-disable no-html-comments }}
+<tr class="au-c-data-table__header">
+  {{#if enableSelection}}
+    <th class="au-c-data-table__header-title"><!-- Checkbox --></th>
+  {{/if}}
+  {{#if enableLineNumbers}}
+    <th class="au-c-data-table__header-title"><!-- Linenumbers --></th>
+  {{/if}}
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{#each fields as |field|}}
+      {{th-sortable field=field label=field currentSorting=sort}}
+    {{/each}}
+  {{/if}}
+</tr>

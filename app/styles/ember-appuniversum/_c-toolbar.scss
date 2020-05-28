@@ -23,7 +23,6 @@ $au-toolbar-font-size       : $au-h6 !default;
 
 .au-c-toolbar__group {
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   align-items: baseline;
 
@@ -56,4 +55,8 @@ $au-toolbar-font-size       : $au-h6 !default;
 
 .au-c-toolbar--large {
   padding: $au-toolbar-spacing*2;
+}
+
+.au-c-toolbar__group--center {
+  align-items: center;
 }

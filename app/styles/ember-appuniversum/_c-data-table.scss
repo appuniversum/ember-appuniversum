@@ -1,0 +1,74 @@
+/* ==================================
+   #DATA TABLE
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+
+/* Component
+  ========================================================================== */
+
+.au-c-data-table {
+
+}
+
+.au-c-data-table__actions {
+
+}
+
+.au-c-data-table__actions--top {
+  margin-bottom: $au-unit;
+}
+
+.au-c-data-table__actions--bottom {
+  padding: $au-unit-small;
+  border-top: 2px solid $au-gray-200;
+}
+
+.au-c-data-table__search {
+  position: relative;
+  min-width: 320px;
+
+  > .au-c-input {
+    padding-right: $au-unit-large;
+  }
+}
+
+.au-c-data-table__search-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  padding: $au-unit-tiny $au-unit-small;
+}
+
+.au-c-data-table__table {
+  display: table;
+  width: 100%;
+
+
+  thead {
+    border-bottom: 2px solid $au-gray-200;
+  }
+
+  tbody {
+
+  }
+
+  tr + tr {
+    border-top: 1px solid $au-gray-200;
+  }
+
+  th,
+  td {
+    text-align: left;
+    padding: $au-unit-small;
+  }
+}
+
+.au-c-data-table__header {
+
+}

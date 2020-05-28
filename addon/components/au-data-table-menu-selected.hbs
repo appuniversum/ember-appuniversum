@@ -1,0 +1,3 @@
+{{#unless data-table.selectionIsEmpty}}
+  {{yield (slice 0 selectionCount data-table.selection) data-table}}
+{{/unless}}

@@ -1,0 +1,12 @@
+{{! template-lint-disable table-groups }}
+<table class="au-c-data-table__table {{tableClass}}">
+  {{#if hasBlock}}
+    {{yield (hash
+        header=(component "au-data-table-content-header" enableSelection=enableSelection enableLineNumbers=enableLineNumbers data-table=data-table)
+        body=(component "au-data-table-content-body" content=content enableSelection=enableSelection enableLineNumbers=enableLineNumbers noDataMessage=noDataMessage onClickRow=(optional onClickRow) data-table=data-table)
+        )}}
+  {{else}}
+    {{component "au-data-table-content-header" enableSelection=enableSelection enableLineNumbers=enableLineNumbers data-table=data-table}}
+    {{component "au-data-table-content-body" content=content enableSelection=enableSelection enableLineNumbers=enableLineNumbers noDataMessage=noDataMessage onClickRow=(optional onClickRow) data-table=data-table}}
+  {{/if}}
+</table>
