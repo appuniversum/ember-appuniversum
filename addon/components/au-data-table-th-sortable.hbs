@@ -1,10 +1,19 @@
-<a role="button" class="data-table__header-title--sortable {{if isSorted " data-table__header-title--sortable-active"}}" {{action "inverseSorting"}}>
+<span class="au-c-data-table__header-title au-c-data-table__header-title--sortable {{if isSorted " is-active"}}">
   {{label}}
   {{#if (eq order "desc")}}
-    <span class="u-visually-hidden">Oplopend sorteren</span>
-
+    <button role="button" {{action "inverseSorting"}} class="au-c-data-table__sort">
+      <span class="au-u-hidden-visually">Oplopend sorteren</span>
+      <AuIcon @icon="nav-down" />
+    </button>
+  {{else if (eq order "asc")}}
+    <button role="button" {{action "inverseSorting"}} class="au-c-data-table__sort">
+      <span class="au-u-hidden-visually">Aflopend sorteren</span>
+      <AuIcon @icon="nav-up" />
+    </button>
   {{else}}
-    <span class="u-visually-hidden">Aflopend sorteren</span>
-
+    <button role="button" {{action "inverseSorting"}} class="au-c-data-table__sort">
+      <span class="au-u-hidden-visually">Sorteren</span>
+      <AuIcon @icon="nav-up-down" />
+    </button>
   {{/if}}
-</a>
+</span>
