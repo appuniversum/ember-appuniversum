@@ -7,6 +7,6 @@
         )}}
   {{else}}
     {{component "au-data-table-content-header" enableSelection=enableSelection enableLineNumbers=enableLineNumbers data-table=data-table}}
-    {{component "au-data-table-content-body" content=content enableSelection=enableSelection enableLineNumbers=enableLineNumbers noDataMessage=noDataMessage onClickRow=(optional onClickRow) data-table=data-table}}
+    {{component "content-body" content=content enableSelection=enableSelection enableLineNumbers=enableLineNumbers noDataMessage=noDataMessage onClickRow=(optional onClickRow) data-table=data-table}}
   {{/if}}
 </table>

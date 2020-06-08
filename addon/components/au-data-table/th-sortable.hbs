@@ -3,12 +3,12 @@
   {{#if (eq order "desc")}}
     <button role="button" {{action "inverseSorting"}} class="au-c-data-table__sort">
       <span class="au-u-hidden-visually">Oplopend sorteren</span>
-      <AuIcon @icon="nav-down" />
+      <AuIcon @icon="nav-up" />
     </button>
   {{else if (eq order "asc")}}
     <button role="button" {{action "inverseSorting"}} class="au-c-data-table__sort">
       <span class="au-u-hidden-visually">Aflopend sorteren</span>
-      <AuIcon @icon="nav-up" />
+      <AuIcon @icon="nav-down" />
     </button>
   {{else}}
     <button role="button" {{action "inverseSorting"}} class="au-c-data-table__sort">

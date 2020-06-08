@@ -1,1 +1,1 @@
-export { default } from '@appuniversum/ember-appuniversum/components/au-data-table-menu-general';
+export { default } from '@appuniversum/ember-appuniversum/components/au-data-table/menu-general';

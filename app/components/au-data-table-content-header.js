@@ -1,1 +1,1 @@
-export { default } from '@appuniversum/ember-appuniversum/components/au-data-table-content-header';
+export { default } from '@appuniversum/ember-appuniversum/components/au-data-table/content-header';

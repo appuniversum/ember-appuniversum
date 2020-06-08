@@ -7,7 +7,7 @@
     <AuDataTable @content={{this.model}} @fields="title description" @noDataMessage="Geen documenten" @sort={{sort}} as |t|>
       <t.menu as |menu|>
         <menu.general>
-          <AuToolbar class="au-o-box au-o-box--tiny">
+          <AuToolbar class="au-o-box">
             <AuHeading @skin="2">
               Notulen zitting
             </AuHeading>

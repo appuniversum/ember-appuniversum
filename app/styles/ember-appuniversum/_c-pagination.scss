@@ -1,0 +1,29 @@
+/* ==================================
+   #PAGINATION
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+/* Component
+   ========================================================================== */
+
+.au-c-pagination {
+  @include au-font-size($au-h6);
+  color: $au-gray-700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.au-c-pagination__list {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.au-c-pagination__list-item {
+  & + & {
+    margin-left: $au-unit-tiny;
+    padding-left: $au-unit-tiny;
+    border-left: .1rem solid $au-gray-200;
+  }
+}

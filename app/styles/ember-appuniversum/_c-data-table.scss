@@ -10,7 +10,9 @@
   ========================================================================== */
 
 .au-c-data-table {
-
+  position: relative;
+  max-height: 100%;
+  overflow: auto;
 }
 
 .au-c-data-table__actions {
@@ -18,12 +20,12 @@
 }
 
 .au-c-data-table__actions--top {
-  margin-bottom: $au-unit;
+
 }
 
 .au-c-data-table__actions--bottom {
-  padding: $au-unit-small;
-  border-top: 2px solid $au-gray-200;
+  padding: $au-unit-small $au-unit;
+  border-top: .1rem solid $au-gray-200;
 }
 
 .au-c-data-table__search {
@@ -46,12 +48,15 @@
 }
 
 .au-c-data-table__table {
+  @include au-font-size($au-h6);
   display: table;
+  position: relative;
   width: 100%;
-
+  border-top: .1rem solid $au-gray-200;
 
   thead {
     border-bottom: 2px solid $au-gray-200;
+    border-top: 0;
   }
 
   tbody {
@@ -63,13 +68,18 @@
   }
 
   tbody tr:nth-child(odd) {
-    background-color: $au-white;
+    background-color: $au-gray-100;
   }
 
   th,
   td {
     text-align: left;
-    padding: $au-unit-small;
+    padding: $au-unit-small $au-unit;
+  }
+
+  th + th,
+  td + td {
+    border-left: .1rem dotted $au-gray-200;
   }
 }
 
