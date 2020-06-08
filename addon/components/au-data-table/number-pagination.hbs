@@ -3,16 +3,16 @@
     <span class="au-u-hidden-visually">Rij </span><strong>{{startItem}} - {{endItem}}</strong> van {{total}}
   </p>
   <ul class="au-c-pagination__list">
-    {{!-- {{#if hasMultiplePages}} --}}
-      {{!-- {{#unless isFirstPage}} --}}
+    {{#if hasMultiplePages}}
+      {{#unless isFirstPage}}
         <li class="au-c-pagination__list-item">
           <button {{action "changePage" links.prev}} class="au-c-button au-c-button--tertiary">
             <AuIcon @icon="nav-left" @alignment="left" /> vorige
             <span class="au-u-hidden-visually"> {{pageSize}} rijen</span>
           </button>
         </li>
-      {{!-- {{/unless}} --}}
-      {{!-- {{#unless isLastPage}} --}}
+      {{/unless}}
+      {{#unless isLastPage}}
         <li class="au-c-pagination__list-item">
           <button {{action "changePage" links.next}} class="au-c-button au-c-button--tertiary">
             volgende
@@ -20,7 +20,7 @@
             <AuIcon @icon="nav-right" @alignment="right" />
           </button>
         </li>
-      {{!-- {{/unless}} --}}
-    {{!-- {{/if}} --}}
+      {{/unless}}
+    {{/if}}
   </ul>
 </div>
