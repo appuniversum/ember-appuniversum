@@ -1,17 +1,12 @@
 /* ==================================
-   #DATA TABLE
+   #DATA TABLE (DRAFT)
    ================================== */
-
-/* Variables
-   ========================================================================== */
-
-
-/* Component
-  ========================================================================== */
 
 .au-c-data-table {
   position: relative;
-  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: auto;
 }
 
@@ -25,7 +20,7 @@
 
 .au-c-data-table__actions--bottom {
   padding: $au-unit-small $au-unit;
-  border-top: .1rem solid $au-gray-200;
+  border-top: .2rem solid $au-gray-200;
 }
 
 .au-c-data-table__search {
@@ -49,32 +44,43 @@
 
 .au-c-data-table__table {
   @include au-font-size($au-h6);
+  flex-grow: 1;
   display: table;
   position: relative;
   width: 100%;
-  border-top: .1rem solid $au-gray-200;
+  overflow: auto;
+  border-collapse: collapse;
 
   thead {
-    border-bottom: 2px solid $au-gray-200;
-    border-top: 0;
-  }
-
-  tbody {
-
+    border: 0;
   }
 
   tr + tr {
-    border-top: 1px solid $au-gray-200;
+    border-top: .1rem solid $au-gray-200;
   }
 
   tbody tr:nth-child(odd) {
     background-color: $au-gray-100;
   }
 
+  tbody tr:nth-child(even) {
+    background-color: $au-white;
+  }
+
   th,
   td {
     text-align: left;
-    padding: $au-unit-small $au-unit;
+    padding: $au-unit-small;
+  }
+
+  th:first-child,
+  td:first-child {
+    padding-left: $au-unit;
+  }
+
+  th:last-child,
+  td:last-child {
+    padding-right: $au-unit;
   }
 
   th + th,
@@ -84,7 +90,28 @@
 }
 
 .au-c-data-table__header {
+  position: sticky;
+  top: 0;
 
+  th {
+    border: 0;
+    outline: 0;
+  }
+
+  th {
+    box-shadow: 0 .1rem 0 .1rem $au-gray-200;
+  }
+
+  &:after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: .1rem;
+    background-color: $au-gray-200;
+  }
 }
 
 .au-c-data-table__sort {
@@ -134,4 +161,8 @@
     color: $au-blue-700;
     text-decoration: none;
   }
+}
+
+.au-c-data-table__message {
+  border-bottom: .1rem solid $au-gray-200;
 }

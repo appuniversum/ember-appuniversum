@@ -1,6 +1,8 @@
-# Data table
+# Data table (draft)
 
 ---
+
+Wrapper for [https://github.com/mu-semtech/ember-data-table](https://github.com/mu-semtech/ember-data-table)
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-data-table.hbs'}}
