@@ -23,12 +23,12 @@
     {{/if}}
     {{component "au-data-table-content" content=content noDataMessage=noDataMessage enableSelection=enableSelection enableLineNumbers=enableLineNumbers onClickRow=(optional onClickRow) data-table=this}}
   {{/if}}
-</div>
 
-{{#if content}}
+  {{#if content}}
   <div class="au-c-data-table__actions au-c-data-table__actions--bottom">
     {{au-data-table-number-pagination
       page=page size=size nbOfItems=content.length sizeOptions=sizeOptions
       total=content.meta.count links=content.meta.pagination}}
   </div>
-{{/if}}
+  {{/if}}
+</div>
