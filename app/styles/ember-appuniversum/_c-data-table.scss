@@ -48,6 +48,7 @@
   flex-grow: 999;
   overflow: auto;
   position: relative;
+  border-top: 1px solid $au-gray-300;
 }
 
 .au-c-data-table__table {
@@ -59,6 +60,7 @@
 
   thead {
     position: relative;
+    width: 100%;
     z-index: $au-z-index-alpha;
     border: 0;
     @include au-font-size($au-base,1.2);
@@ -119,26 +121,16 @@
 }
 
 .au-c-data-table__header {
-  position: sticky;
-  top: 0;
-  box-shadow: 0 .1rem 0 .1rem $au-gray-300;
   background-color: $au-white;
 
   th {
+    position: sticky;
+    z-index: 1;
+    top: 0;
     border: 0;
     outline: 0;
     background-color: $au-white;
-  }
-
-  &:after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    height: .1rem;
-    background-color: $au-gray-300;
+    box-shadow: 0 .2rem 0 0 $au-gray-300;
   }
 }
 
