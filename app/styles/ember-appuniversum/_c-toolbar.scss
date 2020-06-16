@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$au-toolbar-spacing         : $au-unit-small !default;
+$au-toolbar-spacing         : $au-unit-tiny !default;
 $au-toolbar-border-width    : .2rem !default;
 $au-toolbar-border-color    : $au-gray-200 !default;
 $au-toolbar-tint            : $au-gray-100 !default;
@@ -16,9 +16,11 @@ $au-toolbar-font-size       : $au-h6 !default;
 
 .au-c-toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   font-size: $au-toolbar-font-size;
+  margin: -$au-toolbar-spacing
 }
 
 .au-c-toolbar__group {
@@ -26,8 +28,8 @@ $au-toolbar-font-size       : $au-h6 !default;
   justify-content: flex-start;
   align-items: baseline;
 
-  > * + * {
-    margin-left: $au-toolbar-spacing;
+  > * {
+    margin: $au-toolbar-spacing;
   }
 }
 
