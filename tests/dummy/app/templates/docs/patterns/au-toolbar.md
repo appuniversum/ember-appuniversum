@@ -15,9 +15,11 @@
           Secondary button
         </AuButton>
       </AuToolbarGroup>
-      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-        Secondary link
-      </AuLink>
+      <AuToolbarGroup>
+        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+          Secondary link
+        </AuLink>
+      </AuToolbarGroup>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar.hbs'}}
@@ -54,9 +56,11 @@
           Secondary button
         </AuButton>
       </AuToolbarGroup>
-      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-        Secondary link
-      </AuLink>
+      <AuToolbarGroup>
+        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+          Secondary link
+        </AuLink>
+      </AuToolbarGroup>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-border-top.hbs'}}
@@ -75,9 +79,11 @@
           Secondary button
         </AuButton>
       </AuToolbarGroup>
-      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-        Secondary link
-      </AuLink>
+      <AuToolbarGroup>
+        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+          Secondary link
+        </AuLink>
+      </AuToolbarGroup>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-border-bottom.hbs'}}
@@ -96,9 +102,11 @@
           Secondary button
         </AuButton>
       </AuToolbarGroup>
-      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-        Secondary link
-      </AuLink>
+      <AuToolbarGroup>
+        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+          Secondary link
+        </AuLink>
+      </AuToolbarGroup>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-skin.hbs'}}
@@ -117,9 +125,11 @@
           Secondary button
         </AuButton>
       </AuToolbarGroup>
-      <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
-        Secondary link
-      </AuLink>
+      <AuToolbarGroup>
+        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+          Secondary link
+        </AuLink>
+      </AuToolbarGroup>
     </AuToolbar>
   {{/demo.example}}
   {{demo.snippet 'au-toolbar-size.hbs'}}
