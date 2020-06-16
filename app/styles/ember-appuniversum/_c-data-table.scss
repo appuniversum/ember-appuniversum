@@ -27,7 +27,7 @@
 
 .au-c-data-table__search {
   position: relative;
-  min-width: 320px;
+  min-width: 32rem;
 
   > .au-c-input {
     padding-right: $au-unit-large;
@@ -49,13 +49,14 @@
   overflow: auto;
   position: relative;
   border-top: 1px solid $au-gray-300;
+  max-width: 100%;
 }
 
 .au-c-data-table__table {
   @include au-font-size($au-h6);
   display: table;
   position: relative;
-  width: 100%;
+  min-width: 50rem;
   border-collapse: collapse;
 
   thead {
@@ -92,6 +93,12 @@
     min-width: 18ch;
     max-width: 55ch;
     position: relative;
+  }
+
+  th.is-selectable,
+  td.is-selectable {
+    width: $au-unit-large + $au-unit-tiny;
+    min-width: auto;
   }
 
   th:first-child,

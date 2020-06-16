@@ -31,6 +31,7 @@ $au-main-container-height: calc(100vh - 4.2rem) !default;
 
 .au-c-main-container__content {
   flex-basis: 100%;
+  max-width: 100%;
 
   @include mq(medium) {
     height: 100%;
