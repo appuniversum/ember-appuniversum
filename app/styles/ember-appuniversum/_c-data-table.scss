@@ -49,14 +49,15 @@
   overflow: auto;
   position: relative;
   border-top: 1px solid $au-gray-300;
-  max-width: 100%;
+  width: 100%;
 }
 
 .au-c-data-table__table {
   @include au-font-size($au-h6);
   display: table;
   position: relative;
-  min-width: 50rem;
+  min-width: 70rem;
+  width: 100%;
   border-collapse: collapse;
 
   thead {
