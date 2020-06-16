@@ -89,9 +89,12 @@
     padding: $au-unit-small;
   }
 
+  th {
+    white-space: nowrap;
+  }
+
   th,
   td {
-    min-width: 18ch;
     max-width: 55ch;
     position: relative;
   }
@@ -99,7 +102,6 @@
   th.is-selectable,
   td.is-selectable {
     width: $au-unit-large + $au-unit-tiny;
-    min-width: auto;
   }
 
   th:first-child,

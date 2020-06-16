@@ -25,6 +25,8 @@ export default class AuToolbar extends Component {
   }
 
   get size() {
+    if (this.args.size == "medium")
+      return "au-c-toolbar--medium";
     if (this.args.size == "large")
       return "au-c-toolbar--large";
     else

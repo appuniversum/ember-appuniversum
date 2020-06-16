@@ -139,4 +139,4 @@
 - `@reverse`: [ true ] - reverse the direction of the child components
 - `@border`: [ top | bottom ] - adds a border a padding to the top|bottom
 - `@skin`: [ tint ] - adds a background color
-- `@size`: [ large ] - adds more padding
+- `@size`: [ medium | large ] - adds more padding
