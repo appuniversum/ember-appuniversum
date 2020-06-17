@@ -166,10 +166,6 @@
   &:focus {
     outline: $au-outline;
   }
-
-  .au-c-data-table__header-title--sortable.is-active & {
-    color: $au-blue-700;
-  }
 }
 
 .au-c-data-table__header-title {
@@ -182,14 +178,17 @@
   position: relative;
   text-decoration: underline;
   text-decoration-color: $au-gray-300;
+  color: $au-gray-600;
+  transition: color $au-transition;
 
   &:hover {
+    color: $au-gray-900;
     text-decoration: none;
   }
 
   &.is-active {
-    color: $au-blue-700;
     text-decoration: none;
+    color: $au-gray-900;
   }
 }
 

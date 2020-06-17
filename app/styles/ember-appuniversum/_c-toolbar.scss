@@ -27,6 +27,10 @@ $au-toolbar-font-size       : $au-h6 !default;
   justify-content: flex-start;
   align-items: baseline;
 
+  > * + * {
+    margin-left: $au-toolbar-spacing;
+  }
+
   .au-c-toolbar--small &,
   .au-c-toolbar--medium &,
   .au-c-toolbar--large & {
