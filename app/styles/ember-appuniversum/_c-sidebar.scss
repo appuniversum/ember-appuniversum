@@ -30,6 +30,10 @@ $au-sidebar-footer-padding: $au-unit !default;
 
 .au-c-sidebar__header {
   padding: $au-sidebar-header-padding;
+
+  @include mq(medium) {
+    padding: $au-sidebar-header-padding*2 $au-sidebar-header-padding*2 $au-sidebar-header-padding/2;
+  }
 }
 
 .au-c-sidebar__content {

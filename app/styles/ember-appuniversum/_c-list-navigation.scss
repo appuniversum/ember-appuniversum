@@ -89,6 +89,8 @@ $au-list-navigation-border-color: $au-gray-200 !default;
   }
 
   @include mq(medium) {
+    padding: $au-unit-small $au-unit;
+
     &.active {
       box-shadow: inset -.3rem 0 0 $au-gray-300;
       background-color: $au-gray-200;
