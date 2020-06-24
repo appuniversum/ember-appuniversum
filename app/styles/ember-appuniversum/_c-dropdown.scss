@@ -198,12 +198,16 @@ $au-dropdown-caret-size        : .4rem !default;
     border-top-left-radius: $au-radius;
   }
 
+  &:last-child {
+    border-bottom-right-radius: $au-radius;
+    border-bottom-left-radius: $au-radius;
+  }
+
   &.active {
     color: $au-gray-800;
     background-color: $au-gray-100;
     font-weight: $au-medium;
-    outline: .2rem solid $white;
-    outline-offset: -.3rem;
+    outline-offset: -.2rem;
   }
 
   &:focus,
