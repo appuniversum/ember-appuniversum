@@ -45,15 +45,16 @@ $au-main-header-divider-rotation  : -19deg !default;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  width: $au-unit-huge;
+  max-width: $au-unit-huge;
 
   @include mq(xsmall) {
-    width: auto;
+    max-width: $au-unit-huge*1.5;
   }
 
   @include mq(small) {
     margin-left: 0;
     padding-left: $au-unit;
+    max-width: $au-unit-huge*2;
 
     &::before {
       content: "";
@@ -66,6 +67,10 @@ $au-main-header-divider-rotation  : -19deg !default;
       height: 3rem;
       background-color: $au-main-header-border;
     }
+  }
+
+  @include mq(medium) {
+    max-width: initial;
   }
 }
 
