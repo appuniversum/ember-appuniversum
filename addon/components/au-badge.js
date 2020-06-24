@@ -6,6 +6,8 @@ export default class AuBadgeComponent extends Component {
       return "au-c-badge--border";
     if (this.args.skin == "action")
       return "au-c-badge--action";
+    if (this.args.skin == "brand")
+      return "au-c-badge--brand";
     if (this.args.skin == "success")
       return "au-c-badge--success";
     if (this.args.skin == "warning")

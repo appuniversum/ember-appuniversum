@@ -1,0 +1,20 @@
+/* ==================================
+   #CARD
+   ================================== */
+
+/* Component
+  ========================================================================== */
+
+.au-c-card {
+  border: 1px solid $au-gray-300;
+}
+
+.au-c-card--fill {
+  height: 100%;
+}
+
+.au-c-card--flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

@@ -10,6 +10,8 @@
     <hr>
     <AuBadge @icon="info-circle" @skin="border" />
     <hr>
+    <AuBadge @icon="info-circle" @skin="brand" />
+    <hr>
     <AuBadge @icon="info-circle" @skin="success" />
     <hr>
     <AuBadge @icon="info-circle" @skin="warning" />
@@ -33,5 +35,5 @@
 {{/docs-demo}}
 
 ## Properties
-- `@skin`: [ none | border | success | warning | error | action ] - default is gray
+- `@skin`: [ none | border | brand | success | warning | error | action ] - default is gray
 - `@size`: [ small ] - makes badge smaller

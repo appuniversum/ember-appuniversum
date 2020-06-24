@@ -10,6 +10,8 @@ $au-badge-small-icon-size               : 1.5rem !default;
 $au-badge-icon-color                    : $au-gray-700 !default;
 $au-badge-contrast-color                : $au-white !default;
 $au-badge-border-color                  : $au-gray-300 !default;
+$au-badge-brand-icon-color              : $au-yellow-900 !default;
+$au-badge-brand-contrast-color          : $au-yellow-300 !default;
 $au-badge-default-icon-color            : $au-gray-800 !default;
 $au-badge-default-contrast-color        : $au-gray-200 !default;
 $au-badge-action-icon-color             : $au-white !default;
@@ -50,6 +52,11 @@ $au-badge-error-contrast-color          : $au-red-600 !default;
 .au-c-badge--default {
   color: $au-badge-default-icon-color;
   background-color: $au-badge-default-contrast-color;
+}
+
+.au-c-badge--brand {
+  color: $au-badge-brand-icon-color;
+  background-color: $au-badge-brand-contrast-color;
 }
 
 .au-c-badge--border {
