@@ -115,6 +115,10 @@ $au-modal-backdrop-z-index : 9 !default;
   &:focus {
     color: $au-gray-600;
   }
+
+  &:focus {
+    outline: $au-outline;
+  }
 }
 
 .au-c-modal__body {

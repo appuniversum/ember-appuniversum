@@ -13,6 +13,7 @@ $au-label-error-badge-font-size   : 1.2rem !default;
   ========================================================================== */
 
 .au-c-label {
+  @include au-font-size($au-h6);
   color: $au-label-color;
   font-family: $au-font;
   font-weight: $au-medium;
