@@ -48,4 +48,4 @@
 
 ## Properties
 
-- `@skin`: [ small ] - smaller text and vertical spacing
+- `@skin`: [ small | large ] - smaller/larger text and vertical spacing

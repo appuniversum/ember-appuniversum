@@ -142,3 +142,111 @@ $au-content-small         : $au-base !default;
     margin-top: $au-unit-tiny;
   }
 }
+
+.au-c-content--large {
+  @include au-font-size($au-content-heading-6);
+
+  h1,
+  .au-c-heading--1 {
+    @include au-font-size($au-content-heading-2);
+    font-family: $au-font-secondary;
+    font-weight: $au-light;
+  }
+
+  h2,
+  .au-c-heading--2 {
+    @include au-font-size($au-content-heading-3);
+    font-family: $au-font-secondary;
+    font-weight: $au-light;
+  }
+
+  h3,
+  .au-c-heading--3 {
+    @include au-font-size($au-content-heading-4);
+    font-family: $au-font-secondary;
+    font-weight: $au-medium;
+  }
+
+  h4,
+  .au-c-heading--4 {
+    @include au-font-size($au-content-heading-5);
+    font-family: $au-font;
+    font-weight: $au-medium;
+  }
+
+  h5,
+  .au-c-heading--5 {
+    @include au-font-size($au-content-heading-6);
+    font-family: $au-font;
+    font-weight: $au-medium;
+  }
+
+  h6,
+  .au-c-heading--6 {
+    @include au-font-size($au-content-heading-6);
+    font-family: $au-font;
+    font-weight: $au-medium;
+  }
+
+  > * + * {
+    margin-top: $au-unit;
+  }
+
+  > * + h1,
+  > * + h2,
+  > * + h3 {
+    margin-top: $au-unit-large;
+  }
+
+  > * + h4,
+  > * + h5,
+  > * + h6 {
+    margin-top: $au-unit;
+  }
+
+  @include mq(medium) {
+    @include au-font-size($au-content-heading-5);
+
+    h1,
+    .au-c-heading--1 {
+      @include au-font-size($au-content-heading-1);
+      font-family: $au-font-secondary;
+      font-weight: $au-light;
+    }
+
+    h2,
+    .au-c-heading--2 {
+      @include au-font-size($au-content-heading-2);
+      font-family: $au-font-secondary;
+      font-weight: $au-light;
+    }
+
+    h3,
+    .au-c-heading--3 {
+      @include au-font-size($au-content-heading-3);
+      font-family: $au-font-secondary;
+      font-weight: $au-medium;
+    }
+
+    h4,
+    .au-c-heading--4 {
+      @include au-font-size($au-content-heading-4);
+      font-family: $au-font;
+      font-weight: $au-medium;
+    }
+
+    h5,
+    .au-c-heading--5 {
+      @include au-font-size($au-content-heading-5);
+      font-family: $au-font;
+      font-weight: $au-medium;
+    }
+
+    h6,
+    .au-c-heading--6 {
+      @include au-font-size($au-content-heading-6);
+      font-family: $au-font;
+      font-weight: $au-medium;
+    }
+  }
+}

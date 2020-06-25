@@ -14,7 +14,7 @@ $au-button-color                          : $au-white !default;
 $au-button-contrast-color                 : $au-blue-700 !default;
 $au-button-contrast-hover-color           : $au-blue-600 !default;
 $au-button-contrast-active-color          : $au-blue-600 !default;
-$au-button-contrast-visited-color         : $au-blue-900 !default;
+$au-button-contrast-visited-color         : $au-blue-600 !default;
 $au-button-secondary-color                : $au-gray-700 !default;
 $au-button-secondary-hover-color          : $au-gray-600 !default;
 $au-button-tertiary-height                : $au-unit !default;
@@ -44,14 +44,18 @@ $au-button-radius                         : 0 !default;
   align-items: center;
   padding: 0 $au-unit-small .1rem; // Visually center the text in the button
   border-radius: $au-button-radius;
-  border: $au-button-border solid $au-button-contrast-color;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: $au-button-color;
-  background-color: $au-button-contrast-color;
   box-shadow: inset 0px 0px 0px $au-button-border transparent;
   transition: color $au-transition, background-color $au-transition, border-color $au-transition, box-shadow $au-transition;
+
+  &,
+  &:visited {
+    color: $au-button-color;
+    background-color: $au-button-contrast-color;
+    border: $au-button-border solid $au-button-contrast-color;
+  }
 
   &:hover,
   &:focus {
@@ -68,9 +72,7 @@ $au-button-radius                         : 0 !default;
     background-color: $au-button-contrast-active-color;
   }
 
-  &:visited {
-    background-color: $au-button-contrast-visited-color;
-  }
+
 
   &.is-disabled,
   &.is-disabled:hover,
@@ -126,12 +128,11 @@ $au-button-radius                         : 0 !default;
 
 // Secondary button
 .au-c-button--secondary {
-  background-color: transparent;
-  border-color: tint($au-button-secondary-color,50);
-
   &,
   &:visited {
     color: $au-button-secondary-color;
+    background-color: transparent;
+    border-color: tint($au-button-secondary-color,50);
   }
 
   &:hover,
