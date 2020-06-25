@@ -51,6 +51,10 @@ $au-list-navigation-border-color: $au-gray-200 !default;
   color: $au-gray-600;
   text-transform: uppercase;
   border-bottom: 1px solid $au-list-navigation-border-color;
+
+  @include mq(medium) {
+    padding: $au-unit-small $au-unit-small + $au-unit-tiny;
+  }
 }
 
 .au-c-list-navigation__link {
@@ -89,7 +93,7 @@ $au-list-navigation-border-color: $au-gray-200 !default;
   }
 
   @include mq(medium) {
-    padding: $au-unit-small $au-unit;
+    padding: $au-unit-small $au-unit-small + $au-unit-tiny;
 
     &.active {
       box-shadow: inset -.3rem 0 0 $au-gray-300;

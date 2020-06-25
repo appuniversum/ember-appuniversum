@@ -32,7 +32,7 @@ $au-sidebar-footer-padding: $au-unit !default;
   padding: $au-sidebar-header-padding;
 
   @include mq(medium) {
-    padding: $au-sidebar-header-padding*2 $au-sidebar-header-padding*2 $au-sidebar-header-padding/2;
+    padding: $au-sidebar-header-padding*1.5 $au-sidebar-header-padding*1.5 $au-sidebar-header-padding/2;
   }
 }
 
