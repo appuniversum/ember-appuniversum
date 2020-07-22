@@ -28,6 +28,7 @@ Router.map(function() {
       this.route("au-dropdown");
       this.route("au-modal");
       this.route("au-data-table");
+      this.route("ember-power-select");
     });
 
     this.route("patterns", function() {
