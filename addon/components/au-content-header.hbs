@@ -1,0 +1,19 @@
+<div role="banner" class="au-c-content-header">
+  <picture class="au-c-content-header__bg">
+    {{yield}}
+  </picture>
+  <div class="au-c-content-header__wrapper">
+    <div class="au-o-layout">
+      {{#if @titlePartOne }}
+      <span class="au-c-content-header__top">
+        {{@titlePartOne}}
+      </span>
+      {{/if}}
+      {{#if @titlePartTwo }}
+      <span class="au-c-content-header__bottom">
+        {{@titlePartTwo}}
+      </span>
+      {{/if}}
+    </div>
+  </div>
+</div>

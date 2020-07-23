@@ -1,0 +1,87 @@
+/* ==================================
+   #CONTENT HEADER
+   ================================== */
+
+/* Component
+   ========================================================================== */
+
+.au-c-content-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  max-height: 40rem;
+  min-height: 10rem;
+  color: $au-gray-900;
+  background-color: $au-yellow-300;
+}
+
+.au-c-content-header__bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  overflow: hidden;
+  transform-origin: 100% 50%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-bottom: 40rem solid
+    $au-yellow-300;
+    border-right: 13.68rem solid
+    transparent;
+  }
+
+  @include mq(medium) {
+    width: 50%;
+  }
+}
+
+.au-c-content-header__wrapper {
+  width: 100%;
+  padding-top: $au-unit;
+  padding-bottom: $au-unit;
+
+  @include mq(medium) {
+    padding-top: $au-unit-large;
+    padding-bottom: $au-unit-large;
+  }
+}
+
+.au-c-content-header__top,
+.au-c-content-header__bottom {
+  @include au-font-size($au-h4,1);
+  font-family: $au-font;
+  display: block;
+  max-width: 60%;
+
+  @include mq(medium) {
+    @include au-font-size($au-h3,1.1);
+    max-width: 50%;
+  }
+}
+
+.au-c-content-header__top {
+  font-weight: $au-regular;
+}
+
+.au-c-content-header__bottom {
+  font-weight: $au-medium;
+}
