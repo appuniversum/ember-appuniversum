@@ -20,6 +20,7 @@ Router.map(function() {
       this.route("au-navigation-link");
       this.route("au-pill");
       this.route('au-textarea');
+      this.route('au-loader');
     });
 
     this.route("components", function() {

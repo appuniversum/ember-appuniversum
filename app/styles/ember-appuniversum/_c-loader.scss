@@ -1,0 +1,61 @@
+/* ==================================
+   #LOADER
+   ================================== */
+
+/* Component
+   ========================================================================== */
+
+.au-c-loader {
+  display: block;
+  position: relative;
+  width: 3rem + $au-unit;
+  height: 3rem + $au-unit;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - 2rem),-50%);
+    width: .4rem;
+    height: .4rem;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 1rem 0 $au-white, 2rem 0 $au-white, 3rem 0 $au-white;
+    animation: loader-wave infinite 1s linear;
+  }
+}
+
+.au-c-loader--small {
+  width: 3rem;
+  height: 3rem;
+}
+
+.au-c-loader--large {
+  width: 3rem + $au-unit-large;
+  height: 3rem + $au-unit-large;
+}
+
+@keyframes loader-wave {
+  0%,
+  100%,
+  60% {
+    box-shadow: 1rem 0 $au-gray-600, 2rem 0 $au-gray-600, 3rem 0 $au-gray-600
+  }
+  10% {
+    box-shadow: 1rem -.3rem $au-gray-600, 2rem 0 $au-gray-600, 3rem 0 $au-gray-600
+  }
+  20% {
+    box-shadow: 1rem -.6rem $au-gray-600, 2rem -.3rem $au-gray-600, 3rem 0 $au-gray-600
+  }
+  30% {
+    box-shadow: 1rem -.3rem $au-gray-600, 2rem -.6rem $au-gray-600, 3rem -.3rem $au-gray-600
+  }
+  40% {
+    box-shadow: 1rem 0 $au-gray-600, 2rem -.3rem $au-gray-600, 3rem -.6rem $au-gray-600
+  }
+  50% {
+    box-shadow: 1rem 0 $au-gray-600, 2rem 0 $au-gray-600, 3rem -.3rem $au-gray-600
+  }
+}
