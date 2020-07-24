@@ -30,8 +30,9 @@ $au-input-font-size                 : $au-h6 !default;
 
 .au-c-input:focus {
   outline: none;
-  border-color: $au-yellow-400;
-  box-shadow: inset 0 0 0 .1rem $au-yellow-400;
+  border-width: .1rem !important; // Temporary overide for Webuniversum
+  border-color: $au-yellow-400 !important; // Temporary overide for Webuniversum
+  box-shadow: inset 0 0 0 .2rem $au-yellow-400 !important; // Temporary overide for Webuniversum
 }
 
 /* Modifiers

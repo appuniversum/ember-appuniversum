@@ -18,7 +18,12 @@ $au-label-error-badge-font-size   : 1.2rem !default;
   font-family: $au-font;
   font-weight: $au-medium;
   margin-bottom: $au-unit-tiny;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+
+  > .au-c-pill {
+    margin-left: $au-unit-tiny;
+  }
 }
 
 
@@ -29,18 +34,17 @@ $au-label-error-badge-font-size   : 1.2rem !default;
   position: relative;
 
   &:before {
-    font-size: $au-label-error-badge-font-size;
-    line-height: 1.7;
     content: "!";
-    padding: 0;
+    font-size: $au-label-error-badge-font-size;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     color: $au-white;
-    position: absolute;
-    top: .2rem;
-    left: -$au-unit;
+    position: relative;
     background-color: $au-label-error-badge-color;
     width: $au-unit-small * 1.5;
     height: $au-unit-small * 1.5 - .05rem;
-    border-radius: $au-unit-small;
-    text-align: center;
+    border-radius: $au-unit-small * 1.5;
+    margin-right: $au-unit-tiny;
   }
 }
