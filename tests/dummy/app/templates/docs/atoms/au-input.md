@@ -6,20 +6,16 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-input.hbs'}}
-    <div class="au-o-grid">
-      <div class="au-o-grid__item au-u-1-1">
+    <div class="au-c-form">
+      <p>
         <AuLabel for="input-regular">Normal input</AuLabel>
         <AuInput id="input-regular" />
-      </div>
+      </p>
 
-      <div class="au-o-grid__item au-u-1-1">
-        <div class="au-o-grid au-o-grid--flush au-u-margin-bottom-tiny">
-          <div class="au-o-grid__item au-u-1-2">
-            <AuLabel for="input-regular">Block input</AuLabel>
-          </div>
-        </div>
+      <p>
+        <AuLabel for="input-regular">Block input</AuLabel>
         <AuInput id="input-regular" @width="block"/>
-      </div>
+      </p>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-input.hbs'}}
@@ -30,18 +26,14 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-input-required.hbs'}}
-    <div class="au-o-grid">
-      <div class="au-o-grid__item au-u-1-1">
-        <div class="au-o-grid au-o-grid--flush au-u-margin-bottom-tiny">
-          <div class="au-o-grid__item au-u-1-2">
-            <AuLabel for="input-required">Input required</AuLabel>
-          </div>
-          <div class="au-o-grid__item au-u-1-2 au-u-text-right">
-            <AuPill>Verplicht</AuPill>
-          </div>
-        </div>
+    <div class="au-c-form">
+      <p>
+        <AuLabel for="input-required">
+          Input required
+          <AuPill>Verplicht</AuPill>
+        </AuLabel>
         <AuInput id="input-required" @width="block"/>
-      </div>
+      </p>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-input-required.hbs'}}
@@ -52,10 +44,12 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-input-error.hbs'}}
-    <div class="au-u-margin-left">
-      <AuLabel @error="true" for="input-error">Normal input</AuLabel>
-      <AuInput id="input-error" @error="error" @width="block"/>
-      <AuHelpText @error="true">Something is wrong.</AuHelpText>
+    <div class="au-c-form">
+      <p>
+        <AuLabel @error="true" for="input-error">Normal input</AuLabel>
+        <AuInput id="input-error" @error="error" @width="block"/>
+        <AuHelpText @error="true">Something is wrong.</AuHelpText>
+      </p>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-input-error.hbs'}}

@@ -15,6 +15,7 @@ $au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-smal
 
 .au-c-help-text {
   @include au-font-size($au-help-text-font-size);
+  display: block;
   color: $au-help-text-color;
   margin-top: $au-unit-tiny;
 }

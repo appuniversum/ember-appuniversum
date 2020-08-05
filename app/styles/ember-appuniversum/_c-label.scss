@@ -18,7 +18,7 @@ $au-label-error-badge-font-size   : 1.2rem !default;
   font-family: $au-font;
   font-weight: $au-medium;
   margin-bottom: $au-unit-tiny;
-  display: inline-flex;
+  display: flex;
   align-items: center;
 
   > .au-c-pill {

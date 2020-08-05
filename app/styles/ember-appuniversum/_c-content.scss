@@ -64,6 +64,19 @@ $au-content-small         : $au-base !default;
     font-weight: $au-medium;
   }
 
+  ul:not(.au-c-list-horizontal) {
+    list-style: disc;
+    margin-left: $au-unit;
+  }
+
+  ul:not(.au-c-list-horizontal) ul {
+    list-style: circle;
+  }
+
+  ul:not(.au-c-list-horizontal) li + li {
+    margin-top: $au-unit-tiny;
+  }
+
   > * + * {
     margin-top: $au-unit;
   }
