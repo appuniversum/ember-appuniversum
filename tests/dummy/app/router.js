@@ -13,6 +13,7 @@ Router.map(function() {
       this.route("au-button");
       this.route('au-brand');
       this.route('au-content');
+      this.route('au-control');
       this.route('au-heading');
       this.route('au-icon');
       this.route('au-input');

@@ -13,8 +13,8 @@
       </p>
 
       <p>
-        <AuLabel for="input-regular">Block input</AuLabel>
-        <AuInput id="input-regular" @width="block"/>
+        <AuLabel for="input-block">Block input</AuLabel>
+        <AuInput id="input-block" @width="block"/>
       </p>
     </div>
   {{/demo.example}}
@@ -28,11 +28,11 @@
   {{#demo.example name='au-input-required.hbs'}}
     <div class="au-c-form">
       <p>
-        <AuLabel for="input-required">
+        <AuLabel for="input-required-block">
           Input required
           <AuPill>Verplicht</AuPill>
         </AuLabel>
-        <AuInput id="input-required" @width="block"/>
+        <AuInput id="input-required-block" @width="block"/>
       </p>
     </div>
   {{/demo.example}}

@@ -1,0 +1,80 @@
+/* ==================================
+   #CONTROL: radio/checkbox
+   https://github.com/mdo/wtf-forms/blob/master/wtf-forms.css
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+/* Component
+   ========================================================================== */
+
+.au-c-control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: $au-gray-800;
+  cursor: pointer;
+}
+
+.au-c-control__input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+}
+
+.au-c-control__indicator {
+  position: relative;
+  bottom: .1ex;
+  display: block;
+  width:  $au-unit-small + $au-unit-tiny;
+  height: $au-unit-small + $au-unit-tiny;
+  line-height: $au-unit-small + $au-unit-tiny;
+  color: $au-gray-100;
+  text-align: center;
+  background-color: $au-gray-100;
+  background-size: $au-unit-small;
+  background-position: center center;
+  background-repeat: no-repeat;
+  user-select: none;
+  border: .1rem solid $au-gray-300;
+  margin-right: $au-unit-tiny;
+}
+
+/* Focus */
+.au-c-control__input:focus ~ .au-c-control__indicator {
+  outline: $au-outline;
+  outline-offset: .2rem;
+}
+
+/* Checked state */
+.au-c-control__input:checked ~ .au-c-control__indicator {
+  color: $au-white;
+  background-color: $au-blue-600;
+  border-color: $au-blue-700;
+}
+
+/* Active */
+.au-c-control__input:active ~ .au-c-control__indicator {
+  color: $au-white;
+  background-color: $au-blue-600;
+  border-color: $au-blue-700;
+}
+
+/* Checkbox modifiers */
+.au-c-control--checkbox .au-c-control__indicator {
+  border-radius: .25rem;
+}
+
+.au-c-control--checkbox .au-c-control__input:checked ~ .au-c-control__indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+/* Radio modifiers */
+.au-c-control--radio .au-c-control__indicator {
+  border-radius: 50%;
+}
+
+.au-c-control--radio .au-c-control__input:checked ~ .au-c-control__indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}

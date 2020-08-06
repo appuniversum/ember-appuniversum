@@ -72,8 +72,6 @@ $au-button-radius                         : 0 !default;
     background-color: $au-button-contrast-active-color;
   }
 
-
-
   &.is-disabled,
   &.is-disabled:hover,
   &.is-disabled:focus,
@@ -110,8 +108,10 @@ $au-button-radius                         : 0 !default;
     border-radius: 50%;
     width: $au-unit - $au-unit-tiny;
     height: $au-unit - $au-unit-tiny;
+    top: 50%;
     left: 50%;
-    margin-left: -$au-unit-small;
+    margin-top: -$au-unit-small/2 - $au-unit-tiny/2;
+    margin-left: -$au-unit-small/2 - $au-unit-tiny/2;
     animation: buttonLoading 2s linear infinite;
   }
 }
