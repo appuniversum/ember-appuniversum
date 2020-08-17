@@ -15,6 +15,7 @@ Router.map(function() {
       this.route('au-content');
       this.route('au-control');
       this.route('au-heading');
+      this.route('au-hr');
       this.route('au-icon');
       this.route('au-input');
       this.route('au-link');

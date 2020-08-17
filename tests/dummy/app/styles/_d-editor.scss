@@ -101,7 +101,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     @include au-font-size($au-base,1.5);
   }
 
-  hr {
+  hr:not(.au-c-hr) {
     margin: 0;
     margin-top: $au-unit;
     margin-bottom: $au-unit;
