@@ -1,6 +1,6 @@
 {{! template-lint-disable table-groups }}
 <div class="au-c-data-table__wrapper">
-  <table class="au-c-data-table__table {{tableClass}}">
+  <table class="au-c-data-table__table {{tableClass}}" ...attributes>
     {{#if hasBlock}}
       {{yield (hash
           header=(component "au-data-table-content-header" enableSelection=enableSelection enableLineNumbers=enableLineNumbers data-table=data-table)
