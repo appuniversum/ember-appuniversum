@@ -72,3 +72,8 @@ $au-toolbar-font-size       : $au-h6 !default;
 .au-c-toolbar__group--center {
   align-items: center;
 }
+
+.au-c-toolbar--nowrap {
+  flex-wrap: nowrap;
+  align-items: normal;
+}

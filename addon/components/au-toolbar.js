@@ -34,4 +34,11 @@ export default class AuToolbar extends Component {
     else
       return "";
   }
+
+  get nowrap() {
+    if (this.args.nowrap == "true")
+      return "au-c-toolbar--nowrap";
+    else
+      return "";
+  }
 }
