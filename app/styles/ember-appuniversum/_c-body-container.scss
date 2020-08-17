@@ -1,0 +1,16 @@
+/* ==================================
+  #BODY CONTAINER
+  ================================== */
+
+.au-c-body-container {
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  position: relative;
+  flex-grow: 1;
+}
+
+.au-c-body-container--scroll {
+  overflow: auto;
+}

@@ -35,6 +35,7 @@ Router.map(function() {
     });
 
     this.route("patterns", function() {
+      this.route("au-body-container");
       this.route("au-content-header");
       this.route("au-main-container");
       this.route("au-main-header");
