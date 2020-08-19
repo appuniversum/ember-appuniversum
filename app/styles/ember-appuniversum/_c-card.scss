@@ -26,14 +26,8 @@ $au-card-border-color                         : $au-gray-300 !default;
   flex-direction: row;
   flex-wrap: nowrap;
 
-  > * {
-    flex-grow: 1;
-  }
-
-  > *:first-child,
-  > *:last-child {
-    flex-grow: 0;
-    flex-shrink: 2;
+  > *:not(:first-child):not(:last-child) {
+    flex-grow: 2;
   }
 }
 
