@@ -45,6 +45,7 @@
     "@glimmer/tracking": "^1.0.0",
     "babel-eslint": "^10.0.3",
     "broccoli-asset-rev": "^3.0.0",
+    "ember-auto-focus": "^2.0.4",
     "ember-auto-import": "^1.5.3",
     "ember-cli": "~3.16.0",
     "ember-cli-addon-docs": "^0.6.16",
