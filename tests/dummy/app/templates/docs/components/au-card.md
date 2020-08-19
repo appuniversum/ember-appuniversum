@@ -54,7 +54,23 @@
   {{demo.snippet 'au-card-flex.hbs'}}
 {{/docs-demo}}
 
+## Card expandable
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-card-expandable.hbs'}}
+    <AuCard @expandable="true"
+            @flex="true"
+            @collapsableTitle="Waarom werkt de zoekfunctie niet zoals ik had verwacht?"
+            @collapsableSubTitle="We werken er aan!"
+            @collapsableIcon="info-circle">
+      <p>We willen de zoekfunctionaliteit samen met u verbeteren. We horen dus graag wat er niet werkt zoals verwacht! Neem gerust contact met ons op, zodat we een betere ervaring kunnen creëren.</p>
+    </AuCard>
+  {{/demo.example}}
+  {{demo.snippet 'au-card-expandable.hbs'}}
+{{/docs-demo}}
+
 
 ## Properties
 
 - `@flex`: [ true ] - layout elements as flexbox columns
+- `@expandable`: [ true ] - card becomes expandable
