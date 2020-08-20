@@ -221,7 +221,7 @@ Groups and spaces buttons
 
 ## Button Group Inline
 
-Groups and spaces buttons
+Can be used as a toggle function. Not functional in this demo.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button-group-inline.hbs'}}
