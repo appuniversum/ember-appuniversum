@@ -35,3 +35,8 @@
   margin-right: -1px;
   margin-top: 0;
 }
+
+/* Active buttons within inline buttun groups */
+.au-c-button-group--inline .au-c-button:not(.is-active) {
+  text-decoration: underline;
+}
