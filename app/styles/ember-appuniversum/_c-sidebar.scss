@@ -26,6 +26,10 @@ $au-sidebar-footer-padding: $au-unit !default;
     border-right: 1px solid $au-sidebar-border;
     overflow: auto;
   }
+
+  @include mq(small) {
+    overflow: hidden;
+  }
 }
 
 .au-c-sidebar__header {
@@ -38,7 +42,8 @@ $au-sidebar-footer-padding: $au-unit !default;
 
 .au-c-sidebar__content {
   @include mq(small) {
-    flex-grow: 1;
+    flex-grow: 2;
+    overflow: auto;
   }
 }
 
@@ -49,5 +54,13 @@ $au-sidebar-footer-padding: $au-unit !default;
   @include mq(medium) {
     text-align: center;
     padding: $au-sidebar-footer-padding;
+  }
+
+  @include mq(small) {
+    flex-grow: 1;
+
+    &.au-c-sidebar__footer--border-top {
+      border-top: 1px solid $au-gray-300;
+    }
   }
 }
