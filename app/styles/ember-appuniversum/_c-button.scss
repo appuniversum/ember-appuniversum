@@ -26,6 +26,9 @@ $au-button-alert-color                    : $au-white !default;
 $au-button-alert-contrast-color           : shade($au-red-600,10) !default; // @TODO: lighten red 700
 $au-button-alert-contrast-hover-color     : $au-red-600 !default;
 $au-button-radius                         : 0 !default;
+$au-button-active-contrast-color            : $au-blue-900 !default;
+$au-button-secondary-active-contrast-color  : $au-gray-200 !default;
+$au-button-tertiary-active-color            : $au-gray-900 !default;
 
 
 /* Component
@@ -341,6 +344,20 @@ $au-button-radius                         : 0 !default;
   justify-content: center;
 }
 
+// Active buttons
+.au-c-button:not(.au-c-button--secondary):not(.au-c-button--tertiary).is-active {
+  background-color: $au-button-active-contrast-color;
+  border-color: $au-button-active-contrast-color;
+}
+
+.au-c-button--secondary.is-active {
+  background-color: $au-button-secondary-active-contrast-color;
+}
+
+.au-c-button--tertiary.is-active {
+  color: $au-button-tertiary-active-color;
+  font-weight: $au-medium;
+}
 
 /* Animations
   ========================================================================== */
