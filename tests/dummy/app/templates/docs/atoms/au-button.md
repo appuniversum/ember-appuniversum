@@ -20,8 +20,19 @@ Indicates the main action of the view (only one should be used per view).
 
     <hr>
 
-    <AuButton>
-      <AuIcon @icon="pencil" @alignment="left" />
+    <AuButton @icon="pencil" @iconAlignment="left">
+      Primary button - icon
+    </AuButton>
+
+    <hr>
+
+    <AuButton @icon="pencil" @iconAlignment="right">
+      Primary button - icon
+    </AuButton>
+
+    <hr>
+
+    <AuButton @icon="pencil" @hidetext="true">
       Primary button - icon
     </AuButton>
 
@@ -69,8 +80,19 @@ Addon to a primary action (should not be used without the presence of a primary 
 
     <hr>
 
-    <AuButton @skin="secondary">
-      <AuIcon @icon="pencil" @alignment="left" />
+    <AuButton @skin="secondary" @icon="pencil" @iconAlignment="left">
+      Secondary button - icon
+    </AuButton>
+
+    <hr>
+
+    <AuButton @skin="secondary" @icon="pencil" @iconAlignment="right">
+      Secondary button - icon
+    </AuButton>
+
+    <hr>
+
+    <AuButton @skin="secondary" @icon="pencil" @hidetext="true">
       Secondary button - icon
     </AuButton>
 
@@ -103,47 +125,53 @@ Addon to a primary action (should not be used without the presence of a primary 
 
 ## Tertiary button
 
-Can be used as a standalone secondary action.
+Can be used as a standalone secondary action or link.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button-tertiary.hbs'}}
     <AuButton @skin="tertiary">
-      <AuIcon @icon="pencil" @alignment="left" />
-      Link button
+      Tertiary button
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="tertiary" @size="large">
-      <AuIcon @icon="pencil" @alignment="left" />
-      Link button - large
+    <AuButton @icon="pencil" @iconAlignment="left" @skin="tertiary">
+      Tertiary button - icon
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="tertiary" @width="block">
-      <AuIcon @icon="pencil" @alignment="left" />
-      Link button - block
+    <AuButton @icon="pencil" @iconAlignment="right" @skin="tertiary">
+      Tertiary button - icon
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="tertiary" @alert="true">
-      <AuIcon @icon="pencil" @alignment="left" />
-      Link button - error
+    <AuButton @icon="pencil" @hidetext="true" @skin="tertiary">
+      Tertiary button - icon
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="tertiary" @loading="true">
-      <AuIcon @icon="pencil" @alignment="left" />
-      Link button - loading
+    <AuButton @icon="pencil" @iconAlignment="left" @skin="tertiary" @width="block">
+      Tertiary button - block
     </AuButton>
 
     <hr>
 
-    <AuButton @skin="tertiary" @disabled="true">
-      <AuIcon @icon="pencil" @alignment="left" />
+    <AuButton @icon="pencil" @iconAlignment="left" @skin="tertiary" @alert="true">
+      Tertiary button - error
+    </AuButton>
+
+    <hr>
+
+    <AuButton @icon="pencil" @iconAlignment="left" @skin="tertiary" @loading="true">
+      Tertiary button - loading
+    </AuButton>
+
+    <hr>
+
+    <AuButton @icon="pencil" @iconAlignment="left" @skin="tertiary" @disabled="true">
       Link button - disabled
     </AuButton>
   {{/demo.example}}
