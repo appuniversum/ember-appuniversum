@@ -39,4 +39,16 @@
 /* Active buttons within inline buttun groups */
 .au-c-button-group--inline .au-c-button:not(.is-active) {
   text-decoration: underline;
+  text-decoration-color: tint($au-button-contrast-hover-color,60);
+}
+.au-c-button-group--inline .au-c-button--secondary:not(.is-active) {
+  text-decoration: underline;
+  text-decoration-color: tint($au-button-secondary-hover-color,60);
+}
+.au-c-button-group--inline .au-c-button-tertiary:not(.is-active) {
+  text-decoration: underline;
+  text-decoration-color: tint($au-button-tertiary-hover-color,60);
+}
+.au-c-button-group--inline .au-c-button--tertiary.is-active {
+  text-decoration: none;
 }
