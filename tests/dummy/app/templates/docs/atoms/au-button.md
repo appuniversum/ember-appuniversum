@@ -32,7 +32,7 @@ Indicates the main action of the view (only one should be used per view).
 
     <hr>
 
-    <AuButton @icon="pencil" @hidetext="true">
+    <AuButton @icon="pencil" @hideText="true">
       Primary button - icon
     </AuButton>
 
@@ -147,7 +147,7 @@ Can be used as a standalone secondary action or link.
 
     <hr>
 
-    <AuButton @icon="pencil" @hidetext="true" @skin="tertiary">
+    <AuButton @icon="pencil" @hideText="true" @skin="tertiary">
       Tertiary button - icon
     </AuButton>
 
@@ -182,6 +182,9 @@ Can be used as a standalone secondary action or link.
 
 - `@skin`: [ secondary | tertiary ] - default is primary
 - `@size`: [ large ] - makes a button larger
+- `@icon`: [ icon name ] - adds an icon
+- `@iconAlignment`: [ left | right ] - adds margin left or right of the icon
+- `@hideText`: [ true ] - hides the button text visually
 - `@width`: [ block ] - makes a button behave like a block element
 - `@alert`: [ true ] - adds an alert state to the button
 - `@disabled`: [ true ] - adds a disabled state to the button
