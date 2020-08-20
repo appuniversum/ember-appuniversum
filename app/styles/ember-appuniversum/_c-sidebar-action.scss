@@ -1,0 +1,26 @@
+/* ==================================
+   #ACTION SIDEBAR
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-sidebar-border        : $au-gray-200 !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-action-sidebar {
+  @include mq(medium) {
+    border-left: .1rem solid $au-sidebar-border;
+    box-shadow: 0 0 6rem rgba($au-gray-900,.2), 0 0 .3rem rgba($au-gray-900,.1);
+  }
+}
+
+.au-c-action-sidebar__header {
+  border-bottom: .1rem solid $au-sidebar-border;
+}
+
+.au-c-action-sidebar__footer {
+  border-top: .1rem solid $au-sidebar-border;
+}
