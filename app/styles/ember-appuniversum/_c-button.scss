@@ -180,6 +180,8 @@ $au-button-radius                         : 0 !default;
   &:visited {
     color: $au-button-tertiary-color;
     background-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-tertiary-color,70);
   }
 
   &:hover,
@@ -189,6 +191,8 @@ $au-button-radius                         : 0 !default;
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-tertiary-hover-color,80);
   }
 
   &.is-disabled,
@@ -197,6 +201,7 @@ $au-button-radius                         : 0 !default;
   &.is-disabled:active {
     color: $au-button-contrast-color;
     background-color: transparent;
+    text-decoration: none;
   }
 
   &.is-loading,
@@ -204,6 +209,7 @@ $au-button-radius                         : 0 !default;
     color: transparent;
     border-color: transparent;
     background-color: transparent;
+    text-decoration: none;
   }
 
   &.is-loading::after {
@@ -294,6 +300,7 @@ $au-button-radius                         : 0 !default;
     &:visited {
       color: $au-button-alert-contrast-color;
       border-color: transparent;
+      text-decoration-color: tint($au-button-alert-contrast-color,70);
     }
 
     &:hover,
@@ -302,6 +309,7 @@ $au-button-radius                         : 0 !default;
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
       box-shadow: none;
+      text-decoration-color: tint($au-button-alert-contrast-hover-color,80);
     }
 
     &.is-disabled,
