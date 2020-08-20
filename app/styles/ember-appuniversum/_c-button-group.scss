@@ -2,6 +2,9 @@
    #BUTTON-GROUP
    ================================== */
 
+// $au-button-font-size                      : $au-h6 !default;
+// $au-button-font-size-large                : $au-h5 !default;
+
 .au-c-button-group .au-c-button {
   display: inline-block;
   vertical-align: middle;
@@ -18,4 +21,17 @@
   .au-c-icon {
     vertical-align: middle;
   }
+}
+
+
+/* Modifiers
+========================================================================== */
+
+.au-c-button-group.au-c-button-group--inline {
+  display: flex;
+}
+
+.au-c-button-group.au-c-button-group--inline .au-c-button {
+  margin-right: -1px;
+  margin-top: 0;
 }
