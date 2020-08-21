@@ -44,7 +44,7 @@
 .au-c-button-group--inline .au-c-button--secondary:not(.is-active) {
   text-decoration: underline;
   text-decoration-color: tint($au-button-secondary-hover-color,60);
-  background: $white;
+  background: $au-white;
 }
 .au-c-button-group--inline .au-c-button-tertiary:not(.is-active) {
   text-decoration: underline;

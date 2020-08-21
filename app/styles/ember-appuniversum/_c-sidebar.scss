@@ -57,7 +57,6 @@ $au-sidebar-footer-padding: $au-unit !default;
   }
 
   @include mq(small) {
-
     &.au-c-sidebar__footer--border-top {
       border-top: 1px solid $au-gray-300;
     }
