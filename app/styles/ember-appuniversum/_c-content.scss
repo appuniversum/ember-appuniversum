@@ -92,6 +92,11 @@ $au-content-small         : $au-base !default;
   > * + h6 {
     margin-top: $au-unit;
   }
+
+  em {
+    font-style: italic;
+    color: $au-gray-700;
+  }
 }
 
 .au-c-content--small {
