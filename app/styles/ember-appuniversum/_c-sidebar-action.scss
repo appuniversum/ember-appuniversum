@@ -19,6 +19,10 @@ $au-sidebar-border        : $au-gray-200 !default;
 
 .au-c-action-sidebar__header {
   border-bottom: .1rem solid $au-sidebar-border;
+
+  &:focus {
+    outline: 0;
+  }
 }
 
 .au-c-action-sidebar__footer {
