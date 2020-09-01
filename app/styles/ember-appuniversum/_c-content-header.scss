@@ -85,3 +85,35 @@
 .au-c-content-header__bottom {
   font-weight: $au-medium;
 }
+
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-content-header--large {
+  .au-c-content-header__bg {
+    width: 100%;
+
+    &::after {
+      content: normal;
+    }
+  }
+
+  .au-c-content-header__top,
+  .au-c-content-header__bottom {
+    background: $au-white;
+    display: inline;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .au-c-content-header__wrapper {
+    z-index: 1;
+    padding-top: $au-unit-large;
+    padding-bottom: $au-unit-large;
+
+    @include mq(medium) {
+      padding-top: $au-unit-huge;
+      padding-bottom: $au-unit-huge;
+    }
+  }
+}
