@@ -1,15 +1,19 @@
-<article class="au-o-box au-c-card au-c-card--fill {{this.flex}} {{this.expandable}}" ...attributes>
-  {{#if expandable}}
-    <div class="au-c-card__header au-c-card__header--clickable" {{on "click" this.openSection}}>
-      <AuBadge @icon="{{@collapsableIcon}}" @skin="brand" />
-      <div>
-        <AuHeading @level="2" @skin="4">
-          {{@collapsableTitle}}
-        </AuHeading>
-        <p>
-          {{@collapsableSubTitle}}
-        </p>
-      </div>
+<article class="au-o-box au-c-card au-c-card--fill {{this.flex}} {{this.expandable}} {{this.divided}} {{this.textCenter}}" ...attributes>
+  <div class="au-c-card__header {{if this.expandable "au-c-card__header--clickable"}}" {{on "click" this.openSection}}>
+    {{#if @badgeIcon}}
+      <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @size="{{@badgeSize}}" @icon="{{@badgeIcon}}" />
+    {{else if @badgeNumber}}
+      <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @number="{{@badgeNumber}}" @icon="{{@badgeIcon}}" />
+    {{/if}}
+    <div>
+      <AuHeading @level="2" @skin="4" class="{{unless @cardSubTitle "au-u-margin-top-tiny"}}">
+        {{@cardTitle}}
+      </AuHeading>
+      <p>
+        {{@cardSubTitle}}
+      </p>
+    </div>
+    {{#if expandable}}
       <AuButtonGroup>
         <AuButton class="au-c-card__toggle" @size="small" @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.sectionOpen "true" "false"}}" >
           {{#if this.sectionOpen}}
@@ -25,8 +29,10 @@
           {{/if}}
         </AuButton>
       </AuButtonGroup>
-    </div>
+    {{/if}}
+  </div>
 
+  {{#if this.expandable}}
     {{#if this.sectionOpen}}
       {{#auto-focus '.au-c-card__content' tagName="" }}
         <AuContent @skin="small" class="au-c-card__content" tabindex="0">
@@ -35,6 +41,8 @@
       {{/auto-focus}}
     {{/if}}
   {{else}}
-    {{yield}}
+    <AuContent @skin="small" class="au-c-card__content" tabindex="0">
+      {{yield}}
+    </AuContent>
   {{/if}}
 </article>

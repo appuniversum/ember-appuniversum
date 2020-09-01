@@ -46,6 +46,14 @@ $au-badge-error-contrast-color          : $au-red-600 !default;
   }
 }
 
+.au-c-badge__number {
+  font-weight: $au-medium;
+}
+
+.au-c-badge:not(.au-c-badge--small) .au-c-badge__number {
+  font-size: 2rem;
+}
+
 /* Modifiers
 ========================================================================== */
 
@@ -92,5 +100,9 @@ $au-badge-error-contrast-color          : $au-red-600 !default;
   .au-c-icon {
     height: $au-badge-small-icon-size - .1rem; // compensate for visual distortion of perfect circle
     width: $au-badge-small-icon-size;
+  }
+
+  .au-c-badge__number {
+    font-size: 1.3rem;
   }
 }

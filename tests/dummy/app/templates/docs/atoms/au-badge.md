@@ -2,6 +2,19 @@
 
 ---
 
+## Options
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-badge-options.hbs'}}
+    <AuBadge @icon="info-circle" />
+    <hr>
+    <AuBadge @number="100" />
+    <hr>
+    <AuBadge @number="10" @size="small" />
+  {{/demo.example}}
+  {{demo.snippet 'au-badge-options.hbs'}}
+{{/docs-demo}}
+
 ## Skins
 
 {{#docs-demo as |demo|}}
@@ -37,3 +50,5 @@
 ## Properties
 - `@skin`: [ none | border | brand | success | warning | error | action ] - default is gray
 - `@size`: [ small ] - makes badge smaller
+- `@icon`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink>
+- `@number`: [1 - 100]

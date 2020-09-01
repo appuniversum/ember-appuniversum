@@ -1,3 +1,8 @@
 <span class="au-c-badge {{this.skin}} {{this.size}}" aria-hidden="{{if @iconVisible "false" "true"}}" ...attributes>
-  <AuIcon @icon="{{@icon}}" />
+  {{#if @icon}}
+    <AuIcon @icon="{{@icon}}" />
+  {{/if}}
+  {{#if @number}}
+    <span class="au-c-badge__number">{{@number}}</span>
+  {{/if}}
 </span>

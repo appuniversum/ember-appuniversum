@@ -2,56 +2,93 @@
 
 ---
 
-## Card
+## Card – normal – centered – flexed with badge
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card.hbs'}}
-    <AuCard>
-      <AuBadge @icon="search-folder" @skin="brand" class="au-u-margin-bottom-small" />
-      <AuContent>
-        <AuHeading @level="2" @skin="4">
-          Toezicht
-        </AuHeading>
-        <p class="au-u-margin-top-tiny">Bezorg besluiten en overzichtslijsten elektronisch aan de toezichthoudende overheid.</p>
-        <p>
-          <a class="au-c-button" href="https://lokaalbestuur.vlaanderen.be/mijn-binnenland" target="_blank" rel="noopener noreferrer">Meer informatie</a>
-          <a class="au-c-button au-c-button--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#toezicht" target="_blank" rel="noopener noreferrer">Handleiding</a>
-        </p>
-      </AuContent>
-    </AuCard>
+    <div class="au-o-grid">
+      <div class="au-o-grid__item au-u-1-2">
+        <AuCard @cardTitle="Title for card"
+                @cardSubTitle="Subtitle for card">
+          <AuButton>Ga naar toezicht</AuButton>
+        </AuCard>
+      </div>
+      <div class="au-o-grid__item au-u-1-2">
+        <AuCard
+                @cardTitle="Title for card"
+                @cardSubTitle="Subtitle for card"
+                @textCenter="true">
+          <AuButton>Ga naar toezicht</AuButton>
+        </AuCard>
+      </div>
+      <div class="au-o-grid__item au-u-1-2">
+        <AuCard @flex="true"
+                @cardTitle="Title for card"
+                @cardSubTitle="Subtitle for card"
+                @badgeSkin="brand"
+                @badgeIcon="users">
+          <AuButton>Ga naar toezicht</AuButton>
+        </AuCard>
+      </div>
+    </div>
   {{/demo.example}}
   {{demo.snippet 'au-card.hbs'}}
 {{/docs-demo}}
 
-## Card (flex)
+## Card – with badges, small or big, icon or number
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-card-flex.hbs'}}
-    <AuCard @flex="true">
-      <AuBadge @icon="search-folder" @skin="brand" />
-      <AuContent @skin="small">
-        <AuHeading @level="2" @skin="4">
-          Toezicht
-        </AuHeading>
-        <p class="au-u-margin-top-tiny">Bezorg besluiten en overzichtslijsten aan de toezichthoudende overheid.</p>
-        <p>
-          <AuButton {{action "goToToezicht"}}>Ga naar toezicht</AuButton>
-        </p>
-        <p>
-          <a class="au-c-link au-c-link--secondary" href="https://lokaalbestuur.vlaanderen.be/loket-lokaal-bestuur-module-toezicht" target="_blank" rel="noopener noreferrer">
-            <AuIcon @icon="link" @alignment="left" />
-            Meer informatie
-          </a>
-          &nbsp;
-          <a class="au-c-link au-c-link--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#toezicht" target="_blank" rel="noopener noreferrer">
-            <AuIcon @icon="manual" @alignment="left" />
-            Handleiding
-          </a>
-        </p>
-      </AuContent>
+  {{#demo.example name='au-card-badge.hbs'}}
+    <div class="au-o-grid">
+      <div class="au-o-grid__item au-u-1-2">
+        <AuCard
+                @cardTitle="Title for card"
+                @cardSubTitle="Subtitle for card"
+                @badgeIcon="users"
+                @badgeSkin="brand" />
+      </div>
+      <div class="au-o-grid__item au-u-1-2">
+        <AuCard
+                @cardTitle="Title for card"
+                @cardSubTitle="Subtitle for card"
+                @badgeNumber="1"
+                @badgeSkin="action" />
+      </div>
+      <div class="au-o-grid__item au-u-1-2">
+        <AuCard
+                @cardTitle="Title for card"
+                @cardSubTitle="Subtitle for card"
+                @badgeNumber="1"
+                @badgeSkin="success"
+                @badgeSize="small" />
+      </div>
+      <div class="au-o-grid__item au-u-1-2">
+        <AuCard
+                @cardTitle="Title for card"
+                @cardSubTitle="Subtitle for card"
+                @badgeIcon="manual"
+                @badgeSkin="border"
+                @badgeSize="small" />
+      </div>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-card-badge.hbs'}}
+{{/docs-demo}}
+
+## Card - divided
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-card-divided.hbs'}}
+    <AuCard @flex="true"
+            @divided="true"
+            @cardTitle="Title for card"
+            @cardSubTitle="Subtitle for card"
+            @badgeSkin="brand"
+            @badgeIcon="users">
+      <p>Information in the card that comes below the header. Content.</p>
     </AuCard>
   {{/demo.example}}
-  {{demo.snippet 'au-card-flex.hbs'}}
+  {{demo.snippet 'au-card-divided.hbs'}}
 {{/docs-demo}}
 
 ## Card expandable
@@ -60,10 +97,12 @@
   {{#demo.example name='au-card-expandable.hbs'}}
     <AuCard @expandable="true"
             @flex="true"
-            @collapsableTitle="Waarom werkt de zoekfunctie niet zoals ik had verwacht?"
-            @collapsableSubTitle="We werken er aan!"
-            @collapsableIcon="info-circle">
-      <p>We willen de zoekfunctionaliteit samen met u verbeteren. We horen dus graag wat er niet werkt zoals verwacht! Neem gerust contact met ons op, zodat we een betere ervaring kunnen creëren.</p>
+            @divided="true"
+            @cardTitle="Title for card"
+            @cardSubTitle="Subtitle for card"
+            @badgeSkin="brand"
+            @badgeIcon="users">
+      <p>Information in the card that comes below the header. Content.</p>
     </AuCard>
   {{/demo.example}}
   {{demo.snippet 'au-card-expandable.hbs'}}
@@ -74,3 +113,7 @@
 
 - `@flex`: [ true ] - layout elements as flexbox columns
 - `@expandable`: [ true ] - card becomes expandable
+- `@textCenter`: [ true ] - centers text
+- `@badgeIcon`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink>
+- `@badgeSkin`: [ none | border | brand | success | warning | error | action ] - default is gray
+- `@badgeSize`: [ small ] - makes badge smaller
