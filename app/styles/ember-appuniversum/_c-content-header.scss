@@ -69,7 +69,7 @@
 .au-c-content-header__bottom {
   @include au-font-size($au-h4,1);
   font-family: $au-font;
-  display: block;
+  display: inline-block;
   max-width: 60%;
 
   @include mq(medium) {
