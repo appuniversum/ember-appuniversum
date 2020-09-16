@@ -8,12 +8,12 @@
         <AuButton class="au-c-card__toggle" @size="small" @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.sectionOpen "true" "false"}}" >
           {{#if this.sectionOpen}}
             <AuIcon @icon="nav-up" @alignment="left" @size="large" @ariaHidden="true" />
-            <span class="au-u-hidden-visually au-c-card__toggle__false">
+            <span class="au-u-hidden-visually au-c-card__toggle-false">
               Verberg
             </span>
           {{else}}
             <AuIcon @icon="nav-down" @alignment="left" @size="large" @ariaHidden="true" />
-            <span class="au-u-hidden-visually au-c-card__toggle__true">
+            <span class="au-u-hidden-visually au-c-card__toggle-true">
               Toon
             </span>
           {{/if}}
@@ -35,4 +35,8 @@
       content = (component 'au-card-content')
     )}}
   {{/if}}
+
+  {{yield (hash
+    footer = (component 'au-card-footer')
+  )}}
 </article>

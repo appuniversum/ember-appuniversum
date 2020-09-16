@@ -12,12 +12,10 @@ $au-card-border-color                         : $au-gray-300 !default;
   ========================================================================== */
 
 .au-c-card {
+  display: flex;
+  flex-direction: column;
   background-color: $au-white;
-  border: 1px solid $au-card-border-color;
-
-  .au-c-badge {
-    margin-bottom: $au-unit-small;
-  }
+  border: .1rem solid $au-card-border-color;
 }
 
 .au-c-card--fill {
@@ -29,14 +27,23 @@ $au-card-border-color                         : $au-gray-300 !default;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  align-items: center;
 
   > *:nth-child(2) {
     flex-grow: 2;
+  }
+
+  .au-c-badge {
+    margin-bottom: 0;
   }
 }
 
 .au-c-card__header {
   margin-bottom: $au-unit-small;
+
+  .au-c-badge {
+    margin-bottom: $au-unit-small;
+  }
 }
 
 /* Modifiers
@@ -54,13 +61,12 @@ $au-card-border-color                         : $au-gray-300 !default;
 
 /* Expandable */
 .au-c-card--expandable {
-
-  .au-c-card__toggle[aria-expanded] .au-c-card__toggle__false,
-  .au-c-card__toggle[aria-expanded="true"] .au-c-card__toggle__true {
+  .au-c-card__toggle[aria-expanded] .au-c-card__toggle-false,
+  .au-c-card__toggle[aria-expanded="true"] .au-c-card__toggle-true {
     display: none;
   }
 
-  .au-c-card__toggle[aria-expanded="true"] .au-c-card__toggle__false {
+  .au-c-card__toggle[aria-expanded="true"] .au-c-card__toggle-false {
     display: block;
   }
 }
@@ -71,6 +77,7 @@ $au-card-border-color                         : $au-gray-300 !default;
 }
 
 .au-c-card__content {
+  flex-grow: 1;
 
   &:focus {
     outline: none !important;
@@ -79,5 +86,9 @@ $au-card-border-color                         : $au-gray-300 !default;
 
 .au-c-card--divided .au-c-card__content {
   padding-top: 2.5rem;
-  border-top: 1px solid $au-card-border-color;
+  border-top: .1rem solid $au-card-border-color;
+}
+
+.au-c-card__footer {
+  margin-top: $au-unit;
 }
