@@ -1,18 +1,8 @@
 <article class="au-o-box au-c-card au-c-card--fill {{this.flex}} {{this.expandable}} {{this.divided}} {{this.textCenter}}" ...attributes>
   <div class="au-c-card__header {{if this.expandable "au-c-card__header--clickable"}}" {{on "click" this.openSection}}>
-    {{#if @badgeIcon}}
-      <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @size="{{@badgeSize}}" @icon="{{@badgeIcon}}" />
-    {{else if @badgeNumber}}
-      <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @number="{{@badgeNumber}}" @icon="{{@badgeIcon}}" />
-    {{/if}}
-    <div>
-      <AuHeading @level="2" @skin="4" class="{{unless @cardSubTitle "au-u-margin-top-tiny"}}">
-        {{@cardTitle}}
-      </AuHeading>
-      <p>
-        {{@cardSubTitle}}
-      </p>
-    </div>
+    {{yield (hash
+      header = (component 'au-card-header')
+    )}}
     {{#if expandable}}
       <AuButtonGroup>
         <AuButton class="au-c-card__toggle" @size="small" @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.sectionOpen "true" "false"}}" >
@@ -35,14 +25,14 @@
   {{#if this.expandable}}
     {{#if this.sectionOpen}}
       {{#auto-focus '.au-c-card__content' tagName="" }}
-        <AuContent @skin="small" class="au-c-card__content" tabindex="0">
-          {{yield}}
-        </AuContent>
+        {{yield (hash
+          content = (component 'au-card-content')
+        )}}
       {{/auto-focus}}
     {{/if}}
   {{else}}
-    <AuContent @skin="small" class="au-c-card__content" tabindex="0">
-      {{yield}}
-    </AuContent>
+    {{yield (hash
+      content = (component 'au-card-content')
+    )}}
   {{/if}}
 </article>

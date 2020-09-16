@@ -1,4 +1,4 @@
-# Card (draft)
+# Card
 
 ---
 
@@ -8,26 +8,48 @@
   {{#demo.example name='au-card.hbs'}}
     <div class="au-o-grid">
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard @cardTitle="Title for card"
-                @cardSubTitle="Subtitle for card">
-          <AuButton>Ga naar toezicht</AuButton>
+        <AuCard as |c|>
+          <c.header>
+            <AuHeading @level="2" @skin="4">
+              Title for card
+            </AuHeading>
+            <p>
+              Subtitle for card
+            </p>
+          </c.header>
+          <c.content>
+            <AuButton>Ga naar toezicht</AuButton>
+          </c.content>
         </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard
-                @cardTitle="Title for card"
-                @cardSubTitle="Subtitle for card"
-                @textCenter="true">
-          <AuButton>Ga naar toezicht</AuButton>
+        <AuCard @textCenter="true" as |c|>
+          <c.header>
+            <AuHeading @level="2" @skin="4">
+              Title for card
+            </AuHeading>
+            <p>
+              Subtitle for card
+            </p>
+          </c.header>
+          <c.content>
+            <AuButton>Ga naar toezicht</AuButton>
+          </c.content>
         </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard @flex="true"
-                @cardTitle="Title for card"
-                @cardSubTitle="Subtitle for card"
-                @badgeSkin="brand"
-                @badgeIcon="users">
-          <AuButton>Ga naar toezicht</AuButton>
+        <AuCard @flex="true" as |c|>
+          <c.header @badgeSkin="brand" @badgeIcon="users">
+            <AuHeading @level="2" @skin="4">
+              Title for card
+            </AuHeading>
+            <p>
+              Subtitle for card
+            </p>
+          </c.header>
+          <c.content>
+            <AuButton>Ga naar toezicht</AuButton>
+          </c.content>
         </AuCard>
       </div>
     </div>
@@ -41,34 +63,52 @@
   {{#demo.example name='au-card-badge.hbs'}}
     <div class="au-o-grid">
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard
-                @cardTitle="Title for card"
-                @cardSubTitle="Subtitle for card"
-                @badgeIcon="users"
-                @badgeSkin="brand" />
+        <AuCard as |c|>
+          <c.header @badgeIcon="users" @badgeSkin="brand">
+            <AuHeading @level="2" @skin="4">
+              Title for card
+            </AuHeading>
+            <p>
+              Subtitle for card
+            </p>
+          </c.header>
+        </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard
-                @cardTitle="Title for card"
-                @cardSubTitle="Subtitle for card"
-                @badgeNumber="1"
-                @badgeSkin="action" />
+        <AuCard as |c|>
+          <c.header @badgeNumber="1" @badgeSkin="action">
+            <AuHeading @level="2" @skin="4">
+              Title for card
+            </AuHeading>
+            <p>
+              Subtitle for card
+            </p>
+          </c.header>
+        </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard
-                @cardTitle="Title for card"
-                @cardSubTitle="Subtitle for card"
-                @badgeNumber="1"
-                @badgeSkin="success"
-                @badgeSize="small" />
+        <AuCard as |c|>
+          <c.header @badgeNumber="1" @badgeSkin="success" @badgeSize="small">
+            <AuHeading @level="2" @skin="4">
+              Title for card
+            </AuHeading>
+            <p>
+              Subtitle for card
+            </p>
+          </c.header>
+        </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard
-                @cardTitle="Title for card"
-                @cardSubTitle="Subtitle for card"
-                @badgeIcon="manual"
-                @badgeSkin="border"
-                @badgeSize="small" />
+        <AuCard as |c|>
+          <c.header @badgeIcon="manual" @badgeSkin="border" @badgeSize="small">
+            <AuHeading @level="2" @skin="4">
+              Title for card
+            </AuHeading>
+            <p>
+              Subtitle for card
+            </p>
+          </c.header>
+        </AuCard>
       </div>
     </div>
   {{/demo.example}}
@@ -79,13 +119,18 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card-divided.hbs'}}
-    <AuCard @flex="true"
-            @divided="true"
-            @cardTitle="Title for card"
-            @cardSubTitle="Subtitle for card"
-            @badgeSkin="brand"
-            @badgeIcon="users">
-      <p>Information in the card that comes below the header. Content.</p>
+    <AuCard @flex="true" @divided="true" as |c|>
+      <c.header @badgeSkin="brand" @badgeIcon="users">
+        <AuHeading @level="2" @skin="4">
+          Title for card
+        </AuHeading>
+        <p>
+          Subtitle for card
+        </p>
+      </c.header>
+      <c.content>
+        <p>Information in the card that comes below the header. Content.</p>
+      </c.content>
     </AuCard>
   {{/demo.example}}
   {{demo.snippet 'au-card-divided.hbs'}}
@@ -95,25 +140,32 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card-expandable.hbs'}}
-    <AuCard @expandable="true"
-            @flex="true"
-            @divided="true"
-            @cardTitle="Title for card"
-            @cardSubTitle="Subtitle for card"
-            @badgeSkin="brand"
-            @badgeIcon="users">
-      <p>Information in the card that comes below the header. Content.</p>
+    <AuCard @expandable="true" @flex="true" @divided="true" as |c|>
+      <c.header @badgeSkin="brand" @badgeIcon="users">
+        <AuHeading @level="2" @skin="4">
+          Title for card
+        </AuHeading>
+        <p>
+          Subtitle for card
+        </p>
+      </c.header>
+      <c.content>
+        <p>Information in the card that comes below the header. Content.</p>
+      </c.content>
     </AuCard>
   {{/demo.example}}
   {{demo.snippet 'au-card-expandable.hbs'}}
 {{/docs-demo}}
 
 
-## Properties
+## Card properties
 
 - `@flex`: [ true ] - layout elements as flexbox columns
 - `@expandable`: [ true ] - card becomes expandable
 - `@textCenter`: [ true ] - centers text
+
+## Card header properties
+
 - `@badgeIcon`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink>
 - `@badgeSkin`: [ none | border | brand | success | warning | error | action ] - default is gray
 - `@badgeSize`: [ small ] - makes badge smaller
