@@ -92,7 +92,7 @@ Addon to a primary action (should not be used without the presence of a primary 
 
     <hr>
 
-    <AuButton @skin="secondary" @icon="pencil" @hidetext="true">
+    <AuButton @skin="secondary" @icon="pencil" @hideText="true">
       Secondary button - icon
     </AuButton>
 

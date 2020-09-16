@@ -12,8 +12,7 @@
 
     <hr>
 
-    <AuLink @linkRoute="docs.atoms.au-link">
-      <AuIcon @icon="login" @alignment="left" />
+    <AuLink @linkRoute="docs.atoms.au-link" @icon="login" @iconAlignment="left">
       Primary link + icon
     </AuLink>
 
@@ -36,8 +35,7 @@
 
     <hr>
 
-    <AuLink @skin="secondary" @linkRoute="docs.atoms.au-link">
-      <AuIcon @icon="logout" @alignment="left" />
+    <AuLink @skin="secondary" @linkRoute="docs.atoms.au-link" @icon="logout" @iconAlignment="left">
       Secondary link + icon
     </AuLink>
 
@@ -55,3 +53,6 @@
 - `@skin`: [ secondary ] - default is primary
 - `@active`: [ true ] - adds an active state and disables pointer events
 - `@linkRoute`: the route that is passed to the link
+- `@icon`: [ icon name ] - adds an icon
+- `@iconAlignment`: [ left | right ] - adds margin left or right of the icon
+- `@hideText`: [ true ] - hides the button text visually
