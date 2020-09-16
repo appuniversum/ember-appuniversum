@@ -18,8 +18,11 @@
             </p>
           </c.header>
           <c.content>
-            <AuButton>Ga naar toezicht</AuButton>
+            <p>Information in the card that comes below the header. Content.</p>
           </c.content>
+          <c.footer>
+            <AuButton>Ga naar toezicht</AuButton>
+          </c.footer>
         </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
@@ -33,8 +36,11 @@
             </p>
           </c.header>
           <c.content>
-            <AuButton>Ga naar toezicht</AuButton>
+            <p>Information in the card that comes below the header. Content.</p>
           </c.content>
+          <c.footer>
+            <AuButton>Ga naar toezicht</AuButton>
+          </c.footer>
         </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
@@ -48,8 +54,11 @@
             </p>
           </c.header>
           <c.content>
-            <AuButton>Ga naar toezicht</AuButton>
+            <p>Information in the card that comes below the header. Content.</p>
           </c.content>
+          <c.footer>
+            <AuButton>Ga naar toezicht</AuButton>
+          </c.footer>
         </AuCard>
       </div>
     </div>
