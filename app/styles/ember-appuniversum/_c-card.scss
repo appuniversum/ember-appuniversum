@@ -22,8 +22,8 @@ $au-card-border-color                         : $au-gray-300 !default;
   height: 100%;
 }
 
-.au-c-card--flex:not(.au-c-card--expandable) .au-c-card__header,
-.au-c-card--flex.au-c-card--expandable .au-c-card__header {
+.au-c-card--flex:not(.au-c-card--expandable) > .au-c-card__header,
+.au-c-card--flex.au-c-card--expandable > .au-c-card__header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
