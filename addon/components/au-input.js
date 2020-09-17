@@ -8,6 +8,15 @@ export default class AuInput extends Component {
       return "";
   }
 
+  get iconAlignment() {
+    if (this.args.iconAlignment == "left")
+      return "au-c-input-wrapper--left";
+    if (this.args.iconAlignment == "right")
+      return "au-c-input-wrapper--right";
+    else
+      return "";
+  }
+
   get error() {
     if (this.args.error == "true")
       return "au-c-input--error";

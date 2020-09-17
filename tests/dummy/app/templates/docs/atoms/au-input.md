@@ -16,6 +16,16 @@
         <AuLabel for="input-block">Block input</AuLabel>
         <AuInput id="input-block" @width="block"/>
       </p>
+
+      <p>
+        <AuLabel for="input-block">Block input with icon (default | left aligned)</AuLabel>
+        <AuInput id="input-block" @width="block" @icon="search"/>
+      </p>
+
+      <p>
+        <AuLabel for="input-block">Block input with icon (right aligned)</AuLabel>
+        <AuInput id="input-block" @width="block" @icon="search" @iconAlignment="right"/>
+      </p>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-input.hbs'}}
@@ -59,6 +69,8 @@
 
 - `@error`: [ true ] - add an error state
 - `@width`: [ block ] - display the input as a block element
+- `@icon`: [ icon name ] - adds an icon (using an icon implies the use @width="block")
+- `@iconAlignment`: [ left | right ] - adds margin left or right of the icon (default is left)
 
 ## Label Properties
 

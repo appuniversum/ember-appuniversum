@@ -1,1 +1,12 @@
+{{#if @icon}}
+  <span class="au-c-input-wrapper {{this.iconAlignment}}">
+    <Input class="au-c-input au-c-input--block {{this.error}}" @value={{@value}} ...attributes/>
+    {{#if (eq @iconAlignment "right")}}
+    <AuIcon @icon="{{@icon}}" @alignment="right" />
+    {{else}}
+    <AuIcon @icon="{{@icon}}" @alignment="left" />
+    {{/if}}
+  </span>
+{{else}}
 <Input class="au-c-input {{this.error}} {{this.width}}" @value={{@value}} ...attributes/>
+{{/if}}
