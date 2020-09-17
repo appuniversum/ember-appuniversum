@@ -27,7 +27,6 @@ $au-card-border-color                         : $au-gray-300 !default;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
 
   > *:nth-child(2) {
     flex-grow: 2;
@@ -36,6 +35,14 @@ $au-card-border-color                         : $au-gray-300 !default;
   .au-c-badge {
     margin-bottom: 0;
   }
+}
+
+.au-c-card--flex:not(.au-c-card--expandable) > .au-c-card__header {
+  align-items: center;
+}
+
+.au-c-card--flex.au-c-card--expandable > .au-c-card__header {
+  align-items: flex-start;
 }
 
 .au-c-card__header {
