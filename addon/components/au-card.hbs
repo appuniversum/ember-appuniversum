@@ -25,15 +25,19 @@
   {{#if this.expandable}}
     {{#if this.sectionOpen}}
       {{#auto-focus '.au-c-card__content' tagName="" }}
+        <AuContent class="au-c-card__content" tabindex="0">
         {{yield (hash
           content = (component 'au-card-content')
         )}}
+        </AuContent>
       {{/auto-focus}}
     {{/if}}
   {{else}}
-    {{yield (hash
-      content = (component 'au-card-content')
-    )}}
+    <AuContent class="au-c-card__content">
+      {{yield (hash
+        content = (component 'au-card-content')
+      )}}
+    </AuContent>
   {{/if}}
 
   {{yield (hash

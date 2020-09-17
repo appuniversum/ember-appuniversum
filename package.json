@@ -30,7 +30,6 @@
     "@appuniversum/icon-font": "^1.1.0",
     "@ember/render-modifiers": "^1.0.2",
     "@zestia/ember-auto-focus": "^4.1.0",
-    "a11y-announcer": "^1.0.4",
     "ember-cli-babel": "^7.17.2",
     "ember-cli-htmlbars": "^4.2.2",
     "ember-data-table": "^1.2.2",
