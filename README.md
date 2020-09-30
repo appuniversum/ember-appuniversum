@@ -23,7 +23,7 @@ ember install ember-appuniversum
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+This ember addon wraps a CSS framework for Flanders government applications called appuniversum. It provides components that helps being complient with this framework in Ember apps.
 
 
 Contributing
