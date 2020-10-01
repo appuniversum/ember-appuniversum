@@ -6,9 +6,12 @@
    ========================================================================== */
 
 $au-help-text-color             : $au-gray-800 !default;
+$au-help-text-secondary-color   : $au-gray-600 !default;
+$au-help-text-tertiary-color    : $au-gray-600 !default;
 $au-help-text-error-color       : $au-red-600 !default;
 $au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-small variable in appuniversum;
-
+$au-help-text-font-size-normal  : $au-base !default;
+$au-help-text-font-size-large   : $au-h6 !default;
 
 /* Component
   ========================================================================== */
@@ -27,6 +30,23 @@ $au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-smal
 
 /* Modifiers
   ========================================================================== */
+
+.au-c-help-text--normal {
+  @include au-font-size($au-help-text-font-size-normal);
+}
+
+.au-c-help-text--large {
+  @include au-font-size($au-help-text-font-size-large);
+}
+
+.au-c-help-text--secondary {
+  color: $au-help-text-secondary-color;
+}
+
+.au-c-help-text--tertiary {
+  color: $au-help-text-tertiary-color;
+  font-style: italic;
+}
 
 .au-c-help-text--error {
   color: $au-help-text-error-color;
