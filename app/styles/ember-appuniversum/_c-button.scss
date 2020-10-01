@@ -69,6 +69,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
 
   &:focus {
     outline: $au-outline;
+    outline-offset: .2rem;
   }
 
   &:active {
