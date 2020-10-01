@@ -1,1 +1,13 @@
-<span class="au-c-pill {{this.skin}}" ...attributes>{{yield}}</span>
+<span class="au-c-pill {{this.skin}}" ...attributes>
+  {{#if @icon}}
+    {{#if (eq @iconAlignment "left")}}
+    <AuIcon @icon="{{@icon}}" @alignment="left" />
+    {{/if}}
+  {{/if}}
+  {{yield}}
+  {{#if @icon}}
+    {{#if (eq @iconAlignment "right")}}
+    <AuIcon @icon="{{@icon}}" @alignment="right" />
+    {{/if}}
+  {{/if}}
+</span>
