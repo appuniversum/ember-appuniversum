@@ -56,7 +56,7 @@
   {{demo.snippet 'au-modal-fullscreen.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@buttonTitle`: [ string ] - set the title of the open modal button
 - `@buttonIcon`: add an icon to the open modal button (see icon component for available icons)

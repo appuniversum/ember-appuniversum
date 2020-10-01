@@ -17,6 +17,6 @@
   {{demo.snippet 'au-loader.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@size`: [ small | large ]

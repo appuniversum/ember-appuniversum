@@ -65,17 +65,17 @@
   {{demo.snippet 'au-input-error.hbs'}}
 {{/docs-demo}}
 
-## Input Properties
+## Input arguments
 
 - `@error`: [ true ] - add an error state
 - `@width`: [ block ] - display the input as a block element
 - `@icon`: [ icon name ] - adds an icon (using an icon implies the use @width="block")
 - `@iconAlignment`: [ left | right ] - adds margin left or right of the icon (default is left)
 
-## Label Properties
+## Label arguments
 
 - `@error`: [ true ] - add an error state
 
-## Helptext Properties
+## Helptext arguments
 
 - `@error`: [ true ] - add an error state

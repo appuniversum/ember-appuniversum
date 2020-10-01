@@ -48,5 +48,5 @@
   {{demo.snippet 'au-pill.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 - `@skin`: [ none | border | action | success | warning | error ] - default is grey

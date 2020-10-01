@@ -20,6 +20,6 @@
   {{demo.snippet 'au-navigation-link.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@linkRoute`: the route that is passed to the navigation item

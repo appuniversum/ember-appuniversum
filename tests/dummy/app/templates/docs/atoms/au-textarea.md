@@ -57,7 +57,7 @@
   {{demo.snippet 'au-textarea-error.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@error`: [ true ] - add an error state
 - `@width`: [ block ] - display the input as a block element

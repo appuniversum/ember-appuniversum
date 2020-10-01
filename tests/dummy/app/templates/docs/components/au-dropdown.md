@@ -52,7 +52,7 @@
 
 
 
-## Properties
+## Arguments
 
 - `@dropdownTitle`: pass the title of the dropdown
 - `@dropdownButtonLabel`: pass name of the dropdown button (visually hidden)

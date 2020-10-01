@@ -15,7 +15,7 @@
   {{demo.snippet 'au-main-header.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@brandLink`: pass a link to the logo (the logo has no link if this property is not present)
 - `@appTitle`: pass the header title

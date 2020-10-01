@@ -78,6 +78,6 @@ Wrapper for [https://github.com/mu-semtech/ember-data-table](https://github.com/
   {{demo.snippet 'au-data-table-small.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - For now, you can only add the class [au-c-data-table__table--small] in the content tag.

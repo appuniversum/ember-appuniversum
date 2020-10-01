@@ -167,13 +167,13 @@
 {{/docs-demo}}
 
 
-## Card properties
+## Card arguments
 
 - `@flex`: [ true ] - layout elements as flexbox columns
 - `@expandable`: [ true ] - card becomes expandable
 - `@textCenter`: [ true ] - centers text
 
-## Card header properties
+## Card header arguments
 
 - `@badgeIcon`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink>
 - `@badgeSkin`: [ none | border | brand | success | warning | error | action ] - default is gray

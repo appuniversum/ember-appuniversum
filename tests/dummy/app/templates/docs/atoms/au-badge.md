@@ -47,7 +47,7 @@
   {{demo.snippet 'au-badge-size.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 - `@skin`: [ none | border | brand | success | warning | error | action ] - default is gray
 - `@size`: [ small ] - makes badge smaller
 - `@icon`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink>

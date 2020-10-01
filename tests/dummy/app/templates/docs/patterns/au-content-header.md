@@ -29,7 +29,7 @@
   {{demo.snippet 'au-content-header.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@titlePartOne`: top part of the title
 - `@titlePartTwo`: bottom part of the title

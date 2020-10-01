@@ -199,7 +199,7 @@
   {{demo.snippet 'au-toolbar-nowrap.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 - `@reverse`: [ true ] - reverse the direction of the child components
 - `@border`: [ top | bottom ] - adds a border a padding to the top|bottom
 - `@skin`: [ tint ] - adds a background color

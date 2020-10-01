@@ -48,7 +48,7 @@
   {{demo.snippet 'au-link-secondary.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@skin`: [ secondary ] - default is primary
 - `@active`: [ true ] - adds an active state and disables pointer events

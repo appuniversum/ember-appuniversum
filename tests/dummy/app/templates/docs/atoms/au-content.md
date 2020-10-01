@@ -68,6 +68,6 @@
   {{demo.snippet 'au-content-large.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@skin`: [ small | large ] - smaller/larger text and vertical spacing

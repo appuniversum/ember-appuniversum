@@ -18,6 +18,6 @@
   {{demo.snippet 'au-hr.hbs'}}
 {{/docs-demo}}
 
-## Horizontal Ruler Properties
+## Arguments
 
 - `@size`: [ large | huge ]

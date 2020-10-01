@@ -29,7 +29,7 @@
   {{demo.snippet 'au-brand-tagline.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@tagline`: [ string ] - adds a tagline underneath the logotype
 - `@brandLink`: [ url ] - adds a link.

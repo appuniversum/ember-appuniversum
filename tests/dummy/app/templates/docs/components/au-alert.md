@@ -97,7 +97,7 @@
   {{demo.snippet 'au-alert-content.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@alertIcon`: add an icon to the alert (see icon component for available icons)
 - `@alertSkin`: [ info | success | warning | error ]

@@ -178,7 +178,7 @@ Can be used as a standalone secondary action or link.
   {{demo.snippet 'au-button-tertiary.hbs'}}
 {{/docs-demo}}
 
-## Properties
+## Arguments
 
 - `@skin`: [ secondary | tertiary ] - default is primary
 - `@size`: [ large ] - makes a button larger
