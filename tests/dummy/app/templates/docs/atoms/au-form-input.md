@@ -1,4 +1,4 @@
-# Input
+# Form: Input
 
 ---
 
@@ -16,7 +16,30 @@
         <AuLabel for="input-block">Block input</AuLabel>
         <AuInput id="input-block" @width="block"/>
       </p>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-input.hbs'}}
+{{/docs-demo}}
 
+## Width
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-input-block.hbs'}}
+    <div class="au-c-form">
+      <p>
+        <AuLabel for="input-block">Block input</AuLabel>
+        <AuInput id="input-block" @width="block"/>
+      </p>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-input-block.hbs'}}
+{{/docs-demo}}
+
+## Input with icon
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-input-icon.hbs'}}
+    <div class="au-c-form">
       <p>
         <AuLabel for="input-block">Block input with icon (default | left aligned)</AuLabel>
         <AuInput id="input-block" @width="block" @icon="search"/>
@@ -28,9 +51,8 @@
       </p>
     </div>
   {{/demo.example}}
-  {{demo.snippet 'au-input.hbs'}}
+  {{demo.snippet 'au-input-icon.hbs'}}
 {{/docs-demo}}
-
 
 ## Input Required
 
@@ -65,17 +87,11 @@
   {{demo.snippet 'au-input-error.hbs'}}
 {{/docs-demo}}
 
-## Input arguments
+## Arguments
 
-- `@error`: [ true ] - add an error state
-- `@width`: [ block ] - display the input as a block element
-- `@icon`: [ icon name ] - adds an icon (using an icon implies the use @width="block")
-- `@iconAlignment`: [ left | right ] - adds margin left or right of the icon (default is left)
-
-## Label arguments
-
-- `@error`: [ true ] - add an error state
-
-## Helptext arguments
-
-- `@error`: [ true ] - add an error state
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@error` | Add an error state  | `boolean` | `false` |
+| `@width` | Display the input as a block element  | `block` | - |
+| `@icon` | Adds an icon (using an icon implies the use @width="block") | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@iconAlignment` | Choose the position of the icon | `left` / `right`  | `left` |

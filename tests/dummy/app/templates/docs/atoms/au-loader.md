@@ -19,4 +19,6 @@
 
 ## Arguments
 
-- `@size`: [ small | large ]
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@size` | Set the size of the loader  | `small` / `default` / `large` | `default` |

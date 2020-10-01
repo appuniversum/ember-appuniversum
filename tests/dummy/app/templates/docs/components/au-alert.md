@@ -99,8 +99,10 @@
 
 ## Arguments
 
-- `@alertIcon`: add an icon to the alert (see icon component for available icons)
-- `@alertSkin`: [ info | success | warning | error ]
-- `@alertSize`: [ small ]
-- `@alertTitle` : add a title to the alert
-- `@closable` : [ true ] - makes the alert closable
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@alertSkin` | Sets the style of the alert  | `info` / `success` / `warning` / `error` | - |
+| `@alertIcon` | Add an icon to the alert | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@alertSize` | Set the size of the alert | `small` / `default` | `default` |
+| `@alertTitle` | Add a title to the alert | `string` | - |
+| `@closable` | Makes the alert closable | `boolean` | `false` |

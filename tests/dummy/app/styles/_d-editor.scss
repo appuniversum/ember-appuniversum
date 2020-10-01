@@ -286,6 +286,34 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     }
   }
 
+  > table {
+    border: .1rem solid $au-gray-200;
+    width: 100%;
+
+    thead {
+      border-bottom: .2rem solid $au-gray-200;
+    }
+
+    th {
+      font-weight: $au-medium;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: $au-unit-tiny;
+    }
+
+    tr + tr {
+      border-top: .1rem solid $au-gray-200;
+    }
+
+    th + th,
+    td + td {
+      border-left: .1rem solid $au-gray-200;
+    }
+  }
+
   @include mq(small) {
     > * + * {
       margin-top: $au-unit;

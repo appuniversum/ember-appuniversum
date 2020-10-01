@@ -58,8 +58,10 @@
 
 ## Arguments
 
-- `@buttonTitle`: [ string ] - set the title of the open modal button
-- `@buttonIcon`: add an icon to the open modal button (see icon component for available icons)
-- `@modalTitle`: [ string ] - set the title of the modal
-- `@buttonSkin`: [ secondary | tertiary ] - default is primary
-- `@size`: [ fullscreen ] - make the modal open fullscreen
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@buttonTitle` | Set the title of the open modal button | `string` | - |
+| `@buttonIcon` | Add an icon to the open modal button | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@buttonSkin` | Set the title of the modal | `primary` / `secondary` / `tertiary` | `primary` |
+| `@modalTitle` | Set the title of the modal | `string` | - |
+| `@size` | Set the size of the modal | `default` / `fullscreen` | `default` |

@@ -22,4 +22,6 @@
 
 ## Arguments
 
-- `@linkRoute`: the route that is passed to the navigation item
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@linkRoute` | The route that is passed to the link  | `route name` | - |

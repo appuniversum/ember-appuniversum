@@ -11,18 +11,22 @@ Router.map(function() {
     this.route("atoms", function() {
       this.route("au-badge");
       this.route("au-button");
+      this.route("au-button-group");
       this.route('au-brand');
       this.route('au-content');
-      this.route('au-control');
       this.route('au-heading');
+      this.route('au-helptext');
       this.route('au-hr');
       this.route('au-icon');
-      this.route('au-input');
+      this.route('au-form-input');
+      this.route('au-form-label');
+      this.route('au-form-textarea');
+      this.route('au-form-radio');
+      this.route('au-form-checkbox');
       this.route('au-link');
+      this.route('au-loader');
       this.route("au-navigation-link");
       this.route("au-pill");
-      this.route('au-textarea');
-      this.route('au-loader');
     });
 
     this.route("components", function() {

@@ -2,15 +2,13 @@
 
 ---
 
-## Options
+## Icon or number
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-badge-options.hbs'}}
     <AuBadge @icon="info-circle" />
     <hr>
     <AuBadge @number="100" />
-    <hr>
-    <AuBadge @number="10" @size="small" />
   {{/demo.example}}
   {{demo.snippet 'au-badge-options.hbs'}}
 {{/docs-demo}}
@@ -48,7 +46,10 @@
 {{/docs-demo}}
 
 ## Arguments
-- `@skin`: [ none | border | brand | success | warning | error | action ] - default is gray
-- `@size`: [ small ] - makes badge smaller
-- `@icon`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink>
-- `@number`: [1 - 100]
+
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@skin` | Sets the color and background color | `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `gray` |
+| `@size` | Change the size of the badge | `small` | - |
+| `@icon` | Adds an icon to the badge | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@number` | Adds a number to the badge | 1 - 100 | - |

@@ -169,12 +169,16 @@
 
 ## Card arguments
 
-- `@flex`: [ true ] - layout elements as flexbox columns
-- `@expandable`: [ true ] - card becomes expandable
-- `@textCenter`: [ true ] - centers text
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@flex` | Layout elements as flexbox columns  | `boolean` | `false` |
+| `@expandable` | Card becomes expandable  | `boolean` | `false` |
+| `@textCenter` | Centers text | `boolean` | `false` |
 
 ## Card header arguments
 
-- `@badgeIcon`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink>
-- `@badgeSkin`: [ none | border | brand | success | warning | error | action ] - default is gray
-- `@badgeSize`: [ small ] - makes badge smaller
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@badgeIcon` | Add an icon  | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@badgeSkin` | Set the theme of the badge  | `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `none` |
+| `@badgeSize` | Set the size of the badge  | `small` / `default` | `default` |

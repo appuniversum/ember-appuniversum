@@ -31,6 +31,8 @@
 
 ## Arguments
 
-- `@titlePartOne`: top part of the title
-- `@titlePartTwo`: bottom part of the title
-- `@pictureSize`: [ large ] - creates a full-bleed picture
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@titlePartOne` | Top part of the title | `string` | - |
+| `@titlePartTwo` | Bottom part of the title | `string` | - |
+| `@pictureSize` | Sets the size of the header picture | `default` / `large` | `default` |

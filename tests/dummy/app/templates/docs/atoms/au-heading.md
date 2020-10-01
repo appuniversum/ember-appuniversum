@@ -33,5 +33,7 @@
 
 ## Arguments
 
-- `@level`: [ 1 | 2 | 3 | 4 | 5 | 6 ] - changes the depth of the heading (h1 > h6) - default is 1 (h1)
-- `@skin`: [ 1 | 2 | 3 | 4 | 5 | 6 ] - changes the style and size of the heading - default is 1
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@level` | Defines the depth of the heading (h1 > h6) | `1` / `2` / `3` / `4` / `5` / `6` | `1` |
+| `@skin` | Defines the style and size of the heading | `1` / `2` / `3` / `4` / `5` / `6` | `1` |

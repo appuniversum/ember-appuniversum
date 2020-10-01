@@ -200,8 +200,11 @@
 {{/docs-demo}}
 
 ## Arguments
-- `@reverse`: [ true ] - reverse the direction of the child components
-- `@border`: [ top | bottom ] - adds a border a padding to the top|bottom
-- `@skin`: [ tint ] - adds a background color
-- `@size`: [ small | medium | large ] - adds more padding
-- `@nowrap`: [ true ] - aligns elements to the top and makes sure groups, when dealing with longer content, do not push groups into a new line
+
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@reverse` | Reverse the direction of the child components | `boolean` | `false` |
+| `@border` | Adds a border and padding to the top or bottom | `none` / `top` / `bottom` | `none` |
+| `@skin` | Adds a background color | `tint` | - |
+| `@size` | Adds more padding | `small` / `medium` / `large` | - |
+| `@nowrap` | Aligns elements to the top and makes sure groups, when dealing with longer content, do not push groups into a new line | `boolean` | `false` |

@@ -54,6 +54,8 @@
 
 ## Arguments
 
-- `@dropdownTitle`: pass the title of the dropdown
-- `@dropdownButtonLabel`: pass name of the dropdown button (visually hidden)
-- `@alignment`: [ left | right ] position the icon and menu  - default is centered
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@dropdownTitle` | Pass the title of the dropdown | `string` | - |
+| `@dropdownButtonLabel` | Pass name of the dropdown button | `string` | - |
+| `@alignment` | Position the icon and menu | `left` / `center` / `right` | `center` |

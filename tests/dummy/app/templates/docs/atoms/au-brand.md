@@ -31,5 +31,7 @@
 
 ## Arguments
 
-- `@tagline`: [ string ] - adds a tagline underneath the logotype
-- `@brandLink`: [ url ] - adds a link.
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@brandLink` | Adds a link on the logotype | `url` | - |
+| `@tagline` | Adds a tagline underneath the logotype | `string` | - |

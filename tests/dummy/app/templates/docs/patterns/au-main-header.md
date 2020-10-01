@@ -17,7 +17,9 @@
 
 ## Arguments
 
-- `@brandLink`: pass a link to the logo (the logo has no link if this property is not present)
-- `@appTitle`: pass the header title
-- `@homeRoute`: pass a route for the appTitle link (expected behaviour is to link to the dashboard or homepage of the application)
-- `@contactRoute`: pass a route for the contact route (no contact route is shown when this property is not present)
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@brandLink` | Pass a link to the logo | `URL` | - |
+| `@appTitle` | Pass the header title | `string` | - |
+| `@homeRoute` | Pass a route for the appTitle link | `route` | - |
+| `@contactRoute` | Pass a route for the contact link | `route` | - |

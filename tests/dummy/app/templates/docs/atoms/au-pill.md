@@ -49,4 +49,7 @@
 {{/docs-demo}}
 
 ## Arguments
-- `@skin`: [ none | border | action | success | warning | error ] - default is grey
+
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@skin` | Sets the style of the badge  | `default` / `border` / `action` / `success` / `warning` / `error` | `default` |

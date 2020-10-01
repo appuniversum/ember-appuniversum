@@ -20,4 +20,6 @@
 
 ## Arguments
 
-- `@size`: [ large | huge ]
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@size` | Define the top and bottom margin | `default` / `large` / `huge` | `default` |

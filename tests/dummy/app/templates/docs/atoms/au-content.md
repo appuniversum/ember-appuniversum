@@ -70,4 +70,6 @@
 
 ## Arguments
 
-- `@skin`: [ small | large ] - smaller/larger text and vertical spacing
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@skin` | Smaller/larger text and vertical spacing  | `small` / `default` / `large` | `default` |
