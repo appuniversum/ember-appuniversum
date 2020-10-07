@@ -29,7 +29,6 @@
     "@appuniversum/appuniversum": "0.0.14",
     "@appuniversum/icon-font": "^1.1.0",
     "@duetds/date-picker": "^1.0.4",
-    "@ember/render-modifiers": "^1.0.2",
     "@zestia/ember-auto-focus": "^4.1.0",
     "ember-cli-babel": "^7.17.2",
     "ember-cli-htmlbars": "^4.2.2",
