@@ -15,7 +15,13 @@ module.exports = function(defaults) {
       enabled: true,
       cascade: true,
       sourcemap: true
-    }
+    },
+    autoImport: {
+      alias: {
+        '@duetds/date-picker/loader': '@duetds/date-picker/dist/loader/index.cjs',
+      },
+    },
+
   });
 
   /*
