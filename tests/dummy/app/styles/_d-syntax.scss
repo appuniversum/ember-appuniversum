@@ -18,7 +18,8 @@ $hue-6:   #e06c75; // original #d19a66
 $hue-6-2: #e6c07b;
 
 
-.docs-demo__snippet-wrapper {
+.docs-demo__snippet-wrapper,
+.docs-bg-code-base {
   @include au-font-size($au-base);
   font-family: $au-font-tertiary;
   position: relative;
