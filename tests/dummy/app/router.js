@@ -27,6 +27,8 @@ Router.map(function() {
       this.route('au-loader');
       this.route("au-navigation-link");
       this.route("au-pill");
+      this.route("ember-power-select");
+      this.route("au-form-datepicker")
     });
 
     this.route("components", function() {
@@ -35,8 +37,6 @@ Router.map(function() {
       this.route("au-dropdown");
       this.route("au-modal");
       this.route("au-data-table");
-      this.route("ember-power-select");
-      this.route("au-date-picker")
     });
 
     this.route("patterns", function() {

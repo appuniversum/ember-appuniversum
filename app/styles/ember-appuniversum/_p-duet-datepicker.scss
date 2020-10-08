@@ -1,0 +1,106 @@
+/* ==================================
+   #DUET DATEPICKER
+   https://github.com/duetds/date-picker#theming
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+:root {
+  --duet-color-primary: #{$au-yellow-400};
+  --duet-color-text: #{$au-gray-1000};
+  --duet-color-text-active: #{$au-white};
+  --duet-color-placeholder:#{$au-gray-700};
+  --duet-color-button: #{$au-white};
+  --duet-color-surface: #{$au-white};
+  --duet-color-overlay: rgba(0, 0, 0, 0.8);
+
+  --duet-font: #{$au-font};
+  --duet-font-normal: 400;
+  --duet-font-bold: 500;
+
+  --duet-radius: 0;
+  --duet-z-index: 10;
+}
+
+
+/* Overrides
+   ========================================================================== */
+
+.duet-date__input {
+  height: $au-unit-large - $au-unit-small;
+  border-color: $au-gray-300;
+
+  &:focus {
+    outline: none;
+    border-width: .1rem !important; // Temporary overide for Webuniversum
+    border-color: $au-yellow-400 !important; // Temporary overide for Webuniversum
+    box-shadow: 0 0 0 .2rem $au-yellow-400 !important; // Temporary overide for Webuniversum
+  }
+}
+
+.duet-date__toggle {
+  width: $au-unit + $au-unit-small;
+  transition: background $au-transition;
+
+  &,
+  &:focus {
+    box-shadow: none;
+    border-left: .1rem solid $au-gray-300;
+  }
+
+  &:focus {
+    outline: $au-outline;
+    outline-offset: .2rem;
+  }
+
+  &:hover {
+    background-color: $au-gray-100;
+  }
+}
+
+.duet-date__table {
+  font-size: 1.4rem;
+}
+
+.duet-date__toggle-icon svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.duet-date__select-label {
+  font-size: 1.6rem;
+}
+
+.duet-date__table-header {
+  font-size: 1.2rem;
+}
+
+.duet-date__day.is-today {
+  box-shadow: 0 0 0 1px $au-blue-700;
+}
+
+[aria-selected="true"] .duet-date__day,  {
+  background: $au-blue-700;
+}
+
+.duet-date__day {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.duet-date__day:focus {
+  color: $au-gray-1000;
+  background-color: $au-yellow-200;
+  border: .2rem solid $au-yellow-300;
+  box-shadow: none;
+}
+
+.duet-date__day:active {
+  background: $au-blue-700;
+  box-shadow: 0 0 5px $au-blue-700;
+}
+
+.duet-date__day:hover::before, .duet-date__day.is-today::before {
+  background: $au-blue-700;
+}

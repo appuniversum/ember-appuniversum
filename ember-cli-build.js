@@ -21,7 +21,6 @@ module.exports = function(defaults) {
         '@duetds/date-picker/loader': '@duetds/date-picker/dist/loader/index.cjs',
       },
     },
-
   });
 
   /*
