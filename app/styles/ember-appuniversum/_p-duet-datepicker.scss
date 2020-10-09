@@ -39,6 +39,10 @@
   }
 }
 
+.duet-date__input[disabled=""] {
+  background-color: $au-gray-100;
+}
+
 .duet-date__toggle {
   width: $au-unit + $au-unit-small;
   transition: background $au-transition;
@@ -56,6 +60,11 @@
 
   &:hover {
     background-color: $au-gray-100;
+  }
+
+  &[disabled=""] {
+    background-color: $au-gray-100;
+    cursor: default;
   }
 }
 
