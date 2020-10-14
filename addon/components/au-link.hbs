@@ -1,4 +1,4 @@
-<LinkTo @route="{{@linkRoute}}" class="au-c-link {{this.skin}} {{this.active}}" ...attributes>
+<LinkTo @route="{{@linkRoute}}" @model={{@model}} class="au-c-link {{this.skin}} {{this.active}}" ...attributes>
   {{#if @icon}}
     {{#if (eq @iconAlignment "left")}}
     <AuIcon @icon="{{@icon}}" @alignment="left" />
