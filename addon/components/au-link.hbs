@@ -1,20 +1,24 @@
-<LinkTo @route="{{@linkRoute}}" @model={{@model}} class="au-c-link {{this.skin}} {{this.active}}" ...attributes>
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "left")}}
-    <AuIcon @icon="{{@icon}}" @alignment="left" />
+{{#with (if @model
+                (component "link-to" model=@model)
+                (component "link-to" )) as |LinkTo| }}
+  <LinkTo @route={{@linkRoute}} class="au-c-link {{this.skin}} {{this.active}}" ...attributes>
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "left")}}
+        <AuIcon @icon="{{@icon}}" @alignment="left"/>
+      {{/if}}
+      {{#unless @iconAlignment}}
+        <AuIcon @icon="{{@icon}}"/>
+      {{/unless}}
     {{/if}}
-    {{#unless @iconAlignment}}
-    <AuIcon @icon="{{@icon}}" />
-    {{/unless}}
-  {{/if}}
-  {{#if (eq @hideText "true")}}
-  <span class="au-u-hidden-visually">{{yield}}</span>
-  {{else}}
-  {{yield}}
-  {{/if}}
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "right")}}
-    <AuIcon @icon="{{@icon}}" @alignment="right" />
+    {{#if (eq @hideText "true")}}
+      <span class="au-u-hidden-visually">{{yield}}</span>
+    {{else}}
+      {{yield}}
     {{/if}}
-  {{/if}}
-</LinkTo>
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "right")}}
+        <AuIcon @icon="{{@icon}}" @alignment="right"/>
+      {{/if}}
+    {{/if}}
+  </LinkTo>
+{{/with}}
