@@ -41,9 +41,9 @@
   {{#demo.example name='au-label-error.hbs'}}
     <div class="au-c-form">
       <p>
-        <AuLabel @error="true" for="input-error">Label error</AuLabel>
+        <AuLabel @error={{true}} for="input-error">Label error</AuLabel>
         <AuInput id="input-error" @error="error" @width="block"/>
-        <AuHelpText @error="true">Something is wrong.</AuHelpText>
+        <AuHelpText @error={{true}}>Something is wrong.</AuHelpText>
       </p>
     </div>
   {{/demo.example}}
@@ -55,4 +55,4 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@error` | Add an error state  | `boolean` | `false` |
+| `@error` | Add an error state  | `Boolean` | `false` |

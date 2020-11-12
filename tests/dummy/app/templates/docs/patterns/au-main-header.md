@@ -19,7 +19,7 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@brandLink` | Pass a link to the logo | `URL` | - |
-| `@appTitle` | Pass the header title | `string` | - |
+| `@brandLink` | Pass a link to the logo | `url` | - |
+| `@appTitle` | Pass the header title | `String` | - |
 | `@homeRoute` | Pass a route for the appTitle link | `route` | - |
 | `@contactRoute` | Pass a route for the contact link | `route` | - |

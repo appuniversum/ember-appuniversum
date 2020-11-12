@@ -22,4 +22,4 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@size` | Define the top and bottom margin | `default` / `large` / `huge` | `default` |
+| `@size` | Define the top and bottom margin | `value`: `default` / `large` / `huge` | `default` |

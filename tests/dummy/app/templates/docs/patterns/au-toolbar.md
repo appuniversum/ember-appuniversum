@@ -31,7 +31,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-toolbar-reverse.hbs'}}
-    <AuToolbar @reverse="true">
+    <AuToolbar @reverse={{true}}>
       <AuToolbarGroup>
         <AuButtonGroup>
           <AuButton>
@@ -185,7 +185,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-toolbar-nowrap.hbs'}}
-    <AuToolbar @nowrap="true">
+    <AuToolbar @nowrap={{true}}>
       <AuToolbarGroup>
         A very long text that is supposed to overflow when nowrap has not been added to the AuToolbar component. A very long text that is supposed to overflow when nowrap has not been added to the AuToolbar component.
       </AuToolbarGroup>
@@ -203,8 +203,8 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@reverse` | Reverse the direction of the child components | `boolean` | `false` |
-| `@border` | Adds a border and padding to the top or bottom | `none` / `top` / `bottom` | `none` |
-| `@skin` | Adds a background color | `tint` | - |
-| `@size` | Adds more padding | `small` / `medium` / `large` | - |
-| `@nowrap` | Aligns elements to the top and makes sure groups, when dealing with longer content, do not push groups into a new line | `boolean` | `false` |
+| `@reverse` | Reverse the direction of the child components | `Boolean` | `false` |
+| `@border` | Adds a border and padding to the top or bottom | `value`: `none` / `top` / `bottom` | `none` |
+| `@skin` | Adds a background color | `value`: `tint` | - |
+| `@size` | Adds more padding | `value`: `small` / `medium` / `large` | - |
+| `@nowrap` | Aligns elements to the top and makes sure groups, when dealing with longer content, do not push groups into a new line | `Boolean` | `false` |

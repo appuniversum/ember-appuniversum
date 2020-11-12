@@ -72,4 +72,4 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@skin` | Smaller/larger text and vertical spacing  | `small` / `default` / `large` | `default` |
+| `@skin` | Smaller/larger text and vertical spacing  | `value`: `small` / `default` / `large` | `default` |

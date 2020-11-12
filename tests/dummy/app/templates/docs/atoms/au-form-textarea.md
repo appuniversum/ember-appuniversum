@@ -38,9 +38,9 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-textarea-error.hbs'}}
-    <AuLabel @error="true" for="textarea-error">Normal textarea</AuLabel>
-    <AuTextarea id="textarea-error" @error="true" @width="block"></AuTextarea>
-    <AuHelpText @error="true">Something is wrong.</AuHelpText>
+    <AuLabel @error={{true}} for="textarea-error">Normal textarea</AuLabel>
+    <AuTextarea id="textarea-error" @error={{true}} @width="block"></AuTextarea>
+    <AuHelpText @error={{true}}>Something is wrong.</AuHelpText>
   {{/demo.example}}
   {{demo.snippet 'au-textarea-error.hbs'}}
 {{/docs-demo}}
@@ -49,5 +49,5 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@width` | Display the textarea as a block element  | `block` | - |
-| `@error` | Add an error state  | `boolean` | `false` |
+| `@width` | Display the textarea as a block element  | `value`: `block` | - |
+| `@error` | Add an error state  | `Boolean` | `false` |

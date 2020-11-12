@@ -78,9 +78,9 @@
   {{#demo.example name='au-input-error.hbs'}}
     <div class="au-c-form">
       <p>
-        <AuLabel @error="true" for="input-error">Normal input</AuLabel>
+        <AuLabel @error={{true}} for="input-error">Normal input</AuLabel>
         <AuInput id="input-error" @error="error" @width="block"/>
-        <AuHelpText @error="true">Something is wrong.</AuHelpText>
+        <AuHelpText @error={{true}}>Something is wrong.</AuHelpText>
       </p>
     </div>
   {{/demo.example}}
@@ -91,7 +91,7 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@error` | Add an error state  | `boolean` | `false` |
-| `@width` | Display the input as a block element  | `block` | - |
-| `@icon` | Adds an icon (using an icon implies the use @width="block") | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
-| `@iconAlignment` | Choose the position of the icon | `left` / `right`  | `left` |
+| `@error` | Add an error state  | `Boolean` | `false` |
+| `@width` | Display the input as a block element  | `value`: `block` | - |
+| `@icon` | Adds an icon (using an icon implies the use @width="block") | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@iconAlignment` | Choose the position of the icon | `value`: `left` / `right`  | `left` |

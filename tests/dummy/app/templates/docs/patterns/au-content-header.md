@@ -33,6 +33,6 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@titlePartOne` | Top part of the title | `string` | - |
-| `@titlePartTwo` | Bottom part of the title | `string` | - |
-| `@pictureSize` | Sets the size of the header picture | `default` / `large` | `default` |
+| `@titlePartOne` | Top part of the title | `String` | - |
+| `@titlePartTwo` | Bottom part of the title | `String` | - |
+| `@pictureSize` | Sets the size of the header picture | `value`: `default` / `large` | `default` |

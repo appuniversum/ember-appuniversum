@@ -35,5 +35,5 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@level` | Defines the depth of the heading (h1 > h6) | `1` / `2` / `3` / `4` / `5` / `6` | `1` |
-| `@skin` | Defines the style and size of the heading | `1` / `2` / `3` / `4` / `5` / `6` | `1` |
+| `@level` | Defines the depth of the heading (h1 > h6) | `value`: `1` / `2` / `3` / `4` / `5` / `6` | `1` |
+| `@skin` | Defines the style and size of the heading | `value`: `1` / `2` / `3` / `4` / `5` / `6` | `1` |

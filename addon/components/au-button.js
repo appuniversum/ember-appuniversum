@@ -25,21 +25,21 @@ export default class AuButton extends Component {
   }
 
   get alert() {
-    if (this.args.alert == "true")
+    if (this.args.alert)
       return "au-c-button--alert";
     else
       return "";
   }
 
   get disabled() {
-    if (this.args.disabled == "true")
+    if (this.args.disabled)
       return "is-disabled";
     else
       return "";
   }
 
   get loading() {
-    if (this.args.loading == "true")
+    if (this.args.loading)
       return "is-loading";
     else
       return "";

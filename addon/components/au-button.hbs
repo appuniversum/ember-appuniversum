@@ -7,7 +7,7 @@
     <AuIcon @icon="{{@icon}}" />
     {{/unless}}
   {{/if}}
-  {{#if (eq @hideText "true")}}
+  {{#if @hideText}}
   <span class="au-u-hidden-visually">{{yield}}</span>
   {{else}}
   {{yield}}

@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 
 export default class AuToolbar extends Component {
   get reverse() {
-    if (this.args.reverse == "true")
+    if (this.args.reverse)
       return "au-c-toolbar--reverse";
     else
       return "";
@@ -36,7 +36,7 @@ export default class AuToolbar extends Component {
   }
 
   get nowrap() {
-    if (this.args.nowrap == "true")
+    if (this.args.nowrap)
       return "au-c-toolbar--nowrap";
     else
       return "";
