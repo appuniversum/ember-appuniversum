@@ -12,7 +12,7 @@ export default class AuTimePickerComponent extends Component {
   @action increment(elem){ 
 
     if(elem == "hourValue"){
-      this[elem]++
+      ++this[elem]
 
       if(this[elem] >= 24){
         this[elem] = 24
@@ -20,7 +20,7 @@ export default class AuTimePickerComponent extends Component {
     }
 
     if(elem != "hourValue"){
-      this[elem]++
+      ++this[elem]
 
       if(this[elem] == 61){
         this[elem] = 60
@@ -32,7 +32,7 @@ export default class AuTimePickerComponent extends Component {
   @action decrement(elem){
 
     if(elem == "hourValue"){
-      this[elem]--
+      --this[elem]
 
       if(this[elem] <= 1){
         this[elem] = 1
@@ -40,7 +40,7 @@ export default class AuTimePickerComponent extends Component {
     }
 
     if(elem != "hourValue"){
-      this[elem]--
+      --this[elem]
 
       if(this[elem] <= 0){
         this[elem] = 0
