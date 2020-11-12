@@ -16,7 +16,7 @@ Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install ember-appuniversum
+ember install @appuniversum/ember-appuniversum
 ```
 
 
