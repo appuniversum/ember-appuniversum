@@ -4,7 +4,7 @@
     <div class="au-time-picker_box">
       <label class="au-time-picker_label" for="">Hours</label>
       <div class="au-time-picker_input-wrapper">
-        <input class="au-time-picker_input" value={{this.hourValue}}  {{on 'keydown' (fn this.setTimeValue "hourValue")}} name="input-hour" id="input-hour"/>
+        <input class="au-time-picker_input" value={{format-time this.hourValue}}  {{on 'keydown' (fn this.setTimeValue "hourValue")}} name="input-hour" id="input-hour"/>
         <div class="au-time-picker_button-wrapper">
           <button type="button" aria-label="increment hours" {{on 'click' (fn this.increment "hourValue")}} aria-controls="input-hour"  class="au-time-picker_button">+</button>
           <button type="button" aria-label="decrement hours" {{on 'click' (fn this.decrement "hourValue")}} aria-controls="input-hour" class="au-time-picker_button">-</button>
@@ -17,7 +17,7 @@
     <div class="au-time-picker_box">
       <label class="au-time-picker_label" for="">Minutes</label>
       <div class="au-time-picker_input-wrapper">
-        <input class="au-time-picker_input" value={{this.minuteValue}} {{on 'keydown' (fn this.setTimeValue "minuteValue")}} name="input-minute" id="input-minute"/>
+        <input class="au-time-picker_input" value={{format-time this.minuteValue}} {{on 'keydown' (fn this.setTimeValue "minuteValue")}} name="input-minute" id="input-minute"/>
         <div class="au-time-picker_button-wrapper">
           <button aria-label="increment minutes" {{on 'click' (fn this.increment "minuteValue")}} type="button" aria-controls="input-minute" class="au-time-picker_button">+</button>
           <button aria-label="decrement minutes" {{on 'click' (fn this.decrement "minuteValue")}} type="button" aria-controls="input-minute" class="au-time-picker_button">-</button>
@@ -30,7 +30,7 @@
     <div class="au-time-picker_box">
       <label class="au-time-picker_label" for="">Seconds</label>
       <div class="au-time-picker_input-wrapper">
-        <input class="au-time-picker_input" value={{this.secondValue}} {{on 'keydown' (fn this.setTimeValue "secondValue")}} name="input-second" id="input-second"/>
+        <input class="au-time-picker_input" value={{format-time this.secondValue}} {{on 'keydown' (fn this.setTimeValue "secondValue")}} name="input-second" id="input-second"/>
         <div class="au-time-picker_button-wrapper">
           <button aria-label="increment seconds" {{on 'click' (fn this.increment "secondValue")}} type="button" aria-controls="input-second" class="au-time-picker_button">+</button>
           <button aria-label="decrement seconds" {{on 'click' (fn this.decrement "secondValue")}} type="button" aria-controls="input-second" class="au-time-picker_button">-</button>
