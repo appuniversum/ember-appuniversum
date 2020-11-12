@@ -7,7 +7,7 @@ export default class AuTimePickerComponent extends Component {
   @tracked minuteValue = 0;
   @tracked secondValue = 0;
 
-  @tracked keyCodes = [ 8 , 9, 13 , 33 , 34 , 37 , 39, 46 ]
+  @tracked keyCodes = [ 9, 13 , 33 , 34]
 
   @action increment(elem){ 
 
