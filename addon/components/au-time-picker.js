@@ -6,8 +6,7 @@ export default class AuTimePickerComponent extends Component {
   @tracked hourValue = 12;
   @tracked minuteValue = 0;
   @tracked secondValue = 0;
-
-  @tracked keyCodes = [ 9, 13 , 33 , 34]
+  @tracked keyCodes = [ 8 , 9, 13 , 33 , 34 , 37 , 39, 46 ]
 
   @action increment(elem){ 
 
@@ -22,7 +21,7 @@ export default class AuTimePickerComponent extends Component {
     if(elem != "hourValue"){
       ++this[elem]
 
-      if(this[elem] == 61){
+      if(this[elem] >= 60){
         this[elem] = 60
       }
     }
@@ -65,5 +64,35 @@ export default class AuTimePickerComponent extends Component {
       e.preventDefault()
 
     } 
+  }
+
+  @action updateTime(elem, e){
+    let inputValue = e.target.value
+    if(elem == "hourValue"){
+      if(inputValue < 0){
+        this[elem] = 0
+      } else if ( inputValue > 24 ) {
+        this[elem] = 24
+      } else {
+        this[elem] = inputValue
+      }
+    }
+
+    if(elem != "hourValue"){
+      if(inputValue < 0){
+        this[elem] = 0
+      } else if ( inputValue > 60 ) {
+        this[elem] = 60
+      } else {
+        this[elem] = inputValue
+      }
+    }
+  }
+
+  @action setCurrentTime(){
+    let current = new Date()
+    this.hourValue = current.getHours()
+    this.minuteValue = current.getMinutes()
+    this.secondValue = current.getSeconds()
   }
 }

@@ -54,6 +54,7 @@ input[type=number] {
   align-items: center;
   max-width: 310px;
   min-width: 290px;
+  height: auto;
 
 }
 
@@ -78,7 +79,6 @@ input[type=number] {
   border-radius: 0px;
   appearance: none;
   border: 1px solid rgb(134, 134, 134);
-  caret-color: transparent;
 }
 
 .au-time-picker_button-wrapper{
@@ -106,5 +106,13 @@ input[type=number] {
 .au-time-picker_seperator{
   font-weight: bold;
   padding: .5rem;
+}
+
+.au-time-picker_current{
+  margin-left: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: rgb(15, 15, 15);
+  color: white;
 }
 
