@@ -29,6 +29,7 @@ Router.map(function() {
       this.route("au-pill");
       this.route("ember-power-select");
       this.route("au-form-datepicker")
+      this.route("au-form-timepicker");
     });
 
     this.route("components", function() {
