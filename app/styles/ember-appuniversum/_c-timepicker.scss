@@ -1,0 +1,78 @@
+/* ==================================
+   #TIMEPICKER
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+
+/* Component
+   ========================================================================== */
+
+.au-time-picker {
+  display: flex;
+  align-items: flex-end;
+}
+
+.au-time-picker__input-wrapper {
+  position: relative;
+}
+
+.au-time-picker__input {
+  width: 100%;
+  max-width: 8rem;
+}
+
+.au-time-picker__button-wrapper {
+  position: absolute;
+  right: 0;
+  height: calc(100% - .2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  top: .1rem;
+  right: .1rem;
+  border-left: .1rem solid $au-gray-300;
+}
+
+.au-time-picker__button {
+  @include au-font-size(1.4rem,1);
+  flex-grow: 1;
+  font-family: $au-font;
+  font-weight: $au-medium;
+  background-color: $au-white;
+  border: none;
+  padding: 0 $au-unit-tiny;
+  height: 100%;
+  margin: 0;
+
+  & + & {
+    border-top: .1rem solid $au-gray-300;
+  }
+
+  &,
+  &:visited {
+    color: $au-gray-800;
+    background-color: $au-white;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-gray-700;
+    background-color: $au-gray-100;
+  }
+
+  &:focus {
+    outline: $au-outline;
+    outline-offset: .2rem;
+  }
+}
+
+.au-time-picker__separator {
+  font-weight: $au-medium;
+  padding: $au-unit-tiny;
+}
+
+.au-time-picker__current {
+  margin-left: $au-unit-small;
+}
