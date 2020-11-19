@@ -41,10 +41,10 @@ Most of the components from Webuniversum are available in Appuniversum. The curr
 | - | <AuLink @linkRoute="docs.patterns.au-main-header">AuMainHeader</AuLink> | <AuPill @skin="action">New</AuPill> |
 | - | <AuLink @linkRoute="docs.patterns.au-main-footer">AuMainfooter</AuLink> | <AuPill @skin="action">New</AuPill> |
 | - | <AuLink @linkRoute="docs.atoms.au-navigation-link">AuNavigationLink</AuLink> | <AuPill @skin="action">New</AuPill> |
+| - | <AuLink @linkRoute="docs.atoms.au-form-timepicker">AuTimepicker</AuLink> | <AuPill @skin="action">New</AuPill> |
 | - | <AuLink @linkRoute="docs.atoms.au-form-textarea">AuTextarea</AuLink> | <AuPill @skin="action">New</AuPill> |
 | - | <AuLink @linkRoute="docs.patterns.au-toolbar">AuToolbar</AuLink> | <AuPill @skin="action">New</AuPill> |
 | `wu-contact-card` | - | <AuPill @skin="warning">Not started</AuPill> |
-| `wu-datepicker-input` | - | <AuPill @skin="warning">Not started</AuPill> |
 | `wu-date-range` | - | <AuPill @skin="warning">Not started</AuPill> |
 | `wu-document-miniature` | - | <AuPill @skin="warning">Not started</AuPill> |
 | `wu-info-tile` | - | <AuPill @skin="warning">Not started</AuPill> |
