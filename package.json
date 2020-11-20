@@ -37,7 +37,7 @@
     "ember-data-table": "git+https://github.com/aatauil/ember-data-table.git#a13ca0696f6d63a3570af13a4109d1e8b1f24503",
     "ember-focus-trap": "^0.4.0",
     "ember-modifier": "^1.0.3",
-    "ember-power-select": "^4.0.3",
+    "ember-power-select": "^4.1.0",
     "ember-prop-modifier": "^1.0.0",
     "ember-wormhole": "^0.5.5"
   },
