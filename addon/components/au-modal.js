@@ -1,10 +1,11 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
+import EmberObject from '@ember/object';
 
 export default class AuModal extends Component {
   // Variables
-  destinationElementId =  null
+  destinationElementId =  null;
 
   constructor() {
     super(...arguments);
@@ -31,29 +32,35 @@ export default class AuModal extends Component {
       return "";
   }
 
-  // Track modal state
-  @tracked modalOpen = false;
+  get modalOpen() {
+    if (this.args.modalOpen)
+      return "test";
+    else
+      return "";
+  }
 
   // Open modal
-  @action
-  openModal() {
-    // Toggle modal view state
-    this.modalOpen = !this.modalOpen;
+  // @action
+  // openModal() {
+  //   // Toggle modal view state
+  //   this.modalOpen = !this.modalOpen;
 
-    // Add body class
-    document.getElementsByTagName('html')[0].classList.add("au-c-modal-open");
-  }
+  //   // Add body class
+  //   document.getElementsByTagName('html')[0].classList.add("au-c-modal-open");
+  // }
+
+
 
   // Close modal
   @action
   closeModal() {
     // Only run this action when a modal is open
-    if (this.modalOpen) {
+    // if (modalOpen) {
       // Close the modal
-      this.modalOpen = false;
+      // modalOpen.set(false);
 
       // Remove html class when modal is disabled
-      document.getElementsByTagName('html')[0].classList.remove("au-c-modal-open");
-    }
+      // document.getElementsByTagName('html')[0].classList.remove("au-c-modal-open");
+    // }
   }
 }

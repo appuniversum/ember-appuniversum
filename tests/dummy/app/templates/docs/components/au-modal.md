@@ -10,25 +10,8 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-modal.hbs'}}
-    <AuModal @buttonTitle="Open modal" @modalTitle="Modal title">
-      <AuModalBody>
-        <p>Modal content</p>
-      </AuModalBody>
-      <AuModalFooter>
-        <AuButton>Action</AuButton>
-      </AuModalFooter>
-    </AuModal>
-    <hr>
-    <AuModal @buttonTitle="Open modal" @buttonSkin="secondary" @modalTitle="Modal title">
-      <AuModalBody>
-        <p>Modal content</p>
-      </AuModalBody>
-      <AuModalFooter>
-        <AuButton>Action</AuButton>
-      </AuModalFooter>
-    </AuModal>
-    <hr>
-    <AuModal @buttonTitle="Open modal" @buttonSkin="tertiary" @buttonIcon="add" @modalTitle="Modal title">
+    <AuButton {{on "click" (action (mut popup) true)}}>Open modal</AuButton>
+    <AuModal @modalTitle="Modal title" @modalOpen={{this.popup}}>
       <AuModalBody>
         <p>Modal content</p>
       </AuModalBody>
@@ -44,7 +27,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-modal-fullscreen.hbs'}}
-    <AuModal @buttonTitle="Open fullscreen modal" @modalTitle="Modal title" @size="fullscreen">
+    <AuModal @modalOpen={{false}} @modalTitle="Modal title" @size="fullscreen">
       <AuModalBody>
         <p>Modal content</p>
       </AuModalBody>
@@ -60,8 +43,7 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@buttonTitle` | Set the title of the open modal button | `string` | - |
-| `@buttonIcon` | Add an icon to the open modal button | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
-| `@buttonSkin` | Set the title of the modal | `primary` / `secondary` / `tertiary` | `primary` |
+| `@modalOpen` | Show or hide the modal | `Boolean` | - |
+| `@onClose` | Add the action to close the modal | `function` | - |
 | `@modalTitle` | Set the title of the modal | `string` | - |
 | `@size` | Set the size of the modal | `default` / `fullscreen` | `default` |
