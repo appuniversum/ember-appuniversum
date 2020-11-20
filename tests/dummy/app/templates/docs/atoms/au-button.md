@@ -59,7 +59,7 @@
 
     <hr>
 
-    <AuButton @icon="pencil" @hideText="true">
+    <AuButton @icon="pencil" @hideText={{true}}>
       Primary button
     </AuButton>
 
@@ -82,19 +82,19 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button-states.hbs'}}
-    <AuButton @alert="true">
+    <AuButton @alert={{true}}>
       Primary button (alert)
     </AuButton>
 
     <hr>
 
-    <AuButton @disabled="true">
+    <AuButton @disabled={{true}}>
       Primary button (disabled)
     </AuButton>
 
     <hr>
 
-    <AuButton @loading="true">
+    <AuButton @loading={{true}}>
       Primary button (loading)
     </AuButton>
   {{/demo.example}}
@@ -105,12 +105,12 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@skin` | Defines the style of the button  | `primary` / `secondary` / `tertiary` | `primary` |
-| `@size` | Set the size of the button  | `large` | - |
-| `@icon` | Adds an icon  | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
-| `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `left` / `right` | - |
-| `@hideText` | Hides the button text visually | `boolean` | `false` |
-| `@width` | Defines the width of a button | `block` | - |
-| `@alert` | Adds an alert state to the button | `boolean` | `false` |
-| `@disabled` | Adds a disabled state to the button | `boolean` | `false` |
-| `@loading` | Adds a loading state to the button | `boolean` | `false` |
+| `@skin` | Defines the style of the button  | `value`: `primary` / `secondary` / `tertiary` | `primary` |
+| `@size` | Set the size of the button  | `value`: `large` | - |
+| `@icon` | Adds an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |
+| `@hideText` | Hides the button text visually | `Boolean` | `false` |
+| `@width` | Defines the width of a button | `value`: `block` | - |
+| `@alert` | Adds an alert state to the button | `Boolean` | `false` |
+| `@disabled` | Adds a disabled state to the button | `Boolean` | `false` |
+| `@loading` | Adds a loading state to the button | `Boolean` | `false` |

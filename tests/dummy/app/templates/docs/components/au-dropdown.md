@@ -56,6 +56,6 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@dropdownTitle` | Pass the title of the dropdown | `string` | - |
-| `@dropdownButtonLabel` | Pass name of the dropdown button | `string` | - |
-| `@alignment` | Position the icon and menu | `left` / `center` / `right` | `center` |
+| `@dropdownTitle` | Pass the title of the dropdown | `String` | - |
+| `@dropdownButtonLabel` | Pass name of the dropdown button | `String` | - |
+| `@alignment` | Position the icon and menu | `value`: `left` / `center` / `right` | `center` |

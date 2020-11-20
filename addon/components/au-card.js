@@ -14,25 +14,25 @@ export default class AuCardComponent extends Component {
   }
 
   get flex() {
-    if (this.args.flex == "true")
+    if (this.args.flex)
       return "au-c-card--flex";
     return "";
   }
 
   get expandable() {
-    if (this.args.expandable == "true")
+    if (this.args.expandable)
       return "au-c-card--expandable";
     return "";
   }
 
   get divided() {
-    if (this.args.divided == "true")
+    if (this.args.divided)
       return "au-c-card--divided";
     return "";
   }
 
   get textCenter() {
-    if (this.args.textCenter == "true")
+    if (this.args.textCenter)
       return "au-c-card--text-center";
     return "";
   }

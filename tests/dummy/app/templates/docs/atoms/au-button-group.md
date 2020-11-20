@@ -36,7 +36,7 @@ Can be used as a toggle function. Not functional in this demo.
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-button-group-inline.hbs'}}
-    <AuButtonGroup @inline="true">
+    <AuButtonGroup @inline={{true}}>
       <AuButton>
         Primary button in group
       </AuButton>
@@ -44,7 +44,7 @@ Can be used as a toggle function. Not functional in this demo.
         Primary button in group - active
       </AuButton>
     </AuButtonGroup>
-    <AuButtonGroup @inline="true">
+    <AuButtonGroup @inline={{true}}>
       <AuButton @size="large">
         Large primary button in group
       </AuButton>
@@ -54,7 +54,7 @@ Can be used as a toggle function. Not functional in this demo.
     </AuButtonGroup>
 
     <hr>
-    <AuButtonGroup @inline="true">
+    <AuButtonGroup @inline={{true}}>
       <AuButton @skin="secondary">
         Secondary button in group
       </AuButton>
@@ -62,7 +62,7 @@ Can be used as a toggle function. Not functional in this demo.
         Secondary button in group - active
       </AuButton>
     </AuButtonGroup>
-    <AuButtonGroup @inline="true">
+    <AuButtonGroup @inline={{true}}>
       <AuButton @skin="secondary" @size="large">
         Large secondary button in group
       </AuButton>
@@ -72,7 +72,7 @@ Can be used as a toggle function. Not functional in this demo.
     </AuButtonGroup>
 
     <hr>
-    <AuButtonGroup @inline="true">
+    <AuButtonGroup @inline={{true}}>
       <AuButton @skin="tertiary">
         Tertiary button in group
       </AuButton>
@@ -88,4 +88,4 @@ Can be used as a toggle function. Not functional in this demo.
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@inline` | Removes whitespace between buttons  | `boolean` | false |
+| `@inline` | Removes whitespace between buttons  | `Boolean` | false |

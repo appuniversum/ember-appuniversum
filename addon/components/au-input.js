@@ -18,7 +18,7 @@ export default class AuInput extends Component {
   }
 
   get error() {
-    if (this.args.error == "true")
+    if (this.args.error)
       return "au-c-input--error";
     else
       return "";

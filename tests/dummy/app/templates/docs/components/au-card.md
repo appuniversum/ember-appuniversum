@@ -26,7 +26,7 @@
         </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard @textCenter="true" as |c|>
+        <AuCard @textCenter={{true}} as |c|>
           <c.header>
             <AuHeading @level="2" @skin="4">
               Title for card
@@ -44,7 +44,7 @@
         </AuCard>
       </div>
       <div class="au-o-grid__item au-u-1-2">
-        <AuCard @flex="true" as |c|>
+        <AuCard @flex={{true}} as |c|>
           <c.header @badgeSkin="brand" @badgeIcon="users">
             <AuHeading @level="2" @skin="4">
               Title for card
@@ -128,7 +128,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card-divided.hbs'}}
-    <AuCard @flex="true" @divided="true" as |c|>
+    <AuCard @flex={{true}} @divided={{true}} as |c|>
       <c.header @badgeSkin="brand" @badgeIcon="users">
         <AuHeading @level="2" @skin="4">
           Title for card
@@ -149,7 +149,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card-expandable.hbs'}}
-    <AuCard @expandable="true" @flex="true" @divided="true" as |c|>
+    <AuCard @expandable={{true}} @flex={{true}} @divided={{true}} as |c|>
       <c.header @badgeSkin="brand" @badgeIcon="users">
         <AuHeading @level="2" @skin="4">
           Title for card
@@ -179,6 +179,6 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@badgeIcon` | Add an icon  | <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
-| `@badgeSkin` | Set the theme of the badge  | `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `none` |
-| `@badgeSize` | Set the size of the badge  | `small` / `default` | `default` |
+| `@badgeIcon` | Add an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@badgeSkin` | Set the theme of the badge  | `value`: `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `none` |
+| `@badgeSize` | Set the size of the badge  | `value`: `small` / `default` | `default` |

@@ -35,9 +35,9 @@
   {{#demo.example name='au-helptext-form.hbs'}}
     <div class="au-c-form">
       <p>
-        <AuLabel @error="true" for="input-error">Normal input</AuLabel>
+        <AuLabel @error={{true}} for="input-error">Normal input</AuLabel>
         <AuInput id="input-error" @error="error" @width="block"/>
-        <AuHelpText @error="true">Something is wrong.</AuHelpText>
+        <AuHelpText @error={{true}}>Something is wrong.</AuHelpText>
       </p>
     </div>
   {{/demo.example}}
@@ -48,6 +48,6 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@skin` | Change the style of the text  | `primary` / `secondary` / `tertiary` | `primary` |
-| `@size` | Change the size of the text  | `small` / `normal` / `large` | `small` |
-| `@error` | Add an error state  | `boolean` | `false` |
+| `@skin` | Change the style of the text  | `value`: `primary` / `secondary` / `tertiary` | `primary` |
+| `@size` | Change the size of the text  | `value`: `small` / `normal` / `large` | `small` |
+| `@error` | Add an error state  | `Boolean` | `false` |

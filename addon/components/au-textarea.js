@@ -9,7 +9,7 @@ export default class AuTextarea extends Component {
   }
 
   get error() {
-    if (this.args.error == "true")
+    if (this.args.error)
       return "au-c-textarea--error";
     else
       return "";
