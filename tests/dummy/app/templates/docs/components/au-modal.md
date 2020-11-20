@@ -2,22 +2,22 @@
 
 ---
 
-## Todo
-- Seperate the open button from the modal component
-- Make the modal open/close action available to other components
 
 ## Modal button styles
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-modal.hbs'}}
-    <AuButton {{on "click" (action (mut popup) true)}}>Open modal</AuButton>
-    <AuModal @modalTitle="Modal title" @modalOpen={{this.popup}}>
-      <AuModalBody>
+    <AuButton {{on "click" (fn (mut this.popup) true)}}>Open modal</AuButton>
+    <AuModal 
+    @modalTitle="Modal title" 
+    @modalOpen={{this.popup}} 
+    @closeModal={{fn (mut this.popup) false}} as |Modal| >
+      <Modal.Body>
         <p>Modal content</p>
-      </AuModalBody>
-      <AuModalFooter>
+      </Modal.Body>
+      <Modal.Footer>
         <AuButton>Action</AuButton>
-      </AuModalFooter>
+      </Modal.Footer>
     </AuModal>
   {{/demo.example}}
   {{demo.snippet 'au-modal.hbs'}}
@@ -27,13 +27,17 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-modal-fullscreen.hbs'}}
-    <AuModal @modalOpen={{false}} @modalTitle="Modal title" @size="fullscreen">
-      <AuModalBody>
+    <AuButton {{on "click" (fn (mut this.popupFullScreen) true)}}>Open modal</AuButton>
+    <AuModal @modalOpen={{this.popupFullScreen}} 
+    @modalTitle="Modal title" 
+    @size="fullscreen" 
+    @closeModal={{fn (mut this.popupFullScreen) false}} as |Modal|>
+      <Modal.Body>
         <p>Modal content</p>
-      </AuModalBody>
-      <AuModalFooter>
+      </Modal.Body>
+      <Modal.Footer>
         <AuButton>Action</AuButton>
-      </AuModalFooter>
+      </Modal.Footer>
     </AuModal> 
   {{/demo.example}}
   {{demo.snippet 'au-modal-fullscreen.hbs'}}
