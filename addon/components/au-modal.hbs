@@ -6,11 +6,12 @@
       role="dialog"
       aria-describedby={{concat "au-c-modal-title-" @id}}
       tabindex="-1"
+      {{did-insert (fn this.setInert false)}}
       {{focus-trap
           isActive=@modalOpen
           focusTrapOptions=
             (hash
-              onDeactivate=@closeModal
+              onDeactivate=this.closeModal
               initialFocus=".au-c-modal__title"
               clickOutsideDeactivates=true
             )
@@ -21,7 +22,7 @@
           {{@modalTitle}}
         </h1>
       </div>
-      <button type="button" {{on "click" @closeModal}} class="au-c-modal__close">
+      <button type="button" {{on "click" this.closeModal}} class="au-c-modal__close">
         <AuIcon @icon="cross" @size="large" />
         <span class="au-u-hidden-visually">Venster sluiten</span>
       </button>
