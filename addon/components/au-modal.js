@@ -1,7 +1,6 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
-import EmberObject from '@ember/object';
 
 export default class AuModal extends Component {
   // Variables
@@ -57,7 +56,7 @@ export default class AuModal extends Component {
     // Only run this action when a modal is open
     // if (modalOpen) {
       // Close the modal
-      // modalOpen.set(false);
+      //   this.modalOpen = !this.modalOpen;
 
       // Remove html class when modal is disabled
       // document.getElementsByTagName('html')[0].classList.remove("au-c-modal-open");
