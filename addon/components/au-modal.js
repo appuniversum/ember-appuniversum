@@ -8,11 +8,9 @@ export default class AuModal extends Component {
 
   constructor() {
     super(...arguments);
-
-    // Set wormhole destination
-    if (!this.destinationElementId) {
-      this.destinationElementId = 'ember-appuniversum-wormhole';
-    }
+  }
+  get destinationElement() {
+    return document.getElementById("ember-appuniversum-wormhole");
   }
 
   get buttonSkin() {
