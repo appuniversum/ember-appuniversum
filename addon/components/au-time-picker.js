@@ -3,10 +3,25 @@ import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 
 export default class AuTimePickerComponent extends Component {
-  @tracked hourValue = 12;
-  @tracked minuteValue = 0;
-  @tracked secondValue = 0;
+  @tracked hourValue = this.hours || 12;
+  @tracked minuteValue = this.minutes || 0;
+  @tracked secondValue = this.seconds || 0;
   @tracked keyCodes = [ 8 , 9, 13 , 33 , 34 , 37 , 39, 46 ];
+
+  get getTimeObject(){
+    return{
+      hours: this.hourValue,
+      minutes: this.minuteValue,
+      seconds: this.secondValue
+    }
+  }
+
+  /**
+   * Increments or decrements a time value. 
+   * HourValue has a max of 24 while minute & seconds have a max of 60
+   * HourValue has a min of 1 while minute  seconds have a min of 0
+   *  
+   */
 
   @action
   increment(elem){
@@ -25,6 +40,7 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = 60;
       }
     }
+
   }
 
 
@@ -46,9 +62,17 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = 0;
       }
     }
+
   }
 
-  // Keyboard input
+  /**
+   * Triggers on keydown
+   * up arrow (38) increments the current value
+   * down arrow (40) decrements the current value
+   * If any other key that up or down has been pressed then check if it is a number key or one 
+   * of the allowed keys (left/right/shift/enter..) in the keyCodes list 
+   */
+
   @action
   setTimeValue(elem, e){
 
@@ -64,7 +88,15 @@ export default class AuTimePickerComponent extends Component {
     } else if(e.target.value.length >= 2 && this.keyCodes.indexOf(e.keyCode) == -1) {
       e.preventDefault();
     }
+
   }
+
+  /**
+   * triggered after focussing out of field. Checks if the inputted value makes sense. (e.g. hour range: 1 - 24)
+   * "elem" is the name of the tracked property
+   * "e" is the context
+   * 
+   */
 
   @action
   updateTime(elem, e){
@@ -88,6 +120,7 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = inputValue;
       }
     }
+
   }
 
   @action
@@ -96,5 +129,6 @@ export default class AuTimePickerComponent extends Component {
     this.hourValue = current.getHours();
     this.minuteValue = current.getMinutes();
     this.secondValue = current.getSeconds();
+
   }
 }
