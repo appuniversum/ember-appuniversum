@@ -16,9 +16,7 @@ module('Integration | Component | au-control-checkbox', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      <AuControlCheckbox>
-        template block text
-      </AuControlCheckbox>
+      <AuControlCheckbox @label="template block text" />
     `);
 
     assert.dom(this.element).hasText('template block text');

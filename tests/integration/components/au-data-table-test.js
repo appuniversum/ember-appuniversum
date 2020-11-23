@@ -13,14 +13,5 @@ module('Integration | Component | au-data-table', function(hooks) {
     await render(hbs`<AuDataTable />`);
 
     assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <AuDataTable>
-        template block text
-      </AuDataTable>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
   });
 });

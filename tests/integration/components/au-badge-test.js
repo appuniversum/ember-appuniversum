@@ -16,11 +16,9 @@ module('Integration | Component | au-badge', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      <AuBadge>
-        template block text
-      </AuBadge>
+      <AuBadge @number=2/>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('2');
   });
 });

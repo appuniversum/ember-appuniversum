@@ -14,13 +14,5 @@ module('Integration | Component | au-icon', function(hooks) {
 
     assert.dom(this.element).hasText('');
 
-    // Template block usage:
-    await render(hbs`
-      <AuIcon>
-        template block text
-      </AuIcon>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
   });
 });

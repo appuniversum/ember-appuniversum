@@ -37,7 +37,7 @@ export default class AuModal extends Component {
   @action
   closeModal() {
     this.setInert(true);
-    this.args.closeModal();
+    this.args.closeModal && this.args.closeModal();
   }
 
 

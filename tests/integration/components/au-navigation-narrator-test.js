@@ -12,15 +12,7 @@ module('Integration | Component | au-navigation-narrator', function(hooks) {
 
     await render(hbs`<AuNavigationNarrator />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).containsText('Nieuwe pagina');
 
-    // Template block usage:
-    await render(hbs`
-      <AuNavigationNarrator>
-        template block text
-      </AuNavigationNarrator>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
   });
 });

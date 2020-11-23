@@ -14,13 +14,5 @@ module('Integration | Component | au-input', function(hooks) {
 
     assert.dom(this.element).hasText('');
 
-    // Template block usage:
-    await render(hbs`
-      <AuInput>
-        template block text
-      </AuInput>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
   });
 });

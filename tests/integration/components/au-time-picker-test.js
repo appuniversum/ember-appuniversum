@@ -12,15 +12,7 @@ module('Integration | Component | au-time-picker', function(hooks) {
 
     await render(hbs`<AuTimePicker />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).exists();
 
-    // Template block usage:
-    await render(hbs`
-      <AuTimePicker>
-        template block text
-      </AuTimePicker>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
   });
 });

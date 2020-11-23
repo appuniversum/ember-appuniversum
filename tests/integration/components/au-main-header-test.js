@@ -12,7 +12,7 @@ module('Integration | Component | au-main-header', function(hooks) {
 
     await render(hbs`<AuMainHeader />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).containsText('Naar de hoofdinhoud');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | au-main-header', function(hooks) {
       </AuMainHeader>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).containsText('template block text');
   });
 });

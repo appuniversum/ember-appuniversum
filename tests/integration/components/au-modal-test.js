@@ -16,11 +16,15 @@ module('Integration | Component | au-modal', function(hooks) {
 
     // Template block usage:
     await render(hbs`
-      <AuModal>
-        template block text
+      <AuModal @modalOpen={{true}} as |Modal|>
+        <Modal.Body>
+          template block text
+        </Modal.Body>
       </AuModal>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    // the wormhole exists outside of the test dom,
+    // so we explicitly pass in the document as rootelement here
+    assert.dom("#ember-appuniversum-wormhole", document).containsText('template block text');
   });
 });
