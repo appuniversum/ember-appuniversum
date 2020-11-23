@@ -12,6 +12,6 @@ module('Integration | Component | au-data-table', function(hooks) {
 
     await render(hbs`<AuDataTable />`);
 
-    assert.dom(this.element).hasText('');
+    assert.dom(this.element).hasText('No data');
   });
 });
