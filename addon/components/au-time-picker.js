@@ -40,7 +40,7 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = 60;
       }
     }
-
+    this.onChange(this.getTimeObject)
   }
 
 
@@ -62,7 +62,7 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = 0;
       }
     }
-
+    this.onChange(this.getTimeObject)
   }
 
   /**
@@ -120,6 +120,7 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = inputValue;
       }
     }
+    this.onChange(this.getTimeObject)
 
   }
 
@@ -129,6 +130,6 @@ export default class AuTimePickerComponent extends Component {
     this.hourValue = current.getHours();
     this.minuteValue = current.getMinutes();
     this.secondValue = current.getSeconds();
-
+    this.onChange(this.getTimeObject)
   }
 }
