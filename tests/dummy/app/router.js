@@ -8,6 +8,11 @@ const Router = AddonDocsRouter.extend({
 
 Router.map(function() {
   docsRoute(this, function() {
+    this.route("outline", function() {
+      this.route("getting-started");
+      this.route("webuniversum");
+    });
+
     this.route("atoms", function() {
       this.route("au-badge");
       this.route("au-button");
@@ -54,9 +59,6 @@ Router.map(function() {
 
   this.route('not-found', { path: '/*path' });
 
-  this.route('atoms', function() {
-    this.route('au-badge');
-  });
 });
 
 export default Router;
