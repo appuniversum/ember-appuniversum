@@ -11,6 +11,7 @@ Router.map(function() {
     this.route("outline", function() {
       this.route("getting-started");
       this.route("webuniversum");
+      this.route("accessibility");
     });
 
     this.route("atoms", function() {
