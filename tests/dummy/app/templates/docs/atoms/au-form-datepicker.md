@@ -69,3 +69,4 @@ Customize how the dates are formatted and/or parsed. The adapter argument expect
 | `@disabled` | Makes the date picker input component disabled | `Boolean` | false |
 | `@localization` | Object for localizing Button labels, names... | `Object` | [See above](#localization) |
 | `@adapter` | Object for parsing and formatting | `Object` | [See above](#adapter) |
+| `@onChange`| Gets called when the date changes. Returns an object including the date value (event) | 'object' | - |
