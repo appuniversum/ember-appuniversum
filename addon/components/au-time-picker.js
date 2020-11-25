@@ -1,6 +1,6 @@
 import Component from '@ember/component';
-import { action } from "@ember/object";
-import { tracked } from "@glimmer/tracking";
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class AuTimePickerComponent extends Component {
   @tracked hourValue = this.hours || 12;
@@ -13,8 +13,8 @@ export default class AuTimePickerComponent extends Component {
       hours: this.hourValue,
       minutes: this.minuteValue,
       seconds: this.secondValue
-    }
-  };
+    };
+  }
 
   /**
    * Increments or decrements a time value. 
@@ -25,7 +25,7 @@ export default class AuTimePickerComponent extends Component {
 
   @action
   increment(elem){
-    if (elem == "hourValue") {
+    if (elem == 'hourValue') {
       ++this[elem];
 
       if (this[elem] >= 24) {
@@ -33,20 +33,20 @@ export default class AuTimePickerComponent extends Component {
       }
     }
 
-    if (elem != "hourValue") {
+    if (elem != 'hourValue') {
       ++this[elem];
 
       if (this[elem] >= 60) {
         this[elem] = 60;
       }
     }
-    this.onChange(this.getTimeObject)
-  };
+    this.onChange(this.getTimeObject);
+  }
 
 
   @action
   decrement(elem){
-    if (elem == "hourValue") {
+    if (elem == 'hourValue') {
       --this[elem];
 
       if (this[elem] <= 1) {
@@ -54,15 +54,15 @@ export default class AuTimePickerComponent extends Component {
       }
     }
 
-    if(elem != "hourValue"){
+    if(elem != 'hourValue'){
       --this[elem];
 
       if(this[elem] <= 0){
         this[elem] = 0;
       }
     }
-    this.onChange(this.getTimeObject)
-  };
+    this.onChange(this.getTimeObject);
+  }
 
   /**
    * Triggers on keydown
@@ -86,7 +86,7 @@ export default class AuTimePickerComponent extends Component {
     } else if (e.target.value.length >= 2 && this.keyCodes.indexOf(e.keyCode) == -1) {
       e.preventDefault();
     }
-  };
+  }
 
   /**
    * triggered after focussing out of field. Checks if the inputted value makes sense. (e.g. hour range: 1 - 24)
@@ -98,7 +98,7 @@ export default class AuTimePickerComponent extends Component {
   @action
   updateTime(elem, e){
     let inputValue = e.target.value;
-    if (elem == "hourValue") {
+    if (elem == 'hourValue') {
       if (inputValue < 0) {
         this[elem] = 0;
       } else if (inputValue > 24) {
@@ -108,7 +108,7 @@ export default class AuTimePickerComponent extends Component {
       }
     }
 
-    if(elem != "hourValue"){
+    if(elem != 'hourValue'){
       if(inputValue < 0){
         this[elem] = 0;
       } else if (inputValue > 60) {
@@ -118,7 +118,7 @@ export default class AuTimePickerComponent extends Component {
       }
     }
     this.onChange(this.getTimeObject);
-  };
+  }
 
   @action
   setCurrentTime(){
@@ -127,5 +127,5 @@ export default class AuTimePickerComponent extends Component {
     this.minuteValue = current.getMinutes();
     this.secondValue = current.getSeconds();
     this.onChange(this.getTimeObject);
-  };
+  }
 }
