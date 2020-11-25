@@ -6,24 +6,24 @@ export default class AuDatePickerComponent extends Component {
 
   //Default Localization
   @tracked localization = {
-    buttonLabel: "Choose date",
-    placeholder: "DD-MM-YYYY",
-    selectedDateMessage: "Selected date is",
-    prevMonthLabel: "Previous month",
-    nextMonthLabel: "Next month",
-    monthSelectLabel: "Month",
-    yearSelectLabel: "Year",
-    closeLabel: "Close window",
-    keyboardInstruction: "You can use arrow keys to navigate dates",
-    calendarHeading: "Choose a date",
-    dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-    monthNamesShort: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    buttonLabel: 'Choose date',
+    placeholder: 'DD-MM-YYYY',
+    selectedDateMessage: 'Selected date is',
+    prevMonthLabel: 'Previous month',
+    nextMonthLabel: 'Next month',
+    monthSelectLabel: 'Month',
+    yearSelectLabel: 'Year',
+    closeLabel: 'Close window',
+    keyboardInstruction: 'You can use arrow keys to navigate dates',
+    calendarHeading: 'Choose a date',
+    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   };
 
   // Default Adapter
   @tracked adapter = {
-    parse: function(value = "", createDate) {
+    parse: function(value = '', createDate) {
       const matches = value.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
       if (matches) {
         return createDate(matches[3], matches[2], matches[1]);
@@ -47,7 +47,7 @@ export default class AuDatePickerComponent extends Component {
     if (localArgs) {
 
       // Check if localization argument passed in is of type object
-      if (typeof localArgs != "object") {
+      if (typeof localArgs != 'object') {
         throw SyntaxError(`The passed in value for the localization argument needs to be of type "object", You passed in a "${typeof localArgs}"` ) ;
       }
       
@@ -60,7 +60,7 @@ export default class AuDatePickerComponent extends Component {
         }
       }
     }
-  };
+  }
 
   @action _assignAdapter(args){
     let adaptArgs = args.adapter;
@@ -68,7 +68,7 @@ export default class AuDatePickerComponent extends Component {
     if (adaptArgs) {
 
       // Check if adapter argument passed in is of type object
-      if (typeof adaptArgs != "object") {
+      if (typeof adaptArgs != 'object') {
         throw SyntaxError(`The passed in value for the adapter argument needs to be of type "object", You passed in a "${typeof adaptArgs}"`);
       }
 
@@ -81,5 +81,10 @@ export default class AuDatePickerComponent extends Component {
         }
       }
     }
-  };
+  }
+
+  @action returnDate(context){
+    const isoDate = new Date(context.detail.value).toISOString().split('T')[0];
+    this.args.onChange(isoDate);
+  }
 }
