@@ -13,4 +13,23 @@ export default class localizationDefault extends Component {
 }
 // END-SNIPPET
 
+// BEGIN-SNIPPET au-time-picker-on-change.js
+
+// value argument contains the time object inputted by user
+@action myCallBackFunc(value) {
+  window.alert(`Selected hour: ${value.hours}, minutes: ${value.minutes}, seconds: ${value.seconds}`);
+}
+
+/*
+Value object example:
+
+  {
+    hours: '24'
+    minutes: '00'
+    seconds: '50'
+  }
+  
+*/
+
+// END-SNIPPET
 }
