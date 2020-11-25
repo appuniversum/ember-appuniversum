@@ -55,6 +55,17 @@ Customize how the dates are formatted and/or parsed. The adapter argument expect
 {{docs-snippet name="au-date-picker-adapter.js" unindent=false language=js showCopy=false}}
 
 
+## @onChange
+
+Triggered everytime the date gets changed by the user. Expects a function to which it returns the formatted date (IS0-8601 format: YYYY-MM-DD).
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-date-picker-on-change.hbs'}}
+    <AuDatePicker  @onChange={{this.myCallBackFunc}} />
+  {{/demo.example}}
+  {{docs-snippet name="au-date-picker-on-change.js" unindent=false language=js showCopy=false}}
+{{/docs-demo}}
+
 
 ## Arguments
 
