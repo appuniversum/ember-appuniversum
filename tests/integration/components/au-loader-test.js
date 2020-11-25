@@ -12,15 +12,7 @@ module('Integration | Component | au-loader', function(hooks) {
 
     await render(hbs`<AuLoader />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('Aan het laden');
 
-    // Template block usage:
-    await render(hbs`
-      <AuLoader>
-        template block text
-      </AuLoader>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

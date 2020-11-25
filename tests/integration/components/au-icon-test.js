@@ -12,15 +12,7 @@ module('Integration | Component | au-icon', function(hooks) {
 
     await render(hbs`<AuIcon />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
-    // Template block usage:
-    await render(hbs`
-      <AuIcon>
-        template block text
-      </AuIcon>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });

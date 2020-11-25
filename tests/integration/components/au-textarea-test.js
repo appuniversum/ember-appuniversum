@@ -12,15 +12,7 @@ module('Integration | Component | au-textarea', function(hooks) {
 
     await render(hbs`<AuTextarea />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
-    // Template block usage:
-    await render(hbs`
-      <AuTextarea>
-        template block text
-      </AuTextarea>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
   });
 });
