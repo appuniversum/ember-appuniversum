@@ -3,5 +3,5 @@
     <AuLabel for="date">{{@label}}</AuLabel>
   {{/if}}
 
-  <duet-date-picker {{on 'duetChange' this.returnDate}} {{prop localization=this.localization}} {{prop dateAdapter=this.adapter}} adapter={{@adapter}} localization={{@localization}} disabled={{@disabled}} buttonLabel={{@buttonLabel}} identifier={{@id}} value={{@value}} min={{@min}} max={{@max}} first-day-of-week={{@first-day}} ...attributes></duet-date-picker>
+  <duet-date-picker {{on 'duetChange' this.callBackParent}} {{prop localization=this.localization}} {{prop dateAdapter=this.adapter}} adapter={{@adapter}} localization={{@localization}} disabled={{@disabled}} buttonLabel={{@buttonLabel}} identifier={{@id}} value={{@value}} min={{@min}} max={{@max}} first-day-of-week={{@first-day}} ...attributes></duet-date-picker>
 </div>
