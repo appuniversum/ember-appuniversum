@@ -40,7 +40,7 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = 60;
       }
     }
-    this.onChange(this.getTimeObject);
+    this.callBackParent(this.getTimeObject);
   }
 
 
@@ -61,7 +61,7 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = 0;
       }
     }
-    this.onChange(this.getTimeObject);
+    this.callBackParent(this.getTimeObject);
   }
 
   /**
@@ -117,7 +117,17 @@ export default class AuTimePickerComponent extends Component {
         this[elem] = inputValue;
       }
     }
-    this.onChange(this.getTimeObject);
+    this.callBackParent(this.getTimeObject);
+  }
+
+    /**
+   * calls the function assigned to @onChange by the user with the timeObject as argument
+   * 
+   */
+
+  @action
+  callBackParent(value){
+    this.args.onChange(value);
   }
 
   @action
@@ -126,6 +136,6 @@ export default class AuTimePickerComponent extends Component {
     this.hourValue = current.getHours();
     this.minuteValue = current.getMinutes();
     this.secondValue = current.getSeconds();
-    this.onChange(this.getTimeObject);
+    this.callBackParent(this.getTimeObject);
   }
 }
