@@ -6,21 +6,24 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | au-card', function(hooks) {
   setupRenderingTest(hooks);
 
+  /** @type {import("qunit-dom").test} */
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
     await render(hbs`<AuCard />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
     // Template block usage:
     await render(hbs`
-      <AuCard>
-        template block text
+      <AuCard as |Card|>
+        <Card.content>
+          template block text
+        </Card.content>
       </AuCard>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom(this.element).hasText('template block text');
   });
 });

@@ -12,15 +12,13 @@ module('Integration | Component | au-badge', function(hooks) {
 
     await render(hbs`<AuBadge />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
     // Template block usage:
     await render(hbs`
-      <AuBadge>
-        template block text
-      </AuBadge>
+      <AuBadge @number=2/>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom(this.element).hasText('2');
   });
 });

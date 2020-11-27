@@ -12,7 +12,7 @@ module('Integration | Component | au-main-footer', function(hooks) {
 
     await render(hbs`<AuMainFooter />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('Logo Vlaanderen Vlaanderen verbeelding werkt');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | au-main-footer', function(hooks) {
       </AuMainFooter>
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom(this.element).containsText('template block text');
   });
 });

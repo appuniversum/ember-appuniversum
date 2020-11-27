@@ -20,11 +20,11 @@ Most of the components from Webuniversum are available in Appuniversum. The curr
 | `wu-icon` | <AuLink @linkRoute="docs.atoms.au-icon">AuIcon</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-link-button` | Replaced by <AuLink @linkRoute="docs.atoms.au-link">AuLink</AuLink> or <AuLink @linkRoute="docs.atoms.au-button">AuButton</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-loader` | <AuLink @linkRoute="docs.atoms.au-loader">AuLoader</AuLink> | <AuPill @skin="success">Available</AuPill> |
+| `wu-modal` | <AuLink @linkRoute="docs.components.au-modal">AuModal</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-pill` | <AuLink @linkRoute="docs.atoms.au-pill">AuPill</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-popover` | <AuLink @linkRoute="docs.components.au-dropdown">Dropdown</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-checkbox` | <AuLink @linkRoute="docs.atoms.au-form-checkbox">AuControlCheckbox</AuLink> | <AuPill>In progress</AuPill> |
 | `data-table` | <AuLink @linkRoute="docs.components.au-data-table">AuDataTable</AuLink> | <AuPill>In progress</AuPill> |
-| `wu-modal` | <AuLink @linkRoute="docs.components.au-modal">AuModal</AuLink> | <AuPill>In progress</AuPill> |
 | `power-select` | <AuLink @linkRoute="docs.atoms.ember-power-select">PowerSelect</AuLink> | <AuPill>In progress</AuPill> |
 | `wu-radio-button` | <AuLink @linkRoute="docs.atoms.au-form-radio">AuControlRadio</AuLink> | <AuPill>In progress</AuPill> |
 | - | <AuLink @linkRoute="docs.patterns.au-body-container">AuBodyContainer</AuLink> | <AuPill @skin="action">New</AuPill> |

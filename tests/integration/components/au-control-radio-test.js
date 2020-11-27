@@ -12,15 +12,13 @@ module('Integration | Component | au-control-radio', function(hooks) {
 
     await render(hbs`<AuControlRadio />`);
 
-    assert.equal(this.element.textContent.trim(), '');
+    assert.dom(this.element).hasText('');
 
     // Template block usage:
     await render(hbs`
-      <AuControlRadio>
-        template block text
-      </AuControlRadio>
+      <AuControlRadio @label="template block text" />
     `);
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom(this.element).hasText('template block text');
   });
 });
