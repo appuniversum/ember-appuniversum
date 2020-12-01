@@ -85,6 +85,9 @@ export default class AuDatePickerComponent extends Component {
 
   @action callBackParent(context){
     const isoDate = new Date(context.detail.value).toISOString().split('T')[0];
-    this.args.onChange(isoDate);
+
+    if(this.args.onChange != undefined){
+      this.args.onChange(isoDate);
+    }
   }
 }

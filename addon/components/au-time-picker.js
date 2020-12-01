@@ -127,7 +127,9 @@ export default class AuTimePickerComponent extends Component {
 
   @action
   callBackParent(value){
-    this.args.onChange(value);
+    if(this.onChange != undefined){
+      this.onChange(value);
+    }
   }
 
   @action
