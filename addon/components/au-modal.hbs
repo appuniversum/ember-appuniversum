@@ -1,24 +1,34 @@
-<button {{on "click" this.openModal}} class="au-c-button {{this.buttonSkin}}" aria-open="{{if this.modalOpen "true" "false"}}">
-  {{#if @buttonIcon}}
-  <AuIcon @icon="{{@buttonIcon}}" @alignment="left" />
-  {{/if}}
-  {{@buttonTitle}}
-</button>
-
-{{#if this.modalOpen}}
-<EmberWormhole @to={{this.destinationElementId}}>
-<div class="au-c-modal-backdrop {{if this.modalOpen "is-visible"}}" role="presentation"></div>
-<div id="{{@id}}" class="au-c-modal {{this.size}} {{if this.modalOpen "is-visible"}}" role="dialog" aria-describedby="au-c-modal-title-{{@id}}" tabindex="-1" {{focus-trap isActive=this.modalOpen focusTrapOptions=(hash onDeactivate=(fn this.closeModal) initialFocus=".au-c-modal__title" clickOutsideDeactivates=true)}}>
-  <div class="au-c-modal__header">
-    <h1 id="au-c-modal-title-{{@id}}" class="au-c-modal__title" tabindex="-1">
-      {{@modalTitle}}
-    </h1>
-    <button type="button" {{on "click" this.closeModal}} class="au-c-modal__close">
-      <AuIcon @icon="cross" @size="large" />
-      <span class="au-u-hidden-visually">Venster sluiten</span>
-    </button>
-  </div>
-  {{yield}}
-</div>
-</EmberWormhole>
+{{#if @modalOpen}}
+  {{#in-element this.destinationElement}}
+    <div class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}" role="presentation"></div>
+    <div id="{{@id}}"
+      class={{concat "au-c-modal " this.size (if @modalOpen " is-visible")}}
+      role="dialog"
+      aria-describedby={{concat "au-c-modal-title-" @id}}
+      tabindex="-1"
+      {{did-insert (fn this.setInert false)}}
+      {{focus-trap
+          isActive=@modalOpen
+          focusTrapOptions=
+            (hash
+              onDeactivate=this.closeModal
+              initialFocus=".au-c-modal__title"
+              clickOutsideDeactivates=true
+            )
+      }}
+    >
+      <div class="au-c-modal-header">
+        <h1 id="au-c-modal-title-{{@id}}" class="au-c-modal__title" tabindex="-1">
+          {{@modalTitle}}
+        </h1>
+      </div>
+      <button type="button" {{on "click" this.closeModal}} class="au-c-modal__close">
+        <AuIcon @icon="cross" @size="large" />
+        <span class="au-u-hidden-visually">Venster sluiten</span>
+      </button>
+      {{yield (hash
+          Body=(component "au-modal-body")
+          Footer=(component "au-modal-footer"))}}
+    </div>
+  {{/in-element}}
 {{/if}}

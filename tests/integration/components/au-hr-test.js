@@ -12,15 +12,6 @@ module('Integration | Component | au-hr', function(hooks) {
 
     await render(hbs`<AuHr />`);
 
-    assert.equal(this.element.textContent.trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      <AuHr>
-        template block text
-      </AuHr>
-    `);
-
-    assert.equal(this.element.textContent.trim(), 'template block text');
+    assert.dom(this.element).hasText('');
   });
 });
