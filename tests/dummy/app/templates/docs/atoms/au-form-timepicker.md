@@ -20,6 +20,17 @@
   {{demo.snippet 'au-dateTime-picker-value.hbs'}}
 {{/docs-demo}}
 
+## @onChange
+
+Triggered everytime the time gets changed by the user. Expects a function to which it returns the time.
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-date-picker-on-change.hbs'}}
+    <AuTimePicker  @onChange={{this.myCallBackFunc}} @nowLabel="Now"/>
+  {{/demo.example}}
+  {{docs-snippet name="au-time-picker-on-change.js" unindent=false language=js showCopy=false}}
+{{/docs-demo}}
+
 ## Arguments
 
 | Argument      | Description | Type | Default value |
@@ -32,6 +43,6 @@
 | `@hours`| Sets the hour value | 'integer' | 12 |
 | `@minutes`| Sets the minutes value | 'integer' | 0 |
 | `@seconds`| Sets the seconds value | 'integer' | 0 |
-| `@onChange`| Gets called when a time value changes. Returns an object with all time values (action up) | 'object' | - |
+| `@onChange`| Gets called when a time value changes. Returns an object with all time values in an object | 'object' | - |
 
 
