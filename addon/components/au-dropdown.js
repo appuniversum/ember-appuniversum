@@ -14,13 +14,15 @@ export default class AuDropdown extends Component {
   @action
   openDropdown() {
     // Toggle dropdown view state
-    this.dropdownOpen = true;
+    if (!this.dropdownOpen)
+      this.dropdownOpen = true;
   }
 
   @action
   closeDropdown() {
     // Toggle dropdown view state
-    this.dropdownOpen = false;
+    if (this.dropdownOpen)
+      this.dropdownOpen = false;
   }
 
   // Dropdown alignment
