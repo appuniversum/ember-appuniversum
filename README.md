@@ -26,6 +26,20 @@ Usage
 This ember addon wraps a CSS framework for Flanders government applications called appuniversum. It provides components that helps being complient with this framework in Ember apps.
 
 
+Development
+------------------------------------------------------------------------------
+
+In the addon:
+```
+npm link
+npm run icons
+```
+
+In the frontend:
+```
+npm link @appuniversum/ember-appuniversum
+```
+
 Contributing
 ------------------------------------------------------------------------------
 
