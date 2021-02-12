@@ -11,7 +11,7 @@
         <AuControlCheckbox @label="Ik ga akkoord" @identifier="akkoord" />
       </p>
       <p>
-        <AuControlCheckbox @label="Ik wil een document ontvangen" @identifier="akkoord-ontvangen" @checked={{true}} />
+        <AuControlCheckbox @label="Ik wil een document ontvangen Ik wil een document ontvangen Ik wil een document ontvangen  Ik wil een document ontvangen Ik wil een document ontvangen Ik wil een document ontvangen Ik wil een document ontvangen" @identifier="akkoord-ontvangen" />
       </p>
     </div>
   {{/demo.example}}
@@ -41,6 +41,5 @@
 | `@label` | Set label text  | `String` | - |
 | `@identifier` | Makes sure the label is linked to the checkbox and clicking it will only activate the checkbox you clicked.  | `String` | - |
 | `@disabled` | Adds a disabled state to the checkbox | `Boolean` | `false` |
-| `@checked` | Adds a checked state to the radiobutton | `Boolean` | `false` |
 | `@name` | Groups checkboxes for server side  | `String` | - |
 | `@value` | The value given to the data submitted with the checkbox's name  | `String` | - |

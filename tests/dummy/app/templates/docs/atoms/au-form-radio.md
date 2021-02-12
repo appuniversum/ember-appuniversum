@@ -9,7 +9,7 @@
     <div class="au-c-form">
       <ul>
         <li>
-          <AuControlRadio @label="Ja" @name="ja-nee" @value="ja" @identifier="ja" @checked={{true}} />
+          <AuControlRadio @label="Ja" @name="ja-nee" @value="ja" @identifier="ja" />
         </li>
         <li>
           <AuControlRadio @label="Nee" @name="ja-nee" @value="nee" @identifier="nee" />
@@ -28,7 +28,7 @@
     <div class="au-c-form">
       <ul>
         <li>
-          <AuControlRadio @label="Ja" @name="ja-nee-disabled" @value="ja" @identifier="ja-disabled" @checked={{true}} @disabled={{true}} />
+          <AuControlRadio @label="Ja" @name="ja-nee-disabled" @value="ja" @identifier="ja-disabled" @disabled={{true}} />
         </li>
         <li>
           <AuControlRadio @label="Nee" @name="ja-nee-disabled" @value="nee" @identifier="nee-disabled" @disabled={{true}} />
