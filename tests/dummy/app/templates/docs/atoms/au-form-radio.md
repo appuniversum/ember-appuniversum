@@ -1,4 +1,4 @@
-# Form: Radio button (draft)
+# Form: Radio button
 
 ---
 
@@ -9,10 +9,10 @@
     <div class="au-c-form">
       <ul>
         <li>
-          <AuControlRadio @label="Ja" @name="ja-nee" @identifier="ja" @checked={{true}}/>
+          <AuControlRadio @label="Ja" @name="ja-nee" @value="ja" @identifier="ja" @checked={{true}} />
         </li>
         <li>
-          <AuControlRadio @label="Nee" @name="ja-nee" @identifier="nee"/>
+          <AuControlRadio @label="Nee" @name="ja-nee" @value="nee" @identifier="nee" />
         </li>
       </ul>
     </div>
@@ -24,18 +24,19 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-control-radio-disabled.hbs'}}
+
     <div class="au-c-form">
       <ul>
         <li>
-          <AuControlRadio @label="Ja" @name="ja-nee-disabled" @identifier="ja-disabled" @checked={{true}} @disabled={{true}}/>
+          <AuControlRadio @label="Ja" @name="ja-nee-disabled" @value="ja" @identifier="ja-disabled" @checked={{true}} @disabled={{true}} />
         </li>
         <li>
-          <AuControlRadio @label="Nee" @name="ja-nee-disabled" @identifier="nee-disabled" @disabled={{true}}/>
+          <AuControlRadio @label="Nee" @name="ja-nee-disabled" @value="nee" @identifier="nee-disabled" @disabled={{true}} />
         </li>
       </ul>
     </div>
   {{/demo.example}}
-  {{demo.snippet 'au-control-radio.hbs'}}
+  {{demo.snippet 'au-control-radio-disabled.hbs'}}
 {{/docs-demo}}
 
 ## Arguments

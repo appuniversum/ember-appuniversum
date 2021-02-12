@@ -8,10 +8,10 @@
   {{#demo.example name='au-control-checkbox.hbs'}}
     <div class="au-c-form">
       <p>
-        <AuControlCheckbox @label="Ik ga akkoord" @identifier="akkoord"/>
+        <AuControlCheckbox @label="Ik ga akkoord" @identifier="akkoord" />
       </p>
       <p>
-        <AuControlCheckbox @label="Ik wil een document ontvangen" @identifier="akkoord-ontvangen" @checked={{true}}/>
+        <AuControlCheckbox @label="Ik wil een document ontvangen" @identifier="akkoord-ontvangen" @checked={{true}} />
       </p>
     </div>
   {{/demo.example}}
@@ -24,14 +24,14 @@
   {{#demo.example name='au-control-checkbox-disabled.hbs'}}
     <div class="au-c-form">
       <p>
-        <AuControlCheckbox @label="Ik ga akkoord" @identifier="akkoord-disabled" @disabled={{true}}/>
+        <AuControlCheckbox @label="Ik ga akkoord" @identifier="akkoord-disabled" @disabled={{true}} />
       </p>
       <p>
-        <AuControlCheckbox @label="Ik ga akkoord" @identifier="akkoord-disabled" @checked={{true}} @disabled={{true}}/>
+        <AuControlCheckbox @label="Ik ga akkoord" @identifier="akkoord-disabled" @checked={{true}} @disabled={{true}} />
       </p>
     </div>
   {{/demo.example}}
-  {{demo.snippet 'au-control-checkbox.hbs'}}
+  {{demo.snippet 'au-control-checkbox-disabled.hbs'}}
 {{/docs-demo}}
 
 ## Arguments
