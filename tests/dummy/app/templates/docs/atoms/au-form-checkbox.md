@@ -1,4 +1,4 @@
-# Form: Checkbox (draft)
+# Form: Checkbox
 
 ---
 
