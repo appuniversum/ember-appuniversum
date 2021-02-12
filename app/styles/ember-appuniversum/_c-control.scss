@@ -29,7 +29,7 @@ $au-control-disabled-color            : $au-gray-600 !default;
   position: relative;
   bottom: .1ex;
   display: block;
-  width:  $au-unit-small + $au-unit-tiny;
+  min-width:  $au-unit-small + $au-unit-tiny;
   height: $au-unit-small + $au-unit-tiny;
   line-height: $au-unit-small + $au-unit-tiny;
   color: $au-gray-100;
