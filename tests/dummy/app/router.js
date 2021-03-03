@@ -36,6 +36,7 @@ Router.map(function() {
       this.route("ember-power-select");
       this.route("au-form-datepicker")
       this.route("au-form-timepicker");
+      this.route('au-toggle-switch');
     });
 
     this.route("components", function() {
