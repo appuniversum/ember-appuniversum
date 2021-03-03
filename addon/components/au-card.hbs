@@ -7,7 +7,7 @@
     {{yield (hash
       header = (component 'au-card-header')
     )}}
-    {{#if expandable}}
+    {{#if this.expandable}}
       <AuButtonGroup>
         <AuButton class="au-c-card__toggle" @size="small" @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.sectionOpen "true" "false"}}" >
           {{#if this.sectionOpen}}
