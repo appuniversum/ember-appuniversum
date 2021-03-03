@@ -1,7 +1,7 @@
 <aside class="au-c-sidebar">
   <div class="au-c-sidebar__content">
-    {{#docs-viewer as |viewer|}}
-      {{#viewer.nav as |nav|}}
+    <DocsViewer as |viewer|>
+      <viewer.nav as |nav|>
         <li class="au-c-list-navigation__item au-c-list-navigation__item--section">
           <a href="https://appuniversum.github.io/appuniversum" class="au-c-list-navigation__link au-c-list-navigation__link--highlight">
             <AuIcon @icon="hierarchal-back" @alignment="left" />
@@ -203,7 +203,7 @@
             </li>
           </ul>
         </li>
-      {{/viewer.nav}}
-    {{/docs-viewer}}
+      </viewer.nav>
+    </DocsViewer>
   </div>
 </aside>
