@@ -1,4 +1,5 @@
 
+/* eslint-disable no-dupe-class-members */
 import Component from '@ember/component';
 import { action } from "@ember/object";
 
@@ -28,7 +29,7 @@ Value object example:
     minutes: '00'
     seconds: '50'
   }
-  
+
 */
 
 // END-SNIPPET
