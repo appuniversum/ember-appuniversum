@@ -1,1 +1,1 @@
-export { default, formatTime } from '@appuniversum/ember-appuniversum/helpers/format-time';
+export { default } from '@appuniversum/ember-appuniversum/helpers/format-time';
