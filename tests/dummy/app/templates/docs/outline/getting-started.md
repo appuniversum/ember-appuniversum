@@ -134,6 +134,7 @@ Then load the SCSS partials in your `app.scss` file:
 
 // UTILITIES
 @import "appuniversum/u-align-text";
+@import "appuniversum/u-break-word";
 @import "appuniversum/u-headings";
 @import "appuniversum/u-hide";
 @import "appuniversum/u-font-family";
