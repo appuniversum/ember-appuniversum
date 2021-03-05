@@ -22,3 +22,9 @@
     margin-left: -$au-list-horizontal-spacing/2;
   }
 }
+
+// Fix additional scroll bars
+// @TODO: find the cause of this and fix in a better way
+.ember-application {
+  overflow: hidden;
+}
