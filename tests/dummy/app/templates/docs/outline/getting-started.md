@@ -4,7 +4,10 @@
 
 ## Installing
 
-You can install the ember-appuniversum addon as an [npm package](https://www.npmjs.com/package/@appuniversum/ember-appuniversum).
+Before you get started, you'll need to have [ember](https://emberjs.com) and [ember-cli-sass](https://www.npmjs.com/package/ember-cli-sass) installed.
+
+Going forward, you can install the ember-appuniversum addon as an [npm package](https://www.npmjs.com/package/@appuniversum/ember-appuniversum).
+
 
 ## Customising the SCSS for your project
 
