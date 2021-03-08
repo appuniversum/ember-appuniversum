@@ -2,12 +2,22 @@
 
 ---
 
-## Installing
+## Installation
 
-Before you get started, you'll need to have [ember](https://emberjs.com) and [ember-cli-sass](https://www.npmjs.com/package/ember-cli-sass) installed.
+You can install the [ember-appuniversum](https://www.npmjs.com/package/@appuniversum/ember-appuniversum) addon with ember-cli:
 
-Going forward, you can install the ember-appuniversum addon as an [npm package](https://www.npmjs.com/package/@appuniversum/ember-appuniversum).
+`ember install @appuniversum/ember-appuniversum`
 
+## Set up the build pipeline
+
+### SCSS
+
+`ember-appuniversum` uses SCSS so you will need to add a SCSS compiler to your project. This can be done by installing [ember-cli-sass](https://www.npmjs.com/package/ember-cli-sass).
+
+### Autoprefixer
+`ember-appuniversum` doesn't use any CSS vendor prefixes in its code and it depends on `autoprefixer` to add those when needed. Make sure to set up autoprefixer in your project.
+
+The easiest way to do this in an ember project is by installing the [`ember-cli-autoprefixer` addon](https://github.com/kimroen/ember-cli-autoprefixer).
 
 ## Customising the SCSS for your project
 
@@ -21,16 +31,10 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     sassOptions: {
-      sourceMapEmbed: true,
       includePaths: [
         'node_modules/@appuniversum/appuniversum',
         'node_modules/@appuniversum/ember-appuniversum/app/styles'
       ]
-    },
-    autoprefixer: {
-      enabled: true,
-      cascade: true,
-      sourcemap: true
     }
   });
 
