@@ -1,0 +1,86 @@
+/* ==================================
+   #TOGGLE SWITCH
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+$au-toggleswitch-background-color               : $au-gray-200 !default;
+$au-toggle-border-width                         : .1rem        !default;
+$au-toggle-border-color                         : $au-gray-200 !default;
+$au-toggle-background-color                     : $au-white    !default;
+$au-toggle-background-color-disabled            : $au-gray-100 !default;
+$au-toggleswitch-background-color-on            : $au-blue-700 !default;
+$au-toggleswitch-background-color-disabled      : $au-gray-300 !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-toggleswitch{
+    position: relative;
+    display: inline-block;
+    height: 1.6rem;
+    width: 3.5rem;
+}
+
+.au-c-toggleswitch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.au-c-toggleswitch__toggle{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $au-toggleswitch-background-color;
+    border-radius: 1rem;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.au-c-toggleswitch__toggle:before{
+    background:$au-toggle-background-color;
+    position: absolute;
+    content: '';
+    border-radius: 1rem ;
+    border: $au-toggle-border-width solid $au-toggle-border-color;
+    left:0;
+    bottom: -.2rem;
+    height: 2rem;
+    width: 2rem;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+/* Checked state */
+input:checked + .au-c-toggleswitch__toggle {
+    background-color:$au-toggleswitch-background-color-on;
+}
+
+input:checked + .au-c-toggleswitch__toggle:before {
+    -webkit-transform: translateX(1.6rem);
+    -ms-transform: translateX(1.6rem);
+    transform: translateX(1.6rem);
+}
+
+/* Focus */
+input:focus + .au-c-toggleswitch__toggle {
+    outline: $au-outline;
+    outline-offset: .2rem;
+}
+
+/* Disabled */
+.disabled{
+    cursor:not-allowed;
+    background-color: $au-toggleswitch-background-color-disabled;
+    border-radius: 1rem;
+
+}
+
+.disabled:before{
+    background-color: $au-toggle-background-color-disabled;
+
+}
