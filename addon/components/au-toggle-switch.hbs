@@ -1,17 +1,6 @@
-{{yield}}
-<h2>Default</h2>
 
-<label class="au-c-toggleswitch {{this.disabled}}...attributes ">
-  <input type="checkbox" disabled={{@disabled}}/>
+<label class="au-c-toggleswitch {{if @disabled 'is-disabled'}} {{if (and @checked @disabled) 'is-checked-disabled'}}">
+  <input type="checkbox" class="au-c-toggleswitch__input" disabled={{@disabled}} checked={{@checked}}/>
   <span class="au-c-toggleswitch__toggle"></span>
-  
-</label>
-
-
-<h2>Disabled</h2>
-
-<label class="au-c-toggleswitch disabled">
-  <input type="checkbox" disabled/>
-  <span class="au-c-toggleswitch__toggle disabled"></span>
   
 </label>
