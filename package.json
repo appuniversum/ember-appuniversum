@@ -33,7 +33,6 @@
     "@duetds/date-picker": "^1.0.4",
     "@zestia/ember-auto-focus": "^4.1.0",
     "caniuse-lite": "^1.0.30001192",
-    "ember-cli-autoprefixer": "^1.0.3",
     "ember-cli-babel": "^7.21.0",
     "ember-cli-htmlbars": "^5.2.0",
     "ember-data-table": "git+https://github.com/aatauil/ember-data-table.git#a13ca0696f6d63a3570af13a4109d1e8b1f24503",
