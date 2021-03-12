@@ -9,10 +9,10 @@
     <div class="au-c-form">
       <ul>
         <li>
-          <AuControlRadio @label="Ja" @name="ja-nee" @value="ja" @identifier="ja" />
+          <AuControlRadio @label="Ja" @name="ja-nee"  @identifier="ja" value="ja" />
         </li>
         <li>
-          <AuControlRadio @label="Nee" @name="ja-nee" @value="nee" @identifier="nee" />
+          <AuControlRadio @label="Nee" @name="ja-nee" @identifier="nee" value="nee" />
         </li>
       </ul>
     </div>
@@ -28,10 +28,10 @@
     <div class="au-c-form">
       <ul>
         <li>
-          <AuControlRadio @label="Ja" @name="ja-nee-disabled" @value="ja" @identifier="ja-disabled" @disabled={{true}} />
+          <AuControlRadio @label="Ja" @name="ja-nee-disabled" @identifier="ja-disabled" @disabled={{true}} value="ja" />
         </li>
         <li>
-          <AuControlRadio @label="Nee" @name="ja-nee-disabled" @value="nee" @identifier="nee-disabled" @disabled={{true}} />
+          <AuControlRadio @label="Nee" @name="ja-nee-disabled" @identifier="nee-disabled" @disabled={{true}} value="nee" />
         </li>
       </ul>
     </div>
@@ -44,8 +44,7 @@
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
 | `@label` | Set label text  | `String` | - |
-| `@name` | Groups radio buttons, to make sure their checked statuses are related  | `String` | - |
-| `@identifier` | Makes sure the label is linked to the checkbox and clicking it will only activate the checkbox you clicked.  | `String` | - |
-| `@value` | Used to identify which radio button in a group is selected.  | `String` | - |
-| `@checked` | Adds a checked state to the radiobutton | `Boolean` | `false` |
-| `@disabled` | Adds a disabled state to the radiobutton | `Boolean` | `false` |
+| `@name` | Groups radio buttons, to make sure their selected statuses are related  | `String` | - |
+| `@identifier` | Makes sure the label is linked to the radio button and clicking it will only activate the radio button you clicked.  | `String` | - |
+| `@checked` | Used to set/get checked state of component  | `Boolean` | - |
+| `@onChange`| Expects a function that gets called when the radio button state changes. The function receives the radio button state & event context as parameters. | `Function` | | - |
