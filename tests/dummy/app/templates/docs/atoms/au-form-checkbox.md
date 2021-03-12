@@ -43,3 +43,4 @@
 | `@disabled` | Adds a disabled state to the checkbox | `Boolean` | `false` |
 | `@name` | Groups checkboxes for server side  | `String` | - |
 | `@value` | The value given to the data submitted with the checkbox's name  | `String` | - |
+| `@onChange`| Expects a function that gets called when the dropzone state changes. The function receives the checkbox state & event context as parameters. | `Function` | | - |
