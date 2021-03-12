@@ -43,4 +43,4 @@
 | `@disabled` | Adds a disabled state to the checkbox | `Boolean` | `false` |
 | `@name` | Groups checkboxes for server side  | `String` | - |
 | `@checked` | Used to set/get checked state of component  | `Boolean` | - |
-| `@onChange`| Expects a function that gets called when the dropzone state changes. The function receives the checkbox state & event context as parameters. | `Function` | | - |
+| `@onChange`| Expects a function that gets called when the checkbox state changes. The function receives the checkbox state & event context as parameters. | `Function` | | - |
