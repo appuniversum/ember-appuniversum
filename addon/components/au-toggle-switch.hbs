@@ -1,6 +1,5 @@
-
-<label class="au-c-toggleswitch {{if @disabled 'is-disabled'}} {{if (and @checked @disabled) 'is-checked-disabled'}}">
-  <input type="checkbox" class="au-c-toggleswitch__input" disabled={{@disabled}} checked={{@checked}}/>
+<label for="{{@identifier}}" class="au-c-toggleswitch {{this.disabled}} {{if @disabled 'is-disabled'}} {{if (and @checked @disabled) 'is-checked-disabled'}}">
+  <Input class="au-c-toggleswitch__input" id="{{@identifier}}" name="{{@name}}" disabled={{@disabled}} @type="checkbox" @checked={{@checked}} {{on "change" this.onChange}} ...attributes />
   <span class="au-c-toggleswitch__toggle"></span>
-  
+  {{@label}}
 </label>
