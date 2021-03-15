@@ -1,6 +1,6 @@
 {{#if @modalOpen}}
   {{#in-element this.destinationElement}}
-    <div {{on "click" this.closeModal}} class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}"  role="presentation"></div>
+    <div {{on "click" this.closeModal}} class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}"  role="button"></div>
     <div id="{{@id}}"
       class={{concat "au-c-modal " this.size (if @modalOpen " is-visible")}}
       role="dialog"

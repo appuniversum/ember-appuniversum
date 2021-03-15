@@ -1,4 +1,4 @@
-{{#with (if @model
+{{#let (if @model
                 (component "link-to" model=@model)
                 (component "link-to" )) as |LinkTo| }}
   <LinkTo @route={{@linkRoute}} class="au-c-link {{this.skin}} {{this.active}}" ...attributes>
@@ -21,4 +21,4 @@
       {{/if}}
     {{/if}}
   </LinkTo>
-{{/with}}
+{{/let}}
