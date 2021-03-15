@@ -47,4 +47,4 @@
 | `@name` | Groups radio buttons, to make sure their selected statuses are related  | `String` | - |
 | `@identifier` | Makes sure the label is linked to the radio button and clicking it will only activate the radio button you clicked.  | `String` | - |
 | `@checked` | Used to set/get checked state of component  | `Boolean` | - |
-| `@onChange`| Expects a function that gets called when the radio button state changes. The function receives the radio button state & event context as parameters. | `Function` | | - |
+| `@onChange`| Expects a function that gets called when the radio button state changes. The function receives the radio button **state**, **value** & **event context** as parameters. | `Function` | | - |
