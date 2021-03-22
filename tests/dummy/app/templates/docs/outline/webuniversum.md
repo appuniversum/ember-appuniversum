@@ -23,10 +23,11 @@ Most of the components from Webuniversum are available in Appuniversum. The curr
 | `wu-modal` | <AuLink @linkRoute="docs.components.au-modal">AuModal</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-pill` | <AuLink @linkRoute="docs.atoms.au-pill">AuPill</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-popover` | <AuLink @linkRoute="docs.components.au-dropdown">Dropdown</AuLink> | <AuPill @skin="success">Available</AuPill> |
+| `wu-radio-button` | <AuLink @linkRoute="docs.atoms.au-form-radio">AuControlRadio</AuLink> | <AuPill @skin="success">Available</AuPill> |
+| `wu-switch` | <AuLink @linkRoute="docs.atoms.au-toggle-switch">AuToggleSwitch</AuLink> | <AuPill @skin="success">Available</AuPill> |
 | `wu-checkbox` | <AuLink @linkRoute="docs.atoms.au-form-checkbox">AuControlCheckbox</AuLink> | <AuPill>In progress</AuPill> |
 | `data-table` | <AuLink @linkRoute="docs.components.au-data-table">AuDataTable</AuLink> | <AuPill>In progress</AuPill> |
 | `power-select` | <AuLink @linkRoute="docs.atoms.ember-power-select">PowerSelect</AuLink> | <AuPill>In progress</AuPill> |
-| `wu-radio-button` | <AuLink @linkRoute="docs.atoms.au-form-radio">AuControlRadio</AuLink> | <AuPill>In progress</AuPill> |
 | - | <AuLink @linkRoute="docs.patterns.au-body-container">AuBodyContainer</AuLink> | <AuPill @skin="action">New</AuPill> |
 | - | <AuLink @linkRoute="docs.atoms.au-brand">AuBrand</AuLink> | <AuPill @skin="action">New</AuPill> |
 | - | <AuLink @linkRoute="docs.atoms.au-content">AuContent</AuLink> | <AuPill @skin="action">New</AuPill> |
@@ -48,5 +49,4 @@ Most of the components from Webuniversum are available in Appuniversum. The curr
 | `wu-date-range` | - | <AuPill @skin="warning">Not started</AuPill> |
 | `wu-document-miniature` | - | <AuPill @skin="warning">Not started</AuPill> |
 | `wu-info-tile` | - | <AuPill @skin="warning">Not started</AuPill> |
-| `wu-switch` | - | <AuPill @skin="warning">Not started</AuPill> |
 | `wu-wizard` | - | <AuPill @skin="warning">Not started</AuPill> |
