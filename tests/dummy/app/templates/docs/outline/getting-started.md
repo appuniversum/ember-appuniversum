@@ -129,6 +129,7 @@ Then load the SCSS partials in your `app.scss` file:
 @import "ember-appuniversum/c-sidebar-action";
 @import "ember-appuniversum/c-textarea";
 @import "ember-appuniversum/c-toolbar";
+@import "ember-appuniversum/c-toggle-switch";
 
 
 // PLUGINS
