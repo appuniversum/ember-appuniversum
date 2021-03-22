@@ -1,0 +1,91 @@
+/* ==================================
+   #TOGGLE SWITCH
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+$au-toggle-switch-height                         : 2rem         !default;
+$au-toggle-switch-width                          : 2rem         !default;
+$au-toggle-switch-border-radius                  : 1rem         !default;
+$au-toggle-switch-border-width                   : .1rem        !default;
+$au-toggle-switch-border-color                   : $au-gray-300 !default;
+$au-toggle-switch-color                          : $au-white !default;
+$au-toggle-switch-background-color               : $au-gray-200 !default;
+$au-toggle-switch-color-disabled                 : $au-gray-200 !default;
+$au-toggle-switch-background-color-disabled      : $au-gray-300 !default;
+$au-toggle-switch-background-color-on            : $au-blue-600 !default;
+$au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-toggle-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.au-c-toggle-switch__toggle {
+  position: relative;
+  cursor: pointer;
+  height: $au-toggle-switch-height - .4rem;
+  width: $au-toggle-switch-width * 1.5;
+  background-color: $au-toggle-switch-background-color;
+  border-radius: $au-toggle-switch-border-radius;
+  transition: transform $au-transition, color $au-transition;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: $au-toggle-switch-height;
+    width: $au-toggle-switch-width;
+    background-color: $au-toggle-switch-color;
+    border-radius: $au-toggle-switch-border-radius;
+    border: $au-toggle-switch-border-width solid $au-toggle-switch-border-color;
+    left: -.1rem;
+    top: -.2rem;
+    transition: transform $au-transition;
+  }
+
+  .is-disabled & {
+    background-color: $au-toggle-switch-color-disabled;
+    border-radius: $au-toggle-switch-border-radius;
+    cursor: not-allowed;
+  }
+
+  .is-disabled &:before {
+    background-color: $au-toggle-switch-background-color-disabled;
+  }
+}
+
+.au-c-toggle-switch__label {
+  @include au-font-size($au-h6);
+  color: $au-gray-700;
+  font-family: $au-font;
+  font-weight: $au-regular;
+  margin-left: $au-unit-tiny;
+
+  .is-disabled & {
+    color: $au-gray-600;
+  }
+}
+
+// Checked state
+.au-c-toggle-switch__input:checked + .au-c-toggle-switch__toggle {
+  background-color: $au-toggle-switch-background-color-on;
+
+  .is-disabled & {
+    background-color: $au-toggle-switch-background-color-on-disabled;
+  }
+}
+
+.au-c-toggle-switch__input:checked + .au-c-toggle-switch__toggle:before {
+  transform: translateX($au-toggle-switch-width/2 + .2rem);
+}
+
+
+// Focus
+.au-c-toggle-switch__input:focus + .au-c-toggle-switch__toggle {
+  outline: $au-outline;
+  outline-offset: .2rem;
+}
