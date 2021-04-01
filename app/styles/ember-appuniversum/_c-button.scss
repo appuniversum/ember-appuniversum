@@ -18,18 +18,19 @@ $au-button-contrast-active-color            : $au-blue-600 !default;
 $au-button-contrast-visited-color           : $au-blue-600 !default;
 $au-button-secondary-color                  : $au-blue-600 !default;
 $au-button-secondary-hover-color            : $au-blue-700 !default;
-$au-button-tertiary-height                  : $au-unit !default;
-$au-button-tertiary-color                   : $au-blue-700 !default;
-$au-button-tertiary-hover-color             : $au-blue-600 !default;
-$au-button-tertiary-secondary-color         : $au-gray-800 !default;
-$au-button-tertiary-secondary-hover-color   : $au-gray-700 !default;
+$au-button-link-height                  : $au-unit !default;
+$au-button-link-color                   : $au-blue-700 !default;
+$au-button-link-hover-color             : $au-blue-600 !default;
+$au-button-link-secondary-color         : $au-gray-800 !default;
+$au-button-link-secondary-hover-color   : $au-gray-700 !default;
+$au-button-link-active-color            : $au-gray-900 !default;
 $au-button-alert-color                      : $au-white !default;
 $au-button-alert-contrast-color             : shade($au-red-600,10) !default; // @TODO: lighten red 700
 $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 $au-button-radius                           : 0 !default;
 $au-button-active-contrast-color            : $au-blue-900 !default;
 $au-button-secondary-active-contrast-color  : $au-gray-200 !default;
-$au-button-tertiary-active-color            : $au-gray-900 !default;
+
 
 
 /* Component
@@ -129,7 +130,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
 
 .au-c-button--large {
   @include au-font-size($au-button-font-size-large);
-  padding: $au-unit-small - .1rem $au-unit-small $au-unit-small + .1rem;
+  padding: $au-unit-small $au-unit-small $au-unit-small + .1rem;
   height: $au-button-height-large;
 }
 
@@ -190,26 +191,26 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
   font-size: inherit;
   border-color: transparent;
   padding: 0 $au-unit-tiny 0;
-  height: $au-button-tertiary-height;
-  line-height: $au-button-tertiary-height;
+  height: $au-button-link-height;
+  line-height: $au-button-link-height;
 
   &,
   &:visited {
-    color: $au-button-tertiary-color;
+    color: $au-button-link-color;
     background-color: transparent;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-tertiary-color,70);
+    text-decoration-color: tint($au-button-link-color,70);
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: $au-button-tertiary-hover-color;
+    color: $au-button-link-hover-color;
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-tertiary-hover-color,80);
+    text-decoration-color: tint($au-button-link-hover-color,80);
   }
 
   &.is-disabled,
@@ -364,7 +365,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
 }
 
 .au-c-button--link.is-active {
-  color: $au-button-tertiary-active-color;
+  color: $au-button-link-active-color;
   font-weight: $au-medium;
 }
 
