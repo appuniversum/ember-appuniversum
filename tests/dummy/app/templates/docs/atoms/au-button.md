@@ -12,7 +12,7 @@
 
     <hr>
 
-    <AuButton @skin="secondary" @loading={{true}}>
+    <AuButton @skin="secondary">
       Secondary button
     </AuButton>
 
