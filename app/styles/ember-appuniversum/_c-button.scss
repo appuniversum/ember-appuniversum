@@ -14,22 +14,21 @@ $au-button-border-radius                    : .3rem !default;
 $au-button-color                            : $au-white !default;
 $au-button-contrast-color                   : $au-blue-600 !default;
 $au-button-contrast-hover-color             : $au-blue-700 !default;
-$au-button-contrast-active-color            : $au-blue-600 !default;
+$au-button-contrast-active-color            : $au-blue-900 !default;
 $au-button-contrast-visited-color           : $au-blue-600 !default;
 $au-button-secondary-color                  : $au-blue-600 !default;
 $au-button-secondary-hover-color            : $au-blue-700 !default;
-$au-button-link-height                  : $au-unit !default;
-$au-button-link-color                   : $au-blue-700 !default;
-$au-button-link-hover-color             : $au-blue-600 !default;
-$au-button-link-secondary-color         : $au-gray-800 !default;
-$au-button-link-secondary-hover-color   : $au-gray-700 !default;
-$au-button-link-active-color            : $au-gray-900 !default;
+$au-button-secondary-contrast-active-color  : $au-blue-100 !default;
+$au-button-link-height                      : $au-unit !default;
+$au-button-link-color                       : $au-blue-700 !default;
+$au-button-link-hover-color                 : $au-blue-600 !default;
+$au-button-link-secondary-color             : $au-gray-800 !default;
+$au-button-link-secondary-hover-color       : $au-gray-700 !default;
+$au-button-link-active-color                : $au-gray-900 !default;
 $au-button-alert-color                      : $au-white !default;
 $au-button-alert-contrast-color             : shade($au-red-600,10) !default; // @TODO: lighten red 700
 $au-button-alert-contrast-hover-color       : $au-red-600 !default;
-$au-button-radius                           : 0 !default;
-$au-button-active-contrast-color            : $au-blue-900 !default;
-$au-button-secondary-active-contrast-color  : $au-gray-200 !default;
+
 
 
 
@@ -48,11 +47,10 @@ $au-button-secondary-active-contrast-color  : $au-gray-200 !default;
   display: inline-flex;
   align-items: center;
   padding: 0 $au-unit-small .1rem; // Visually center the text in the button
-  border-radius: $au-button-radius;
+  border-radius: $au-button-border-radius;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: $au-button-border-radius;
   transition: color $au-transition, background-color $au-transition, border-color $au-transition, box-shadow $au-transition;
 
   &,
@@ -76,6 +74,7 @@ $au-button-secondary-active-contrast-color  : $au-gray-200 !default;
   }
 
   &:active {
+    border-color: $au-button-contrast-active-color;
     background-color: $au-button-contrast-active-color;
   }
 
@@ -356,12 +355,12 @@ $au-button-secondary-active-contrast-color  : $au-gray-200 !default;
 
 // Active buttons
 .au-c-button:not(.au-c-button--secondary):not(.au-c-button--link).is-active {
-  background-color: $au-button-active-contrast-color;
-  border-color: $au-button-active-contrast-color;
+  background-color: $au-button-contrast-active-color;
+  border-color: $au-button-contrast-active-color;
 }
 
 .au-c-button--secondary.is-active {
-  background-color: $au-button-secondary-active-contrast-color;
+  background-color: $au-button-secondary-contrast-active-color;
 }
 
 .au-c-button--link.is-active {
