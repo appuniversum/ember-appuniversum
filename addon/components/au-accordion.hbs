@@ -1,0 +1,23 @@
+<div class="au-c-accordion" {{on "click" this.openAccordion}} ...attributes>
+  <AuButton @alert="{{@buttonAlert}}" @disabled="{{@disabled}}" @skin="{{@buttonSkin}}" @width="{{@buttonWidth}}" @size="{{@buttonSize}}" disabled="{{@disabled}}">
+    {{#if @hideText}}
+      <span class="au-u-hidden-visually">{{@accordionButtonLabel}}</span>
+    {{else}}
+      {{@accordionButtonLabel}}
+    {{/if}}
+    {{#if this.accordionOpen}}
+      <AuIcon @icon="nav-down" @alignment="right" />
+    {{else}}
+      <AuIcon @icon="nav-right" @alignment="right" />
+    {{/if}}
+  </AuButton>
+  {{#if this.accordionOpen}}
+    <AuContent class="au-o-box au-o-box--tiny" {{auto-focus}} tabindex="0">
+      {{#if this.loading}}
+        <AuLoader />
+      {{else}}
+        {{yield}}
+      {{/if}}
+    </AuContent>
+  {{/if}}
+</div>

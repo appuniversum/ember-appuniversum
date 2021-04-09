@@ -40,6 +40,7 @@ Router.map(function() {
     });
 
     this.route("components", function() {
+      this.route("au-accordion");
       this.route("au-alert");
       this.route("au-card");
       this.route("au-dropdown");
