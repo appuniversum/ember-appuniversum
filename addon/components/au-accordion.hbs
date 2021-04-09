@@ -1,18 +1,29 @@
-<div class="au-c-accordion" {{on "click" this.openAccordion}} ...attributes>
-  <AuButton @alert="{{@buttonAlert}}" @disabled="{{@disabled}}" @skin="{{@buttonSkin}}" @width="{{@buttonWidth}}" @size="{{@buttonSize}}" disabled="{{@disabled}}">
-    {{#if @hideText}}
-      <span class="au-u-hidden-visually">{{@accordionButtonLabel}}</span>
-    {{else}}
-      {{@accordionButtonLabel}}
-    {{/if}}
-    {{#if this.accordionOpen}}
-      <AuIcon @icon="nav-down" @alignment="right" />
-    {{else}}
-      <AuIcon @icon="nav-right" @alignment="right" />
-    {{/if}}
-  </AuButton>
+<div class="au-c-accordion" ...attributes>
+  <AuToolbar @nowrap={{true}} {{on "click" this.openAccordion}}>
+    <AuToolbarGroup>
+      <div>
+        <AuButton @skin="tertiary">
+          {{#if @hideText}}
+            <span class="au-u-hidden-visually">{{@accordionButtonLabel}}</span>
+          {{else}}
+            {{@accordionButtonLabel}}
+          {{/if}}
+        </AuButton>
+        <p>
+          {{@accordionSubTitle}}
+        </p>
+      </div>
+    </AuToolbarGroup>
+    <AuToolbarGroup>
+      {{#if this.accordionOpen}}
+        <AuIcon @icon="{{@accordionIconOpen}}" @alignment="right" @size="large" />
+      {{else}}
+        <AuIcon @icon="{{@accordionIconClosed}}" @alignment="right" @size="large" />
+      {{/if}}
+    </AuToolbarGroup>
+  </AuToolbar>
   {{#if this.accordionOpen}}
-    <AuContent class="au-o-box au-o-box--tiny" {{auto-focus}} tabindex="0">
+    <AuContent {{auto-focus}} tabindex="0">
       {{#if this.loading}}
         <AuLoader />
       {{else}}

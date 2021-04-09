@@ -2,68 +2,40 @@
 
 ---
 
-## Accordion Skins
+## Accordion
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-accordion-skin.hbs'}}
-    <AuAccordion @accordionButtonLabel="Regular information button">
-      <p>I am information</p>
+  {{#demo.example name='au-accordion.hbs'}}
+    <AuAccordion @accordionIconOpen="nav-down" @accordionIconClosed="nav-right" @accordionButtonLabel="Accordion with arrows">
+      <p>I am information. I can even contain a <AuLink>A Link</AuLink>!</p>
     </AuAccordion>
-    <AuAccordion @accordionButtonLabel="Secondary information button" @buttonSkin="secondary">
-      <p>I am information</p>
+    <AuAccordion @accordionIconOpen="info-circle" @accordionIconClosed="info-circle" @accordionButtonLabel="Accordion with info sign" @accordionSubTitle="Accordion with a subtitle">
+      <p>I am information. I can even contain a <AuLink>A Link</AuLink>!</p>
     </AuAccordion>
-    <AuAccordion @accordionButtonLabel="Tertiary information button" @buttonSkin="tertiary">
-      <p>I am information</p>
+    <AuAccordion @accordionIconOpen="nav-down" @accordionIconClosed="nav-right" @accordionButtonLabel="Regular information button" @accordionSubTitle="Accordion with a subtitle">
+      <p>I am information. I can even contain a <AuLink>A Link</AuLink>!</p>
     </AuAccordion>
   {{/demo.example}}
-  {{demo.snippet 'au-accordion-skin.hbs'}}
+  {{demo.snippet 'au-accordion.hbs'}}
 {{/docs-demo}}
 
-## Accordion Size &amp; Width
+## Accordion Loading
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-accordion-size-width.hbs'}}
-    <AuAccordion @accordionButtonLabel="Large information button" @buttonSize="large">
-      <p>I am information</p>
-    </AuAccordion>
-    <AuAccordion @accordionButtonLabel="Wide information button" @buttonWidth="block">
-      <p>I am information</p>
+  {{#demo.example name='au-accordion-size-loading.hbs'}}
+    <AuAccordion @accordionIconOpen="nav-down" @accordionIconClosed="nav-right" @accordionButtonLabel="This accordion's text will be loading" @buttonWidth="block" @loading={{true}}>
+      <p>I am information. I can even contain a <AuLink>A Link</AuLink>!</p>
     </AuAccordion>
   {{/demo.example}}
-  {{demo.snippet 'au-accordion-size-width.hbs'}}
-{{/docs-demo}}
-
-## States
-
-{{#docs-demo as |demo|}}
-  {{#demo.example name='au-accordion-states.hbs'}}
-    <AuAccordion @accordionButtonLabel="Disabled information button" @disabled={{true}}>
-      <p>I am information</p>
-    </AuAccordion>
-    <AuAccordion @accordionButtonLabel="Loading content" @loading={{true}}>
-      <p>I am information</p>
-    </AuAccordion>
-    <AuAccordion @accordionButtonLabel="Alerting information button" @buttonAlert={{true}}>
-      <p>I am information</p>
-    </AuAccordion>
-  {{/demo.example}}
-  {{demo.snippet 'au-accordion-states.hbs'}}
+  {{demo.snippet 'au-accordion-size-loading.hbs'}}
 {{/docs-demo}}
 
 
 ## Accordion Arguments
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@disabled` | Adds a disabled state to the button | `Boolean` | `false` |
-| `@loading` | Adds a loading state to the button | `Boolean` | `false` |
-
-## Accordion Button Arguments
-
-| Argument      | Description | Type | Default value |
-| ------------- | ----------- | ---- | ------------- |
+| `@accordionIconOpen` | Adds an icon to the accordion when it's open | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@accordionIconClosed` | Adds an icon to the accordion when it's open | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@accordionButtonLabel` | Set the label of the button | `String` | - |
-| `@buttonSkin` | Defines the style of the button  | `value`: `primary` / `secondary` / `tertiary` | `primary` |
-| `@buttonSize` | Set the size of the button  | `value`: `large` | - |
-| `@buttonAlert` | Adds an alert state to the button | `Boolean` | `false` |
-| `@buttonWidth` | Defines the width of a button | `value`: `block` | - |
-| `@hideText` | Hides the button text visually | `Boolean` | `false` |
+| `@accordionSubTitle` | Set the subtitle of the accordion | `String` | - |
+| `@loading` | Adds a loading state to the button | `Boolean` | `false` |
