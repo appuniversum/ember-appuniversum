@@ -159,7 +159,8 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
   }
 
   &.is-loading,
-  &.is-loading:hover {
+  &.is-loading:hover,
+  &.is-loading:focus {
     color: transparent;
     background-color: transparent;
     border-color: tint($au-button-secondary-color,30);
