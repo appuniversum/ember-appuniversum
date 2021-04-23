@@ -63,7 +63,6 @@
     "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-stencil": "^1.0.0",
     "ember-cli-uglify": "^3.0.0",
     "ember-cli-update": "^0.55.2",
     "ember-click-outside": "^1.3.0",
