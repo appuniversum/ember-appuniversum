@@ -24,7 +24,7 @@ export default class AuDatePickerComponent extends Component {
   // Default Adapter
   @tracked adapter = {
     parse: function(value = '', createDate) {
-      const matches = value.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})$/);
+      const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
       if (matches) {
         return createDate(matches[3], matches[2], matches[1]);
       }
