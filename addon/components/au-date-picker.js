@@ -1,25 +1,39 @@
 import Component from '@glimmer/component';
 import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
+import { assert, runInDebug } from '@ember/debug';
+
+const DEFAULT_LOCALIZATION = {
+  buttonLabel: 'Choose date',
+  placeholder: 'DD-MM-YYYY',
+  selectedDateMessage: 'Selected date is',
+  prevMonthLabel: 'Previous month',
+  nextMonthLabel: 'Next month',
+  monthSelectLabel: 'Month',
+  yearSelectLabel: 'Year',
+  closeLabel: 'Close window',
+  keyboardInstruction: 'You can use arrow keys to navigate dates',
+  calendarHeading: 'Choose a date',
+  dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
 
 export default class AuDatePickerComponent extends Component {
+  get localization() {
+    let localizationArg = this.args.localization;
 
-  //Default Localization
-  @tracked localization = {
-    buttonLabel: 'Choose date',
-    placeholder: 'DD-MM-YYYY',
-    selectedDateMessage: 'Selected date is',
-    prevMonthLabel: 'Previous month',
-    nextMonthLabel: 'Next month',
-    monthSelectLabel: 'Month',
-    yearSelectLabel: 'Year',
-    closeLabel: 'Close window',
-    keyboardInstruction: 'You can use arrow keys to navigate dates',
-    calendarHeading: 'Choose a date',
-    dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-  };
+    if (!localizationArg) {
+      return DEFAULT_LOCALIZATION;
+    }
+
+    runInDebug(() => validateLocalization(localizationArg));
+
+    return {
+      ...DEFAULT_LOCALIZATION,
+      ...localizationArg,
+    };
+  }
 
   // Default Adapter
   @tracked adapter = {
@@ -36,30 +50,7 @@ export default class AuDatePickerComponent extends Component {
 
   constructor(owner, args) {
     super(owner, args);
-    this._assignLocalization(args);
     this._assignAdapter(args);
-  }
-
-  @action _assignLocalization(args){
-
-    let localArgs = args.localization;
-    // Check if localization argument has been defined
-    if (localArgs) {
-
-      // Check if localization argument passed in is of type object
-      if (typeof localArgs != 'object') {
-        throw SyntaxError(`The passed in value for the localization argument needs to be of type "object", You passed in a "${typeof localArgs}"` ) ;
-      }
-
-      // Update localization properties where needed
-      for (const [key, value] of Object.entries(localArgs)) {
-        if (this.localization[key]) {
-          this.localization[key] = value;
-        } else {
-          throw Error(`"${key}" is not a property of localization, maybe it is just a typo?`);
-        }
-      }
-    }
   }
 
   @action _assignAdapter(args){
@@ -92,4 +83,15 @@ export default class AuDatePickerComponent extends Component {
       this.args.onChange?.(event.detail.value, event.detail.valueAsDate);
     }
   }
+}
+
+function validateLocalization(localizationArg) {
+  assert(
+    `The @localization argument needs to be an object but it is a "${typeof localizationArg}"`,
+    Boolean(localizationArg) && typeof localizationArg === 'object'
+  );
+
+  Object.keys(localizationArg).map((key) => {
+    assert(`"${key}" is not a property of localization, maybe it is just a typo?`, key in DEFAULT_LOCALIZATION);
+  });
 }
