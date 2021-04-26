@@ -1,7 +1,18 @@
 import Component from '@glimmer/component';
 import { action } from "@ember/object";
-import { tracked } from "@glimmer/tracking";
 import { assert, runInDebug } from '@ember/debug';
+
+const DEFAULT_ADAPTER = {
+  parse: function(value = '', createDate) {
+    const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+    if (matches) {
+      return createDate(matches[3], matches[2], matches[1]);
+    }
+  },
+  format: function(date) {
+    return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+  },
+};
 
 const DEFAULT_LOCALIZATION = {
   buttonLabel: 'Choose date',
@@ -20,58 +31,30 @@ const DEFAULT_LOCALIZATION = {
 };
 
 export default class AuDatePickerComponent extends Component {
-  get localization() {
-    let localizationArg = this.args.localization;
-
-    if (!localizationArg) {
-      return DEFAULT_LOCALIZATION;
+  get adapter() {
+    if (!this.args.adapter) {
+      return DEFAULT_ADAPTER;
     }
 
-    runInDebug(() => validateLocalization(localizationArg));
+    runInDebug(() => validateAdapter(this.args.adapter));
 
     return {
-      ...DEFAULT_LOCALIZATION,
-      ...localizationArg,
+      ...DEFAULT_ADAPTER,
+      ...this.args.adapter,
     };
   }
 
-  // Default Adapter
-  @tracked adapter = {
-    parse: function(value = '', createDate) {
-      const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
-      if (matches) {
-        return createDate(matches[3], matches[2], matches[1]);
-      }
-    },
-    format: function(date) {
-      return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-    },
-  };
-
-  constructor(owner, args) {
-    super(owner, args);
-    this._assignAdapter(args);
-  }
-
-  @action _assignAdapter(args){
-    let adaptArgs = args.adapter;
-    // Check if adapter argument has been defined
-    if (adaptArgs) {
-
-      // Check if adapter argument passed in is of type object
-      if (typeof adaptArgs != 'object') {
-        throw SyntaxError(`The passed in value for the adapter argument needs to be of type "object", You passed in a "${typeof adaptArgs}"`);
-      }
-
-      // Update adapter properties where needed
-      for (const [key, value] of Object.entries(adaptArgs)) {
-        if (this.adapter[key]) {
-          this.adapter[key] = value;
-        } else {
-          throw Error(`"${key}" is not a property of adapter, maybe it is just a typo?`);
-        }
-      }
+  get localization() {
+    if (!this.args.localization) {
+      return DEFAULT_LOCALIZATION;
     }
+
+    runInDebug(() => validateLocalization(this.args.localization));
+
+    return {
+      ...DEFAULT_LOCALIZATION,
+      ...this.args.localization,
+    };
   }
 
   @action
@@ -83,6 +66,17 @@ export default class AuDatePickerComponent extends Component {
       this.args.onChange?.(event.detail.value, event.detail.valueAsDate);
     }
   }
+}
+
+function validateAdapter(adapterArg) {
+  assert(
+    `The @adapter argument needs to be an object but it is a "${typeof adapterArg}"`,
+    Boolean(adapterArg) && typeof adapterArg === 'object'
+  );
+
+  Object.keys(adapterArg).map((key) => {
+    assert(`"${key}" is not a property of adapter, maybe it is just a typo?`, key in DEFAULT_ADAPTER);
+  });
 }
 
 function validateLocalization(localizationArg) {
