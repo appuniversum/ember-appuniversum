@@ -32,6 +32,10 @@ const DEFAULT_LOCALIZATION = {
 };
 
 export default class AuDatePickerComponent extends Component {
+  @asIsoDate value;
+  @asIsoDate min;
+  @asIsoDate max;
+
   get adapter() {
     if (!this.args.adapter) {
       return DEFAULT_ADAPTER;
@@ -93,4 +97,46 @@ function validateLocalization(localizationArg) {
   Object.keys(localizationArg).map((key) => {
     assert(`"${key}" is not a property of localization, maybe it is just a typo?`, key in DEFAULT_LOCALIZATION);
   });
+}
+
+function asIsoDate(target, key /*, descriptor */) {
+  return {
+    get() {
+      let argValue = this.args[key];
+
+      if (!argValue) {
+        return;
+      }
+
+      assert(
+        `@${key} should be a string or a Date instance but it is a "${typeof valueArg}"`,
+        typeof argValue === 'string' || argValue instanceof Date
+      );
+
+
+      if (argValue instanceof Date) {
+        return toIsoDateString(argValue);
+      } else {
+        assert(
+          `@${key} ("${argValue}") should be a valid ISO 8601 formatted date`,
+          isIsoDateString(argValue)
+        );
+        return argValue;
+      }
+    }
+  };
+}
+
+function toIsoDateString(date) {
+  return date.toISOString().split('T')[0];
+}
+
+function isIsoDateString(isoDate) {
+  let date = new Date(isoDate);
+
+  return isValidDate(date) && isoDate === toIsoDateString(date);
+}
+
+function isValidDate(date) {
+  return !isNaN(date);
 }

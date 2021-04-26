@@ -7,9 +7,9 @@
     disabled={{@disabled}}
     buttonLabel={{@buttonLabel}}
     identifier={{this.id}}
-    value={{@value}}
-    min={{@min}}
-    max={{@max}}
+    value={{this.value}}
+    min={{this.min}}
+    max={{this.max}}
     first-day-of-week={{@first-day}}
     {{on "duetChange" this.handleDuetDateChange}}
     {{prop localization=this.localization}}
