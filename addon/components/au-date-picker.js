@@ -50,10 +50,10 @@ export default class AuDatePickerComponent extends Component {
       if (typeof localArgs != 'object') {
         throw SyntaxError(`The passed in value for the localization argument needs to be of type "object", You passed in a "${typeof localArgs}"` ) ;
       }
-      
+
       // Update localization properties where needed
       for (const [key, value] of Object.entries(localArgs)) {
-        if (this.localization[key]) { 
+        if (this.localization[key]) {
           this.localization[key] = value;
         } else {
           throw Error(`"${key}" is not a property of localization, maybe it is just a typo?`);
@@ -74,7 +74,7 @@ export default class AuDatePickerComponent extends Component {
 
       // Update adapter properties where needed
       for (const [key, value] of Object.entries(adaptArgs)) {
-        if (this.adapter[key]) { 
+        if (this.adapter[key]) {
           this.adapter[key] = value;
         } else {
           throw Error(`"${key}" is not a property of adapter, maybe it is just a typo?`);
@@ -83,11 +83,13 @@ export default class AuDatePickerComponent extends Component {
     }
   }
 
-  @action callBackParent(context){
-    const isoDate = new Date(context.detail.value).toISOString().split('T')[0];
-
-    if(this.args.onChange != undefined){
-      this.args.onChange(isoDate);
+  @action
+  handleDuetDateChange(event) {
+    let wasDatePickerCleared = !event.detail.value;
+    if (wasDatePickerCleared) {
+      this.args.onChange?.(null, null);
+    } else {
+      this.args.onChange?.(event.detail.value, event.detail.valueAsDate);
     }
   }
 }
