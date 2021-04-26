@@ -1,12 +1,12 @@
 <div class="au-date-picker">
   {{#if @label}}
-    <AuLabel for={{@id}}>{{@label}}</AuLabel>
+    <AuLabel for={{this.id}}>{{@label}}</AuLabel>
   {{/if}}
 
   <duet-date-picker
     disabled={{@disabled}}
     buttonLabel={{@buttonLabel}}
-    identifier={{@id}}
+    identifier={{this.id}}
     value={{@value}}
     min={{@min}}
     max={{@max}}

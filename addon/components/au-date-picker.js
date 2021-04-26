@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
 import { action } from "@ember/object";
 import { assert, runInDebug } from '@ember/debug';
+import { guidFor } from '@ember/object/internals';
 
 const DEFAULT_ADAPTER = {
   parse: function(value = '', createDate) {
@@ -42,6 +43,10 @@ export default class AuDatePickerComponent extends Component {
       ...DEFAULT_ADAPTER,
       ...this.args.adapter,
     };
+  }
+
+  get id() {
+    return this.args.id ? this.args.id : guidFor(this);
   }
 
   get localization() {
