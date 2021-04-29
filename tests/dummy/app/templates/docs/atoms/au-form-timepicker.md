@@ -25,7 +25,7 @@
 Triggered everytime the time gets changed by the user. Expects a function to which it returns the time.
 
 {{#docs-demo as |demo|}}
-  {{#demo.example name='au-date-picker-on-change.hbs'}}
+  {{#demo.example name='au-time-picker-on-change.hbs'}}
     <AuTimePicker  @onChange={{this.myCallBackFunc}} @nowLabel="Now"/>
   {{/demo.example}}
   {{docs-snippet name="au-time-picker-on-change.js" unindent=false language=js showCopy=false}}

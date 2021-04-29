@@ -7,7 +7,7 @@ export default class localizationDefault extends Component {
 // Default values
 @tracked localization = {
   buttonLabel: "Choose date",
-  placeholder: "DD/MM/YYYY",
+  placeholder: "DD-MM-YYYY",
   selectedDateMessage: "Selected date is",
   prevMonthLabel: "Previous month",
   nextMonthLabel: "Next month",

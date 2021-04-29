@@ -1,7 +1,20 @@
-<div class="au-date-picker">
+<div class="au-date-picker" data-test-au-date-picker>
   {{#if @label}}
-    <AuLabel for="date">{{@label}}</AuLabel>
+    <AuLabel for={{this.id}} data-test-au-date-picker-label>{{@label}}</AuLabel>
   {{/if}}
 
-  <duet-date-picker {{on 'duetChange' this.callBackParent}} {{prop localization=this.localization}} {{prop dateAdapter=this.adapter}} adapter={{@adapter}} localization={{@localization}} disabled={{@disabled}} buttonLabel={{@buttonLabel}} identifier={{@id}} value={{@value}} min={{@min}} max={{@max}} first-day-of-week={{@first-day}} ...attributes></duet-date-picker>
+  <duet-date-picker
+    disabled={{@disabled}}
+    buttonLabel={{@buttonLabel}}
+    identifier={{this.id}}
+    value={{this.value}}
+    min={{this.min}}
+    max={{this.max}}
+    first-day-of-week={{@first-day}}
+    data-test-au-date-picker-component
+    {{on "duetChange" this.handleDuetDateChange}}
+    {{prop localization=this.localization}}
+    {{prop dateAdapter=this.adapter}}
+    ...attributes
+    ></duet-date-picker>
 </div>
