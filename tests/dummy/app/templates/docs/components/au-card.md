@@ -166,44 +166,131 @@
   {{demo.snippet 'au-card-expandable.hbs'}}
 {{/docs-demo}}
 
-## Card Standout
+## Card Standout Editable Pattern
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card-standout.hbs'}}
-    <div class="au-o-grid">
-      <div class="au-o-grid__item au-u-2-3">
-        <AuHeading @level="4" @skin="4">Example standout card with editing</AuHeading>
-      </div>
-      <div class="au-o-grid__item au-u-1-3 au-u-align-right">
-        <AuButton @skin="tertiary" @icon="pencil" @iconAlignment="right">
-          Bewerk
-        </AuButton>
-      </div>
-    </div>
     <AuCard @standOut={{true}} as |c|>
       <c.content>
         <div class="au-o-grid">
-          <div class="au-o-grid__item au-u-1-2">
-            <dl class="au-u-definition-list">
-              <dt class="au-u-definition-list__label">First Label</dt>
-              <dd class="au-u-definition-list__description">Description for first label</dd>
-              <dt class="au-u-definition-list__label">Second Label</dt>
-              <dd class="au-u-definition-list__description">Second description</dd>
-            </dl>
+          <div class="au-o-grid__item au-u-1-1 au-u-1-2@medium">
+            <div class="au-o-grid">
+              <div class="au-o-grid__item au-u-1-4">
+                <p><strong>Subject</strong></p>
+              </div>
+              <div class="au-o-grid__item au-u-3-4">
+                <p>Object (information)</p>
+                <AuHelpText>This is not a label-input pattern or definition list.</AuHelpText>
+              </div>
+            </div>
           </div>
-          <div class="au-o-grid__item au-u-1-2">
-            <dl class="au-u-definition-list">
-              <dt class="au-u-definition-list__label">First Label</dt>
-              <dd class="au-u-definition-list__description">Description for first label</dd>
-              <dt class="au-u-definition-list__label">Second Label</dt>
-              <dd class="au-u-definition-list__description">Second description</dd>
-            </dl>
+          <div class="au-o-grid__item  au-u-1-1 au-u-1-2@medium">
+            <div class="au-o-grid">
+              <div class="au-o-grid__item au-u-1-4">
+                <p><strong>Context</strong></p>
+              </div>
+              <div class="au-o-grid__item au-u-3-4">
+                <p>Information</p>
+                <AuHelpText>We are not dealing with label-input, nor a definition list.</AuHelpText>
+              </div>
+            </div>
           </div>
         </div>
       </c.content>
     </AuCard>
   {{/demo.example}}
   {{demo.snippet 'au-card-standout.hbs'}}
+{{/docs-demo}}
+
+## Card Editable Information Pattern
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-card-editable.hbs'}}
+    <div class="au-o-flow">
+      <div>
+        <AuToolbar class="au-u-margin-bottom-small">
+          <AuToolbarGroup>
+            <AuHeading @level="4" @skin="5">Example standout card with editing</AuHeading>
+          </AuToolbarGroup>
+          <AuToolbarGroup>
+            <AuButton @skin="tertiary" @icon="pencil" @iconAlignment="right">
+              Bewerk
+            </AuButton>
+          </AuToolbarGroup>
+        </AuToolbar>
+        <AuCard @standOut={{true}} as |c|>
+          <c.content>
+            <div class="au-o-grid">
+              <div class="au-o-grid__item au-u-1-1 au-u-1-2@medium">
+                <div class="au-o-grid">
+                  <div class="au-o-grid__item au-u-1-4">
+                    <p><strong>Subject</strong></p>
+                  </div>
+                  <div class="au-o-grid__item au-u-3-4">
+                    <p>Object (information)</p>
+                    <AuHelpText>This is not a label-input pattern or definition list.</AuHelpText>
+                  </div>
+                </div>
+              </div>
+              <div class="au-o-grid__item  au-u-1-1 au-u-1-2@medium">
+                <div class="au-o-grid">
+                  <div class="au-o-grid__item au-u-1-4">
+                    <p><strong>Context</strong></p>
+                  </div>
+                  <div class="au-o-grid__item au-u-3-4">
+                    <p>Information</p>
+                    <AuHelpText>We are not dealing with label-input, nor a definition list.</AuHelpText>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </c.content>
+        </AuCard>
+      </div>
+      <div>
+        <AuToolbar class="au-u-margin-bottom-small">
+          <AuToolbarGroup>
+            <AuHeading @level="4" @skin="5">Example standout card with editing</AuHeading>
+          </AuToolbarGroup>
+          <AuToolbarGroup>
+            <AuButton @icon="check" @iconAlignment="right">
+              Bewaar
+            </AuButton>
+          </AuToolbarGroup>
+        </AuToolbar>
+        <AuCard as |c|>
+          <c.content>
+            <div class="au-o-grid">
+              <div class="au-o-grid__item au-u-1-1 au-u-1-2@medium">
+                <div class="au-o-grid">
+                  <div class="au-o-grid__item au-u-1-4">
+                    <p><strong>Subject</strong></p>
+                  </div>
+                  <div class="au-o-grid__item au-u-3-4">
+                    <AuLabel for="input-subject-object" class="au-u-hidden-visually">Object subject input</AuLabel>
+                    <AuInput id="input-subject-object"/>
+                    <AuHelpText>The label is there for accessibility, but hidden.</AuHelpText>
+                  </div>
+                </div>
+              </div>
+              <div class="au-o-grid__item  au-u-1-1 au-u-1-2@medium">
+                <div class="au-o-grid">
+                  <div class="au-o-grid__item au-u-1-4">
+                    <p><strong>Context</strong></p>
+                  </div>
+                  <div class="au-o-grid__item au-u-3-4">
+                    <p>Information</p>
+                    <AuHelpText>We are not dealing with label-input, nor a definition list.</AuHelpText>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </c.content>
+        </AuCard>
+      </div>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-card-editable.hbs'}}
 {{/docs-demo}}
 
 
