@@ -166,6 +166,46 @@
   {{demo.snippet 'au-card-expandable.hbs'}}
 {{/docs-demo}}
 
+## Card Standout
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-card-standout.hbs'}}
+    <div class="au-o-grid">
+      <div class="au-o-grid__item au-u-2-3">
+        <AuHeading @level="4" @skin="4">Example standout card with editing</AuHeading>
+      </div>
+      <div class="au-o-grid__item au-u-1-3 au-u-align-right">
+        <AuButton @skin="tertiary" @icon="pencil" @iconAlignment="right">
+          Bewerk
+        </AuButton>
+      </div>
+    </div>
+    <AuCard @standOut={{true}} as |c|>
+      <c.content>
+        <div class="au-o-grid">
+          <div class="au-o-grid__item au-u-1-2">
+            <dl class="au-u-definition-list">
+              <dt class="au-u-definition-list__label">First Label</dt>
+              <dd class="au-u-definition-list__description">Description for first label</dd>
+              <dt class="au-u-definition-list__label">Second Label</dt>
+              <dd class="au-u-definition-list__description">Second description</dd>
+            </dl>
+          </div>
+          <div class="au-o-grid__item au-u-1-2">
+            <dl class="au-u-definition-list">
+              <dt class="au-u-definition-list__label">First Label</dt>
+              <dd class="au-u-definition-list__description">Description for first label</dd>
+              <dt class="au-u-definition-list__label">Second Label</dt>
+              <dd class="au-u-definition-list__description">Second description</dd>
+            </dl>
+          </div>
+        </div>
+      </c.content>
+    </AuCard>
+  {{/demo.example}}
+  {{demo.snippet 'au-card-standout.hbs'}}
+{{/docs-demo}}
+
 
 ## Card arguments
 
@@ -174,6 +214,7 @@
 | `@flex` | Layout elements as flexbox columns  | `boolean` | `false` |
 | `@expandable` | Card becomes expandable  | `boolean` | `false` |
 | `@textCenter` | Centers text | `boolean` | `false` |
+| `@standOut` | Makes background colour stand out | `boolean` | `false` |
 
 ## Card header arguments
 
