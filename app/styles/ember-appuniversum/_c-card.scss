@@ -6,7 +6,7 @@
    ========================================================================== */
 
 $au-card-border-color                         : $au-gray-300 !default;
-
+$au-card-standout-color                       : $au-gray-200 !default;
 
 /* Component
   ========================================================================== */
@@ -16,6 +16,10 @@ $au-card-border-color                         : $au-gray-300 !default;
   flex-direction: column;
   background-color: $au-white;
   border: .1rem solid $au-card-border-color;
+}
+
+.au-c-card--standout {
+  background-color: $au-card-standout-color;
 }
 
 .au-c-card--fill {
