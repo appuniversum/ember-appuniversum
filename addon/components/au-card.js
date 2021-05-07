@@ -36,4 +36,10 @@ export default class AuCardComponent extends Component {
       return "au-c-card--text-center";
     return "";
   }
+
+  get standOut() {
+    if (this.args.standOut)
+      return "au-c-card--standout";
+    return "";
+  }
 }

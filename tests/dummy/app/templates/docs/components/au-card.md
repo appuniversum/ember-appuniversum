@@ -166,6 +166,42 @@
   {{demo.snippet 'au-card-expandable.hbs'}}
 {{/docs-demo}}
 
+## Card Standout Editable Pattern
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-card-standout.hbs'}}
+    <AuCard @standOut={{true}} as |c|>
+      <c.content>
+        <div class="au-o-grid">
+          <div class="au-o-grid__item au-u-1-1 au-u-1-2@medium">
+            <div class="au-o-grid">
+              <div class="au-o-grid__item au-u-1-4">
+                <p><strong>Subject</strong></p>
+              </div>
+              <div class="au-o-grid__item au-u-3-4">
+                <p>Object (information)</p>
+                <AuHelpText>This is not a label-input pattern or definition list.</AuHelpText>
+              </div>
+            </div>
+          </div>
+          <div class="au-o-grid__item  au-u-1-1 au-u-1-2@medium">
+            <div class="au-o-grid">
+              <div class="au-o-grid__item au-u-1-4">
+                <p><strong>Context</strong></p>
+              </div>
+              <div class="au-o-grid__item au-u-3-4">
+                <p>Information</p>
+                <AuHelpText>We are not dealing with label-input, nor a definition list.</AuHelpText>
+              </div>
+            </div>
+          </div>
+        </div>
+      </c.content>
+    </AuCard>
+  {{/demo.example}}
+  {{demo.snippet 'au-card-standout.hbs'}}
+{{/docs-demo}}
+
 
 ## Card arguments
 
@@ -174,6 +210,7 @@
 | `@flex` | Layout elements as flexbox columns  | `boolean` | `false` |
 | `@expandable` | Card becomes expandable  | `boolean` | `false` |
 | `@textCenter` | Centers text | `boolean` | `false` |
+| `@standOut` | Makes background colour stand out | `boolean` | `false` |
 
 ## Card header arguments
 
