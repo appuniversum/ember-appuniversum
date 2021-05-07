@@ -20,6 +20,7 @@ $au-card-standout-color                       : $au-gray-200 !default;
 
 .au-c-card--standout {
   background-color: $au-card-standout-color;
+  border: 0;
 }
 
 .au-c-card--fill {
