@@ -1,7 +1,9 @@
-import { defineCustomElements as registerDuetDatePicker } from "@duetds/date-picker/custom-element";
-
 export function initialize() {
-  registerDuetDatePicker();
+  if (typeof FastBoot === 'undefined') {
+    import('@duetds/date-picker/custom-element').then(({ defineCustomElements: registerDuetDatePicker }) => {
+      registerDuetDatePicker();
+    });
+  }
 }
 
 export default {

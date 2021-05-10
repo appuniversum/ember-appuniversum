@@ -38,7 +38,7 @@
     "ember-auto-import": "^1.6.0",
     "ember-cli-babel": "^7.21.0",
     "ember-cli-htmlbars": "^5.2.0",
-    "ember-data-table": "git+https://github.com/aatauil/ember-data-table.git#a13ca0696f6d63a3570af13a4109d1e8b1f24503",
+    "ember-data-table": "^2.0.1",
     "ember-focus-trap": "^0.5.0",
     "ember-in-element-polyfill": "^1.0.0",
     "ember-modifier": "^1.0.3",
