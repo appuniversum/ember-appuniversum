@@ -63,3 +63,4 @@
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |
 | `@hideText` | Hides the link text visually | `Boolean` | `false` |
 | `@active` | Adds an active state and disables pointer events | `Boolean` | `false` |
+| `@model` / `@models` | [Supply a model to the route](https://api.emberjs.com/ember/release/classes/Ember.Templates.components/methods/input?anchor=LinkTo#supplying-a-model) | `route model(s)` | - |
