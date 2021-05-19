@@ -25,3 +25,4 @@
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
 | `@linkRoute` | The route that is passed to the link  | `route name` | - |
+| `@model` / `@models` | [Supply a model to the route](https://api.emberjs.com/ember/release/classes/Ember.Templates.components/methods/input?anchor=LinkTo#supplying-a-model) | `route model(s)` | - |
