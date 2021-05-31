@@ -53,4 +53,25 @@ module('Integration | Component | au-modal', function(hooks) {
     await triggerKeyEvent(document, 'keydown', 'Escape');
     assert.equal(timesCalled, 2);
   });
+
+  test('it calls @onClose only once when the component is rendered conditionally', async function(assert) {
+    let timesCalled = 0;
+    this.handleClose = () => {
+      timesCalled++;
+      this.set('showModal', false);
+    };
+
+    this.showModal = true;
+
+    await render(hbs`
+      {{#if this.showModal}}
+        <AuModal @modalOpen={{true}} @closeModal={{this.handleClose}}></AuModal>
+        <button data-test-close-button type="button" {{on "click" this.handleClose}}>Close modal</button>
+      {{/if}}
+    `);
+
+    let closeButton = document.querySelector('[data-test-close-button]');
+    await click(closeButton);
+    assert.equal(timesCalled, 1);
+  });
 });
