@@ -6,13 +6,13 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-link-skin.hbs'}}
-    <AuLink @linkRoute="docs.atoms.au-link">
+    <AuLink @route="docs.atoms.au-link">
       Primary link
     </AuLink>
 
     <hr>
 
-    <AuLink @linkRoute="docs.atoms.au-link" @skin="secondary">
+    <AuLink @route="docs.atoms.au-link" @skin="secondary">
       Secondary link
     </AuLink>
 
@@ -35,19 +35,19 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-link-icon.hbs'}}
-    <AuLink @linkRoute="docs.atoms.au-link" @icon="login" @iconAlignment="left">
+    <AuLink @route="docs.atoms.au-link" @icon="login" @iconAlignment="left">
       Primary link + icon (left)
     </AuLink>
 
     <hr>
 
-    <AuLink @linkRoute="docs.atoms.au-link" @icon="login" @iconAlignment="right">
+    <AuLink @route="docs.atoms.au-link" @icon="login" @iconAlignment="right">
       Primary link + icon (right)
     </AuLink>
 
     <hr>
 
-    <AuLink @linkRoute="docs.atoms.au-link" @icon="login" @hideText={{true}}>
+    <AuLink @route="docs.atoms.au-link" @icon="login" @hideText={{true}}>
       Primary link + icon
     </AuLink>
   {{/demo.example}}
@@ -58,7 +58,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-link-active.hbs'}}
-    <AuLink @linkRoute="docs.atoms.au-link" @active={{true}}>
+    <AuLink @route="docs.atoms.au-link" @active={{true}}>
       Primary link - active
     </AuLink>
   {{/demo.example}}
@@ -71,7 +71,7 @@
 | ------------- | ----------- | ---- | ------------- |
 | `@route` | The route that is passed to the link  | `route name` | - |
 | `@skin` | Defines the style of the link  | Valid skin options: <br> `primary` / `secondary` / `button` / `button-secondary` | `primary` |
-| `@icon` | Adds an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@icon` | Adds an icon  | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |
 | `@hideText` | Hides the link text visually | `Boolean` | `false` |
 | `@active` | Adds an active state and disables pointer events | `Boolean` | `false` |

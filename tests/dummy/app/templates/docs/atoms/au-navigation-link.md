@@ -6,12 +6,12 @@
   {{#demo.example name='au-navigation-link.hbs'}}
     <ul class="au-c-list-navigation">
       <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.atoms.au-button">
+        <AuNavigationLink @route="docs.atoms.au-button">
           Navigation link
         </AuNavigationLink>
       </li>
       <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
+        <AuNavigationLink @route="docs.atoms.au-navigation-link">
           Navigation link active
         </AuNavigationLink>
       </li>

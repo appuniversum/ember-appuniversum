@@ -12,10 +12,10 @@
         <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a></p>
         <ul class="au-c-list-horizontal">
           <li class="au-c-list-horizontal__item">
-            <AuLink @linkRoute="index" @skin="secondary">Disclaimer</AuLink>
+            <AuLink @route="index" @skin="secondary">Disclaimer</AuLink>
           </li>
           <li class="au-c-list-horizontal__item">
-            <AuLink @linkRoute="index" @skin="secondary">Cookieverklaring</AuLink>
+            <AuLink @route="index" @skin="secondary">Cookieverklaring</AuLink>
           </li>
         </ul>
       </AuContent>

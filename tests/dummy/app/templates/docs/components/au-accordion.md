@@ -34,8 +34,8 @@
 ## Accordion Arguments
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@accordionIconOpen` | Adds an icon to the accordion when it's open | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
-| `@accordionIconClosed` | Adds an icon to the accordion when it's open | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@accordionIconOpen` | Adds an icon to the accordion when it's open | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@accordionIconClosed` | Adds an icon to the accordion when it's open | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@accordionButtonLabel` | Set the label of the button | `String` | - |
 | `@accordionSubTitle` | Set the subtitle of the accordion | `String` | - |
 | `@loading` | Adds a loading state to the button | `Boolean` | `false` |
