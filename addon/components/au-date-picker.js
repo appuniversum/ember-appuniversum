@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { action } from "@ember/object";
 import { assert, runInDebug } from '@ember/debug';
 import { guidFor } from '@ember/object/internals';
+import formatISO from 'date-fns/formatISO'
 
 const DEFAULT_ADAPTER = {
   parse: function(value = '', createDate) {
@@ -128,7 +129,7 @@ function asIsoDate(target, key /*, descriptor */) {
 }
 
 function toIsoDateString(date) {
-  return date.toISOString().split('T')[0];
+  return formatISO(date, { representation: 'date' });
 }
 
 function isIsoDateString(isoDate) {

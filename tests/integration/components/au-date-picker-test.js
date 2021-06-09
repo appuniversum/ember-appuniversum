@@ -51,7 +51,6 @@ module('Integration | Component | au-date-picker', function(hooks) {
 
   test('it is possible to set a selected date', async function(assert) {
     let isoDate = '2021-01-01';
-    let date = new Date('2021-12-31');
 
     this.set('date', isoDate);
     await render(hbs`
@@ -62,7 +61,8 @@ module('Integration | Component | au-date-picker', function(hooks) {
     let input = assert.dom('[data-test-au-date-picker-component] input');
     input.hasValue('1-1-2021');
 
-    this.set('date', date);
+    let dateWithTimezone = new Date('2021-12-31T00:00:00+01:00');
+    this.set('date', dateWithTimezone);
 
     // The web component updates aren't monitored by Ember, so we need to do some manual waiting.
     await waitUntil(() => {
