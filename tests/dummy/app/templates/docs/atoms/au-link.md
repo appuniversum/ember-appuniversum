@@ -69,7 +69,7 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@linkRoute` | The route that is passed to the link  | `route name` | - |
+| `@route` | The route that is passed to the link  | `route name` | - |
 | `@skin` | Defines the style of the link  | Valid skin options: <br> `primary` / `secondary` / `button` / `button-secondary` | `primary` |
 | `@icon` | Adds an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |
