@@ -15,6 +15,18 @@
     <AuLink @linkRoute="docs.atoms.au-link" @skin="secondary">
       Secondary link
     </AuLink>
+
+    <hr>
+
+    <AuLink @linkRoute="docs.atoms.au-link" @skin="button">
+      Link styled as a button
+    </AuLink>
+
+    <hr>
+
+    <AuLink @linkRoute="docs.atoms.au-link" @skin="button-secondary">
+      Link styled as a secondary button
+    </AuLink>
   {{/demo.example}}
   {{demo.snippet 'au-link-skin.hbs'}}
 {{/docs-demo}}
@@ -58,7 +70,7 @@
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
 | `@linkRoute` | The route that is passed to the link  | `route name` | - |
-| `@skin` | Defines the style of the link  | `value`: `primary` / `secondary` | `primary` |
+| `@skin` | Defines the style of the link  | Valid skin options: <br> `primary` / `secondary` / `button` / `button-secondary` | `primary` |
 | `@icon` | Adds an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |
 | `@hideText` | Hides the link text visually | `Boolean` | `false` |
