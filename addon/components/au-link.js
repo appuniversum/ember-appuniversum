@@ -4,7 +4,7 @@ const SKIN_CLASSES = {
   primary: 'au-c-link',
   secondary: 'au-c-link au-c-link--secondary',
   button: 'au-c-button',
-  'button-link': 'au-c-button au-c-button-secondary',
+  'button-secondary': 'au-c-button au-c-button--secondary',
 };
 
 export default class AuLink extends Component {
