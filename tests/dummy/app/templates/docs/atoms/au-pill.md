@@ -63,5 +63,5 @@
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
 | `@skin` | Sets the style of the badge  | `value`: `default` / `border` / `action` / `success` / `warning` / `error` | `default` |
-| `@icon` | Adds an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@icon` | Adds an icon  | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |

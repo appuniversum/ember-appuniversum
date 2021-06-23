@@ -1,7 +1,9 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 import { action } from "@ember/object";
 import { assert, runInDebug } from '@ember/debug';
 import { guidFor } from '@ember/object/internals';
+import formatISO from 'date-fns/formatISO'
 
 const DEFAULT_ADAPTER = {
   parse: function(value = '', createDate) {
@@ -35,6 +37,12 @@ export default class AuDatePickerComponent extends Component {
   @asIsoDate value;
   @asIsoDate min;
   @asIsoDate max;
+  @tracked isInitialized = false;
+
+  constructor() {
+    super(...arguments);
+    this.registerDuetDatePicker();
+  }
 
   get adapter() {
     if (!this.args.adapter) {
@@ -73,6 +81,14 @@ export default class AuDatePickerComponent extends Component {
       this.args.onChange?.(null, null);
     } else {
       this.args.onChange?.(event.detail.value, event.detail.valueAsDate);
+    }
+  }
+
+  async registerDuetDatePicker() {
+    if (typeof FastBoot === 'undefined') {
+      const { defineCustomElements: registerDuetDatePicker } = await import('@duetds/date-picker/custom-element');
+      registerDuetDatePicker();
+      this.isInitialized = true;
     }
   }
 }
@@ -128,7 +144,7 @@ function asIsoDate(target, key /*, descriptor */) {
 }
 
 function toIsoDateString(date) {
-  return date.toISOString().split('T')[0];
+  return formatISO(date, { representation: 'date' });
 }
 
 function isIsoDateString(isoDate) {
