@@ -6,12 +6,12 @@
   {{#demo.example name='au-navigation-link.hbs'}}
     <ul class="au-c-list-navigation">
       <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.atoms.au-button">
+        <AuNavigationLink @route="docs.atoms.au-button">
           Navigation link
         </AuNavigationLink>
       </li>
       <li class="au-c-list-navigation__item">
-        <AuNavigationLink @linkRoute="docs.atoms.au-navigation-link">
+        <AuNavigationLink @route="docs.atoms.au-navigation-link">
           Navigation link active
         </AuNavigationLink>
       </li>
@@ -24,6 +24,6 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@linkRoute` | The route that is passed to the link  | `route name` | - |
+| `@route` | The route that is passed to the link  | `route name` | - |
 | `@model` / `@models` | [Supply a model to the route](https://api.emberjs.com/ember/release/classes/Ember.Templates.components/methods/input?anchor=LinkTo#supplying-a-model) | `route model(s)` | - |
 | `@query` | [Supply query parameters to the route](https://api.emberjs.com/ember/release/classes/Ember.Templates.components/methods/input?anchor=LinkTo#supplying-query-parameters) | `query params as key value pairs` | - |

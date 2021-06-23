@@ -107,7 +107,7 @@
 | ------------- | ----------- | ---- | ------------- |
 | `@skin` | Defines the style of the button  | `value`: `primary` / `secondary` / `tertiary` | `primary` |
 | `@size` | Set the size of the button  | `value`: `large` | - |
-| `@icon` | Adds an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@icon` | Adds an icon  | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |
 | `@hideText` | Hides the button text visually | `Boolean` | `false` |
 | `@width` | Defines the width of a button | `value`: `block` | - |

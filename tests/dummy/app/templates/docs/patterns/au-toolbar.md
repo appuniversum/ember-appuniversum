@@ -18,7 +18,7 @@
         </AuButtonGroup>
       </AuToolbarGroup>
       <AuToolbarGroup>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        <AuLink @route="docs.patterns.au-toolbar" @skin="secondary">
           Secondary link
         </AuLink>
       </AuToolbarGroup>
@@ -63,7 +63,7 @@
         </AuButtonGroup>
       </AuToolbarGroup>
       <AuToolbarGroup>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        <AuLink @route="docs.patterns.au-toolbar" @skin="secondary">
           Secondary link
         </AuLink>
       </AuToolbarGroup>
@@ -88,7 +88,7 @@
         </AuButtonGroup>
       </AuToolbarGroup>
       <AuToolbarGroup>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        <AuLink @route="docs.patterns.au-toolbar" @skin="secondary">
           Secondary link
         </AuLink>
       </AuToolbarGroup>
@@ -113,7 +113,7 @@
         </AuButtonGroup>
       </AuToolbarGroup>
       <AuToolbarGroup>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        <AuLink @route="docs.patterns.au-toolbar" @skin="secondary">
           Secondary link
         </AuLink>
       </AuToolbarGroup>
@@ -138,7 +138,7 @@
         </AuButtonGroup>
       </AuToolbarGroup>
       <AuToolbarGroup>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        <AuLink @route="docs.patterns.au-toolbar" @skin="secondary">
           Secondary link
         </AuLink>
       </AuToolbarGroup>
@@ -155,7 +155,7 @@
         </AuButtonGroup>
       </AuToolbarGroup>
       <AuToolbarGroup>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        <AuLink @route="docs.patterns.au-toolbar" @skin="secondary">
           Secondary link
         </AuLink>
       </AuToolbarGroup>
@@ -172,7 +172,7 @@
         </AuButtonGroup>
       </AuToolbarGroup>
       <AuToolbarGroup>
-        <AuLink @linkRoute="docs.patterns.au-toolbar" @skin="secondary">
+        <AuLink @route="docs.patterns.au-toolbar" @skin="secondary">
           Secondary link
         </AuLink>
       </AuToolbarGroup>

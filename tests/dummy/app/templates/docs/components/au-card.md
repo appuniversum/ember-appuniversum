@@ -216,6 +216,6 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@badgeIcon` | Add an icon  | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@badgeIcon` | Add an icon  | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@badgeSkin` | Set the theme of the badge  | `value`: `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `none` |
 | `@badgeSize` | Set the size of the badge  | `value`: `small` / `default` | `default` |
