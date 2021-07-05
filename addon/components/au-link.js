@@ -40,6 +40,16 @@ export default class AuLink extends Component {
     }
   }
 
+  get width() {
+    if (this.args.width == "block")
+      if (this.args.skin == "button" | "button-secondary")
+        return "au-c-button--block";
+      else
+        return "au-c-link--block";
+    else
+      return "";
+  }
+
   get active() {
     if (this.args.active)
       return 'is-active';

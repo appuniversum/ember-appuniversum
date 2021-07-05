@@ -73,3 +73,9 @@ $au-link-secondary-active-color      : $au-gray-900 !default;
     color: $au-link-secondary-active-color;
   }
 }
+
+.au-c-link--block {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

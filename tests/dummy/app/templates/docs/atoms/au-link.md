@@ -54,6 +54,23 @@
   {{demo.snippet 'au-link-icon.hbs'}}
 {{/docs-demo}}
 
+## Width
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-link-width.hbs'}}
+    <AuLink @route="docs.atoms.au-link" @width="block">
+      Primary link
+    </AuLink>
+
+    <hr>
+
+    <AuLink @linkRoute="docs.atoms.au-link" @skin="button" @width="block">
+      Link styled as a button
+    </AuLink>
+  {{/demo.example}}
+  {{demo.snippet 'au-link-width.hbs'}}
+{{/docs-demo}}
+
 ## Active
 
 {{#docs-demo as |demo|}}
@@ -74,6 +91,7 @@
 | `@icon` | Adds an icon  | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |
 | `@hideText` | Hides the link text visually | `Boolean` | `false` |
+| `@width` | Defines the width of the link | `value`: `block` | - |
 | `@active` | Adds an active state and disables pointer events | `Boolean` | `false` |
 | `@model` / `@models` | [Supply a model to the route](https://api.emberjs.com/ember/release/classes/Ember.Templates.components/methods/input?anchor=LinkTo#supplying-a-model) | `route model(s)` | - |
 | `@query` | [Supply query parameters to the route](https://api.emberjs.com/ember/release/classes/Ember.Templates.components/methods/input?anchor=LinkTo#supplying-query-parameters) | `query params as key value pairs` | - |
