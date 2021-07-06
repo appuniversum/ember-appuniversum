@@ -32,7 +32,7 @@ $au-badge-error-contrast-color          : $au-red-600 !default;
   border-radius: $au-unit-large;
   height: $au-unit-large - .1rem; // compensate for visual distortion of perfect circle
   width: $au-unit-large;
-  margin-right: $au-unit-large / 2;
+  margin-right: $au-unit-large * .5;
 
   display: inline-flex;
   align-items: center;

@@ -80,7 +80,7 @@ $au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
 }
 
 .au-c-toggle-switch__input:checked + .au-c-toggle-switch__toggle:before {
-  transform: translateX($au-toggle-switch-width/2 + .2rem);
+  transform: translateX($au-toggle-switch-width*.5 + .2rem);
 }
 
 

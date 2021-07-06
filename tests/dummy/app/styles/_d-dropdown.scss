@@ -116,7 +116,7 @@
 
     &:focus {
       outline: .1rem dashed $au-gray-300;
-      outline-offset: -$au-unit-tiny/2;
+      outline-offset: -$au-unit-tiny*.5;
     }
 
     &:focus:not(:focus-visible) {
@@ -142,7 +142,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   top: $au-unit + $au-unit-small !important;
-  right: $au-unit-small + $au-unit-tiny/2 !important;
+  right: $au-unit-small + $au-unit-tiny*.5 !important;
   transform: none !important;
   left: auto !important;
   width: auto;

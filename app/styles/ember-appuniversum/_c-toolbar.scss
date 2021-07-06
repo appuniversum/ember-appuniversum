@@ -34,7 +34,7 @@ $au-toolbar-font-size       : $au-h6 !default;
   .au-c-toolbar--small &,
   .au-c-toolbar--medium &,
   .au-c-toolbar--large & {
-    margin: $au-toolbar-spacing/2;
+    margin: $au-toolbar-spacing*.5;
   }
 }
 
@@ -58,7 +58,7 @@ $au-toolbar-font-size       : $au-h6 !default;
 }
 
 .au-c-toolbar--small {
-  padding: $au-toolbar-spacing/2;
+  padding: $au-toolbar-spacing*.5;
 }
 
 .au-c-toolbar--medium {

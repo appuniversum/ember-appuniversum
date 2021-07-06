@@ -139,7 +139,7 @@ $au-dropdown-caret-size        : .4rem !default;
     position: absolute;
     pointer-events: none;
     border-width: $au-dropdown-caret-size;
-    margin-left: -$au-dropdown-caret-size/2;
+    margin-left: -$au-dropdown-caret-size*.5;
   }
 
   &:before {
@@ -183,7 +183,7 @@ $au-dropdown-caret-size        : .4rem !default;
 
   .au-c-dropdown--right &:before,
   .au-c-dropdown--right &:after {
-    left: calc(100% - #{$au-unit-small + $au-dropdown-caret-size/2});
+    left: calc(100% - #{$au-unit-small + $au-dropdown-caret-size*.5});
   }
 }
 

@@ -32,6 +32,6 @@ $au-list-horizontal-divider    : 1px dotted $au-gray-300 !default;
   > .au-c-dropdown,
   > .au-c-button,
   > .ember-view > .au-c-button {
-    margin-left: -$au-list-horizontal-spacing/2;
+    margin-left: -$au-list-horizontal-spacing*.5;
   }
 }
