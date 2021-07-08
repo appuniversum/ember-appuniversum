@@ -36,7 +36,7 @@ $au-link-secondary-active-color      : $au-gray-900 !default;
 
   &:focus {
     outline: $au-outline;
-    outline-offset: $au-unit-tiny/2;
+    outline-offset: $au-unit-tiny*.5;
   }
 
   &.is-active {

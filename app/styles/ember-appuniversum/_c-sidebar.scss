@@ -36,7 +36,7 @@ $au-sidebar-footer-padding: $au-unit !default;
   padding: $au-sidebar-header-padding;
 
   @include mq(medium) {
-    padding: $au-sidebar-header-padding*1.5 $au-sidebar-header-padding*1.5 $au-sidebar-header-padding/2;
+    padding: $au-sidebar-header-padding*1.5 $au-sidebar-header-padding*1.5 $au-sidebar-header-padding*0.5;
   }
 }
 
@@ -49,7 +49,7 @@ $au-sidebar-footer-padding: $au-unit !default;
 
 .au-c-sidebar__footer {
   @include au-font-size($au-base);
-  padding: $au-sidebar-footer-padding/2;
+  padding: $au-sidebar-footer-padding*.5;
 
   @include mq(medium) {
     text-align: center;

@@ -114,8 +114,8 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
     height: $au-unit - $au-unit-tiny;
     top: 50%;
     left: 50%;
-    margin-top: -$au-unit-small/2 - $au-unit-tiny/2;
-    margin-left: -$au-unit-small/2 - $au-unit-tiny/2;
+    margin-top: -$au-unit-small*0.5 - $au-unit-tiny*.5;
+    margin-left: -$au-unit-small*0.5 - $au-unit-tiny*.5;
     animation: buttonLoading 2s linear infinite;
   }
 }

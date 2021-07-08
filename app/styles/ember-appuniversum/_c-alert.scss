@@ -45,7 +45,7 @@ $au-alert-small-icon-size               : 1.5rem !default;
   border-radius: $au-unit-large;
   height: $au-unit-large - .1rem; // compensate for visual distortion of perfect circle
   width: $au-unit-large;
-  margin-right: $au-unit-large / 2;
+  margin-right: $au-unit-large * .5;
 
   display: flex;
   align-items: center;
@@ -106,7 +106,7 @@ $au-alert-small-icon-size               : 1.5rem !default;
   .au-c-alert__icon {
     height: $au-unit - .1rem; // compensate for visual distortion of perfect circle
     width: $au-unit;
-    margin-right: $au-unit / 2;
+    margin-right: $au-unit * .5;
   }
 
   .au-c-icon {
