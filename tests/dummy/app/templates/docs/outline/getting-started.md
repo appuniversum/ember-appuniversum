@@ -96,7 +96,9 @@ Then load the SCSS partials in your `app.scss` file:
 
 
 // COMPONENTS
+@import "ember-appuniversum/c-accordion";
 @import "ember-appuniversum/c-alert";
+@import "ember-appuniversum/c-app";
 @import "ember-appuniversum/c-badge";
 @import "ember-appuniversum/c-body-container";
 @import "ember-appuniversum/c-brand";
@@ -128,6 +130,7 @@ Then load the SCSS partials in your `app.scss` file:
 @import "ember-appuniversum/c-sidebar";
 @import "ember-appuniversum/c-sidebar-action";
 @import "ember-appuniversum/c-textarea";
+@import "ember-appuniversum/c-timepicker";
 @import "ember-appuniversum/c-toolbar";
 @import "ember-appuniversum/c-toggle-switch";
 
@@ -139,6 +142,7 @@ Then load the SCSS partials in your `app.scss` file:
 
 // UTILITIES
 @import "appuniversum/u-align-text";
+@import "appuniversum/u-background";
 @import "appuniversum/u-break-word";
 @import "appuniversum/u-headings";
 @import "appuniversum/u-hide";

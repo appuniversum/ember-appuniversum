@@ -1,4 +1,4 @@
-# Main container (draft)
+# Main container
 
 ---
 
@@ -6,18 +6,18 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-main-container.hbs'}}
-    <div class="au-c-main-container">
-      <div class="au-c-main-container__sidebar">
+    <AuMainContainer as |m|>
+      <m.sidebar>
         <div class="au-d-component-block">
           Sidebar
         </div>
-      </div>
-      <div class="au-c-main-container__content">
+      </m.sidebar>
+      <m.content>
         <div class="au-d-component-block">
           Main content
         </div>
-      </div>
-    </div>
+      </m.content>
+    </AuMainContainer>
   {{/demo.example}}
   {{demo.snippet 'au-main-container.hbs'}}
 {{/docs-demo}}
@@ -26,18 +26,25 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-main-container-scroll.hbs'}}
-    <div class="au-c-main-container">
-      <div class="au-c-main-container__sidebar">
+    <AuMainContainer as |m|>
+      <m.sidebar>
         <div class="au-d-component-block">
           Sidebar
         </div>
-      </div>
-      <div class="au-c-main-container__content au-c-main-container__content--scroll">
+      </m.sidebar>
+      <m.content @scroll={{true}}>
         <div class="au-d-component-block au-d-component-block--overflow">
           Main content
         </div>
-      </div>
-    </div>
+      </m.content>
+    </AuMainContainer>
   {{/demo.example}}
   {{demo.snippet 'au-main-container-scroll.hbs'}}
 {{/docs-demo}}
+
+
+## Main container content arguments
+
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@scroll` | Make content container scrollable  | `boolean` | `false` |
