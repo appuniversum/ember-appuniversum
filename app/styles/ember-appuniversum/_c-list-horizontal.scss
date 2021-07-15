@@ -17,6 +17,10 @@ $au-list-horizontal-divider    : 1px dotted $au-gray-300 !default;
   align-items: center;
 }
 
+.au-c-list-horizontal--small {
+  font-size: $au-base;
+}
+
 .au-c-list-horizontal__item {
   display: flex;
   align-items: center;

@@ -58,6 +58,12 @@ Router.map(function() {
       this.route("au-toolbar");
     });
 
+    this.route("templates", function() {
+      this.route("app-login");
+      this.route("app-breadcrumbs");
+      this.route("app-sidebar");
+    });
+
     this.route("index");
   });
 

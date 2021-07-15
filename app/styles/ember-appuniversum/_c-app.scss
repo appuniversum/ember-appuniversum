@@ -1,0 +1,16 @@
+/* ==================================
+   #APP
+   Global app container
+   ================================== */
+
+.au-c-app {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  overflow: auto;
+  background-color: $au-white;
+
+  @include mq(medium) {
+    overflow: hidden;
+  }
+}

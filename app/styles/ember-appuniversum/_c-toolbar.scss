@@ -59,6 +59,7 @@ $au-toolbar-font-size       : $au-h6 !default;
 
 .au-c-toolbar--small {
   padding: $au-toolbar-spacing*.5;
+  font-size: $au-toolbar-font-size;
 }
 
 .au-c-toolbar--medium {
