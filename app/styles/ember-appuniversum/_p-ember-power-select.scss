@@ -7,8 +7,6 @@
    ========================================================================== */
 
 // ember-basic-dropdown
-@use "sass:math";
-
 $ember-basic-dropdown-content-background-color: #FFF !default;
 $ember-basic-dropdown-overlay-background: rgba($au-gray-900, .5) !default;
 $ember-basic-dropdown-content-background-color: $au-white !default;
@@ -290,8 +288,8 @@ $ember-power-select-multiple-option-line-height: 1.45;
   padding: 0 $au-unit-tiny 0 0;
   border-radius: $au-unit-tiny;
   margin-right: $au-unit-tiny;
-  margin-top: $au-unit-tiny*.5;
-  margin-bottom: $au-unit-tiny*.5;
+  margin-top: $au-unit-tiny/2;
+  margin-bottom: $au-unit-tiny/2;
 }
 
 .ember-power-select-multiple-remove-btn {
@@ -477,7 +475,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
     content: "";
     position: absolute;
     top: 0;
-    left: math.div($au-unit-tiny, 1.5);
+    left: $au-unit-tiny/1.5;
     display: block;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%230E5EB8" viewBox="0 0 24 24"><g class="check"><path d="M10.695 17L5 12.553l1.424-1.872 3.796 3.042L17.102 6 19 7.404 10.695 17z" class="Vector"/></g></svg>');
     background-size: contain;
