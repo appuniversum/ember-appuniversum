@@ -23,6 +23,8 @@ The easiest way to do this in an ember project is by installing the [`ember-cli-
 
 Add the following to your `ember-cli-build.js` file:
 
+
+
 ``` js
 'use strict';
 
@@ -156,3 +158,7 @@ Then load the SCSS partials in your `app.scss` file:
 @import "appuniversum/u-widths";
 
 ```
+
+## Note
+Sometimes the [appuniversum](https://github.com/appuniversum/appuniversum) dependency is not installed in the correct location which will break this setup ([see issue #123](https://github.com/appuniversum/ember-appuniversum/issues/123)). To fix you can install the dependecy manually by running 
+`npm i @appuniversum/appuniversum --save-dev`.
