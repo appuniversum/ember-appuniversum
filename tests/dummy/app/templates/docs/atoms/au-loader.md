@@ -8,11 +8,11 @@
 
     <hr>
 
-    <AuLoader @size="small" />
+    <AuLoader @padding="small" />
 
     <hr>
 
-    <AuLoader @size="large" />
+    <AuLoader @padding="large" />
   {{/demo.example}}
   {{demo.snippet 'au-loader.hbs'}}
 {{/docs-demo}}
@@ -21,4 +21,4 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@size` | Set the size of the loader  | `value`: `small` / `default` / `large` | `default` |
+| `@padding` | Set the padding of the loader  | `value`: `small` / `default` / `large` | `default` |

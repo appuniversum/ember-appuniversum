@@ -49,7 +49,9 @@
 
 
 // COMPONENTS
+@import "ember-appuniversum/c-accordion";
 @import "ember-appuniversum/c-alert";
+@import "ember-appuniversum/c-app";
 @import "ember-appuniversum/c-badge";
 @import "ember-appuniversum/c-body-container";
 @import "ember-appuniversum/c-brand";
@@ -93,6 +95,7 @@
 
 // UTILITIES
 @import "appuniversum/u-align-text";
+@import "appuniversum/u-background";
 @import "appuniversum/u-break-word";
 @import "appuniversum/u-headings";
 @import "appuniversum/u-hide";

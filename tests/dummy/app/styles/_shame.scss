@@ -19,7 +19,7 @@
 // @TODO: find cleaner solution to make spacing consistent
 .au-c-list-horizontal__item {
   .au-d-dropdown {
-    margin-left: -$au-list-horizontal-spacing/2;
+    margin-left: -$au-list-horizontal-spacing*.5;
   }
 }
 
@@ -27,4 +27,25 @@
 // @TODO: find the cause of this and fix in a better way
 .ember-application {
   overflow: hidden;
+}
+
+// Limit app height on component boxes
+.au-d-component .au-c-app {
+  height: 50vh;
+}
+
+.au-d-component .au-c-main-container {
+  @include mq(medium) {
+    height: calc(50vh - 4.2rem);
+  }
+}
+
+// Demo of body container
+.au-d-component .au-c-body-container {
+  height: 20rem;
+}
+
+.au-d-component .au-c-body-container--scroll .au-d-component-block {
+  height: 30rem;
+  min-height: 30rem;
 }

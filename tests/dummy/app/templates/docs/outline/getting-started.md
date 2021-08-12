@@ -23,6 +23,8 @@ The easiest way to do this in an ember project is by installing the [`ember-cli-
 
 Add the following to your `ember-cli-build.js` file:
 
+
+
 ``` js
 'use strict';
 
@@ -96,7 +98,9 @@ Then load the SCSS partials in your `app.scss` file:
 
 
 // COMPONENTS
+@import "ember-appuniversum/c-accordion";
 @import "ember-appuniversum/c-alert";
+@import "ember-appuniversum/c-app";
 @import "ember-appuniversum/c-badge";
 @import "ember-appuniversum/c-body-container";
 @import "ember-appuniversum/c-brand";
@@ -128,6 +132,7 @@ Then load the SCSS partials in your `app.scss` file:
 @import "ember-appuniversum/c-sidebar";
 @import "ember-appuniversum/c-sidebar-action";
 @import "ember-appuniversum/c-textarea";
+@import "ember-appuniversum/c-timepicker";
 @import "ember-appuniversum/c-toolbar";
 @import "ember-appuniversum/c-toggle-switch";
 
@@ -139,6 +144,7 @@ Then load the SCSS partials in your `app.scss` file:
 
 // UTILITIES
 @import "appuniversum/u-align-text";
+@import "appuniversum/u-background";
 @import "appuniversum/u-break-word";
 @import "appuniversum/u-headings";
 @import "appuniversum/u-hide";
@@ -152,3 +158,7 @@ Then load the SCSS partials in your `app.scss` file:
 @import "appuniversum/u-widths";
 
 ```
+
+## Note
+Sometimes the [appuniversum](https://github.com/appuniversum/appuniversum) dependency is not installed in the correct location which will break this setup ([see issue #123](https://github.com/appuniversum/ember-appuniversum/issues/123)). To fix you can install the dependecy manually by running 
+`npm i @appuniversum/appuniversum --save-dev`.

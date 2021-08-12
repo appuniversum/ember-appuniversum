@@ -1,0 +1,34 @@
+/* ==================================
+   #ACCORDION
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-accordion-border-color                  : $au-gray-300 !default;
+$au-accordion-spacing                       : $au-unit !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-accordion {
+  padding-bottom: $au-accordion-spacing;
+}
+
+.au-c-accordion__subtitle {
+  margin-left: $au-accordion-spacing;
+}
+
+.au-c-accordion .au-c-toolbar {
+  margin-bottom: $au-unit-tiny;
+  cursor: pointer;
+}
+
+.au-c-accordion .au-c-button {
+  padding-left: 0;
+  text-align: left;
+  white-space: initial;
+  overflow: visible;
+  height: auto;
+  cursor: inherit;
+}

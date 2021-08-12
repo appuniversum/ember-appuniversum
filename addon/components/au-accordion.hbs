@@ -1,0 +1,40 @@
+<div class="au-c-accordion" ...attributes>
+  <AuToolbar @nowrap={{true}} {{on "click" this.openAccordion}}>
+    <AuToolbarGroup>
+      <div>
+        <AuButton @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.openAccordion "true" "false"}}">
+          {{#if @hideText}}
+            <span class="au-u-hidden-visually">{{@accordionButtonLabel}}</span>
+          {{else}}
+            {{@accordionButtonLabel}}
+          {{/if}}
+        </AuButton>
+        <p>
+          {{@accordionSubTitle}}
+        </p>
+      </div>
+    </AuToolbarGroup>
+    <AuToolbarGroup>
+      {{#if this.accordionOpen}}
+        <AuIcon @icon="{{@accordionIconOpen}}" @alignment="left" @size="large" @ariaHidden="true" />
+        <span class="au-u-hidden-visually">
+          Open accordion
+        </span>
+      {{else}}
+        <AuIcon @icon="{{@accordionIconClosed}}" @alignment="left" @size="large" @ariaHidden="true" />
+        <span class="au-u-hidden-visually">
+          Sluit accordion
+        </span>
+      {{/if}}
+    </AuToolbarGroup>
+  </AuToolbar>
+  {{#if this.accordionOpen}}
+    <AuContent {{auto-focus}} tabindex="0">
+      {{#if this.loading}}
+        <AuLoader />
+      {{else}}
+        {{yield}}
+      {{/if}}
+    </AuContent>
+  {{/if}}
+</div>

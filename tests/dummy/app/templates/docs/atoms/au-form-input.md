@@ -93,5 +93,5 @@
 | ------------- | ----------- | ---- | ------------- |
 | `@error` | Add an error state  | `Boolean` | `false` |
 | `@width` | Display the input as a block element  | `value`: `block` | - |
-| `@icon` | Adds an icon (using an icon implies the use @width="block") | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@icon` | Adds an icon (using an icon implies the use @width="block") | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon | `value`: `left` / `right`  | `left` |

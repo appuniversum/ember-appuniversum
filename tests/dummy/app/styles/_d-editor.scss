@@ -66,7 +66,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
 
     &:focus {
       outline: $au-outline;
-      outline-offset: $au-unit-tiny/2;
+      outline-offset: $au-unit-tiny*.5;
     }
   }
 
@@ -152,7 +152,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   }
 
   > ol {
-    margin-left: $au-unit + $au-unit-tiny/2;
+    margin-left: $au-unit + $au-unit-tiny*.5;
   }
 
   > ul ul {
@@ -191,7 +191,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     counter-increment: numbered-list;
     position: absolute;
     top: .3ex;
-    left: -$au-unit - $au-unit-tiny/2;
+    left: -$au-unit - $au-unit-tiny*.5;
     font-size: .8em;
     color: $au-gray-600;
     background-color: $au-gray-100;
@@ -204,9 +204,9 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     font-family: $au-font-tertiary;
     font-weight: $au-light;
     padding-top: $au-unit-tiny;
-    padding-bottom: $au-unit-tiny/2;
-    padding-left: $au-unit-tiny/2;
-    padding-right: $au-unit-tiny/2;
+    padding-bottom: $au-unit-tiny*0.5;
+    padding-left: $au-unit-tiny*0.5;
+    padding-right: $au-unit-tiny*0.5;
     background-color: $au-gray-100;
     border-radius: $au-radius;
     border: 1px solid $au-gray-200;
@@ -278,7 +278,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
 
     &:focus {
       outline: $au-outline;
-      outline-offset: $au-unit-tiny/2;
+      outline-offset: $au-unit-tiny*0.5;
     }
 
     .is-active > & {

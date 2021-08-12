@@ -1,17 +1,59 @@
 import Component from '@glimmer/component';
+import { deprecate } from '@ember/debug';
+
+const SKIN_CLASSES = {
+  primary: 'au-c-link',
+  secondary: 'au-c-link au-c-link--secondary',
+  button: 'au-c-button',
+  'button-secondary': 'au-c-button au-c-button--secondary',
+};
 
 export default class AuLink extends Component {
+  get route() {
+    if (this.args.linkRoute) {
+      deprecate(
+        '@linkRoute is deprecated, use @route instead',
+        false,
+        {
+          id: '@appuniversum/ember-appuniversum.au-link.linkRoute-argument',
+          until: "0.7.0",
+          for: '@appuniversum/ember-appuniversum',
+          since: {
+            enabled: '0.5.0'
+          }
+        }
+      );
+
+      return this.args.linkRoute;
+    } else if (this.args.route) {
+      return this.args.route;
+    } else {
+      return undefined;
+    }
+  }
+
   get skin() {
-    if (this.args.skin == "secondary")
-      return "au-c-link--secondary";
+    if (SKIN_CLASSES[this.args.skin]) {
+      return SKIN_CLASSES[this.args.skin];
+    } else {
+      return SKIN_CLASSES.primary;
+    }
+  }
+
+  get width() {
+    if (this.args.width == "block")
+      if (this.args.skin == "button" | "button-secondary")
+        return "au-c-button--block";
+      else
+        return "au-c-link--block";
     else
       return "";
   }
 
   get active() {
     if (this.args.active)
-      return "is-active";
+      return 'is-active';
     else
-      return "";
+      return '';
   }
 }

@@ -22,7 +22,12 @@
         <h1 id="au-c-modal-title-{{@id}}" class="au-c-modal__title" tabindex="-1">
           {{@modalTitle}}
         </h1>
-        <button type="button" {{on "click" this.closeModal}} class="au-c-modal__close">
+        <button
+          class="au-c-modal__close"
+          type="button"
+          data-test-au-modal-close
+          {{on "click" this.closeModal}}
+        >
           <AuIcon @icon="cross" @size="large" />
           <span class="au-u-hidden-visually">Venster sluiten</span>
         </button>

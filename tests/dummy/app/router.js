@@ -40,6 +40,7 @@ Router.map(function() {
     });
 
     this.route("components", function() {
+      this.route("au-accordion");
       this.route("au-alert");
       this.route("au-card");
       this.route("au-dropdown");
@@ -50,10 +51,17 @@ Router.map(function() {
     this.route("patterns", function() {
       this.route("au-body-container");
       this.route("au-content-header");
+      this.route("au-card-edit");
       this.route("au-main-container");
       this.route("au-main-header");
       this.route("au-main-footer");
       this.route("au-toolbar");
+    });
+
+    this.route("templates", function() {
+      this.route("app-login");
+      this.route("app-breadcrumbs");
+      this.route("app-sidebar");
     });
 
     this.route("index");

@@ -16,11 +16,10 @@ export default class AuTimePickerComponent extends Component {
     };
   }
 
-  /**
-   * Increments or decrements a time value. 
+  /*
+   * Increments or decrements a time value.
    * HourValue has a max of 24 while minute & seconds have a max of 60
    * HourValue has a min of 1 while minute  seconds have a min of 0
-   *  
    */
 
   @action
@@ -64,12 +63,12 @@ export default class AuTimePickerComponent extends Component {
     this.callBackParent(this.getTimeObject);
   }
 
-  /**
+  /*
    * Triggers on keydown
    * up arrow (38) increments the current value
    * down arrow (40) decrements the current value
-   * If any other key that up or down has been pressed then check if it is a number key or one 
-   * of the allowed keys (left/right/shift/enter..) in the keyCodes list 
+   * If any other key that up or down has been pressed then check if it is a number key or one
+   * of the allowed keys (left/right/shift/enter..) in the keyCodes list
    */
 
   @action
@@ -88,11 +87,10 @@ export default class AuTimePickerComponent extends Component {
     }
   }
 
-  /**
+  /*
    * triggered after focussing out of field. Checks if the inputted value makes sense. (e.g. hour range: 1 - 24)
    * "elem" is the name of the tracked property
    * "e" is the context
-   * 
    */
 
   @action
@@ -120,9 +118,8 @@ export default class AuTimePickerComponent extends Component {
     this.callBackParent(this.getTimeObject);
   }
 
-    /**
+  /*
    * calls the function assigned to @onChange by the user with the timeObject as argument
-   * 
    */
 
   @action

@@ -1,12 +1,14 @@
-<DocsHeader />
+<AuApp>
+  <DocsHeader />
 
-<main id="main" class="au-c-main-container" tabindex="-1">
-  <div class="au-c-main-container__sidebar">
-    <Sidebar/>
-  </div>
-  <div id="content" class="au-c-main-container__content au-c-main-container__content--scroll" tabindex="-1">
-    <div class="au-o-region-large au-d-theme-white">
-      {{outlet}}
-    </div>
-  </div>
-</main>
+  <AuMainContainer as |m|>
+    <m.sidebar>
+      <Sidebar/>
+    </m.sidebar>
+    <m.content @scroll={{true}}>
+      <div class="au-o-region-large au-d-theme-white">
+        {{outlet}}
+      </div>
+    </m.content>
+  </AuMainContainer>
+</AuApp>

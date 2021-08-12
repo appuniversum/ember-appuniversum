@@ -51,5 +51,5 @@
 | ------------- | ----------- | ---- | ------------- |
 | `@skin` | Sets the color and background color | `value`: `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `gray` |
 | `@size` | Change the size of the badge | `value`: `small` | - |
-| `@icon` | Adds an icon to the badge | `value`: <AuLink @linkRoute="docs.atoms.au-icon">Find the options here</AuLink> | - |
+| `@icon` | Adds an icon to the badge | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@number` | Adds a number to the badge | `value`: 1 - 100 | - |

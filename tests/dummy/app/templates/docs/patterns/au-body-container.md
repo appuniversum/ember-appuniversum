@@ -1,4 +1,4 @@
-# Body container (draft)
+# Body container
 
 ---
 
@@ -6,11 +6,11 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-body-container.hbs'}}
-    <div class="au-c-body-container">
+    <AuBodyContainer>
       <div class="au-d-component-block" style="height: 30rem;">
         This block will take up all the vertical space left, but will not be scrollable &mdash; even if the content is longer than the vertical space that is left.
       </div>
-    </div>
+    </AuBodyContainer>
   {{/demo.example}}
   {{demo.snippet 'au-body-container.hbs'}}
 {{/docs-demo}}
@@ -19,11 +19,17 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-body-container-scroll.hbs'}}
-    <div class="au-c-body-container au-c-body-container--scroll" style="max-height: 20rem;">
-      <div class="au-d-component-block" style="height: 30rem; min-height: 30rem;">
+    <AuBodyContainer @scroll={{true}}>
+      <div class="au-d-component-block">
         This block will take up all the vertical space left, and will be scrollable if the content is longer than that vertical space that is left.
       </div>
-    </div>
+    </AuBodyContainer>
   {{/demo.example}}
   {{demo.snippet 'au-body-container-scroll.hbs'}}
 {{/docs-demo}}
+
+## Body container arguments
+
+| Argument      | Description | Type | Default value |
+| ------------- | ----------- | ---- | ------------- |
+| `@scroll` | Make body container scrollable  | `boolean` | `false` |

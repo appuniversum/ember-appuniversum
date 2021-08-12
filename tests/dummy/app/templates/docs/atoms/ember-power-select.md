@@ -2,7 +2,7 @@
 
 ---
 
-Styling of [https://ember-power-select.com/](https://ember-power-select.com/)
+`@appuniversum/ember-appuniversum` only provides styles for [ember-power-select](https://ember-power-select.com/). If you want to use the components make sure the `ember-power-select` [addon is installed](https://ember-power-select.com/docs/installation) first. Once installed, replace the styles provided by the addon (`@import "ember-power-select";`) with the appuniversum version (`@import "ember-appuniversum/p-ember-power-select";`).
 
 ## Single select
 
