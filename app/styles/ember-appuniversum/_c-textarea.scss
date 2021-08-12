@@ -9,6 +9,7 @@ $au-textarea-height                : $au-unit-large - $au-unit-small !default;
 $au-textarea-color                 : $au-gray-1000 !default;
 $au-textarea-border-color          : $au-gray-300 !default;
 $au-textarea-font-size             : $au-h6 !default;
+$au-textarea-border-radius         : .3rem !default;
 
 /* Component
   ========================================================================== */
@@ -21,6 +22,7 @@ $au-textarea-font-size             : $au-h6 !default;
   padding: $au-unit-tiny $au-unit-small;
   font-size: $au-textarea-font-size;
   font-weight: $au-regular;
+  border-radius: $au-textarea-border-radius;
 }
 
 .au-c-textarea:focus {

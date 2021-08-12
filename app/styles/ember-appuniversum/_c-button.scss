@@ -46,7 +46,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
   appearance: none;
   display: inline-flex;
   align-items: center;
-  padding: 0 $au-unit-small .1rem; // Visually center the text in the button
+  padding: 0 $au-unit-small; // Visually center the text in the button
   border-radius: $au-button-border-radius;
   white-space: nowrap;
   overflow: hidden;

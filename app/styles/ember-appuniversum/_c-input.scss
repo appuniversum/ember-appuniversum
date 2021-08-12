@@ -12,6 +12,7 @@ $au-input-disabled-background-color : $au-gray-100 !default;
 $au-input-disabled-border-color     : $au-gray-600 !default;
 $au-input-disabled-color            : $au-gray-700 !default;
 $au-input-font-size                 : $au-h6 !default;
+$au-input-border-radius             : .3rem !default;
 
 
 /* Component
@@ -26,6 +27,7 @@ $au-input-font-size                 : $au-h6 !default;
   height: $au-input-height;
   max-width: 100%;
   padding: 0 $au-unit-small .1ex;
+  border-radius: $au-input-border-radius;
 }
 
 .au-c-input:focus {
