@@ -18,10 +18,10 @@ $au-button-contrast-active-color            : $au-blue-900 !default;
 $au-button-contrast-visited-color           : $au-blue-600 !default;
 $au-button-secondary-color                  : $au-blue-600 !default;
 $au-button-secondary-hover-color            : $au-blue-700 !default;
-$au-button-secondary-contrast-active-color  : $au-blue-100 !default;
+$au-button-secondary-contrast-active-color  : $au-blue-200 !default;
 $au-button-link-height                      : $au-unit !default;
-$au-button-link-color                       : $au-blue-700 !default;
-$au-button-link-hover-color                 : $au-blue-600 !default;
+$au-button-link-color                       : $au-blue-600 !default;
+$au-button-link-hover-color                 : $au-blue-700 !default;
 $au-button-link-secondary-color             : $au-gray-800 !default;
 $au-button-link-secondary-hover-color       : $au-gray-700 !default;
 $au-button-link-active-color                : $au-gray-900 !default;
@@ -361,6 +361,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 }
 
 .au-c-button--secondary.is-active {
+  color: $au-button-secondary-hover-color;
   background-color: $au-button-secondary-contrast-active-color;
 }
 
