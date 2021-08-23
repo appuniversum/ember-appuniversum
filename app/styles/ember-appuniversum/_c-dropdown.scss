@@ -6,7 +6,7 @@
    ========================================================================== */
 
 $au-dropdown-color             : $au-blue-600 !default;
-$au-dropdown-hover-color       : $au-blue-700 !default;
+$au-dropdown-hover-color       : shade($au-blue-700,10) !default;
 $au-dropdown-active-color      : $au-blue-600 !default;
 $au-dropdown-visited-color     : $au-blue-900 !default;
 $au-dropdown-active-color      : $au-blue-900 !default;

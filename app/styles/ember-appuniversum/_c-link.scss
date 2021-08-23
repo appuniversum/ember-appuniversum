@@ -6,7 +6,7 @@
    ========================================================================== */
 
 $au-link-color                       : $au-blue-600 !default;
-$au-link-hover-color                 : $au-blue-700 !default;
+$au-link-hover-color                 : shade($au-blue-700,10) !default;
 $au-link-active-color                : $au-gray-900 !default;
 $au-link-secondary-color             : $au-gray-800 !default;
 $au-link-secondary-hover-color       : $au-gray-700 !default;

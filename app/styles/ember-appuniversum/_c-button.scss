@@ -13,15 +13,15 @@ $au-button-border                           : .2rem !default;
 $au-button-border-radius                    : .3rem !default;
 $au-button-color                            : $au-white !default;
 $au-button-contrast-color                   : $au-blue-600 !default;
-$au-button-contrast-hover-color             : $au-blue-700 !default;
+$au-button-contrast-hover-color             : shade($au-blue-700,10) !default;
 $au-button-contrast-active-color            : $au-blue-900 !default;
 $au-button-contrast-visited-color           : $au-blue-600 !default;
 $au-button-secondary-color                  : $au-blue-600 !default;
-$au-button-secondary-hover-color            : $au-blue-700 !default;
+$au-button-secondary-hover-color            : shade($au-blue-700,10) !default;
 $au-button-secondary-contrast-active-color  : $au-blue-200 !default;
 $au-button-link-height                      : $au-unit !default;
 $au-button-link-color                       : $au-blue-600 !default;
-$au-button-link-hover-color                 : $au-blue-700 !default;
+$au-button-link-hover-color                 : shade($au-blue-700,10) !default;
 $au-button-link-secondary-color             : $au-gray-800 !default;
 $au-button-link-secondary-hover-color       : $au-gray-700 !default;
 $au-button-link-active-color                : $au-gray-900 !default;
@@ -187,7 +187,8 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 }
 
 // Link button
-.au-c-button--link {
+.au-c-button--link,
+.au-c-button--tertiary { // support for deprecated naming
   font-size: inherit;
   border-color: transparent;
   padding: 0 $au-unit-tiny 0;
@@ -307,7 +308,8 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     }
   }
 
-  &.au-c-button--link {
+  &.au-c-button--link,
+  &.au-c-button--tertiary {
     background-color: transparent;
 
     &,
@@ -355,7 +357,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 }
 
 // Active buttons
-.au-c-button:not(.au-c-button--secondary):not(.au-c-button--link).is-active {
+.au-c-button:not(.au-c-button--secondary):not(.au-c-button--link):not(.au-c-button--tertiary).is-active {
   background-color: $au-button-contrast-active-color;
   border-color: $au-button-contrast-active-color;
 }
@@ -365,7 +367,8 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
   background-color: $au-button-secondary-contrast-active-color;
 }
 
-.au-c-button--link.is-active {
+.au-c-button--link.is-active,
+.au-c-button--tertiary.is-active {
   color: $au-button-link-active-color;
   font-weight: $au-medium;
 }

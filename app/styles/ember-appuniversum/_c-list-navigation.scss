@@ -76,7 +76,7 @@ $au-list-navigation-border-color: $au-gray-200 !default;
 
   &:hover,
   &:focus {
-    color: $au-blue-700;
+    color: shade($au-blue-700,10);
     text-decoration-color: $au-blue-300 !important;
   }
 
