@@ -22,8 +22,8 @@ $au-button-secondary-contrast-active-color  : $au-blue-200 !default;
 $au-button-link-height                      : $au-unit !default;
 $au-button-link-color                       : $au-blue-600 !default;
 $au-button-link-hover-color                 : $au-blue-800 !default;
-$au-button-link-secondary-color             : $au-gray-800 !default;
-$au-button-link-secondary-hover-color       : $au-gray-700 !default;
+$au-button-link-secondary-color             : $au-gray-700 !default;
+$au-button-link-secondary-hover-color       : $au-gray-900 !default;
 $au-button-link-active-color                : $au-gray-900 !default;
 $au-button-alert-color                      : $au-white !default;
 $au-button-alert-contrast-color             : shade($au-red-600,10) !default; // @TODO: lighten red 700
@@ -212,6 +212,56 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     box-shadow: none;
     text-decoration: underline;
     text-decoration-color: tint($au-button-link-hover-color,80);
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &.is-disabled:active {
+    color: $au-button-contrast-color;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &.is-loading,
+  &.is-loading:hover {
+    color: transparent;
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &.is-loading::after {
+    border-color: $au-button-contrast-color;
+    border-top-color: rgba($au-button-contrast-color,.3);
+  }
+}
+
+// Link secondary button
+.au-c-button--link-secondary {
+  font-size: inherit;
+  border-color: transparent;
+  padding: 0 $au-unit-tiny 0;
+  height: $au-button-link-height;
+  line-height: $au-button-link-height;
+
+  &,
+  &:visited {
+    color: $au-button-link-secondary-color;
+    background-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-link-secondary-color,70);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $au-button-link-secondary-hover-color;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-link-secondary-hover-color,80);
   }
 
   &.is-disabled,

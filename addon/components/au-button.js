@@ -22,6 +22,8 @@ export default class AuButton extends Component {
       return "au-c-button--link";
     if (this.args.skin == "link")
       return "au-c-button--link";
+    if (this.args.skin == "link-secondary")
+      return "au-c-button--link-secondary";
     else
       return "au-c-button--primary";
   }
