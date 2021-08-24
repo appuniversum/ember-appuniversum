@@ -7,6 +7,7 @@
 
 $au-card-border-color                         : $au-gray-300 !default;
 $au-card-standout-color                       : $au-gray-200 !default;
+$au-card-radius                               : .3rem !default;
 
 /* Component
   ========================================================================== */
@@ -16,6 +17,7 @@ $au-card-standout-color                       : $au-gray-200 !default;
   flex-direction: column;
   background-color: $au-white;
   border: .1rem solid $au-card-border-color;
+  border-radius: $au-card-radius;
 }
 
 .au-c-card--standout {

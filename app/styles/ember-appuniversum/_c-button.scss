@@ -5,30 +5,31 @@
 /* Variables
    ========================================================================== */
 
-$au-button-height                         : $au-unit-large - $au-unit-small !default;
-$au-button-height-large                   : $au-unit-large !default;
-$au-button-font-size                      : $au-h6 !default;
-$au-button-font-size-large                : $au-h5 !default;
-$au-button-border                         : .1rem !default;
-$au-button-color                          : $au-white !default;
-$au-button-contrast-color                 : $au-blue-700 !default;
-$au-button-contrast-hover-color           : $au-blue-600 !default;
-$au-button-contrast-active-color          : $au-blue-600 !default;
-$au-button-contrast-visited-color         : $au-blue-600 !default;
-$au-button-secondary-color                : $au-gray-700 !default;
-$au-button-secondary-hover-color          : $au-gray-600 !default;
-$au-button-tertiary-height                : $au-unit !default;
-$au-button-tertiary-color                 : $au-blue-700 !default;
-$au-button-tertiary-hover-color           : $au-blue-600 !default;
-$au-button-tertiary-secondary-color       : $au-gray-800 !default;
-$au-button-tertiary-secondary-hover-color : $au-gray-700 !default;
-$au-button-alert-color                    : $au-white !default;
-$au-button-alert-contrast-color           : shade($au-red-600,10) !default; // @TODO: lighten red 700
-$au-button-alert-contrast-hover-color     : $au-red-600 !default;
-$au-button-radius                         : 0 !default;
-$au-button-active-contrast-color            : $au-blue-900 !default;
-$au-button-secondary-active-contrast-color  : $au-gray-200 !default;
-$au-button-tertiary-active-color            : $au-gray-900 !default;
+$au-button-height                           : $au-unit-large - $au-unit-small !default;
+$au-button-height-large                     : $au-unit-large !default;
+$au-button-font-size                        : $au-h6 !default;
+$au-button-font-size-large                  : $au-h5 !default;
+$au-button-border                           : .2rem !default;
+$au-button-border-radius                    : .3rem !default;
+$au-button-color                            : $au-white !default;
+$au-button-contrast-color                   : $au-blue-600 !default;
+$au-button-contrast-hover-color             : $au-blue-800 !default;
+$au-button-contrast-active-color            : $au-blue-900 !default;
+$au-button-contrast-visited-color           : $au-blue-600 !default;
+$au-button-secondary-color                  : $au-blue-600 !default;
+$au-button-secondary-hover-color            : $au-blue-800 !default;
+$au-button-secondary-contrast-active-color  : $au-blue-200 !default;
+$au-button-link-height                      : $au-unit !default;
+$au-button-link-color                       : $au-blue-600 !default;
+$au-button-link-hover-color                 : $au-blue-800 !default;
+$au-button-link-secondary-color             : $au-gray-700 !default;
+$au-button-link-secondary-hover-color       : $au-gray-900 !default;
+$au-button-link-active-color                : $au-gray-900 !default;
+$au-button-alert-color                      : $au-white !default;
+$au-button-alert-contrast-color             : shade($au-red-600,10) !default; // @TODO: lighten red 700
+$au-button-alert-contrast-hover-color       : $au-red-600 !default;
+
+
 
 
 /* Component
@@ -45,12 +46,11 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
   appearance: none;
   display: inline-flex;
   align-items: center;
-  padding: 0 $au-unit-small .1rem; // Visually center the text in the button
-  border-radius: $au-button-radius;
+  padding: 0 $au-unit-small; // Visually center the text in the button
+  border-radius: $au-button-border-radius;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  box-shadow: inset 0px 0px 0px $au-button-border transparent;
   transition: color $au-transition, background-color $au-transition, border-color $au-transition, box-shadow $au-transition;
 
   &,
@@ -64,6 +64,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
   &:focus {
     color: $au-button-color;
     background-color: $au-button-contrast-hover-color;
+    border-color: $au-button-contrast-hover-color;
     text-decoration: none;
   }
 
@@ -73,6 +74,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
   }
 
   &:active {
+    border-color: $au-button-contrast-active-color;
     background-color: $au-button-contrast-active-color;
   }
 
@@ -91,6 +93,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
     position: relative;
     color: $au-button-color;
     background-color: $au-button-contrast-hover-color;
+    border-color: $au-button-contrast-hover-color;
   }
 
   &.is-loading:before {
@@ -126,26 +129,36 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
 
 .au-c-button--large {
   @include au-font-size($au-button-font-size-large);
-  padding: $au-unit-small $au-unit-small .1rem+$au-unit-small;
+  padding: $au-unit-small $au-unit-small $au-unit-small + .1rem;
   height: $au-button-height-large;
+}
+
+// Primary button
+.au-c-button--primary {
+  font-weight: $au-medium;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // Secondary button
 .au-c-button--secondary {
+  font-weight: $au-medium;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
   &,
   &:visited {
     color: $au-button-secondary-color;
     background-color: transparent;
-    border-color: tint($au-button-secondary-color,50);
+    border-color: $au-button-secondary-color;
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: $au-button-secondary-color;
+    color: $au-button-secondary-hover-color;
     background-color: transparent;
-    border-color: tint($au-button-secondary-hover-color,10);
-    box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-secondary-hover-color,10);
+    border-color: $au-button-secondary-hover-color;
   }
 
   &.is-disabled,
@@ -163,7 +176,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
   &.is-loading:focus {
     color: transparent;
     background-color: transparent;
-    border-color: tint($au-button-secondary-color,30);
+    border-color: $au-button-secondary-color;
     box-shadow: none;
   }
 
@@ -174,30 +187,81 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
 }
 
 // Link button
-.au-c-button--tertiary {
+.au-c-button--link,
+.au-c-button--tertiary { // support for deprecated naming
   font-size: inherit;
   border-color: transparent;
   padding: 0 $au-unit-tiny 0;
-  height: $au-button-tertiary-height;
-  line-height: $au-button-tertiary-height;
+  height: $au-button-link-height;
+  line-height: $au-button-link-height;
 
   &,
   &:visited {
-    color: $au-button-tertiary-color;
+    color: $au-button-link-color;
     background-color: transparent;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-tertiary-color,70);
+    text-decoration-color: tint($au-button-link-color,70);
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: $au-button-tertiary-hover-color;
+    color: $au-button-link-hover-color;
     background-color: transparent;
     border-color: transparent;
     box-shadow: none;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-tertiary-hover-color,80);
+    text-decoration-color: tint($au-button-link-hover-color,80);
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &.is-disabled:active {
+    color: $au-button-contrast-color;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &.is-loading,
+  &.is-loading:hover {
+    color: transparent;
+    border-color: transparent;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &.is-loading::after {
+    border-color: $au-button-contrast-color;
+    border-top-color: rgba($au-button-contrast-color,.3);
+  }
+}
+
+// Link secondary button
+.au-c-button--link-secondary {
+  font-size: inherit;
+  border-color: transparent;
+  padding: 0 $au-unit-tiny 0;
+  height: $au-button-link-height;
+  line-height: $au-button-link-height;
+
+  &,
+  &:visited {
+    color: $au-button-link-secondary-color;
+    background-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-link-secondary-color,70);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $au-button-link-secondary-hover-color;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-link-secondary-hover-color,80);
   }
 
   &.is-disabled,
@@ -232,11 +296,9 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
   &:hover,
   &:focus,
   &:active {
-    color: $au-white;
-    background-color: $au-button-alert-contrast-hover-color;
-    border-color: $au-button-alert-contrast-color;
     color: $au-button-alert-color;
-    box-shadow: none;
+    background-color: $au-button-alert-contrast-hover-color;
+    border-color: $au-button-alert-contrast-hover-color;
   }
 
   &.is-disabled,
@@ -273,7 +335,6 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: tint($au-button-alert-contrast-hover-color,20);
-      box-shadow: inset 0px 0px 0px $au-button-border tint($au-button-alert-contrast-hover-color,20);
     }
 
     &.is-disabled,
@@ -283,7 +344,6 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
       color: $au-button-alert-contrast-color;
       background-color: transparent;
       border-color: tint($au-button-alert-contrast-color,20);
-      box-shadow: none;
     }
 
     &.is-loading,
@@ -298,6 +358,7 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
     }
   }
 
+  &.au-c-button--link,
   &.au-c-button--tertiary {
     background-color: transparent;
 
@@ -313,7 +374,6 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
-      box-shadow: none;
       text-decoration-color: tint($au-button-alert-contrast-hover-color,80);
     }
 
@@ -347,17 +407,19 @@ $au-button-tertiary-active-color            : $au-gray-900 !default;
 }
 
 // Active buttons
-.au-c-button:not(.au-c-button--secondary):not(.au-c-button--tertiary).is-active {
-  background-color: $au-button-active-contrast-color;
-  border-color: $au-button-active-contrast-color;
+.au-c-button:not(.au-c-button--secondary):not(.au-c-button--link):not(.au-c-button--tertiary).is-active {
+  background-color: $au-button-contrast-active-color;
+  border-color: $au-button-contrast-active-color;
 }
 
 .au-c-button--secondary.is-active {
-  background-color: $au-button-secondary-active-contrast-color;
+  color: $au-button-secondary-hover-color;
+  background-color: $au-button-secondary-contrast-active-color;
 }
 
+.au-c-button--link.is-active,
 .au-c-button--tertiary.is-active {
-  color: $au-button-tertiary-active-color;
+  color: $au-button-link-active-color;
   font-weight: $au-medium;
 }
 

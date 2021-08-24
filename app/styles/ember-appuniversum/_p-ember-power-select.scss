@@ -56,13 +56,13 @@ $ember-power-select-multiple-option-border-color: $au-gray-300;
 $ember-power-select-multiple-option-border: .1rem solid $ember-power-select-multiple-option-border-color;
 
 // Borders radius
-$ember-power-select-default-border-radius: 0; // General border radius
+$ember-power-select-default-border-radius: .3rem; // General border radius
 $ember-power-select-trigger-default-border-radius: $ember-power-select-default-border-radius;
 $ember-power-select-dropdown-default-border-radius: $ember-power-select-default-border-radius;
 
 $ember-power-select-opened-border-radius: 0; // Border radius of the side of the dropdown and the trigger where they touch
 
-$ember-power-select-search-input-border-radius: 0;
+$ember-power-select-search-input-border-radius: .3rem;
 $ember-power-select-multiple-option-border-radius: $ember-power-select-default-border-radius;
 
 // Other
