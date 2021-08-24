@@ -5,10 +5,13 @@
 /* Variables
    ========================================================================== */
 
-$au-textarea-height                : $au-unit-large - $au-unit-small !default;
-$au-textarea-color                 : $au-gray-1000 !default;
-$au-textarea-border-color          : $au-gray-300 !default;
-$au-textarea-font-size             : $au-h6 !default;
+$au-textarea-height                    : $au-unit-large - $au-unit-small !default;
+$au-textarea-color                     : $au-gray-1000 !default;
+$au-textarea-border-color              : $au-gray-300 !default;
+$au-textarea-font-size                 : $au-h6 !default;
+$au-textarea-disabled-background-color : $au-gray-100 !default;
+$au-textarea-disabled-border-color     : $au-gray-300 !default;
+$au-textarea-disabled-color            : $au-gray-700 !default;
 
 /* Component
   ========================================================================== */
@@ -21,6 +24,13 @@ $au-textarea-font-size             : $au-h6 !default;
   padding: $au-unit-tiny $au-unit-small;
   font-size: $au-textarea-font-size;
   font-weight: $au-regular;
+
+  &.is-disabled {
+    background-color: $au-textarea-disabled-background-color;
+    border-color: $au-textarea-disabled-border-color;
+    color: $au-textarea-disabled-color;
+    cursor: not-allowed;
+  }
 }
 
 .au-c-textarea:focus {
@@ -41,9 +51,10 @@ $au-textarea-font-size             : $au-h6 !default;
   border: .3rem solid $au-red-600;
 }
 
-.au-c-textarea--disabled {
-  background-color: $au-input-disabled-background-color;
-  border-color: $au-input-disabled-border-color;
-  color: $au-input-disabled-color;
+.au-c-textarea--disabled,
+.au-c-textarea[disabled="true"] {
+  background-color: $au-textarea-disabled-background-color;
+  border-color: $au-textarea-disabled-border-color;
+  color: $au-textarea-disabled-color;
   cursor: not-allowed;
 }

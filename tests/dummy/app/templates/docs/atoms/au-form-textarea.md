@@ -45,9 +45,20 @@
   {{demo.snippet 'au-textarea-error.hbs'}}
 {{/docs-demo}}
 
+## Disabled Textarea
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-textarea-disabled.hbs'}}
+    <AuLabel for="textarea-disabled">Disabled textarea</AuLabel>
+    <AuTextarea id="textarea-disabled" @width="block" @value="This is a disabled textarea" @disabled={{true}}></AuTextarea>
+  {{/demo.example}}
+  {{demo.snippet 'au-textarea-disabled.hbs'}}
+{{/docs-demo}}
+
 ## Arguments
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
 | `@width` | Display the textarea as a block element  | `value`: `block` | - |
 | `@error` | Add an error state  | `Boolean` | `false` |
+| `@disabled` | Adds a disabled state to the textarea | `Boolean` | `false` |

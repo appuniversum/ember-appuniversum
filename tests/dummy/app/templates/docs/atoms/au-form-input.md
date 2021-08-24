@@ -87,11 +87,26 @@
   {{demo.snippet 'au-input-error.hbs'}}
 {{/docs-demo}}
 
+## Disabled Input
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-input-disabled.hbs'}}
+    <div class="au-c-form">
+      <p>
+        <AuLabel for="input-disabled">Disabled input</AuLabel>
+        <AuInput id="input-disabled" @width="block" @disabled={{true}} @value="This is a disabled input field"  />
+      </p>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-input-disabled.hbs'}}
+{{/docs-demo}}
+
 ## Arguments
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
 | `@error` | Add an error state  | `Boolean` | `false` |
 | `@width` | Display the input as a block element  | `value`: `block` | - |
+| `@disabled` | Adds a disabled state to the input | `Boolean` | `false` |
 | `@icon` | Adds an icon (using an icon implies the use @width="block") | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon | `value`: `left` / `right`  | `left` |

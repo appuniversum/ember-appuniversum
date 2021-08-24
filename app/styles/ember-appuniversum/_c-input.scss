@@ -9,7 +9,7 @@ $au-input-height                    : $au-unit-large - $au-unit-small !default;
 $au-input-color                     : $au-gray-1000 !default;
 $au-input-border-color              : $au-gray-300 !default;
 $au-input-disabled-background-color : $au-gray-100 !default;
-$au-input-disabled-border-color     : $au-gray-600 !default;
+$au-input-disabled-border-color     : $au-gray-300 !default;
 $au-input-disabled-color            : $au-gray-700 !default;
 $au-input-font-size                 : $au-h6 !default;
 
@@ -26,6 +26,13 @@ $au-input-font-size                 : $au-h6 !default;
   height: $au-input-height;
   max-width: 100%;
   padding: 0 $au-unit-small .1ex;
+
+  &.is-disabled {
+    background-color: $au-input-disabled-background-color;
+    border-color: $au-input-disabled-border-color;
+    color: $au-input-disabled-color;
+    cursor: not-allowed;
+  }
 }
 
 .au-c-input:focus {
@@ -80,11 +87,4 @@ $au-input-font-size                 : $au-h6 !default;
 .au-c-input--error {
   border-color: $au-red-600;
   box-shadow: inset 0 0 0 .2rem $au-red-600;
-}
-
-.au-c-input--disabled {
-  background-color: $au-input-disabled-background-color;
-  border-color: $au-input-disabled-border-color;
-  color: $au-input-disabled-color;
-  cursor: not-allowed;
 }
