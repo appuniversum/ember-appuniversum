@@ -149,7 +149,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card-expandable.hbs'}}
-    <AuCard @expandable={{true}} @flex={{true}} @divided={{true} @isOpenInitially={{true}} as |c|>
+    <AuCard @expandable={{true}} @flex={{true}} @divided={{true}} @isOpenInitially={{true}} as |c|>
       <c.header @badgeSkin="brand" @badgeIcon="users">
         <AuHeading @level="2" @skin="4">
           Title for card
