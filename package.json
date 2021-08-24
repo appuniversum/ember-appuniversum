@@ -1,6 +1,6 @@
 {
   "name": "@appuniversum/ember-appuniversum",
-  "version": "0.4.10",
+  "version": "0.5.0",
   "description": "Ember addon wrapping the appuniversum components.",
   "keywords": [
     "ember-addon"
