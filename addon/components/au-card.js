@@ -3,8 +3,16 @@ import { action } from "@ember/object";
 import { tracked } from "@glimmer/tracking";
 
 export default class AuCardComponent extends Component {
+
   // Track section state
   @tracked sectionOpen = false;
+
+  constructor() {
+    super(...arguments);
+    if (this.args.isOpenInitially) {
+      this.sectionOpen = true;
+    }
+  }
 
   // Open section
   @action

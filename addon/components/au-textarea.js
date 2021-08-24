@@ -14,4 +14,11 @@ export default class AuTextarea extends Component {
     else
       return "";
   }
+
+  get disabled() {
+    if (this.args.disabled)
+      return "is-disabled";
+    else
+      return "";
+  }
 }
