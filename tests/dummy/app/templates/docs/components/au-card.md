@@ -149,7 +149,7 @@
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-card-expandable.hbs'}}
-    <AuCard @expandable={{true}} @flex={{true}} @divided={{true}} as |c|>
+    <AuCard @expandable={{true}} @flex={{true}} @divided={{true} @isOpenInitially={{true}} as |c|>
       <c.header @badgeSkin="brand" @badgeIcon="users">
         <AuHeading @level="2" @skin="4">
           Title for card
@@ -205,17 +205,18 @@
 
 ## Card arguments
 
-| Argument      | Description | Type | Default value |
-| ------------- | ----------- | ---- | ------------- |
-| `@flex` | Layout elements as flexbox columns  | `boolean` | `false` |
-| `@expandable` | Card becomes expandable  | `boolean` | `false` |
-| `@textCenter` | Centers text | `boolean` | `false` |
-| `@standOut` | Makes background colour stand out | `boolean` | `false` |
+| Argument           | Description                                                             | Type      | Default value |
+| -------------      | -----------                                                             | ----      | ------------- |
+| `@flex`            | Layout elements as flexbox columns                                      | `boolean` | `false`       |
+| `@expandable`      | Card becomes expandable                                                 | `boolean` | `false`       |
+| `@textCenter`      | Centers text                                                            | `boolean` | `false`       |
+| `@standOut`        | Makes background colour stand out                                       | `boolean` | `false`       |
+| `@isOpenInitially` | Determines whether the card is open initially (when expandable is true) | `boolean` | `false`       |
 
 ## Card header arguments
 
-| Argument      | Description | Type | Default value |
-| ------------- | ----------- | ---- | ------------- |
-| `@badgeIcon` | Add an icon  | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
-| `@badgeSkin` | Set the theme of the badge  | `value`: `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `none` |
-| `@badgeSize` | Set the size of the badge  | `value`: `small` / `default` | `default` |
+| Argument      | Description                | Type                                                                              | Default value |
+| ------------- | -----------                | ----                                                                              | ------------- |
+| `@badgeIcon`  | Add an icon                | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink>       | -             |
+| `@badgeSkin`  | Set the theme of the badge | `value`: `none` / `border` / `brand` / `success` / `warning` / `error` / `action` | `none`        |
+| `@badgeSize`  | Set the size of the badge  | `value`: `small` / `default`                                                      | `default`     |
