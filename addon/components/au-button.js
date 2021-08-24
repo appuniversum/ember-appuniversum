@@ -18,10 +18,14 @@ export default class AuButton extends Component {
   get skin() {
     if (this.args.skin == "secondary")
       return "au-c-button--secondary";
-    if (this.args.skin == "tertiary")
-      return "au-c-button--tertiary";
+    if (this.args.skin == "tertiary") // DEPRECATED
+      return "au-c-button--link";
+    if (this.args.skin == "link")
+      return "au-c-button--link";
+    if (this.args.skin == "link-secondary")
+      return "au-c-button--link-secondary";
     else
-      return "";
+      return "au-c-button--primary";
   }
 
   get alert() {

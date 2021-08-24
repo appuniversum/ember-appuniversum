@@ -18,8 +18,14 @@
 
     <hr>
 
-    <AuButton @skin="tertiary">
-      Tertiary button
+    <AuButton @skin="link">
+      Link button
+    </AuButton>
+
+    <hr>
+
+    <AuButton @skin="link-secondary">
+      Link button
     </AuButton>
   {{/demo.example}}
   {{demo.snippet 'au-button-skin.hbs'}}
@@ -105,7 +111,7 @@
 
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
-| `@skin` | Defines the style of the button  | `value`: `primary` / `secondary` / `tertiary` | `primary` |
+| `@skin` | Defines the style of the button  | `value`: `primary` / `secondary` / `link` / `link-secondary` | `primary` |
 | `@size` | Set the size of the button  | `value`: `large` | - |
 | `@icon` | Adds an icon  | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |
 | `@iconAlignment` | Choose the position of the icon, adds correct margin next to the icon | `value`: `left` / `right` | - |

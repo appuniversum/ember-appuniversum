@@ -46,6 +46,14 @@
   height: 100%;
   margin: 0;
 
+  &:first-child {
+    border-top-right-radius: .3rem;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: .3rem;
+  }
+
   & + & {
     border-top: .1rem solid $au-gray-300;
   }
