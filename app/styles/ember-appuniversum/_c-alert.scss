@@ -18,7 +18,7 @@ $au-alert-success-icon-color            : $au-white !default;
 $au-alert-error-icon-color              : $au-white !default;
 $au-alert-icon-size                     : 2rem !default;
 $au-alert-small-icon-size               : 1.5rem !default;
-$au-alert-radius                        : .3rem !default;
+$au-alert-radius                        : $au-radius !default;
 
 
 /* Component

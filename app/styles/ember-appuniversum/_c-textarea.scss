@@ -9,7 +9,7 @@ $au-textarea-height                    : $au-unit-large - $au-unit-small !defaul
 $au-textarea-color                     : $au-gray-1000 !default;
 $au-textarea-border-color              : $au-gray-300 !default;
 $au-textarea-font-size                 : $au-h6 !default;
-$au-textarea-border-radius             : .3rem !default;
+$au-textarea-border-radius             : $au-radius !default;
 $au-textarea-disabled-background-color : $au-gray-100 !default;
 $au-textarea-disabled-border-color     : $au-gray-300 !default;
 $au-textarea-disabled-color            : $au-gray-700 !default;
@@ -37,8 +37,8 @@ $au-textarea-disabled-color            : $au-gray-700 !default;
 
 .au-c-textarea:focus {
   outline: none;
-  border-color: $au-yellow-400;
-  box-shadow: inset 0 0 0 .1rem $au-yellow-400;
+  border-color: rgba($au-blue-600,.65);
+  box-shadow: inset 0 0 0 .2rem rgba($au-blue-600,.65);
 }
 
 /* Modifiers

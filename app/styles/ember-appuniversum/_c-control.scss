@@ -84,7 +84,7 @@ $au-control-disabled-color            : $au-gray-600 !default;
 /* Shared modifiers */
 
 .au-c-control .au-c-control__input[disabled] + .au-c-control__indicator {
-  background-color: $au-gray-400;
+  background-color: $au-gray-300;
   border-color: $au-gray-500;
 }
 

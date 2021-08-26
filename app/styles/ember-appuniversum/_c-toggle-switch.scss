@@ -87,5 +87,5 @@ $au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
 // Focus
 .au-c-toggle-switch__input:focus + .au-c-toggle-switch__toggle {
   outline: $au-outline;
-  outline-offset: .2rem;
+  outline-offset: $au-outline-offset;
 }

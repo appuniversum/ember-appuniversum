@@ -72,7 +72,7 @@
 
   &:focus {
     outline: $au-outline;
-    outline-offset: .2rem;
+    outline-offset: $au-outline-offset;
   }
 }
 

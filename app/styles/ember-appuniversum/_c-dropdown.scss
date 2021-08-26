@@ -207,13 +207,13 @@ $au-dropdown-caret-size        : .4rem !default;
     color: $au-gray-800;
     background-color: $au-gray-100;
     font-weight: $au-medium;
-    outline-offset: -.2rem;
+    outline-offset: $au-outline-offset-negative;
   }
 
   &:focus,
   &.active:focus {
     outline: $au-outline;
-    outline-offset: -.2rem;
+    outline-offset: $au-outline-offset-negative;
   }
 }
 
