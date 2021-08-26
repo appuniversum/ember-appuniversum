@@ -37,8 +37,8 @@ $au-textarea-disabled-color            : $au-gray-700 !default;
 
 .au-c-textarea:focus {
   outline: none;
-  border-color: $au-yellow-400;
-  box-shadow: inset 0 0 0 .1rem $au-yellow-400;
+  border-color: rgba($au-blue-600,.65);
+  box-shadow: inset 0 0 0 .2rem rgba($au-blue-600,.65);
 }
 
 /* Modifiers
