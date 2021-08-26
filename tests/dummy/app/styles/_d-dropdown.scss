@@ -116,7 +116,7 @@
 
     &:focus {
       outline: .1rem dashed $au-gray-300;
-      outline-offset: -$au-unit-tiny*.5;
+      outline-offset: $au-outline-offset-negative;
     }
 
     &:focus:not(:focus-visible) {

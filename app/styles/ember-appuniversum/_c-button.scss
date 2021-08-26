@@ -10,7 +10,7 @@ $au-button-height-large                     : $au-unit-large !default;
 $au-button-font-size                        : $au-h6 !default;
 $au-button-font-size-large                  : $au-h5 !default;
 $au-button-border                           : .2rem !default;
-$au-button-border-radius                    : .3rem !default;
+$au-button-border-radius                    : $au-radius !default;
 $au-button-color                            : $au-white !default;
 $au-button-contrast-color                   : $au-blue-600 !default;
 $au-button-contrast-hover-color             : $au-blue-800 !default;
@@ -70,7 +70,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 
   &:focus {
     outline: $au-outline;
-    outline-offset: .2rem;
+    outline-offset: $au-outline-offset;
   }
 
   &:active {

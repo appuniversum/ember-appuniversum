@@ -66,7 +66,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
 
     &:focus {
       outline: $au-outline;
-      outline-offset: $au-unit-tiny*.5;
+      outline-offset: $au-outline-offset;
     }
   }
 
@@ -278,7 +278,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
 
     &:focus {
       outline: $au-outline;
-      outline-offset: $au-unit-tiny*0.5;
+      outline-offset: $au-outline-offset;
     }
 
     .is-active > & {

@@ -82,7 +82,7 @@ $au-list-navigation-border-color: $au-gray-200 !default;
 
   &:focus {
     outline: $au-outline;
-    outline-offset: -.2rem;
+    outline-offset: $au-outline-offset-negative;
   }
 
   // @TODO: change to state class > is-active
