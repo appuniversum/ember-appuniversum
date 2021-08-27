@@ -62,7 +62,7 @@
               <div class="au-o-grid__item au-u-1-2@medium">
                 <div class="au-o-grid au-o-grid--tiny">
                   <div class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
-                    <AuLabel for="input-subject-object" @inline={{true}} @required={{true}} @requiredLabel="*">Subject</AuLabel>
+                    <AuLabel for="input-subject-object" @inline={{true}} @required={{true}}>Subject</AuLabel>
                   </div>
                   <div class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
                     <AuInput id="input-subject-object" @width="block" />
@@ -73,7 +73,7 @@
               <div class="au-o-grid__item au-u-1-2@medium">
                 <div class="au-o-grid au-o-grid--tiny">
                   <div class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
-                    <AuLabel for="input-subject-object" @inline={{true}} @required={{true}} @requiredLabel="*" @error={{true}}>Subject</AuLabel>
+                    <AuLabel for="input-subject-object" @inline={{true}} @required={{true}} @error={{true}}>Subject</AuLabel>
                   </div>
                   <div class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
                     <AuInput id="input-subject-object" @error={{true}} @width="block" />
@@ -83,7 +83,7 @@
               </div>
             </div>
           </c.content>
-          <c.footer>
+          <c.footer >
             <AuHelpText @skin="secondary">
               * Required field
             </AuHelpText>
