@@ -6,6 +6,7 @@
    ========================================================================== */
 
 $au-label-color                   : $au-gray-800 !default;
+$au-label-height                  : $au-unit-large - $au-unit-small !default;
 $au-label-error-badge-color       : $au-red-600 !default;
 $au-label-error-badge-font-size   : 1.2rem !default;
 
@@ -26,9 +27,24 @@ $au-label-error-badge-font-size   : 1.2rem !default;
   }
 }
 
+.au-c-label__addendum {
+  position: relative;
+  bottom: .5ex;
+  font-weight: $au-regular;
+  margin-left: $au-unit-tiny*.5;
+  color: $au-gray-500;
+}
 
 /* Modifiers
   ========================================================================== */
+
+.au-c-label--inline {
+  margin-bottom: 0;
+  
+  @include mq(small) {
+    min-height: $au-label-height;
+  }
+}
 
 .au-c-label--error {
   position: relative;
@@ -37,6 +53,7 @@ $au-label-error-badge-font-size   : 1.2rem !default;
     content: "!";
     font-size: $au-label-error-badge-font-size;
     display: inline-flex;
+    flex: none;
     align-items: center;
     justify-content: center;
     color: $au-white;

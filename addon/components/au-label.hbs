@@ -1,3 +1,18 @@
-<label class="au-c-label {{this.error}}" ...attributes>
+<label class="au-c-label {{this.error}} {{this.inline}}" ...attributes>
   {{yield}}
+  {{#if @required}}
+    {{#if @inline}}
+      {{#if @requiredLabel}}
+      <span class="au-c-label__addendum">{{@requiredLabel}}</span>
+      {{else}}
+      <span class="au-c-label__addendum">*</span>
+      {{/if}}
+    {{else}}
+      {{#if @requiredLabel}}
+      <AuPill>{{@requiredLabel}}</AuPill>
+      {{else}}
+      <AuPill>Verplicht</AuPill>
+      {{/if}}
+    {{/if}}
+  {{/if}}
 </label>

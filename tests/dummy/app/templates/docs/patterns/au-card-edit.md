@@ -22,24 +22,24 @@
           <c.content>
             <div class="au-o-grid">
               <div class="au-o-grid__item au-u-1-1 au-u-1-2@medium">
-                <div class="au-o-grid">
-                  <div class="au-o-grid__item au-u-1-4">
+                <dl class="au-o-grid au-o-grid--tiny">
+                  <dt class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
                     <p><strong>Subject</strong></p>
-                  </div>
-                  <div class="au-o-grid__item au-u-3-4">
+                  </dt>
+                  <dd class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
                     <p>Object (information)</p>
-                  </div>
-                </div>
+                  </dd>
+                </dl>
               </div>
               <div class="au-o-grid__item  au-u-1-1 au-u-1-2@medium">
-                <div class="au-o-grid">
-                  <div class="au-o-grid__item au-u-1-4">
+                <dl class="au-o-grid au-o-grid--tiny">
+                  <dt class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
                     <p><strong>Context</strong></p>
-                  </div>
-                  <div class="au-o-grid__item au-u-3-4">
+                  </dt>
+                  <dd class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
                     <p>Information</p>
-                  </div>
-                </div>
+                  </dd>
+                </dl>
               </div>
             </div>
           </c.content>
@@ -59,31 +59,35 @@
         <AuCard as |c|>
           <c.content>
             <div class="au-o-grid">
-              <div class="au-o-grid__item au-u-1-1 au-u-1-2@medium">
-                <div class="au-o-grid">
-                  <div class="au-o-grid__item au-u-1-4">
-                    <p><strong>Subject</strong></p>
+              <div class="au-o-grid__item au-u-1-2@medium">
+                <div class="au-o-grid au-o-grid--tiny">
+                  <div class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
+                    <AuLabel for="input-subject-object" @inline={{true}} @required={{true}} @requiredLabel="*">Subject</AuLabel>
                   </div>
-                  <div class="au-o-grid__item au-u-3-4">
-                    <AuLabel for="input-subject-object" class="au-u-hidden-visually">Object subject input</AuLabel>
-                    <AuInput id="input-subject-object"/>
-                    <AuHelpText>The label is there for accessibility, but hidden.</AuHelpText>
+                  <div class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
+                    <AuInput id="input-subject-object" @width="block" />
+                    <AuHelpText>Helptext</AuHelpText>
                   </div>
                 </div>
               </div>
-              <div class="au-o-grid__item  au-u-1-1 au-u-1-2@medium">
-                <div class="au-o-grid">
-                  <div class="au-o-grid__item au-u-1-4">
-                    <p><strong>Context</strong></p>
+              <div class="au-o-grid__item au-u-1-2@medium">
+                <div class="au-o-grid au-o-grid--tiny">
+                  <div class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
+                    <AuLabel for="input-subject-object" @inline={{true}} @required={{true}} @requiredLabel="*" @error={{true}}>Subject</AuLabel>
                   </div>
-                  <div class="au-o-grid__item au-u-3-4">
-                    <p>Information</p>
-                    <AuHelpText>We are not dealing with label-input, nor a definition list.</AuHelpText>
+                  <div class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
+                    <AuInput id="input-subject-object" @error={{true}} @width="block" />
+                    <AuHelpText @error={{true}}>Error message</AuHelpText>
                   </div>
                 </div>
               </div>
             </div>
           </c.content>
+          <c.footer>
+            <AuHelpText @skin="secondary">
+              * Required field
+            </AuHelpText>
+          </c.footer>
         </AuCard>
       </div>
     </div>

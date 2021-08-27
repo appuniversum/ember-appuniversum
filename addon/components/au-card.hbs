@@ -1,4 +1,5 @@
 <article class="au-o-box au-c-card au-c-card--fill {{this.flex}} {{this.expandable}} {{this.divided}} {{this.textCenter}} {{this.standOut}}" ...attributes>
+  {{#if (has-block "header")}}
   <div
     class="au-c-card__header {{if this.expandable "au-c-card__header--clickable"}}"
     role="{{if this.expandable "button" }}"
@@ -25,6 +26,7 @@
       </AuButtonGroup>
     {{/if}}
   </div>
+  {{/if}}
 
   {{#if this.expandable}}
     {{#if this.sectionOpen}}
