@@ -1,7 +1,7 @@
 <article class="au-o-box au-c-card au-c-card--fill {{this.flex}} {{this.expandable}} {{this.divided}} {{this.textCenter}} {{this.standOut}}" ...attributes>
   <div
     class="au-c-card__header {{if this.expandable "au-c-card__header--clickable"}}"
-    role="button"
+    role="{{if this.expandable "button" }}"
     {{on "click" this.openSection}}
   >
     {{yield (hash

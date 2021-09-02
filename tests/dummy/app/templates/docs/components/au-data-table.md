@@ -45,7 +45,7 @@ Wrapper for [https://github.com/mu-semtech/ember-data-table](https://github.com/
 
 {{#docs-demo as |demo|}}
   {{#demo.example name='au-data-table-small.hbs'}}
-    <AuDataTable @content={{this.model}} @fields="title description" @noDataMessage="Geen documenten" @sort={{sort}} @size="small" as |t|>
+    <AuDataTable @content={{this.model}} @fields="title description" @noDataMessage="Geen documenten" @sort={{sort}} as |t|>
       <t.menu as |menu|>
         <menu.general>
           <AuToolbar class="au-o-box">
@@ -80,4 +80,4 @@ Wrapper for [https://github.com/mu-semtech/ember-data-table](https://github.com/
 
 ## Arguments
 
-- For now, you can only add the class [au-c-data-table__table--small] in the content tag.
+- For now, you can only add the class `au-c-data-table__table--small` in the content tag.

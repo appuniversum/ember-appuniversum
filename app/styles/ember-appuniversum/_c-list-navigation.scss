@@ -71,18 +71,18 @@ $au-list-navigation-border-color: $au-gray-200 !default;
 
   &,
   &:visited {
-    color: $au-blue-700;
+    color: $au-blue-600;
   }
 
   &:hover,
   &:focus {
-    color: $au-blue-600;
+    color: $au-blue-800;
     text-decoration-color: $au-blue-300 !important;
   }
 
   &:focus {
     outline: $au-outline;
-    outline-offset: -.2rem;
+    outline-offset: $au-outline-offset-negative;
   }
 
   // @TODO: change to state class > is-active

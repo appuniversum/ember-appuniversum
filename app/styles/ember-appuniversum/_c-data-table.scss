@@ -134,10 +134,13 @@
 
 .au-c-data-table__table.au-c-data-table__table--small {
   th,
-  td,
+  td {
+    padding: $au-unit-tiny;
+  }
+
   th:first-child,
   td:first-child {
-    padding: $au-unit-tiny;
+    padding-left: $au-unit;
   }
 }
 
@@ -151,7 +154,7 @@
     border: 0;
     outline: 0;
     background-color: $au-white;
-    box-shadow: 0 .2rem 0 0 $au-gray-300;
+    box-shadow: inset 0 -.2rem 0 0 $au-gray-300;
   }
 }
 

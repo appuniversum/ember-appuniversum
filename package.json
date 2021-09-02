@@ -1,6 +1,6 @@
 {
   "name": "@appuniversum/ember-appuniversum",
-  "version": "0.4.9",
+  "version": "0.5.3",
   "description": "Ember addon wrapping the appuniversum components.",
   "keywords": [
     "ember-addon"
@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "ember build --environment=production",
+    "deploy": "ember deploy production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
@@ -28,7 +29,7 @@
     "prepare": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg"
   },
   "dependencies": {
-    "@appuniversum/appuniversum": "0.1.2",
+    "@appuniversum/appuniversum": "0.1.5",
     "@duetds/date-picker": "^1.0.4",
     "@glimmer/component": "^1.0.1",
     "@glimmer/tracking": "^1.0.0",

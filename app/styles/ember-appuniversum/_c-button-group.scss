@@ -2,12 +2,7 @@
    #BUTTON-GROUP
    ================================== */
 
-// $au-button-font-size                      : $au-h6 !default;
-// $au-button-font-size-large                : $au-h5 !default;
-
 .au-c-button-group .au-c-button {
-  display: inline-block;
-  vertical-align: middle;
   margin-right: $au-unit-tiny;
   margin-bottom: $au-unit-tiny;
   margin-top: $au-unit-tiny;
@@ -17,39 +12,52 @@
   margin-right: $au-unit-small;
   margin-bottom: $au-unit-small;
   margin-top: $au-unit-small;
-
-  .au-c-icon {
-    vertical-align: middle;
-  }
 }
 
 
 /* Modifiers
 ========================================================================== */
 
-.au-c-button-group.au-c-button-group--inline {
+.au-c-button-group--inline {
   display: flex;
 }
 
-.au-c-button-group.au-c-button-group--inline .au-c-button {
-  margin-right: -1px;
-  margin-top: 0;
+.au-c-button-group--inline  {
+  .au-c-button {
+    margin-right: -2px;
+    margin-top: 0;
+  }
+
+  .au-c-button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .au-c-button + .au-c-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 }
 
-/* Active buttons within inline buttun groups */
-.au-c-button-group--inline .au-c-button:not(.is-active) {
-  text-decoration: underline;
-  text-decoration-color: tint($au-button-contrast-hover-color,60);
-}
-.au-c-button-group--inline .au-c-button--secondary:not(.is-active) {
-  text-decoration: underline;
-  text-decoration-color: tint($au-button-secondary-hover-color,60);
-  background: $au-white;
-}
-.au-c-button-group--inline .au-c-button-tertiary:not(.is-active) {
-  text-decoration: underline;
-  text-decoration-color: tint($au-button-tertiary-hover-color,60);
-}
-.au-c-button-group--inline .au-c-button--tertiary.is-active {
-  text-decoration: none;
+/* Active buttons within inline button groups */
+.au-c-button-group--inline {
+  .au-c-button:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-contrast-hover-color,60);
+  }
+
+  .au-c-button--secondary:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-secondary-hover-color,60);
+    background: $au-white;
+  }
+
+  .au-c-button-link:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: tint($au-button-link-hover-color,60);
+  }
+
+  .au-c-button--link.is-active {
+    text-decoration: none;
+  }
 }

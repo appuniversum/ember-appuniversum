@@ -18,6 +18,8 @@ $au-alert-success-icon-color            : $au-white !default;
 $au-alert-error-icon-color              : $au-white !default;
 $au-alert-icon-size                     : 2rem !default;
 $au-alert-small-icon-size               : 1.5rem !default;
+$au-alert-radius                        : $au-radius !default;
+
 
 /* Component
   ========================================================================== */
@@ -30,6 +32,7 @@ $au-alert-small-icon-size               : 1.5rem !default;
   padding: $au-unit;
   margin-bottom: $au-unit;
   background-color: $au-alert-background-color;
+  border-radius: $au-alert-radius;
 
   > :last-child {
     margin-bottom: 0;

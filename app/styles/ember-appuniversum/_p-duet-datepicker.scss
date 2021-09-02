@@ -7,7 +7,7 @@
    ========================================================================== */
 
 :root {
-  --duet-color-primary: #{$au-yellow-400};
+  --duet-color-primary: #{$au-blue-600};
   --duet-color-text: #{$au-gray-1000};
   --duet-color-text-active: #{$au-white};
   --duet-color-placeholder:#{$au-gray-700};
@@ -19,7 +19,7 @@
   --duet-font-normal: 400;
   --duet-font-bold: 500;
 
-  --duet-radius: 0;
+  --duet-radius: .3rem;
   --duet-z-index: 10;
 }
 
@@ -34,8 +34,8 @@
   &:focus {
     outline: none;
     border-width: .1rem !important; // Temporary overide for Webuniversum
-    border-color: $au-yellow-400 !important; // Temporary overide for Webuniversum
-    box-shadow: 0 0 0 .2rem $au-yellow-400 !important; // Temporary overide for Webuniversum
+    border-color: rgba($au-blue-600,.65) !important; // Temporary overide for Webuniversum
+    box-shadow: 0 0 0 .2rem rgba($au-blue-600,.65) !important; // Temporary overide for Webuniversum
   }
 }
 
@@ -55,7 +55,7 @@
 
   &:focus {
     outline: $au-outline;
-    outline-offset: .2rem;
+    outline-offset: $au-outline-offset;
   }
 
   &:hover {
@@ -99,9 +99,9 @@
 }
 
 .duet-date__day:focus {
-  color: $au-gray-1000;
-  background-color: $au-yellow-200;
-  border: .2rem solid $au-yellow-300;
+  color: $au-white;
+  background-color: $au-blue-200;
+  border: .2rem solid $au-blue-300;
   box-shadow: none;
 }
 
