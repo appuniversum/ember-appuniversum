@@ -1,0 +1,74 @@
+/* ==================================
+   #FILE UPLOAD
+   ================================== */
+
+.au-c-file-upload-box {
+  border: .1rem solid $au-gray-200;
+  background-color: $au-white;
+  margin-bottom: $au-unit;
+}
+
+.au-c-file-upload {
+  border: .2rem dashed $au-gray-300;
+  background-color: $au-white;
+  transition: background $au-transition;
+
+  &:hover {
+    background-color: $au-gray-100;
+  }
+
+  &:focus,
+  &:focus-within {
+    background-color: $au-gray-100;
+    outline: $au-outline;
+  }
+}
+
+.au-c-file-upload input,
+.file-upload input[hidden] {
+  display: block !important;
+  height: 0;
+  width: 0;
+  outline: 0;
+}
+
+.au-c-file-upload-message {
+  @include au-font-size($au-h5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $au-gray-100;
+  padding: $au-unit + $au-unit-tiny/4 $au-unit-small;
+}
+
+.au-c-file-upload-label {
+  @include au-font-size($au-h5);
+  display: flex;
+  flex-direction: column;
+  padding: $au-unit-small $au-unit-small;
+  text-align: center;
+  transition: background-color $au-transition;
+
+  &,
+  &:hover,
+  &:visited,
+  &:active {
+    text-decoration: none;
+    color: $au-gray-800;
+  }
+}
+
+.au-c-file-upload-label__title {
+  @include au-font-size($au-h5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $au-blue-600;
+  text-decoration: underline;
+  text-decoration-color: tint($au-blue-600,70);
+
+  &:hover {
+    color: $au-blue-700;
+    text-decoration-color: tint($au-blue-700,80);
+  }
+}
