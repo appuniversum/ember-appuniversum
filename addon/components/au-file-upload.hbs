@@ -14,7 +14,7 @@
         <small class="au-c-small-text">{{this.uploadingMsg}}</small>
       </label>
     {{else}}
-      <FileUpload @name={{this.queueName}} @accept={{@accept}} @multiple={{@multiple}} @onfileadd={{this.upload}}>
+      <FileUpload @name={{this.queueName}} @accept={{@accept}} @multiple={{@multiple}} @onFileAdd={{this.upload}}>
         <span class="au-c-upload-label">
           <span class="au-c-upload-label__title">
             <AuIcon @icon="attachment" @alignment="left" />
