@@ -1,0 +1,43 @@
+<div class="js-upload js-upload-bound" data-upload-allow-drop={{if @dataUploadAllowDrop "" "false"}}>
+  <FileDropzone @class="au-c-upload" @ondrop={{fn this.onDrop}} @name={{this.queueName}} as |dropzone queue|>
+    {{#if dropzone.active}}
+      <label class="au-c-upload-message">
+        <AuIcon @icon="attachment" @alignment="left" />
+        {{#if dropzone.valid}}
+          <small class="au-c-small-text">{{this.helpTextDragDrop}}</small>
+        {{else}}
+          <small class="au-c-small-text">{{this.helpTextFileNotSupported}}</small>
+        {{/if}}
+      </label>
+    {{else if queue.files.length}}
+      <label class="au-c-upload-message">
+        <small class="au-c-small-text">{{this.uploadingMsg}}</small>
+      </label>
+    {{else}}
+      <FileUpload @name={{this.queueName}} @accept={{@accept}} @multiple={{@multiple}} @onfileadd={{this.upload}}>
+        <span class="au-c-upload-label">
+          <span class="au-c-upload-label__title">
+            <AuIcon @icon="attachment" @alignment="left" />
+            {{this.title}}
+          </span>
+          {{#if dropzone.supported}}
+            <small class="au-c-small-text">{{this.helpTextDragDrop}}</small>
+          {{/if}}
+        </span>
+      </FileUpload>
+    {{/if}}
+  </FileDropzone>
+  {{#if this.hasErrors}}
+    <AuAlert @alertIcon="alert-triangle" @alertskin="error" class="au-u-margin-top-tiny">
+      <ul>
+        {{#each this.uploadErrorData as |data|}}
+          <li> Fout bij het opladen van {{data.filename}}.
+            {{#if data.error}}
+              (Foutmelding: {{data.error}})
+            {{/if}}
+          </li>
+        {{/each}}
+      </ul>
+    </AuAlert>
+  {{/if}}
+</div>
