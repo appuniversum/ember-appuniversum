@@ -18,7 +18,8 @@ This is an appuniversum wrapper around [ember-file-upload](https://adopted-ember
 {{/docs-demo}}
 
 ## Model
-After uploading the file, this component will fetch the file metadata from the backend. It assumes the id returned from the service can be used in ember-data call using `store.FindRecord(this.args.modelName, id)`. The model is not provided by this addon.
+After uploading the file, this component will call the `onFinishUpload` callback with the id returned by the backend.  If you're using ember-data you can use the following model to fetch the metadata using  `store.findRecord('file', id)`. 
+Note: The model is not provided by this addon. The datetime transform used in this example is provided by [mu-transform-helpers](https://github.com/mu-semtech/ember-mu-transform-helpers).
 
 {{#docs-demo}}
   {{docs-snippet name="file-model.js" language="js"}}
@@ -32,7 +33,6 @@ After uploading the file, this component will fetch the file metadata from the b
 | `@helpTextDragDrop`         | help text shown below the title on the dropzone             | `string`  | "Sleep de bestanden naar hier om toe te voegen" |
 | `@helpTextFileNotSupported` | error shown when unsupported file format is added           | `string`  | "Dit bestandsformaat wordt niet ondersteund."   |
 | `@maxFileSizeMB`            | maximum filesize allowed (in MB)                            | `number`  | 20                                              |
-| `@modelName`                | Used when loading the file metadata after upload            | `string`  | "file"                                          |
 | `@multiple`                 | whether multiple files can be selected when uploading       | `boolean` |                                                 |
 | `@onFinishUpload`           | action called when upload was finished successfully         | `action`  | null                                            |
 | `@onQueueUpdate`            | action called when queue was updated                        | `action`  | null                                            |

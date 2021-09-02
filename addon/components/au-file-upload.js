@@ -6,8 +6,7 @@ import { task } from 'ember-concurrency';
 import { guidFor } from '@ember/object/internals';
 
 export default class AuFileUploadComponent extends Component {
-  @service() store;
-  @service() fileQueue;
+  @service fileQueue;
   @tracked uploadErrorData = [];
 
   constructor() {
@@ -40,13 +39,14 @@ export default class AuFileUploadComponent extends Component {
     );
   }
 
+  get queue() {
+    this.fileQueue.find(this.queueName);
+  }
+
   get endPoint() {
     return this.args.endPoint || '/files';
   }
 
-  get modelName() {
-    return this.args.modelName || 'file';
-  }
   get maxFileSizeMB() {
     return this.args.maxFileSizeMB || 20;
   }
@@ -67,11 +67,8 @@ export default class AuFileUploadComponent extends Component {
       const response = yield file.upload(this.endPoint, {
         'Content-Type': 'multipart/form-data',
       });
-      const uploadedFile = yield this.store.findRecord(
-        this.modelName,
-        response.body.data.id
-      );
-      return uploadedFile;
+      const fileId = response.body?.data?.id;
+      return fileId;
     } catch (e) {
       this.uploadErrorData = [...this.uploadErrorData, { filename: file.name }];
       this.removeFileFromQueue(file);
@@ -115,7 +112,7 @@ export default class AuFileUploadComponent extends Component {
 
   calculateQueueInfo() {
     const filesQueueInfo = {
-      isQueueEmpty: this.uploadFileTask.state === 'idle',
+      isQueueEmpty: this.uploadFileTask.isIdle
     };
     return filesQueueInfo;
   }
