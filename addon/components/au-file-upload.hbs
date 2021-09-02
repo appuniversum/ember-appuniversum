@@ -1,5 +1,5 @@
 <div class="js-upload js-upload-bound" data-upload-allow-drop={{if @dataUploadAllowDrop "" "false"}}>
-  <FileDropzone @class="au-c-upload" @ondrop={{fn this.onDrop}} @name={{this.queueName}} as |dropzone queue|>
+  <FileDropzone @class="au-c-upload" @onDrop={{this.onDrop}} @name={{this.queueName}} as |dropzone queue|>
     {{#if dropzone.active}}
       <label class="au-c-upload-message">
         <AuIcon @icon="attachment" @alignment="left" />
