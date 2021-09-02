@@ -106,8 +106,7 @@ export default class AuFileUploadComponent extends Component {
   // File queue
   ////////
   removeFileFromQueue(file) {
-    let q = this.fileQueue.queues.find((q) => q.name === this.queueName);
-    q.remove(file);
+    this.queue.remove(file);
   }
 
   calculateQueueInfo() {
