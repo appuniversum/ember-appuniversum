@@ -11,6 +11,7 @@ This is an appuniversum wrapper around [ember-file-upload](https://adopted-ember
       @onFinishUpload={{this.uploadedImage}} 
       @title="upload file"
       @multiple={{false}}
+      class="test"
       />
   {{/demo.example}}
   {{demo.snippet 'au-image-upload.hbs' language="hbs"}}

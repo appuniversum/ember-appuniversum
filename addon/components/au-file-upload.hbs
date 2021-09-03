@@ -1,43 +1,41 @@
-<div class="js-upload js-upload-bound" data-upload-allow-drop={{if @dataUploadAllowDrop "" "false"}}>
-  <FileDropzone @class="au-c-file-upload" @onDrop={{this.onDrop}} @name={{this.queueName}} as |dropzone queue|>
-    {{#if dropzone.active}}
-      <label class="au-c-file-upload-message">
-        <AuIcon @icon="attachment" @alignment="left" />
-        {{#if dropzone.valid}}
-          <AuHelpText @skin="secondary">{{this.helpTextDragDrop}}</AuHelpText>
-        {{else}}
-          <AuHelpText @skin="secondary">{{this.helpTextFileNotSupported}}</AuHelpText>
-        {{/if}}
-      </label>
-    {{else if queue.files.length}}
-      <label class="au-c-file-upload-message">
-        <small class="au-c-small-text">{{this.uploadingMsg}}</small>
-      </label>
-    {{else}}
-      <FileUpload @name={{this.queueName}} @accept={{@accept}} @multiple={{@multiple}} @onFileAdd={{this.upload}}>
-        <span class="au-c-file-upload-label">
-          <span class="au-c-file-upload-label__title">
-            <AuIcon @icon="attachment" @alignment="left" />
-            {{this.title}}
-          </span>
-          {{#if dropzone.supported}}
-            <AuHelpText @skin="secondary">{{this.helpTextDragDrop}}</AuHelpText>
-          {{/if}}
+<FileDropzone @class="au-c-file-upload" @onDrop={{this.onDrop}} @name={{this.queueName}} ...attributes as |dropzone queue|>
+  {{#if dropzone.active}}
+    <label class="au-c-file-upload-message">
+      <AuIcon @icon="attachment" @alignment="left" />
+      {{#if dropzone.valid}}
+        <AuHelpText @skin="secondary">{{this.helpTextDragDrop}}</AuHelpText>
+      {{else}}
+        <AuHelpText @skin="secondary">{{this.helpTextFileNotSupported}}</AuHelpText>
+      {{/if}}
+    </label>
+  {{else if queue.files.length}}
+    <label class="au-c-file-upload-message">
+      <small class="au-c-small-text">{{this.uploadingMsg}}</small>
+    </label>
+  {{else}}
+    <FileUpload @name={{this.queueName}} @accept={{@accept}} @multiple={{@multiple}} @onFileAdd={{this.upload}}>
+      <span class="au-c-file-upload-label">
+        <span class="au-c-file-upload-label__title">
+          <AuIcon @icon="attachment" @alignment="left" />
+          {{this.title}}
         </span>
-      </FileUpload>
-    {{/if}}
-  </FileDropzone>
-  {{#if this.hasErrors}}
-    <AuAlert @alertIcon="alert-triangle" @alertskin="error" class="au-u-margin-top-tiny">
-      <ul>
-        {{#each this.uploadErrorData as |data|}}
-          <li>Fout bij het opladen van {{data.filename}}.
-            {{#if data.error}}
-              (Foutmelding: {{data.error}})
-            {{/if}}
-          </li>
-        {{/each}}
-      </ul>
-    </AuAlert>
+        {{#if dropzone.supported}}
+          <AuHelpText @skin="secondary">{{this.helpTextDragDrop}}</AuHelpText>
+        {{/if}}
+      </span>
+    </FileUpload>
   {{/if}}
-</div>
+</FileDropzone>
+{{#if this.hasErrors}}
+  <AuAlert @alertIcon="alert-triangle" @alertskin="error" class="au-u-margin-top-tiny">
+    <ul>
+      {{#each this.uploadErrorData as |data|}}
+        <li>Fout bij het opladen van {{data.filename}}.
+          {{#if data.error}}
+            (Foutmelding: {{data.error}})
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </AuAlert>
+{{/if}}
