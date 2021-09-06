@@ -18,7 +18,7 @@ export default class AuFileUploadComponent extends Component {
   // Properties which may be overridden
   ////////
   get uploadingMsg() {
-    return `Bezig met het opladen van ${this.fileQueue.files.length} bestand(en). (${this.fileQueue.progress}%)`;
+    return `Bezig met het opladen van ${this.queue.files.length} bestand(en). (${this.queue.progress}%)`;
   }
 
   get title() {
