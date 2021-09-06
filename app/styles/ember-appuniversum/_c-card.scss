@@ -6,7 +6,7 @@
    ========================================================================== */
 
 $au-card-border-color                         : $au-gray-300 !default;
-$au-card-standout-color                       : $au-gray-200 !default;
+$au-card-standout-color                       : $au-gray-100 !default;
 $au-card-radius                               : $au-radius !default;
 
 /* Component
@@ -22,7 +22,7 @@ $au-card-radius                               : $au-radius !default;
 
 .au-c-card--standout {
   background-color: $au-card-standout-color;
-  border: 0;
+  border-color: $au-card-standout-color;
 }
 
 .au-c-card--fill {
