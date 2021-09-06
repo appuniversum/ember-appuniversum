@@ -40,7 +40,7 @@ export default class AuFileUploadComponent extends Component {
   }
 
   get queue() {
-    this.fileQueue.find(this.queueName);
+    return this.fileQueue.find(this.queueName);
   }
 
   get endPoint() {
