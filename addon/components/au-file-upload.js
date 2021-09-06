@@ -94,12 +94,9 @@ export default class AuFileUploadComponent extends Component {
     return false;
   }
 
+  @action
   resetErrors() {
     this.uploadErrorData = [];
-  }
-
-  click() {
-    this.resetErrors();
   }
 
   ////////
@@ -134,10 +131,5 @@ export default class AuFileUploadComponent extends Component {
 
     if (uploadedFile && this.args.onFinishUpload)
       this.args.onFinishUpload(uploadedFile, this.calculateQueueInfo());
-  }
-
-  @action
-  onDrop() {
-    this.resetErrors();
   }
 }

@@ -1,4 +1,4 @@
-<FileDropzone @class="au-c-file-upload" @onDrop={{this.onDrop}} @name={{this.queueName}} ...attributes as |dropzone queue|>
+<FileDropzone @class="au-c-file-upload" @onDrop={{this.resetErrors}} @name={{this.queueName}} ...attributes as |dropzone queue|>
   {{#if dropzone.active}}
     <label class="au-c-file-upload-message">
       <AuIcon @icon="attachment" @alignment="left" />
@@ -27,7 +27,7 @@
   {{/if}}
 </FileDropzone>
 {{#if this.hasErrors}}
-  <AuAlert @alertIcon="alert-triangle" @alertskin="error" class="au-u-margin-top-tiny">
+  <AuAlert @alertIcon="alert-triangle" @alertskin="error" @closable={{true}} class="au-u-margin-top-tiny">
     <ul>
       {{#each this.uploadErrorData as |data|}}
         <li>Fout bij het opladen van {{data.filename}}.
