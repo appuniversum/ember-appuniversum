@@ -125,10 +125,10 @@ export default class AuFileUploadComponent extends Component {
   ////////
   // Actions
   ////////
-  @action
-  async upload(file) {
+  @task
+  * upload(file) {
     if (this.hasValidationErrors(file)) return;
-    let uploadedFile = await this.uploadFileTask.perform(file);
+    let uploadedFile = yield this.uploadFileTask.perform(file);
 
     this.notifyQueueUpdate();
 
