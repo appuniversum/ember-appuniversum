@@ -29,16 +29,16 @@ This ember addon wraps a CSS framework for Flanders government applications call
 Development
 ------------------------------------------------------------------------------
 
-In the addon:
-```
-npm link
-npm run icons
-```
+Local development:
+- Run the documentation site: `npm start`
+- Generate the icons: `npm run icons`
 
-In the frontend:
-```
-npm link @appuniversum/ember-appuniversum
-```
+Link to an ember project:
+- In the addon: `npm link`
+- In the your project: `npm link @appuniversum/ember-appuniversum`
+
+Deploy the documentation site:
+- Build and deploy to github pages: `npm run deploy`
 
 Contributing
 ------------------------------------------------------------------------------
