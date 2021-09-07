@@ -37,8 +37,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: $au-gray-600;
   background-color: $au-gray-100;
-  padding: $au-unit + $au-unit-tiny/4 $au-unit-small;
+  padding: $au-unit + $au-unit-tiny/2 $au-unit-small;
+
+  > .au-c-help-text {
+    margin-top: 0;
+  }
 }
 
 .au-c-file-upload-label {

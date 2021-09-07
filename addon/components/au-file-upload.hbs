@@ -1,17 +1,17 @@
 <FileDropzone @class="au-c-file-upload" @onDrop={{this.resetErrors}} @name={{this.queueName}} ...attributes as |dropzone queue|>
   {{#if dropzone.active}}
-    <label class="au-c-file-upload-message">
+    <p class="au-c-file-upload-message">
       <AuIcon @icon="attachment" @alignment="left" />
       {{#if dropzone.valid}}
         <AuHelpText @skin="secondary">{{this.helpTextDragDrop}}</AuHelpText>
       {{else}}
         <AuHelpText @skin="secondary">{{this.helpTextFileNotSupported}}</AuHelpText>
       {{/if}}
-    </label>
+    </p>
   {{else if queue.files.length}}
-    <label class="au-c-file-upload-message">
+    <p class="au-c-file-upload-message">
       <small class="au-c-small-text">{{this.uploadingMsg}}</small>
-    </label>
+    </p>
   {{else}}
     <FileUpload @name={{this.queueName}} @accept={{@accept}} @multiple={{@multiple}} @onFileAdd={{perform this.upload}}>
       <span class="au-c-file-upload-label">
@@ -27,7 +27,7 @@
   {{/if}}
 </FileDropzone>
 {{#if this.hasErrors}}
-  <AuAlert @alertIcon="alert-triangle" @alertskin="error" @closable={{true}} class="au-u-margin-top-tiny">
+  <AuAlert @alertIcon="alert-triangle" @alertskin="error" @alertsize="small" @closable={{true}} class="au-u-margin-top-tiny">
     <ul>
       {{#each this.uploadErrorData as |data|}}
         <li>Fout bij het opladen van {{data.filename}}.
