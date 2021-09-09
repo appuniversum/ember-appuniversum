@@ -44,6 +44,7 @@
     "ember-focus-trap": "^0.7.0",
     "ember-in-element-polyfill": "^1.0.0",
     "ember-modifier": "^2.1.2",
+    "ember-named-blocks-polyfill": "^0.2.4",
     "ember-prop-modifier": "^1.0.1",
     "ember-test-selectors": "^6.0.0"
   },

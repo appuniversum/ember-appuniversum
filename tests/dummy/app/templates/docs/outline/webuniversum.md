@@ -43,6 +43,7 @@ Most of the components from Webuniversum are available in Appuniversum. The curr
 | -                       | <AuLink @route="docs.patterns.au-main-header">AuMainHeader</AuLink>                                                        | <AuPill @skin="action">New</AuPill>          |
 | -                       | <AuLink @route="docs.patterns.au-main-footer">AuMainfooter</AuLink>                                                        | <AuPill @skin="action">New</AuPill>          |
 | -                       | <AuLink @route="docs.atoms.au-navigation-link">AuNavigationLink</AuLink>                                                   | <AuPill @skin="action">New</AuPill>          |
+| -                       | <AuLink @route="docs.components.au-table">AuTable</AuLink>                                                               | <AuPill @skin="action">New</AuPill>          |
 | -                       | <AuLink @route="docs.atoms.au-form-timepicker">AuTimepicker</AuLink>                                                       | <AuPill @skin="action">New</AuPill>          |
 | -                       | <AuLink @route="docs.atoms.au-form-textarea">AuTextarea</AuLink>                                                           | <AuPill @skin="action">New</AuPill>          |
 | -                       | <AuLink @route="docs.patterns.au-toolbar">AuToolbar</AuLink>                                                               | <AuPill @skin="action">New</AuPill>          |
