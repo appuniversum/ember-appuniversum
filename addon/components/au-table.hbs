@@ -1,0 +1,24 @@
+<div class="au-c-table-wrapper">
+  <table class="au-c-table {{this.size}}" ...attributes>
+    {{#if (has-block "title")}}
+      <caption class="au-c-table__caption">
+        {{yield to="title"}}
+      </caption>
+    {{/if}}
+    {{#if (has-block "header")}}
+      <thead class="au-c-table__header">
+        {{yield to="header"}}
+      </thead>
+    {{/if}}
+    {{#if (has-block "body")}}
+      <tbody class="au-c-table__body">
+        {{yield to="body"}}
+      </tbody>
+    {{/if}}
+    {{#if (has-block "footer")}}
+      <tfoot class="au-c-table__footer">
+        {{yield to="footer"}}
+      </tfoot>
+    {{/if}}
+  </table>
+</div>
