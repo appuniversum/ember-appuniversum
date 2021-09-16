@@ -1,0 +1,15 @@
+<select {{on "change" this.handleSelectionChange}} ...attributes>
+  {{#if @placeholder}}
+    {{!
+      TODO this probably needs to be influenced by the `@allowClear` argument as well.
+      If that is false this first option should not be visible, or disabled if the placeholder is set.
+    }}
+    <option value={{this.CLEAR_VALUE}}>{{@placeholder}}</option>
+  {{/if}}
+  {{#each @options as |optionValue index|}}
+    {{!-- TODO: add option grouping support --}}
+    <option value={{index}} selected={{eq optionValue @selected}}>
+      {{~yield optionValue~}}
+    </option>
+  {{/each}}
+</select>

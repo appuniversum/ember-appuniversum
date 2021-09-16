@@ -29,6 +29,7 @@ Router.map(function() {
       this.route('au-form-textarea');
       this.route('au-form-radio');
       this.route('au-form-checkbox');
+      this.route('au-form-select');
       this.route('au-link');
       this.route('au-loader');
       this.route("au-navigation-link");
