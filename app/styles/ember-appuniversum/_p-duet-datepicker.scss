@@ -27,6 +27,13 @@
 /* Overrides
    ========================================================================== */
 
+// Tweak position of dialog
+.duet-date__dialog {
+  left: auto;
+  right: 0;
+  min-width: 290px;
+}
+
 .duet-date__input {
   height: $au-unit-large - $au-unit-small;
   border-color: $au-gray-300;
