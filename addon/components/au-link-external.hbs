@@ -1,0 +1,25 @@
+<a
+  class="{{this.skin}} {{this.active}} {{this.width}}"
+  target="_blank"
+  rel="noopener noreferrer"
+  ...attributes
+>
+  {{#if @icon}}
+    {{#if (eq @iconAlignment "left")}}
+      <AuIcon @icon="{{@icon}}" @alignment="left"/>
+    {{/if}}
+    {{#unless @iconAlignment}}
+      <AuIcon @icon="{{@icon}}"/>
+    {{/unless}}
+  {{/if}}
+  {{#if @hideText}}
+    <span class="au-u-hidden-visually">{{yield}}</span>
+  {{else}}
+    {{yield}}
+  {{/if}}
+  {{#if @icon}}
+    {{#if (eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" @alignment="right"/>
+    {{/if}}
+  {{/if}}
+</a>
