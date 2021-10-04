@@ -3,22 +3,22 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | card-edit', function(hooks) {
+module('Integration | Component | au-link-external', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
-    await render(hbs`<CardEdit />`);
+    await render(hbs`<AuLinkExternal />`);
 
     assert.equal(this.element.textContent.trim(), '');
 
     // Template block usage:
     await render(hbs`
-      <CardEdit>
+      <AuLinkExternal>
         template block text
-      </CardEdit>
+      </AuLinkExternal>
     `);
 
     assert.equal(this.element.textContent.trim(), 'template block text');

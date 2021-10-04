@@ -30,6 +30,7 @@ Router.map(function() {
       this.route('au-form-radio');
       this.route('au-form-checkbox');
       this.route('au-link');
+      this.route('au-link-external');
       this.route('au-loader');
       this.route("au-navigation-link");
       this.route("au-pill");
