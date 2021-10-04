@@ -28,10 +28,9 @@
               </nav>
             </div>
             <div class="au-c-sidebar__footer">
-              <a href="#!" target="_blank" rel="noopener noreferrer" class="au-c-link au-c-link--secondary au-c-link--icon">
-                <AuIcon @icon="manual" @alignment="left" />
+              <AuLinkExternal href="https://www.vlaanderen.be/" @width="block" @skin="secondary" @icon="manual" @iconAlignment="left">
                 Manual
-              </a>
+              </AuLinkExternal>
             </div>
           </div>
         </m.sidebar>
