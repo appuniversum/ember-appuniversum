@@ -106,13 +106,14 @@
 }
 
 .duet-date__day:focus {
-  color: $au-white;
+  color: $au-blue-700;
   background-color: $au-blue-200;
   border: .2rem solid $au-blue-300;
   box-shadow: none;
 }
 
 .duet-date__day:active {
+  color: $au-white;
   background: $au-blue-700;
   box-shadow: 0 0 5px $au-blue-700;
 }
