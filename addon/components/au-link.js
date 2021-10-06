@@ -60,6 +60,7 @@ export default class AuLink extends Component {
       return {};
     }
   }
+
   get active() {
     if (this.args.active)
       return 'is-active';
