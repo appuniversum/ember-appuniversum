@@ -50,4 +50,4 @@
 | `@modalOpen` | Show or hide the modal | `Boolean` | - |
 | `@onClose` | Add the action to close the modal | `function` | - |
 | `@modalTitle` | Set the title of the modal | `string` | - |
-| `@size` | Set the size of the modal | `default` / `fullscreen` | `default` |
+| `@size` | Set the size of the modal | `default` /  `large` / `fullscreen` | `default` |

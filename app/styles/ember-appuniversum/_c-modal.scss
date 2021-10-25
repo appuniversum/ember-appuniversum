@@ -5,8 +5,8 @@
 /* Variables
    ========================================================================== */
 
-$au-modal-z-index          : 10 !default;
-$au-modal-backdrop-z-index : 9 !default;
+$au-modal-z-index          : 9999 !default;
+$au-modal-backdrop-z-index : 9998 !default;
 
 /* Component
   ========================================================================== */
@@ -65,6 +65,14 @@ $au-modal-backdrop-z-index : 9 !default;
   &.is-visible {
     display: flex;
   }
+}
+
+.au-c-modal--large {
+  max-width: calc(100% - #{$au-unit-huge});
+  max-height: calc(100% - #{$au-unit-huge});
+  width: calc(100% - #{$au-unit-huge});
+  height: calc(100% - #{$au-unit-huge});
+  left: $au-unit-small;
 }
 
 .au-c-modal--fullscreen {

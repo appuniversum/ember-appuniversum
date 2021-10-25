@@ -65,6 +65,7 @@ Router.map(function() {
       this.route("app-login");
       this.route("app-breadcrumbs");
       this.route("app-sidebar");
+      this.route("app-editor");
     });
 
     this.route("index");

@@ -1,0 +1,52 @@
+<nav>
+  <div class="au-c-app-chrome">
+    <AuToolbar @size="small" class="au-u-padding-bottom-none">
+      <AuToolbarGroup>
+        <AuLink @route="docs.templates.app-editor" @skin="secondary">
+          <AuIcon @icon="arrow-left" @alignment="left" />
+          Terug naar overzicht agendapunten
+        </AuLink>
+        <span class="au-c-app-chrome__entity">Title</span>
+      </AuToolbarGroup>
+      <AuToolbarGroup>
+        <ul class="au-c-list-horizontal au-u-padding-right-tiny">
+          <li class="au-c-list-horizontal__item">
+            <span class="au-c-app-chrome__status">
+              Bewaard op 25/10/2021
+            </span>
+          </li>
+        </ul>
+      </AuToolbarGroup>
+    </AuToolbar>
+    <AuToolbar @size="small" class="au-u-padding-top-none">
+      <AuToolbarGroup>
+        <div>
+          <AuPill @skin="warning">
+            <AuIcon @icon="alert-triangle" @alignment="left" />
+            Concept niet bewaard
+          </AuPill>
+        </div>
+        <h1 class="au-c-app-chrome__title">
+          Title
+        </h1>
+      </AuToolbarGroup>
+      <AuToolbarGroup class="au-c-toolbar__group--actions">
+        <AuDropdown @dropdownTitle="Bestand acties" @dropdownButtonLabel="Bestand opties" @alignment="right">
+          <AuButton @skin="tertiary" role="menuitem">
+            <AuIcon @icon="copy" @alignment="left" />
+            Kopieer agendapunt
+          </AuButton>
+          <AuButton @skin="tertiary" role="menuitem">
+            <AuIcon @icon="export" @alignment="left" />
+            Exporteer als HTML
+          </AuButton>
+          <AuButton @skin="tertiary" @alert="true" role="menuitem">
+            <AuIcon @icon="bin" @alignment="left" />
+            Naar prullenmand
+          </AuButton>
+        </AuDropdown>
+        <AuButton>Bewaar</AuButton>
+      </AuToolbarGroup>
+    </AuToolbar>
+  </div>
+</nav>

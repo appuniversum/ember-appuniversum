@@ -21,6 +21,17 @@ export default class AuCardComponent extends Component {
     this.sectionOpen = !this.sectionOpen;
   }
 
+  get size() {
+    if (this.args.size == "small")
+      return "au-c-card--padding-small";
+    if (this.args.size == "tiny")
+      return "au-c-card--padding-tiny";
+    if (this.args.size == "flush")
+      return "";
+    else
+      return "au-c-card--padding";
+  }
+
   get flex() {
     if (this.args.flex)
       return "au-c-card--flex";
@@ -30,6 +41,12 @@ export default class AuCardComponent extends Component {
   get expandable() {
     if (this.args.expandable)
       return "au-c-card--expandable";
+    return "";
+  }
+
+  get shadow() {
+    if (this.args.shadow)
+      return "au-c-card--shadow";
     return "";
   }
 
