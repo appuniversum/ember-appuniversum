@@ -32,6 +32,16 @@
   {{demo.snippet 'au-date-picker-range.hbs'}}
 {{/docs-demo}}
 
+## Error
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-date-picker-error.hbs'}}
+    <AuDatePicker @label="Choose a date" @error={{true}} />
+    <AuHelpText @error={{true}}>Please choose a date.</AuHelpText>
+  {{/demo.example}}
+  {{demo.snippet 'au-date-picker-disabled.hbs'}}
+{{/docs-demo}}
+
 ## Disabled
 
 {{#docs-demo as |demo|}}
@@ -88,6 +98,7 @@ Triggered everytime the date gets changed by the user or when the input field is
 | `@min` | Set starting date | `Date` or `String` | - |
 | `@max` | set ending date | `Date` or `String` | - |
 | `@first-day` | Choose first day of the week (range: 1 - 7) | `Integer` | 1 |
+| `@error` | Add an error state  | `Boolean` | `false` |
 | `@disabled` | Makes the date picker input component disabled | `Boolean` | false |
 | `@localization` | Object for localizing Button labels, names... | `Object` | [See above](#localization) |
 | `@adapter` | Object for parsing and formatting | `Object` | [See above](#adapter) |

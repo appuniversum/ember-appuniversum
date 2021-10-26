@@ -166,6 +166,29 @@
   {{demo.snippet 'au-card-expandable.hbs'}}
 {{/docs-demo}}
 
+## Card shadow Pattern
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-card-shadow.hbs'}}
+    <AuCard @flex={{true}} @divided={{true}} @shadow={{true}} @size="small" as |c|>
+      <c.header>
+        <AuHeading @level="3" @skin="6">
+          Title for card
+        </AuHeading>
+      </c.header>
+      <c.content>
+        <p>Information in the card that comes below the header. Content.</p>
+      </c.content>
+      <c.footer>
+        <AuButtonGroup class="au-u-text-right">
+          <AuButton @skin="link" @icon="cross" @iconAlignment="left">Venster sluiten</AuButton>
+        </AuButtonGroup>
+      </c.footer>
+    </AuCard>
+  {{/demo.example}}
+  {{demo.snippet 'au-card-shadow.hbs'}}
+{{/docs-demo}}
+
 ## Card Standout Editable Pattern
 
 {{#docs-demo as |demo|}}
@@ -210,6 +233,8 @@
 | `@flex`            | Layout elements as flexbox columns                                      | `boolean` | `false`       |
 | `@expandable`      | Card becomes expandable                                                 | `boolean` | `false`       |
 | `@textCenter`      | Centers text                                                            | `boolean` | `false`       |
+| `@shadow`          | Adds a box shadow                                                       | `boolean` | `false`       |
+| `@size`            | Changes the padding                                                     | `value`: `small` / `regular` / `flush` | `regular`       |
 | `@standOut`        | Makes background colour stand out                                       | `boolean` | `false`       |
 | `@isOpenInitially` | Determines whether the card is open initially (when expandable is true) | `boolean` | `false`       |
 
