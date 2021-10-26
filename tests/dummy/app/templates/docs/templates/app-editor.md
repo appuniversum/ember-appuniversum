@@ -36,6 +36,18 @@
                     </c.footer>
                   </AuCard>
                 </li>
+                <li class="say-editor-hints__list-item">
+                  <AuCard @flex={{true}} @divided={{true}} @expandable={{true}} @shadow={{true}} @size="small" as |c|>
+                    <c.header>
+                      <AuHeading @level="3" @skin="6">
+                        Title for card
+                      </AuHeading>
+                    </c.header>
+                    <c.content>
+                      <p>Information in the card that comes below the header. Content.</p>
+                    </c.content>
+                  </AuCard>
+                </li>
               </ul>
             </div>
           </div>

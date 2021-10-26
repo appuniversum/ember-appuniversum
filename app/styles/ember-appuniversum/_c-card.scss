@@ -75,10 +75,16 @@ $au-card-radius                               : $au-radius !default;
     padding: $au-unit-small;
   }
 
+
+
   .au-c-card--padding:not(.au-c-card--divided) & + &,
   .au-c-card--padding-small:not(.au-c-card--divided) & + & {
     padding-top: 0;
   }
+}
+
+.au-c-card--shadow.au-c-card--expandable .au-c-card__header {
+  padding-left: 0;
 }
 
 .au-c-card__footer {
@@ -90,6 +96,15 @@ $au-card-radius                               : $au-radius !default;
 .au-c-card__clickable {
   display: flex;
   justify-content: space-between;
+  transition: background-color $au-transition;
+
+  .au-c-card--shadow & {
+    justify-content: flex-start;
+  }
+
+  &:hover {
+    background-color: $au-gray-100;
+  }
 
   .au-card__header {
     width: 100%;
@@ -137,6 +152,11 @@ $au-card-radius                               : $au-radius !default;
     margin-top: $au-unit-small;
     margin-right: $au-unit-small;
     margin-bottom: $au-unit-small;
+  }
+
+  .au-c-card--shadow.au-c-card--padding &,
+  .au-c-card--shadow.au-c-card--padding-small & {
+    margin-right: 0;
   }
 }
 

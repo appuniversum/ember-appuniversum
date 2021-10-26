@@ -201,7 +201,7 @@ flex-direction: column;
   bottom: 0;
   right: $au-unit-small + $au-unit-tiny;
   width: 380px;
-  max-height: calc(100% - 44px);
+  max-height: 100%;
   overflow: auto;
   padding: $au-unit-small $au-unit-small + $au-unit-tiny;
 
