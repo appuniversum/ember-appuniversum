@@ -29,26 +29,31 @@
     </div>
   </div>
 
-  <span class="au-time-picker__separator">:</span>
+  {{#if this.showSeconds}}
+    <span class="au-time-picker__separator">:</span>
 
-  <div class="au-time-picker__box">
-    <AuLabel for="input-second">{{@secondsLabel}}</AuLabel>
-    <div class="au-time-picker__input-wrapper">
-      <AuInput class="au-time-picker__input" value={{format-time this.secondValue}} name="input-second" id="input-second"
-        {{on 'keyup' (fn this.setTimeValue "secondValue")}}
-        {{on 'focusout' (fn this.updateTime "secondValue")}}
-      />
-      <div class="au-time-picker__button-wrapper">
-        <button aria-label="increment seconds" {{on 'click' (fn this.increment "secondValue")}} type="button" aria-controls="input-second" class="au-time-picker__button">+</button>
-        <button aria-label="decrement seconds" {{on 'click' (fn this.decrement "secondValue")}} type="button" aria-controls="input-second" class="au-time-picker__button">-</button>
+    <div class="au-time-picker__box">
+      <AuLabel for="input-second">{{@secondsLabel}}</AuLabel>
+      <div class="au-time-picker__input-wrapper">
+        <AuInput class="au-time-picker__input" value={{format-time this.secondValue}} name="input-second" id="input-second"
+          {{on 'keyup' (fn this.setTimeValue "secondValue")}}
+          {{on 'focusout' (fn this.updateTime "secondValue")}}
+        />
+        <div class="au-time-picker__button-wrapper">
+          <button aria-label="increment seconds" {{on 'click' (fn this.increment "secondValue")}} type="button" aria-controls="input-second" class="au-time-picker__button">+</button>
+          <button aria-label="decrement seconds" {{on 'click' (fn this.decrement "secondValue")}} type="button" aria-controls="input-second" class="au-time-picker__button">-</button>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="au-time-picker__box">
-    <AuButton class="au-time-picker__current" {{on 'click' this.setCurrentTime}}>
-      {{@nowLabel}}
-    </AuButton>
-  </div>
+  {{/if}}
+
+  {{#if this.showNow}}
+    <div class="au-time-picker__box">
+      <AuButton class="au-time-picker__current" {{on 'click' this.setCurrentTime}}>
+        {{@nowLabel}}
+      </AuButton>
+    </div>
+  {{/if}}
 
   <span class="au-u-hidden-visually">{{this.hourValue}} {{@hoursLabel}}, {{this.minuteValue}} {{@minutesLabel}}, {{this.secondValue}} {{@secondsLabel}}.</span>
 </div>
