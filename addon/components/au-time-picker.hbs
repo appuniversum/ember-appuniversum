@@ -2,7 +2,7 @@
   <div class="au-time-picker__box">
     <AuLabel for="input-hour">{{@hoursLabel}}</AuLabel>
     <div class="au-time-picker__input-wrapper">
-      <AuInput class="au-time-picker__input" value={{format-time this.hourValue}} name="input-hour" id="input-hour"
+      <AuInput class="au-time-picker__input" value={{format-time-digit this.hourValue}} name="input-hour" id="input-hour"
         {{on 'keyup' (fn this.setTimeValue "hourValue")}}
         {{on 'focusout' (fn this.updateTime "hourValue")}}
       />
@@ -18,7 +18,7 @@
   <div class="au-time-picker__box">
     <AuLabel for="input-minute">{{@minutesLabel}}</AuLabel>
     <div class="au-time-picker__input-wrapper">
-      <AuInput class="au-time-picker__input" value={{format-time this.minuteValue}} name="input-minute" id="input-minute"
+      <AuInput class="au-time-picker__input" value={{format-time-digit this.minuteValue}} name="input-minute" id="input-minute"
         {{on 'keyup' (fn this.setTimeValue "minuteValue")}}
         {{on 'focusout' (fn this.updateTime "minuteValue")}}
       />
@@ -35,7 +35,7 @@
     <div class="au-time-picker__box">
       <AuLabel for="input-second">{{@secondsLabel}}</AuLabel>
       <div class="au-time-picker__input-wrapper">
-        <AuInput class="au-time-picker__input" value={{format-time this.secondValue}} name="input-second" id="input-second"
+        <AuInput class="au-time-picker__input" value={{format-time-digit this.secondValue}} name="input-second" id="input-second"
           {{on 'keyup' (fn this.setTimeValue "secondValue")}}
           {{on 'focusout' (fn this.updateTime "secondValue")}}
         />
