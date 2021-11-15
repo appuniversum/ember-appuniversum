@@ -31,7 +31,14 @@
 .duet-date__dialog {
   left: auto;
   right: 0;
-  min-width: 290px;
+  min-width: 220px;
+  max-width: 220px;
+}
+
+.duet-date__dialog-content {
+  min-width: 220px;
+  max-width: 220px;
+  padding: $au-unit-tiny * .5 $au-unit-tiny $au-unit-tiny;
 }
 
 .duet-date__input {
@@ -92,17 +99,24 @@
   font-size: 1.2rem;
 }
 
+.duet-date__cell {
+  padding-top: $au-unit-tiny * .25;
+  padding-bottom: $au-unit-tiny * .25;
+}
+
 .duet-date__day.is-today {
   box-shadow: 0 0 0 1px $au-blue-700;
 }
 
-[aria-selected="true"] .duet-date__day,  {
+[aria-selected="true"] .duet-date__day {
   background: $au-blue-700;
 }
 
 .duet-date__day {
   font-size: 1.4rem;
   line-height: 1;
+  width: 26px;
+  height: 26px;
 }
 
 .duet-date__day:focus {
