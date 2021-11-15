@@ -44,6 +44,9 @@ Can be used as a toggle function. Not functional in this demo.
         Primary button in group - active
       </AuButton>
     </AuButtonGroup>
+
+    <br/>
+    
     <AuButtonGroup @inline={{true}}>
       <AuButton @size="large">
         Large primary button in group
@@ -54,6 +57,7 @@ Can be used as a toggle function. Not functional in this demo.
     </AuButtonGroup>
 
     <hr>
+
     <AuButtonGroup @inline={{true}}>
       <AuButton @skin="secondary">
         Secondary button in group
@@ -62,6 +66,9 @@ Can be used as a toggle function. Not functional in this demo.
         Secondary button in group - active
       </AuButton>
     </AuButtonGroup>
+
+    <br/>
+
     <AuButtonGroup @inline={{true}}>
       <AuButton @skin="secondary" @size="large">
         Large secondary button in group
@@ -72,6 +79,7 @@ Can be used as a toggle function. Not functional in this demo.
     </AuButtonGroup>
 
     <hr>
+
     <AuButtonGroup @inline={{true}}>
       <AuButton @skin="tertiary">
         Tertiary button in group
