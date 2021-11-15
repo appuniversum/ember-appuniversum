@@ -47,10 +47,12 @@ $au-toolbar-font-size       : $au-h6 !default;
 
 .au-c-toolbar--top {
   border-top: $au-toolbar-border-width solid $au-toolbar-border-color;
+  padding-top: $au-unit-tiny;
 }
 
 .au-c-toolbar--bottom {
   border-bottom: $au-toolbar-border-width solid $au-toolbar-border-color;
+  padding-bottom: $au-unit-tiny;
 }
 
 .au-c-toolbar--tint {

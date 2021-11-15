@@ -3,8 +3,13 @@
    ================================== */
 
 .au-c-button-group  {
+  margin-top: -$au-unit-tiny;
+  margin-bottom: -$au-unit-tiny;
+
   .au-c-button {
     margin-right: $au-unit-tiny;
+    margin-top: $au-unit-tiny;
+    margin-bottom: $au-unit-tiny;
   }
 
   .au-c-button:last-child {
