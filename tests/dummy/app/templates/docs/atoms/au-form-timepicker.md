@@ -20,6 +20,24 @@
   {{demo.snippet 'au-dateTime-picker-value.hbs'}}
 {{/docs-demo}}
 
+## Hidden seconds input
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-dateTime-picker-hidden-seconds-input.hbs'}}
+    <AuTimePicker @hours="8" @minutes="12" @showSeconds={{false}} @nowLabel="Now" />
+  {{/demo.example}}
+  {{demo.snippet 'au-dateTime-picker-hidden-seconds-input.hbs'}}
+{{/docs-demo}}
+
+## Hidden now button
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-dateTime-picker-hidden-now-button.hbs'}}
+    <AuTimePicker @hours="17" @minutes="48" @seconds="12" @showNow={{false}} />
+  {{/demo.example}}
+  {{demo.snippet 'au-dateTime-picker-hidden-now-button.hbs'}}
+{{/docs-demo}}
+
 ## @onChange
 
 Triggered everytime the time gets changed by the user. Expects a function to which it returns the time.
@@ -39,10 +57,9 @@ Triggered everytime the time gets changed by the user. Expects a function to whi
 | `@minutesLabel` | Minutes label  | `string` | - |
 | `@secondsLabel` | Seconds label  | `string` | - |
 | `@nowLabel` | Current time button label  | `string` | - |
-| `@nowLabel` | Current time button label  | `string` | - |
-| `@hours`| Sets the hour value | 'integer' | 12 |
-| `@minutes`| Sets the minutes value | 'integer' | 0 |
-| `@seconds`| Sets the seconds value | 'integer' | 0 |
-| `@onChange`| Gets called when a time value changes. Returns an object with all time values in an object | 'object' | - |
-
-
+| `@hours`| Sets the hour value | `integer` | 12 |
+| `@minutes`| Sets the minutes value | `integer` | 0 |
+| `@seconds`| Sets the seconds value | `integer` | 0 |
+| `@showSeconds`| Wether the seconds input is shown | `boolean` | true |
+| `@showNow`| Wether the now button is shown | `boolean` | true |
+| `@onChange`| Gets called when a time value changes. Returns an object with all time values in an object | `object` | - |

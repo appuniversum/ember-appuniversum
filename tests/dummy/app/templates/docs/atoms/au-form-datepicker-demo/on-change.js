@@ -1,6 +1,6 @@
 
 /* eslint-disable no-dupe-class-members */
-import Component from '@ember/component';
+import Component from '@glimmer/component';
 import { action } from "@ember/object";
 
 export default class onChangeSnippets extends Component {
