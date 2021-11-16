@@ -5,29 +5,33 @@
 /* Variables
    ========================================================================== */
 
-$au-button-height                           : $au-unit-large - $au-unit-small !default;
-$au-button-height-large                     : $au-unit-large !default;
-$au-button-font-size                        : $au-h6 !default;
-$au-button-font-size-large                  : $au-h5 !default;
-$au-button-border                           : .2rem !default;
-$au-button-border-radius                    : $au-radius !default;
-$au-button-color                            : $au-white !default;
-$au-button-contrast-color                   : $au-blue-600 !default;
-$au-button-contrast-hover-color             : $au-blue-800 !default;
-$au-button-contrast-active-color            : $au-blue-900 !default;
-$au-button-contrast-visited-color           : $au-blue-600 !default;
-$au-button-secondary-color                  : $au-blue-600 !default;
-$au-button-secondary-hover-color            : $au-blue-800 !default;
-$au-button-secondary-contrast-active-color  : $au-blue-200 !default;
-$au-button-link-height                      : $au-unit !default;
-$au-button-link-color                       : $au-blue-600 !default;
-$au-button-link-hover-color                 : $au-blue-800 !default;
-$au-button-link-secondary-color             : $au-gray-700 !default;
-$au-button-link-secondary-hover-color       : $au-gray-900 !default;
-$au-button-link-active-color                : $au-gray-900 !default;
-$au-button-alert-color                      : $au-white !default;
-$au-button-alert-contrast-color             : shade($au-red-600,10) !default; // @TODO: lighten red 700
-$au-button-alert-contrast-hover-color       : $au-red-600 !default;
+$au-button-height                               : $au-unit-large - $au-unit-small !default;
+$au-button-height-large                         : $au-unit-large !default;
+$au-button-font-size                            : $au-h6 !default;
+$au-button-font-size-large                      : $au-h5 !default;
+$au-button-border                               : .2rem !default;
+$au-button-border-radius                        : var(--au-radius) !default;
+$au-button-color                                : var(--au-white) !default;
+$au-button-contrast-color                       : var(--au-blue-600) !default;
+$au-button-contrast-hover-color                 : var(--au-blue-800) !default;
+$au-button-contrast-active-color                : var(--au-blue-900) !default;
+$au-button-contrast-visited-color               : var(--au-blue-600) !default;
+$au-button-secondary-color                      : var(--au-blue-600) !default;
+$au-button-secondary-hover-color                : var(--au-blue-800) !default;
+$au-button-secondary-contrast-active-color      : var(--au-blue-200) !default;
+$au-button-link-height                          : $au-unit !default;
+$au-button-link-color                           : var(--au-blue-600) !default;
+$au-button-link-color-underline                 : var(--au-blue-300) !default;
+$au-button-link-hover-color                     : var(--au-blue-800) !default;
+$au-button-link-hover-color-underline           : var(--au-blue-200) !default;
+$au-button-link-secondary-color                 : var(--au-gray-700) !default;
+$au-button-link-secondary-color-underline       : var(--au-gray-300) !default;
+$au-button-link-secondary-hover-color           : var(--au-gray-900) !default;
+$au-button-link-secondary-hover-color-underline : var(--au-gray-200) !default;
+$au-button-link-active-color                    : var(--au-gray-900) !default;
+$au-button-alert-color                          : var(--au-white) !default;
+$au-button-alert-contrast-color                 : var(--au-red-700) !default;
+$au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
 
 
 
@@ -38,8 +42,8 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 .au-c-button {
   @include au-font-size($au-button-font-size, $au-button-height - $au-button-border * 2);
   cursor: default;
-  font-family: $au-font;
-  font-weight: $au-regular;
+  font-family: var(--au-font);
+  font-weight: var(--au-regular);
   height: $au-button-height;
   text-decoration: none;
   text-align: center;
@@ -51,7 +55,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color $au-transition, background-color $au-transition, border-color $au-transition, box-shadow $au-transition;
+  transition: color var(--au-transition), background-color var(--au-transition), border-color var(--au-transition), box-shadow var(--au-transition);
 
   &,
   &:visited {
@@ -69,8 +73,8 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
   }
 
   &:focus {
-    outline: $au-outline;
-    outline-offset: $au-outline-offset;
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
   }
 
   &:active {
@@ -86,6 +90,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     opacity: .5;
     color: $au-button-color;
     background-color: $au-button-contrast-color;
+    border-color: $au-button-contrast-color;
   }
 
   &.is-loading,
@@ -111,7 +116,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     position: absolute;
     text-align: center;
     border: .3rem solid $au-button-color;
-    border-top: .3rem solid rgba($au-button-color,.3);
+    border-top: .3rem solid var(--au-blue-700);
     border-radius: 50%;
     width: $au-unit - $au-unit-tiny;
     height: $au-unit - $au-unit-tiny;
@@ -135,14 +140,14 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 
 // Primary button
 .au-c-button--primary {
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 // Secondary button
 .au-c-button--secondary {
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -166,9 +171,8 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
   &.is-disabled:focus,
   &.is-disabled:active {
     color: $au-button-secondary-color;
-    background: transparent;
-    border-color: tint($au-button-secondary-color,30);
-    box-shadow: none;
+    background-color: transparent;
+    border-color: $au-button-secondary-color;
   }
 
   &.is-loading,
@@ -182,7 +186,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 
   &.is-loading::after {
     border-color: $au-button-secondary-color;
-    border-top-color: rgba($au-button-secondary-color,.3);
+    border-top-color: var(--au-blue-300);
   }
 }
 
@@ -200,7 +204,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     color: $au-button-link-color;
     background-color: transparent;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-link-color,70);
+    text-decoration-color: $au-button-link-color-underline;
   }
 
   &:hover,
@@ -211,7 +215,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     border-color: transparent;
     box-shadow: none;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-link-hover-color,80);
+    text-decoration-color: $au-button-link-hover-color-underline;
   }
 
   &.is-disabled,
@@ -221,6 +225,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     color: $au-button-contrast-color;
     background-color: transparent;
     text-decoration: none;
+    border-color: transparent;
   }
 
   &.is-loading,
@@ -233,7 +238,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 
   &.is-loading::after {
     border-color: $au-button-contrast-color;
-    border-top-color: rgba($au-button-contrast-color,.3);
+    border-top-color: var(--au-blue-300);
   }
 }
 
@@ -250,7 +255,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     color: $au-button-link-secondary-color;
     background-color: transparent;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-link-secondary-color,70);
+    text-decoration-color: $au-button-link-secondary-color-underline;
   }
 
   &:hover,
@@ -261,7 +266,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     border-color: transparent;
     box-shadow: none;
     text-decoration: underline;
-    text-decoration-color: tint($au-button-link-secondary-hover-color,80);
+    text-decoration-color: $au-button-link-secondary-hover-color-underline;
   }
 
   &.is-disabled,
@@ -271,6 +276,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     color: $au-button-contrast-color;
     background-color: transparent;
     text-decoration: none;
+    border-color: transparent;
   }
 
   &.is-loading,
@@ -283,7 +289,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 
   &.is-loading::after {
     border-color: $au-button-contrast-color;
-    border-top-color: rgba($au-button-contrast-color,.3);
+    border-top-color: var(--au-blue-300);
   }
 }
 
@@ -313,12 +319,13 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
   &.is-loading,
   &.is-loading:hover {
     color: transparent;
+    border-color: $au-button-alert-contrast-color;
     background-color: $au-button-alert-contrast-color;
   }
 
   &.is-loading::after {
     border-color: $au-button-alert-color;
-    border-top-color: rgba( $au-button-alert-color,.3);
+    border-top-color: var(--au-red-600);
   }
 
   &.au-c-button--secondary {
@@ -327,23 +334,22 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     &,
     &:visited {
       color: $au-button-alert-contrast-color;
-      border-color: tint($au-button-alert-contrast-color,20);
+      border-color: $au-button-alert-contrast-color;
     }
 
     &:hover,
     &:focus,
     &:active {
       color: $au-button-alert-contrast-hover-color;
-      border-color: tint($au-button-alert-contrast-hover-color,20);
+      border-color: $au-button-alert-contrast-hover-color;
     }
 
     &.is-disabled,
     &.is-disabled:hover,
     &.is-disabled:focus,
     &.is-disabled:active {
-      color: $au-button-alert-contrast-color;
-      background-color: transparent;
-      border-color: tint($au-button-alert-contrast-color,20);
+      color: $au-button-alert-contrast-hover-color;
+      border-color: $au-button-alert-contrast-hover-color;
     }
 
     &.is-loading,
@@ -354,11 +360,12 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 
     &.is-loading::after {
       border-color: $au-button-alert-contrast-color;
-      border-top-color: rgba($au-button-alert-contrast-color,.3);
+      border-top-color: var(--au-red-200);
     }
   }
 
   &.au-c-button--link,
+  &.au-c-button--link-secondary,
   &.au-c-button--tertiary {
     background-color: transparent;
 
@@ -366,7 +373,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     &:visited {
       color: $au-button-alert-contrast-color;
       border-color: transparent;
-      text-decoration-color: tint($au-button-alert-contrast-color,70);
+      text-decoration-color: var(--au-red-200);
     }
 
     &:hover,
@@ -374,7 +381,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
-      text-decoration-color: tint($au-button-alert-contrast-hover-color,80);
+      text-decoration-color: var(--au-red-100);
     }
 
     &.is-disabled,
@@ -394,7 +401,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 
     &.is-loading::after {
       border-color: $au-button-alert-contrast-color;
-      border-top-color: rgba($au-button-alert-contrast-color,.3);
+      border-top-color: var(--au-red-200);
     }
   }
 }
@@ -420,7 +427,7 @@ $au-button-alert-contrast-hover-color       : $au-red-600 !default;
 .au-c-button--link.is-active,
 .au-c-button--tertiary.is-active {
   color: $au-button-link-active-color;
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 }
 
 /* Animations

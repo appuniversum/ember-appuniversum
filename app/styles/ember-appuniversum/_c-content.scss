@@ -33,43 +33,43 @@ $au-content-small           : $au-base !default;
   h1,
   .au-c-heading--1 {
     @include au-font-size($au-content-heading-1-small);
-    font-family: $au-font-secondary;
-    font-weight: $au-light;
+    font-family: var(--au-font-secondary);
+    font-weight: var(--au-light);
   }
 
   h2,
   .au-c-heading--2 {
     @include au-font-size($au-content-heading-2-small);
-    font-family: $au-font-secondary;
-    font-weight: $au-light;
+    font-family: var(--au-font-secondary);
+    font-weight: var(--au-light);
   }
 
   h3,
   .au-c-heading--3 {
     @include au-font-size($au-content-heading-3-small);
-    font-family: $au-font-secondary;
-    font-weight: $au-medium;
+    font-family: var(--au-font-secondary);
+    font-weight: var(--au-medium);
   }
 
   h4,
   .au-c-heading--4 {
     @include au-font-size($au-content-heading-4-small);
-    font-family: $au-font;
-    font-weight: $au-medium;
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
   }
 
   h5,
   .au-c-heading--5 {
     @include au-font-size($au-content-heading-5-small);
-    font-family: $au-font;
-    font-weight: $au-medium;
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
   }
 
   h6,
   .au-c-heading--6 {
     @include au-font-size($au-content-heading-6-small);
-    font-family: $au-font;
-    font-weight: $au-medium;
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
   }
 
   ul:not(.au-c-list-horizontal) {
@@ -103,7 +103,7 @@ $au-content-small           : $au-base !default;
 
   em {
     font-style: italic;
-    color: $au-gray-700;
+    color: var(--au-gray-700);
   }
 
   @include mq(medium) {

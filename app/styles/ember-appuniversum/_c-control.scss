@@ -6,7 +6,7 @@
 /* Variables
    ========================================================================== */
 
-$au-control-disabled-color            : $au-gray-600 !default;
+$au-control-disabled-color            : var(--au-gray-600) !default;
 
 /* Component
    ========================================================================== */
@@ -14,7 +14,7 @@ $au-control-disabled-color            : $au-gray-600 !default;
 .au-c-control {
   position: relative;
   display: inline-flex;
-  color: $au-gray-800;
+  color: var(--au-gray-800);
   cursor: pointer;
 }
 
@@ -31,36 +31,36 @@ $au-control-disabled-color            : $au-gray-600 !default;
   min-width:  $au-unit-small + $au-unit-tiny;
   height: $au-unit-small + $au-unit-tiny;
   line-height: $au-unit-small + $au-unit-tiny;
-  color: $au-gray-100;
+  color: var(--au-gray-100);
   text-align: center;
-  background-color: $au-gray-100;
+  background-color: var(--au-gray-100);
   background-size: $au-unit-small;
   background-position: center center;
   background-repeat: no-repeat;
   user-select: none;
-  border: .1rem solid $au-gray-300;
+  border: .1rem solid var(--au-gray-300);
   margin-right: $au-unit-tiny;
   margin-top: $au-unit-tiny*.5;
 }
 
 /* Focus */
 .au-c-control__input:focus ~ .au-c-control__indicator {
-  outline: $au-outline;
+  outline: var(--au-outline);
   outline-offset: .2rem;
 }
 
 /* Checked state */
 .au-c-control__input:checked ~ .au-c-control__indicator {
-  color: $au-white;
-  background-color: $au-blue-600;
-  border-color: $au-blue-700;
+  color: var(--au-white);
+  background-color: var(--au-blue-600);
+  border-color: var(--au-blue-700);
 }
 
 /* Active */
 .au-c-control__input:active ~ .au-c-control__indicator {
-  color: $au-white;
-  background-color: $au-blue-600;
-  border-color: $au-blue-700;
+  color: var(--au-white);
+  background-color: var(--au-blue-600);
+  border-color: var(--au-blue-700);
 }
 
 /* Checkbox modifiers */
@@ -84,8 +84,8 @@ $au-control-disabled-color            : $au-gray-600 !default;
 /* Shared modifiers */
 
 .au-c-control .au-c-control__input[disabled] + .au-c-control__indicator {
-  background-color: $au-gray-300;
-  border-color: $au-gray-500;
+  background-color: var(--au-gray-300);
+  border-color: var(--au-gray-500);
 }
 
 .au-c-control.is-disabled {

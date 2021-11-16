@@ -5,11 +5,11 @@
 /* Variables
    ========================================================================== */
 
-$au-brand-color                : $au-gray-900 !default;
-$au-brand-highlight-color      : $au-gray-200 !default;
-$au-brand-bg                   : $au-white !default;
-$au-brand-text                 : $au-gray-900 !default;
-$au-brand-border               : $au-gray-300 !default;
+$au-brand-color                : var(--au-gray-900) !default;
+$au-brand-highlight-color      : var(--au-gray-200) !default;
+$au-brand-bg                   : var(--au-white) !default;
+$au-brand-text                 : var(--au-gray-900) !default;
+$au-brand-border               : var(--au-gray-300) !default;
 $au-brand-size                 : 4.2rem !default;
 $au-brand-divider-rotation     : -19deg !default;
 
@@ -21,7 +21,7 @@ $au-brand-divider-rotation     : -19deg !default;
   align-items: center;
   text-decoration: none;
   position: relative;
-  background-color: $au-white;
+  background-color: var(--au-white);
 }
 
 .au-c-brand--link {
@@ -37,7 +37,7 @@ $au-brand-divider-rotation     : -19deg !default;
   padding-left: .75rem;
   overflow: hidden;
   background-color: $au-brand-bg;
-  transition: background-color $au-transition;
+  transition: background-color var(--au-transition);
 
   svg {
     fill: $au-brand-color;
@@ -52,7 +52,7 @@ $au-brand-divider-rotation     : -19deg !default;
     right: -.1rem;
     bottom: -.3rem;
     border-top: 9rem solid
-    $au-white;
+    var(--au-white);
     border-left: 3.07818rem solid
     transparent;
   }
@@ -84,11 +84,11 @@ $au-brand-divider-rotation     : -19deg !default;
   @include au-font-size(1.8rem,1);
   display: none;
   position: relative;
-  font-family: $au-font;
-  font-weight: $au-medium;
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
   color: $au-brand-text;
   margin-left: $au-unit-tiny;
-  transition: color $au-transition;
+  transition: color var(--au-transition);
 
   .au-c-brand--tagline & {
     display: flex;
@@ -107,11 +107,11 @@ $au-brand-divider-rotation     : -19deg !default;
 
     .au-c-brand--link:hover &,
     .au-c-brand--link:focus & {
-      color: $au-blue-600;
+      color: var(--au-blue-600);
     }
 
     .au-c-brand--link:focus & {
-      outline: $au-outline;
+      outline: var(--au-outline);
     }
   }
 }
@@ -123,7 +123,7 @@ $au-brand-divider-rotation     : -19deg !default;
 
 .au-c-brand__tagline {
   @include au-font-size(1.2rem,1.2);
-  font-weight: $au-regular;
+  font-weight: var(--au-regular);
   display: block;
-  color: $au-gray-800;
+  color: var(--au-gray-800);
 }

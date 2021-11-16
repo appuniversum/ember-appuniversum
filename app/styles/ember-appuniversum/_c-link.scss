@@ -5,12 +5,16 @@
 /* Variables
    ========================================================================== */
 
-$au-link-color                       : $au-blue-600 !default;
-$au-link-hover-color                 : $au-blue-800 !default;
-$au-link-active-color                : $au-gray-900 !default;
-$au-link-secondary-color             : $au-gray-700 !default;
-$au-link-secondary-hover-color       : $au-gray-900 !default;
-$au-link-secondary-active-color      : $au-gray-900 !default;
+$au-link-color                           : var(--au-blue-600) !default;
+$au-link-color-underline                 : var(--au-blue-300) !default;
+$au-link-hover-color                     : var(--au-blue-800) !default;
+$au-link-hover-color-underline           : var(--au-blue-200) !default;
+$au-link-active-color                    : var(--au-gray-900)!default;
+$au-link-secondary-color                 : var(--au-gray-700) !default;
+$au-link-secondary-color-underline       : var(--au-gray-300) !default;
+$au-link-secondary-hover-color           : var(--au-gray-900) !default;
+$au-link-secondary-hover-color-underline : var(--au-gray-200) !default;
+$au-link-secondary-active-color          : var(--au-gray-900) !default;
 
 /* Component
   ========================================================================== */
@@ -18,10 +22,10 @@ $au-link-secondary-active-color      : $au-gray-900 !default;
 .au-c-link {
   display: inline-flex;
   align-items: center;
-  font-family: $au-font;
-  transition: color $au-transition, text-decoration $au-transition;
-  font-weight: $au-regular;
-  text-decoration-color: tint($au-link-color,70);
+  font-family: var(--au-font);
+  transition: color var(--au-transition), text-decoration var(--au-transition);
+  font-weight: var(--au-regular);
+  text-decoration-color: $au-link-color-underline;
 
   &,
   &:visited {
@@ -31,16 +35,16 @@ $au-link-secondary-active-color      : $au-gray-900 !default;
   &:hover,
   &:focus {
     color: $au-link-hover-color;
-    text-decoration-color: tint($au-link-hover-color,80);
+    text-decoration-color: $au-link-hover-color-underline;
   }
 
   &:focus {
-    outline: $au-outline;
-    outline-offset: $au-outline-offset;
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
   }
 
   &.is-active {
-    font-weight: $au-medium;
+    font-weight: var(--au-medium);
     color: $au-link-active-color;
     text-decoration: none;
     pointer-events: none;
@@ -55,13 +59,13 @@ $au-link-secondary-active-color      : $au-gray-900 !default;
   &,
   &:visited {
     color: $au-link-secondary-color;
-    text-decoration-color: tint($au-link-secondary-color,70);
+    text-decoration-color: $au-link-secondary-color-underline;
   }
 
   &:hover,
   &:focus {
     color: $au-link-secondary-hover-color;
-    text-decoration-color: tint($au-link-secondary-hover-color,80);
+    text-decoration-color: $au-link-secondary-hover-color-underline;
   }
 
   .is-active > & {
