@@ -3,36 +3,17 @@
    ================================== */
 
 .au-c-button-group  {
-  margin-top: -$au-unit-tiny;
-  margin-bottom: -$au-unit-tiny;
-
-  .au-c-button {
-    margin-right: $au-unit-tiny;
-    margin-top: $au-unit-tiny;
-    margin-bottom: $au-unit-tiny;
-  }
-
-  .au-c-button:last-child {
-    margin-right: 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: $au-unit-tiny;
 }
-
-.au-c-button-group  {
-  .au-c-button--large {
-    margin-right: $au-unit-small;
-  }
-
-  .au-c-button--large:last-child {
-    margin-right: 0;
-  }
-}
-
 
 /* Modifiers
 ========================================================================== */
 
 .au-c-button-group--inline {
-  display: flex;
+  gap: 0;
+  flex-wrap: nowrap;
 }
 
 .au-c-button-group--inline  {
