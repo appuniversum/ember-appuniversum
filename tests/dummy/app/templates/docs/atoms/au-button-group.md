@@ -18,6 +18,7 @@ Groups and spaces buttons
     </AuButtonGroup>
 
     <hr>
+    
     <AuButtonGroup>
       <AuButton @size="large">
         Large primary button in group
