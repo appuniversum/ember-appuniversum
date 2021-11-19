@@ -21,10 +21,10 @@ $hue-6-2: #e6c07b;
 .docs-demo__snippet-wrapper,
 .docs-bg-code-base {
   @include au-font-size($au-base);
-  font-family: $au-font-tertiary;
+  font-family: var(--au-font-tertiary);
   position: relative;
-  border-bottom-left-radius: $au-radius;
-  border-bottom-right-radius: $au-radius;
+  border-bottom-left-radius: var(--au-radius);
+  border-bottom-right-radius: var(--au-radius);
   overflow: hidden;
 
   button {
@@ -35,13 +35,13 @@ $hue-6-2: #e6c07b;
     position: absolute;
     top: 0;
     right: 0;
-    color: $au-gray-200;
-    background-color: $au-gray-800;
-    transition: $au-transition;
+    color: var(--au-gray-200);
+    background-color: var(--au-gray-800);
+    transition: var(--au-transition);
 
     &:hover,
     &:focus {
-      background-color: $au-gray-700;
+      background-color: var(--au-gray-700);
     }
   }
 }

@@ -5,10 +5,10 @@
 /* Variables
    ========================================================================== */
 
-$au-help-text-color             : $au-gray-800 !default;
-$au-help-text-secondary-color   : $au-gray-600 !default;
-$au-help-text-tertiary-color    : $au-gray-600 !default;
-$au-help-text-error-color       : $au-red-600 !default;
+$au-help-text-color             : var(--au-gray-800) !default;
+$au-help-text-secondary-color   : var(--au-gray-600) !default;
+$au-help-text-tertiary-color    : var(--au-gray-600) !default;
+$au-help-text-error-color       : var(--au-red-600) !default;
 $au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-small variable in appuniversum;
 $au-help-text-font-size-normal  : $au-base !default;
 $au-help-text-font-size-large   : $au-h6 !default;
@@ -50,5 +50,5 @@ $au-help-text-font-size-large   : $au-h6 !default;
 
 .au-c-help-text--error {
   color: $au-help-text-error-color;
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 }

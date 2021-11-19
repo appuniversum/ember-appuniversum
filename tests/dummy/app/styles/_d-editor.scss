@@ -5,11 +5,11 @@
 /* Variables
    ========================================================================== */
 
-$au-editor-link-color             : $au-blue-600 !default;
-$au-editor-link-hover-color       : $au-blue-700 !default;
-$au-editor-link-active-color      : $au-blue-900 !default;
-$au-editor-link-underline         : $au-blue-600 !default;
-$au-editor-link-underline-hover   : $au-blue-300 !default;
+$au-editor-link-color             : var(--au-blue-600) !default;
+$au-editor-link-hover-color       : var(--au-blue-700) !default;
+$au-editor-link-active-color      : var(--au-blue-900) !default;
+$au-editor-link-underline         : var(--au-blue-600) !default;
+$au-editor-link-underline-hover   : var(--au-blue-300) !default;
 
 
 /* Component
@@ -40,7 +40,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   > h4,
   > h5,
   > h6 {
-    font-family: $au-font-secondary;
+    font-family: var(--au-font-secondary);
   }
 
   > h1 a,
@@ -49,24 +49,24 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   > h4 a,
   > h5 a,
   > h6 a {
-    transition: color $au-transition, text-decoration $au-transition;
-    font-weight: $au-regular;
-    text-decoration-color: $au-gray-300;
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration-color: var(--au-gray-300);
 
     &,
     &:visited {
-      color: $au-gray-800;
+      color: var(--au-gray-800);
     }
 
     &:hover,
     &:focus {
-      color: $au-gray-700;
-      text-decoration-color: $au-gray-300;
+      color: var(--au-gray-700);
+      text-decoration-color: var(--au-gray-300);
     }
 
     &:focus {
-      outline: $au-outline;
-      outline-offset: $au-outline-offset;
+      outline: var(--au-outline);
+      outline-offset: var(--au-outline-offset);
     }
   }
 
@@ -76,17 +76,17 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
 
   > h2 {
     @include au-font-size($au-h4);
-    font-weight: $au-medium;
+    font-weight: var(--au-medium);
   }
 
   > h3 {
     @include au-font-size($au-h5);
-    font-weight: $au-medium;
+    font-weight: var(--au-medium);
   }
 
   > ul h3 {
     @include au-font-size($au-h6);
-    font-weight: $au-medium;
+    font-weight: var(--au-medium);
   }
 
   > h4,
@@ -106,7 +106,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     margin-top: $au-unit;
     margin-bottom: $au-unit;
     border: 0;
-    border-bottom: 3px solid $au-gray-200;
+    border-bottom: 3px solid var(--au-gray-200);
   }
 
   > * + blockquote {
@@ -120,8 +120,8 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   > blockquote {
     padding-top: $au-unit;
     padding-bottom: $au-unit;
-    border-top: 2px solid $au-gray-200;
-    border-bottom: 2px solid $au-gray-200;
+    border-top: 2px solid var(--au-gray-200);
+    border-bottom: 2px solid var(--au-gray-200);
   }
 
   > blockquote p {
@@ -142,7 +142,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   > blockquote p + p {
     @include au-font-size($au-base,1.5);
     margin-top: $au-unit-small;
-    font-weight: $au-medium;
+    font-weight: var(--au-medium);
   }
 
   > ul,
@@ -174,7 +174,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     top: .3ex;
     left: -$au-unit-small;
     font-size: .8em;
-    color: $au-gray-600;
+    color: var(--au-gray-600);
   }
 
   > ul li + li,
@@ -193,40 +193,40 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     top: .3ex;
     left: -$au-unit - $au-unit-tiny*.5;
     font-size: .8em;
-    color: $au-gray-600;
-    background-color: $au-gray-100;
+    color: var(--au-gray-600);
+    background-color: var(--au-gray-100);
     display: block;
     padding: 0 $au-unit-tiny;
-    border-radius: $au-radius;
+    border-radius: var(--au-radius);
   }
 
   code {
-    font-family: $au-font-tertiary;
-    font-weight: $au-light;
+    font-family: var(--au-font-tertiary);
+    font-weight: var(--au-light);
     padding-top: $au-unit-tiny;
     padding-bottom: $au-unit-tiny*0.5;
     padding-left: $au-unit-tiny*0.5;
     padding-right: $au-unit-tiny*0.5;
-    background-color: $au-gray-100;
-    border-radius: $au-radius;
-    border: 1px solid $au-gray-200;
+    background-color: var(--au-gray-100);
+    border-radius: var(--au-radius);
+    border: 1px solid var(--au-gray-200);
 
     &::-moz-selection {
-      background-color: $au-gray-200;
-      color: $au-gray-700;
+      background-color: var(--au-gray-200);
+      color: var(--au-gray-700);
     }
 
     &::selection {
-      background-color: $au-gray-200;
-      color: $au-gray-700;
+      background-color: var(--au-gray-200);
+      color: var(--au-gray-700);
     }
   }
 
   > pre {
-    background-color: $au-gray-800;
-    color: $au-white;
+    background-color: var(--au-gray-800);
+    color: var(--au-white);
     padding: $au-unit-small;
-    border-radius: $au-radius;
+    border-radius: var(--au-radius);
     margin-bottom: $au-unit;
 
     display: block;
@@ -253,7 +253,7 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   }
 
   strong {
-    font-weight: $au-medium;
+    font-weight: var(--au-medium);
   }
 
   > a:not(.au-c-button),
@@ -261,8 +261,8 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   > ol > li > a:not(.au-c-button),
   > p > a:not(.au-c-button),
   .docs-md__a {
-    transition: color $au-transition, text-decoration $au-transition;
-    font-weight: $au-regular;
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
     text-decoration-color: $au-editor-link-underline;
 
     &,
@@ -277,8 +277,8 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     }
 
     &:focus {
-      outline: $au-outline;
-      outline-offset: $au-outline-offset;
+      outline: var(--au-outline);
+      outline-offset: var(--au-outline-offset);
     }
 
     .is-active > & {
@@ -288,15 +288,15 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
   }
 
   > table {
-    border: .1rem solid $au-gray-200;
+    border: .1rem solid var(--au-gray-200);
     width: 100%;
 
     thead {
-      border-bottom: .2rem solid $au-gray-200;
+      border-bottom: .2rem solid var(--au-gray-200);
     }
 
     th {
-      font-weight: $au-medium;
+      font-weight: var(--au-medium);
     }
 
     th,
@@ -306,12 +306,12 @@ $au-editor-link-underline-hover   : $au-blue-300 !default;
     }
 
     tr + tr {
-      border-top: .1rem solid $au-gray-200;
+      border-top: .1rem solid var(--au-gray-200);
     }
 
     th + th,
     td + td {
-      border-left: .1rem solid $au-gray-200;
+      border-left: .1rem solid var(--au-gray-200);
     }
   }
 

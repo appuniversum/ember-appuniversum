@@ -5,9 +5,9 @@
 /* Variables
    ========================================================================== */
 
-$au-label-color                   : $au-gray-800 !default;
+$au-label-color                   : var(--au-gray-800) !default;
 $au-label-height                  : $au-unit-large - $au-unit-small !default;
-$au-label-error-badge-color       : $au-red-600 !default;
+$au-label-error-badge-color       : var(--au-red-600) !default;
 $au-label-error-badge-font-size   : 1.2rem !default;
 
 /* Component
@@ -16,8 +16,8 @@ $au-label-error-badge-font-size   : 1.2rem !default;
 .au-c-label {
   @include au-font-size($au-h6);
   color: $au-label-color;
-  font-family: $au-font;
-  font-weight: $au-medium;
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
   margin-bottom: $au-unit-tiny;
   display: flex;
   align-items: center;
@@ -30,9 +30,9 @@ $au-label-error-badge-font-size   : 1.2rem !default;
 .au-c-label__addendum {
   position: relative;
   bottom: .5ex;
-  font-weight: $au-regular;
+  font-weight: var(--au-regular);
   margin-left: $au-unit-tiny*.5;
-  color: $au-gray-500;
+  color: var(--au-gray-500);
 }
 
 /* Modifiers
@@ -40,7 +40,7 @@ $au-label-error-badge-font-size   : 1.2rem !default;
 
 .au-c-label--inline {
   margin-bottom: 0;
-  
+
   @include mq(small) {
     min-height: $au-label-height;
   }
@@ -56,7 +56,7 @@ $au-label-error-badge-font-size   : 1.2rem !default;
     flex: none;
     align-items: center;
     justify-content: center;
-    color: $au-white;
+    color: var(--au-white);
     position: relative;
     background-color: $au-label-error-badge-color;
     width: $au-unit-small * 1.5;

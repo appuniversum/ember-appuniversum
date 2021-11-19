@@ -3,24 +3,24 @@
    ================================== */
 
 .au-c-file-upload-box {
-  border: .1rem solid $au-gray-200;
-  background-color: $au-white;
+  border: .1rem solid var(--au-gray-200);
+  background-color: var(--au-white);
   margin-bottom: $au-unit;
 }
 
 .au-c-file-upload {
-  border: .2rem dashed $au-gray-300;
-  background-color: $au-white;
-  transition: background $au-transition;
+  border: .2rem dashed var(--au-gray-300);
+  background-color: var(--au-white);
+  transition: background var(--au-transition);
 
   &:hover {
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
   }
 
   &:focus,
   &:focus-within {
-    background-color: $au-gray-100;
-    outline: $au-outline;
+    background-color: var(--au-gray-100);
+    outline: var(--au-outline);
   }
 }
 
@@ -37,8 +37,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $au-gray-600;
-  background-color: $au-gray-100;
+  color: var(--au-gray-600);
+  background-color: var(--au-gray-100);
   padding: $au-unit + $au-unit-tiny/2 $au-unit-small;
 
   > .au-c-help-text {
@@ -52,14 +52,14 @@
   flex-direction: column;
   padding: $au-unit-small $au-unit-small;
   text-align: center;
-  transition: background-color $au-transition;
+  transition: background-color var(--au-transition);
 
   &,
   &:hover,
   &:visited,
   &:active {
     text-decoration: none;
-    color: $au-gray-800;
+    color: var(--au-gray-800);
   }
 }
 
@@ -68,12 +68,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: $au-blue-600;
+  color: var(--au-blue-600);
   text-decoration: underline;
-  text-decoration-color: tint($au-blue-600,70);
+  text-decoration-color: var(--au-blue-300);
 
   &:hover {
-    color: $au-blue-700;
-    text-decoration-color: tint($au-blue-800,80);
+    color: var(--au-blue-700);
+    text-decoration-color: var(--au-blue-200);
   }
 }

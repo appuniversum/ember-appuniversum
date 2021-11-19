@@ -37,18 +37,34 @@
 .au-c-button-group--inline {
   .au-c-button:not(.is-active) {
     text-decoration: underline;
-    text-decoration-color: tint($au-button-contrast-hover-color,60);
+    text-decoration-color: $au-button-link-color-underline;
+  }
+
+  .au-c-button:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
   }
 
   .au-c-button--secondary:not(.is-active) {
     text-decoration: underline;
-    text-decoration-color: tint($au-button-secondary-hover-color,60);
-    background: $au-white;
+    text-decoration-color: $au-button-link-color-underline;
+    background: var(--au-white);
+  }
+
+  .au-c-button--secondary:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
+    background: var(--au-white);
   }
 
   .au-c-button-link:not(.is-active) {
     text-decoration: underline;
-    text-decoration-color: tint($au-button-link-hover-color,60);
+    text-decoration-color: $au-button-link-color-underline;
+  }
+
+  .au-c-button-link:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
   }
 
   .au-c-button--link.is-active {

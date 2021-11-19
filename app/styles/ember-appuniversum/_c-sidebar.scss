@@ -5,8 +5,8 @@
 /* Variables
    ========================================================================== */
 
-$au-sidebar-background    : $au-gray-100 !default;
-$au-sidebar-border        : $au-gray-200 !default;
+$au-sidebar-background    : var(--au-gray-100) !default;
+$au-sidebar-border        : var(--au-gray-200) !default;
 $au-sidebar-header-padding: $au-unit-small !default;
 $au-sidebar-footer-padding: $au-unit !default;
 
@@ -58,7 +58,7 @@ $au-sidebar-footer-padding: $au-unit !default;
 
   @include mq(small) {
     &.au-c-sidebar__footer--border-top {
-      border-top: 1px solid $au-gray-300;
+      border-top: 1px solid var(--au-gray-300);
     }
   }
 }

@@ -34,7 +34,7 @@ $au-modal-backdrop-z-index : 9998 !default;
 
 // Modal Dialog base styling
 .au-c-modal {
-  background: $au-white;
+  background: var(--au-white);
   margin: auto;
   height: auto;
   max-height: calc(100% - #{$au-unit});
@@ -52,10 +52,10 @@ $au-modal-backdrop-z-index : 9998 !default;
   top: 50%;
   transform: translateY(-50%);
   visibility: visible;
-  border-radius: $au-radius;
+  border-radius: var(--au-radius);
   z-index: $au-modal-z-index;
   box-shadow: 0 1px 3px rgba($au-gray-1000, .1), 0 4px 20px rgba($au-gray-1000, .035), 0 1px 1px rgba($au-gray-1000, .025);
-  transition: $au-transition;
+  transition: var(--au-transition);
   display: none;
 
   &:focus {
@@ -91,7 +91,7 @@ $au-modal-backdrop-z-index : 9998 !default;
   justify-content: space-between;
   align-items: center;
   padding: $au-unit-small;
-  border-bottom: 1px solid $au-gray-300;
+  border-bottom: 1px solid var(--au-gray-300);
 
   @include mq(medium) {
     padding: $au-unit;
@@ -100,8 +100,8 @@ $au-modal-backdrop-z-index : 9998 !default;
 
 .au-c-modal__title {
   @include au-font-size($au-h3);
-  font-family: $au-font-secondary;
-  font-weight: $au-medium;
+  font-family: var(--au-font-secondary);
+  font-weight: var(--au-medium);
 
   &:focus {
     outline: 0;
@@ -116,16 +116,16 @@ $au-modal-backdrop-z-index : 9998 !default;
   border: 0;
   padding: 0;
   text-align: center;
-  color: $au-gray-700;
-  transition: color $au-transition;
+  color: var(--au-gray-700);
+  transition: color var(--au-transition);
 
   &:hover,
   &:focus {
-    color: $au-gray-600;
+    color: var(--au-gray-600);
   }
 
   &:focus {
-    outline: $au-outline;
+    outline: var(--au-outline);
   }
 }
 
@@ -133,7 +133,7 @@ $au-modal-backdrop-z-index : 9998 !default;
   flex-grow: 1;
   position: relative;
   height: calc(100% - #{$au-unit-large + $au-unit-small});
-  background-color: $au-white;
+  background-color: var(--au-white);
   overflow: auto;
   padding: $au-unit-small;
 
@@ -148,7 +148,7 @@ $au-modal-backdrop-z-index : 9998 !default;
 
 .au-c-modal__footer {
   padding: $au-unit-small;
-  border-top: 1px solid $au-gray-300;
+  border-top: 1px solid var(--au-gray-300);
 
   @include mq(medium) {
     padding: $au-unit;

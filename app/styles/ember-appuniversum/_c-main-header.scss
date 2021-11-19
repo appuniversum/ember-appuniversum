@@ -5,19 +5,21 @@
 /* Variables
    ========================================================================== */
 
-$au-main-header-bg                : $au-white !default;
-$au-main-header-border            : $au-gray-300 !default;
-$au-main-header-color             : $au-gray-800 !default;
-$au-main-header-hover-color       : $au-gray-700 !default;
-$au-main-header-active-color      : $au-blue-900 !default;
-$au-main-header-divider-rotation  : -19deg !default;
+$au-main-header-bg                    : var(--au-white) !default;
+$au-main-header-border                : var(--au-gray-300) !default;
+$au-main-header-color                 : var(--au-gray-800) !default;
+$au-main-header-color-underline       : var(--au-gray-300) !default;
+$au-main-header-hover-color           : var(--au-gray-700) !default;
+$au-main-header-hover-color-underline : var(--au-gray-200) !default;
+$au-main-header-active-color          : var(--au-blue-900) !default;
+$au-main-header-divider-rotation      : -19deg !default;
 
 /* Component
    ========================================================================== */
 
 .au-c-main-header {
   position: relative;
-  z-index: $au-z-index-alpha;
+  z-index: var(--au-z-index-alpha);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,13 +36,13 @@ $au-main-header-divider-rotation  : -19deg !default;
 
 .au-c-main-header__title {
   @include au-font-size($au-base,1);
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
   text-transform: uppercase;
   position: relative;
   display: block;
   padding: $au-unit-tiny;
   color: $au-main-header-color;
-  transition: color $au-transition, text-decoration-color $au-transition;
+  transition: color var(--au-transition), text-decoration-color var(--au-transition);
   letter-spacing: .03ex;
   white-space: nowrap;
   overflow: hidden;
@@ -81,45 +83,45 @@ $au-main-header-divider-rotation  : -19deg !default;
   &,
   &:visited {
     color: $au-main-header-color;
-    text-decoration-color: tint($au-main-header-color,70);
+    text-decoration-color: $au-main-header-color-underline;
   }
 
   &:hover,
   &:focus {
     color: $au-main-header-hover-color;
     text-decoration: underline;
-    text-decoration-color: tint($au-main-header-hover-color,80);
+    text-decoration-color: $au-main-header-hover-color-underline;
   }
 
   &:focus {
-    outline: $au-outline;
+    outline: var(--au-outline);
   }
 }
 
 .au-c-main-header__skiplink {
   @include au-font-size($au-base,1);
-  font-weight: $au-regular;
+  font-weight: var(--au-regular);
   position: absolute;
-  transition: color $au-transition;
+  transition: color var(--au-transition);
   letter-spacing: .03ex;
   margin-left: $au-unit-small;
   padding: $au-unit-tiny;
-  background-color: $au-gray-100;
-  border-radius: $au-radius;
-  z-index: $au-z-index-alpha;
+  background-color: var(--au-gray-100);
+  border-radius: var(--au-radius);
+  z-index: var(--au-z-index-alpha);
   top: -1000px;
   left: -1000px;
 
   &,
   &:hover,
   &:focus {
-    color: $au-gray-800;
+    color: var(--au-gray-800);
     text-decoration: underline;
-    text-decoration-color: tint($au-gray-800,80);
+    text-decoration-color: var(--au-gray-300);
   }
 
   &:focus {
-    outline: $au-outline;
+    outline: var(--au-outline);
     top: $au-unit-large;
     left: -$au-unit-tiny;
   }
