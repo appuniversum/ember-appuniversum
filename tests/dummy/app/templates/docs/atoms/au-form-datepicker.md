@@ -39,7 +39,7 @@
     <AuDatePicker @label="Choose a date" @error={{true}} />
     <AuHelpText @error={{true}}>Please choose a date.</AuHelpText>
   {{/demo.example}}
-  {{demo.snippet 'au-date-picker-disabled.hbs'}}
+  {{demo.snippet 'au-date-picker-error.hbs'}}
 {{/docs-demo}}
 
 ## Disabled
