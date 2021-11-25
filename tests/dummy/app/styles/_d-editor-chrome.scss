@@ -14,13 +14,13 @@ $au-brand-divider-rotation     : -20deg !default;
 .au-c-app-chrome {
   position: relative;
   z-index: 8;
-  background-color: $au-white;
+  background-color: var(--au-white);
   box-shadow: 0 1px 3px rgba($au-gray-900, .1), 0 4px 20px rgba($au-gray-900, .035), 0 1px 1px rgba($au-gray-900, .025);
 }
 
 .au-c-app-chrome__entity {
   position: relative;
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
   padding-left: $au-unit-small;
   margin-left: $au-unit-small;
 
@@ -33,7 +33,7 @@ $au-brand-divider-rotation     : -20deg !default;
     transform: rotate($au-brand-divider-rotation);
     width: .1rem;
     height: 2.3rem;
-    background-color: $au-gray-300;
+    background-color: var(--au-gray-300);
   }
 }
 
@@ -43,7 +43,7 @@ $au-brand-divider-rotation     : -20deg !default;
   align-items: center;
   height: $au-unit;
   line-height: $au-unit;
-  color: $au-gray-600;
+  color: var(--au-gray-600);
   padding: $au-unit-tiny/2;
 }
 
@@ -58,7 +58,7 @@ $au-brand-divider-rotation     : -20deg !default;
   white-space: nowrap;
   padding: 0 $au-unit-tiny/2;
   border: .1rem solid transparent;
-  border-radius: $au-radius;
+  border-radius: var(--au-radius);
   max-width: $au-unit-huge * 3.5;
 
   .au-c-button {
@@ -96,22 +96,22 @@ $au-brand-divider-rotation     : -20deg !default;
 }
 
 .au-c-app-chrome__title--edit {
-  transition: color $au-transition, border $au-transition;
-  color: $au-gray-800;
+  transition: color var(--au-transition), border var(--au-transition);
+  color: var(--au-gray-800);
 
   &:hover,
   &:focus {
-    color: $au-gray-700;
-    border: .1rem solid $au-gray-200;
+    color: var(--au-gray-700);
+    border: .1rem solid var(--au-gray-200);
   }
 
   &:focus {
-    outline: .2rem dashed $au-yellow-400;
+    outline: .2rem dashed var(--au-yellow-400);
   }
 }
 
 .au-c-app-chrome__title-fade {
-  color: $au-gray-600;
+  color: var(--au-gray-600);
 }
 
 .au-c-app-chrome__title-group {
@@ -146,17 +146,17 @@ $au-brand-divider-rotation     : -20deg !default;
 
 .au-c-app-chrome__title-input {
   @include au-font-size($au-h4);
-  font-family: $au-font;
+  font-family: var(--au-font);
   display: block;
   width: 100%;
   padding: 0 $au-unit-tiny/2;
   height: $au-unit + $au-unit-small;
   line-height: $au-unit + $au-unit-small;
-  border: .1rem solid $au-gray-300;
-  border-radius: $au-radius;
+  border: .1rem solid var(--au-gray-300);
+  border-radius: var(--au-radius);
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
-  color: $au-gray-800;
+  color: var(--au-gray-800);
 
   &:focus {
     outline: 0;
@@ -164,18 +164,18 @@ $au-brand-divider-rotation     : -20deg !default;
 }
 
 .au-c-button.au-c-app-chrome__title-button {
-  border-color: $au-gray-300;
-  border-top-right-radius: $au-radius;
-  border-bottom-right-radius: $au-radius;
+  border-color: var(--au-gray-300);
+  border-top-right-radius: var(--au-radius);
+  border-bottom-right-radius: var(--au-radius);
   border-left: 0;
   padding-left: $au-unit-tiny;
   padding-right: $au-unit-tiny;
 
   &:hover {
-    border-color: $au-gray-300;
+    border-color: var(--au-gray-300);
     box-shadow: none;
-    background-color: $au-gray-100;
-    color: $au-gray-800;
+    background-color: var(--au-gray-100);
+    color: var(--au-gray-800);
   }
 
   .au-c-icon {

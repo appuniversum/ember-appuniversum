@@ -5,13 +5,13 @@
 /* Variables
    ========================================================================== */
 
-$au-dropdown-color             : $au-blue-600 !default;
-$au-dropdown-hover-color       : $au-blue-800 !default;
-$au-dropdown-active-color      : $au-blue-600 !default;
-$au-dropdown-visited-color     : $au-blue-900 !default;
-$au-dropdown-active-color      : $au-blue-900 !default;
-$au-dropdown-underline         : $au-blue-600 !default;
-$au-dropdown-underline-hover   : $au-blue-300 !default;
+$au-dropdown-color             : var(--au-blue-600) !default;
+$au-dropdown-hover-color       : var(--au-blue-800) !default;
+$au-dropdown-active-color      : var(--au-blue-600) !default;
+$au-dropdown-visited-color     : var(--au-blue-900) !default;
+$au-dropdown-active-color      : var(--au-blue-900) !default;
+$au-dropdown-underline         : var(--au-blue-600) !default;
+$au-dropdown-underline-hover   : var(--au-blue-300) !default;
 $au-dropdown-caret-size        : .4rem !default;
 
 /* Component
@@ -24,16 +24,16 @@ $au-dropdown-caret-size        : .4rem !default;
 
 .au-c-dropdown__toggle {
   @include au-font-size($au-base,1.2);
-  font-weight: $au-regular;
+  font-weight: var(--au-regular);
   color: $au-dropdown-color;
   display: flex;
   align-items: center;
   position: relative;
   padding: $au-unit-tiny;
-  border-radius: $au-radius;
+  border-radius: var(--au-radius);
 
   &:focus-within {
-    outline: $au-outline;
+    outline: var(--au-outline);
   }
 
   &,
@@ -45,12 +45,12 @@ $au-dropdown-caret-size        : .4rem !default;
   &:focus,
   &:focus-within {
     color: $au-dropdown-hover-color;
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
   }
 
   &:focus,
   &:focus-within {
-    outline: $au-outline;
+    outline: var(--au-outline);
   }
 
   .au-c-dropdown--left & {
@@ -111,11 +111,11 @@ $au-dropdown-caret-size        : .4rem !default;
 
 .au-c-dropdown__menu {
   @include au-font-size($au-base,1.5);
-  font-family: $au-font;
-  font-weight: $au-regular;
+  font-family: var(--au-font);
+  font-weight: var(--au-regular);
   position: absolute;
-  z-index: $au-z-index-beta;
-  background-color: $au-white;
+  z-index: var(--au-z-index-beta);
+  background-color: var(--au-white);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -125,7 +125,7 @@ $au-dropdown-caret-size        : .4rem !default;
   width: auto;
   top: $au-unit + $au-unit-tiny;
   box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
-  border-radius: $au-radius;
+  border-radius: var(--au-radius);
   display: none;
 
   &:before,
@@ -144,12 +144,12 @@ $au-dropdown-caret-size        : .4rem !default;
 
   &:before {
     border-color: rgba($au-white, 0);
-    border-bottom-color: $au-gray-200;
+    border-bottom-color: var(--au-gray-200);
   }
 
   &:after {
     border-color: rgba($au-white, 0);
-    border-bottom-color: $au-white;
+    border-bottom-color: var(--au-white);
   }
 
   &:focus {
@@ -194,29 +194,29 @@ $au-dropdown-caret-size        : .4rem !default;
   text-decoration: none;
 
   &:first-child {
-    border-top-right-radius: $au-radius;
-    border-top-left-radius: $au-radius;
+    border-top-right-radius: var(--au-radius);
+    border-top-left-radius: var(--au-radius);
   }
 
   &:last-child {
-    border-bottom-right-radius: $au-radius;
-    border-bottom-left-radius: $au-radius;
+    border-bottom-right-radius: var(--au-radius);
+    border-bottom-left-radius: var(--au-radius);
   }
 
   &.active {
-    color: $au-gray-800;
-    background-color: $au-gray-100;
-    font-weight: $au-medium;
-    outline-offset: $au-outline-offset-negative;
+    color: var(--au-gray-800);
+    background-color: var(--au-gray-100);
+    font-weight: var(--au-medium);
+    outline-offset: var(--au-outline-offset-negative);
   }
 
   &:focus,
   &.active:focus {
-    outline: $au-outline;
-    outline-offset: $au-outline-offset-negative;
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset-negative);
   }
 }
 
 .au-c-dropdown__menu [role="menuitem"] + [role="menuitem"] {
-  border-top: 1px dotted $au-gray-300;
+  border-top: 1px dotted var(--au-gray-300);
 }

@@ -7,8 +7,8 @@
 
 $au-toolbar-spacing         : $au-unit-small !default;
 $au-toolbar-border-width    : .1rem !default;
-$au-toolbar-border-color    : $au-gray-200 !default;
-$au-toolbar-tint            : $au-gray-100 !default;
+$au-toolbar-border-color    : var(--au-gray-200) !default;
+$au-toolbar-tint            : var(--au-gray-100) !default;
 $au-toolbar-font-size       : $au-h6 !default;
 
 /* Component
@@ -47,10 +47,12 @@ $au-toolbar-font-size       : $au-h6 !default;
 
 .au-c-toolbar--top {
   border-top: $au-toolbar-border-width solid $au-toolbar-border-color;
+  padding-top: $au-unit-tiny;
 }
 
 .au-c-toolbar--bottom {
   border-bottom: $au-toolbar-border-width solid $au-toolbar-border-color;
+  padding-bottom: $au-unit-tiny;
 }
 
 .au-c-toolbar--tint {
@@ -63,7 +65,7 @@ $au-toolbar-font-size       : $au-h6 !default;
 }
 
 .au-c-toolbar--medium {
-  padding: 0 $au-toolbar-spacing*1.5;
+  padding: $au-toolbar-spacing*.5 $au-toolbar-spacing*1.5;
 }
 
 .au-c-toolbar--large {

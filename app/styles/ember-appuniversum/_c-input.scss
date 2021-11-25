@@ -6,11 +6,11 @@
    ========================================================================== */
 
 $au-input-height                    : $au-unit-large - $au-unit-small !default;
-$au-input-color                     : $au-gray-1000 !default;
-$au-input-border-color              : $au-gray-300 !default;
-$au-input-disabled-background-color : $au-gray-100 !default;
-$au-input-disabled-border-color     : $au-gray-300 !default;
-$au-input-disabled-color            : $au-gray-700 !default;
+$au-input-color                     : var(--au-gray-1000) !default;
+$au-input-border-color              : var(--au-gray-300) !default;
+$au-input-disabled-background-color : var(--au-gray-100) !default;
+$au-input-disabled-border-color     : var(--au-gray-300) !default;
+$au-input-disabled-color            : var(--au-gray-700) !default;
 $au-input-font-size                 : $au-h6 !default;
 $au-input-border-radius             : .3rem !default;
 
@@ -22,8 +22,8 @@ $au-input-border-radius             : .3rem !default;
   border: .1rem solid $au-input-border-color;
   color: $au-input-color;
   font-size: $au-input-font-size;
-  font-weight: $au-regular;
-  font-family: $au-font;
+  font-weight: var(--au-regular);
+  font-family: var(--au-font);
   height: $au-input-height;
   max-width: 100%;
   padding: 0 $au-unit-small .1ex;
@@ -40,8 +40,8 @@ $au-input-border-radius             : .3rem !default;
 .au-c-input:focus {
   outline: none;
   border-width: .1rem !important; // Temporary overide for Webuniversum
-  border-color: rgba($au-blue-600,.65) !important; // Temporary overide for Webuniversum
-  box-shadow: inset 0 0 0 .2rem rgba($au-blue-600,.65) !important; // Temporary overide for Webuniversum
+  border-color: var(--au-outline-color) !important; // Temporary overide for Webuniversum
+  box-shadow: inset 0 0 0 .2rem var(--au-outline-color) !important; // Temporary overide for Webuniversum
 }
 
 // Wrapper for positioning icons on an input field
@@ -87,6 +87,6 @@ $au-input-border-radius             : .3rem !default;
 }
 
 .au-c-input--error {
-  border-color: $au-red-600;
-  box-shadow: inset 0 0 0 .2rem $au-red-600;
+  border-color: var(--au-red-600);
+  box-shadow: inset 0 0 0 .2rem var(--au-red-600);
 }

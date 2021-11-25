@@ -5,10 +5,10 @@
 /* Variables
    ========================================================================== */
 
-$au-card-border-color                         : $au-gray-200 !default;
-$au-card-standout-border-color                : $au-gray-300 !default;
-$au-card-standout-color                       : $au-gray-100 !default;
-$au-card-radius                               : $au-radius !default;
+$au-card-border-color                         : var(--au-gray-200) !default;
+$au-card-standout-border-color                : var(--au-gray-300) !default;
+$au-card-standout-color                       : var(--au-gray-100) !default;
+$au-card-radius                               : var(--au-radius) !default;
 
 /* Component
   ========================================================================== */
@@ -16,7 +16,7 @@ $au-card-radius                               : $au-radius !default;
 .au-c-card {
   display: flex;
   flex-direction: column;
-  background-color: $au-white;
+  background-color: var(--au-white);
   border: .1rem solid $au-card-border-color;
   border-radius: $au-card-radius;
 }
@@ -89,21 +89,21 @@ $au-card-radius                               : $au-radius !default;
 
 .au-c-card__footer {
   .au-c-card--shadow & {
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
   }
 }
 
 .au-c-card__clickable {
   display: flex;
   justify-content: space-between;
-  transition: background-color $au-transition;
+  transition: background-color var(--au-transition);
 
   .au-c-card--shadow & {
     justify-content: flex-start;
   }
 
   &:hover {
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
   }
 
   .au-card__header {

@@ -7,15 +7,15 @@
    ========================================================================== */
 
 :root {
-  --duet-color-primary: #{$au-blue-600};
-  --duet-color-text: #{$au-gray-1000};
-  --duet-color-text-active: #{$au-white};
-  --duet-color-placeholder:#{$au-gray-700};
-  --duet-color-button: #{$au-white};
-  --duet-color-surface: #{$au-white};
+  --duet-color-primary: #{var(--au-blue-600)};
+  --duet-color-text: #{var(--au-gray-1000)};
+  --duet-color-text-active: #{var(--au-white)};
+  --duet-color-placeholder:#{var(--au-gray-700)};
+  --duet-color-button: #{var(--au-white)};
+  --duet-color-surface: #{var(--au-white)};
   --duet-color-overlay: rgba(0, 0, 0, 0.8);
 
-  --duet-font: #{$au-font};
+  --duet-font: #{var(--au-font)};
   --duet-font-normal: 400;
   --duet-font-bold: 500;
 
@@ -31,46 +31,53 @@
 .duet-date__dialog {
   left: auto;
   right: 0;
-  min-width: 290px;
+  min-width: 220px;
+  max-width: 220px;
+}
+
+.duet-date__dialog-content {
+  min-width: 220px;
+  max-width: 220px;
+  padding: $au-unit-tiny * .5 $au-unit-tiny $au-unit-tiny;
 }
 
 .duet-date__input {
   height: $au-unit-large - $au-unit-small;
-  border-color: $au-gray-300;
+  border-color: var(--au-gray-300);
 
   &:focus {
     outline: none;
     border-width: .1rem !important; // Temporary overide for Webuniversum
-    border-color: rgba($au-blue-600,.65) !important; // Temporary overide for Webuniversum
-    box-shadow: 0 0 0 .2rem rgba($au-blue-600,.65) !important; // Temporary overide for Webuniversum
+    border-color: var(--au-outline-color) !important; // Temporary overide for Webuniversum
+    box-shadow: 0 0 0 .2rem var(--au-outline-color) !important; // Temporary overide for Webuniversum
   }
 }
 
 .duet-date__input[disabled=""] {
-  background-color: $au-gray-100;
+  background-color: var(--au-gray-100);
 }
 
 .duet-date__toggle {
   width: $au-unit + $au-unit-small;
-  transition: background $au-transition;
+  transition: background var(--au-transition);
 
   &,
   &:focus {
     box-shadow: none;
-    border-left: .1rem solid $au-gray-300;
+    border-left: .1rem solid var(--au-gray-300);
   }
 
   &:focus {
-    outline: $au-outline;
-    outline-offset: $au-outline-offset;
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
   }
 
   &:hover {
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
   }
 
   &[disabled=""] {
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
     cursor: default;
   }
 }
@@ -92,40 +99,47 @@
   font-size: 1.2rem;
 }
 
-.duet-date__day.is-today {
-  box-shadow: 0 0 0 1px $au-blue-700;
+.duet-date__cell {
+  padding-top: $au-unit-tiny * .25;
+  padding-bottom: $au-unit-tiny * .25;
 }
 
-[aria-selected="true"] .duet-date__day,  {
-  background: $au-blue-700;
+.duet-date__day.is-today {
+  box-shadow: 0 0 0 1px var(--au-blue-700);
+}
+
+[aria-selected="true"] .duet-date__day {
+  background: var(--au-blue-700);
 }
 
 .duet-date__day {
   font-size: 1.4rem;
   line-height: 1;
+  width: 26px;
+  height: 26px;
 }
 
 .duet-date__day:focus {
-  color: $au-blue-700;
-  background-color: $au-blue-200;
-  border: .2rem solid $au-blue-300;
+  color: var(--au-blue-700);
+  background-color: var(--au-blue-200);
+  border: .2rem solid var(--au-blue-300);
   box-shadow: none;
 }
 
 .duet-date__day:active {
-  color: $au-white;
-  background: $au-blue-700;
-  box-shadow: 0 0 5px $au-blue-700;
+  color: var(--au-white);
+  background: var(--au-blue-700);
+  box-shadow: 0 0 5px var(--au-blue-700);
 }
 
 .duet-date__day:hover::before, .duet-date__day.is-today::before {
-  background: $au-blue-700;
+  background: var(--au-blue-700);
 }
 
 /* Modifiers
   ========================================================================== */
 
 .duet-date-error .duet-date__input {
-  border-color: $au-red-600;
-  box-shadow: 0 0 0 .2rem $au-red-600;
+  border-color: var(--au-red-600);
+  box-shadow: 0 0 0 .2rem var(--au-red-600);
 }

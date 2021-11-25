@@ -1,6 +1,6 @@
 {
   "name": "@appuniversum/ember-appuniversum",
-  "version": "0.6.4",
+  "version": "0.6.6",
   "description": "Ember addon wrapping the appuniversum components.",
   "keywords": [
     "ember-addon"
@@ -32,24 +32,25 @@
     "prepare": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg"
   },
   "dependencies": {
-    "@appuniversum/appuniversum": "0.1.5",
+    "@appuniversum/appuniversum": "0.2.1",
     "@duetds/date-picker": "^1.0.4",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "@zestia/ember-auto-focus": "^4.1.0",
     "caniuse-lite": "^1.0.30001192",
     "date-fns": "^2.22.1",
-    "ember-auto-import": "^1.11.3",
+    "ember-auto-import": "^2.2.4",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
     "ember-data-table": "^2.0.1",
     "ember-file-upload": "^4.0.1",
-    "ember-focus-trap": "^0.7.0",
+    "ember-focus-trap": "^0.8.0",
     "ember-in-element-polyfill": "^1.0.0",
     "ember-modifier": "^2.1.2",
     "ember-named-blocks-polyfill": "^0.2.4",
     "ember-prop-modifier": "^1.0.1",
-    "ember-test-selectors": "^6.0.0"
+    "ember-test-selectors": "^6.0.0",
+    "webpack": "^5.64.4"
   },
   "optionalDependencies": {
     "ember-concurrency": "2.x",

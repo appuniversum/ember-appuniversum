@@ -14,8 +14,8 @@
   overflow: hidden;
   max-height: 40rem;
   min-height: 10rem;
-  color: $au-gray-900;
-  background-color: $au-yellow-300;
+  color: var(--au-gray-900);
+  background-color: var(--au-yellow-300);
 }
 
 .au-c-content-header__bg {
@@ -44,7 +44,7 @@
     top: 50%;
     transform: translateY(-50%);
     border-bottom: 40rem solid
-    $au-yellow-300;
+    var(--au-yellow-300);
     border-right: 13.68rem solid
     transparent;
   }
@@ -68,7 +68,7 @@
 .au-c-content-header__top,
 .au-c-content-header__bottom {
   @include au-font-size($au-h4,1);
-  font-family: $au-font;
+  font-family: var(--au-font);
   display: inline-block;
   max-width: 60%;
 
@@ -79,11 +79,11 @@
 }
 
 .au-c-content-header__top {
-  font-weight: $au-regular;
+  font-weight: var(--au-regular);
 }
 
 .au-c-content-header__bottom {
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 }
 
 
@@ -101,7 +101,7 @@
 
   .au-c-content-header__top,
   .au-c-content-header__bottom {
-    background: $au-white;
+    background: var(--au-white);
     display: inline;
     padding: 0.4rem 0.5rem;
   }

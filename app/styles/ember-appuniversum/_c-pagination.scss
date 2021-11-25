@@ -10,7 +10,7 @@
 
 .au-c-pagination {
   @include au-font-size($au-h6);
-  color: $au-gray-700;
+  color: var(--au-gray-700);
   display: flex;
   justify-content: space-between;
 }
@@ -24,6 +24,6 @@
   & + & {
     margin-left: $au-unit-tiny;
     padding-left: $au-unit-tiny;
-    border-left: .1rem solid $au-gray-200;
+    border-left: .1rem solid var(--au-gray-200);
   }
 }

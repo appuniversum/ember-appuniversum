@@ -8,13 +8,13 @@ $au-toggle-switch-height                         : 2rem         !default;
 $au-toggle-switch-width                          : 2rem         !default;
 $au-toggle-switch-border-radius                  : 1rem         !default;
 $au-toggle-switch-border-width                   : .1rem        !default;
-$au-toggle-switch-border-color                   : $au-gray-300 !default;
-$au-toggle-switch-color                          : $au-white !default;
-$au-toggle-switch-background-color               : $au-gray-200 !default;
-$au-toggle-switch-color-disabled                 : $au-gray-200 !default;
-$au-toggle-switch-background-color-disabled      : $au-gray-300 !default;
-$au-toggle-switch-background-color-on            : $au-blue-600 !default;
-$au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
+$au-toggle-switch-border-color                   : var(--au-gray-300) !default;
+$au-toggle-switch-color                          : var(--au-white) !default;
+$au-toggle-switch-background-color               : var(--au-gray-200) !default;
+$au-toggle-switch-color-disabled                 : var(--au-gray-200) !default;
+$au-toggle-switch-background-color-disabled      : var(--au-gray-300) !default;
+$au-toggle-switch-background-color-on            : var(--au-blue-600) !default;
+$au-toggle-switch-background-color-on-disabled   : var(--au-gray-400) !default;
 
 /* Component
   ========================================================================== */
@@ -32,7 +32,7 @@ $au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
   width: $au-toggle-switch-width * 1.5;
   background-color: $au-toggle-switch-background-color;
   border-radius: $au-toggle-switch-border-radius;
-  transition: transform $au-transition, color $au-transition;
+  transition: transform var(--au-transition), color var(--au-transition);
 
   &:before {
     content: '';
@@ -44,7 +44,7 @@ $au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
     border: $au-toggle-switch-border-width solid $au-toggle-switch-border-color;
     left: -.1rem;
     top: -.2rem;
-    transition: transform $au-transition;
+    transition: transform var(--au-transition);
   }
 
   .is-disabled & {
@@ -60,13 +60,13 @@ $au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
 
 .au-c-toggle-switch__label {
   @include au-font-size($au-h6);
-  color: $au-gray-700;
-  font-family: $au-font;
-  font-weight: $au-regular;
+  color: var(--au-gray-700);
+  font-family: var(--au-font);
+  font-weight: var(--au-regular);
   margin-left: $au-unit-tiny;
 
   .is-disabled & {
-    color: $au-gray-600;
+    color: var(--au-gray-600);
   }
 }
 
@@ -86,6 +86,6 @@ $au-toggle-switch-background-color-on-disabled   : $au-gray-400 !default;
 
 // Focus
 .au-c-toggle-switch__input:focus + .au-c-toggle-switch__toggle {
-  outline: $au-outline;
-  outline-offset: $au-outline-offset;
+  outline: var(--au-outline);
+  outline-offset: var(--au-outline-offset);
 }
