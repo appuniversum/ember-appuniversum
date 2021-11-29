@@ -28,8 +28,8 @@ $au-heading-6-small : $au-base !default;
 
 .au-c-heading--1 {
   @include au-font-size($au-heading-1-small);
-  font-family: $au-font-secondary;
-  font-weight: $au-light;
+  font-family: var(--au-font-secondary);
+  font-weight: var(--au-light);
 
   @include mq(small) {
     @include au-font-size($au-heading-1);
@@ -38,8 +38,8 @@ $au-heading-6-small : $au-base !default;
 
 .au-c-heading--2 {
   @include au-font-size($au-heading-2-small);
-  font-family: $au-font-secondary;
-  font-weight: $au-light;
+  font-family: var(--au-font-secondary);
+  font-weight: var(--au-light);
 
   @include mq(small) {
     @include au-font-size($au-heading-2);
@@ -48,8 +48,8 @@ $au-heading-6-small : $au-base !default;
 
 .au-c-heading--3 {
   @include au-font-size($au-heading-3-small);
-  font-family: $au-font-secondary;
-  font-weight: $au-medium;
+  font-family: var(--au-font-secondary);
+  font-weight: var(--au-medium);
 
   @include mq(small) {
     @include au-font-size($au-heading-3);
@@ -58,7 +58,7 @@ $au-heading-6-small : $au-base !default;
 
 .au-c-heading--4 {
   @include au-font-size($au-heading-4-small);
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 
   @include mq(small) {
     @include au-font-size($au-heading-4);
@@ -67,7 +67,7 @@ $au-heading-6-small : $au-base !default;
 
 .au-c-heading--5 {
   @include au-font-size($au-heading-5-small);
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 
   @include mq(small) {
     @include au-font-size($au-heading-5);
@@ -76,7 +76,7 @@ $au-heading-6-small : $au-base !default;
 
 .au-c-heading--6 {
   @include au-font-size($au-heading-6-small);
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 
   @include mq(small) {
     @include au-font-size($au-heading-6);

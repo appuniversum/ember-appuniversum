@@ -17,6 +17,8 @@ export default class AuModal extends Component {
   get size() {
     if (this.args.size === "fullscreen")
       return "au-c-modal--fullscreen";
+      if (this.args.size === "large")
+      return "au-c-modal--large";
     else
       return "";
   }

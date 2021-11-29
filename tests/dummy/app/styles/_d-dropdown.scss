@@ -17,7 +17,7 @@
   &:focus,
   &:focus-within {
     color: $au-dropdown-hover-color;
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
   }
 
   &:focus {
@@ -27,13 +27,13 @@
 
   .au-d-dropdown__toggle {
     @include au-font-size($au-base,1);
-    font-weight: $au-regular;
+    font-weight: var(--au-regular);
     color: $au-dropdown-color;
     display: flex;
     align-items: center;
     position: relative;
     padding: $au-unit-tiny;
-    border-radius: $au-radius;
+    border-radius: var(--au-radius);
   }
 
   .au-d-dropdown__name {
@@ -89,8 +89,8 @@
 
   .au-d-dropdown-list__link {
     @include au-font-size($au-base,1.5);
-    font-family: $au-font;
-    font-weight: $au-regular;
+    font-family: var(--au-font);
+    font-weight: var(--au-regular);
     padding: $au-unit-tiny $au-unit-small;
     border: 0;
     appearance: none;
@@ -101,22 +101,22 @@
     white-space: nowrap;
     text-underline-offset: .3ex;
     text-decoration: underline;
-    text-decoration-color: $au-gray-300;
-    color: $au-gray-800;
+    text-decoration-color: var(--au-gray-300);
+    color: var(--au-gray-800);
     background-color: transparent;
-    transition: color $au-transition;
+    transition: color var(--au-transition);
     cursor: pointer;
 
     &:hover {
-      color: $au-gray-700;
+      color: var(--au-gray-700);
       background-color: transparent;
       text-decoration: underline;
       text-decoration-color: tint($au-gray-700,80);
     }
 
     &:focus {
-      outline: .1rem dashed $au-gray-300;
-      outline-offset: $au-outline-offset-negative;
+      outline: .1rem dashed var(--au-gray-300);
+      outline-offset: var(--au-outline-offset-negative);
     }
 
     &:focus:not(:focus-visible) {
@@ -134,9 +134,9 @@
 
 .ember-modal-dialog.ember-modal-dialog-target-attachment-right {
   position: absolute;
-  z-index: $au-z-index-beta;
-  background-color: $au-white;
-  border-radius: $au-radius;
+  z-index: var(--au-z-index-beta);
+  background-color: var(--au-white);
+  border-radius: var(--au-radius);
   box-shadow: 0 0 $au-unit-tiny rgba($au-gray-700,.2), 0 0 $au-unit rgba($au-gray-700,.1);
   display: flex;
   flex-direction: column;
@@ -148,7 +148,7 @@
   width: auto;
   top: $au-unit + $au-unit-tiny;
   box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
-  border-radius: $au-radius;
+  border-radius: var(--au-radius);
 
   &:after, &:before {
     bottom: 100%;
@@ -163,14 +163,14 @@
 
   &:after {
     border-color: rgba($au-white, 0);
-    border-bottom-color: $au-white;
+    border-bottom-color: var(--au-white);
     border-width: 4px;
     margin-left: -4px;
   }
 
   &:before {
     border-color: rgba($au-white, 0);
-    border-bottom-color: $au-gray-200;
+    border-bottom-color: var(--au-gray-200);
     border-width: 4px;
     margin-left: -4px;
   }

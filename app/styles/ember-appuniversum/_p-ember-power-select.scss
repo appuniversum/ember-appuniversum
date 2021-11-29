@@ -9,25 +9,25 @@
 // ember-basic-dropdown
 $ember-basic-dropdown-content-background-color: #FFF !default;
 $ember-basic-dropdown-overlay-background: rgba($au-gray-900, .5) !default;
-$ember-basic-dropdown-content-background-color: $au-white !default;
+$ember-basic-dropdown-content-background-color: var(--au-white) !default;
 
 // Backgrounds
 $ember-power-select-background-color: $ember-basic-dropdown-content-background-color !default;
-$ember-power-select-disabled-background-color: $au-gray-100 !default;
-$ember-power-select-multiple-selection-background-color: $au-gray-200 !default;
-$ember-power-select-highlighted-background: $au-gray-200 !default;
-$ember-power-select-selected-background: $au-gray-200 !default;
+$ember-power-select-disabled-background-color: var(--au-gray-100) !default;
+$ember-power-select-multiple-selection-background-color: var(--au-gray-200) !default;
+$ember-power-select-highlighted-background: var(--au-gray-200) !default;
+$ember-power-select-selected-background: var(--au-gray-200) !default;
 
 // Texts
 $ember-power-select-text-color: inherit !default;
-$ember-power-select-placeholder-color: $au-gray-600 !default;
-$ember-power-select-highlighted-color: $au-blue-700 !default;
-$ember-power-select-disabled-option-color: $au-gray-200!default;
-$ember-power-select-multiple-selection-color: $au-gray-800 !default;
+$ember-power-select-placeholder-color: var(--au-gray-600) !default;
+$ember-power-select-highlighted-color: var(--au-blue-700) !default;
+$ember-power-select-disabled-option-color: var(--au-gray-200)!default;
+$ember-power-select-multiple-selection-color: var(--au-gray-800) !default;
 
 // Borders
-$ember-power-select-border-color: $au-gray-300 !default;
-$ember-power-select-focus-border-color: rgba($au-blue-600,.65) !default;
+$ember-power-select-border-color: var(--au-gray-300) !default;
+$ember-power-select-focus-border-color: var(--au-outline-color) !default;
 $ember-power-select-default-border: .1rem solid $ember-power-select-border-color;
 $ember-power-select-default-focus-border: .1rem solid $ember-power-select-focus-border-color;
 
@@ -52,7 +52,7 @@ $ember-power-select-dropdown-left-border: $ember-power-select-dropdown-border;
 
 $ember-power-select-dropdown-contiguous-border: none;
 
-$ember-power-select-multiple-option-border-color: $au-gray-300;
+$ember-power-select-multiple-option-border-color: var(--au-gray-300);
 $ember-power-select-multiple-option-border: .1rem solid $ember-power-select-multiple-option-border-color;
 
 // Borders radius
@@ -130,7 +130,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
 
 .ember-power-select-dropdown * {
   box-sizing: border-box;
-  font-family: $au-font;
+  font-family: var(--au-font);
 }
 
 // Trigger
@@ -156,8 +156,8 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select-trigger--active {
   outline: none;
   border-width: .1rem !important; // Temporary webuniversum override
-  border-color: rgba($au-blue-600,.65) !important; // Temporary webuniversum override
-  box-shadow: inset 0 0 0 .2rem rgba($au-blue-600,.65) !important; // Temporary webuniversum override
+  border-color: var(--au-outline-color) !important; // Temporary webuniversum override
+  box-shadow: inset 0 0 0 .2rem var(--au-outline-color) !important; // Temporary webuniversum override
 }
 
 .ember-basic-dropdown-trigger--below.ember-power-select-trigger[aria-expanded="true"],
@@ -209,9 +209,9 @@ $ember-power-select-multiple-option-line-height: 1.45;
   line-height: 0;
   font-size: .1rem;
   color: transparent;
-  background-color: $au-gray-200;
+  background-color: var(--au-gray-200);
   border-radius: 100%;
-  transition: opacity $au-transition;
+  transition: opacity var(--au-transition);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="%23545961"><polygon points="7 8.414 1.707 13.707 .293 12.293 5.586 7 .293 1.707 1.707 .293 7 5.586 12.293 .293 13.707 1.707 8.414 7 13.707 12.293 12.293 13.707" transform="translate(2 2)"/></svg>');
   background-size: 1.2rem 1.2rem;
   background-repeat: no-repeat;
@@ -278,13 +278,13 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select-multiple-option {
   @include au-font-size($au-base);
   display: inline-flex;
-  font-family: $au-font;
-  font-weight: $au-medium;
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
   line-height: $au-unit;
   min-height: $au-unit;
-  color: $au-gray-700;
-  background-color: $au-gray-200;
-  border: .1rem solid $au-gray-300;
+  color: var(--au-gray-700);
+  background-color: var(--au-gray-200);
+  border: .1rem solid var(--au-gray-300);
   padding: 0 $au-unit-tiny 0 0;
   border-radius: $au-unit-tiny;
   margin-right: $au-unit-tiny;
@@ -295,19 +295,19 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select-multiple-remove-btn {
   position: relative;
   font-size: .1rem;
-  font-weight: $au-regular;
+  font-weight: var(--au-regular);
   width: 2rem;
   cursor: pointer;
   text-align: center;
   color: transparent;
-  background-color: $au-gray-200;
-  transition: color $au-transition;
+  background-color: var(--au-gray-200);
+  transition: color var(--au-transition);
   margin-right: $au-unit-tiny;
   padding-right: $au-unit-tiny;
   padding-left: $au-unit-tiny;
-  border-right: .1rem dotted $au-gray-300;
-  border-top-left-radius: $au-radius;
-  border-bottom-left-radius: $au-radius;
+  border-right: .1rem dotted var(--au-gray-300);
+  border-top-left-radius: var(--au-radius);
+  border-bottom-left-radius: var(--au-radius);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="%23545961"><polygon points="7 8.414 1.707 13.707 .293 12.293 5.586 7 .293 1.707 1.707 .293 7 5.586 12.293 .293 13.707 1.707 8.414 7 13.707 12.293 12.293 13.707" transform="translate(2 2)"/></svg>');
   background-size: 1.2rem 1.2rem;
   background-repeat: no-repeat;
@@ -342,30 +342,30 @@ $ember-power-select-multiple-option-line-height: 1.45;
 
   &:focus {
     outline: none;
-    border-color: rgba($au-blue-600,.65);
-    box-shadow: inset 0 0 0 .2rem rgba($au-blue-600,.65);
+    border-color: var(--au-outline-color);
+    box-shadow: inset 0 0 0 .2rem var(--au-outline-color);
   }
 
   &::-webkit-input-placeholder {
-    color: $au-gray-600;
+    color: var(--au-gray-600);
     font-style: italic;
     font-weight: 300;
   }
 
   &::-moz-placeholder {
-    color: $au-gray-600;
+    color: var(--au-gray-600);
     font-style: italic;
     font-weight: 300;
   }
 
   &:-ms-input-placeholder {
-    color: $au-gray-600;
+    color: var(--au-gray-600);
     font-style: italic;
     font-weight: 300;
   }
 
   &:-moz-placeholder {
-    color: $au-gray-600;
+    color: var(--au-gray-600);
     font-style: italic;
     font-weight: 300;
   }
@@ -414,7 +414,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
   padding: 0;
   user-select: none;
   -webkit-user-select: none;
-  border-top: .1rem solid $au-gray-200;
+  border-top: .1rem solid var(--au-gray-200);
 
   &[role="listbox"] {
     overflow-y: auto; /* in firefox in windows this can cause a word-break issue. Try `overflow-y: scroll` if that happens */
@@ -490,7 +490,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select-option--no-matches-message,
 .ember-power-select-option--search-message {
   font-style: italic;
-  color: $au-gray-600;
+  color: var(--au-gray-600);
   padding: $au-unit-tiny 0 $au-unit-tiny $au-unit-tiny !important; // Temporary webuniversum override
 
   &:hover {
@@ -511,7 +511,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
 
 // Error styles
 .ember-power-select--error .ember-power-select-trigger {
-  border: .3rem solid $au-red-600;
+  border: .3rem solid var(--au-red-600);
 }
 
 // Error focus styles
@@ -519,8 +519,8 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select--error .ember-power-select-trigger.ember-power-select-trigger--active {
   outline: none;
   border-width: .1rem !important; // Temporary webuniversum override
-  border-color: rgba($au-blue-600,.65) !important; // Temporary webuniversum override
-  box-shadow: inset 0 0 0 .2rem rgba($au-blue-600,.65) !important; // Temporary webuniversum override
+  border-color: var(--au-outline-color) !important; // Temporary webuniversum override
+  box-shadow: inset 0 0 0 .2rem var(--au-outline-color) !important; // Temporary webuniversum override
 }
 
 // LTR styles

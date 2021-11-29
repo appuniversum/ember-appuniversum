@@ -1,11 +1,13 @@
-{{#if @badgeIcon}}
-  <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @icon="{{@badgeIcon}}" />
-{{else if @badgeNumber}}
-  <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @number="{{@badgeNumber}}" />
-{{/if}}
+<div class="au-c-card__header" ...attributes>
+  {{#if @badgeIcon}}
+    <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @icon="{{@badgeIcon}}" />
+  {{else if @badgeNumber}}
+    <AuBadge @size="{{@badgeSize}}" @skin="{{@badgeSkin}}" @number="{{@badgeNumber}}" />
+  {{/if}}
 
-{{#if (has-block)}}
-<div>
-  {{yield "header"}}
+  {{#if (has-block)}}
+  <div>
+    {{yield "header"}}
+  </div>
+  {{/if}}
 </div>
-{{/if}}

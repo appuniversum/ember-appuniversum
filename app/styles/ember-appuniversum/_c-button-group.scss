@@ -2,24 +2,18 @@
    #BUTTON-GROUP
    ================================== */
 
-.au-c-button-group .au-c-button {
-  margin-right: $au-unit-tiny;
-  margin-bottom: $au-unit-tiny;
-  margin-top: $au-unit-tiny;
+.au-c-button-group  {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $au-unit-tiny;
 }
-
-.au-c-button-group .au-c-button--large {
-  margin-right: $au-unit-small;
-  margin-bottom: $au-unit-small;
-  margin-top: $au-unit-small;
-}
-
 
 /* Modifiers
 ========================================================================== */
 
 .au-c-button-group--inline {
-  display: flex;
+  gap: 0;
+  flex-wrap: nowrap;
 }
 
 .au-c-button-group--inline  {
@@ -43,18 +37,34 @@
 .au-c-button-group--inline {
   .au-c-button:not(.is-active) {
     text-decoration: underline;
-    text-decoration-color: tint($au-button-contrast-hover-color,60);
+    text-decoration-color: $au-button-link-color-underline;
+  }
+
+  .au-c-button:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
   }
 
   .au-c-button--secondary:not(.is-active) {
     text-decoration: underline;
-    text-decoration-color: tint($au-button-secondary-hover-color,60);
-    background: $au-white;
+    text-decoration-color: $au-button-link-color-underline;
+    background: var(--au-white);
+  }
+
+  .au-c-button--secondary:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
+    background: var(--au-white);
   }
 
   .au-c-button-link:not(.is-active) {
     text-decoration: underline;
-    text-decoration-color: tint($au-button-link-hover-color,60);
+    text-decoration-color: $au-button-link-color-underline;
+  }
+
+  .au-c-button-link:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
   }
 
   .au-c-button--link.is-active {

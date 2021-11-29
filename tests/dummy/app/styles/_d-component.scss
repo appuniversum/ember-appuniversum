@@ -3,9 +3,9 @@
    ========================================================================== */
 
 .au-d-component {
-  border: 1px solid $au-gray-100;
+  border: 1px solid var(--au-gray-100);
   background-color: tint($au-gray-100,50);
-  border-radius: $au-radius;
+  border-radius: var(--au-radius);
 }
 
 .au-d-component__contrast {
@@ -17,7 +17,7 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  background-color: $au-gray-200;
+  background-color: var(--au-gray-200);
   border: $au-unit-tiny solid tint($au-gray-100,50);
   padding: $au-unit;
 }

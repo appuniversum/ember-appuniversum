@@ -32,15 +32,15 @@
   justify-content: stretch;
   top: .1rem;
   right: .1rem;
-  border-left: .1rem solid $au-gray-300;
+  border-left: .1rem solid var(--au-gray-300);
 }
 
 .au-time-picker__button {
   @include au-font-size(1.4rem,1);
   flex-grow: 1;
-  font-family: $au-font;
-  font-weight: $au-medium;
-  background-color: $au-white;
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
+  background-color: var(--au-white);
   border: none;
   padding: 0 $au-unit-tiny;
   height: 100%;
@@ -55,29 +55,29 @@
   }
 
   & + & {
-    border-top: .1rem solid $au-gray-300;
+    border-top: .1rem solid var(--au-gray-300);
   }
 
   &,
   &:visited {
-    color: $au-gray-800;
-    background-color: $au-white;
+    color: var(--au-gray-800);
+    background-color: var(--au-white);
   }
 
   &:hover,
   &:focus {
-    color: $au-gray-700;
-    background-color: $au-gray-100;
+    color: var(--au-gray-700);
+    background-color: var(--au-gray-100);
   }
 
   &:focus {
-    outline: $au-outline;
-    outline-offset: $au-outline-offset;
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
   }
 }
 
 .au-time-picker__separator {
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
   padding: $au-unit-tiny;
 }
 

@@ -6,7 +6,7 @@
    ========================================================================== */
 
 $au-list-horizontal-spacing    : $au-unit-small !default;
-$au-list-horizontal-divider    : 1px dotted $au-gray-300 !default;
+$au-list-horizontal-divider    : 1px dotted var(--au-gray-300) !default;
 
 
 /* Component

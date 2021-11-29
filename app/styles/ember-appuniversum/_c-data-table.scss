@@ -22,7 +22,7 @@
 
 .au-c-data-table__actions--bottom {
   padding: $au-unit-small $au-unit;
-  border-top: .1rem solid $au-gray-300;
+  border-top: .1rem solid var(--au-gray-300);
 }
 
 .au-c-data-table__search {
@@ -48,7 +48,7 @@
   flex-grow: 999;
   overflow: auto;
   position: relative;
-  border-top: 1px solid $au-gray-300;
+  border-top: 1px solid var(--au-gray-300);
   width: 100%;
 }
 
@@ -63,25 +63,25 @@
   thead {
     position: relative;
     width: 100%;
-    z-index: $au-z-index-alpha;
+    z-index: var(--au-z-index-alpha);
     border: 0;
     @include au-font-size($au-base,1.2);
   }
 
   tbody tr {
-    border-bottom: .1rem solid $au-gray-300;
+    border-bottom: .1rem solid var(--au-gray-300);
   }
 
   tbody tr:nth-child(odd) {
-    background-color: $au-gray-100;
+    background-color: var(--au-gray-100);
   }
 
   tbody tr:nth-child(even) {
-    background-color: $au-white;
+    background-color: var(--au-white);
   }
 
   th {
-    font-weight: $au-medium;
+    font-weight: var(--au-medium);
     text-align: left;
     padding: $au-unit-tiny $au-unit-small;
     border-radius: 0;
@@ -127,7 +127,7 @@
       left: -.1rem;
       top: 0;
       height: 100%;
-      border-left: .1rem dotted $au-gray-300;
+      border-left: .1rem dotted var(--au-gray-300);
     }
   }
 }
@@ -145,7 +145,7 @@
 }
 
 .au-c-data-table__header {
-  background-color: $au-white;
+  background-color: var(--au-white);
 
   th {
     position: sticky;
@@ -153,8 +153,8 @@
     top: 0;
     border: 0;
     outline: 0;
-    background-color: $au-white;
-    box-shadow: inset 0 -.2rem 0 0 $au-gray-300;
+    background-color: var(--au-white);
+    box-shadow: inset 0 -.2rem 0 0 var(--au-gray-300);
   }
 }
 
@@ -162,7 +162,7 @@
   border: 0;
   outline: 0;
   padding: $au-unit-tiny;
-  color: $au-gray-700;
+  color: var(--au-gray-700);
 
   > .au-c-icon {
     bottom: -.1ex;
@@ -178,12 +178,12 @@
   }
 
   &:focus {
-    outline: $au-outline;
+    outline: var(--au-outline);
   }
 }
 
 .au-c-data-table__header-title {
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 }
 
 .au-c-data-table__header-title--sortable {
@@ -191,21 +191,21 @@
   align-items: baseline;
   position: relative;
   text-decoration: underline;
-  text-decoration-color: $au-gray-300;
-  color: $au-gray-600;
-  transition: color $au-transition;
+  text-decoration-color: var(--au-gray-300);
+  color: var(--au-gray-600);
+  transition: color var(--au-transition);
 
   &:hover {
-    color: $au-gray-900;
+    color: var(--au-gray-900);
     text-decoration: none;
   }
 
   &.is-active {
     text-decoration: none;
-    color: $au-gray-900;
+    color: var(--au-gray-900);
   }
 }
 
 .au-c-data-table__message {
-  border-bottom: .1rem solid $au-gray-300;
+  border-bottom: .1rem solid var(--au-gray-300);
 }

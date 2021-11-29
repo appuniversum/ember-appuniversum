@@ -7,21 +7,21 @@
 
 $au-badge-icon-size                     : 2rem !default;
 $au-badge-small-icon-size               : 1.5rem !default;
-$au-badge-icon-color                    : $au-gray-700 !default;
-$au-badge-contrast-color                : $au-white !default;
-$au-badge-border-color                  : $au-gray-300 !default;
-$au-badge-brand-icon-color              : $au-yellow-900 !default;
-$au-badge-brand-contrast-color          : $au-yellow-300 !default;
-$au-badge-default-icon-color            : $au-gray-800 !default;
-$au-badge-default-contrast-color        : $au-gray-200 !default;
-$au-badge-action-icon-color             : $au-white !default;
-$au-badge-action-contrast-color         : $au-blue-700 !default;
-$au-badge-success-icon-color            : $au-white !default;
-$au-badge-success-contrast-color        : $au-green-700 !default;
-$au-badge-warning-icon-color            : $au-yellow-900 !default;
-$au-badge-warning-contrast-color        : $au-yellow-400 !default;
-$au-badge-error-icon-color              : $au-white !default;
-$au-badge-error-contrast-color          : $au-red-600 !default;
+$au-badge-icon-color                    : var(--au-gray-700) !default;
+$au-badge-contrast-color                : var(--au-white) !default;
+$au-badge-border-color                  : var(--au-gray-300) !default;
+$au-badge-brand-icon-color              : var(--au-yellow-900) !default;
+$au-badge-brand-contrast-color          : var(--au-yellow-300) !default;
+$au-badge-default-icon-color            : var(--au-gray-800) !default;
+$au-badge-default-contrast-color        : var(--au-gray-200) !default;
+$au-badge-action-icon-color             : var(--au-white) !default;
+$au-badge-action-contrast-color         : var(--au-blue-700) !default;
+$au-badge-success-icon-color            : var(--au-white) !default;
+$au-badge-success-contrast-color        : var(--au-green-700) !default;
+$au-badge-warning-icon-color            : var(--au-yellow-900) !default;
+$au-badge-warning-contrast-color        : var(--au-yellow-400) !default;
+$au-badge-error-icon-color              : var(--au-white) !default;
+$au-badge-error-contrast-color          : var(--au-red-600) !default;
 
 /* Component
    ========================================================================== */
@@ -47,7 +47,7 @@ $au-badge-error-contrast-color          : $au-red-600 !default;
 }
 
 .au-c-badge__number {
-  font-weight: $au-medium;
+  font-weight: var(--au-medium);
 }
 
 .au-c-badge:not(.au-c-badge--small) .au-c-badge__number {
