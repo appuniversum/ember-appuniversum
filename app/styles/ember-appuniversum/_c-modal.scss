@@ -141,6 +141,10 @@ $au-modal-backdrop-z-index : 9998 !default;
     outline: 0;
   }
 
+  .au-c-modal--flush & {
+    padding: 0;
+  }
+
   @include mq(medium) {
     padding: $au-unit;
   }
