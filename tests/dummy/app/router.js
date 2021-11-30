@@ -48,6 +48,7 @@ Router.map(function() {
       this.route("au-file-upload");
       this.route("au-modal");
       this.route("au-data-table");
+      this.route("au-pagination");
       this.route("au-table");
     });
 

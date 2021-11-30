@@ -23,6 +23,13 @@ export default class AuModal extends Component {
       return "";
   }
 
+  get padding() {
+    if (this.args.padding === "none")
+      return " au-c-modal--flush";
+    else
+      return "";
+  }
+
   @action
   setInert(toggle) {
     let landmarkElements = document.querySelectorAll(LANDMARKS);

@@ -46,6 +46,14 @@
   }
 }
 
+.au-c-table--middle {
+  tbody,
+  tr,
+  td {
+    vertical-align: middle;
+  }
+}
+
 .au-c-table__header {
   background-color: var(--au-white);
 
@@ -115,4 +123,32 @@
   .au-c-table--small & {
     padding: $au-unit-tiny;
   }
+}
+
+.au-c-data-table__clickable-row {
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--au-gray-200) !important;
+  }
+}
+
+.au-c-data-table__clickable-row-icon {
+  color: var(--au-blue-600);
+}
+
+.au-c-data-table__detail {
+  background-color: var(--au-white) !important;
+  border-bottom: .1rem solid var(--au-gray-200) !important;
+
+  td {
+    padding-top: $au-unit !important;
+    padding-bottom: $au-unit !important;
+  }
+}
+
+.au-c-data-table__image {
+  max-width: 44px;
+  max-height: 44px;
+  display: block;
 }
