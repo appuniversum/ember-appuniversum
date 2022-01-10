@@ -67,6 +67,7 @@
     "@storybook/ember-cli-storybook": "^0.4.0",
     "@storybook/builder-webpack5": "^6.4.0",
     "@storybook/manager-webpack5": "^6.4.0",
+    "@storybook/addon-a11y": "^6.4.8",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.4.2",
     "@embroider/test-setup": "^0.43.5",

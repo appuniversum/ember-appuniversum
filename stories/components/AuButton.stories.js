@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Button',
+  title: 'Components/AuButton',
   argTypes: {
     text: { control: 'text' },
     skin: { control: 'select', options: ['primary', 'secondary', 'link', 'link-secondary']},
@@ -18,10 +18,10 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuButton 
-      @skin={{this.skin}} 
-      @size={{this.size}} 
-      @icon={{this.icon}} 
+    <AuButton
+      @skin={{this.skin}}
+      @size={{this.size}}
+      @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @width={{this.width}}
@@ -34,10 +34,49 @@ const Template = (args) => ({
   context: args,
 });
 
-export const Text = Template.bind({});
-Text.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   text: 'Button',
   skin: 'primary',
+  icon: '',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  alert: false,
+  disabled: false,
+  loading: false
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  text: 'Button',
+  skin: 'secondary',
+  icon: '',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  alert: false,
+  disabled: false,
+  loading: false
+};
+
+export const PrimaryLink = Template.bind({});
+PrimaryLink.args = {
+  text: 'Primary link',
+  skin: 'link',
+  icon: '',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  alert: false,
+  disabled: false,
+  loading: false
+};
+
+export const SecondaryLink = Template.bind({});
+SecondaryLink.args = {
+  text: 'Secondary link',
+  skin: 'link-secondary',
   icon: '',
   iconAlignment: 'left',
   hideText: false,
