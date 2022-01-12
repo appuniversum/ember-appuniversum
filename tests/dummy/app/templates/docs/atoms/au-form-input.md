@@ -71,6 +71,21 @@
   {{demo.snippet 'au-input-required.hbs'}}
 {{/docs-demo}}
 
+## Warning Input
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-input-warning.hbs'}}
+    <div class="au-c-form">
+      <p>
+        <AuLabel @warning={{true}} for="input-warning">Normal input</AuLabel>
+        <AuInput id="input-warning" @warning="warning" @width="block"/>
+        <AuHelpText @warning={{true}}>Something is wrong.</AuHelpText>
+      </p>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-input-warning.hbs'}}
+{{/docs-demo}}
+
 
 ## Error Input
 
@@ -106,6 +121,7 @@
 | Argument      | Description | Type | Default value |
 | ------------- | ----------- | ---- | ------------- |
 | `@error` | Add an error state  | `Boolean` | `false` |
+| `@warning` | Add an warning state  | `Boolean` | `false` |
 | `@width` | Display the input as a block element  | `value`: `block` | - |
 | `@disabled` | Adds a disabled state to the input | `Boolean` | `false` |
 | `@icon` | Adds an icon (using an icon implies the use @width="block") | `value`: <AuLink @route="docs.atoms.au-icon">Find the options here</AuLink> | - |

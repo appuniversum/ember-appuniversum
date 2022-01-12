@@ -45,6 +45,17 @@
   {{demo.snippet 'au-textarea-error.hbs'}}
 {{/docs-demo}}
 
+## Warning Textarea
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-textarea-warning.hbs'}}
+    <AuLabel @warning={{true}} for="textarea-warning">Normal textarea</AuLabel>
+    <AuTextarea id="textarea-warning" @warning={{true}} @width="block"></AuTextarea>
+    <AuHelpText @warning={{true}}>Something is wrong.</AuHelpText>
+  {{/demo.example}}
+  {{demo.snippet 'au-textarea-warning.hbs'}}
+{{/docs-demo}}
+
 ## Disabled Textarea
 
 {{#docs-demo as |demo|}}
@@ -61,4 +72,5 @@
 | ------------- | ----------- | ---- | ------------- |
 | `@width` | Display the textarea as a block element  | `value`: `block` | - |
 | `@error` | Add an error state  | `Boolean` | `false` |
+| `@warning` | Add an warning state  | `Boolean` | `false` |
 | `@disabled` | Adds a disabled state to the textarea | `Boolean` | `false` |

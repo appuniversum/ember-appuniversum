@@ -14,4 +14,11 @@ export default class AuLabelComponent extends Component {
     else
       return "";
   }
+
+  get warning() {
+    if (this.args.warning)
+      return "au-c-label--warning";
+    else
+      return "";
+  }
 }

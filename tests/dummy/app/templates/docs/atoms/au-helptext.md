@@ -36,12 +36,27 @@
     <div class="au-c-form">
       <p>
         <AuLabel @error={{true}} for="input-error">Normal input</AuLabel>
-        <AuInput id="input-error" @error="error" @width="block"/>
+        <AuInput id="input-error" @error={{true}} @width="block"/>
         <AuHelpText @error={{true}}>Something is wrong.</AuHelpText>
       </p>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-helptext-form.hbs'}}
+{{/docs-demo}}
+
+## As warning message
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-helptext-form-warning.hbs'}}
+    <div class="au-c-form">
+      <p>
+        <AuLabel @warning={{true}} for="input-warning">Normal input</AuLabel>
+        <AuInput id="input-warning" @warning={{true}} @width="block"/>
+        <AuHelpText @warning={{true}}>Something is wrong.</AuHelpText>
+      </p>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-helptext-form-warning.hbs'}}
 {{/docs-demo}}
 
 ## Arguments
@@ -51,3 +66,4 @@
 | `@skin` | Change the style of the text  | `value`: `primary` / `secondary` / `tertiary` | `primary` |
 | `@size` | Change the size of the text  | `value`: `small` / `normal` / `large` | `small` |
 | `@error` | Add an error state  | `Boolean` | `false` |
+| `@warning` | Add an warning state  | `Boolean` | `false` |
