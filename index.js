@@ -19,9 +19,6 @@ module.exports = {
     app.options.sassOptions.includePaths.push(
       'node_modules/@appuniversum/appuniversum'
     );
-    app.options.sassOptions.includePaths.push(
-      'node_modules/@appuniversum/ember-appuniversum/app/styles'
-    );
   },
 
   contentFor: function(type, config) {
