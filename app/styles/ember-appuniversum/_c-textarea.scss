@@ -53,6 +53,10 @@ $au-textarea-disabled-color            : var(--au-gray-700) !default;
   border: .3rem solid var(--au-red-600);
 }
 
+.au-c-textarea--warning {
+  border: .3rem solid var(--au-yellow-400);
+}
+
 .au-c-textarea--disabled,
 .au-c-textarea[disabled="true"] {
   background-color: $au-textarea-disabled-background-color;

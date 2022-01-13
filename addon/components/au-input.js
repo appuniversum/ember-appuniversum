@@ -24,6 +24,13 @@ export default class AuInput extends Component {
       return "";
   }
 
+  get warning() {
+    if (this.args.warning)
+      return "au-c-input--warning";
+    else
+      return "";
+  }
+
   get disabled() {
     if (this.args.disabled)
       return "is-disabled";

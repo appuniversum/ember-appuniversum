@@ -40,12 +40,27 @@
     <div class="au-c-form">
       <p>
         <AuLabel @error={{true}} for="input-error">Label error</AuLabel>
-        <AuInput id="input-error" @error="error" @width="block"/>
+        <AuInput id="input-error" @error={{true}} @width="block"/>
         <AuHelpText @error={{true}}>Something is wrong.</AuHelpText>
       </p>
     </div>
   {{/demo.example}}
   {{demo.snippet 'au-label-error.hbs'}}
+{{/docs-demo}}
+
+## Label warning
+
+{{#docs-demo as |demo|}}
+  {{#demo.example name='au-label-warning.hbs'}}
+    <div class="au-c-form">
+      <p>
+        <AuLabel @warning={{true}} for="input-warning">Label warning</AuLabel>
+        <AuInput id="input-warning" @warning={{true}} @width="block"/>
+        <AuHelpText @warning={{true}}>Something is wrong.</AuHelpText>
+      </p>
+    </div>
+  {{/demo.example}}
+  {{demo.snippet 'au-label-warning.hbs'}}
 {{/docs-demo}}
 
 ## Inline label
@@ -74,3 +89,4 @@
 | `@required` | Add a required state  | `Boolean` | `false` |
 | `@requiredLabel` | Add the required state label  | `String` | `*/verplicht` |
 | `@error` | Add an error state  | `Boolean` | `false` |
+| `@warning` | Add an warning state  | `Boolean` | `false` |

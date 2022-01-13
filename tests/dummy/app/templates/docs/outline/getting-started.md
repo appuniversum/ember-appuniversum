@@ -21,30 +21,13 @@ The easiest way to do this in an ember project is by installing the [`ember-cli-
 
 ## Customising the SCSS for your project
 
-Add the following to your `ember-cli-build.js` file:
-
-
-
+Then load the SCSS in your `app.scss` file:
 ``` js
-'use strict';
-
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-
-module.exports = function(defaults) {
-  let app = new EmberApp(defaults, {
-    sassOptions: {
-      includePaths: [
-        'node_modules/@appuniversum/appuniversum',
-        'node_modules/@appuniversum/ember-appuniversum/app/styles'
-      ]
-    }
-  });
-
-  return app.toTree();
-};
+@import "ember-appuniversum";
 ```
 
-Then load the SCSS partials in your `app.scss` file:
+
+Alternatively you can also load the SCSS partials in your `app.scss` file for more control over which components you want to use:
 
 ``` js
 /* ==================================

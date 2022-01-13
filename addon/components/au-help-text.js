@@ -25,4 +25,11 @@ export default class AuHelpTextComponent extends Component {
     else
       return "";
   }
+
+  get warning() {
+    if (this.args.warning)
+      return "au-c-help-text--warning";
+    else
+      return "";
+  }
 }

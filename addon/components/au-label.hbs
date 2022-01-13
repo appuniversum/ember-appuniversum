@@ -1,4 +1,10 @@
-<label class="au-c-label {{this.error}} {{this.inline}}" ...attributes>
+<label class="au-c-label {{this.error}} {{this.warning}} {{this.inline}}" ...attributes>
+  {{#if this.warning}}
+  <AuBadge @icon="alert-triangle" @size="small" @skin="warning" class="au-u-margin-right-tiny" />
+  {{/if}}
+  {{#if this.error}}
+  <AuBadge @icon="cross" @size="small" @skin="error" class="au-u-margin-right-tiny" />
+  {{/if}}
   {{yield}}
   {{#if @required}}
     {{#if @inline}}

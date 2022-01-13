@@ -7,6 +7,7 @@
 
 $au-label-color                   : var(--au-gray-800) !default;
 $au-label-height                  : $au-unit-large - $au-unit-small !default;
+$au-label-warning-badge-color       : var(--au-yellow-400) !default;
 $au-label-error-badge-color       : var(--au-red-600) !default;
 $au-label-error-badge-font-size   : 1.2rem !default;
 
@@ -48,20 +49,8 @@ $au-label-error-badge-font-size   : 1.2rem !default;
 
 .au-c-label--error {
   position: relative;
+}
 
-  &:before {
-    content: "!";
-    font-size: $au-label-error-badge-font-size;
-    display: inline-flex;
-    flex: none;
-    align-items: center;
-    justify-content: center;
-    color: var(--au-white);
-    position: relative;
-    background-color: $au-label-error-badge-color;
-    width: $au-unit-small * 1.5;
-    height: $au-unit-small * 1.5 - .05rem;
-    border-radius: $au-unit-small * 1.5;
-    margin-right: $au-unit-tiny;
-  }
+.au-c-label--warning {
+  position: relative;
 }

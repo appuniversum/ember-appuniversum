@@ -1,6 +1,6 @@
 {{#if @icon}}
   <span class="au-c-input-wrapper {{this.iconAlignment}}">
-    <Input class="au-c-input au-c-input--block {{this.error}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
+    <Input class="au-c-input au-c-input--block {{this.error}} {{this.warning}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
     {{#if (eq @iconAlignment "right")}}
     <AuIcon @icon="{{@icon}}" @alignment="right" />
     {{else}}
@@ -8,5 +8,5 @@
     {{/if}}
   </span>
 {{else}}
-<Input class="au-c-input {{this.error}} {{this.width}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
+<Input class="au-c-input {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
 {{/if}}
