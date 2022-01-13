@@ -3,28 +3,17 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/AuLoader',
   argTypes: {
-    skin: { control: 'select', options: ['', 'border', 'brand', 'success', 'warning', 'error', 'action', 'gray'], description:''},
-    size: { control: 'select', options: ['', 'small'], description:''},
-    icon: { control: 'text', description:'' },
-    number: {control: 'text', description:''}
+    padding: { control: 'select', options: ['', 'default', 'small', 'large'], description:'Set the padding of the loader'},
   },
 };
 
 const Template = (args) => ({
   template: hbs`
-    <AuBadge
-      @icon={{this.icon}}
-      @skin={{this.skin}}
-      @size={{this.size}}
-      @number={{this.number}}
-    />`,
+    <AuLoader @padding={{this.padding}} />`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  skin: '',
-  icon: 'info-circle',
-  size: '',
-  number: ''
+  padding: 'default',
 };
