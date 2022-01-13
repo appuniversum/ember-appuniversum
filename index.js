@@ -8,7 +8,20 @@ module.exports = {
       plugins: [require.resolve('ember-auto-import/babel-plugin')],
     },
   },
-  contentFor: function(type /*, config */) {
+
+  included: function (app) {
+    this._super.included.apply(this, arguments);
+
+    app.options.sassOptions = app.options.sassOptions || {};
+    app.options.sassOptions.includePaths =
+      app.options.sassOptions.includePaths || [];
+
+    app.options.sassOptions.includePaths.push(
+      'node_modules/@appuniversum/appuniversum'
+    );
+  },
+
+  contentFor: function(type, config) {
     if (type === 'body'){
       return '<div id="ember-appuniversum-wormhole"></div>';
     } else {
