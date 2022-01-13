@@ -3,16 +3,16 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/AuButton',
   argTypes: {
-    text: { control: 'text' },
-    skin: { control: 'select', options: ['primary', 'secondary', 'link', 'link-secondary']},
-    size: { control: 'select', options: ['', 'large']},
-    icon: { control: 'text' },
-    iconAlignment: { control: 'select', options: ['', 'left', 'right']},
-    hideText: {control: 'boolean'},
-    width: { control: 'select', options: ['', 'block']},
-    alert: {control: 'boolean'},
-    disabled: {control: 'boolean'},
-    loading: {control: 'boolean'},
+    text: { control: 'text', description:'' },
+    skin: { control: 'select', options: ['primary', 'secondary', 'link', 'link-secondary'], description:'Defines the style of the button'},
+    size: { control: 'select', options: ['', 'large'], description:'Set the size of the button'},
+    icon: { control: 'text', description:'Adds an icon' },
+    iconAlignment: { control: 'select', options: ['', 'left', 'right'], description:'Choose the position of the icon, adds correct margin next to the icon'},
+    hideText: {control: 'boolean', description:'Hides the button text visually'},
+    width: { control: 'select', options: ['', 'block'], description:'Defines the width of a button'},
+    alert: {control: 'boolean', description:'Adds an alert state to the button'},
+    disabled: {control: 'boolean', description:'Adds a disabled state to the button'},
+    loading: {control: 'boolean', description:'Adds a loading state to the button'},
   },
 };
 

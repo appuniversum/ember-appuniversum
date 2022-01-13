@@ -3,10 +3,10 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/AuBadge',
   argTypes: {
-    skin: { control: 'select', options: ['', 'border', 'brand', 'success', 'warning', 'error', 'action', 'gray']},
-    size: { control: 'select', options: ['', 'small']},
-    icon: { control: 'text' },
-    number: {control: 'text'}
+    skin: { control: 'select', options: ['', 'border', 'brand', 'success', 'warning', 'error', 'action', 'gray'], description:'Sets the color and background color'},
+    size: { control: 'select', options: ['', 'small'], description:'Change the size of the badge'},
+    icon: { control: 'text', description:'Adds an icon to the badge' },
+    number: {control: 'text', description:'Adds a number to the badge'}
   },
 };
 
