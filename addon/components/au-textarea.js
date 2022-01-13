@@ -15,6 +15,13 @@ export default class AuTextarea extends Component {
       return "";
   }
 
+  get warning() {
+    if (this.args.warning)
+      return "au-c-textarea--warning";
+    else
+      return "";
+  }
+
   get disabled() {
     if (this.args.disabled)
       return "is-disabled";

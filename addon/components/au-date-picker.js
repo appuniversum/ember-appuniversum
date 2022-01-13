@@ -77,6 +77,8 @@ export default class AuDatePickerComponent extends Component {
   get error() {
     if (this.args.error)
       return "duet-date-error";
+    if (this.args.warning)
+      return "duet-date-warning";
     else
       return "";
   }
