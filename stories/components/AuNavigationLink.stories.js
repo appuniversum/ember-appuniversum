@@ -3,28 +3,33 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/AuNavigationLink',
   argTypes: {
-    skin: { control: 'select', options: ['', 'border', 'brand', 'success', 'warning', 'error', 'action', 'gray'], description:''},
-    size: { control: 'select', options: ['', 'small'], description:''},
-    icon: { control: 'text', description:'' },
-    number: {control: 'text', description:''}
-  },
+    text: {control: 'text', description:''},
+    route: {control: 'route', description:'The route that is passed to the link'},
+    model: { control: 'model', description:'Supply a model to the route'},
+    models: { control: 'model', description:'Supply models to the route'},
+    query: { control: 'query', description:'Supply query parameters to the route'}
+  }
 };
 
 const Template = (args) => ({
   template: hbs`
-    <AuBadge
-      @icon={{this.icon}}
-      @skin={{this.skin}}
-      @size={{this.size}}
-      @number={{this.number}}
-    />`,
+    <ul class="au-c-list-navigation">
+      <li class="au-c-list-navigation__item">
+        <AuNavigationLink
+          @route={{this.route}}
+          @model={{this.model}}
+          @models={{this.models}}
+          @query={{this.query}}
+        >
+          {{text}}
+        </AuNavigationLink>
+      </li>
+    </ul>`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  skin: '',
-  icon: 'info-circle',
-  size: '',
-  number: ''
+  text: "Navigation Link",
+  route: "index"
 };

@@ -1,30 +1,64 @@
 import { hbs } from 'ember-cli-htmlbars';
+const singleselects = [
+  'Advies bij jaarrekening AGB',
+  'Advies bij jaarrekening eredienstbestuur',
+  'Agenda',
+  'Andere documenten BBC',
+  'Besluit budget AGB',
+  'Besluit meerjarenplan(aanpassing) AGB',
+  'Besluit over budget(wijziging) eredienstbestuur',
+  'Besluit over budget(wijziging) OCMW-vereniging',
+  'Besluitenlijst',
+  'Budget',
+  'Goedkeuringstoezicht Voeren',
+  'Meerjarenplan(aanpassing)',
+  'Notulen',
+  'Oprichting autonoom bedrijf',
+  'Oprichting districtbestuur',
+]
 
 export default {
   title: 'Components/AuPowerSelect',
   argTypes: {
-    skin: { control: 'select', options: ['', 'border', 'brand', 'success', 'warning', 'error', 'action', 'gray'], description:''},
-    size: { control: 'select', options: ['', 'small'], description:''},
-    icon: { control: 'text', description:'' },
-    number: {control: 'text', description:''}
+    allowClear: { control: 'boolean', description:'' },
+    disabled: { control: 'select', options: ['','disabled'], description:'' },
+    searchEnabled: { control: 'boolean', description:'' },
+    loadingMessage: { control: 'text', description:'' },
+    noMatchesMessage: { control: 'text', description:'' },
+    searchMessage: { control: 'text', description:'' },
+    options: { control: 'object', description:'' },
+    selected: { control: 'text', description:'' },
+    onChange: { control: 'function', description:'' }
   },
 };
 
 const Template = (args) => ({
   template: hbs`
-    <AuBadge
-      @icon={{this.icon}}
-      @skin={{this.skin}}
-      @size={{this.size}}
-      @number={{this.number}}
-    />`,
+    <PowerSelect
+      @allowClear={{this.allowClear}}
+      @disabled={{this.disabled}}
+      @searchEnabled={{this.searchEnabled}}
+      @loadingMessage={{this.loadingMessage}}
+      @noMatchesMessage={{this.noMatchesMessage}}
+      @searchMessage={{this.searchMessage}}
+      @options={{this.option}}
+      @selected={{this.selected}}
+      @onChange={{fn (mut this.singleselect)}}
+      as |singleselect|>
+      {{singleselect}}
+    </PowerSelect>`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  skin: '',
-  icon: 'info-circle',
-  size: '',
-  number: ''
+  allowClear: true,
+  disabled: '',
+  searchEnabled: true,
+  loadingMessage: "Aan het laden...",
+  noMatchesMessage: "Geen resultaten",
+  searchMessage: "Typ om te zoeken",
+  options: singleselects,
+  selected: "Budget",
+  onChange: "{{fn (mut this.multipleselect)}}"
 };

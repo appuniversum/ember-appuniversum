@@ -3,28 +3,34 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/AuToggleSwitch',
   argTypes: {
-    skin: { control: 'select', options: ['', 'border', 'brand', 'success', 'warning', 'error', 'action', 'gray'], description:''},
-    size: { control: 'select', options: ['', 'small'], description:''},
-    icon: { control: 'text', description:'' },
-    number: {control: 'text', description:''}
+    label: { control: 'text', description:'Set label text' },
+    identifier: {control: 'text', description:'Makes sure the label is linked to the toggle switch and clicking it will only activate the toggle switch you clicked.'},
+    disabled: {control: 'boolean', description:'Adds a disabled state to the toggle switch'},
+    name: {control: 'text', description:'Groups toggle switches for server side'},
+    checked: {control: 'boolean', description:'Used to set/get checked state of component'},
+    onChange: {control: 'function', description:'Expects a function that gets called when the toggle switch state changes. The function receives the toggle switch state & event context as parameters.'}
   },
 };
 
 const Template = (args) => ({
   template: hbs`
-    <AuBadge
-      @icon={{this.icon}}
-      @skin={{this.skin}}
-      @size={{this.size}}
-      @number={{this.number}}
+    <AuToggleSwitch
+      @label={{this.label}}
+      @identifier={{this.identifier}}
+      @disabled={{this.disabled}}
+      @name={{this.name}}
+      @checked={{this.checked}}
+      @onChange={{this.onchange}}
     />`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  skin: '',
-  icon: 'info-circle',
-  size: '',
-  number: ''
+  label: "Toggle this feature",
+  identifier: "toggle",
+  disabled: false,
+  name: "",
+  checked: false,
+  onChange: ""
 };
