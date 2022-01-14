@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuFormDatePicker',
+  title: 'Components/Forms/AuDatePicker',
   argTypes: {
     id: { control: 'text', description:'Set id of component'},
     label: { control: 'text', description:'Set label text'},

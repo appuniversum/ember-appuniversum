@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuNavigationLink',
+  title: 'Components/Links/AuNavigationLink',
   argTypes: {
     text: {control: 'text', description:''},
     route: {control: 'route', description:'The route that is passed to the link'},

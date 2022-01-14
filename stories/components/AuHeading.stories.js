@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuHeading',
+  title: 'Components/Content/AuHeading',
   argTypes: {
     text: { control: 'text', description:'' },
     level: { control: 'select', options: ['1', '2', '3', '4', '5', '6'], description:'Defines the depth of the heading (h1 > h6)'},

@@ -18,7 +18,7 @@ const singleselects = [
 ]
 
 export default {
-  title: 'Components/AuPowerSelect',
+  title: 'Components/Forms/EmberPowerSelect',
   argTypes: {
     allowClear: { control: 'boolean', description:'' },
     disabled: { control: 'select', options: ['','disabled'], description:'' },

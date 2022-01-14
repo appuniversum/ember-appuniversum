@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuContent',
+  title: 'Components/Content/AuContent',
   argTypes: {
     skin: { control: 'select', options: ['default', 'small', 'large'], description:'Smaller/larger text and vertical spacing'}
   },

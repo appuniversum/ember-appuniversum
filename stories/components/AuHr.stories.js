@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuHr',
+  title: 'Components/Content/AuHr',
   argTypes: {
     size: { control: 'select', options: ['default', 'large', 'huge'], description:'Define the top and bottom margin'},
   },

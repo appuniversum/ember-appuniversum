@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuHelptext',
+  title: 'Components/Forms/AuHelptext',
   argTypes: {
     text: { control: 'text', description:'' },
     skin: { control: 'select', options: ['primary', 'secondary', 'tertiary'], description:'Change the style of the text'},

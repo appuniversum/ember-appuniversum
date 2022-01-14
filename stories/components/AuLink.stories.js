@@ -62,7 +62,7 @@ const icons = [
 ]
 
 export default {
-  title: 'Components/AuLink',
+  title: 'Components/Links/AuLink',
   argTypes: {
     text: {control: 'text', description:''},
     route: {control: 'route', description:'The route that is passed to the link'},

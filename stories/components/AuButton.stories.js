@@ -62,7 +62,7 @@ const icons = [
 ]
 
 export default {
-  title: 'Components/AuButton',
+  title: 'Components/Buttons/AuButton',
   argTypes: {
     text: { control: 'text', description:'' },
     skin: { control: 'select', options: ['primary', 'secondary', 'link', 'link-secondary'], description:'Defines the style of the button'},

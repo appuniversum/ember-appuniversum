@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuFormTimepicker',
+  title: 'Components/Forms/AuTimepicker',
   argTypes: {
     hoursLabel: { control: 'text', description:'Hours label' },
     minutesLabel: {control: 'text', description:'Minutes label'},

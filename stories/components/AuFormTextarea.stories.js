@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuFormTextarea',
+  title: 'Components/Forms/AuTextarea',
   argTypes: {
     id: { control: 'text', description:'' },
     width: {control: 'select', options:['default','block'], description:'Display the textarea as a block element'},

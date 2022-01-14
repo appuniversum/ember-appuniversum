@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuFormRadio',
+  title: 'Components/Forms/AuRadio',
   argTypes: {
     label: { control: 'text', description:'Set label text'},
     name: {control: 'text', description:'Groups radio buttons, to make sure their checked statuses are related'},

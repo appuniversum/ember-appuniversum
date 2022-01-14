@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuToggleSwitch',
+  title: 'Components/Forms/AuToggleSwitch',
   argTypes: {
     label: { control: 'text', description:'Set label text' },
     identifier: {control: 'text', description:'Makes sure the label is linked to the toggle switch and clicking it will only activate the toggle switch you clicked.'},

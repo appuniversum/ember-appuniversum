@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuFormLabel',
+  title: 'Components/Forms/AuLabel',
   argTypes: {
     text: { control: 'text', description:'' },
     for: { control: 'text', description:'' },

@@ -62,7 +62,7 @@ const icons = [
 ]
 
 export default {
-  title: 'Components/AuFormInput',
+  title: 'Components/Forms/AuInput',
   argTypes: {
     id: { control: 'text', description:'' },
     error: {control: 'boolean', description:'Add an error state'},

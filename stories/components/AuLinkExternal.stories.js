@@ -62,7 +62,7 @@ const icons = [
 ]
 
 export default {
-  title: 'Components/AuLinkExternal',
+  title: 'Components/Links/AuLinkExternal',
   argTypes: {
     text: {control: 'text', description:''},
     href: {control: 'text', description:''},

@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/AuButtonGroup',
+  title: 'Components/Buttons/AuButtonGroup',
   argTypes: {
     inline:  {control: 'boolean', description:'Removes whitespace between buttons'}
   }
