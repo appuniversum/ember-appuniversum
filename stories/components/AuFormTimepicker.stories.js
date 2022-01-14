@@ -7,9 +7,9 @@ export default {
     minutesLabel: {control: 'text', description:'Minutes label'},
     secondsLabel: {control: 'text', description:'Seconds label'},
     nowLabel: {control: 'text', description:'Current time button label'},
-    hours: {control: 'string', description:'Sets the hour value'},
-    minutes: {control: 'string', description:'Sets the minutes value'},
-    seconds: {control: 'string', description:' Sets the seconds value'},
+    hours: {control: 'text', description:'Sets the hour value'},
+    minutes: {control: 'text', description:'Sets the minutes value'},
+    seconds: {control: 'text', description:' Sets the seconds value'},
     showSeconds: {control: 'boolean', description:'Wether the seconds input is shown'},
     showNow: {control: 'boolean', description:'Wether the now button is shown'},
     onChange: {control: 'object', description:'Gets called when a time value changes. Returns an object with all time values in an object'}
