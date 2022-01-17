@@ -1,0 +1,47 @@
+import { hbs } from 'ember-cli-htmlbars';
+import { action } from '@storybook/addon-actions';
+
+export default {
+  title: 'Components/Content/AuModal',
+  argTypes: {
+    modalOpen: { control: 'boolean',  description:'Show or hide the modal'},
+    onClose: { control: 'function',  description:'Add the action to close the modal'},
+    modalTitle: { control: 'text',  description:'Set the title of the modal'},
+    size: { control: 'select', options: ['default', 'large', 'fullscreen'], description:'Set the size of the modal'},
+    padding: { control: 'select', options: ['default', 'none'], description:'Set the padding of the modal'}
+  },
+  parameters: {
+    layout: 'padded',
+  },
+};
+
+const Template = (args) => ({
+  template: hbs`
+    <div id="ember-appuniversum-wormhole"></div>
+    <AuModal
+      @modalOpen={{this.modalOpen}}
+      @onClose={{this.onClose}}
+      @closeModal={{this.closeModal}}
+      @modalTitle={{this.modalTitle}}
+      @size={{this.size}}
+      @padding={{this.padding}}
+      as |Modal|
+    >
+      <Modal.Body>
+        <p>Modal content</p>
+      </Modal.Body>
+      <Modal.Footer>
+        <AuButton>Action</AuButton>
+      </Modal.Footer>
+    </AuModal>`,
+  context: args,
+});
+
+export const Component = Template.bind({});
+Component.args = {
+  modalOpen: true,
+  onClose: null,
+  modalTitle: "Modal",
+  size: "default",
+  padding: "default"
+};
