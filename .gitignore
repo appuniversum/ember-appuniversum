@@ -4,6 +4,8 @@
 /dist/
 /tmp/
 /public/appuniversum-symbolset.svg
+/storybook-static
+/build-storybook.log
 
 # dependencies
 /bower_components/
