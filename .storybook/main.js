@@ -10,5 +10,6 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-a11y"
-  ]
+  ],
+  staticDirs: ['../dist', '../stories/assets']
 }

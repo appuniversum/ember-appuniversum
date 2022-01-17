@@ -18,7 +18,7 @@ const Template = (args) => ({
       <AuMainContainer as |m|>
         <m.content @scroll={{true}}>
           <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is lokaal bestuur">
-            <img sizes="50vw" src={{root-url "/assets/images/loket-header-1600.jpg"}} srcset={{srcSet}} alt="Foto van een laptop met daarop het vlaanderen logo.">
+            <img sizes="50vw" src={{root-url "/images/loket-header-1600.jpg"}} srcset={{srcSet}} alt="Foto van een laptop met daarop het vlaanderen logo.">
           </AuContentHeader>
 
           <section class="au-o-region-large">

@@ -29,8 +29,8 @@
     "test:ember-compatibility": "ember try:each",
     "icons": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
     "prepare": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
-    "storybook": "start-storybook -p 6006 -s dist",
-    "build-storybook": "build-storybook -s dist"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@appuniversum/appuniversum": "0.2.1",
