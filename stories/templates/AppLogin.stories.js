@@ -119,7 +119,7 @@ const Template = (args) => ({
   context: args,
 });
 
-export const Component = Template.bind({});
-Component.args = {
+export const Page = Template.bind({});
+Page.args = {
 
 };
