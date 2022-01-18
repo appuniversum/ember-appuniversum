@@ -32,7 +32,7 @@ export default class AuDropdown extends Component {
         '@dropdownTitle is deprecated, use @title instead',
         false,
         {
-          id: '@appuniversum/ember-appuniversum.au-accordion.dropdownTitle-argument',
+          id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownTitle-argument',
           until: "1.0.0",
           for: '@appuniversum/ember-appuniversum',
           since: {
@@ -55,7 +55,7 @@ export default class AuDropdown extends Component {
         '@dropdownButtonLabel is deprecated, use @buttonLabel instead',
         false,
         {
-          id: '@appuniversum/ember-appuniversum.au-accordion.dropdownButtonLabel-argument',
+          id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
           until: "1.0.0",
           for: '@appuniversum/ember-appuniversum',
           since: {

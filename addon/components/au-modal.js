@@ -1,5 +1,6 @@
 import { action } from '@ember/object';
 import Component from "@glimmer/component";
+import { deprecate } from '@ember/debug';
 const LANDMARKS = [
     'aside',
     'footer',
@@ -8,8 +9,8 @@ const LANDMARKS = [
     'main',
     'nav'
 ];
-export default class AuModal extends Component {
 
+export default class AuModal extends Component {
   get destinationElement() {
     return document.getElementById("ember-appuniversum-wormhole");
   }
@@ -28,6 +29,29 @@ export default class AuModal extends Component {
       return " au-c-modal--flush";
     else
       return "";
+  }
+
+  get title() {
+    if (this.args.modalTitle) {
+      deprecate(
+        '@modalTitle is deprecated, use @title instead',
+        false,
+        {
+          id: '@appuniversum/ember-appuniversum.au-modal.modalTitle-argument',
+          until: "1.0.0",
+          for: '@appuniversum/ember-appuniversum',
+          since: {
+            enabled: '0.5.0'
+          }
+        }
+      );
+
+      return this.args.modalTitle;
+    } else if (this.args.title) {
+      return this.args.title;
+    } else {
+      return undefined;
+    }
   }
 
   @action

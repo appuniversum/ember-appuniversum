@@ -6,6 +6,7 @@
 /public/appuniversum-symbolset.svg
 /storybook-static
 /build-storybook.log
+/.storybook/preview-head.html
 
 # dependencies
 /bower_components/
