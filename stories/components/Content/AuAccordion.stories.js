@@ -64,10 +64,10 @@ const icons = [
 export default {
   title: 'Components/Content/AuAccordion',
   argTypes: {
-    accordionSubTitle: { control: 'text', description:'Set the subtitle of the accordion'},
-    accordionIconOpen: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's open"},
-    accordionIconClosed: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's closed"},
-    accordionButtonLabel: { control: 'text', description:''},
+    subtitle: { control: 'text', description:'Set the subtitle of the accordion'},
+    iconOpen: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's open"},
+    iconClosed: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's closed"},
+    buttonLabel: { control: 'text', description:''},
     loading: { control: 'boolean', description:'Adds a loading state to the button'}
   },
   parameters: {
@@ -78,10 +78,10 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuAccordion
-      @accordionSubTitle={{this.accordionSubTitle}}
-      @accordionIconOpen={{this.accordionIconOpen}}
-      @accordionIconClosed={{this.accordionIconClosed}}
-      @accordionButtonLabel={{this.accordionButtonLabel}}
+      @subtitle={{this.subtitle}}
+      @iconOpen={{this.iconOpen}}
+      @iconClosed={{this.iconClosed}}
+      @buttonLabel={{this.buttonLabel}}
       @loading={{this.loading}}
     >
       <p>I am information. I can even contain a <AuLink>A Link</AuLink>!</p>
@@ -91,9 +91,9 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  accordionSubTitle: "Subtitle",
-  accordionIconOpen: "nav-down",
-  accordionIconClosed: "nav-right",
-  accordionButtonLabel: "Accordion with arrows",
+  subtitle: "subtitle",
+  iconOpen: "nav-down",
+  iconClosed: "nav-right",
+  buttonLabel: "Accordion with arrows",
   loading: false
 };

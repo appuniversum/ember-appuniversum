@@ -3,25 +3,21 @@
     <AuToolbarGroup>
       <div>
         <AuButton @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.openAccordion "true" "false"}}">
-          {{#if @hideText}}
-            <span class="au-u-hidden-visually">{{@accordionButtonLabel}}</span>
-          {{else}}
-            {{@accordionButtonLabel}}
-          {{/if}}
+          {{this.buttonLabel}}
         </AuButton>
         <p>
-          {{@accordionSubTitle}}
+          {{this.subtitle}}
         </p>
       </div>
     </AuToolbarGroup>
     <AuToolbarGroup>
       {{#if this.accordionOpen}}
-        <AuIcon @icon="{{@accordionIconOpen}}" @alignment="left" @size="large" @ariaHidden="true" />
+        <AuIcon @icon={{this.iconOpen}} @alignment="left" @size="large" @ariaHidden="true" />
         <span class="au-u-hidden-visually">
           Open accordion
         </span>
       {{else}}
-        <AuIcon @icon="{{@accordionIconClosed}}" @alignment="left" @size="large" @ariaHidden="true" />
+        <AuIcon @icon={{this.iconClosed}} @alignment="left" @size="large" @ariaHidden="true" />
         <span class="au-u-hidden-visually">
           Sluit accordion
         </span>
