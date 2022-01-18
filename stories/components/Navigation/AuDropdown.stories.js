@@ -3,8 +3,8 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Navigation/AuDropdown',
   argTypes: {
-    dropdownTitle: { control: 'text', description:'Pass the title of the dropdown'},
-    dropdownButtonLabel: { control: 'text', description:'Pass name of the dropdown button'},
+    title: { control: 'text', description:'Pass the title of the dropdown'},
+    buttonLabel: { control: 'text', description:'Pass name of the dropdown button'},
     alignment: { control: 'select', options: ['left', 'right', 'center'], description:'Position the icon and menu'}
   },
   parameters: {
@@ -15,8 +15,8 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuDropdown
-      @dropdownTitle={{this.dropdownTitle}}
-      @dropdownButtonLabel={{this.dropdownButtonLabel}}
+      @title={{this.title}}
+      @buttonLabel={{this.buttonLabel}}
       @alignment={{this.alignment}}
     >
       <AuButton @skin="tertiary" role="menuitem">
@@ -31,7 +31,7 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  dropdownTitle: "Demo dropdown",
-  dropdownButtonLabel: "Dropdown",
+  title: "Demo dropdown",
+  buttonLabel: "Dropdown",
   alignment: "left"
 };

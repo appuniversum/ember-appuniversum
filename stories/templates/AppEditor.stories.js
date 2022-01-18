@@ -43,7 +43,7 @@ const Template = (args) => ({
               </h1>
             </AuToolbarGroup>
             <AuToolbarGroup class="au-c-toolbar__group--actions">
-              <AuDropdown @dropdownTitle="Bestand acties" @dropdownButtonLabel="Bestand opties" @alignment="right">
+              <AuDropdown @title="Bestand acties" @buttonLabel="Bestand opties" @alignment="right">
                 <AuButton @skin="tertiary" role="menuitem">
                   <AuIcon @icon="copy" @alignment="left" />
                   Kopieer agendapunt
