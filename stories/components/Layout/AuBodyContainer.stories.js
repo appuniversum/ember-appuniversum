@@ -15,7 +15,7 @@ const Template = (args) => ({
     <AuBodyContainer
       @scroll={{this.scroll}}
     >
-      <div style="display: flex; align-items:center; justify-content: center; padding: 1rem; background-color: silver; height: 105%">
+      <div class="au-d-component-block au-d-component-block--overflow">
         Content
       </div>
     </AuBodyContainer>`,

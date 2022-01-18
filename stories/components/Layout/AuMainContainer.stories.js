@@ -14,14 +14,14 @@ const Template = (args) => ({
   template: hbs`
     <AuMainContainer as |m|>
       <m.sidebar>
-        <div style="display: flex; align-items:center; justify-content: center; padding: 1rem; background-color: lightgray; height: 100%">
+        <div class="au-d-component-block">
           Sidebar
         </div>
       </m.sidebar>
       <m.content
         @scroll={{this.scroll}}
       >
-        <div style="display: flex; align-items:center; justify-content: center; padding: 1rem; background-color: silver;  height: 105%">
+        <div class="au-d-component-block au-d-component-block--overflow">
           Main content
         </div>
       </m.content>
