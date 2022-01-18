@@ -30,15 +30,13 @@ Development
 ------------------------------------------------------------------------------
 
 Local development:
-- Run the documentation site: `npm start`
+- Build the CSS and run storybook: `npm start`
+- Run the documentation site: `npm run storybook`
 - Generate the icons: `npm run icons`
 
 Link to an ember project:
 - In the addon: `npm link`
 - In the your project: `npm link @appuniversum/ember-appuniversum`
-
-Deploy the documentation site:
-- Build and deploy to github pages: `npm run deploy`
 
 Contributing
 ------------------------------------------------------------------------------
