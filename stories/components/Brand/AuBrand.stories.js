@@ -3,7 +3,7 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Brand/AuBrand',
   argTypes: {
-    brandLink: { control: 'text', description:'Adds a link on the logotype' },
+    link: { control: 'text', description:'Adds a link on the logotype' },
     tagline: {control: 'text', description:'Adds a tagline underneath the logotype'}
   },
   parameters: {
@@ -14,7 +14,7 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuBrand
-      @brandLink={{this.brandLink}}
+      @link={{this.link}}
       @tagline={{this.tagline}}
     />`,
   context: args,
@@ -22,18 +22,18 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  brandLink: '',
+  link: '',
   tagline: ''
 };
 
 export const WithLink = Template.bind({});
 WithLink.args = {
-  brandLink: 'https://www.vlaanderen.be/',
+  link: 'https://www.vlaanderen.be/',
   tagline: ''
 };
 
 export const WithTagline = Template.bind({});
 WithTagline.args = {
-  brandLink: '',
+  link: '',
   tagline: 'verbeelding werkt'
 };
