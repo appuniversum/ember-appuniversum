@@ -16,21 +16,23 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production",
+    "build": "run-s build-ember build-storybook",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "ember serve",
+    "start": "run-p ember storybook",
+    "ember": "ember serve",
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each",
     "icons": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
     "prepare": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build-ember": "ember build --environment=production"
   },
   "dependencies": {
     "@appuniversum/appuniversum": "0.2.1",
@@ -66,6 +68,7 @@
     "@storybook/addon-actions": "^6.4.0",
     "@storybook/addon-essentials": "^6.4.0",
     "@storybook/addon-links": "^6.4.0",
+    "@storybook/addon-storysource": "^6.4.13",
     "@storybook/addons": "^6.4.12",
     "@storybook/builder-webpack5": "^6.4.0",
     "@storybook/ember": "^6.4.0",
