@@ -19,7 +19,7 @@ const Template = (args) => ({
       @titlePartTwo={{this.titlePartTwo}}
       @pictureSize={{this.pictureSize}}
     >
-      <img sizes="50vw" src="/images/loket-header-1600.jpg" srcset={{srcSet}} alt="Foto van een laptop met daarop het vlaanderen logo.">
+      <img sizes="50vw" src={{root-url "/images/loket-header-1600.jpg"}} srcset={{srcSet}} alt="Foto van een laptop met daarop het vlaanderen logo.">
     </AuContentHeader>`,
   context: args,
 });
