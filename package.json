@@ -31,7 +31,7 @@
     "icons": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
     "prepare": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook --docs",
     "build-ember": "ember build --environment=production"
   },
   "dependencies": {
