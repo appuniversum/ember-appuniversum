@@ -32,7 +32,8 @@
     "prepare": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook --docs",
-    "build-ember": "ember build --environment=production"
+    "build-ember": "ember build --environment=production",
+    "release": "release-it"
   },
   "dependencies": {
     "@appuniversum/appuniversum": "0.2.1",
@@ -85,7 +86,6 @@
     "ember-cli-autoprefixer": "^1.0.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-release": "^1.0.0-beta.2",
     "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
@@ -116,6 +116,7 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
+    "release-it": "^14.12.3",
     "sass": "^1.26.2",
     "svg-symbols": "^1.0.5",
     "webpack": "^5.64.4"
