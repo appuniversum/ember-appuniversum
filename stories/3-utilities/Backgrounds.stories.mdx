@@ -1,0 +1,67 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Utilities/Backgrounds" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-800);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+`}</style>
+
+# Backgrounds
+
+Limited set of background color utilities.
+
+<div class="au-o-box au-d-component au-u-margin-top">
+  <h2 class="au-u-h4">Gray</h2>
+  <div class="au-o-box au-o-box--flush au-u-margin-top-small">
+    <div class="au-d-swatch au-u-background-gray-100">
+      <p class="au-u-h5 au-u-bold au-d-swatch__name au-u-margin-bottom-none">.au-u-background-gray-100</p>
+      <p class="au-d-swatch__contrast">AA contrast: $au-gray-700 or higher</p>
+    </div>
+  </div>
+  <div class="au-o-box au-o-box--flush au-u-margin-top-small">
+    <div class="au-d-swatch au-u-background-gray-200">
+      <p class="au-u-h5 au-u-bold au-d-swatch__name au-u-margin-bottom-none">.au-u-background-gray-200</p>
+      <p class="au-d-swatch__contrast">AA contrast: $au-gray-700 or higher</p>
+    </div>
+  </div>
+</div>

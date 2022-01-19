@@ -1,0 +1,69 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Utilities/Widths" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-800);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+`}</style>
+
+# Widths
+
+The width utility can be used on all components but is commonly used in combination with the grid object.
+
+## Fractions
+
+The widths are calculated by fractions which are defined in `_s-global.scss`
+
+### Examples
+`.au-u-1-2`: 50%
+
+`.au-u-3-5`: 60%
+
+## Responsive
+
+Each width utility can be made responsive by adding a breakpoint extension.
+
+### Examples
+`.au-u-1-2@medium`: 50% starting from the medium breakpoint
+
+`.au-u-3-5@small`: 60% starting from the small breakpoint
