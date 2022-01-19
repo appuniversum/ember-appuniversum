@@ -34,6 +34,9 @@ Local development:
 - Run the documentation site: `npm run storybook`
 - Generate the icons: `npm run icons`
 
+Releases:
+- Release to npm: `npm run release`
+
 Link to an ember project:
 - In the addon: `npm link`
 - In the your project: `npm link @appuniversum/ember-appuniversum`
