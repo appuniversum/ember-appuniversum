@@ -1,0 +1,50 @@
+<style>
+  :root {
+    --brand-primary: #FFFFFF;
+  }
+
+  html {
+    min-height: 100%;
+    height: 100%;
+  }
+
+  .sb-show-main {
+    height: 100%;
+  }
+
+  .sb-show-main.sb-main-padded {
+    padding: 0;
+  }
+
+  #root {
+    min-height: 100%;
+    overflow: auto;
+  }
+
+  .sb-show-main.sb-main-padded #root,
+  .sb-show-main.sb-main-padded #docs-root {
+    padding: 2rem;
+  }
+
+  .docs-story,
+  .docs-story > div,
+  .docs-story > div > div,
+  .innerZoomElementWrapper > div,
+  .innerZoomElementWrapper > div > div {
+    height: 300px;
+    padding: 0;
+    background-color: var(--au-gray-100);
+  }
+
+  .docs-story > div:first-child {
+    background-color: var(--au-gray-100);
+  }
+
+  .docs-story > div:last-child {
+    height: auto;
+  }
+
+  .innerZoomElementWrapper > div > div > div {
+    min-height: 300px !important;
+  }
+</style>

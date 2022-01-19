@@ -1,6 +1,0 @@
-{{yield (hash
-  nav=(component "docs-viewer/x-nav")
-  main=(component "docs-viewer/x-main" onReindex=(action (mut pageIndex)))
-)}}
-
-{{docs-viewer/x-current-page-index pageIndex=pageIndex}}

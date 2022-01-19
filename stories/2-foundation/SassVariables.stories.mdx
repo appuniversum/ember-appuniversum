@@ -1,0 +1,172 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Foundation/Sass Variables" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-800);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+`}</style>
+
+# SCSS variables
+## Color palette
+``` css
+$au-white                    : #FFFFFF;
+
+$au-gray-100                 : #F4F5F6;
+$au-gray-200                 : #E6E8EB;
+$au-gray-300                 : #CCD1D9;
+$au-gray-400                 : #A1ABBA;
+$au-gray-500                 : #8E98A6;
+$au-gray-600                 : #69717C;
+$au-gray-700                 : #545961;
+$au-gray-800                 : #2A2D31;
+$au-gray-900                 : #212326;
+$au-gray-1000                : #000000;
+
+$au-blue-100                 : #EDF6FF;
+$au-blue-200                 : #DCECFD;
+$au-blue-300                 : #C1DDFB;
+$au-blue-500                 : #64A0E2;
+$au-blue-600                 : #0F6FD7;
+$au-blue-700                 : #0E5EB8;
+$au-blue-800                 : #004099;
+$au-blue-900                 : #073261;
+
+$au-yellow-100               : #FFF9D5;
+$au-yellow-200               : #FFF29B;
+$au-yellow-300               : #FEE539;
+$au-yellow-400               : #FFC515;
+$au-yellow-600               : #7F6E3B;
+$au-yellow-900               : #473D21;
+
+$au-red-100                  : #FCF3F3;
+$au-red-200                  : #F7E3E3;
+$au-red-500                  : #FF4141;
+$au-red-600                  : #D92626;
+$au-red-700                  : #AB1F1F;
+$au-red-900                  : #470000;
+
+$au-green-100                : #F7FAE5;
+$au-green-200                : #ECF2CD;
+$au-green-400                : #B3E000;
+$au-green-500                : #8BAE00;
+$au-green-700                : #5F750B;
+$au-green-900                : #323D08;
+
+```
+
+
+## Global settings
+``` css
+// Breakpoints
+// ---
+$mq-breakpoints: (
+  tiny: 300px,
+  xsmall: 500px,
+  small: 767px,
+  medium: 1023px,
+  large: 1600px
+) !default;
+// Uncomment line below to show breakpoint indicators
+// $mq-show-breakpoints: (xsmall, small, medium, large);
+
+
+// Spacing units
+// ---
+$au-unit-tiny: .6rem !default;
+$au-unit-small: 1.2rem !default;
+$au-unit: 2.4rem !default;
+$au-unit-large: 4.8rem !default;
+$au-unit-huge: 9.6rem !default;
+
+
+// Objects settings
+// ---
+// Layout
+$au-layout-width: 1280px !default;
+$au-layout-width-small: 768px !default;
+$au-layout-width-large: 1600px !default;
+$au-layout-breakpoint: medium !default;
+
+// Region
+$au-region-breakpoint: medium !default;
+
+```
+
+## Deprecated variables: to be replaced by CSS variables
+``` css
+$au-global-font-size: 1.5rem !default;
+$au-global-line-height: 1.5 !default;
+$au-font: "flanders-sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !default;
+$au-font-secondary: "flanders-serif" !default;
+$au-font-tertiary: courier, monospace !default;
+$au-light: 300 !default;
+$au-regular: 400 !default;
+$au-medium: 500 !default;
+$au-bold: 700 !default;
+$au-base: $au-global-font-size !default;
+$au-tiny: 1.3rem !default;
+$au-small: 1.4rem !default;
+$au-h6: 1.6rem !default;
+$au-h5: 1.8rem !default;
+$au-h4: 2rem !default;
+$au-h3: 2.4rem !default;
+$au-h2: 3.4rem !default;
+$au-h1: 4.8rem !default;
+$au-page-bg: $au-white !default;
+$au-select-text-color: $au-gray-900 !default;
+$au-select-text-bg: $au-blue-200 !default;
+$au-radius: .3rem !default;
+$au-border: .2rem !default;
+$au-outline-border: .3rem !default;
+$au-outline-border-style: solid !default;
+$au-outline: $au-outline-border $au-outline-border-style rgba($au-blue-600,.65) !default;
+$au-outline-offset: .2rem !default;
+$au-outline-offset-negative: -.3rem !default;
+$au-duration: (1*.125) + s !default;
+$au-easing: cubic-bezier(0.190,  1.000, 0.220, 1.000) !default;
+$au-transition: $au-duration $au-easing !default;
+$au-z-index-alpha: 1 !default;
+$au-z-index-beta: 2 !default;
+$au-z-index-gamma: 3 !default;
+
+```

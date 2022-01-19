@@ -1,0 +1,131 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Foundation/CSS Variables" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-800);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+`}</style>
+
+# CSS variables
+
+``` css
+:root {
+  // Colors
+  --au-white: #{$au-white};
+  --au-gray-100: #{$au-gray-100};
+  --au-gray-200: #{$au-gray-200};
+  --au-gray-300: #{$au-gray-300};
+  --au-gray-400: #{$au-gray-400};
+  --au-gray-500: #{$au-gray-500};
+  --au-gray-600: #{$au-gray-600};
+  --au-gray-700: #{$au-gray-700};
+  --au-gray-800: #{$au-gray-800};
+  --au-gray-900: #{$au-gray-900};
+  --au-gray-1000: #{$au-gray-1000};
+  --au-blue-100: #{$au-blue-100};
+  --au-blue-200: #{$au-blue-200};
+  --au-blue-300: #{$au-blue-300};
+  --au-blue-500: #{$au-blue-500};
+  --au-blue-600: #{$au-blue-600};
+  --au-blue-700: #{$au-blue-700};
+  --au-blue-800: #{$au-blue-800};
+  --au-blue-900: #{$au-blue-900};
+  --au-yellow-100: #{$au-yellow-100};
+  --au-yellow-200: #{$au-yellow-200};
+  --au-yellow-300: #{$au-yellow-300};
+  --au-yellow-400: #{$au-yellow-400};
+  --au-yellow-600: #{$au-yellow-600};
+  --au-yellow-900: #{$au-yellow-900};
+  --au-red-100: #{$au-red-100};
+  --au-red-200: #{$au-red-200};
+  --au-red-500: #{$au-red-500};
+  --au-red-600: #{$au-red-600};
+  --au-red-700: #{$au-red-700};
+  --au-red-900: #{$au-red-900};
+  --au-green-100: #{$au-green-100};
+  --au-green-200: #{$au-green-200};
+  --au-green-400: #{$au-green-400};
+  --au-green-500: #{$au-green-500};
+  --au-green-700: #{$au-green-700};
+  --au-green-900: #{$au-green-900};
+
+  // Typography
+  --au-global-font-size: #{$au-global-font-size};
+  --au-global-line-height: #{$au-global-line-height};
+  --au-font: #{$au-font};
+  --au-font-secondary: #{$au-font-secondary};
+  --au-font-tertiary: #{$au-font-tertiary};
+  --au-light: #{$au-light};
+  --au-regular: #{$au-regular};
+  --au-medium: #{$au-medium};
+  --au-bold: #{$au-bold};
+  --au-base: #{$au-base};
+  --au-tiny: #{$au-tiny};
+  --au-small: #{$au-small};
+  --au-h6: #{$au-h6};
+  --au-h5: #{$au-h5};
+  --au-h4: #{$au-h4};
+  --au-h3: #{$au-h3};
+  --au-h2: #{$au-h2};
+  --au-h1: #{$au-h1};
+
+  // UI
+  --au-page-bg: #{$au-page-bg};
+  --au-select-text-color: #{$au-select-text-color};
+  --au-select-text-bg: #{$au-select-text-bg};
+  --au-radius: #{$au-radius};
+  --au-border: #{$au-border};
+  --au-outline-color: #{$au-blue-500};
+  --au-outline-border: #{$au-outline-border};
+  --au-outline-border-style: #{$au-outline-border-style};
+  --au-outline: #{$au-outline};
+  --au-outline-offset: #{$au-outline-offset};
+  --au-outline-offset-negative: #{$au-outline-offset-negative};
+  --au-duration: #{$au-duration};
+  --au-easing: #{$au-easing};
+  --au-transition: #{$au-transition};
+  --au-z-index-alpha: #{$au-z-index-alpha};
+  --au-z-index-beta: #{$au-z-index-beta};
+  --au-z-index-gamma: #{$au-z-index-gamma};
+}
+```

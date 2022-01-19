@@ -1,0 +1,89 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Utilities/Visible" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-600);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-800);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+`}</style>
+
+# Visible
+
+## Visible for screens larger than extra small
+### Hidden on extra small screens and below
+
+`.au-u-visible-from@xsmall`
+
+The box below is visible starting from extra small reponsive sizes and up:
+<div class="au-o-box au-d-component au-u-visible-from@xsmall">
+  <p>Your screen width is extra small and up. Make your screen smaller to see me disappear.</p>
+</div>
+
+## Visible for screens larger than small
+### Hidden on small screens and below
+
+`.au-u-visible-from@small`
+
+The box below is visible starting from small reponsive sizes and up:
+<div class="au-o-box au-d-component au-u-visible-from@small">
+  <p>Your screen width is small and up. Make your screen smaller to see me disappear.</p>
+</div>
+
+## Visible for screens larger than medium
+### Hidden on medium screens and below
+
+`.au-u-visible-from@medium`
+
+The box below is visible starting from medium reponsive sizes and up:
+<div class="au-o-box au-d-component au-u-visible-from@medium">
+  <p>Your screen width is medium and up. Make your screen smaller to see me disappear.</p>
+</div>
+
+## Visible for screens larger than large
+### Hidden on large screens and below
+
+`.au-u-visible-from@large`
+
+The box below is visible starting from large reponsive sizes and up:
+<div class="au-o-box au-d-component au-u-visible-from@large">
+  <p>Your screen width is large and up. Make your screen smaller to see me disappear.</p>
+</div>

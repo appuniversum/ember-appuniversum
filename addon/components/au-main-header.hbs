@@ -1,7 +1,7 @@
 <header class="au-c-main-header">
   <div class="au-c-main-header__title-group">
     <AuNavigationNarrator />
-    <AuBrand @brandLink="{{@brandLink}}" />
+    <AuBrand @link="{{@brandLink}}" />
     {{#if @homeRoute}}
     <LinkTo {{on "click" this.headerLinkFocus}} @route="{{@homeRoute}}" class="au-c-main-header__title au-c-main-header__title--link">
       {{@appTitle}}
