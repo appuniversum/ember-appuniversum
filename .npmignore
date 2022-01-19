@@ -1,6 +1,7 @@
 # compiled output
 /dist/
 /tmp/
+/storybook-static/
 
 # dependencies
 /bower_components/
@@ -29,6 +30,9 @@
 /yarn-error.log
 /yarn.lock
 .gitkeep
+/.storybook
+/stories/
+/build-storybook.log
 
 # ember-try
 /.node_modules.ember-try/
