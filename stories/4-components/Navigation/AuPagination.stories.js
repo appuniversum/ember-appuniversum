@@ -4,6 +4,9 @@ export default {
   title: 'Components/Navigation/AuPagination',
   parameters: {
     layout: 'padded',
+    status: {
+      type: 'draft' // 'draft' | 'stable' | 'deprecated'
+    }
   },
 };
 
