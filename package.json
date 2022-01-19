@@ -16,7 +16,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "run-s build-ember build-storybook",
+    "build": "run-s icons build-ember build-storybook",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",

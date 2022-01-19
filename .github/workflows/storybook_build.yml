@@ -18,9 +18,9 @@ jobs:
           args: run build
       - name: Deploy
         if: success()
-        uses: crazy-max/ghaction-github-pages@v1
+        uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
           build_dir: storybook-static
         env:
-          GITHUB_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
