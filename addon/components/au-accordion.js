@@ -63,7 +63,7 @@ export default class AuAccordionComponent extends Component {
     } else if (this.args.iconOpen) {
       return this.args.iconOpen;
     } else {
-      return undefined;
+      return "nav-down";
     }
   }
 
@@ -86,7 +86,7 @@ export default class AuAccordionComponent extends Component {
     } else if (this.args.iconClosed) {
       return this.args.iconClosed;
     } else {
-      return undefined;
+      return "nav-right";
     }
   }
 

@@ -65,8 +65,8 @@ export default {
   title: 'Components/Content/AuAccordion',
   argTypes: {
     subtitle: { control: 'text', description:'Set the subtitle of the accordion'},
-    iconOpen: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's open"},
-    iconClosed: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's closed"},
+    iconOpen: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's open. Defaults to nav-down."},
+    iconClosed: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's closed. Defaults to nav-right."},
     buttonLabel: { control: 'text', description:''},
     loading: { control: 'boolean', description:'Adds a loading state to the button'}
   },
@@ -92,8 +92,7 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   subtitle: "subtitle",
-  iconOpen: "nav-down",
-  iconClosed: "nav-right",
+
   buttonLabel: "Accordion with arrows",
   loading: false
 };
