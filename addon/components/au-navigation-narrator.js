@@ -5,6 +5,6 @@ export default class AuNavigationNarrator extends Component {
   @service router;
 
   get activeRoute() {
-    return "Nieuwe pagina: " + this.router.currentRouteName ;
+    return 'Nieuwe pagina: ' + this.router.currentRouteName ;
   }
 }

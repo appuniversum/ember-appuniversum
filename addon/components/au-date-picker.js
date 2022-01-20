@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { action } from "@ember/object";
+import { action } from '@ember/object';
 import { assert, runInDebug } from '@ember/debug';
 import { guidFor } from '@ember/object/internals';
 import formatISO from 'date-fns/formatISO'
@@ -76,11 +76,11 @@ export default class AuDatePickerComponent extends Component {
 
   get error() {
     if (this.args.error)
-      return "duet-date-error";
+      return 'duet-date-error';
     if (this.args.warning)
-      return "duet-date-warning";
+      return 'duet-date-warning';
     else
-      return "";
+      return '';
   }
 
   @action

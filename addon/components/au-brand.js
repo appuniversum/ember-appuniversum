@@ -12,7 +12,7 @@ export default class AuBrand extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-brand.brandLink-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'
@@ -30,8 +30,8 @@ export default class AuBrand extends Component {
 
   get tagline() {
     if (this.args.tagline)
-      return "au-c-brand--tagline";
+      return 'au-c-brand--tagline';
     else
-      return "";
+      return '';
   }
 }

@@ -16,7 +16,7 @@ export default class AuLink extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-link.linkRoute-argument',
-          until: "0.7.0",
+          until: '0.7.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'
@@ -41,13 +41,13 @@ export default class AuLink extends Component {
   }
 
   get width() {
-    if (this.args.width == "block")
-      if (this.args.skin == "button" | "button-secondary")
-        return "au-c-button--block";
+    if (this.args.width == 'block')
+      if (this.args.skin == 'button' | 'button-secondary')
+        return 'au-c-button--block';
       else
-        return "au-c-link--block";
+        return 'au-c-link--block';
     else
-      return "";
+      return '';
   }
 
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693

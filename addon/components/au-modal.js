@@ -1,5 +1,5 @@
 import { action } from '@ember/object';
-import Component from "@glimmer/component";
+import Component from '@glimmer/component';
 import { deprecate } from '@ember/debug';
 const LANDMARKS = [
     'aside',
@@ -12,23 +12,23 @@ const LANDMARKS = [
 
 export default class AuModal extends Component {
   get destinationElement() {
-    return document.getElementById("ember-appuniversum-wormhole");
+    return document.getElementById('ember-appuniversum-wormhole');
   }
 
   get size() {
-    if (this.args.size === "fullscreen")
-      return "au-c-modal--fullscreen";
-      if (this.args.size === "large")
-      return "au-c-modal--large";
+    if (this.args.size === 'fullscreen')
+      return 'au-c-modal--fullscreen';
+      if (this.args.size === 'large')
+      return 'au-c-modal--large';
     else
-      return "";
+      return '';
   }
 
   get padding() {
-    if (this.args.padding === "none")
-      return " au-c-modal--flush";
+    if (this.args.padding === 'none')
+      return ' au-c-modal--flush';
     else
-      return "";
+      return '';
   }
 
   get title() {
@@ -38,7 +38,7 @@ export default class AuModal extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-modal.modalTitle-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'

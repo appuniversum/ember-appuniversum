@@ -2,39 +2,39 @@ import Component from '@glimmer/component';
 
 export default class AuInput extends Component {
   get width() {
-    if (this.args.width == "block")
-      return "au-c-input--block";
+    if (this.args.width == 'block')
+      return 'au-c-input--block';
     else
-      return "";
+      return '';
   }
 
   get iconAlignment() {
-    if (this.args.iconAlignment == "left")
-      return "au-c-input-wrapper--left";
-    if (this.args.iconAlignment == "right")
-      return "au-c-input-wrapper--right";
+    if (this.args.iconAlignment == 'left')
+      return 'au-c-input-wrapper--left';
+    if (this.args.iconAlignment == 'right')
+      return 'au-c-input-wrapper--right';
     else
-      return "";
+      return '';
   }
 
   get error() {
     if (this.args.error)
-      return "au-c-input--error";
+      return 'au-c-input--error';
     else
-      return "";
+      return '';
   }
 
   get warning() {
     if (this.args.warning)
-      return "au-c-input--warning";
+      return 'au-c-input--warning';
     else
-      return "";
+      return '';
   }
 
   get disabled() {
     if (this.args.disabled)
-      return "is-disabled";
+      return 'is-disabled';
     else
-      return "";
+      return '';
   }
 }

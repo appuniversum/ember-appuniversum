@@ -1,7 +1,7 @@
-import Component from "@glimmer/component";
-import { action } from "@ember/object";
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
-import { tracked } from "@glimmer/tracking";
+import { tracked } from '@glimmer/tracking';
 import { deprecate } from '@ember/debug';
 
 export default class AuDropdown extends Component {
@@ -33,7 +33,7 @@ export default class AuDropdown extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownTitle-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'
@@ -56,7 +56,7 @@ export default class AuDropdown extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'
@@ -74,10 +74,10 @@ export default class AuDropdown extends Component {
 
   // Dropdown alignment
   get alignment() {
-    if (this.args.alignment == "left")
-      return "au-c-dropdown--left";
-    if (this.args.alignment == "right")
-      return "au-c-dropdown--right";
-    return "";
+    if (this.args.alignment == 'left')
+      return 'au-c-dropdown--left';
+    if (this.args.alignment == 'right')
+      return 'au-c-dropdown--right';
+    return '';
   }
 }

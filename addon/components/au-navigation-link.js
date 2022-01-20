@@ -1,6 +1,6 @@
-import Component from "@glimmer/component";
+import Component from '@glimmer/component';
 import { deprecate } from '@ember/debug';
-import { action } from "@ember/object";
+import { action } from '@ember/object';
 
 export default class AuNavigationLink extends Component {
   get route() {

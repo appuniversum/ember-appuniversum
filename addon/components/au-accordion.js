@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
-import { action } from "@ember/object";
-import { tracked } from "@glimmer/tracking";
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 import { deprecate } from '@ember/debug';
 
 export default class AuAccordionComponent extends Component {
@@ -16,9 +16,9 @@ export default class AuAccordionComponent extends Component {
 
   get loading() {
     if (this.args.loading)
-      return "is-loading";
+      return 'is-loading';
     else
-      return "";
+      return '';
   }
 
   get subtitle() {
@@ -28,7 +28,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionSubtitle-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'
@@ -51,7 +51,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionIconOpen-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'
@@ -63,7 +63,7 @@ export default class AuAccordionComponent extends Component {
     } else if (this.args.iconOpen) {
       return this.args.iconOpen;
     } else {
-      return "nav-down";
+      return 'nav-down';
     }
   }
 
@@ -74,7 +74,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionIconClosed-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'
@@ -86,7 +86,7 @@ export default class AuAccordionComponent extends Component {
     } else if (this.args.iconClosed) {
       return this.args.iconClosed;
     } else {
-      return "nav-right";
+      return 'nav-right';
     }
   }
 
@@ -97,7 +97,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionButtonLabel-argument',
-          until: "1.0.0",
+          until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0'

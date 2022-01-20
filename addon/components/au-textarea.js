@@ -2,30 +2,30 @@ import Component from '@glimmer/component';
 
 export default class AuTextarea extends Component {
   get width() {
-    if (this.args.width == "block")
-      return "au-c-textarea--block";
+    if (this.args.width == 'block')
+      return 'au-c-textarea--block';
     else
-      return "";
+      return '';
   }
 
   get error() {
     if (this.args.error)
-      return "au-c-textarea--error";
+      return 'au-c-textarea--error';
     else
-      return "";
+      return '';
   }
 
   get warning() {
     if (this.args.warning)
-      return "au-c-textarea--warning";
+      return 'au-c-textarea--warning';
     else
-      return "";
+      return '';
   }
 
   get disabled() {
     if (this.args.disabled)
-      return "is-disabled";
+      return 'is-disabled';
     else
-      return "";
+      return '';
   }
 }

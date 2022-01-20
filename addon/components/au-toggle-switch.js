@@ -4,9 +4,9 @@ import { action } from '@ember/object';
 export default class AuToggleSwitch extends Component {
   get disabled() {
     if (this.args.disabled)
-      return "is-disabled";
+      return 'is-disabled';
     else
-      return "";
+      return '';
   }
 
   @action

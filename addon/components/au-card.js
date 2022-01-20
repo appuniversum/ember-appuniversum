@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
-import { action } from "@ember/object";
-import { tracked } from "@glimmer/tracking";
+import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class AuCardComponent extends Component {
 
@@ -22,49 +22,49 @@ export default class AuCardComponent extends Component {
   }
 
   get size() {
-    if (this.args.size == "small")
-      return "au-c-card--padding-small";
-    if (this.args.size == "tiny")
-      return "au-c-card--padding-tiny";
-    if (this.args.size == "flush")
-      return "";
+    if (this.args.size == 'small')
+      return 'au-c-card--padding-small';
+    if (this.args.size == 'tiny')
+      return 'au-c-card--padding-tiny';
+    if (this.args.size == 'flush')
+      return '';
     else
-      return "au-c-card--padding";
+      return 'au-c-card--padding';
   }
 
   get flex() {
     if (this.args.flex)
-      return "au-c-card--flex";
-    return "";
+      return 'au-c-card--flex';
+    return '';
   }
 
   get expandable() {
     if (this.args.expandable)
-      return "au-c-card--expandable";
-    return "";
+      return 'au-c-card--expandable';
+    return '';
   }
 
   get shadow() {
     if (this.args.shadow)
-      return "au-c-card--shadow";
-    return "";
+      return 'au-c-card--shadow';
+    return '';
   }
 
   get divided() {
     if (this.args.divided)
-      return "au-c-card--divided";
-    return "";
+      return 'au-c-card--divided';
+    return '';
   }
 
   get textCenter() {
     if (this.args.textCenter)
-      return "au-c-card--text-center";
-    return "";
+      return 'au-c-card--text-center';
+    return '';
   }
 
   get standOut() {
     if (this.args.standOut)
-      return "au-c-card--standout";
-    return "";
+      return 'au-c-card--standout';
+    return '';
   }
 }

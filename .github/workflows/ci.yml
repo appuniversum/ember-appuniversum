@@ -34,6 +34,7 @@ on:
   push:
     branches:
       - master
+      - development
   pull_request:
 
 env:
