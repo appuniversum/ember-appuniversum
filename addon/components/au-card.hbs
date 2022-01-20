@@ -47,7 +47,7 @@
       </AuButton>
     </div>
     {{/if}}
-    {{#if this.isExpanded}}
+    {{#if this.sectionOpen}}
       <div tabindex="0">
         {{yield (hash
           content = (component 'au-card-content')

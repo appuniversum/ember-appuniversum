@@ -74,7 +74,8 @@ export default {
     isOpenInitially: { control: 'boolean', description:'Determines whether the card is open initially (when expandable is true)'},
     badgeIcon: { control: 'select', options: icons, description:'Add an icon'},
     badgeSkin: { control: 'select', options: ['none', 'border', 'brand', 'success', 'warning', 'error', 'action'], description:'Set the theme of the badge'},
-    badgeSize: { control: 'select', options: ['default', 'small'], description:'Set the size of the badge'}
+    badgeSize: { control: 'select', options: ['default', 'small'], description:'Set the size of the badge'},
+    manualControl: { control: 'boolean', description:'Activates manual control of the card component'},
   },
   parameters: {
     layout: 'padded',
@@ -92,6 +93,7 @@ const Template = (args) => ({
       @expandable={{this.expandable}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
       as |c|
     >
       <c.header
@@ -127,6 +129,7 @@ const ExpandableTemplate = (args) => ({
       @expandable={{this.expandable}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
       as |c|
     >
       <c.header
@@ -166,6 +169,7 @@ const EditableTemplate = (args) => ({
       @expandable={{this.expandable}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
       as |c|>
       <c.content>
         <div class="au-o-grid">
@@ -216,6 +220,7 @@ const EditingTemplate = (args) => ({
       @expandable={{this.expandable}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
       as |c|>
       <c.content>
         <div class="au-o-grid">
@@ -264,7 +269,8 @@ Component.args = {
   isOpenInitially: false,
   badgeIcon: '',
   badgeSkin: '',
-  badgeSize: ''
+  badgeSize: '',
+  manualControl: false
 };
 
 export const Expandable = ExpandableTemplate.bind({});
@@ -279,7 +285,8 @@ Expandable.args = {
   isOpenInitially: true,
   badgeIcon: '',
   badgeSkin: '',
-  badgeSize: ''
+  badgeSize: '',
+  manualControl: false
 };
 
 
@@ -295,7 +302,8 @@ Editable.args = {
   isOpenInitially: false,
   badgeIcon: '',
   badgeSkin: '',
-  badgeSize: ''
+  badgeSize: '',
+  manualControl: false
 };
 
 export const Editing = EditingTemplate.bind({});
@@ -310,5 +318,6 @@ Editing.args = {
   isOpenInitially: false,
   badgeIcon: '',
   badgeSkin: '',
-  badgeSize: ''
+  badgeSize: '',
+  manualControl: false
 };

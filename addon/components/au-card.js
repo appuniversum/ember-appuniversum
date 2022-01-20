@@ -13,6 +13,14 @@ export default class AuCardComponent extends Component {
     }
   }
 
+  get sectionOpen() {
+    if(this.args.manualControl) {
+      return this.args.isExpanded;
+    } else {
+      return this.isExpanded;
+    }
+  }
+
   get size() {
     if (this.args.size == 'small')
       return 'au-c-card--padding-small';
@@ -64,6 +72,10 @@ export default class AuCardComponent extends Component {
   @action
   openSection() {
     // Toggle section view state
-    this.isExpanded = !this.isExpanded;
+    if(this.args.manualControl) {
+      this.args.openSection();
+    } else {
+      this.isExpanded = !this.isExpanded;
+    }
   }
 }
