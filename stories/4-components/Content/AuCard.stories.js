@@ -70,10 +70,12 @@ export default {
     size: { control: 'select', options: ['regular', 'small', 'flush'], description:'Changes the padding'},
     standOut: { control: 'boolean', description:'Makes background colour stand out'},
     expandable: { control: 'boolean', description:'Card becomes expandable '},
-    isOpenInitially: { control: 'boolean', description:'Determines whether the card is open initially (when expandable is true) '},
+    isExpanded: { control: 'boolean', description:'Toggle expanded section (when expandable is true).'},
+    isOpenInitially: { control: 'boolean', description:'Determines whether the card is open initially (when expandable is true)'},
     badgeIcon: { control: 'select', options: icons, description:'Add an icon'},
     badgeSkin: { control: 'select', options: ['none', 'border', 'brand', 'success', 'warning', 'error', 'action'], description:'Set the theme of the badge'},
-    badgeSize: { control: 'select', options: ['default', 'small'], description:'Set the size of the badge'}
+    badgeSize: { control: 'select', options: ['default', 'small'], description:'Set the size of the badge'},
+    manualControl: { control: 'boolean', description:'Activates manual control of the card component'},
   },
   parameters: {
     layout: 'padded',
@@ -89,7 +91,9 @@ const Template = (args) => ({
       @size={{this.size}}
       @standOut={{this.standOut}}
       @expandable={{this.expandable}}
+      @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
       as |c|
     >
       <c.header
@@ -110,6 +114,36 @@ const Template = (args) => ({
       <c.footer>
         <AuButton>Ga naar toezicht</AuButton>
       </c.footer>
+    </AuCard>`,
+  context: args,
+})
+
+const ExpandableTemplate = (args) => ({
+  template: hbs`
+    <AuCard
+      @flex={{this.flex}}
+      @textCenter={{this.textCenter}}
+      @shadow={{this.shadow}}
+      @size={{this.size}}
+      @standOut={{this.standOut}}
+      @expandable={{this.expandable}}
+      @isExpanded={{this.isExpanded}}
+      @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
+      as |c|
+    >
+      <c.header
+        @badgeIcon={{this.badgeIcon}}
+        @badgeSkin={{this.badgeSkin}}
+        @badgeSize={{this.badgeSize}}
+      >
+        <AuHeading @level="3" @skin="5">
+          Title for card
+        </AuHeading>
+      </c.header>
+      <c.content>
+        <p>Information in the card that comes below the header. Content.</p>
+      </c.content>
     </AuCard>`,
   context: args,
 });
@@ -133,7 +167,9 @@ const EditableTemplate = (args) => ({
       @size={{this.size}}
       @standOut={{this.standOut}}
       @expandable={{this.expandable}}
+      @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
       as |c|>
       <c.content>
         <div class="au-o-grid">
@@ -182,7 +218,9 @@ const EditingTemplate = (args) => ({
       @size={{this.size}}
       @standOut={{this.standOut}}
       @expandable={{this.expandable}}
+      @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
+      @manualControl={{this.manualControl}}
       as |c|>
       <c.content>
         <div class="au-o-grid">
@@ -227,10 +265,28 @@ Component.args = {
   size: 'regular',
   standOut: false,
   expandable: false,
+  isExpanded: false,
   isOpenInitially: false,
   badgeIcon: '',
   badgeSkin: '',
-  badgeSize: ''
+  badgeSize: '',
+  manualControl: false
+};
+
+export const Expandable = ExpandableTemplate.bind({});
+Expandable.args = {
+  flex: false,
+  textCenter: false,
+  shadow: true,
+  size: 'regular',
+  standOut: false,
+  expandable: true,
+  isExpanded: true,
+  isOpenInitially: true,
+  badgeIcon: '',
+  badgeSkin: '',
+  badgeSize: '',
+  manualControl: false
 };
 
 
@@ -242,10 +298,12 @@ Editable.args = {
   size: 'regular',
   standOut: true,
   expandable: false,
+  isExpanded: false,
   isOpenInitially: false,
   badgeIcon: '',
   badgeSkin: '',
-  badgeSize: ''
+  badgeSize: '',
+  manualControl: false
 };
 
 export const Editing = EditingTemplate.bind({});
@@ -256,8 +314,10 @@ Editing.args = {
   size: 'regular',
   standOut: false,
   expandable: false,
+  isExpanded: false,
   isOpenInitially: false,
   badgeIcon: '',
   badgeSkin: '',
-  badgeSize: ''
+  badgeSize: '',
+  manualControl: false
 };

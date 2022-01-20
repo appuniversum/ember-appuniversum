@@ -36,14 +36,13 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  accept: { control: 'text', description:'A list of MIME types/extensions to be accepted by the input'},
-    accept: "image/*",
-    endPoint: "",
-    title: "Bestanden toevoegen",
-    helpTextDragDrop: "Sleep de bestanden naar hier om toe te voegen",
-    helpTextFileNotSupported: "Dit bestandsformaat wordt niet ondersteund.",
-    maxFileSizeMB: "20",
-    multiple: false,
-    onFinishUpload: null,
-    onQueueUpdate: null
+  accept: "image/*",
+  endPoint: "",
+  title: "Bestanden toevoegen",
+  helpTextDragDrop: "Sleep de bestanden naar hier om toe te voegen",
+  helpTextFileNotSupported: "Dit bestandsformaat wordt niet ondersteund.",
+  maxFileSizeMB: "20",
+  multiple: false,
+  onFinishUpload: null,
+  onQueueUpdate: null
 };

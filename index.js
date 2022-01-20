@@ -21,7 +21,7 @@ module.exports = {
     );
   },
 
-  contentFor: function(type, config) {
+  contentFor: function(type) {
     if (type === 'body'){
       return '<div id="ember-appuniversum-wormhole"></div>';
     } else {

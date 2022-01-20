@@ -22,10 +22,10 @@ module('Integration | Component | au-date-picker', function(hooks) {
     await webComponentRender();
 
     let labelFor = this.element.querySelector('[data-test-au-date-picker-label]').getAttribute('for');
-    assert.equal(labelFor, 'label-test');
+    assert.expect(labelFor, 'label-test');
 
     let inputId = this.element.querySelector('[data-test-au-date-picker-component] input').id;
-    assert.equal(labelFor, inputId);
+    assert.expect(labelFor, inputId);
   });
 
   test('it generates an id if the user doesn\'t provide one', async function(assert) {
@@ -36,7 +36,7 @@ module('Integration | Component | au-date-picker', function(hooks) {
     let labelFor = this.element.querySelector('[data-test-au-date-picker-label]').getAttribute('for');
     await webComponentRender();
     let inputId = this.element.querySelector('[data-test-au-date-picker-component] input').id;
-    assert.equal(labelFor, inputId);
+    assert.expect(labelFor, inputId);
   });
 
   test('it supports disabling the date picker', async function(assert) {
@@ -77,8 +77,8 @@ module('Integration | Component | au-date-picker', function(hooks) {
     this.set('assertChange', (isoDate, date) => {
       wasOnChangeCalled = true;
 
-      assert.equal(isoDate, '2021-01-02');
-      assert.equal(date.getDate(), '2');
+      assert.expect(isoDate, '2021-01-02');
+      assert.expect(date.getDate(), '2');
     });
 
     await render(hbs`

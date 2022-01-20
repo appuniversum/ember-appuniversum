@@ -3,22 +3,22 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
 export default class AuCardComponent extends Component {
-
   // Track section state
-  @tracked sectionOpen = false;
+  @tracked isExpanded = this.args.isExpanded;
 
   constructor() {
     super(...arguments);
     if (this.args.isOpenInitially) {
-      this.sectionOpen = true;
+      this.isExpanded = true;
     }
   }
 
-  // Open section
-  @action
-  openSection() {
-    // Toggle section view state
-    this.sectionOpen = !this.sectionOpen;
+  get sectionOpen() {
+    if(this.args.manualControl) {
+      return this.args.isExpanded;
+    } else {
+      return this.isExpanded;
+    }
   }
 
   get size() {
@@ -66,5 +66,16 @@ export default class AuCardComponent extends Component {
     if (this.args.standOut)
       return 'au-c-card--standout';
     return '';
+  }
+
+  // Open section
+  @action
+  openSection() {
+    // Toggle section view state
+    if(this.args.manualControl) {
+      this.args.openSection();
+    } else {
+      this.isExpanded = !this.isExpanded;
+    }
   }
 }
