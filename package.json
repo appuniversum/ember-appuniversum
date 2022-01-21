@@ -5,6 +5,7 @@
   "keywords": [
     "ember-addon"
   ],
+  "homepage": "https://appuniversum.github.io/ember-appuniversum",
   "repository": {
     "type": "git",
     "url": "https://github.com/appuniversum/ember-appuniversum"
@@ -35,6 +36,15 @@
     "build-ember": "ember build --environment=production",
     "release": "release-it"
   },
+  "browserslist": [
+    "last 1 Chrome version",
+    "last 1 Android version",
+    "last 1 Firefox version",
+    "last 1 FirefoxAndroid version",
+    "last 1 Safari version",
+    "last 1 iOS version",
+    "last 1 Edge version"
+  ],
   "dependencies": {
     "@appuniversum/appuniversum": "0.2.1",
     "@duetds/date-picker": "^1.0.4",
@@ -54,10 +64,6 @@
     "ember-named-blocks-polyfill": "^0.2.4",
     "ember-prop-modifier": "^1.0.1",
     "ember-test-selectors": "^6.0.0"
-  },
-  "optionalDependencies": {
-    "ember-concurrency": "2.x",
-    "ember-power-select": "2.x || 3.x || 4.x"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -116,13 +122,21 @@
     "prettier": "^2.3.2",
     "qunit": "^2.16.0",
     "qunit-dom": "^1.6.0",
-    "release-it": "^14.12.3",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^3.1.0",
     "sass": "^1.26.2",
     "svg-symbols": "^1.0.5",
     "webpack": "^5.64.4"
   },
+  "optionalDependencies": {
+    "ember-concurrency": "2.x",
+    "ember-power-select": "2.x || 3.x || 4.x"
+  },
   "engines": {
     "node": "12.* || 14.* || >= 16"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember": {
     "edition": "octane"
@@ -130,14 +144,19 @@
   "ember-addon": {
     "configPath": "tests/dummy/config"
   },
-  "homepage": "https://appuniversum.github.io/ember-appuniversum",
-  "browserslist": [
-    "last 1 Chrome version",
-    "last 1 Android version",
-    "last 1 Firefox version",
-    "last 1 FirefoxAndroid version",
-    "last 1 Safari version",
-    "last 1 iOS version",
-    "last 1 Edge version"
-  ]
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
+  }
 }
