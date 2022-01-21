@@ -1,5 +1,8 @@
 {{#if (has-block)}}
-<div class="au-c-main-container__sidebar au-u-hide-on-print">
-  {{yield "sidebar"}}
-</div>
+  <div
+    class="au-c-main-container__sidebar au-u-hide-on-print"
+    data-test-main-container-sidebar
+  >
+    {{yield}}
+  </div>
 {{/if}}
