@@ -4,10 +4,10 @@ import { click, render, waitFor, waitUntil } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 /** @type import("qunit-dom").module */
-module('Integration | Component | au-date-picker', function(hooks) {
+module('Integration | Component | au-date-picker', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders a label', async function(assert) {
+  test('it renders a label', async function (assert) {
     await render(hbs`
       <AuDatePicker @label="Some label" data-test />
     `);
@@ -15,41 +15,55 @@ module('Integration | Component | au-date-picker', function(hooks) {
     assert.dom('[data-test-au-date-picker-label]').containsText('Some label');
   });
 
-  test('it uses the provided id to link the label to the input', async function(assert) {
+  test('it uses the provided id to link the label to the input', async function (assert) {
     await render(hbs`
       <AuDatePicker @label="Choose a date" @id="label-test" />
     `);
     await webComponentRender();
 
-    let labelFor = this.element.querySelector('[data-test-au-date-picker-label]').getAttribute('for');
-    assert.expect(labelFor, 'label-test');
+    assert
+      .dom('[data-test-au-date-picker-label]')
+      .hasAttribute('for', 'label-test');
 
-    let inputId = this.element.querySelector('[data-test-au-date-picker-component] input').id;
-    assert.expect(labelFor, inputId);
+    assert
+      .dom('[data-test-au-date-picker-component] input')
+      .hasAttribute('id', 'label-test');
   });
 
-  test('it generates an id if the user doesn\'t provide one', async function(assert) {
+  test("it generates an id if the user doesn't provide one", async function (assert) {
     await render(hbs`
       <AuDatePicker @label="Choose a date" />
     `);
 
-    let labelFor = this.element.querySelector('[data-test-au-date-picker-label]').getAttribute('for');
     await webComponentRender();
-    let inputId = this.element.querySelector('[data-test-au-date-picker-component] input').id;
-    assert.expect(labelFor, inputId);
+
+    let labelFor = this.element
+      .querySelector('[data-test-au-date-picker-label]')
+      .getAttribute('for');
+
+    let inputId = this.element.querySelector(
+      '[data-test-au-date-picker-component] input'
+    ).id;
+
+    assert.strictEqual(labelFor, inputId);
   });
 
-  test('it supports disabling the date picker', async function(assert) {
+  test('it supports disabling the date picker', async function (assert) {
     await render(hbs`
       <AuDatePicker @disabled={{true}} />
     `);
     await webComponentRender();
 
-    assert.dom('[data-test-au-date-picker-component] input').hasAttribute('disabled');
-    assert.dom('[data-test-au-date-picker-component] button').hasAttribute('disabled');
+    assert
+      .dom('[data-test-au-date-picker-component] input')
+      .hasAttribute('disabled');
+
+    assert
+      .dom('[data-test-au-date-picker-component] button')
+      .hasAttribute('disabled');
   });
 
-  test('it is possible to set a selected date', async function(assert) {
+  test('it is possible to set a selected date', async function (assert) {
     let isoDate = '2021-01-01';
 
     this.set('date', isoDate);
@@ -61,24 +75,32 @@ module('Integration | Component | au-date-picker', function(hooks) {
     let input = assert.dom('[data-test-au-date-picker-component] input');
     input.hasValue('1-1-2021');
 
-    let dateWithTimezone = new Date('2021-12-31T00:00:00+01:00');
-    this.set('date', dateWithTimezone);
+    let utcDate = new Date('2021-12-31T00:00:00Z');
+    this.set('date', utcDate);
 
     // The web component updates aren't monitored by Ember, so we need to do some manual waiting.
-    await waitUntil(() => {
-      return this.element.querySelector('[data-test-au-date-picker-component] input').value !== '1-1-2021';
-    }, { timeout: 2000 })
+    await waitUntil(
+      () => {
+        return (
+          this.element.querySelector(
+            '[data-test-au-date-picker-component] input'
+          ).value !== '1-1-2021'
+        );
+      },
+      { timeout: 2000 }
+    );
     input.hasValue('31-12-2021');
   });
 
+  test('it calls the @onChange handler when the user selects a date', async function (assert) {
+    assert.expect(4);
 
-  test('it calls the @onChange handler when the user selects a date', async function(assert) {
     let wasOnChangeCalled = false;
     this.set('assertChange', (isoDate, date) => {
       wasOnChangeCalled = true;
 
-      assert.expect(isoDate, '2021-01-02');
-      assert.expect(date.getDate(), '2');
+      assert.strictEqual(isoDate, '2021-01-02');
+      assert.strictEqual(date.getDate(), 2);
     });
 
     await render(hbs`
@@ -90,9 +112,15 @@ module('Integration | Component | au-date-picker', function(hooks) {
     await datePickerOpened();
 
     // Another hack to make sure the date picker buttons have actual values..
-    await waitUntil(() => {
-      return this.element.querySelector('.duet-date__day').children[0].innerText !== '';
-    }, { timeout: 2000 })
+    await waitUntil(
+      () => {
+        return (
+          this.element.querySelector('.duet-date__day').children[0]
+            .innerText !== ''
+        );
+      },
+      { timeout: 2000 }
+    );
 
     let availableDateButtons = this.element.querySelectorAll('.duet-date__day');
     let targetDateButton = [...availableDateButtons].find((date) => {
@@ -108,7 +136,9 @@ module('Integration | Component | au-date-picker', function(hooks) {
 // Ember doesn't know when the web component is finished rendering its HTML.
 // As a workaround we wait for the input element to appear in the DOM.
 function webComponentRender() {
-  return waitFor('[data-test-au-date-picker-component] input', { timeout: 2000 });
+  return waitFor('[data-test-au-date-picker-component] input', {
+    timeout: 2000,
+  });
 }
 
 function toggleDatePicker() {
