@@ -51,7 +51,6 @@
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "@zestia/ember-auto-focus": "^4.1.0",
-    "caniuse-lite": "^1.0.30001192",
     "date-fns": "^2.22.1",
     "ember-auto-import": "^2.2.4",
     "ember-cli-babel": "^7.26.6",
