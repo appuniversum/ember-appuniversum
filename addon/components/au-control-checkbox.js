@@ -3,10 +3,8 @@ import { action } from '@ember/object';
 
 export default class AuControlCheckbox extends Component {
   get disabled() {
-    if (this.args.disabled)
-      return 'is-disabled';
-    else
-      return '';
+    if (this.args.disabled) return 'is-disabled';
+    else return '';
   }
 
   @action

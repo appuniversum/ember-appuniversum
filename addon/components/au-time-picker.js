@@ -6,14 +6,17 @@ import { isPresent } from '@ember/utils';
 export default class AuTimePickerComponent extends Component {
   @tracked hourValue = this.args.hours || 12;
   @tracked minuteValue = this.args.minutes || 0;
-  @tracked secondValue = (isPresent(this.args.showSeconds) && !this.args.showSeconds) ? 0 : this.args.seconds || 0; // ignore 'seconds' argument if 'showSeconds' is false
-  @tracked keyCodes = [ 8 , 9, 13 , 33 , 34 , 37 , 39, 46 ];
+  @tracked secondValue =
+    isPresent(this.args.showSeconds) && !this.args.showSeconds
+      ? 0
+      : this.args.seconds || 0; // ignore 'seconds' argument if 'showSeconds' is false
+  @tracked keyCodes = [8, 9, 13, 33, 34, 37, 39, 46];
 
-  get getTimeObject(){
-    return{
+  get getTimeObject() {
+    return {
       hours: this.hourValue,
       minutes: this.minuteValue,
-      seconds: this.secondValue
+      seconds: this.secondValue,
     };
   }
 
@@ -32,7 +35,7 @@ export default class AuTimePickerComponent extends Component {
    */
 
   @action
-  increment(elem){
+  increment(elem) {
     if (elem == 'hourValue') {
       ++this[elem];
 
@@ -51,12 +54,11 @@ export default class AuTimePickerComponent extends Component {
     this.callBackParent(this.getTimeObject);
   }
 
-
   @action
-  decrement(elem){
+  decrement(elem) {
     --this[elem];
 
-    if(this[elem] <= 0){
+    if (this[elem] <= 0) {
       this[elem] = 0;
     }
     this.callBackParent(this.getTimeObject);
@@ -71,17 +73,20 @@ export default class AuTimePickerComponent extends Component {
    */
 
   @action
-  setTimeValue(elem, e){
+  setTimeValue(elem, e) {
     if (e.keyCode == 38) {
       this.increment(elem);
-
     } else if (e.keyCode == 40) {
       this.decrement(elem);
-
-    } else if (isNaN(parseFloat(e.key)) && this.keyCodes.indexOf(e.keyCode) == -1 ) {
+    } else if (
+      isNaN(parseFloat(e.key)) &&
+      this.keyCodes.indexOf(e.keyCode) == -1
+    ) {
       e.preventDefault();
-
-    } else if (e.target.value.length >= 2 && this.keyCodes.indexOf(e.keyCode) == -1) {
+    } else if (
+      e.target.value.length >= 2 &&
+      this.keyCodes.indexOf(e.keyCode) == -1
+    ) {
       e.preventDefault();
     }
   }
@@ -93,7 +98,7 @@ export default class AuTimePickerComponent extends Component {
    */
 
   @action
-  updateTime(elem, e){
+  updateTime(elem, e) {
     let inputValue = e.target.value;
     if (elem == 'hourValue') {
       if (inputValue < 0) {
@@ -105,8 +110,8 @@ export default class AuTimePickerComponent extends Component {
       }
     }
 
-    if(elem != 'hourValue'){
-      if(inputValue < 0){
+    if (elem != 'hourValue') {
+      if (inputValue < 0) {
         this[elem] = 0;
       } else if (inputValue > 59) {
         this[elem] = 59;
@@ -122,14 +127,14 @@ export default class AuTimePickerComponent extends Component {
    */
 
   @action
-  callBackParent(value){
-    if(this.args.onChange != undefined){
+  callBackParent(value) {
+    if (this.args.onChange != undefined) {
       this.args.onChange(value);
     }
   }
 
   @action
-  setCurrentTime(){
+  setCurrentTime() {
     let current = new Date();
     this.hourValue = current.getHours();
     this.minuteValue = current.getMinutes();

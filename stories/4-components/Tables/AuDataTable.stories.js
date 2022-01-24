@@ -2,9 +2,7 @@ import { hbs } from 'ember-cli-htmlbars';
 
 export default {
   title: 'Components/Tables/AuDataTable',
-  argTypes: {
-
-  },
+  argTypes: {},
   parameters: {
     layout: 'fullscreen',
   },
@@ -59,6 +57,4 @@ const Template = (args) => ({
 });
 
 export const Component = Template.bind({});
-Component.args = {
-
-};
+Component.args = {};

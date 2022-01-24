@@ -3,9 +3,13 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Brand/AuContentHeader',
   argTypes: {
-    titlePartOne: { control: 'text', description:'Top part of the title' },
-    titlePartTwo: {control: 'text', description:'Bottom part of the title'},
-    pictureSize: {control: 'select', options: ['default',  'large'], description:'Sets the size of the header picture'}
+    titlePartOne: { control: 'text', description: 'Top part of the title' },
+    titlePartTwo: { control: 'text', description: 'Bottom part of the title' },
+    pictureSize: {
+      control: 'select',
+      options: ['default', 'large'],
+      description: 'Sets the size of the header picture',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -26,7 +30,7 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  titlePartOne: "Vlaanderen",
-  titlePartTwo: "is lokaal bestuur",
-  pictureSize: "default"
+  titlePartOne: 'Vlaanderen',
+  titlePartTwo: 'is lokaal bestuur',
+  pictureSize: 'default',
 };

@@ -5,8 +5,8 @@ export default {
   parameters: {
     layout: 'padded',
     status: {
-      type: 'draft' // 'draft' | 'stable' | 'deprecated'
-    }
+      type: 'draft', // 'draft' | 'stable' | 'deprecated'
+    },
   },
 };
 
@@ -38,5 +38,4 @@ const Template = (args) => ({
 });
 
 export const Component = Template.bind({});
-Component.args = {
-};
+Component.args = {};

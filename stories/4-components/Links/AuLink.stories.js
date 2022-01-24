@@ -59,22 +59,47 @@ const icons = [
   'user-fill',
   'user-popup',
   'users',
-]
+];
 
 export default {
   title: 'Components/Links/AuLink',
   argTypes: {
-    text: {control: 'text', description:''},
-    route: {control: 'route', description:'The route that is passed to the link'},
-    skin: { control: 'select', options: ['primary', 'secondary', 'button', 'button-secondary'], description:'Defines the style of the link'},
-    icon: { control: 'select', options: icons, description:'Adds an icon'},
-    iconAlignment: { control: 'select', options: ["left","right"], description:'hoose the position of the icon, adds correct margin next to the icon'},
-    hideText: { control: 'boolean',  description:'Hides the link text visually'},
-    width: { control: 'select', options: ["","block"], description:'Defines the width of the link'},
-    active: { control: 'boolean', description:'Adds an active state and disables pointer events'},
-    model: { control: 'model', description:'Supply a model to the route'},
-    models: { control: 'model', description:'Supply models to the route'},
-    query: { control: 'query', description:'Supply query parameters to the route'},
+    text: { control: 'text', description: '' },
+    route: {
+      control: 'route',
+      description: 'The route that is passed to the link',
+    },
+    skin: {
+      control: 'select',
+      options: ['primary', 'secondary', 'button', 'button-secondary'],
+      description: 'Defines the style of the link',
+    },
+    icon: { control: 'select', options: icons, description: 'Adds an icon' },
+    iconAlignment: {
+      control: 'select',
+      options: ['left', 'right'],
+      description:
+        'hoose the position of the icon, adds correct margin next to the icon',
+    },
+    hideText: {
+      control: 'boolean',
+      description: 'Hides the link text visually',
+    },
+    width: {
+      control: 'select',
+      options: ['', 'block'],
+      description: 'Defines the width of the link',
+    },
+    active: {
+      control: 'boolean',
+      description: 'Adds an active state and disables pointer events',
+    },
+    model: { control: 'model', description: 'Supply a model to the route' },
+    models: { control: 'model', description: 'Supply models to the route' },
+    query: {
+      control: 'query',
+      description: 'Supply query parameters to the route',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -102,12 +127,12 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  text: "Link",
-  route: "index",
-  skin: "primary",
-  icon: "login",
-  iconAlignment: "left",
+  text: 'Link',
+  route: 'index',
+  skin: 'primary',
+  icon: 'login',
+  iconAlignment: 'left',
   hideText: false,
-  width: "",
-  active: false
+  width: '',
+  active: false,
 };

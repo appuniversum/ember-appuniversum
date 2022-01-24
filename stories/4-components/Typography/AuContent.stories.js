@@ -3,7 +3,11 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Typography/AuContent',
   argTypes: {
-    skin: { control: 'select', options: ['default', 'small', 'large'], description:'Smaller/larger text and vertical spacing'}
+    skin: {
+      control: 'select',
+      options: ['default', 'small', 'large'],
+      description: 'Smaller/larger text and vertical spacing',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -32,5 +36,5 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  skin: ''
+  skin: '',
 };

@@ -3,7 +3,11 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Notifications/AuLoader',
   argTypes: {
-    padding: { control: 'select', options: ['', 'default', 'small', 'large'], description:'Set the padding of the loader'},
+    padding: {
+      control: 'select',
+      options: ['', 'default', 'small', 'large'],
+      description: 'Set the padding of the loader',
+    },
   },
   parameters: {
     layout: 'padded',

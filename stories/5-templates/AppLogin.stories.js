@@ -120,6 +120,4 @@ const Template = (args) => ({
 });
 
 export const Page = Template.bind({});
-Page.args = {
-
-};
+Page.args = {};

@@ -3,16 +3,16 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { assert, runInDebug } from '@ember/debug';
 import { guidFor } from '@ember/object/internals';
-import formatISO from 'date-fns/formatISO'
+import formatISO from 'date-fns/formatISO';
 
 const DEFAULT_ADAPTER = {
-  parse: function(value = '', createDate) {
+  parse: function (value = '', createDate) {
     const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
     if (matches) {
       return createDate(matches[3], matches[2], matches[1]);
     }
   },
-  format: function(date) {
+  format: function (date) {
     return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
   },
 };
@@ -28,9 +28,43 @@ const DEFAULT_LOCALIZATION = {
   closeLabel: 'Close window',
   keyboardInstruction: 'You can use arrow keys to navigate dates',
   calendarHeading: 'Choose a date',
-  dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-  monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  dayNames: [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ],
+  monthNames: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ],
+  monthNamesShort: [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ],
 };
 
 export default class AuDatePickerComponent extends Component {
@@ -75,12 +109,9 @@ export default class AuDatePickerComponent extends Component {
   }
 
   get error() {
-    if (this.args.error)
-      return 'duet-date-error';
-    if (this.args.warning)
-      return 'duet-date-warning';
-    else
-      return '';
+    if (this.args.error) return 'duet-date-error';
+    if (this.args.warning) return 'duet-date-warning';
+    else return '';
   }
 
   @action
@@ -95,7 +126,9 @@ export default class AuDatePickerComponent extends Component {
 
   async registerDuetDatePicker() {
     if (typeof FastBoot === 'undefined') {
-      const { defineCustomElements: registerDuetDatePicker } = await import('@duetds/date-picker/custom-element');
+      const { defineCustomElements: registerDuetDatePicker } = await import(
+        '@duetds/date-picker/custom-element'
+      );
       registerDuetDatePicker();
       this.isInitialized = true;
     }
@@ -109,7 +142,10 @@ function validateAdapter(adapterArg) {
   );
 
   Object.keys(adapterArg).map((key) => {
-    assert(`"${key}" is not a property of adapter, maybe it is just a typo?`, key in DEFAULT_ADAPTER);
+    assert(
+      `"${key}" is not a property of adapter, maybe it is just a typo?`,
+      key in DEFAULT_ADAPTER
+    );
   });
 }
 
@@ -120,7 +156,10 @@ function validateLocalization(localizationArg) {
   );
 
   Object.keys(localizationArg).map((key) => {
-    assert(`"${key}" is not a property of localization, maybe it is just a typo?`, key in DEFAULT_LOCALIZATION);
+    assert(
+      `"${key}" is not a property of localization, maybe it is just a typo?`,
+      key in DEFAULT_LOCALIZATION
+    );
   });
 }
 
@@ -138,7 +177,6 @@ function asIsoDate(target, key /*, descriptor */) {
         typeof argValue === 'string' || argValue instanceof Date
       );
 
-
       if (argValue instanceof Date) {
         return toIsoDateString(argValue);
       } else {
@@ -148,7 +186,7 @@ function asIsoDate(target, key /*, descriptor */) {
         );
         return argValue;
       }
-    }
+    },
   };
 }
 

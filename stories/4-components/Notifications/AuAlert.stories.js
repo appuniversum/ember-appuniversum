@@ -59,16 +59,28 @@ const icons = [
   'user-fill',
   'user-popup',
   'users',
-]
+];
 
 export default {
   title: 'Components/Notifications/AuAlert',
   argTypes: {
-    title: { control: 'text', description:'Add a title to the alert'},
-    skin: { control: 'select', options:['info', 'success',  'warning', 'error'], description:'Sets the style of the alert'},
-    icon: { control: 'select', options:icons, description:'Add an icon to the alert'},
-    size: { control: 'select', options:['default', 'small'], description:'Set the size of the alert'},
-    closable: { control: 'boolean', description:'Makes the alert closable'},
+    title: { control: 'text', description: 'Add a title to the alert' },
+    skin: {
+      control: 'select',
+      options: ['info', 'success', 'warning', 'error'],
+      description: 'Sets the style of the alert',
+    },
+    icon: {
+      control: 'select',
+      options: icons,
+      description: 'Add an icon to the alert',
+    },
+    size: {
+      control: 'select',
+      options: ['default', 'small'],
+      description: 'Set the size of the alert',
+    },
+    closable: { control: 'boolean', description: 'Makes the alert closable' },
   },
   parameters: {
     layout: 'padded',
@@ -91,9 +103,9 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  title: "Alert",
-  skin: "warning",
-  icon: "download",
-  size: "default",
-  closable: false
+  title: 'Alert',
+  skin: 'warning',
+  icon: 'download',
+  size: 'default',
+  closable: false,
 };

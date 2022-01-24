@@ -3,7 +3,11 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Tables/AuTable',
   argTypes: {
-    size: { control: 'select', options: ['default', 'small'], description:'Set the size of the table'}
+    size: {
+      control: 'select',
+      options: ['default', 'small'],
+      description: 'Set the size of the table',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -44,5 +48,5 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  size: 'default'
+  size: 'default',
 };

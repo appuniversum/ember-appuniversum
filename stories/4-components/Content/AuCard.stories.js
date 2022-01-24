@@ -59,23 +59,60 @@ const icons = [
   'user-fill',
   'user-popup',
   'users',
-]
+];
 
 export default {
   title: 'Components/Content/AuCard',
   argTypes: {
-    flex: { control: 'boolean', description:'Layout elements as flexbox'},
-    textCenter: { control: 'boolean', description:'Centers text'},
-    shadow: { control: 'boolean', description:'Adds a box shadow'},
-    size: { control: 'select', options: ['regular', 'small', 'flush'], description:'Changes the padding'},
-    standOut: { control: 'boolean', description:'Makes background colour stand out'},
-    expandable: { control: 'boolean', description:'Card becomes expandable '},
-    isExpanded: { control: 'boolean', description:'Toggle expanded section (when expandable is true).'},
-    isOpenInitially: { control: 'boolean', description:'Determines whether the card is open initially (when expandable is true)'},
-    badgeIcon: { control: 'select', options: icons, description:'Add an icon'},
-    badgeSkin: { control: 'select', options: ['none', 'border', 'brand', 'success', 'warning', 'error', 'action'], description:'Set the theme of the badge'},
-    badgeSize: { control: 'select', options: ['default', 'small'], description:'Set the size of the badge'},
-    manualControl: { control: 'boolean', description:'Activates manual control of the card component'},
+    flex: { control: 'boolean', description: 'Layout elements as flexbox' },
+    textCenter: { control: 'boolean', description: 'Centers text' },
+    shadow: { control: 'boolean', description: 'Adds a box shadow' },
+    size: {
+      control: 'select',
+      options: ['regular', 'small', 'flush'],
+      description: 'Changes the padding',
+    },
+    standOut: {
+      control: 'boolean',
+      description: 'Makes background colour stand out',
+    },
+    expandable: { control: 'boolean', description: 'Card becomes expandable ' },
+    isExpanded: {
+      control: 'boolean',
+      description: 'Toggle expanded section (when expandable is true).',
+    },
+    isOpenInitially: {
+      control: 'boolean',
+      description:
+        'Determines whether the card is open initially (when expandable is true)',
+    },
+    badgeIcon: {
+      control: 'select',
+      options: icons,
+      description: 'Add an icon',
+    },
+    badgeSkin: {
+      control: 'select',
+      options: [
+        'none',
+        'border',
+        'brand',
+        'success',
+        'warning',
+        'error',
+        'action',
+      ],
+      description: 'Set the theme of the badge',
+    },
+    badgeSize: {
+      control: 'select',
+      options: ['default', 'small'],
+      description: 'Set the size of the badge',
+    },
+    manualControl: {
+      control: 'boolean',
+      description: 'Activates manual control of the card component',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -116,7 +153,7 @@ const Template = (args) => ({
       </c.footer>
     </AuCard>`,
   context: args,
-})
+});
 
 const ExpandableTemplate = (args) => ({
   template: hbs`
@@ -270,7 +307,7 @@ Component.args = {
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false
+  manualControl: false,
 };
 
 export const Expandable = ExpandableTemplate.bind({});
@@ -286,9 +323,8 @@ Expandable.args = {
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false
+  manualControl: false,
 };
-
 
 export const Editable = EditableTemplate.bind({});
 Editable.args = {
@@ -303,7 +339,7 @@ Editable.args = {
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false
+  manualControl: false,
 };
 
 export const Editing = EditingTemplate.bind({});
@@ -319,5 +355,5 @@ Editing.args = {
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false
+  manualControl: false,
 };

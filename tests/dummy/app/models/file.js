@@ -1,5 +1,5 @@
 // BEGIN-SNIPPET file-model.js
-import Model, { attr }from '@ember-data/model';
+import Model, { attr } from '@ember-data/model';
 
 export default class FileModel extends Model {
   @attr name;
@@ -8,7 +8,7 @@ export default class FileModel extends Model {
   @attr extension;
   @attr('datetime') created;
 
-  get humanReadableSize(){
+  get humanReadableSize() {
     const bytes = this.size;
     const sizes = ['bytes', 'KB', 'MB', 'GB', 'TB'];
     if (bytes == 0) return '0 byte';
@@ -16,7 +16,7 @@ export default class FileModel extends Model {
     return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
   }
 
-  get downloadLink(){
+  get downloadLink() {
     return `/files/${this.id}/download?name=${this.name}`;
   }
 }

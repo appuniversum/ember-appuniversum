@@ -59,21 +59,50 @@ const icons = [
   'user-fill',
   'user-popup',
   'users',
-]
+];
 
 export default {
   title: 'Components/Buttons/AuButton',
   argTypes: {
-    text: { control: 'text', description:'' },
-    skin: { control: 'select', options: ['primary', 'secondary', 'link', 'link-secondary'], description:'Defines the style of the button'},
-    size: { control: 'select', options: ['', 'large'], description:'Set the size of the button'},
-    icon: { control: 'select', options: icons, description:'Adds an icon' },
-    iconAlignment: { control: 'select', options: ['', 'left', 'right'], description:'Choose the position of the icon, adds correct margin next to the icon'},
-    hideText: {control: 'boolean', description:'Hides the button text visually'},
-    width: { control: 'select', options: ['', 'block'], description:'Defines the width of a button'},
-    alert: {control: 'boolean', description:'Adds an alert state to the button'},
-    disabled: {control: 'boolean', description:'Adds a disabled state to the button'},
-    loading: {control: 'boolean', description:'Adds a loading state to the button'},
+    text: { control: 'text', description: '' },
+    skin: {
+      control: 'select',
+      options: ['primary', 'secondary', 'link', 'link-secondary'],
+      description: 'Defines the style of the button',
+    },
+    size: {
+      control: 'select',
+      options: ['', 'large'],
+      description: 'Set the size of the button',
+    },
+    icon: { control: 'select', options: icons, description: 'Adds an icon' },
+    iconAlignment: {
+      control: 'select',
+      options: ['', 'left', 'right'],
+      description:
+        'Choose the position of the icon, adds correct margin next to the icon',
+    },
+    hideText: {
+      control: 'boolean',
+      description: 'Hides the button text visually',
+    },
+    width: {
+      control: 'select',
+      options: ['', 'block'],
+      description: 'Defines the width of a button',
+    },
+    alert: {
+      control: 'boolean',
+      description: 'Adds an alert state to the button',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Adds a disabled state to the button',
+    },
+    loading: {
+      control: 'boolean',
+      description: 'Adds a loading state to the button',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -108,7 +137,7 @@ Primary.args = {
   width: '',
   alert: false,
   disabled: false,
-  loading: false
+  loading: false,
 };
 
 export const Secondary = Template.bind({});
@@ -121,7 +150,7 @@ Secondary.args = {
   width: '',
   alert: false,
   disabled: false,
-  loading: false
+  loading: false,
 };
 
 export const PrimaryLink = Template.bind({});
@@ -134,7 +163,7 @@ PrimaryLink.args = {
   width: '',
   alert: false,
   disabled: false,
-  loading: false
+  loading: false,
 };
 
 export const SecondaryLink = Template.bind({});
@@ -147,5 +176,5 @@ SecondaryLink.args = {
   width: '',
   alert: false,
   disabled: false,
-  loading: false
+  loading: false,
 };
