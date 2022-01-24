@@ -183,10 +183,8 @@ jobs:
 
           ember-default-with-jquery,
           ember-classic,
-
-          ## This addon isn't fully compatible with Embroider yet
-          # embroider-safe,
-          # embroider-optimized
+          embroider-safe,
+          embroider-optimized
         ]
 
     steps:
