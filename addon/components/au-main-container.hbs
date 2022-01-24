@@ -1,9 +1,10 @@
-<main id="main" class="au-c-main-container" tabindex="-1" ...attributes>
-  {{yield (hash
-    sidebar = (component 'au-main-container/sidebar')
-  )}}
-
-  {{yield (hash
-    content = (component 'au-main-container/content')
-  )}}
+<main
+  id="main"
+  class="au-c-main-container"
+  tabindex="-1"
+  data-test-main-container
+  ...attributes
+>
+  {{yield (hash sidebar=(component "au-main-container/sidebar"))}}
+  {{yield (hash content=(component "au-main-container/content"))}}
 </main>
