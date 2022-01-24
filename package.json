@@ -67,7 +67,7 @@
     "@babel/core": "^7.15.5",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.4.2",
-    "@embroider/test-setup": "^0.43.5",
+    "@embroider/test-setup": "^1.0.0",
     "@etchteam/storybook-addon-status": "^4.2.0",
     "@storybook/addon-a11y": "^6.4.8",
     "@storybook/addon-actions": "^6.4.0",
