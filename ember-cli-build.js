@@ -7,18 +7,17 @@ module.exports = function (defaults) {
     // Add options here
     sassOptions: {
       sourceMapEmbed: true,
-      includePaths: [
-        'node_modules/@appuniversum/appuniversum'
-      ]
+      includePaths: ['node_modules/@appuniversum/appuniversum'],
     },
     autoprefixer: {
       enabled: true,
       cascade: true,
-      sourcemap: true
+      sourcemap: true,
     },
     autoImport: {
       alias: {
-        '@duetds/date-picker/loader': '@duetds/date-picker/dist/loader/index.cjs',
+        '@duetds/date-picker/loader':
+          '@duetds/date-picker/dist/loader/index.cjs',
       },
     },
   });

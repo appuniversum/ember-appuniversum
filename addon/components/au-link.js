@@ -11,18 +11,14 @@ const SKIN_CLASSES = {
 export default class AuLink extends Component {
   get route() {
     if (this.args.linkRoute) {
-      deprecate(
-        '@linkRoute is deprecated, use @route instead',
-        false,
-        {
-          id: '@appuniversum/ember-appuniversum.au-link.linkRoute-argument',
-          until: '0.7.0',
-          for: '@appuniversum/ember-appuniversum',
-          since: {
-            enabled: '0.5.0'
-          }
-        }
-      );
+      deprecate('@linkRoute is deprecated, use @route instead', false, {
+        id: '@appuniversum/ember-appuniversum.au-link.linkRoute-argument',
+        until: '0.7.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '0.5.0',
+        },
+      });
 
       return this.args.linkRoute;
     } else if (this.args.route) {
@@ -42,12 +38,10 @@ export default class AuLink extends Component {
 
   get width() {
     if (this.args.width == 'block')
-      if (this.args.skin == 'button' | 'button-secondary')
+      if ((this.args.skin == 'button') | 'button-secondary')
         return 'au-c-button--block';
-      else
-        return 'au-c-link--block';
-    else
-      return '';
+      else return 'au-c-link--block';
+    else return '';
   }
 
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693
@@ -55,16 +49,13 @@ export default class AuLink extends Component {
   get queryParams() {
     if (this.args.query) {
       return this.args.query;
-    }
-    else {
+    } else {
       return {};
     }
   }
 
   get active() {
-    if (this.args.active)
-      return 'is-active';
-    else
-      return '';
+    if (this.args.active) return 'is-active';
+    else return '';
   }
 }

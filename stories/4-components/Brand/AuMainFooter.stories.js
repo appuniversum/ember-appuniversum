@@ -2,9 +2,7 @@ import { hbs } from 'ember-cli-htmlbars';
 
 export default {
   title: 'Components/Brand/AuMainFooter',
-  argTypes: {
-
-  },
+  argTypes: {},
   parameters: {
     layout: 'padded',
   },
@@ -32,6 +30,4 @@ const Template = (args) => ({
 });
 
 export const Component = Template.bind({});
-Component.args = {
-
-};
+Component.args = {};

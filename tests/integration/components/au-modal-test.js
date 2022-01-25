@@ -3,10 +3,10 @@ import { setupRenderingTest } from 'ember-qunit';
 import { click, render, triggerKeyEvent } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | au-modal', function(hooks) {
+module('Integration | Component | au-modal', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
+  test('it renders', async function (assert) {
     // Set any properties with this.set('myProperty', 'value');
     // Handle any actions with this.set('myAction', function(val) { ... });
 
@@ -25,10 +25,12 @@ module('Integration | Component | au-modal', function(hooks) {
 
     // the wormhole exists outside of the test dom,
     // so we explicitly pass in the document as rootelement here
-    assert.dom("#ember-appuniversum-wormhole", document).containsText('template block text');
+    assert
+      .dom('#ember-appuniversum-wormhole', document)
+      .containsText('template block text');
   });
 
-  test('it calls `@closeModal` when the modal should be closed', async function(assert) {
+  test('it calls `@closeModal` when the modal should be closed', async function (assert) {
     let timesCalled = 0;
     this.set('handleClose', () => {
       timesCalled++;
@@ -54,7 +56,7 @@ module('Integration | Component | au-modal', function(hooks) {
     assert.equal(timesCalled, 2);
   });
 
-  test('it calls @onClose only once when the component is rendered conditionally', async function(assert) {
+  test('it calls @onClose only once when the component is rendered conditionally', async function (assert) {
     let timesCalled = 0;
     this.handleClose = () => {
       timesCalled++;

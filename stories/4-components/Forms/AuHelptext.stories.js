@@ -3,11 +3,19 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Forms/AuHelptext',
   argTypes: {
-    text: { control: 'text', description:'' },
-    skin: { control: 'select', options: ['primary', 'secondary', 'tertiary'], description:'Change the style of the text'},
-    size: { control: 'select', options: ['small', 'normal', 'large'], description:'Change the size of the text'},
-    error: { control: 'boolean', description:'Add an error state' },
-    warning: { control: 'boolean', description:'Add a warning state' },
+    text: { control: 'text', description: '' },
+    skin: {
+      control: 'select',
+      options: ['primary', 'secondary', 'tertiary'],
+      description: 'Change the style of the text',
+    },
+    size: {
+      control: 'select',
+      options: ['small', 'normal', 'large'],
+      description: 'Change the size of the text',
+    },
+    error: { control: 'boolean', description: 'Add an error state' },
+    warning: { control: 'boolean', description: 'Add a warning state' },
   },
   parameters: {
     layout: 'padded',
@@ -29,9 +37,9 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  text: "Help text",
-  skin: "primary",
-  size: "normal",
+  text: 'Help text',
+  skin: 'primary',
+  size: 'normal',
   error: false,
   warning: false,
 };

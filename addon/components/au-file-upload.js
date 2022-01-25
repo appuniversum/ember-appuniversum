@@ -108,7 +108,7 @@ export default class AuFileUploadComponent extends Component {
 
   calculateQueueInfo() {
     const filesQueueInfo = {
-      isQueueEmpty: this.uploadFileTask.isIdle
+      isQueueEmpty: this.uploadFileTask.isIdle,
     };
     return filesQueueInfo;
   }
@@ -123,7 +123,7 @@ export default class AuFileUploadComponent extends Component {
   // Actions
   ////////
   @task
-  * upload(file) {
+  *upload(file) {
     if (this.hasValidationErrors(file)) return;
     let uploadedFile = yield this.uploadFileTask.perform(file);
 

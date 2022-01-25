@@ -1,10 +1,10 @@
 'use strict';
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   let ENV = {
     environment,
-    rootURL: '/'
-  }
+    rootURL: '/',
+  };
 
   return ENV;
 };

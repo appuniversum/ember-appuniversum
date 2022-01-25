@@ -15,31 +15,25 @@ export default class AuDropdown extends Component {
   @action
   openDropdown() {
     // Toggle dropdown view state
-    if (!this.dropdownOpen)
-      this.dropdownOpen = true;
+    if (!this.dropdownOpen) this.dropdownOpen = true;
   }
 
   @action
   closeDropdown() {
     // Toggle dropdown view state
-    if (this.dropdownOpen)
-      this.dropdownOpen = false;
+    if (this.dropdownOpen) this.dropdownOpen = false;
   }
 
   get title() {
     if (this.args.dropdownTitle) {
-      deprecate(
-        '@dropdownTitle is deprecated, use @title instead',
-        false,
-        {
-          id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownTitle-argument',
-          until: '1.0.0',
-          for: '@appuniversum/ember-appuniversum',
-          since: {
-            enabled: '0.5.0'
-          }
-        }
-      );
+      deprecate('@dropdownTitle is deprecated, use @title instead', false, {
+        id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownTitle-argument',
+        until: '1.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '0.5.0',
+        },
+      });
 
       return this.args.dropdownTitle;
     } else if (this.args.title) {
@@ -59,8 +53,8 @@ export default class AuDropdown extends Component {
           until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
-            enabled: '0.5.0'
-          }
+            enabled: '0.5.0',
+          },
         }
       );
 
@@ -74,10 +68,8 @@ export default class AuDropdown extends Component {
 
   // Dropdown alignment
   get alignment() {
-    if (this.args.alignment == 'left')
-      return 'au-c-dropdown--left';
-    if (this.args.alignment == 'right')
-      return 'au-c-dropdown--right';
+    if (this.args.alignment == 'left') return 'au-c-dropdown--left';
+    if (this.args.alignment == 'right') return 'au-c-dropdown--right';
     return '';
   }
 }

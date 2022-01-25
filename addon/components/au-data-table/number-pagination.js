@@ -4,7 +4,7 @@ import { computed } from '@ember/object';
 export default NumberPagination.extend({
   tagName: '',
 
-  totalItems: computed('total', 'nbOfItems', function() {
+  totalItems: computed('total', 'nbOfItems', function () {
     return this.total ? this.total : this.nbOfItems;
-  })
+  }),
 });

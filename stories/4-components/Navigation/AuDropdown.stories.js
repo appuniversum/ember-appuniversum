@@ -3,9 +3,16 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Navigation/AuDropdown',
   argTypes: {
-    title: { control: 'text', description:'Pass the title of the dropdown'},
-    buttonLabel: { control: 'text', description:'Pass name of the dropdown button'},
-    alignment: { control: 'select', options: ['left', 'right', 'center'], description:'Position the icon and menu'}
+    title: { control: 'text', description: 'Pass the title of the dropdown' },
+    buttonLabel: {
+      control: 'text',
+      description: 'Pass name of the dropdown button',
+    },
+    alignment: {
+      control: 'select',
+      options: ['left', 'right', 'center'],
+      description: 'Position the icon and menu',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -31,7 +38,7 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  title: "Demo dropdown",
-  buttonLabel: "Dropdown",
-  alignment: "left"
+  title: 'Demo dropdown',
+  buttonLabel: 'Dropdown',
+  alignment: 'left',
 };

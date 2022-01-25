@@ -15,20 +15,20 @@ const singleselects = [
   'Notulen',
   'Oprichting autonoom bedrijf',
   'Oprichting districtbestuur',
-]
+];
 
 export default {
   title: 'Components/Forms/EmberPowerSelect',
   argTypes: {
-    allowClear: { control: 'boolean', description:'' },
+    allowClear: { control: 'boolean', description: '' },
     disabled: { control: 'boolean' },
-    searchEnabled: { control: 'boolean', description:'' },
-    loadingMessage: { control: 'text', description:'' },
-    noMatchesMessage: { control: 'text', description:'' },
-    searchMessage: { control: 'text', description:'' },
-    options: { control: 'object', description:'' },
-    selected: { control: 'text', description:'' },
-    onChange: { control: 'function', description:'' }
+    searchEnabled: { control: 'boolean', description: '' },
+    loadingMessage: { control: 'text', description: '' },
+    noMatchesMessage: { control: 'text', description: '' },
+    searchMessage: { control: 'text', description: '' },
+    options: { control: 'object', description: '' },
+    selected: { control: 'text', description: '' },
+    onChange: { control: 'function', description: '' },
   },
   parameters: {
     layout: 'padded',
@@ -58,10 +58,10 @@ Component.args = {
   allowClear: true,
   disabled: '',
   searchEnabled: true,
-  loadingMessage: "Aan het laden...",
-  noMatchesMessage: "Geen resultaten",
-  searchMessage: "Typ om te zoeken",
+  loadingMessage: 'Aan het laden...',
+  noMatchesMessage: 'Geen resultaten',
+  searchMessage: 'Typ om te zoeken',
   options: singleselects,
-  selected: "Budget",
-  onChange: "{{fn (mut this.singleselect)}}"
+  selected: 'Budget',
+  onChange: '{{fn (mut this.singleselect)}}',
 };

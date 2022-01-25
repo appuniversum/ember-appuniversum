@@ -14,8 +14,7 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:ember/recommended',
-    // Disable the Prettier rules for now
-    // 'plugin:prettier/recommended',
+    'plugin:prettier/recommended',
   ],
   env: {
     browser: true,

@@ -15,9 +15,7 @@ export default class AuLinkExternal extends Component {
   }
 
   get width() {
-    if (this.args.width == 'block')
-      return 'au-c-link--block';
-    else
-      return '';
+    if (this.args.width == 'block') return 'au-c-link--block';
+    else return '';
   }
 }

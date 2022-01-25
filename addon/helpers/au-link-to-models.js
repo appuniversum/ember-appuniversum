@@ -23,7 +23,7 @@ export function auLinkToModels([model, models]) {
 
   if (model) {
     return [model];
-  } else if(models) {
+  } else if (models) {
     return models;
   } else {
     return [];

@@ -5,6 +5,6 @@ module.exports = {
   ignore: [
     'addon/components/au-data-table.hbs',
     'addon/components/au-data-table/**',
-    'tests/dummy/app/components/docs*/**'
+    'tests/dummy/app/components/docs*/**',
   ],
 };

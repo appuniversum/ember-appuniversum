@@ -21,11 +21,11 @@ module.exports = {
     );
   },
 
-  contentFor: function(type) {
-    if (type === 'body'){
+  contentFor: function (type) {
+    if (type === 'body') {
       return '<div id="ember-appuniversum-wormhole"></div>';
     } else {
       return '';
     }
-  }
+  },
 };

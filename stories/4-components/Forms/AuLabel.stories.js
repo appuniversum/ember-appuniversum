@@ -3,13 +3,16 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Forms/AuLabel',
   argTypes: {
-    text: { control: 'text', description:'' },
-    for: { control: 'text', description:'' },
-    inline: { control: 'boolean', description:'Add an inline stat' },
-    required: { control: 'boolean', description:'Add a required state' },
-    requiredLabel: { control: 'text', description:'Add the required state label' },
-    error: { control: 'boolean', description:'Add an error state' },
-    warning: { control: 'boolean', description:'Add an warning state' }
+    text: { control: 'text', description: '' },
+    for: { control: 'text', description: '' },
+    inline: { control: 'boolean', description: 'Add an inline stat' },
+    required: { control: 'boolean', description: 'Add a required state' },
+    requiredLabel: {
+      control: 'text',
+      description: 'Add the required state label',
+    },
+    error: { control: 'boolean', description: 'Add an error state' },
+    warning: { control: 'boolean', description: 'Add an warning state' },
   },
   parameters: {
     layout: 'padded',
@@ -33,11 +36,11 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  text: "Label",
-  for: "",
+  text: 'Label',
+  for: '',
   inline: false,
   required: false,
-  requiredLabel: "",
+  requiredLabel: '',
   error: false,
-  warning: false
+  warning: false,
 };

@@ -15,10 +15,8 @@ export default class AuAccordionComponent extends Component {
   }
 
   get loading() {
-    if (this.args.loading)
-      return 'is-loading';
-    else
-      return '';
+    if (this.args.loading) return 'is-loading';
+    else return '';
   }
 
   get subtitle() {
@@ -31,8 +29,8 @@ export default class AuAccordionComponent extends Component {
           until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
-            enabled: '0.5.0'
-          }
+            enabled: '0.5.0',
+          },
         }
       );
 
@@ -54,8 +52,8 @@ export default class AuAccordionComponent extends Component {
           until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
-            enabled: '0.5.0'
-          }
+            enabled: '0.5.0',
+          },
         }
       );
 
@@ -77,8 +75,8 @@ export default class AuAccordionComponent extends Component {
           until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
-            enabled: '0.5.0'
-          }
+            enabled: '0.5.0',
+          },
         }
       );
 
@@ -100,8 +98,8 @@ export default class AuAccordionComponent extends Component {
           until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
-            enabled: '0.5.0'
-          }
+            enabled: '0.5.0',
+          },
         }
       );
 

@@ -3,7 +3,10 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Layout/AuBodyContainer',
   argTypes: {
-    scroll: { control: 'boolean', description:'Make body container scrollable'}
+    scroll: {
+      control: 'boolean',
+      description: 'Make body container scrollable',
+    },
   },
   parameters: {
     layout: 'fullscreen',
@@ -24,5 +27,5 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  scroll: false
+  scroll: false,
 };

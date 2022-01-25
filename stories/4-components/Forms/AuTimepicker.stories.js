@@ -3,16 +3,26 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Forms/AuTimepicker',
   argTypes: {
-    hoursLabel: { control: 'text', description:'Hours label' },
-    minutesLabel: {control: 'text', description:'Minutes label'},
-    secondsLabel: {control: 'text', description:'Seconds label'},
-    nowLabel: {control: 'text', description:'Current time button label'},
-    hours: {control: 'text', description:'Sets the hour value'},
-    minutes: {control: 'text', description:'Sets the minutes value'},
-    seconds: {control: 'text', description:' Sets the seconds value'},
-    showSeconds: {control: 'boolean', description:'Wether the seconds input is shown'},
-    showNow: {control: 'boolean', description:'Wether the now button is shown'},
-    onChange: {control: 'object', description:'Gets called when a time value changes. Returns an object with all time values in an object'}
+    hoursLabel: { control: 'text', description: 'Hours label' },
+    minutesLabel: { control: 'text', description: 'Minutes label' },
+    secondsLabel: { control: 'text', description: 'Seconds label' },
+    nowLabel: { control: 'text', description: 'Current time button label' },
+    hours: { control: 'text', description: 'Sets the hour value' },
+    minutes: { control: 'text', description: 'Sets the minutes value' },
+    seconds: { control: 'text', description: ' Sets the seconds value' },
+    showSeconds: {
+      control: 'boolean',
+      description: 'Wether the seconds input is shown',
+    },
+    showNow: {
+      control: 'boolean',
+      description: 'Wether the now button is shown',
+    },
+    onChange: {
+      control: 'object',
+      description:
+        'Gets called when a time value changes. Returns an object with all time values in an object',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -38,14 +48,14 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  hoursLabel: "Uren",
-  minutesLabel: "Minuten",
-  secondsLabel: "Seconden",
-  nowLabel: "Nu",
-  hours: "",
-  minutes: "",
-  seconds: "",
+  hoursLabel: 'Uren',
+  minutesLabel: 'Minuten',
+  secondsLabel: 'Seconden',
+  nowLabel: 'Nu',
+  hours: '',
+  minutes: '',
+  seconds: '',
   showSeconds: true,
   showNow: true,
-  onChange: ""
+  onChange: '',
 };

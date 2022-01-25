@@ -59,16 +59,32 @@ const icons = [
   'user-fill',
   'user-popup',
   'users',
-]
+];
 
 export default {
   title: 'Components/Content/AuAccordion',
   argTypes: {
-    subtitle: { control: 'text', description:'Set the subtitle of the accordion'},
-    iconOpen: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's open. Defaults to nav-down."},
-    iconClosed: { control: 'select', options: icons, description:"Adds an icon to the accordion when it's closed. Defaults to nav-right."},
-    buttonLabel: { control: 'text', description:''},
-    loading: { control: 'boolean', description:'Adds a loading state to the button'}
+    subtitle: {
+      control: 'text',
+      description: 'Set the subtitle of the accordion',
+    },
+    iconOpen: {
+      control: 'select',
+      options: icons,
+      description:
+        "Adds an icon to the accordion when it's open. Defaults to nav-down.",
+    },
+    iconClosed: {
+      control: 'select',
+      options: icons,
+      description:
+        "Adds an icon to the accordion when it's closed. Defaults to nav-right.",
+    },
+    buttonLabel: { control: 'text', description: '' },
+    loading: {
+      control: 'boolean',
+      description: 'Adds a loading state to the button',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -91,8 +107,8 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  subtitle: "subtitle",
+  subtitle: 'subtitle',
 
-  buttonLabel: "Accordion with arrows",
-  loading: false
+  buttonLabel: 'Accordion with arrows',
+  loading: false,
 };

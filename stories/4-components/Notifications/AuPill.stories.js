@@ -59,15 +59,28 @@ const icons = [
   'user-fill',
   'user-popup',
   'users',
-]
+];
 
 export default {
   title: 'Components/Notifications/AuPill',
   argTypes: {
-    text: { control: 'text', description:'Sets the style of the pill' },
-    skin: { control: 'select', options: ['default', 'border', 'action', 'success', 'warning', 'error'], description:'Adds an icon'},
-    icon: { control: 'select', options: icons, description:'Adds an icon to the badge' },
-    iconAlignment: {control: 'select', options:['left','right'], description:'Choose the position of the icon, adds correct margin next to the icon'}
+    text: { control: 'text', description: 'Sets the style of the pill' },
+    skin: {
+      control: 'select',
+      options: ['default', 'border', 'action', 'success', 'warning', 'error'],
+      description: 'Adds an icon',
+    },
+    icon: {
+      control: 'select',
+      options: icons,
+      description: 'Adds an icon to the badge',
+    },
+    iconAlignment: {
+      control: 'select',
+      options: ['left', 'right'],
+      description:
+        'Choose the position of the icon, adds correct margin next to the icon',
+    },
   },
   parameters: {
     layout: 'padded',
