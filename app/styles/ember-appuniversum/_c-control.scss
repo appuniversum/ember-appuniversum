@@ -52,14 +52,14 @@ $au-control-disabled-color            : var(--au-gray-600) !default;
 /* Checked state */
 .au-c-control__input:checked ~ .au-c-control__indicator {
   color: var(--au-white);
-  background-color: var(--au-blue-600);
+  background-color: var(--au-blue-700);
   border-color: var(--au-blue-700);
 }
 
 /* Active */
 .au-c-control__input:active ~ .au-c-control__indicator {
   color: var(--au-white);
-  background-color: var(--au-blue-600);
+  background-color: var(--au-blue-700);
   border-color: var(--au-blue-700);
 }
 
