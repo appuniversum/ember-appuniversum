@@ -9,12 +9,13 @@ $au-alert-font-size                     : $au-h6 !default;
 $au-alert-color                         : var(--au-gray-800) !default;
 $au-alert-background-color              : var(--au-gray-200) !default;
 $au-alert-success-background-color      : var(--au-green-200) !default;
-$au-alert-warning-background-color      : var(--au-yellow-100) !default;
+$au-alert-warning-background-color      : var(--au-orange-200) !default;
 $au-alert-error-background-color        : var(--au-red-200) !default;
 $au-alert-success-icon-background-color : var(--au-green-500) !default;
-$au-alert-warning-icon-background-color : var(--au-yellow-400) !default;
+$au-alert-warning-icon-background-color : var(--au-orange-500) !default;
 $au-alert-error-icon-background-color   : var(--au-red-600) !default;
 $au-alert-success-icon-color            : var(--au-white) !default;
+$au-alert-warning-icon-color            : var(--au-white) !default;
 $au-alert-error-icon-color              : var(--au-white) !default;
 $au-alert-icon-size                     : 2rem !default;
 $au-alert-small-icon-size               : 1.5rem !default;
@@ -135,6 +136,10 @@ $au-alert-radius                        : var(--au-radius) !default;
 
   .au-c-alert__icon {
     background-color: $au-alert-warning-icon-background-color;
+
+    .au-c-icon {
+      fill: $au-alert-warning-icon-color;
+    }
   }
 }
 

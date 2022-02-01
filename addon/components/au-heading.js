@@ -8,6 +8,7 @@ export default class AuHeading extends Component {
     if (this.args.skin == '4') return 'au-c-heading--4';
     if (this.args.skin == '5') return 'au-c-heading--5';
     if (this.args.skin == '6') return 'au-c-heading--6';
+    if (this.args.skin == 'functional') return 'au-c-heading--functional';
     else return 'au-c-heading--1';
   }
 }

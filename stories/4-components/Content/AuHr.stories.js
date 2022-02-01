@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Typography/AuHr',
+  title: 'Components/Content/AuHr',
   argTypes: {
     size: {
       control: 'select',

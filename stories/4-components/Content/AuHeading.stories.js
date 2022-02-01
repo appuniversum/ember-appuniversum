@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Typography/AuHeading',
+  title: 'Components/Content/AuHeading',
   argTypes: {
     text: { control: 'text', description: '' },
     level: {
@@ -11,7 +11,7 @@ export default {
     },
     skin: {
       control: 'select',
-      options: ['1', '2', '3', '4', '5', '6'],
+      options: ['1', '2', '3', '4', '5', '6', 'functional'],
       description: 'Defines the style and size of the heading',
     },
   },
@@ -33,7 +33,7 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  text: 'Titel',
+  text: 'Title',
   level: '1',
   skin: '1',
 };
