@@ -99,12 +99,16 @@ $au-modal-backdrop-z-index : 9998 !default;
 }
 
 .au-c-modal__title {
-  @include au-font-size($au-h3);
-  font-family: var(--au-font-secondary);
+  @include au-font-size(var(--au-h3-small));
+  font-family: var(--au-font);
   font-weight: var(--au-medium);
 
   &:focus {
     outline: 0;
+  }
+
+  @include mq(medium) {
+    @include au-font-size(var(--au-h3));
   }
 }
 

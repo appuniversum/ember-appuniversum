@@ -11,7 +11,7 @@ $au-input-border-color              : var(--au-gray-300) !default;
 $au-input-disabled-background-color : var(--au-gray-100) !default;
 $au-input-disabled-border-color     : var(--au-gray-300) !default;
 $au-input-disabled-color            : var(--au-gray-700) !default;
-$au-input-font-size                 : $au-h6 !default;
+$au-input-font-size                 : var(--au-h6) !default;
 $au-input-border-radius             : .3rem !default;
 
 
@@ -92,6 +92,6 @@ $au-input-border-radius             : .3rem !default;
 }
 
 .au-c-input--warning {
-  border-color: var(--au-yellow-400);
-  box-shadow: inset 0 0 0 .2rem var(--au-yellow-400);
+  border-color: var(--au-orange-500);
+  box-shadow: inset 0 0 0 .2rem var(--au-orange-500);
 }

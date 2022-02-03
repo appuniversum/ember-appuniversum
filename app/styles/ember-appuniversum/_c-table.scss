@@ -10,7 +10,7 @@
 }
 
 .au-c-table {
-  @include au-font-size($au-h6);
+  @include au-font-size(var(--au-h6));
   display: table;
   position: relative;
   min-width: 50rem;
@@ -22,7 +22,7 @@
     width: 100%;
     z-index: var(--au-z-index-alpha);
     border: 0;
-    @include au-font-size($au-base,1.2);
+    @include au-font-size(var(--au-base),1.2);
   }
 
   th,
@@ -103,7 +103,7 @@
   }
 
   td {
-    @include au-font-size($au-base);
+    @include au-font-size(var(--au-base));
     padding: $au-unit-tiny $au-unit-small;
   }
 
@@ -113,7 +113,7 @@
 }
 
 .au-c-table__caption {
-  @include au-font-size($au-h5);
+  @include au-font-size(var(--au-h5));
   font-weight: var(--au-medium);
   text-align: left;
   padding: $au-unit-tiny $au-unit-small;
@@ -134,7 +134,7 @@
 }
 
 .au-c-data-table__clickable-row-icon {
-  color: var(--au-blue-600);
+  color: var(--au-blue-700);
 }
 
 .au-c-data-table__detail {

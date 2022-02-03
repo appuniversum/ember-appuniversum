@@ -12,7 +12,7 @@ $au-list-navigation-border-color: var(--au-gray-200) !default;
    ========================================================================== */
 
 .au-c-list-navigation {
-  @include au-font-size($au-base);
+  @include au-font-size(var(--au-base));
   display: flex;
   flex-wrap: wrap;
 
@@ -58,7 +58,7 @@ $au-list-navigation-border-color: var(--au-gray-200) !default;
 }
 
 .au-c-list-navigation__link {
-  @include au-font-size($au-base);
+  @include au-font-size(var(--au-base));
   display: flex;
   align-items: center;
   font-family: var(--au-font);
@@ -71,12 +71,12 @@ $au-list-navigation-border-color: var(--au-gray-200) !default;
 
   &,
   &:visited {
-    color: var(--au-blue-600);
+    color: var(--au-blue-700);
   }
 
   &:hover,
   &:focus {
-    color: var(--au-blue-800);
+    color: var(--au-blue-900);
     text-decoration-color: var(--au-blue-200) !important;
   }
 

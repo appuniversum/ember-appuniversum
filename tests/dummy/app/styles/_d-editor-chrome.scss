@@ -44,7 +44,7 @@ $au-brand-divider-rotation     : -20deg !default;
   height: $au-unit;
   line-height: $au-unit;
   color: var(--au-gray-600);
-  padding: $au-unit-tiny/2;
+  padding: $au-unit-tiny * .5;
 }
 
 .au-c-app-chrome__title {
@@ -56,7 +56,7 @@ $au-brand-divider-rotation     : -20deg !default;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0 $au-unit-tiny/2;
+  padding: 0 ($au-unit-tiny * .5);
   border: .1rem solid transparent;
   border-radius: var(--au-radius);
   max-width: $au-unit-huge * 3.5;
@@ -106,7 +106,7 @@ $au-brand-divider-rotation     : -20deg !default;
   }
 
   &:focus {
-    outline: .2rem dashed var(--au-yellow-400);
+    outline: .2rem dashed var(--au-yellow-300);
   }
 }
 
@@ -149,7 +149,7 @@ $au-brand-divider-rotation     : -20deg !default;
   font-family: var(--au-font);
   display: block;
   width: 100%;
-  padding: 0 $au-unit-tiny/2;
+  padding: 0 ($au-unit-tiny * .5);
   height: $au-unit + $au-unit-small;
   line-height: $au-unit + $au-unit-small;
   border: .1rem solid var(--au-gray-300);

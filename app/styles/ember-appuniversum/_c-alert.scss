@@ -5,16 +5,21 @@
 /* Variables
    ========================================================================== */
 
-$au-alert-font-size                     : $au-h6 !default;
-$au-alert-color                         : var(--au-gray-800) !default;
+$au-alert-font-size                     : var(--au-h6) !default;
+$au-alert-color                         : var(--au-gray-900) !default;
 $au-alert-background-color              : var(--au-gray-200) !default;
 $au-alert-success-background-color      : var(--au-green-200) !default;
-$au-alert-warning-background-color      : var(--au-yellow-100) !default;
+$au-alert-warning-background-color      : var(--au-orange-200) !default;
 $au-alert-error-background-color        : var(--au-red-200) !default;
+$au-alert-border-color                  : var(--au-gray-300) !default;
+$au-alert-success-border-color          : var(--au-green-300) !default;
+$au-alert-warning-border-color          : var(--au-orange-300) !default;
+$au-alert-error-border-color            : var(--au-red-300) !default;
 $au-alert-success-icon-background-color : var(--au-green-500) !default;
-$au-alert-warning-icon-background-color : var(--au-yellow-400) !default;
+$au-alert-warning-icon-background-color : var(--au-orange-500) !default;
 $au-alert-error-icon-background-color   : var(--au-red-600) !default;
 $au-alert-success-icon-color            : var(--au-white) !default;
+$au-alert-warning-icon-color            : var(--au-white) !default;
 $au-alert-error-icon-color              : var(--au-white) !default;
 $au-alert-icon-size                     : 2rem !default;
 $au-alert-small-icon-size               : 1.5rem !default;
@@ -33,6 +38,7 @@ $au-alert-radius                        : var(--au-radius) !default;
   margin-bottom: $au-unit;
   background-color: $au-alert-background-color;
   border-radius: $au-alert-radius;
+  border: .1rem solid $au-alert-border-color;
 
   > :last-child {
     margin-bottom: 0;
@@ -120,6 +126,7 @@ $au-alert-radius                        : var(--au-radius) !default;
 
 .au-c-alert--success {
   background-color: $au-alert-success-background-color;
+  border-color: $au-alert-success-border-color;
 
   .au-c-alert__icon {
     background-color: $au-alert-success-icon-background-color;
@@ -132,14 +139,20 @@ $au-alert-radius                        : var(--au-radius) !default;
 
 .au-c-alert--warning {
   background-color: $au-alert-warning-background-color;
+  border-color: $au-alert-warning-border-color;
 
   .au-c-alert__icon {
     background-color: $au-alert-warning-icon-background-color;
+
+    .au-c-icon {
+      fill: $au-alert-warning-icon-color;
+    }
   }
 }
 
 .au-c-alert--error {
   background-color: $au-alert-error-background-color;
+  border-color: $au-alert-error-border-color;
 
   .au-c-alert__icon {
     background-color: $au-alert-error-icon-background-color;

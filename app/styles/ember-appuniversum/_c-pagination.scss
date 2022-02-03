@@ -9,7 +9,7 @@
    ========================================================================== */
 
 .au-c-pagination {
-  @include au-font-size($au-h6);
+  @include au-font-size(var(--au-h6));
   color: var(--au-gray-700);
   display: flex;
   justify-content: space-between;

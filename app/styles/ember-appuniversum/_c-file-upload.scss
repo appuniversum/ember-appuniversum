@@ -33,13 +33,13 @@
 }
 
 .au-c-file-upload-message {
-  @include au-font-size($au-h5);
+  @include au-font-size(var(--au-h5));
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--au-gray-600);
   background-color: var(--au-gray-100);
-  padding: $au-unit + $au-unit-tiny/2 $au-unit-small;
+  padding: $au-unit + ($au-unit-tiny * .5) $au-unit-small;
 
   > .au-c-help-text {
     margin-top: 0;
@@ -47,7 +47,7 @@
 }
 
 .au-c-file-upload-label {
-  @include au-font-size($au-h5);
+  @include au-font-size(var(--au-h5));
   display: flex;
   flex-direction: column;
   padding: $au-unit-small $au-unit-small;
@@ -59,16 +59,16 @@
   &:visited,
   &:active {
     text-decoration: none;
-    color: var(--au-gray-800);
+    color: var(--au-gray-900);
   }
 }
 
 .au-c-file-upload-label__title {
-  @include au-font-size($au-h5);
+  @include au-font-size(var(--au-h5));
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--au-blue-600);
+  color: var(--au-blue-700);
   text-decoration: underline;
   text-decoration-color: var(--au-blue-300);
 

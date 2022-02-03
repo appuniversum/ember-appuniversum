@@ -19,16 +19,16 @@ import { Meta } from '@storybook/addon-docs';
     font-weight: var(--au-regular);
     text-decoration: underline;
     text-decoration-color: var(--au-blue-300);
-    color: var(--au-blue-600);
+    color: var(--au-blue-700);
   }
 
   .sbdocs-a:visited {
-    color: var(--au-blue-600);
+    color: var(--au-blue-700);
   }
 
   .sbdocs-a:hover,
   .sbdocs-a:focus {
-    color: var(--au-blue-800);
+    color: var(--au-blue-900);
     text-decoration-color: var(--au-blue-200);
   }
 
@@ -47,7 +47,44 @@ import { Meta } from '@storybook/addon-docs';
 `}</style>
 
 # SCSS variables
-## Color palette
+## Global settings
+``` css
+// Breakpoints
+// ---
+$mq-breakpoints: (
+  tiny: 300px,
+  xsmall: 500px,
+  small: 767px,
+  medium: 1023px,
+  large: 1600px
+) !default;
+// Uncomment line below to show breakpoint indicators
+// $mq-show-breakpoints: (xsmall, small, medium, large);
+
+
+// Spacing units
+// ---
+$au-unit-tiny: .6rem !default;
+$au-unit-small: 1.2rem !default;
+$au-unit: 2.4rem !default;
+$au-unit-large: 4.8rem !default;
+$au-unit-huge: 9.6rem !default;
+
+
+// Objects settings
+// ---
+// Layout
+$au-layout-width: 1280px !default;
+$au-layout-width-small: 768px !default;
+$au-layout-width-large: 1600px !default;
+$au-layout-breakpoint: medium !default;
+
+// Region
+$au-region-breakpoint: medium !default;
+
+```
+
+## Deprecated variables: to be replaced by CSS variables
 ``` css
 $au-white                    : #FFFFFF;
 
@@ -92,48 +129,6 @@ $au-green-500                : #8BAE00;
 $au-green-700                : #5F750B;
 $au-green-900                : #323D08;
 
-```
-
-
-## Global settings
-``` css
-// Breakpoints
-// ---
-$mq-breakpoints: (
-  tiny: 300px,
-  xsmall: 500px,
-  small: 767px,
-  medium: 1023px,
-  large: 1600px
-) !default;
-// Uncomment line below to show breakpoint indicators
-// $mq-show-breakpoints: (xsmall, small, medium, large);
-
-
-// Spacing units
-// ---
-$au-unit-tiny: .6rem !default;
-$au-unit-small: 1.2rem !default;
-$au-unit: 2.4rem !default;
-$au-unit-large: 4.8rem !default;
-$au-unit-huge: 9.6rem !default;
-
-
-// Objects settings
-// ---
-// Layout
-$au-layout-width: 1280px !default;
-$au-layout-width-small: 768px !default;
-$au-layout-width-large: 1600px !default;
-$au-layout-breakpoint: medium !default;
-
-// Region
-$au-region-breakpoint: medium !default;
-
-```
-
-## Deprecated variables: to be replaced by CSS variables
-``` css
 $au-global-font-size: 1.5rem !default;
 $au-global-line-height: 1.5 !default;
 $au-font: "flanders-sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !default;

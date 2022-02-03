@@ -13,15 +13,15 @@ $au-pill-font-size                    : 1.4rem !default; // @TODO: Make global a
 $au-pill-color-border                 : var(--au-gray-700) !default;
 $au-pill-background-color-border      : var(--au-white) !default;
 $au-pill-border-color-border          : var(--au-gray-300) !default;
-$au-pill-color-success                : var(--au-white) !default;
-$au-pill-background-color-success     : var(--au-green-700) !default;
-$au-pill-border-color-success         : var(--au-green-700) !default;
-$au-pill-color-warning                : var(--au-yellow-900) !default;
-$au-pill-background-color-warning     : var(--au-yellow-400) !default;
-$au-pill-border-color-warning         : var(--au-yellow-400) !default;
-$au-pill-color-error                  : var(--au-white) !default;
-$au-pill-background-color-error       : var(--au-red-600) !default;
-$au-pill-border-color-error           : var(--au-red-600) !default;
+$au-pill-color-success                : var(--au-green-700) !default;
+$au-pill-background-color-success     : var(--au-green-200) !default;
+$au-pill-border-color-success         : var(--au-green-400) !default;
+$au-pill-color-warning                : var(--au-orange-700) !default;
+$au-pill-background-color-warning     : var(--au-orange-200) !default;
+$au-pill-border-color-warning         : var(--au-orange-400) !default;
+$au-pill-color-error                  : var(--au-red-700) !default;
+$au-pill-background-color-error       : var(--au-red-200) !default;
+$au-pill-border-color-error           : var(--au-red-400) !default;
 $au-pill-color-action                 : var(--au-blue-700) !default;
 $au-pill-background-color-action      : var(--au-blue-100) !default;
 $au-pill-border-color-action          : var(--au-blue-300) !default;
@@ -30,13 +30,13 @@ $au-pill-border-color-action          : var(--au-blue-300) !default;
   ========================================================================== */
 
 .au-c-pill {
-  @include au-font-size($au-base);
+  @include au-font-size(var(--au-base));
   display: inline-flex;
   align-items: center;
   font-family: var(--au-font);
   font-weight: var(--au-medium);
   border: $au-pill-border-width solid $au-pill-border-color;
-  padding: 0 $au-unit-tiny;  // Visually center the text in the pill
+  padding: .1rem $au-unit-tiny 0;  // Visually center the text in the pill
   border-radius: $au-unit-tiny;
 }
 

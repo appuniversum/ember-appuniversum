@@ -1,6 +1,6 @@
 <span class="au-c-pill {{this.skin}}" ...attributes>
   {{#if @icon}}
-    {{#if (eq @iconAlignment "left")}}
+    {{#if (not-eq @iconAlignment "right")}}
     <AuIcon @icon="{{@icon}}" @alignment="left" />
     {{/if}}
   {{/if}}

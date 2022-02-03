@@ -7,7 +7,7 @@
 
 $au-main-header-bg                    : var(--au-white) !default;
 $au-main-header-border                : var(--au-gray-300) !default;
-$au-main-header-color                 : var(--au-gray-800) !default;
+$au-main-header-color                 : var(--au-gray-900) !default;
 $au-main-header-color-underline       : var(--au-gray-300) !default;
 $au-main-header-hover-color           : var(--au-gray-700) !default;
 $au-main-header-hover-color-underline : var(--au-gray-200) !default;
@@ -35,7 +35,7 @@ $au-main-header-divider-rotation      : -19deg !default;
 }
 
 .au-c-main-header__title {
-  @include au-font-size($au-base,1);
+  @include au-font-size(var(--au-base),1);
   font-weight: var(--au-medium);
   text-transform: uppercase;
   position: relative;
@@ -99,7 +99,7 @@ $au-main-header-divider-rotation      : -19deg !default;
 }
 
 .au-c-main-header__skiplink {
-  @include au-font-size($au-base,1);
+  @include au-font-size(var(--au-base),1);
   font-weight: var(--au-regular);
   position: absolute;
   transition: color var(--au-transition);
@@ -115,7 +115,7 @@ $au-main-header-divider-rotation      : -19deg !default;
   &,
   &:hover,
   &:focus {
-    color: var(--au-gray-800);
+    color: var(--au-gray-900);
     text-decoration: underline;
     text-decoration-color: var(--au-gray-300);
   }
@@ -137,7 +137,7 @@ $au-main-header-divider-rotation      : -19deg !default;
 }
 
 .au-c-main-header__actions {
-  @include au-font-size($au-base,.7);
+  @include au-font-size(var(--au-base),.7);
   display: flex;
   align-items: center;
   padding: $au-unit-tiny $au-unit-small ;
