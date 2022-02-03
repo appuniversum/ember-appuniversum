@@ -1,4 +1,15 @@
 
+
+## v0.10.0 (2022-02-03)
+
+#### :rocket: Enhancement
+* [#183](https://github.com/appuniversum/ember-appuniversum/pull/183) Upgrade appuniversum ([@Dietr](https://github.com/Dietr))
+
+Warning: this version contains updated colors and typography styles so this might affect your application design.
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v0.9.2 (2022-01-25)
 
 #### :house: Internal
