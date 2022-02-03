@@ -59,7 +59,7 @@ $au-toggle-switch-background-color-on-disabled   : var(--au-gray-400) !default;
 }
 
 .au-c-toggle-switch__label {
-  @include au-font-size($au-h6);
+  @include au-font-size(var(--au-h6));
   color: var(--au-gray-700);
   font-family: var(--au-font);
   font-weight: var(--au-regular);

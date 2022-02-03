@@ -30,13 +30,13 @@ $au-pill-border-color-action          : var(--au-blue-300) !default;
   ========================================================================== */
 
 .au-c-pill {
-  @include au-font-size($au-base);
+  @include au-font-size(var(--au-base));
   display: inline-flex;
   align-items: center;
   font-family: var(--au-font);
   font-weight: var(--au-medium);
   border: $au-pill-border-width solid $au-pill-border-color;
-  padding: 0 $au-unit-tiny;  // Visually center the text in the pill
+  padding: .1rem $au-unit-tiny 0;  // Visually center the text in the pill
   border-radius: $au-unit-tiny;
 }
 

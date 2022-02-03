@@ -8,7 +8,7 @@
 $au-textarea-height                    : $au-unit-large - $au-unit-small !default;
 $au-textarea-color                     : var(--au-gray-1000) !default;
 $au-textarea-border-color              : var(--au-gray-300) !default;
-$au-textarea-font-size                 : $au-h6 !default;
+$au-textarea-font-size                 : var(--au-h6) !default;
 $au-textarea-border-radius             : var(--au-radius) !default;
 $au-textarea-disabled-background-color : var(--au-gray-100) !default;
 $au-textarea-disabled-border-color     : var(--au-gray-300) !default;

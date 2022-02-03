@@ -7,8 +7,8 @@
 
 $au-button-height                               : $au-unit-large - $au-unit-small !default;
 $au-button-height-large                         : $au-unit-large !default;
-$au-button-font-size                            : $au-h6 !default;
-$au-button-font-size-large                      : $au-h5 !default;
+$au-button-font-size                            : var(--au-h6) !default;
+$au-button-font-size-large                      : var(--au-h5) !default;
 $au-button-border                               : .2rem !default;
 $au-button-border-radius                        : var(--au-radius) !default;
 $au-button-color                                : var(--au-white) !default;

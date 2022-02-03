@@ -11,7 +11,7 @@ $au-input-border-color              : var(--au-gray-300) !default;
 $au-input-disabled-background-color : var(--au-gray-100) !default;
 $au-input-disabled-border-color     : var(--au-gray-300) !default;
 $au-input-disabled-color            : var(--au-gray-700) !default;
-$au-input-font-size                 : $au-h6 !default;
+$au-input-font-size                 : var(--au-h6) !default;
 $au-input-border-radius             : .3rem !default;
 
 

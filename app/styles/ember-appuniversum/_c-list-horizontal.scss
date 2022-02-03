@@ -18,7 +18,7 @@ $au-list-horizontal-divider    : 1px dotted var(--au-gray-300) !default;
 }
 
 .au-c-list-horizontal--small {
-  font-size: $au-base;
+  font-size: var(--au-base);
 }
 
 .au-c-list-horizontal__item {

@@ -53,7 +53,7 @@
 }
 
 .au-c-data-table__table {
-  @include au-font-size($au-h6);
+  @include au-font-size(var(--au-h6));
   display: table;
   position: relative;
   min-width: 50rem;
@@ -65,7 +65,7 @@
     width: 100%;
     z-index: var(--au-z-index-alpha);
     border: 0;
-    @include au-font-size($au-base,1.2);
+    @include au-font-size(var(--au-base),1.2);
   }
 
   tbody tr {

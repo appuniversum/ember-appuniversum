@@ -117,7 +117,7 @@ $au-brand-divider-rotation     : -19deg !default;
 }
 
 .au-c-brand__main {
-  @include au-font-size($au-h5,1.2);
+  @include au-font-size(var(--au-h5),1.2);
   display: block;
 }
 
@@ -125,5 +125,5 @@ $au-brand-divider-rotation     : -19deg !default;
   @include au-font-size(1.2rem,1.2);
   font-weight: var(--au-regular);
   display: block;
-  color: var(--au-gray-800);
+  color: var(--au-gray-900);
 }

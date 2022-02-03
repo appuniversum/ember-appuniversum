@@ -48,7 +48,7 @@ $au-sidebar-footer-padding: $au-unit !default;
 }
 
 .au-c-sidebar__footer {
-  @include au-font-size($au-base);
+  @include au-font-size(var(--au-base));
   padding: $au-sidebar-footer-padding*.5;
 
   @include mq(medium) {

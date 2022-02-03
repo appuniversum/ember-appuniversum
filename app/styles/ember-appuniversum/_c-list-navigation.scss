@@ -12,7 +12,7 @@ $au-list-navigation-border-color: var(--au-gray-200) !default;
    ========================================================================== */
 
 .au-c-list-navigation {
-  @include au-font-size($au-base);
+  @include au-font-size(var(--au-base));
   display: flex;
   flex-wrap: wrap;
 
@@ -58,7 +58,7 @@ $au-list-navigation-border-color: var(--au-gray-200) !default;
 }
 
 .au-c-list-navigation__link {
-  @include au-font-size($au-base);
+  @include au-font-size(var(--au-base));
   display: flex;
   align-items: center;
   font-family: var(--au-font);

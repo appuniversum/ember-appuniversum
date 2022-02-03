@@ -23,7 +23,7 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown__toggle {
-  @include au-font-size($au-base,1.2);
+  @include au-font-size(var(--au-base),1.2);
   font-weight: var(--au-regular);
   color: $au-dropdown-color;
   display: flex;
@@ -76,7 +76,7 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown__button {
-  @include au-font-size($au-base,1);
+  @include au-font-size(var(--au-base),1);
   border: 0;
   padding: 0;
   margin-left: $au-unit-tiny;
@@ -110,7 +110,7 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown__menu {
-  @include au-font-size($au-base,1.5);
+  @include au-font-size(var(--au-base),1.5);
   font-family: var(--au-font);
   font-weight: var(--au-regular);
   position: absolute;
@@ -204,7 +204,7 @@ $au-dropdown-caret-size        : .4rem !default;
   }
 
   &.active {
-    color: var(--au-gray-800);
+    color: var(--au-gray-900);
     background-color: var(--au-gray-100);
     font-weight: var(--au-medium);
     outline-offset: var(--au-outline-offset-negative);
