@@ -87,6 +87,15 @@ export default {
       options: ['left', 'right'],
       description: 'Choose the position of the icon',
     },
+    mask: {
+      control: 'text',
+      description:
+        'Define the input mask you want to add. See https://github.com/sinankeskin/ember-inputmask for more options.',
+    },
+    maskPlaceholder: {
+      control: 'text',
+      description: 'Define the input mask placeholder',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -103,6 +112,8 @@ const Template = (args) => ({
       @width={{this.width}}
       @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
+      @mask={{this.mask}}
+      @maskPlaceholder={{this.maskPlaceholder}}
     />`,
   context: args,
 });
@@ -116,4 +127,19 @@ Component.args = {
   width: '',
   icon: '',
   iconAlignment: 'left',
+  mask: '',
+  maskPlaceholder: '',
+};
+
+export const InputMask = Template.bind({});
+InputMask.args = {
+  id: '',
+  error: false,
+  warning: false,
+  disabled: false,
+  width: '',
+  icon: '',
+  iconAlignment: 'left',
+  mask: '99.99.99-999.99',
+  maskPlaceholder: '__.__.__-___.__',
 };
