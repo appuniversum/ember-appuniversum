@@ -89,11 +89,12 @@ export default {
     },
     mask: {
       control: 'text',
-      description: 'Define the input mask you want to add. See https://github.com/sinankeskin/ember-inputmask for more options.'
+      description:
+        'Define the input mask you want to add. See https://github.com/sinankeskin/ember-inputmask for more options.',
     },
     maskPlaceholder: {
       control: 'text',
-      description: 'Define the input mask placeholder'
+      description: 'Define the input mask placeholder',
     },
   },
   parameters: {
@@ -126,8 +127,8 @@ Component.args = {
   width: '',
   icon: '',
   iconAlignment: 'left',
-  mask: "",
-  maskPlaceholder: ""
+  mask: '',
+  maskPlaceholder: '',
 };
 
 export const InputMask = Template.bind({});
@@ -140,5 +141,5 @@ InputMask.args = {
   icon: '',
   iconAlignment: 'left',
   mask: '99.99.99-999.99',
-  maskPlaceholder: '__.__.__-___.__'
+  maskPlaceholder: '__.__.__-___.__',
 };
