@@ -318,7 +318,8 @@ Component.args = {
 
 export const Expandable = ExpandableTemplate.bind({});
 Expandable.args = {
-  title: 'Title for card Information in the card that comes below the header. Content. Information in the card that comes below the header. Content.',
+  title:
+    'Title for card Information in the card that comes below the header. Content. Information in the card that comes below the header. Content.',
   subtitle: 'Subtitle for card',
   content: 'Information in the card that comes below the header. Content.',
   flex: false,
