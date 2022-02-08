@@ -1,5 +1,18 @@
 
 
+
+## v0.11.0 (2022-02-08)
+
+#### :rocket: Enhancement
+* [#187](https://github.com/appuniversum/ember-appuniversum/pull/187) Add kaleidos icons and full icon list ([@Dietr](https://github.com/Dietr))
+* [#185](https://github.com/appuniversum/ember-appuniversum/pull/185) Add input mask ([@Dietr](https://github.com/Dietr))
+
+#### :bug: Bug Fix
+* [#186](https://github.com/appuniversum/ember-appuniversum/pull/186) Prevent that the `<AuCard>` toggle button shrinks ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v0.10.0 (2022-02-03)
 
 #### :rocket: Enhancement
