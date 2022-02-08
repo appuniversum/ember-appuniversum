@@ -87,8 +87,14 @@ export default {
       options: ['left', 'right'],
       description: 'Choose the position of the icon',
     },
-    mask: { control: 'text', description: 'Define the input mask you want to add. See https://github.com/sinankeskin/ember-inputmask for more options.' },
-    maskPlaceholder: { control: 'text', description: 'Define the input mask placeholder' },
+    mask: {
+      control: 'text',
+      description: 'Define the input mask you want to add. See https://github.com/sinankeskin/ember-inputmask for more options.'
+    },
+    maskPlaceholder: {
+      control: 'text',
+      description: 'Define the input mask placeholder'
+    },
   },
   parameters: {
     layout: 'padded',
