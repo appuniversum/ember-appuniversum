@@ -95,3 +95,19 @@ $au-input-border-radius             : .3rem !default;
   border-color: var(--au-orange-500);
   box-shadow: inset 0 0 0 .2rem var(--au-orange-500);
 }
+
+.au-c-input--mask {
+  letter-spacing: .2rem;
+
+  &::placeholder {
+    color: var(--au-gray-500)
+  }
+
+  &:-ms-input-placeholder {
+    color: var(--au-gray-500)
+  }
+
+  &::-ms-input-placeholder {
+    color: var(--au-gray-500)
+  }
+}

@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-  <g class="arrow-right">
-    <path d="M15.88 14.99l2.29-2.29H2v-2h16.17l-2.29-2.29L17.29 7 22 11.7l-4.71 4.71-1.41-1.42z" class="Vector"/>
-  </g>
-</svg>
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="13.88 7.99 16.17 5.7 0 5.7 0 3.7 16.17 3.7 13.88 1.41 15.29 0 20 4.7 15.29 9.41" transform="translate(2 7.295)"/></svg>
