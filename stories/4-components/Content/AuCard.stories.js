@@ -64,6 +64,9 @@ const icons = [
 export default {
   title: 'Components/Content/AuCard',
   argTypes: {
+    title: { control: 'text', description: '' },
+    subtitle: { control: 'text', description: '' },
+    content: { control: 'text', description: '' },
     flex: { control: 'boolean', description: 'Layout elements as flexbox' },
     textCenter: { control: 'boolean', description: 'Centers text' },
     shadow: { control: 'boolean', description: 'Adds a box shadow' },
@@ -139,14 +142,14 @@ const Template = (args) => ({
         @badgeSize={{this.badgeSize}}
       >
         <AuHeading @level="2" @skin="4">
-          Title for card
+          {{this.title}}
         </AuHeading>
         <p>
-          Subtitle for card
+          {{this.subtitle}}
         </p>
       </c.header>
       <c.content>
-        <p>Information in the card that comes below the header. Content.</p>
+        <p>{{this.content}}</p>
       </c.content>
       <c.footer>
         <AuButton>Ga naar toezicht</AuButton>
@@ -175,11 +178,11 @@ const ExpandableTemplate = (args) => ({
         @badgeSize={{this.badgeSize}}
       >
         <AuHeading @level="3" @skin="5">
-          Title for card
+          {{this.title}}
         </AuHeading>
       </c.header>
       <c.content>
-        <p>Information in the card that comes below the header. Content.</p>
+        <p>{{this.content}}</p>
       </c.content>
     </AuCard>`,
   context: args,
@@ -296,6 +299,9 @@ const EditingTemplate = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
+  title: 'Title for card',
+  subtitle: 'Subtitle for card',
+  content: 'Information in the card that comes below the header. Content.',
   flex: false,
   textCenter: false,
   shadow: true,
@@ -312,9 +318,13 @@ Component.args = {
 
 export const Expandable = ExpandableTemplate.bind({});
 Expandable.args = {
+  title:
+    'Title for card Information in the card that comes below the header. Content. Information in the card that comes below the header. Content.',
+  subtitle: 'Subtitle for card',
+  content: 'Information in the card that comes below the header. Content.',
   flex: false,
   textCenter: false,
-  shadow: true,
+  shadow: false,
   size: 'regular',
   standOut: false,
   expandable: true,
