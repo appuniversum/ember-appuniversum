@@ -26,4 +26,12 @@ export default class AuInput extends Component {
     if (this.args.disabled) return 'is-disabled';
     else return '';
   }
+
+  get mask() {
+    return this.args.mask;
+  }
+
+  get maskPlaceholder() {
+    return this.args.maskPlaceholder;
+  }
 }
