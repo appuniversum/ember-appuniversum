@@ -133,6 +133,6 @@ InputMask.args = {
   width: '',
   icon: '',
   iconAlignment: 'left',
-  mask: "99.99.99-999.99",
-  maskPlaceholder: "__.__.__-___.__"
+  mask: '99.99.99-999.99',
+  maskPlaceholder: '__.__.__-___.__'
 };
