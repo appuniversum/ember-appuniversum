@@ -142,6 +142,8 @@ $au-card-radius                               : var(--au-radius) !default;
 }
 
 .au-c-card__toggle {
+  flex: none;
+
   .au-c-card--padding & {
     margin-top: $au-unit;
     margin-right: $au-unit;
