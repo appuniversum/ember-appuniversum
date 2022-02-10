@@ -6,7 +6,6 @@
       <tr class={{if (includes wrapper.item this.data-table.selection) "selected"}} {{action (optional this.onClickRow) wrapper.item}}>
         {{#if this.enableSelection}}
           <td class="is-selectable">
-            {{!--{{input type="checkbox" checked=wrapper.isSelected click=(action "updateSelection" wrapper)}}--}}
             <input type="checkbox" checked={{wrapper.isSelected}} {{on "click" (action "updateSelection" wrapper)}} />
           </td>
         {{/if}}
