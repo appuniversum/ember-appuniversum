@@ -3,8 +3,8 @@
     <span class="au-u-hidden-visually">Rij </span><strong>{{this.startItem}} - {{this.endItem}}</strong> van {{this.totalItems}}
   </p>
   <ul class="au-c-pagination__list">
-    {{#if hasMultiplePages}}
-      {{#unless isFirstPage}}
+    {{#if this.hasMultiplePages}}
+      {{#unless this.isFirstPage}}
         <li class="au-c-pagination__list-item">
           <button {{action "changePage" links.prev}} class="au-c-button au-c-button--tertiary">
             <AuIcon @icon="nav-left" @alignment="left" /> vorige
@@ -12,7 +12,7 @@
           </button>
         </li>
       {{/unless}}
-      {{#unless isLastPage}}
+      {{#unless this.isLastPage}}
         <li class="au-c-pagination__list-item">
           <button {{action "changePage" links.next}} class="au-c-button au-c-button--tertiary">
             volgende
