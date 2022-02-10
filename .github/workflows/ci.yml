@@ -36,6 +36,10 @@ on:
       - master
   pull_request:
 
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
 env:
   NODE_VERSION: '12.x'
 
