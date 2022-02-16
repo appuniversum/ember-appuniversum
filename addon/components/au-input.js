@@ -1,6 +1,18 @@
+import { action } from '@ember/object';
 import Component from '@glimmer/component';
+import { assert } from '@ember/debug';
 
 export default class AuInput extends Component {
+  constructor() {
+    super(...arguments);
+
+    assert(
+      '<AuInput>: An `@onChange` handler was provided but that will only be called if a `@mask` is provided as well.',
+      !this.args.onChange ||
+        (typeof this.args.onChange === 'function' && this.args.mask)
+    );
+  }
+
   get width() {
     if (this.args.width == 'block') return 'au-c-input--block';
     else return '';
@@ -25,5 +37,10 @@ export default class AuInput extends Component {
   get disabled() {
     if (this.args.disabled) return 'is-disabled';
     else return '';
+  }
+
+  @action
+  handleChange(value) {
+    this.args.onChange?.(value);
   }
 }

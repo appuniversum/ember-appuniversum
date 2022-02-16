@@ -1,7 +1,7 @@
 {{#if @icon}}
   <span class="au-c-input-wrapper {{this.iconAlignment}}">
     {{#if @mask}}
-    <Inputmask class="au-c-input au-c-input--mask {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} @mask={{@mask}} @placeholder={{@maskPlaceholder}} disabled={{@disabled}} ...attributes/>
+    <Inputmask class="au-c-input au-c-input--mask {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} @mask={{@mask}} @placeholder={{@maskPlaceholder}} @update={{this.handleChange}} disabled={{@disabled}} ...attributes/>
     {{else}}
     <Input class="au-c-input {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
     {{/if}}
@@ -13,7 +13,7 @@
   </span>
 {{else}}
 {{#if @mask}}
-<Inputmask class="au-c-input au-c-input--mask {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} @mask={{@mask}} @placeholder={{@maskPlaceholder}} disabled={{@disabled}} ...attributes/>
+<Inputmask class="au-c-input au-c-input--mask {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} @mask={{@mask}} @placeholder={{@maskPlaceholder}} @update={{this.handleChange}} disabled={{@disabled}} ...attributes/>
 {{else}}
 <Input class="au-c-input {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
 {{/if}}
