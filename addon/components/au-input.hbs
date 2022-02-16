@@ -1,5 +1,5 @@
 {{#if @icon}}
-  <span class="au-c-input-wrapper {{this.iconAlignment}}">
+  <span class="au-c-input-wrapper {{this.iconAlignment}} {{this.width}}">
     {{#if @mask}}
     <Inputmask class="au-c-input au-c-input--mask {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} @mask={{@mask}} @placeholder={{@maskPlaceholder}} @update={{this.handleChange}} disabled={{@disabled}} ...attributes/>
     {{else}}
