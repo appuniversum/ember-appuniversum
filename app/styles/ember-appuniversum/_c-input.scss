@@ -47,7 +47,7 @@ $au-input-border-radius             : .3rem !default;
 // Wrapper for positioning icons on an input field
 .au-c-input-wrapper {
   position: relative;
-  display: block;
+  display: inline-block;
 
   .au-c-input {
     padding-left: 1.6rem + $au-unit;
