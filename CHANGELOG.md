@@ -1,6 +1,19 @@
 
 
 
+
+## v1.0.0 (2022-02-16)
+
+#### :bug: Bug Fix
+* [#198](https://github.com/appuniversum/ember-appuniversum/pull/198) Make input-wrapper adapt to the width of the input ([@Dietr](https://github.com/Dietr))
+
+#### :house: Internal
+* [#197](https://github.com/appuniversum/ember-appuniversum/pull/197) Group scss imports ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v0.11.0 (2022-02-08)
 
 #### :rocket: Enhancement
