@@ -72,8 +72,19 @@ Then load the SCSS in your `app.scss` file:
 @import "ember-appuniversum";
 ```
 
+If you want more control over the order that SCSS partials are rendered you can import them as groups.
+``` js
+@import "ember-appuniversum/a-settings";
+@import "ember-appuniversum/a-tools";
+@import "ember-appuniversum/a-generic";
+@import "ember-appuniversum/a-elements";
+@import "ember-appuniversum/a-objects";
+@import "ember-appuniversum/a-components";
+@import "ember-appuniversum/a-plugins";
+@import "ember-appuniversum/a-utilities";
+```
 
-Alternatively you can also load the SCSS partials in your `app.scss` file for more control over which components you want to use:
+Alternatively you can also load every SCSS partial in your `app.scss` file for more control over which components you want to use:
 
 ``` js
 /* ==================================
@@ -93,17 +104,18 @@ Alternatively you can also load the SCSS partials in your `app.scss` file for mo
  * ELEMENTS: Plain html tag styling
  * OBJECTS: OOCSS unstyled objects (namespace: '.au-o-...')
  * COMPONENTS: Components (namespace: '.au-c-...')
+ * PLUGINS: Third-party styles
  * UTILITIES: Single function helper classes (namespace: '.au-u-...')
  */
 
 
-// VARIABLES
+// SETTINGS
 @import "appuniversum/s-colors.scss";
 @import "appuniversum/s-global";
 @import "appuniversum/s-utilities";
 
 
-// MIXINS
+// TOOLS
 @import "appuniversum/t-font-size";
 @import "appuniversum/t-sass-mq";
 
@@ -141,6 +153,7 @@ Alternatively you can also load the SCSS partials in your `app.scss` file for mo
 @import "ember-appuniversum/c-control";
 @import "ember-appuniversum/c-data-table";
 @import "ember-appuniversum/c-dropdown";
+@import "ember-appuniversum/c-file-upload";
 @import "ember-appuniversum/c-form";
 @import "ember-appuniversum/c-heading";
 @import "ember-appuniversum/c-help-text";
@@ -160,6 +173,7 @@ Alternatively you can also load the SCSS partials in your `app.scss` file for mo
 @import "ember-appuniversum/c-modal";
 @import "ember-appuniversum/c-sidebar";
 @import "ember-appuniversum/c-sidebar-action";
+@import "ember-appuniversum/c-table";
 @import "ember-appuniversum/c-textarea";
 @import "ember-appuniversum/c-timepicker";
 @import "ember-appuniversum/c-toolbar";
@@ -177,8 +191,10 @@ Alternatively you can also load the SCSS partials in your `app.scss` file for mo
 @import "appuniversum/u-break-word";
 @import "appuniversum/u-headings";
 @import "appuniversum/u-hide";
+@import "appuniversum/u-flex";
 @import "appuniversum/u-font-family";
 @import "appuniversum/u-font-weights";
+@import "appuniversum/u-max-widths";
 @import "appuniversum/u-paragraphs";
 @import "appuniversum/u-print";
 @import "appuniversum/u-responsive-spacings";
