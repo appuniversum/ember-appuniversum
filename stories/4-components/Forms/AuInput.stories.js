@@ -36,6 +36,11 @@ export default {
       control: 'text',
       description: 'Define the input mask placeholder',
     },
+    handleChange: {
+      control: 'function',
+      description:
+        'This action will be called when the value changes and will be passed to the unmasked value and the masked value.',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -54,6 +59,7 @@ const Template = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @mask={{this.mask}}
       @maskPlaceholder={{this.maskPlaceholder}}
+      @handleChange={{this.handleChange}}
     />`,
   context: args,
 });
