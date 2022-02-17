@@ -16,16 +16,21 @@
               allowOutsideClick=true
             )
       }}
+      data-test-modal
       ...attributes
     >
-      <div class="au-c-modal__header">
-        <h1 id="au-c-modal-title-{{@id}}" class="au-c-modal__title" tabindex="-1">
-          {{this.title}}
+      <div class="au-c-modal__header" data-test-modal-header>
+        <h1 id="au-c-modal-title-{{@id}}" class="au-c-modal__title" tabindex="-1" data-test-modal-title>
+          {{#if (has-block "title")}}
+            {{yield to="title"}}
+          {{else}}
+            {{this.title}}
+          {{/if}}
         </h1>
         <button
           class="au-c-modal__close"
           type="button"
-          data-test-au-modal-close
+          data-test-modal-close
           {{on "click" this.closeModal}}
         >
           <AuIcon @icon="cross" @size="large" />
@@ -33,9 +38,27 @@
         </button>
       </div>
 
-      {{yield (hash
-          Body=(component "au-modal-body")
-          Footer=(component "au-modal-footer"))}}
+      {{#if (or
+        (has-block "title")
+        (has-block "body")
+        (has-block "footer")
+      )}}
+        {{#if (has-block "body")}}
+          <div class="au-c-modal__body" data-test-modal-body>
+            {{yield to="body"}}
+          </div>
+        {{/if}}
+
+        {{#if (has-block "footer")}}
+          <div class="au-c-modal__footer" data-test-modal-footer>
+            {{yield to="footer"}}
+          </div>
+        {{/if}}
+      {{else}}
+        {{yield (hash
+            Body=(component "au-modal-body")
+            Footer=(component "au-modal-footer"))}}
+      {{/if}}
     </div>
   {{/in-element}}
 {{/if}}
