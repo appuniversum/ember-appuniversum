@@ -100,7 +100,7 @@
     "ember-load-initializers": "^2.1.2",
     "ember-maybe-import-regenerator": "^1.0.0",
     "ember-page-title": "^6.2.2",
-    "ember-power-select": "^4.1.0",
+    "ember-power-select": "https://github.com/cibernox/ember-power-select.git#c2f917e1b03aef0b85a0a09b12f9e05e9b04749d",
     "ember-qunit": "^5.1.4",
     "ember-resolver": "^8.0.2",
     "ember-root-url": "^1.0.0",
@@ -127,7 +127,7 @@
   },
   "optionalDependencies": {
     "ember-concurrency": "2.x",
-    "ember-power-select": "2.x || 3.x || 4.x"
+    "ember-power-select": "2.x || 3.x || 4.x || 5.x"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
