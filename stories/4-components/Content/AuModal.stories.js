@@ -31,17 +31,16 @@ const Template = (args) => ({
     <AuModal
       @modalOpen={{this.modalOpen}}
       @closeModal={{this.closeModal}}
-      @title={{this.title}}
       @size={{this.size}}
       @padding={{this.padding}}
-      as |Modal|
     >
-      <Modal.Body>
+      <:title>{{this.title}}</:title>
+      <:body>
         <p>Modal content</p>
-      </Modal.Body>
-      <Modal.Footer>
+      </:body>
+      <:footer>
         <AuButton>Action</AuButton>
-      </Modal.Footer>
+      </:footer>
     </AuModal>`,
   context: args,
 });
