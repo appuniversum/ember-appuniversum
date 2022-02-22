@@ -2,6 +2,19 @@
 
 
 
+
+## v1.0.1 (2022-02-22)
+
+#### :rocket: Enhancement
+* [#199](https://github.com/appuniversum/ember-appuniversum/pull/199) Add named block support to the `AuModal` component ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#202](https://github.com/appuniversum/ember-appuniversum/pull/202) Bump ember-power-select ([@erikap](https://github.com/erikap))
+
+#### Committers: 2
+- Erika Pauwels ([@erikap](https://github.com/erikap))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.0 (2022-02-16)
 
 #### :bug: Bug Fix
