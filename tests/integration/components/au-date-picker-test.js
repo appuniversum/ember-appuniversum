@@ -1,7 +1,12 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
 import { click, render, waitFor, waitUntil } from '@ember/test-helpers';
+import { getConfig, getOwnConfig } from '@embroider/macros';
 import { hbs } from 'ember-cli-htmlbars';
+import { setupRenderingTest } from 'ember-qunit';
+import { module, test } from 'qunit';
+import {
+  hasDeprecationStartingWith,
+  hasNoDeprecations,
+} from '../../helpers/deprecations';
 
 /** @type import("qunit-dom").module */
 module('Integration | Component | au-date-picker', function (hooks) {
@@ -73,7 +78,7 @@ module('Integration | Component | au-date-picker', function (hooks) {
     await webComponentRender();
 
     let input = assert.dom('[data-test-au-date-picker-component] input');
-    input.hasValue('1-1-2021');
+    input.hasValue('01-01-2021');
 
     let utcDate = new Date('2021-12-31T00:00:00Z');
     this.set('date', utcDate);
@@ -84,7 +89,7 @@ module('Integration | Component | au-date-picker', function (hooks) {
         return (
           this.element.querySelector(
             '[data-test-au-date-picker-component] input'
-          ).value !== '1-1-2021'
+          ).value !== '01-01-2021'
         );
       },
       { timeout: 2000 }
@@ -131,6 +136,37 @@ module('Integration | Component | au-date-picker', function (hooks) {
     await click(targetDateButton);
     assert.ok(wasOnChangeCalled);
   });
+
+  // It seems we are running into this issue where both getConfig and getOwnConfig are needed to cover the classic and Embroider tests:
+  // https://github.com/embroider-build/embroider/issues/537
+  if (
+    getConfig('@appuniversum/ember-appuniversum')
+      ?.dutchDatePickerLocalization ||
+    getOwnConfig()?.dutchDatePickerLocalization
+  ) {
+    test('it does not show a deprecation message if the Dutch localization is enabled', async function (assert) {
+      await render(hbs`
+      <AuDatePicker @value="2021-01-01" />
+    `);
+      await webComponentRender();
+
+      assert.true(hasNoDeprecations());
+    });
+  } else {
+    test("it shows a deprecation message if the Dutch localization isn't enabled", async function (assert) {
+      await render(hbs`
+      <AuDatePicker @value="2021-01-01" />
+    `);
+      await webComponentRender();
+
+      assert.true(
+        hasDeprecationStartingWith(
+          '[AuDatePicker] The English localization is deprecated.'
+        ),
+        'it shows a deprecation message'
+      );
+    });
+  }
 });
 
 // Ember doesn't know when the web component is finished rendering its HTML.

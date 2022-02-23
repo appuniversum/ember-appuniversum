@@ -29,6 +29,8 @@ jobs:
         run: npm run lint
       - name: Run Tests
         run: npm run test:ember
+      - name: Run temporary au-date-picker tests # This step can be removed when we drop the build-time flag
+        run: DATE_PICKER_EN_LOCALIZATION=true npm run test:ember -- --filter=au-date-picker
 
   floating:
     name: "Floating Dependencies"
