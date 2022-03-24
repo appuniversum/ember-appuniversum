@@ -10,7 +10,7 @@ module('Integration | Helper | format-time-digit', function (hooks) {
   test('it renders', async function (assert) {
     this.set('inputValue', '1234');
 
-    await render(hbs`{{format-time-digit inputValue}}`);
+    await render(hbs`{{format-time-digit this.inputValue}}`);
 
     assert.dom(this.element).hasText('1234');
   });

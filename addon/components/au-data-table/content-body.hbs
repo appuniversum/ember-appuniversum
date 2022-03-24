@@ -1,25 +1,25 @@
-{{#if data-table.isLoading}}
+{{#if this.data-table.isLoading}}
   <tr><td colspan="100%" class="is-loading-data">Aan het laden...</td></tr>
 {{else}}
-  {{#if content}}
-    {{#each wrappedItems as |wrapper index|}}
-      <tr class={{if (includes wrapper.item data-table.selection) "selected"}} {{action (optional onClickRow) wrapper.item}}>
-        {{#if enableSelection}}
+  {{#if this.content}}
+    {{#each this.wrappedItems as |wrapper index|}}
+      <tr class={{if (includes wrapper.item this.data-table.selection) "selected"}} {{action (optional this.onClickRow) wrapper.item}}>
+        {{#if this.enableSelection}}
           <td class="is-selectable">
-            {{input type="checkbox" checked=wrapper.isSelected click=(action "updateSelection" wrapper)}}
+            <input type="checkbox" checked={{wrapper.isSelected}} {{on "click" (action "updateSelection" wrapper)}} />
           </td>
         {{/if}}
-        {{#if enableLineNumbers}}
+        {{#if this.enableLineNumbers}}
           <td>{{add index offset}}</td>
         {{/if}}
-        {{#if hasBlock}}
+        {{#if (has-block)}}
           {{yield wrapper.item}}
         {{else}}
-          {{default-data-table-content-body item=wrapper.item data-table=data-table}}
+          {{default-data-table-content-body item=wrapper.item data-table=this.data-table}}
         {{/if}}
       </tr>
     {{/each}}
   {{else}}
-    <tr><td colspan="100%" class="au-c-data-table__message"><p>{{noDataMessage}}</p></td></tr>
+    <tr><td colspan="100%" class="au-c-data-table__message"><p>{{this.noDataMessage}}</p></td></tr>
   {{/if}}
 {{/if}}

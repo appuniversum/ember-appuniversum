@@ -1,15 +1,15 @@
 {{! template-lint-disable no-html-comments }}
 <tr class="au-c-data-table__header">
-  {{#if enableSelection}}
+  {{#if this.enableSelection}}
     <th class="au-c-data-table__header-title is-selectable"><!-- Checkbox --></th>
   {{/if}}
-  {{#if enableLineNumbers}}
+  {{#if this.enableLineNumbers}}
     <th class="au-c-data-table__header-title"><!-- Linenumbers --></th>
   {{/if}}
-  {{#if hasBlock}}
+  {{#if (has-block)}}
     {{yield}}
   {{else}}
-    {{#each fields as |field|}}
+    {{#each this.fields as |field|}}
       {{au-data-table-th-sortable field=field label=field currentSorting=sort}}
     {{/each}}
   {{/if}}
