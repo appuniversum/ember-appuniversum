@@ -44,12 +44,7 @@ const Template = (args) => ({
 
 const IconList = (args) => ({
   template: hbs`
-    <AuIconList
-      @icon={{this.icon}}
-      @size={{this.size}}
-      @alignment={{this.alignment}}
-      @ariaHidden={{this.ariaHidden}}
-    />
+    <AuIconList />
   `,
   context: args,
 });
@@ -63,9 +58,4 @@ Component.args = {
 };
 
 export const Icons = IconList.bind({});
-IconList.args = {
-  icon: '',
-  size: 'large',
-  alignment: 'left',
-  ariaHidden: false,
-};
+IconList.args = {};
