@@ -3,6 +3,19 @@
 
 
 
+
+## v1.0.3 (2022-03-25)
+
+#### :house: Internal
+* [#214](https://github.com/appuniversum/ember-appuniversum/pull/214) Closes [#212](https://github.com/appuniversum/ember-appuniversum/issues/212) ([@Dietr](https://github.com/Dietr))
+* [#188](https://github.com/appuniversum/ember-appuniversum/pull/188) Resolving Ember 3.28 deprecations ([@benjay10](https://github.com/benjay10))
+* [#206](https://github.com/appuniversum/ember-appuniversum/pull/206) Switch to the official Ember Github Actions config ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 3
+- Ben ([@benjay10](https://github.com/benjay10))
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.2 (2022-02-22)
 
 ## v1.0.1 (2022-02-22)
