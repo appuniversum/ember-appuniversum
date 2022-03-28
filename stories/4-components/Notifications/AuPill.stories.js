@@ -7,7 +7,15 @@ export default {
     text: { control: 'text', description: 'Sets the style of the pill' },
     skin: {
       control: 'select',
-      options: ['default', 'border', 'ongoing', 'link', 'success', 'warning', 'error'],
+      options: [
+        'default',
+        'border',
+        'ongoing',
+        'link',
+        'success',
+        'warning',
+        'error',
+      ],
       description: 'Sets the skin of the pill.',
     },
     draft: {
@@ -49,7 +57,7 @@ export default {
     actionText: {
       control: 'text',
       description: 'Description of the action for screenreaders',
-    }
+    },
   },
   parameters: {
     layout: 'padded',
@@ -86,6 +94,6 @@ Component.args = {
   href: '',
   route: '',
   action: '',
-  actionIcon:'cross',
+  actionIcon: 'cross',
   actionText: 'close',
 };
