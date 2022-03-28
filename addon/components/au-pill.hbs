@@ -1,13 +1,89 @@
-<span class="au-c-pill {{this.skin}}" ...attributes>
-  {{#if @icon}}
-    {{#if (not-eq @iconAlignment "right")}}
-    <AuIcon @icon="{{@icon}}" @alignment="left" />
+{{#if @action}}
+<span class="au-c-pill-container">
+  <span class="au-c-pill {{this.skin}} {{this.draft}}" ...attributes>
+    {{#if @icon}}
+      {{#if (not-eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
     {{/if}}
-  {{/if}}
-  {{yield}}
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "right")}}
-    <AuIcon @icon="{{@icon}}" @alignment="right" />
+    {{#if @hideText}}
+    <span class="au-u-hidden-visually">{{yield}}</span>
+    {{else}}
+    {{yield}}
     {{/if}}
-  {{/if}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
+    {{/if}}
+  </span>
+  <button class="au-c-pill-action {{this.skin}}" {{@action}}>
+    <AuIcon @icon="{{@actionIcon}}" />
+    <span class="au-u-hidden-visually">{{@actionText}}</span>
+  </button>
 </span>
+{{else}}
+  {{#if @route}}
+  <LinkTo
+    class="au-c-pill au-c-pill--link {{this.draft}}"
+    @route={{this.route}}
+    @models={{au-link-to-models @model @models}}
+    @query={{this.queryParams}}
+    ...attributes>
+    {{#if @icon}}
+      {{#if (not-eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
+    {{/if}}
+    {{#if @hideText}}
+    <span class="au-u-hidden-visually">{{yield}}</span>
+    {{else}}
+    {{yield}}
+    {{/if}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
+    {{/if}}
+  </LinkTo>
+  {{else if @href}}
+  <a
+    href={{@href}}
+    class="au-c-pill au-c-pill--link {{this.draft}}"
+    ...attributes>
+    {{#if @icon}}
+      {{#if (not-eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
+    {{/if}}
+    {{#if @hideText}}
+    <span class="au-u-hidden-visually">{{yield}}</span>
+    {{else}}
+    {{yield}}
+    {{/if}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
+    {{/if}}
+  </a>
+  {{else}}
+  <span class="au-c-pill {{this.skin}} {{this.draft}}" ...attributes>
+    {{#if @icon}}
+      {{#if (not-eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
+    {{/if}}
+    {{#if @hideText}}
+    <span class="au-u-hidden-visually">{{yield}}</span>
+    {{else}}
+    {{yield}}
+    {{/if}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/if}}
+    {{/if}}
+  </span>
+  {{/if}}
+{{/if}}

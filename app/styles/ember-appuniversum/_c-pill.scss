@@ -5,26 +5,31 @@
 /* Variables
    ========================================================================== */
 
-$au-pill-color                        : var(--au-gray-700) !default;
-$au-pill-background-color             : var(--au-gray-200) !default;
+$au-pill-color                        : var(--vl-grey-70) !default;
+$au-pill-background-color             : var(--vl-grey-05) !default;
 $au-pill-border-width                 : .1rem !default;
-$au-pill-border-color                 : var(--au-gray-300) !default;
-$au-pill-font-size                    : 1.4rem !default; // @TODO: Make global au-tiny variable in appuniversum;
-$au-pill-color-border                 : var(--au-gray-700) !default;
+$au-pill-border-color                 : var(--vl-grey-50) !default;
+$au-pill-font-size                    : var(--au-small) !default;
+$au-pill-color-border                 : var(--vl-grey-70) !default;
 $au-pill-background-color-border      : var(--au-white) !default;
-$au-pill-border-color-border          : var(--au-gray-300) !default;
-$au-pill-color-success                : var(--au-green-700) !default;
-$au-pill-background-color-success     : var(--au-green-200) !default;
-$au-pill-border-color-success         : var(--au-green-400) !default;
-$au-pill-color-warning                : var(--au-orange-700) !default;
-$au-pill-background-color-warning     : var(--au-orange-200) !default;
-$au-pill-border-color-warning         : var(--au-orange-400) !default;
-$au-pill-color-error                  : var(--au-red-700) !default;
-$au-pill-background-color-error       : var(--au-red-200) !default;
-$au-pill-border-color-error           : var(--au-red-400) !default;
-$au-pill-color-action                 : var(--au-blue-700) !default;
-$au-pill-background-color-action      : var(--au-blue-100) !default;
-$au-pill-border-color-action          : var(--au-blue-300) !default;
+$au-pill-border-color-border          : var(--vl-grey-20) !default;
+$au-pill-color-success                : var(--vl-green-130) !default;
+$au-pill-background-color-success     : var(--vl-green-10) !default;
+$au-pill-border-color-success         : var(--vl-green-100) !default;
+$au-pill-color-warning                : var(--vl-orange-120) !default;
+$au-pill-background-color-warning     : var(--vl-orange-10) !default;
+$au-pill-border-color-warning         : var(--vl-orange-100) !default;
+$au-pill-color-error                  : var(--vl-red-130) !default;
+$au-pill-background-color-error       : var(--vl-red-10) !default;
+$au-pill-border-color-error           : var(--vl-red-100) !default;
+$au-pill-color-link                   : var(--au-blue-700) !default;
+$au-pill-color-link-hover             : var(--au-blue-900) !default;
+$au-pill-background-color-link        : var(--au-blue-100) !default;
+$au-pill-background-color-link-hover  : var(--au-white) !default;
+$au-pill-border-color-link            : var(--au-blue-300) !default;
+$au-pill-color-ongoing                : var(--vl-picton-120) !default;
+$au-pill-background-color-ongoing     : transparent !default;
+$au-pill-border-color-ongoing         : var(--vl-picton-120) !default;
 
 /* Component
   ========================================================================== */
@@ -32,12 +37,57 @@ $au-pill-border-color-action          : var(--au-blue-300) !default;
 .au-c-pill {
   @include au-font-size(var(--au-base));
   display: inline-flex;
+  gap: $au-unit-tiny;
   align-items: center;
   font-family: var(--au-font);
   font-weight: var(--au-medium);
   border: $au-pill-border-width solid $au-pill-border-color;
   padding: .1rem $au-unit-tiny 0;  // Visually center the text in the pill
   border-radius: $au-unit-tiny;
+  min-height: 2.55rem;
+}
+
+.au-c-pill-container {
+  display: inline-flex;
+  align-items: center;
+
+  > .au-c-pill {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  > .au-c-pill-action {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.au-c-pill-action {
+  @include au-font-size(var(--au-base));
+  display: inline-flex;
+  gap: $au-unit-tiny;
+  align-items: center;
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
+  color: $au-pill-color-link;
+  background-color: $au-pill-background-color-link;
+  border: $au-pill-border-width solid $au-pill-border-color-link;
+  padding: 0 $au-unit-tiny 0;  // Visually center the text in the pill
+  border-radius: $au-unit-tiny;
+  min-height: 2.55rem;
+  text-decoration: none;
+  cursor: default;
+
+  &:hover,
+  &:focus {
+    background-color: $au-pill-background-color-link-hover;
+  }
+
+  &:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
 }
 
 /* Modifiers
@@ -53,6 +103,31 @@ $au-pill-border-color-action          : var(--au-blue-300) !default;
   color: $au-pill-color-border;
   background-color: $au-pill-background-color-border;
   border-color: $au-pill-border-color-border;
+}
+
+.au-c-pill--ongoing {
+  color: $au-pill-color-ongoing;
+  background-color: $au-pill-background-color-ongoing;
+  border-color: $au-pill-border-color-ongoing;
+}
+
+.au-c-pill--link {
+  text-decoration: none;
+  cursor: default;
+  color: $au-pill-color-link;
+  background-color: $au-pill-background-color-link;
+  border-color: $au-pill-border-color-link;
+
+  &:hover,
+  &:focus {
+    color: $au-pill-color-link-hover;
+    background-color: $au-pill-background-color-link-hover;
+  }
+
+  &:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
 }
 
 .au-c-pill--success {
@@ -73,8 +148,7 @@ $au-pill-border-color-action          : var(--au-blue-300) !default;
   border-color: $au-pill-border-color-error;
 }
 
-.au-c-pill--action {
-  color: $au-pill-color-action;
-  background-color: $au-pill-background-color-action;
-  border-color: $au-pill-border-color-action;
+.au-c-pill--draft {
+  border-style: dashed;
+  background-color: transparent;
 }
