@@ -3,6 +3,7 @@ module.exports = {
     builder: "webpack5"
   },
   "stories": [
+    '../stories/Introduction.stories.mdx', // set default page
     "../stories/**/*.stories.mdx",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],
