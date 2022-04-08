@@ -20,12 +20,12 @@ export default class AuAccordionComponent extends Component {
   }
 
   get subtitle() {
-    if (this.args.accordionSubtitle) {
+    if (this.args.accordionSubTitle) {
       deprecate(
-        '@accordionSubtitle is deprecated, use @subtitle instead',
+        '@accordionSubTitle is deprecated, use @subtitle instead',
         false,
         {
-          id: '@appuniversum/ember-appuniversum.au-accordion.accordionSubtitle-argument',
+          id: '@appuniversum/ember-appuniversum.au-accordion.accordionSubTitle-argument',
           until: '1.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
@@ -34,7 +34,7 @@ export default class AuAccordionComponent extends Component {
         }
       );
 
-      return this.args.accordionSubtitle;
+      return this.args.accordionSubTitle;
     } else if (this.args.subtitle) {
       return this.args.subtitle;
     } else {
