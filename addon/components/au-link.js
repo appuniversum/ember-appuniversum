@@ -13,7 +13,7 @@ export default class AuLink extends Component {
     if (this.args.linkRoute) {
       deprecate('@linkRoute is deprecated, use @route instead', false, {
         id: '@appuniversum/ember-appuniversum.au-link.linkRoute-argument',
-        until: '0.7.0',
+        until: '2.0.0',
         for: '@appuniversum/ember-appuniversum',
         since: {
           enabled: '0.5.0',

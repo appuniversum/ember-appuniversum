@@ -23,7 +23,7 @@ export default class AuModal extends Component {
     if (this.args.modalTitle) {
       deprecate('@modalTitle is deprecated, use @title instead', false, {
         id: '@appuniversum/ember-appuniversum.au-modal.modalTitle-argument',
-        until: '1.0.0',
+        until: '2.0.0',
         for: '@appuniversum/ember-appuniversum',
         since: {
           enabled: '0.5.0',

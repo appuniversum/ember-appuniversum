@@ -26,7 +26,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionSubTitle-argument',
-          until: '1.0.0',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',
@@ -49,7 +49,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionIconOpen-argument',
-          until: '1.0.0',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',
@@ -72,7 +72,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionIconClosed-argument',
-          until: '1.0.0',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',
@@ -95,7 +95,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionButtonLabel-argument',
-          until: '1.0.0',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',
