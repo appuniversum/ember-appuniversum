@@ -115,8 +115,8 @@ const TemplatePre = (args) => ({
   context: args,
 });
 
-export const SimpleForm = Template.bind({});
-SimpleForm.args = {};
+export const DefaultForm = Template.bind({});
+DefaultForm.args = {};
 
 export const InlineForm = TemplateInline.bind({});
 InlineForm.args = {};
