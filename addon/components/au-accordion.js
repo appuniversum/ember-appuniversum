@@ -20,13 +20,13 @@ export default class AuAccordionComponent extends Component {
   }
 
   get subtitle() {
-    if (this.args.accordionSubtitle) {
+    if (this.args.accordionSubTitle) {
       deprecate(
-        '@accordionSubtitle is deprecated, use @subtitle instead',
+        '@accordionSubTitle is deprecated, use @subtitle instead',
         false,
         {
-          id: '@appuniversum/ember-appuniversum.au-accordion.accordionSubtitle-argument',
-          until: '1.0.0',
+          id: '@appuniversum/ember-appuniversum.au-accordion.accordionSubTitle-argument',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',
@@ -34,7 +34,7 @@ export default class AuAccordionComponent extends Component {
         }
       );
 
-      return this.args.accordionSubtitle;
+      return this.args.accordionSubTitle;
     } else if (this.args.subtitle) {
       return this.args.subtitle;
     } else {
@@ -49,7 +49,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionIconOpen-argument',
-          until: '1.0.0',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',
@@ -72,7 +72,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionIconClosed-argument',
-          until: '1.0.0',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',
@@ -95,7 +95,7 @@ export default class AuAccordionComponent extends Component {
         false,
         {
           id: '@appuniversum/ember-appuniversum.au-accordion.accordionButtonLabel-argument',
-          until: '1.0.0',
+          until: '2.0.0',
           for: '@appuniversum/ember-appuniversum',
           since: {
             enabled: '0.5.0',

@@ -9,7 +9,7 @@ export default class AuBrand extends Component {
     if (this.args.brandLink) {
       deprecate('@brandLink is deprecated, use @link instead', false, {
         id: '@appuniversum/ember-appuniversum.au-brand.brandLink-argument',
-        until: '1.0.0',
+        until: '2.0.0',
         for: '@appuniversum/ember-appuniversum',
         since: {
           enabled: '0.5.0',
