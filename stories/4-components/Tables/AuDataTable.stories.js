@@ -14,7 +14,7 @@ const Template = (args) => ({
       @content={{this.model}}
       @fields="title description"
       @noDataMessage="Geen documenten"
-      @sort={{sort}}
+      @sort={{this.sort}}
       as |t|
     >
       <t.menu as |menu|>
@@ -26,7 +26,7 @@ const Template = (args) => ({
               </AuHeading>
             </AuToolbarGroup>
             <AuToolbarGroup class="au-c-toolbar__group--center">
-              <AuDataTableTextSearch @filter={{title}} @placeholder="Zoek titel notulen" />
+              <AuDataTableTextSearch @filter={{this.title}} @placeholder="Zoek titel notulen" />
               <AuButton>
                 Nieuwe zitting
               </AuButton>
@@ -38,12 +38,12 @@ const Template = (args) => ({
         <c.header>
           <AuDataTableThSortable
             @field="title"
-            @currentSorting={{sort}}
+            @currentSorting={{this.sort}}
             @label="Titel notulen" @class="data-table__header-title"
           />
           <AuDataTableThSortable
             @field="description"
-            @currentSorting={{sort}}
+            @currentSorting={{this.sort}}
             @label="Omschrijving" @class="data-table__header-title"
           />
         </c.header>
