@@ -4,6 +4,23 @@
 
 
 
+
+## v1.0.4 (2022-04-11)
+
+#### :rocket: Enhancement
+* [#220](https://github.com/appuniversum/ember-appuniversum/pull/220) Extend the pill functionality ([@Dietr](https://github.com/Dietr))
+* [#215](https://github.com/appuniversum/ember-appuniversum/pull/215) Add a `AuFileCard` component ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#226](https://github.com/appuniversum/ember-appuniversum/pull/226) Fix a typo in the `accordionSubTitle` argument ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#228](https://github.com/appuniversum/ember-appuniversum/pull/228) Dependency maintenance ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.3 (2022-03-25)
 
 #### :house: Internal
