@@ -4,6 +4,7 @@
 
 .au-c-button-group  {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: $au-unit-tiny;
 }
