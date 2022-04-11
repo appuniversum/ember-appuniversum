@@ -41,6 +41,10 @@ export default {
       description:
         'This action will be called when the value changes and will be passed to the unmasked value and the masked value.',
     },
+    type: {
+      control: 'select',
+      options: ['text', 'number'],
+    },
   },
   parameters: {
     layout: 'padded',
@@ -60,6 +64,7 @@ const Template = (args) => ({
       @mask={{this.mask}}
       @maskPlaceholder={{this.maskPlaceholder}}
       @handleChange={{this.handleChange}}
+      @type={{this.type}}
     />`,
   context: args,
 });
