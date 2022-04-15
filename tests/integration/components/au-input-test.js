@@ -6,12 +6,13 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | au-input', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  test("it's possible to set the type", async function (assert) {
+    await render(hbs`<AuInput @type={{this.type}} />`);
+    assert
+      .dom('input')
+      .hasAttribute('type', 'text', 'it defaults to type="text"');
 
-    await render(hbs`<AuInput />`);
-
-    assert.dom(this.element).hasText('');
+    this.set('type', 'number');
+    assert.dom('input').hasAttribute('type', 'number');
   });
 });
