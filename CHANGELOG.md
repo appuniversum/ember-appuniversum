@@ -5,6 +5,15 @@
 
 
 
+
+## v1.0.5 (2022-04-15)
+
+#### :rocket: Enhancement
+* [#232](https://github.com/appuniversum/ember-appuniversum/pull/232) Feature/table icons ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.0.4 (2022-04-11)
 
 #### :rocket: Enhancement
