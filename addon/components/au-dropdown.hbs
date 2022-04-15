@@ -19,7 +19,7 @@
     </button>
     {{/if}}
   </div>
-  <div id="{{this.id}}" class="au-c-dropdown__menu {{if this.dropdownOpen "is-visible" ""}}" role="menu" tabindex="-1" {{focus-trap isActive=this.dropdownOpen shouldSelfFocus=true focusTrapOptions=(hash onDeactivate=this.closeDropdown clickOutsideDeactivates=true)}} {{on-click-inside this.closeDropdown}}>
+  <div id="{{this.id}}" class="au-c-dropdown__menu {{if this.dropdownOpen "is-visible" ""}}" role="menu" tabindex="-1" {{focus-trap isActive=this.dropdownOpen shouldSelfFocus=true focusTrapOptions=(hash onDeactivate=this.closeDropdown clickOutsideDeactivates=true)}} {{on "click" this.closeDropdown}}>
     {{yield}}
   </div>
 </div>
