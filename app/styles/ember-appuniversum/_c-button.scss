@@ -65,7 +65,7 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
   }
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     color: $au-button-color;
     background-color: $au-button-contrast-hover-color;
     border-color: $au-button-contrast-hover-color;
