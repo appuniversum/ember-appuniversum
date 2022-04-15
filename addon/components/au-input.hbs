@@ -1,20 +1,66 @@
 {{#if @icon}}
   <span class="au-c-input-wrapper {{this.iconAlignment}} {{this.width}}">
     {{#if @mask}}
-    <Inputmask class="au-c-input au-c-input--mask {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} @mask={{@mask}} @placeholder={{@maskPlaceholder}} @update={{this.handleChange}} disabled={{@disabled}} ...attributes/>
+      <Inputmask
+        @value={{@value}}
+        @mask={{@mask}}
+        @placeholder={{@maskPlaceholder}}
+        @update={{this.handleChange}}
+        class="au-c-input au-c-input--mask
+          {{this.error}}
+          {{this.warning}}
+          {{this.width}}
+          {{this.disabled}}"
+        disabled={{@disabled}}
+        type={{this.type}}
+        ...attributes
+      />
     {{else}}
-    <Input class="au-c-input {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
+      <Input
+        @value={{@value}}
+        @type={{this.type}}
+        class="au-c-input
+          {{this.error}}
+          {{this.warning}}
+          {{this.width}}
+          {{this.disabled}}"
+        disabled={{@disabled}}
+        ...attributes
+      />
     {{/if}}
     {{#if (eq @iconAlignment "right")}}
-    <AuIcon @icon="{{@icon}}" @alignment="right" />
+      <AuIcon @icon={{@icon}} @alignment="right" />
     {{else}}
-    <AuIcon @icon="{{@icon}}" @alignment="left" />
+      <AuIcon @icon={{@icon}} @alignment="left" />
     {{/if}}
   </span>
 {{else}}
-{{#if @mask}}
-<Inputmask class="au-c-input au-c-input--mask {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} @mask={{@mask}} @placeholder={{@maskPlaceholder}} @update={{this.handleChange}} disabled={{@disabled}} ...attributes/>
-{{else}}
-<Input class="au-c-input {{this.error}} {{this.warning}} {{this.width}} {{this.disabled}}" @value={{@value}} disabled={{@disabled}} ...attributes/>
-{{/if}}
+  {{#if @mask}}
+    <Inputmask
+      @value={{@value}}
+      @mask={{@mask}}
+      @placeholder={{@maskPlaceholder}}
+      @update={{this.handleChange}}
+      class="au-c-input au-c-input--mask
+        {{this.error}}
+        {{this.warning}}
+        {{this.width}}
+        {{this.disabled}}"
+      disabled={{@disabled}}
+      type={{this.type}}
+      ...attributes
+    />
+  {{else}}
+    <Input
+      @value={{@value}}
+      @type={{this.type}}
+      class="au-c-input
+        {{this.error}}
+        {{this.warning}}
+        {{this.width}}
+        {{this.disabled}}"
+      disabled={{@disabled}}
+      ...attributes
+    />
+  {{/if}}
 {{/if}}
