@@ -73,6 +73,10 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
   }
 
   &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
     outline: var(--au-outline);
     outline-offset: var(--au-outline-offset);
   }

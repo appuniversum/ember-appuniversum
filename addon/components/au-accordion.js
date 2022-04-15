@@ -110,4 +110,14 @@ export default class AuAccordionComponent extends Component {
       return undefined;
     }
   }
+
+  get skin() {
+    if (this.args.skin == 'border') return 'au-c-accordion--border';
+    return '';
+  }
+
+  get reverse() {
+    if (this.args.reverse) return 'au-c-accordion--reverse';
+    return '';
+  }
 }

@@ -1,6 +1,7 @@
-<div class='au-c-accordion' ...attributes>
+<div class='au-c-accordion {{this.skin}} {{this.reverse}}' ...attributes>
   <AuToolbar
     @nowrap={{true}}
+    @reverse={{@reverse}}
     {{on 'click' this.openAccordion}}
     data-test-accordion-toggle
   >
