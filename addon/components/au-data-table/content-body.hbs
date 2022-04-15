@@ -10,7 +10,7 @@
           </td>
         {{/if}}
         {{#if this.enableLineNumbers}}
-          <td>{{add index offset}}</td>
+          <td>{{add index this.offset}}</td>
         {{/if}}
         {{#if (has-block)}}
           {{yield wrapper.item}}
