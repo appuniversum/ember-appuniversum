@@ -8,6 +8,15 @@ export default {
       control: 'text',
       description: 'Set the subtitle of the accordion',
     },
+    skin: {
+      control: 'select',
+      options: ['default', 'border'],
+      description: 'Sets the design of the accordion.',
+    },
+    reverse: {
+      control: 'boolean',
+      description: 'Reverse the layout direction of title and icon.',
+    },
     iconOpen: {
       control: 'select',
       options: icons,
@@ -35,6 +44,8 @@ const Template = (args) => ({
   template: hbs`
     <AuAccordion
       @subtitle={{this.subtitle}}
+      @skin={{this.skin}}
+      @reverse={{this.reverse}}
       @iconOpen={{this.iconOpen}}
       @iconClosed={{this.iconClosed}}
       @buttonLabel={{this.buttonLabel}}
@@ -48,7 +59,10 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   subtitle: 'subtitle',
-
+  skin: 'default',
+  reverse: false,
+  iconOpen: 'nav-down',
+  iconClosed: 'nav-right',
   buttonLabel: 'Accordion with arrows',
   loading: false,
 };

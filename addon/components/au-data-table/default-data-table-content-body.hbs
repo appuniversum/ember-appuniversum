@@ -1,14 +1,16 @@
-{{#if firstColumn}}
-  {{#if linkedRoute}}
-    {{#link-to linkedRoute item tagName="td"}}{{get item firstColumn}}{{/link-to}}
+{{#if this.firstColumn}}
+  {{#if this.linkedRoute}}
+    <td>
+      <AuLink @route={{this.linkedRoute}} @model={{this.item}}>{{get this.item this.firstColumn}}</AuLink>
+    </td>
   {{else}}
-    <td>{{get item firstColumn}}</td>
+    <td>{{get this.item this.firstColumn}}</td>
   {{/if}}
 {{/if}}
-{{#each otherColumns as |field|}}
+{{#each this.otherColumns as |field|}}
   <td>
     {{!-- This should be based on the type of the field --}}
-    {{get item field}}
+    {{get this.item this.field}}
   </td>
 {{/each}}
 {{yield}}

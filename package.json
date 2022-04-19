@@ -1,6 +1,6 @@
 {
   "name": "@appuniversum/ember-appuniversum",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Ember addon wrapping the appuniversum components.",
   "keywords": [
     "ember-addon"
@@ -59,7 +59,6 @@
     "ember-file-upload": "^4.0.1",
     "ember-focus-trap": "^1.0.1",
     "ember-inputmask5": "^3.2.0",
-    "ember-modifier": "^3.2.7",
     "ember-named-blocks-polyfill": "^0.2.5",
     "ember-prop-modifier": "^1.0.1",
     "ember-test-selectors": "^6.0.0"

@@ -1,0 +1,34 @@
+/* ==================================
+   #LIST
+   ================================== */
+
+/* Component
+  ========================================================================== */
+
+.au-c-list {
+  display: flex;
+  flex-direction: column;
+  gap: $au-unit-tiny;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.au-c-list--horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.au-c-list__item {
+  .au-c-list--vertical.au-c-list--divider & + & {
+    padding-top: $au-unit-tiny;
+    border-top: .1rem solid var(--au-gray-200);
+  }
+
+  .au-c-list--horizontal.au-c-list--divider & + & {
+    padding-left: $au-unit-tiny;
+    border-left: .1rem solid var(--au-gray-200);
+  }
+}

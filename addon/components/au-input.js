@@ -39,6 +39,10 @@ export default class AuInput extends Component {
     else return '';
   }
 
+  get type() {
+    return this.args.type || 'text';
+  }
+
   @action
   handleChange(value) {
     this.args.onChange?.(value);

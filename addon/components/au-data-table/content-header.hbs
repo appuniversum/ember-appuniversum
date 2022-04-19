@@ -10,7 +10,7 @@
     {{yield}}
   {{else}}
     {{#each this.fields as |field|}}
-      {{au-data-table-th-sortable field=field label=field currentSorting=sort}}
+      {{au-data-table-th-sortable field=field label=field currentSorting=this.sort}}
     {{/each}}
   {{/if}}
 </tr>

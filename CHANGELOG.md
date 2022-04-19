@@ -5,6 +5,40 @@
 
 
 
+
+
+
+## v1.0.7 (2022-04-19)
+
+#### :rocket: Enhancement
+* [#238](https://github.com/appuniversum/ember-appuniversum/pull/238) List component and accordion fix ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+## v1.0.6 (2022-04-15)
+
+#### :rocket: Enhancement
+* [#235](https://github.com/appuniversum/ember-appuniversum/pull/235) Extend accordion layout options ([@Dietr](https://github.com/Dietr))
+
+#### :bug: Bug Fix
+* [#230](https://github.com/appuniversum/ember-appuniversum/pull/230) Fix remaining deprecations triggered by ember-data-table ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#234](https://github.com/appuniversum/ember-appuniversum/pull/234) Remove the `on-click-inside` modifier ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+## v1.0.5 (2022-04-15)
+
+#### :rocket: Enhancement
+* [#232](https://github.com/appuniversum/ember-appuniversum/pull/232) Feature/table icons ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.0.4 (2022-04-11)
 
 #### :rocket: Enhancement
