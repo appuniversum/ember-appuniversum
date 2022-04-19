@@ -32,7 +32,7 @@ $au-accordion-spacing                       : $au-unit !default;
   cursor: inherit;
 }
 
-.au-c-accordion .au-c-icon {
+.au-c-accordion .au-c-toolbar .au-c-icon {
   color: var(--au-blue-700);
   transition: color var(--au-transition);
   margin-top: .4rem;
