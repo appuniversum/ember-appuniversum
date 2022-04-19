@@ -16,9 +16,9 @@
 
 .au-c-form-row--inline {
   flex-direction: row;
+  gap: $au-unit;
 
   > .au-c-label {
-    padding-right: $au-unit;
     margin-bottom: 0;
     min-height: $au-unit-large - $au-unit-small;
   }
@@ -27,13 +27,18 @@
   > .au-c-textarea,
   > .au-date-picker {
     display: block;
-    width: 100%;
+    width: calc(100% - 15rem);
   }
+}
+
+.au-c-form-row__left {
+  width: 15rem;
 }
 
 .au-c-form-row--pre,
 .au-c-form-row--post {
   align-items: stretch;
+  gap: 0;
 
   > .au-c-label {
     padding-right: $au-unit-small;

@@ -1,0 +1,21 @@
+/* ==================================
+   #Fieldset
+   ================================== */
+
+/* Component
+  ========================================================================== */
+
+.au-c-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: $au-unit-tiny;
+}
+
+.au-c-fieldset--inline {
+  flex-direction: row;
+  gap: $au-unit;
+}
+
+.au-c-fieldset__left {
+  width: 15rem;
+}

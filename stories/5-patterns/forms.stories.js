@@ -22,6 +22,60 @@ const Template = (args) => ({
         </AuLabel>
         <AuDatePicker id="inputTwo" />
       </AuFormRow>
+      <AuFieldset>
+        <AuLegend>Radio list</AuLegend>
+        <AuControlRadio
+          @label="radio 1"
+          @name="radios"
+          @value="radioOne"
+          @identifier="radioOne"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="radio 2"
+          @name="radios"
+          @value="radioTwo"
+          @identifier="radioTwo"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="radio 3"
+          @name="radios"
+          @value="radioThree"
+          @identifier="radioThree"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+      </AuFieldset>
+      <AuFieldset>
+        <AuLegend>Check list</AuLegend>
+        <AuControlCheckbox
+          @label="Checkbox 1"
+          @name="Checkboxs"
+          @value="CheckboxOne"
+          @identifier="CheckboxOne"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlCheckbox
+          @label="Checkbox 2"
+          @name="Checkboxs"
+          @value="CheckboxTwo"
+          @identifier="CheckboxTwo"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlCheckbox
+          @label="Checkbox 3"
+          @name="Checkboxs"
+          @value="CheckboxThree"
+          @identifier="CheckboxThree"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+      </AuFieldset>
       <AuFormRow @alignment="default">
         <AuLabel for="textarea">
           Textarea
@@ -47,19 +101,77 @@ const TemplateInline = (args) => ({
   template: hbs`
     <form class="au-c-form">
       <AuFormRow @alignment="inline">
-        <AuLabel for="input" @required={{true}} @inline={{true}} class="au-u-1-6">
+        <AuLabel for="input" @required={{true}} @inline={{true}} class="au-c-form-row__left">
           Title
         </AuLabel>
         <AuInput id="input" />
       </AuFormRow>
       <AuFormRow @alignment="inline">
-        <AuLabel for="inputTwo" @inline={{true}} class="au-u-1-6">
+        <AuLabel for="inputTwo" @inline={{true}} class="au-c-form-row__left">
           Date
         </AuLabel>
         <AuDatePicker id="inputTwo" />
       </AuFormRow>
+      <AuFieldset @alignment="inline">
+        <div class="au-c-fieldset__left">
+          <AuLegend>Radio list</AuLegend>
+        </div>
+        <AuControlRadio
+          @label="radio 1"
+          @name="radios"
+          @value="radioOne"
+          @identifier="radioOne"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="radio 2"
+          @name="radios"
+          @value="radioTwo"
+          @identifier="radioTwo"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="radio 3"
+          @name="radios"
+          @value="radioThree"
+          @identifier="radioThree"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+      </AuFieldset>
+      <AuFieldset @alignment="inline">
+        <div class="au-c-fieldset__left">
+          <AuLegend>Check list</AuLegend>
+        </div>
+        <AuControlCheckbox
+          @label="Checkbox 1"
+          @name="Checkboxs"
+          @value="CheckboxOne"
+          @identifier="CheckboxOne"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlCheckbox
+          @label="Checkbox 2"
+          @name="Checkboxs"
+          @value="CheckboxTwo"
+          @identifier="CheckboxTwo"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlCheckbox
+          @label="Checkbox 3"
+          @name="Checkboxs"
+          @value="CheckboxThree"
+          @identifier="CheckboxThree"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+      </AuFieldset>
       <AuFormRow @alignment="inline">
-        <AuLabel for="textarea" @inline={{true}} class="au-u-1-6">
+        <AuLabel for="textarea" @inline={{true}} class="au-c-form-row__left">
           Textarea
         </AuLabel>
         <AuTextarea id="textarea"></AuTextarea>
@@ -94,6 +206,60 @@ const TemplatePre = (args) => ({
         </AuLabel>
         <AuDatePicker id="inputTwo" />
       </AuFormRow>
+      <AuFieldset @alignment="inline">
+        <AuLegend class="au-u-1-6">Radio list</AuLegend>
+        <AuControlRadio
+          @label="radio 1"
+          @name="radios"
+          @value="radioOne"
+          @identifier="radioOne"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="radio 2"
+          @name="radios"
+          @value="radioTwo"
+          @identifier="radioTwo"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="radio 3"
+          @name="radios"
+          @value="radioThree"
+          @identifier="radioThree"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+      </AuFieldset>
+      <AuFieldset @alignment="inline">
+        <AuLegend class="au-u-1-6">Check list</AuLegend>
+        <AuControlCheckbox
+          @label="Checkbox 1"
+          @name="Checkboxs"
+          @value="CheckboxOne"
+          @identifier="CheckboxOne"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlCheckbox
+          @label="Checkbox 2"
+          @name="Checkboxs"
+          @value="CheckboxTwo"
+          @identifier="CheckboxTwo"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlCheckbox
+          @label="Checkbox 3"
+          @name="Checkboxs"
+          @value="CheckboxThree"
+          @identifier="CheckboxThree"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+      </AuFieldset>
       <AuFormRow @alignment="pre">
         <AuLabel for="textarea" @inline={{true}} class="au-u-1-6">
           Textarea
