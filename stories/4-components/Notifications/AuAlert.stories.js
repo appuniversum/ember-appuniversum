@@ -17,7 +17,7 @@ export default {
     },
     size: {
       control: 'select',
-      options: ['default', 'small'],
+      options: ['default', 'small', 'tiny'],
       description: 'Set the size of the alert',
     },
     closable: { control: 'boolean', description: 'Makes the alert closable' },
@@ -30,10 +30,10 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuAlert
-      @alertTitle={{this.title}}
-      @alertSkin={{this.skin}}
-      @alertIcon={{this.icon}}
-      @alertSize={{this.size}}
+      @title={{this.title}}
+      @skin={{this.skin}}
+      @icon={{this.icon}}
+      @size={{this.size}}
       @closable={{this.closable}}
     >
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>

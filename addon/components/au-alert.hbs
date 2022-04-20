@@ -1,21 +1,35 @@
-{{#if this.alertVisible}}
-<div class="au-c-alert {{this.alertSkin}} {{this.alertSize}}" role="alert" ...attributes>
-  {{#if @alertIcon}}
-  <div class="au-c-alert__icon" aria-hidden="{{if @iconVisible "false" "true"}}">
-    <AuIcon @icon="{{@alertIcon}}" />
-  </div>
-  {{/if}}
-  <div class="au-c-alert__content">
-    {{#if @alertTitle}}
-    <p class="au-c-alert__title">{{@alertTitle}}</p>
+{{#if this.isVisible}}
+  <div
+    class="au-c-alert {{this.skin}} {{this.size}}"
+    role="alert"
+    data-test-alert
+    ...attributes
+  >
+    {{#if this.icon}}
+      <div
+        class="au-c-alert__icon"
+        aria-hidden={{if @iconVisible "false" "true"}}
+        data-test-alert-icon
+      >
+        <AuIcon @icon={{this.icon}} />
+      </div>
     {{/if}}
-    <div class="au-c-alert__message">{{yield}}</div>
+    <div class="au-c-alert__content">
+      {{#if this.title}}
+        <p class="au-c-alert__title" data-test-alert-title>{{this.title}}</p>
+      {{/if}}
+      <div class="au-c-alert__message" data-test-alert-message>{{yield}}</div>
+    </div>
+    {{#if @closable}}
+      <button
+        class="au-c-alert__close"
+        type="button"
+        data-test-alert-close
+        {{on "click" this.closeAlert}}
+      >
+        <AuIcon @icon="cross" @size="large" />
+        <span class="au-u-hidden-visually">Sluit alert</span>
+      </button>
+    {{/if}}
   </div>
-  {{#if @closable}}
-  <button type="button" {{on "click" this.closeAlert}} class="au-c-alert__close">
-    <AuIcon @icon="cross" @size="large" />
-    <span class="au-u-hidden-visually">Sluit alert</span>
-  </button>
-  {{/if}}
-</div>
 {{/if}}
