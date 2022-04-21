@@ -8,14 +8,26 @@ export default {
       options: ['default', 'inline', 'pre', 'post'],
       description: 'Choose the layout of the form row.',
     },
-    inline: { control: 'boolean', description: 'Add an inline state to the legend.' },
-    required: { control: 'boolean', description: 'Add a required state to the legend.' },
+    inline: {
+      control: 'boolean',
+      description: 'Add an inline state to the legend.',
+    },
+    required: {
+      control: 'boolean',
+      description: 'Add a required state to the legend.',
+    },
     requiredLabel: {
       control: 'text',
       description: 'Add the required state label to the legend.',
     },
-    error: { control: 'boolean', description: 'Add an error state to the legend.' },
-    warning: { control: 'boolean', description: 'Add an warning state to the legend.' },
+    error: {
+      control: 'boolean',
+      description: 'Add an error state to the legend.',
+    },
+    warning: {
+      control: 'boolean',
+      description: 'Add an warning state to the legend.',
+    },
   },
   parameters: {
     layout: 'padded',
