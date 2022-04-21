@@ -8,12 +8,19 @@
 .au-c-fieldset {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: $au-unit-small;
 }
 
 .au-c-fieldset--inline {
   flex-direction: row;
   gap: $au-unit;
+}
+
+.au-c-fieldset--pre,
+.au-c-fieldset--post {
+  align-items: stretch;
+  gap: 0;
 }
 
 .au-c-fieldset__legend {
@@ -26,6 +33,19 @@
 
   > .au-c-pill {
     margin-left: $au-unit-tiny;
+  }
+
+  .au-c-fieldset--inline & {
+    min-height: $au-unit-large - $au-unit-small;
+  }
+
+  .au-c-fieldset--pre &,
+  .au-c-fieldset--post & {
+    padding-right: $au-unit-small;
+    padding-left: $au-unit-small;
+    background-color: var(--au-gray-100);
+    border: .1rem solid var(--au-gray-300);
+    border-radius: var(--au-radius);
   }
 }
 
@@ -51,5 +71,12 @@
     flex-direction: row;
     gap: $au-unit;
     width: 100%;
+    min-height: $au-unit-large - $au-unit-small;
+    align-items: center;
+  }
+
+  .au-c-fieldset--pre &,
+  .au-c-fieldset--post & {
+    padding: 0 $au-unit-small;
   }
 }

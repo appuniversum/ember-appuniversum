@@ -23,7 +23,7 @@ const Template = (args) => ({
         <AuDatePicker id="inputTwo" />
       </AuFormRow>
       <AuFieldset as |f|>
-        <f.legend>Radio list</f.legend>
+        <f.legend @required={{true}}>Radio list</f.legend>
         <f.content>
           <AuControlRadio
             @label="radio 1"
@@ -120,7 +120,7 @@ const TemplateInline = (args) => ({
         @alignment="inline"
         as |f|
       >
-        <f.legend class="au-u-1-6">
+        <f.legend @inline={{true}} @required={{true}} class="au-u-1-6">
           Radio list
         </f.legend>
         <f.content>
@@ -154,7 +154,7 @@ const TemplateInline = (args) => ({
         @alignment="inline"
         as |f|
       >
-        <f.legend class="au-u-1-6">
+        <f.legend @inline={{true}} class="au-u-1-6">
           Check list
         </f.legend>
         <f.content>
@@ -190,6 +190,9 @@ const TemplateInline = (args) => ({
         </AuLabel>
         <AuTextarea id="textarea"></AuTextarea>
       </AuFormRow>
+      <AuFormRow @alignment="inline">
+        <AuHelpText @skin="secondary">* Verplichte velden</AuHelpText>
+      </AuFormRow>
       <AuFormRow>
         <AuButtonGroup>
           <AuButton>
@@ -220,8 +223,10 @@ const TemplatePre = (args) => ({
         </AuLabel>
         <AuDatePicker id="inputTwo" />
       </AuFormRow>
-      <AuFieldset @alignment="inline" as |f|>
-        <f.legend class="au-u-1-6">Radio list</f.legend>
+      <AuFieldset @alignment="pre" as |f|>
+        <f.legend @inline={{true}} @required={{true}} class="au-u-1-6">
+          Radio list
+        </f.legend>
         <f.content>
           <AuControlRadio
             @label="radio 1"
@@ -249,8 +254,10 @@ const TemplatePre = (args) => ({
           />
         </f.content>
       </AuFieldset>
-      <AuFieldset @alignment="inline" as |f|>
-        <f.legend class="au-u-1-6">Check list</f.legend>
+      <AuFieldset @alignment="pre" as |f|>
+        <f.legend @inline={{true}} class="au-u-1-6">
+          Check list
+        </f.legend>
         <f.content>
           <AuControlCheckbox
             @label="Checkbox 1"
@@ -283,6 +290,9 @@ const TemplatePre = (args) => ({
           Textarea
         </AuLabel>
         <AuTextarea id="textarea"></AuTextarea>
+      </AuFormRow>
+      <AuFormRow @alignment="inline">
+        <AuHelpText @skin="secondary">* Verplichte velden</AuHelpText>
       </AuFormRow>
       <AuFormRow>
         <AuButtonGroup>

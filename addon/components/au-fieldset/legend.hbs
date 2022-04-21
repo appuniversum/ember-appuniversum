@@ -9,10 +9,18 @@
     {{/if}}
     {{yield "legend"}}
     {{#if @required}}
-      {{#if @requiredLabel}}
-      <AuPill>{{@requiredLabel}}</AuPill>
+      {{#if @inline}}
+        {{#if @requiredLabel}}
+        <span class="au-c-fieldset__legend-addendum">{{@requiredLabel}}</span>
+        {{else}}
+        <span class="au-c-fieldset__legend-addendum">*</span>
+        {{/if}}
       {{else}}
-      <AuPill>Verplicht</AuPill>
+        {{#if @requiredLabel}}
+        <AuPill>{{@requiredLabel}}</AuPill>
+        {{else}}
+        <AuPill>Verplicht</AuPill>
+        {{/if}}
       {{/if}}
     {{/if}}
   </legend>
