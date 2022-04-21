@@ -8,6 +8,11 @@ export default {
       options: ['default', 'inline', 'pre', 'post'],
       description: 'Choose the layout of the form row.',
     },
+    skin: {
+      control: 'select',
+      options: ['1', '2', '3', '4', '5', '6', 'functional'],
+      description: 'Defines the style and size of the legend',
+    },
     inline: {
       control: 'boolean',
       description: 'Add an inline state to the legend.',
@@ -41,6 +46,7 @@ const Template = (args) => ({
       as |f|
     >
       <f.legend
+        @skin={{this.skin}}
         @inline={{this.inline}}
         @required={{this.required}}
         @requiredLabel={{this.requiredLabel}}
@@ -60,6 +66,7 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   alignment: 'default',
+  skin: '6',
   inline: false,
   required: false,
   requiredLabel: '',

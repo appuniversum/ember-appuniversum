@@ -24,10 +24,9 @@
 }
 
 .au-c-fieldset__legend {
-  @include au-font-size(var(--au-h6));
-  color: var(--au-gray-900);
   font-family: var(--au-font);
   font-weight: var(--au-medium);
+  color: var(--au-gray-900);
   display: flex;
   align-items: center;
 
