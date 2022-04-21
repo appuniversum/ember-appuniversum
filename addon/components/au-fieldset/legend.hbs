@@ -1,0 +1,20 @@
+{{#if (has-block)}}
+<div ...attributes>
+  <legend class="au-c-fieldset__legend {{this.error}} {{this.warning}}">
+    {{#if this.warning}}
+    <AuBadge @icon="alert-triangle" @size="small" @skin="warning" class="au-u-margin-right-tiny" />
+    {{/if}}
+    {{#if this.error}}
+    <AuBadge @icon="cross" @size="small" @skin="error" class="au-u-margin-right-tiny" />
+    {{/if}}
+    {{yield "legend"}}
+    {{#if @required}}
+      {{#if @requiredLabel}}
+      <AuPill>{{@requiredLabel}}</AuPill>
+      {{else}}
+      <AuPill>Verplicht</AuPill>
+      {{/if}}
+    {{/if}}
+  </legend>
+</div>
+{{/if}}

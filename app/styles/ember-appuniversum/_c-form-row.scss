@@ -27,12 +27,8 @@
   > .au-c-textarea,
   > .au-date-picker {
     display: block;
-    width: calc(100% - 15rem);
+    width: 100%;
   }
-}
-
-.au-c-form-row__left {
-  width: 15rem;
 }
 
 .au-c-form-row--pre,

@@ -8,7 +8,7 @@
 .au-c-fieldset {
   display: flex;
   flex-direction: column;
-  gap: $au-unit-tiny;
+  gap: $au-unit-small;
 }
 
 .au-c-fieldset--inline {
@@ -16,6 +16,40 @@
   gap: $au-unit;
 }
 
-.au-c-fieldset__left {
-  width: 15rem;
+.au-c-fieldset__legend {
+  @include au-font-size(var(--au-h6));
+  color: var(--au-gray-900);
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
+  display: flex;
+  align-items: center;
+
+  > .au-c-pill {
+    margin-left: $au-unit-tiny;
+  }
+}
+
+.au-c-fieldset__legend--error,
+.au-c-fieldset__legend--warning {
+  position: relative;
+}
+
+.au-c-fieldset__legend-addendum {
+  position: relative;
+  bottom: .5ex;
+  font-weight: var(--au-regular);
+  margin-left: $au-unit-tiny*.5;
+  color: var(--au-gray-500);
+}
+
+.au-c-fieldset__content {
+  display: flex;
+  flex-direction: column;
+  gap: $au-unit-small;
+
+  .au-c-fieldset--inline & {
+    flex-direction: row;
+    gap: $au-unit;
+    width: 100%;
+  }
 }
