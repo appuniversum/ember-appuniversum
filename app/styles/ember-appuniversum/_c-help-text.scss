@@ -10,7 +10,7 @@ $au-help-text-secondary-color   : var(--au-gray-600) !default;
 $au-help-text-tertiary-color    : var(--au-gray-600) !default;
 $au-help-text-warning-color     : var(--au-orange-700) !default;
 $au-help-text-error-color       : var(--au-red-700) !default;
-$au-help-text-font-size         : 1.4rem !default; // @TODO: Make global au-small variable in appuniversum;
+$au-help-text-font-size         : var(--au-small) !default;
 $au-help-text-font-size-normal  : var(--au-base) !default;
 $au-help-text-font-size-large   : var(--au-h6) !default;
 
