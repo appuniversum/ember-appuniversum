@@ -6,7 +6,7 @@ export default {
     alignment: {
       control: 'select',
       options: ['default', 'inline', 'pre', 'post'],
-      description: 'Choose the layout of the form row.',
+      description: 'Choose the layout of the fieldseet.',
     },
     skin: {
       control: 'select',
@@ -56,7 +56,65 @@ const Template = (args) => ({
         Legend
       </f.legend>
       <f.content>
-        <AuInput id="input" />
+        <AuControlRadio
+          @label="Radio 1"
+          @name="radios"
+          @value="radioOne"
+          @identifier="radioOne"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="Radio 2"
+          @name="radios"
+          @value="radioTwo"
+          @identifier="radioTwo"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+        <AuControlRadio
+          @label="Radio 3"
+          @name="radios"
+          @value="radioThree"
+          @identifier="radioThree"
+          @checked={{false}}
+          @disabled= {{false}}
+        />
+      </f.content>
+    </AuFieldset>
+    `,
+  context: args,
+});
+
+const TemplateGroups = (args) => ({
+  template: hbs`
+    <AuFieldset
+      @alignment={{this.alignment}}
+      as |f|
+    >
+      <f.legend
+        @skin={{this.skin}}
+        @inline={{this.inline}}
+        @required={{this.required}}
+        @requiredLabel={{this.requiredLabel}}
+        @error={{this.error}}
+        @warning={{this.warning}}
+      >
+        Legend
+      </f.legend>
+      <f.content>
+        <AuFormRow>
+          <AuLabel for="input" @required={{true}}  class="au-u-1-6">
+            Title
+          </AuLabel>
+          <AuInput id="input" />
+        </AuFormRow>
+        <AuFormRow>
+          <AuLabel for="inputTwo">
+            Date
+          </AuLabel>
+          <AuDatePicker id="inputTwo" />
+        </AuFormRow>
       </f.content>
     </AuFieldset>
     `,
@@ -67,6 +125,17 @@ export const Component = Template.bind({});
 Component.args = {
   alignment: 'default',
   skin: '6',
+  inline: false,
+  required: false,
+  requiredLabel: '',
+  error: false,
+  warning: false,
+};
+
+export const InputGroups = TemplateGroups.bind({});
+InputGroups.args = {
+  alignment: 'default',
+  skin: '4',
   inline: false,
   required: false,
   requiredLabel: '',

@@ -23,7 +23,11 @@
   gap: 0;
 }
 
-.au-c-fieldset__legend {
+.au-c-fieldset--post {
+  flex-direction: row-reverse;
+}
+
+.au-c-fieldset-legend {
   font-family: var(--au-font);
   font-weight: var(--au-medium);
   color: var(--au-gray-900);
@@ -48,12 +52,12 @@
   }
 }
 
-.au-c-fieldset__legend--error,
-.au-c-fieldset__legend--warning {
+.au-c-fieldset-legend--error,
+.au-c-fieldset-legend--warning {
   position: relative;
 }
 
-.au-c-fieldset__legend-addendum {
+.au-c-fieldset-legend__addendum {
   position: relative;
   bottom: .5ex;
   font-weight: var(--au-regular);
