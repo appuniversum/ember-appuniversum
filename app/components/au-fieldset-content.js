@@ -1,1 +1,1 @@
-export { default } from '@appuniversum/ember-appuniversum/components/au-fieldset/content';
+export { default } from '@appuniversum/ember-appuniversum/components/au-fieldset-content';
