@@ -5,7 +5,7 @@ export default {
   argTypes: {
     alignment: {
       control: 'select',
-      options: ['default', 'inline', 'pre', 'post'],
+      options: ['default', 'inline'],
       description: 'Choose the layout of the fieldseet.',
     },
     skin: {

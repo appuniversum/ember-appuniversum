@@ -223,7 +223,7 @@ const TemplatePre = (args) => ({
         </AuLabel>
         <AuDatePicker id="inputTwo" />
       </AuFormRow>
-      <AuFieldset @alignment="pre" as |f|>
+      <AuFieldset @alignment="inline" as |f|>
         <f.legend @inline={{true}} @required={{true}} class="au-u-1-6">
           Radio list
         </f.legend>
@@ -254,7 +254,7 @@ const TemplatePre = (args) => ({
           />
         </f.content>
       </AuFieldset>
-      <AuFieldset @alignment="pre" as |f|>
+      <AuFieldset @alignment="inline" as |f|>
         <f.legend @inline={{true}} class="au-u-1-6">
           Check list
         </f.legend>
