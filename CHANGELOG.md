@@ -8,6 +8,17 @@
 
 
 
+
+## v1.0.8 (2022-04-25)
+
+#### :rocket: Enhancement
+* [#225](https://github.com/appuniversum/ember-appuniversum/pull/225) Add form patterns and missing form components ([@Dietr](https://github.com/Dietr))
+* [#237](https://github.com/appuniversum/ember-appuniversum/pull/237) Deprecate the `alert` prefixed argument names of the `AuAlert` component ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.7 (2022-04-19)
 
 #### :rocket: Enhancement
