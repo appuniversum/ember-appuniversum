@@ -33,7 +33,21 @@
   right: 0;
   min-width: 220px;
   max-width: 220px;
+
+  .au-c-datepicker--top & {
+    top: auto;
+    bottom: 100%;
+    transform: scale(0.96) translateZ(0) translateY(20px);
+    transform-origin: bottom right;
+  }
+
+  .au-c-datepicker--top &.is-active {
+    top: auto;
+    bottom: calc(100% + .5rem);
+    transform: scale(0.96) translateZ(0) translateY(0);
+  }
 }
+
 
 .duet-date__dialog-content {
   min-width: 220px;

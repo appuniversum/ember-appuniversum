@@ -3,6 +3,11 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Forms/AuDatePicker',
   argTypes: {
+    alignment: {
+      control: 'select',
+      options: ['default', 'top'],
+      description: 'Choose the direction of the datepicker dialog.',
+    },
     id: { control: 'text', description: 'Set id of component' },
     label: { control: 'text', description: 'Set label text' },
     value: { control: 'date', description: 'Set the selected date' },
@@ -41,6 +46,7 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuDatePicker
+      @alignment={{this.alignment}}
       @id={{this.id}}
       @label={{this.label}}
       @value={{this.value}}
@@ -60,4 +66,5 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   label: 'Datepicker',
+  alignment: 'default',
 };
