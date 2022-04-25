@@ -114,6 +114,11 @@ export default class AuDatePickerComponent extends Component {
     else return '';
   }
 
+  get alignment() {
+    if (this.args.alignment == 'top') return 'au-c-datepicker--top';
+    else return '';
+  }
+
   @action
   handleDuetDateChange(event) {
     let wasDatePickerCleared = !event.detail.value;
