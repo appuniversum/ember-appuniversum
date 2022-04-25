@@ -9,6 +9,15 @@
 
 
 
+
+## v1.0.9 (2022-04-25)
+
+#### :rocket: Enhancement
+* [#239](https://github.com/appuniversum/ember-appuniversum/pull/239) Add alignment option for the datepicker ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.0.8 (2022-04-25)
 
 #### :rocket: Enhancement
