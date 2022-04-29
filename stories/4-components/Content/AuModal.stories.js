@@ -27,7 +27,6 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <div id="ember-appuniversum-wormhole"></div>
     <AuModal
       @modalOpen={{this.modalOpen}}
       @closeModal={{this.closeModal}}
