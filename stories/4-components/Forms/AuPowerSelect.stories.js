@@ -44,9 +44,9 @@ const Template = (args) => ({
       @loadingMessage={{this.loadingMessage}}
       @noMatchesMessage={{this.noMatchesMessage}}
       @searchMessage={{this.searchMessage}}
-      @options={{this.option}}
+      @options={{this.options}}
       @selected={{this.selected}}
-      @onChange={{fn (mut this.singleselect)}}
+      @onChange={{fn (mut this.selected)}}
       as |singleselect|>
       {{singleselect}}
     </PowerSelect>`,
