@@ -10,6 +10,19 @@
 
 
 
+
+## v1.0.10 (2022-04-29)
+
+#### :bug: Bug Fix
+* [#243](https://github.com/appuniversum/ember-appuniversum/pull/243) Bug: fix pill route ([@Dietr](https://github.com/Dietr))
+
+#### :memo: Documentation
+* [#241](https://github.com/appuniversum/ember-appuniversum/pull/241) Fix PowerSelect example ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.9 (2022-04-25)
 
 #### :rocket: Enhancement
