@@ -11,6 +11,17 @@
 
 
 
+
+## v1.0.11 (2022-05-02)
+
+#### :bug: Bug Fix
+* [#246](https://github.com/appuniversum/ember-appuniversum/pull/246) Closes [#240](https://github.com/appuniversum/ember-appuniversum/issues/240) ([@Dietr](https://github.com/Dietr))
+* [#245](https://github.com/appuniversum/ember-appuniversum/pull/245) Closes [#242](https://github.com/appuniversum/ember-appuniversum/issues/242) ([@Dietr](https://github.com/Dietr))
+* [#244](https://github.com/appuniversum/ember-appuniversum/pull/244) Fix rendering of list component inside content component ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.0.10 (2022-04-29)
 
 #### :bug: Bug Fix
