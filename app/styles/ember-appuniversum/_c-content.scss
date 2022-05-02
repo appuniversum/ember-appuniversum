@@ -73,17 +73,29 @@ $au-content-tiny             : var(--au-small) !default;
     font-weight: var(--au-medium);
   }
 
+  // @TODO: list-horizontal needs to be refactored to the list component.
   ul:not(.au-c-list-horizontal) {
     list-style: disc;
     margin-left: $au-unit;
   }
 
+  ul.au-c-list {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  // @TODO: list-horizontal needs to be refactored to the list component.
   ul:not(.au-c-list-horizontal) ul {
     list-style: circle;
   }
 
+  // @TODO: list-horizontal needs to be refactored to the list component.
   ul:not(.au-c-list-horizontal) li + li {
     margin-top: $au-unit-tiny;
+  }
+
+  ul.au-c-list  li + li {
+    margin-top: 0;
   }
 
   > * + * {

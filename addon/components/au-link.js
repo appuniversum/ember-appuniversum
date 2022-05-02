@@ -4,7 +4,7 @@ import { deprecate } from '@ember/debug';
 const SKIN_CLASSES = {
   primary: 'au-c-link',
   secondary: 'au-c-link au-c-link--secondary',
-  button: 'au-c-button',
+  button: 'au-c-button au-c-button--primary',
   'button-secondary': 'au-c-button au-c-button--secondary',
 };
 
