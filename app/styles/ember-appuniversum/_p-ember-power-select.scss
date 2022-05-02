@@ -431,7 +431,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
   cursor: pointer;
   font-size: var(--au-h6);
   line-height: 2.2rem;
-  padding: $au-unit-tiny 0 $au-unit-tiny $au-unit;
+  padding: $au-unit-tiny $au-unit-tiny $au-unit-tiny $au-unit;
   position: relative;
 
   &:hover {
