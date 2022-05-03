@@ -12,6 +12,15 @@
 
 
 
+
+## v1.0.12 (2022-05-03)
+
+#### :bug: Bug Fix
+* [#247](https://github.com/appuniversum/ember-appuniversum/pull/247) Fix responsive behaviour of the datepicker ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.0.11 (2022-05-02)
 
 #### :bug: Bug Fix
