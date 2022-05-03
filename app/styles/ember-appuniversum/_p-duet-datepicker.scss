@@ -13,7 +13,7 @@
   --duet-color-placeholder:#{var(--au-gray-700)};
   --duet-color-button: #{var(--au-white)};
   --duet-color-surface: #{var(--au-white)};
-  --duet-color-overlay: rgba(0, 0, 0, 0.8);
+  --duet-color-overlay: rgba(0, 0, 0, .3);
 
   --duet-font: #{var(--au-font)};
   --duet-font-normal: 400;
@@ -29,30 +29,35 @@
 
 // Tweak position of dialog
 .duet-date__dialog {
-  left: auto;
-  right: 0;
-  min-width: 220px;
-  max-width: 220px;
+  overflow: hidden;
+  @media (min-width: 35.9375em) {
+    left: auto;
+    right: 0;
+    min-width: 220px;
+    max-width: 220px;
 
-  .au-c-datepicker--top & {
-    top: auto;
-    bottom: 100%;
-    transform: scale(0.96) translateZ(0) translateY(20px);
-    transform-origin: bottom right;
-  }
+    .au-c-datepicker--top & {
+      top: auto;
+      bottom: 100%;
+      transform: scale(0.96) translateZ(0) translateY(20px);
+      transform-origin: bottom right;
+    }
 
-  .au-c-datepicker--top &.is-active {
-    top: auto;
-    bottom: calc(100% + .5rem);
-    transform: scale(0.96) translateZ(0) translateY(0);
+    .au-c-datepicker--top &.is-active {
+      top: auto;
+      bottom: calc(100% + .5rem);
+      transform: scale(0.96) translateZ(0) translateY(0);
+    }
   }
 }
 
 
 .duet-date__dialog-content {
-  min-width: 220px;
-  max-width: 220px;
-  padding: $au-unit-tiny * .5 $au-unit-tiny $au-unit-tiny;
+  @media (min-width: 35.9375em) {
+    min-width: 220px;
+    max-width: 220px;
+    padding: $au-unit-tiny * .5 $au-unit-tiny $au-unit-tiny;
+  }
 }
 
 .duet-date__input {
