@@ -1,5 +1,17 @@
-<label for="{{@identifier}}" class="au-c-control au-c-control--checkbox {{this.disabled}}">
-  <Input class="au-c-control__input" id="{{@identifier}}" name="{{@name}}" disabled={{@disabled}} @type="checkbox" @checked={{@checked}} {{on "change" this.onChange}} ...attributes />
+<label
+  for={{@identifier}}
+  class="au-c-control au-c-control--checkbox {{this.disabled}}"
+>
+  <input
+    class="au-c-control__input"
+    id={{@identifier}}
+    name={{@name}}
+    disabled={{@disabled}}
+    type="checkbox"
+    checked={{@checked}}
+    {{on "change" this.onChange}}
+    ...attributes
+  />
   <span class="au-c-control__indicator"></span>
   {{@label}}
 </label>
