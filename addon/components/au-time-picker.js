@@ -14,9 +14,9 @@ export default class AuTimePickerComponent extends Component {
 
   get getTimeObject() {
     return {
-      hours: this.hourValue,
-      minutes: this.minuteValue,
-      seconds: this.secondValue,
+      hours: parseInt(this.hourValue),
+      minutes: parseInt(this.minuteValue),
+      seconds: parseInt(this.secondValue),
     };
   }
 
