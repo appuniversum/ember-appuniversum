@@ -13,6 +13,16 @@
 
 
 
+
+## v1.0.13 (2022-05-11)
+
+#### :bug: Bug Fix
+* [#249](https://github.com/appuniversum/ember-appuniversum/pull/249) `AuTimepicker` fixes ([@Windvis](https://github.com/Windvis))
+* [#231](https://github.com/appuniversum/ember-appuniversum/pull/231) Use a native input element in the `AuControlCheckbox` component ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.12 (2022-05-03)
 
 #### :bug: Bug Fix
