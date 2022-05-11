@@ -6,21 +6,23 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | au-toolbar', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<AuToolbar />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
+  test('it yields a group component', async function (assert) {
     await render(hbs`
-      <AuToolbar>
-        template block text
+      <AuToolbar as |Group|>
+        <Group data-test-foo>Foo</Group>
+        <Group data-test-bar>Bar</Group>
       </AuToolbar>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('[data-test-foo]').hasText('Foo');
+    assert.dom('[data-test-bar]').hasText('Bar');
+  });
+
+  test('it passes through extra html attributes', async function (assert) {
+    await render(hbs`
+      <AuToolbar data-test-foo="bar"></AuToolbar>
+    `);
+
+    assert.dom('[data-test-foo]').exists();
   });
 });
