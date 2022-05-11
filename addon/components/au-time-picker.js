@@ -1,20 +1,37 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { isPresent } from '@ember/utils';
-import { localCopy } from 'tracked-toolbox';
+import { trackedReset } from 'tracked-toolbox';
 import { formatTimeDigit } from '../helpers/format-time-digit';
 
 export default class AuTimePickerComponent extends Component {
-  @localCopy('args.hours') hourValue;
-  @localCopy('args.minutes') minuteValue;
-  @localCopy('args.seconds') secondValue;
-
-  constructor() {
-    super(...arguments);
-    this.hourValue = this.hourValue || 12;
-    this.minuteValue = this.minuteValue || 0;
-    this.secondValue = this.secondValue || 0;
-  }
+  @trackedReset({
+    memo() {
+      return this.validateTimeValue(this.args.hours, 'hourValue');
+    },
+    update() {
+      return this.validateTimeValue(this.args.hours, 'hourValue');
+    },
+  })
+  hourValue = 12;
+  @trackedReset({
+    memo() {
+      return this.validateTimeValue(this.args.minutes, 'minuteValue');
+    },
+    update() {
+      return this.validateTimeValue(this.args.minutes, 'minuteValue');
+    },
+  })
+  minuteValue = 0;
+  @trackedReset({
+    memo() {
+      return this.validateTimeValue(this.args.seconds, 'secondValue');
+    },
+    update() {
+      return this.validateTimeValue(this.args.seconds, 'secondValue');
+    },
+  })
+  secondValue = 0;
 
   get hourValueFormatted() {
     return formatTimeDigit([this.hourValue]);
@@ -29,7 +46,7 @@ export default class AuTimePickerComponent extends Component {
   //No-operation setters. Input changes handled by events.
   set hourValueFormatted(newHourValue) {}
   set minuteValueFormatted(newMinuteValue) {}
-  set secondValueFormatted(newMinuteValue) {}
+  set secondValueFormatted(newSecondValue) {}
 
   get getTimeObject() {
     return {
@@ -73,17 +90,17 @@ export default class AuTimePickerComponent extends Component {
 
   @action
   validateTime(type, event) {
-    let tempValue = parseInt(event.target.value, 10);
-    if (isNaN(tempValue)) tempValue = 0;
-    this[type] = this.validateTimeValue(tempValue, type);
+    this[type] = this.validateTimeValue(event.target.value, type);
     this.callBackParent(this.getTimeObject);
   }
 
   validateTimeValue(value, type) {
+    let tempValue = parseInt(value, 10);
+    if (isNaN(tempValue)) tempValue = 0;
     const max = type === 'hourValue' ? 23 : 59;
-    value = value < 0 ? 0 : value;
-    value = value > max ? max : value;
-    return value;
+    tempValue = tempValue < 0 ? 0 : tempValue;
+    tempValue = tempValue > max ? max : tempValue;
+    return tempValue;
   }
 
   @action
