@@ -2,9 +2,13 @@
   <div class="au-time-picker__box">
     <AuLabel for="input-hour">{{@hoursLabel}}</AuLabel>
     <div class="au-time-picker__input-wrapper">
-      <AuInput class="au-time-picker__input" @value={{format-time-digit this.hourValue}} name="input-hour" id="input-hour"
-        {{on 'keyup' (fn this.setTimeValue "hourValue")}}
-        {{on 'focusout' (fn this.updateTime "hourValue")}}
+      <AuInput
+        class="au-time-picker__input"
+        name="input-hour"
+        id="input-hour"
+        @value={{this.hourValueFormatted}}
+        {{on 'keyup' (fn this.timeValueKeyPress "hourValue")}}
+        {{on 'input' (fn this.validateTime "hourValue")}}
       />
       <div class="au-time-picker__button-wrapper">
         <button type="button" aria-label="increment hours" {{on 'click' (fn this.increment "hourValue")}} aria-controls="input-hour"  class="au-time-picker__button">+</button>
@@ -18,9 +22,13 @@
   <div class="au-time-picker__box">
     <AuLabel for="input-minute">{{@minutesLabel}}</AuLabel>
     <div class="au-time-picker__input-wrapper">
-      <AuInput class="au-time-picker__input" @value={{format-time-digit this.minuteValue}} name="input-minute" id="input-minute"
-        {{on 'keyup' (fn this.setTimeValue "minuteValue")}}
-        {{on 'focusout' (fn this.updateTime "minuteValue")}}
+      <AuInput
+        class="au-time-picker__input"
+        name="input-minute"
+        id="input-minute"
+        @value={{this.minuteValueFormatted}}
+        {{on 'keyup' (fn this.timeValueKeyPress "minuteValue")}}
+        {{on 'input' (fn this.validateTime "minuteValue")}}
       />
       <div class="au-time-picker__button-wrapper">
         <button aria-label="increment minutes" {{on 'click' (fn this.increment "minuteValue")}} type="button" aria-controls="input-minute" class="au-time-picker__button">+</button>
@@ -35,9 +43,13 @@
     <div class="au-time-picker__box">
       <AuLabel for="input-second">{{@secondsLabel}}</AuLabel>
       <div class="au-time-picker__input-wrapper">
-        <AuInput class="au-time-picker__input" @value={{format-time-digit this.secondValue}} name="input-second" id="input-second"
-          {{on 'keyup' (fn this.setTimeValue "secondValue")}}
-          {{on 'focusout' (fn this.updateTime "secondValue")}}
+        <AuInput
+          class="au-time-picker__input"
+          name="input-second"
+          id="input-second"
+          @value={{this.secondValueFormatted}}
+          {{on 'keyup' (fn this.timeValueKeyPress "secondValue")}}
+          {{on 'input' (fn this.validateTime "secondValue")}}
         />
         <div class="au-time-picker__button-wrapper">
           <button aria-label="increment seconds" {{on 'click' (fn this.increment "secondValue")}} type="button" aria-controls="input-second" class="au-time-picker__button">+</button>

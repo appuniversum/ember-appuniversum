@@ -1,16 +1,35 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
 import { isPresent } from '@ember/utils';
+import { localCopy } from 'tracked-toolbox';
+import { formatTimeDigit } from '../helpers/format-time-digit';
 
 export default class AuTimePickerComponent extends Component {
-  @tracked hourValue = this.args.hours || 12;
-  @tracked minuteValue = this.args.minutes || 0;
-  @tracked secondValue =
-    isPresent(this.args.showSeconds) && !this.args.showSeconds
-      ? 0
-      : this.args.seconds || 0; // ignore 'seconds' argument if 'showSeconds' is false
-  @tracked keyCodes = [8, 9, 13, 33, 34, 37, 39, 46];
+  @localCopy('args.hours') hourValue;
+  @localCopy('args.minutes') minuteValue;
+  @localCopy('args.seconds') secondValue;
+
+  constructor() {
+    super(...arguments);
+    this.hourValue = this.hourValue || 12;
+    this.minuteValue = this.minuteValue || 0;
+    this.secondValue = this.secondValue || 0;
+  }
+
+  get hourValueFormatted() {
+    return formatTimeDigit([this.hourValue]);
+  }
+  get minuteValueFormatted() {
+    return formatTimeDigit([this.minuteValue]);
+  }
+  get secondValueFormatted() {
+    return formatTimeDigit([this.secondValue]);
+  }
+
+  //No-operation setters. Input changes handled by events.
+  set hourValueFormatted(newHourValue) {}
+  set minuteValueFormatted(newMinuteValue) {}
+  set secondValueFormatted(newMinuteValue) {}
 
   get getTimeObject() {
     return {
@@ -28,103 +47,44 @@ export default class AuTimePickerComponent extends Component {
     return isPresent(this.args.showNow) ? this.args.showNow : true;
   }
 
-  /*
-   * Increments or decrements a time value.
-   * HourValue has a max of 23 while minute & seconds have a max of 59
-   * HourValue, minute & seconds have a min of 0
-   */
-
   @action
   increment(elem) {
-    if (elem == 'hourValue') {
-      ++this[elem];
-
-      if (this[elem] >= 23) {
-        this[elem] = 23;
-      }
-    }
-
-    if (elem != 'hourValue') {
-      ++this[elem];
-
-      if (this[elem] >= 59) {
-        this[elem] = 59;
-      }
-    }
+    this[elem] = this.validateTimeValue(this[elem] + 1, elem);
     this.callBackParent(this.getTimeObject);
   }
 
   @action
   decrement(elem) {
-    --this[elem];
-
-    if (this[elem] <= 0) {
-      this[elem] = 0;
-    }
+    this[elem] = this.validateTimeValue(this[elem] - 1, elem);
     this.callBackParent(this.getTimeObject);
   }
 
-  /*
-   * Triggers on keydown
-   * up arrow (38) increments the current value
-   * down arrow (40) decrements the current value
-   * If any other key that up or down has been pressed then check if it is a number key or one
-   * of the allowed keys (left/right/shift/enter..) in the keyCodes list
-   */
-
   @action
-  setTimeValue(elem, e) {
-    if (e.keyCode == 38) {
-      this.increment(elem);
-    } else if (e.keyCode == 40) {
-      this.decrement(elem);
-    } else if (
-      isNaN(parseFloat(e.key)) &&
-      this.keyCodes.indexOf(e.keyCode) == -1
-    ) {
-      e.preventDefault();
-    } else if (
-      e.target.value.length >= 2 &&
-      this.keyCodes.indexOf(e.keyCode) == -1
-    ) {
-      e.preventDefault();
+  timeValueKeyPress(type, event) {
+    switch (event.key) {
+      case 'ArrowUp':
+        this.increment(type);
+        break;
+      case 'ArrowDown':
+        this.decrement(type);
+        break;
     }
   }
 
-  /*
-   * triggered after focussing out of field. Checks if the inputted value makes sense. (e.g. hour range: 1 - 23)
-   * "elem" is the name of the tracked property
-   * "e" is the context
-   */
-
   @action
-  updateTime(elem, e) {
-    let inputValue = e.target.value;
-    if (elem == 'hourValue') {
-      if (inputValue < 0) {
-        this[elem] = 0;
-      } else if (inputValue > 23) {
-        this[elem] = 23;
-      } else {
-        this[elem] = inputValue;
-      }
-    }
-
-    if (elem != 'hourValue') {
-      if (inputValue < 0) {
-        this[elem] = 0;
-      } else if (inputValue > 59) {
-        this[elem] = 59;
-      } else {
-        this[elem] = inputValue;
-      }
-    }
+  validateTime(type, event) {
+    let tempValue = parseInt(event.target.value, 10);
+    if (isNaN(tempValue)) tempValue = 0;
+    this[type] = this.validateTimeValue(tempValue, type);
     this.callBackParent(this.getTimeObject);
   }
 
-  /*
-   * calls the function assigned to @onChange by the user with the timeObject as argument
-   */
+  validateTimeValue(value, type) {
+    const max = type === 'hourValue' ? 23 : 59;
+    value = value < 0 ? 0 : value;
+    value = value > max ? max : value;
+    return value;
+  }
 
   @action
   callBackParent(value) {
