@@ -17,8 +17,8 @@ const Template = (args) => ({
           </AuButton>
         </AuDropdown>
       </AuMainHeader>
-      <AuToolbar @size="medium" @skin="tint" @border="bottom">
-        <AuToolbarGroup>
+      <AuToolbar @size="medium" @skin="tint" @border="bottom" as |Group|>
+        <Group>
           <ul class="au-c-list-horizontal au-c-list-horizontal--small">
             <li class="au-c-list-horizontal__item">
               <AuLink @linkRoute="index">
@@ -30,7 +30,7 @@ const Template = (args) => ({
               Test
             </li>
           </ul>
-        </AuToolbarGroup>
+        </Group>
       </AuToolbar>
       <AuMainContainer as |m|>
         <m.content @scroll={{true}}>

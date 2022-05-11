@@ -4,8 +4,9 @@
     @reverse={{@reverse}}
     {{on 'click' this.openAccordion}}
     data-test-accordion-toggle
+    as |Group|
   >
-    <AuToolbarGroup>
+    <Group>
       <div>
         <AuButton
           @skin='tertiary'
@@ -20,8 +21,8 @@
           {{this.subtitle}}
         </p>
       </div>
-    </AuToolbarGroup>
-    <AuToolbarGroup>
+    </Group>
+    <Group>
       {{#if this.accordionOpen}}
         <AuIcon
           @icon={{this.iconOpen}}
@@ -45,7 +46,7 @@
           Sluit accordion
         </span>
       {{/if}}
-    </AuToolbarGroup>
+    </Group>
   </AuToolbar>
   {{#if this.accordionOpen}}
     <AuContent {{auto-focus}} tabindex='0' data-test-accordion-content>
