@@ -9,8 +9,7 @@ export default class AuTimePickerComponent extends Component {
     update() {
       if (this.args.hours) {
         return this.validateTimeValue(this.args.hours, 'hourValue');
-      }
-      else {
+      } else {
         return 12;
       }
     },
