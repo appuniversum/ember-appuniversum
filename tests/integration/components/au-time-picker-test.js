@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, pauseTest, click, fillIn, settled } from '@ember/test-helpers';
+import { render, click, fillIn } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 function makeTimeChecker(assert, h, m, s) {
@@ -309,23 +309,30 @@ module('Integration | Component | au-time-picker', function (hooks) {
     assert.dom('[data-test-autimepicker-secondinput]').hasValue('07');
 
     const now = new Date();
-    const hours = now.getHours() < 10 ? `0${now.getHours()}` : now.getHours().toString();
+    const hours =
+      now.getHours() < 10 ? `0${now.getHours()}` : now.getHours().toString();
     const minutes =
-      now.getMinutes() < 10 ? `0${now.getMinutes()}` : now.getMinutes().toString();
+      now.getMinutes() < 10
+        ? `0${now.getMinutes()}`
+        : now.getMinutes().toString();
     const seconds =
-      now.getSeconds() < 10 ? `0${now.getSeconds()}` : now.getSeconds().toString();
-    this.set('timeChange', makeTimeChecker(assert, now.getHours(), now.getMinutes(), now.getSeconds()));
+      now.getSeconds() < 10
+        ? `0${now.getSeconds()}`
+        : now.getSeconds().toString();
+    this.set(
+      'timeChange',
+      makeTimeChecker(
+        assert,
+        now.getHours(),
+        now.getMinutes(),
+        now.getSeconds()
+      )
+    );
     await click('[data-test-autimepicker-nowbutton]');
 
-    assert
-      .dom('[data-test-autimepicker-hourinput]  ')
-      .hasValue(hours);
-    assert
-      .dom('[data-test-autimepicker-minuteinput]')
-      .hasValue(minutes);
-    assert
-      .dom('[data-test-autimepicker-secondinput]')
-      .hasValue(seconds);
+    assert.dom('[data-test-autimepicker-hourinput]  ').hasValue(hours);
+    assert.dom('[data-test-autimepicker-minuteinput]').hasValue(minutes);
+    assert.dom('[data-test-autimepicker-secondinput]').hasValue(seconds);
   });
 
   test('inputs deal with changes', async function (assert) {
@@ -399,7 +406,6 @@ module('Integration | Component | au-time-picker', function (hooks) {
     assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('00');
     assert.dom('[data-test-autimepicker-minuteinput]').hasValue('00');
     assert.dom('[data-test-autimepicker-secondinput]').hasValue('00');
-
 
     this.set('hours', 1);
     this.set('minutes', 2);
