@@ -120,7 +120,6 @@ export default class AuTimePickerComponent extends Component {
   }
 
   formatTimeNumber(number) {
-    if (number < 10) return `0${number}`;
-    else return number.toString();
+    return number.toString().padStart(2, 0);
   }
 }
