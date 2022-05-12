@@ -6,27 +6,26 @@ import { formatTimeDigit } from '../helpers/format-time-digit';
 
 export default class AuTimePickerComponent extends Component {
   @trackedReset({
-    memo() {
-      return this.validateTimeValue(this.args.hours, 'hourValue');
-    },
+    memo: 'args.hours',
     update() {
-      return this.validateTimeValue(this.args.hours, 'hourValue');
+      if (this.args.hours) {
+        return this.validateTimeValue(this.args.hours, 'hourValue');
+      }
+      else {
+        return 12;
+      }
     },
   })
   hourValue = 12;
   @trackedReset({
-    memo() {
-      return this.validateTimeValue(this.args.minutes, 'minuteValue');
-    },
+    memo: 'args.minutes',
     update() {
       return this.validateTimeValue(this.args.minutes, 'minuteValue');
     },
   })
   minuteValue = 0;
   @trackedReset({
-    memo() {
-      return this.validateTimeValue(this.args.seconds, 'secondValue');
-    },
+    memo: 'args.seconds',
     update() {
       return this.validateTimeValue(this.args.seconds, 'secondValue');
     },
