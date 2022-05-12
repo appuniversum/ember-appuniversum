@@ -222,6 +222,23 @@ module('Integration | Component | au-time-picker', function (hooks) {
     assert.dom('[data-test-autimepicker-secondinput]').hasValue('00');
   });
 
+  test('do not overcorrect zero values', async function (assert) {
+    this.set('hours', 0);
+    this.set('minutes', 0);
+    this.set('seconds', 0);
+
+    await render(hbs`
+      <AuTimePicker
+        @hours={{this.hours}}
+        @minutes={{this.minutes}}
+        @seconds={{this.seconds}}/>
+    `);
+
+    assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('00');
+    assert.dom('[data-test-autimepicker-minuteinput]').hasValue('00');
+    assert.dom('[data-test-autimepicker-secondinput]').hasValue('00');
+  });
+
   test('coping with weird input values', async function (assert) {
     this.set('hours', 'a');
     this.set('minutes', 'b');

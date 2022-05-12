@@ -7,7 +7,7 @@ export default class AuTimePickerComponent extends Component {
   @trackedReset({
     memo: 'args.hours',
     update() {
-      if (this.args.hours) {
+      if (this.args.hours || this.args.hours == 0) {
         return this.validateTimeValue(this.args.hours, 'hourValue');
       } else {
         return 12;
