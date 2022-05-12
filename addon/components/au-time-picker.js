@@ -2,7 +2,6 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import { trackedReset } from 'tracked-toolbox';
-import { formatTimeDigit } from '../helpers/format-time-digit';
 
 export default class AuTimePickerComponent extends Component {
   @trackedReset({
@@ -33,13 +32,13 @@ export default class AuTimePickerComponent extends Component {
   secondValue = 0;
 
   get hourValueFormatted() {
-    return formatTimeDigit([this.hourValue]);
+    return this.formatTimeNumber(this.hourValue);
   }
   get minuteValueFormatted() {
-    return formatTimeDigit([this.minuteValue]);
+    return this.formatTimeNumber(this.minuteValue);
   }
   get secondValueFormatted() {
-    return formatTimeDigit([this.secondValue]);
+    return this.formatTimeNumber(this.secondValue);
   }
 
   //TODO Remove these setters when 2-way binding on AuInput is removed
@@ -52,9 +51,9 @@ export default class AuTimePickerComponent extends Component {
 
   get getTimeObject() {
     return {
-      hours: parseInt(this.hourValue),
-      minutes: parseInt(this.minuteValue),
-      seconds: parseInt(this.secondValue),
+      hours: this.hourValue,
+      minutes: this.minuteValue,
+      seconds: this.secondValue,
     };
   }
 
@@ -119,5 +118,10 @@ export default class AuTimePickerComponent extends Component {
     this.minuteValue = current.getMinutes();
     this.secondValue = current.getSeconds();
     this.callBackParent(this.getTimeObject);
+  }
+
+  formatTimeNumber(number) {
+    if (number < 10) return `0${number}`;
+    else return number.toString();
   }
 }
