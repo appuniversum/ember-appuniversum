@@ -43,6 +43,9 @@ export default class AuTimePickerComponent extends Component {
     return formatTimeDigit([this.secondValue]);
   }
 
+  //TODO Remove these setters when 2-way binding on AuInput is removed
+  //SEE https://github.com/appuniversum/ember-appuniversum/issues/250
+  //Without these, JS complains about these properties being getter-only.
   //No-operation setters. Input changes handled by events.
   set hourValueFormatted(newHourValue) {}
   set minuteValueFormatted(newMinuteValue) {}
