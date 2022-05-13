@@ -14,6 +14,15 @@
 
 
 
+
+## v1.0.14 (2022-05-13)
+
+#### :rocket: Enhancement
+* [#252](https://github.com/appuniversum/ember-appuniversum/pull/252) AuTimepicker remake ([@benjay10](https://github.com/benjay10))
+
+#### Committers: 1
+- Ben ([@benjay10](https://github.com/benjay10))
+
 ## v1.0.13 (2022-05-11)
 
 #### :bug: Bug Fix
