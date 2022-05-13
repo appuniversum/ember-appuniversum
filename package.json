@@ -120,6 +120,7 @@
     "release-it-lerna-changelog": "^4.0.1",
     "sass": "^1.50.0",
     "svg-symbols": "^1.0.5",
+    "tracked-toolbox": "^1.2.3",
     "webpack": "^5.72.0"
   },
   "optionalDependencies": {
