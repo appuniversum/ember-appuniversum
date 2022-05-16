@@ -8,7 +8,7 @@ export default {
     href: { control: 'text', description: '' },
     skin: {
       control: 'select',
-      options: ['primary', 'secondary', 'button', 'button-secondary'],
+      options: ['primary', 'secondary'],
       description: 'Defines the style of the link',
     },
     icon: { control: 'select', options: icons, description: 'Adds an icon' },

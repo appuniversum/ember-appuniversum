@@ -7,7 +7,7 @@ export default {
     text: { control: 'text', description: '' },
     skin: {
       control: 'select',
-      options: ['primary', 'secondary', 'link', 'link-secondary'],
+      options: ['primary', 'secondary', 'naked', 'link', 'link-secondary'],
       description: 'Defines the style of the button',
     },
     size: {

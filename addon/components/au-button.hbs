@@ -3,22 +3,34 @@
   type="button"
   ...attributes
 >
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "left")}}
-    <AuIcon @icon="{{@icon}}" @alignment="left" />
+  {{#unless this.loading}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "left")}}
+      <AuIcon @icon="{{@icon}}" @alignment="left" />
+      {{/if}}
+      {{#unless @iconAlignment}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/unless}}
     {{/if}}
-    {{#unless @iconAlignment}}
-    <AuIcon @icon="{{@icon}}" />
-    {{/unless}}
-  {{/if}}
+  {{/unless}}
   {{#if @hideText}}
-  <span class="au-u-hidden-visually">{{yield}}</span>
+    {{#if this.loading}}
+    <span class="au-u-hidden-visually">Aan het laden</span><AuLoader @padding="small" />
+    {{else}}
+    <span class="au-u-hidden-visually">{{yield}}</span>
+    {{/if}}
   {{else}}
-  {{yield}}
-  {{/if}}
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "right")}}
-    <AuIcon @icon="{{@icon}}" @alignment="right" />
+    {{#if this.loading}}
+    Aan het laden <AuLoader @padding="small" class="au-u-margin-left-tiny" />
+    {{else}}
+    {{yield}}
     {{/if}}
   {{/if}}
+  {{#unless this.loading}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" @alignment="right" />
+      {{/if}}
+    {{/if}}
+  {{/unless}}
 </button>
