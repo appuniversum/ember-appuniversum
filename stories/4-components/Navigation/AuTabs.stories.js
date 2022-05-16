@@ -18,6 +18,9 @@ const Template = (args) => ({
   template: hbs`
     <AuTabs @reversed={{this.reversed}}>
       <AuTabs::Item>
+        <AuLink @icon="hierarchal-back" @hideText={{true}}>Back</AuLink>
+      </AuTabs::Item>
+      <AuTabs::Item>
         <AuLink class="active">Tab 1</AuLink>
       </AuTabs::Item>
       <AuTabs::Item>
@@ -25,6 +28,9 @@ const Template = (args) => ({
       </AuTabs::Item>
       <AuTabs::Item>
         <AuLink>Tab 3</AuLink>
+      </AuTabs::Item>
+      <AuTabs::Item>
+        <AuLinkExternal @icon="external" @iconAlignment="right">External link</AuLinkExternal>
       </AuTabs::Item>
     </AuTabs>`,
   context: args,
