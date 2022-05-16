@@ -194,6 +194,51 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
   }
 }
 
+// Naked button
+.au-c-button--naked {
+  font-weight: var(--au-medium);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &,
+  &:visited {
+    color: $au-button-secondary-color;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $au-button-secondary-hover-color;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &.is-disabled:active {
+    color: $au-button-secondary-color;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &.is-loading,
+  &.is-loading:hover,
+  &.is-loading:focus {
+    color: transparent;
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  &.is-loading::after {
+    border-color: $au-button-secondary-color;
+    border-top-color: var(--au-blue-300);
+  }
+}
+
 // Link button
 .au-c-button--link,
 .au-c-button--tertiary { // support for deprecated naming
@@ -354,6 +399,42 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
     &.is-disabled:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: $au-button-alert-contrast-hover-color;
+    }
+
+    &.is-loading,
+    &.is-loading:hover {
+      color: transparent;
+      background-color: transparent;
+    }
+
+    &.is-loading::after {
+      border-color: $au-button-alert-contrast-color;
+      border-top-color: var(--au-red-200);
+    }
+  }
+
+  &.au-c-button--naked {
+    background-color: transparent;
+
+    &,
+    &:visited {
+      color: $au-button-alert-contrast-color;
+      border-color: transparent;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $au-button-alert-contrast-hover-color;
+      border-color: transparent;
+    }
+
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus,
+    &.is-disabled:active {
+      color: $au-button-alert-contrast-hover-color;
+      border-color: transparent;
     }
 
     &.is-loading,

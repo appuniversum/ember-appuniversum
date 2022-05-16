@@ -11,7 +11,13 @@ export default {
     },
     skin: {
       control: 'select',
-      options: ['primary', 'secondary', 'button', 'button-secondary'],
+      options: [
+        'primary',
+        'secondary',
+        'button',
+        'button-secondary',
+        'button-naked',
+      ],
       description: 'Defines the style of the link',
     },
     icon: { control: 'select', options: icons, description: 'Adds an icon' },
