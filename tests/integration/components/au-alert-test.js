@@ -1,7 +1,8 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { click, getDeprecations, render } from '@ember/test-helpers';
+import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import { hasDeprecation, hasNoDeprecations } from '../../helpers/deprecations';
 
 const ALERT = {
   CONTAINER: '[data-test-alert]',
@@ -156,13 +157,3 @@ module('Integration | Component | au-alert', function (hooks) {
     );
   });
 });
-
-function hasNoDeprecations() {
-  return getDeprecations().length === 0;
-}
-
-function hasDeprecation(deprecationMessage) {
-  return getDeprecations().some(
-    (deprecation) => deprecation.message === deprecationMessage
-  );
-}

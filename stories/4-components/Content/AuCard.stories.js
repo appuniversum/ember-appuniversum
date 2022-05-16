@@ -130,15 +130,15 @@ const ExpandableTemplate = (args) => ({
 
 const EditableTemplate = (args) => ({
   template: hbs`
-    <AuToolbar class="au-u-margin-bottom-small">
-      <AuToolbarGroup>
+    <AuToolbar class="au-u-margin-bottom-small" as |Group|>
+      <Group>
         <AuHeading @level="4" @skin="5">Card – editable</AuHeading>
-      </AuToolbarGroup>
-      <AuToolbarGroup>
+      </Group>
+      <Group>
         <AuButton @skin="tertiary" @icon="pencil" @iconAlignment="right">
           Bewerk
         </AuButton>
-      </AuToolbarGroup>
+      </Group>
     </AuToolbar>
     <AuCard
       @flex={{this.flex}}
@@ -181,15 +181,15 @@ const EditableTemplate = (args) => ({
 
 const EditingTemplate = (args) => ({
   template: hbs`
-    <AuToolbar class="au-u-margin-bottom-small">
-      <AuToolbarGroup>
+    <AuToolbar class="au-u-margin-bottom-small" as |Group|>
+      <Group>
         <AuHeading @level="4" @skin="5">Card – editing</AuHeading>
-      </AuToolbarGroup>
-      <AuToolbarGroup>
+      </Group>
+      <Group>
         <AuButton @icon="check" @iconAlignment="right">
           Bewaar
         </AuButton>
-      </AuToolbarGroup>
+      </Group>
     </AuToolbar>
     <AuCard
       @flex={{this.flex}}
