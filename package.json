@@ -61,7 +61,8 @@
     "ember-inputmask5": "^3.2.0",
     "ember-named-blocks-polyfill": "^0.2.5",
     "ember-prop-modifier": "^1.0.1",
-    "ember-test-selectors": "^6.0.0"
+    "ember-test-selectors": "^6.0.0",
+    "tracked-toolbox": "^1.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -120,7 +121,6 @@
     "release-it-lerna-changelog": "^4.0.1",
     "sass": "^1.50.0",
     "svg-symbols": "^1.0.5",
-    "tracked-toolbox": "^1.2.3",
     "webpack": "^5.72.0"
   },
   "optionalDependencies": {
