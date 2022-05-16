@@ -15,6 +15,21 @@
 
 
 
+
+## v1.0.15 (2022-05-16)
+
+#### :rocket: Enhancement
+* [#253](https://github.com/appuniversum/ember-appuniversum/pull/253) yield the `AuToolbarGroup` component from the `AuToolbar` component ([@Windvis](https://github.com/Windvis))
+* [#259](https://github.com/appuniversum/ember-appuniversum/pull/259) Update the `AuButton` component so it matches the latest Webuniversum version ([@Dietr](https://github.com/Dietr))
+
+#### :bug: Bug Fix
+* [#260](https://github.com/appuniversum/ember-appuniversum/pull/260) Fix power select padding and line height ([@Dietr](https://github.com/Dietr))
+* [#257](https://github.com/appuniversum/ember-appuniversum/pull/257) Move tracked-toolbox to the dependencies list ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.14 (2022-05-13)
 
 #### :rocket: Enhancement
