@@ -3,14 +3,16 @@
   type="button"
   ...attributes
 >
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "left")}}
-    <AuIcon @icon="{{@icon}}" @alignment="left" />
+  {{#unless this.loading}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "left")}}
+      <AuIcon @icon="{{@icon}}" @alignment="left" />
+      {{/if}}
+      {{#unless @iconAlignment}}
+      <AuIcon @icon="{{@icon}}" />
+      {{/unless}}
     {{/if}}
-    {{#unless @iconAlignment}}
-    <AuIcon @icon="{{@icon}}" />
-    {{/unless}}
-  {{/if}}
+  {{/unless}}
   {{#if @hideText}}
     {{#if this.loading}}
     <span class="au-u-hidden-visually">Aan het laden</span><AuLoader @padding="small" />
@@ -24,9 +26,11 @@
     {{yield}}
     {{/if}}
   {{/if}}
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "right")}}
-    <AuIcon @icon="{{@icon}}" @alignment="right" />
+  {{#unless this.loading}}
+    {{#if @icon}}
+      {{#if (eq @iconAlignment "right")}}
+      <AuIcon @icon="{{@icon}}" @alignment="right" />
+      {{/if}}
     {{/if}}
-  {{/if}}
+  {{/unless}}
 </button>
