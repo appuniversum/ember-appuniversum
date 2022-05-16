@@ -19,18 +19,18 @@ const Template = (args) => ({
     >
       <t.menu as |menu|>
         <menu.general>
-          <AuToolbar class="au-o-box">
-            <AuToolbarGroup>
+          <AuToolbar class="au-o-box" as |Group|>
+            <Group>
               <AuHeading @skin="2">
                 Notulen zitting
               </AuHeading>
-            </AuToolbarGroup>
-            <AuToolbarGroup class="au-c-toolbar__group--center">
+            </Group>
+            <Group class="au-c-toolbar__group--center">
               <AuDataTableTextSearch @filter={{this.title}} @placeholder="Zoek titel notulen" />
               <AuButton>
                 Nieuwe zitting
               </AuButton>
-            </AuToolbarGroup>
+            </Group>
           </AuToolbar>
         </menu.general>
       </t.menu>

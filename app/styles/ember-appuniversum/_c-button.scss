@@ -30,8 +30,8 @@ $au-button-link-secondary-hover-color           : var(--au-gray-900) !default;
 $au-button-link-secondary-hover-color-underline : var(--au-gray-200) !default;
 $au-button-link-active-color                    : var(--au-gray-900) !default;
 $au-button-alert-color                          : var(--au-white) !default;
-$au-button-alert-contrast-color                 : var(--au-red-700) !default;
-$au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
+$au-button-alert-contrast-color                 : var(--au-red-600) !default;
+$au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
 
 
 
@@ -91,44 +91,17 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
   &.is-disabled:focus,
   &.is-disabled:active {
     cursor: not-allowed;
-    opacity: .5;
-    color: $au-button-color;
-    background-color: $au-button-contrast-color;
-    border-color: $au-button-contrast-color;
+    color: var(--au-gray-700);
+    background-color: var(--au-gray-300);
+    border-color: var(--au-gray-300);
   }
 
   &.is-loading,
   &.is-loading:hover {
     position: relative;
-    color: $au-button-color;
-    background-color: $au-button-contrast-hover-color;
-    border-color: $au-button-contrast-hover-color;
-  }
-
-  &.is-loading:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
-  }
-
-  &.is-loading::after {
-    content: "";
-    position: absolute;
-    text-align: center;
-    border: .3rem solid $au-button-color;
-    border-top: .3rem solid var(--au-blue-700);
-    border-radius: 50%;
-    width: $au-unit - $au-unit-tiny;
-    height: $au-unit - $au-unit-tiny;
-    top: 50%;
-    left: 50%;
-    margin-top: -$au-unit-small*0.5 - $au-unit-tiny*.5;
-    margin-left: -$au-unit-small*0.5 - $au-unit-tiny*.5;
-    animation: buttonLoading 2s linear infinite;
+    color: var(--au-gray-700);
+    background-color: var(--au-gray-300);
+    border-color: var(--au-gray-300);
   }
 }
 
@@ -169,28 +142,44 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
     background-color: transparent;
     border-color: $au-button-secondary-hover-color;
   }
+}
+
+// Naked button
+.au-c-button--naked {
+  font-weight: var(--au-medium);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &,
+  &:visited {
+    color: $au-button-secondary-color;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $au-button-secondary-hover-color;
+    background-color: transparent;
+    border-color: transparent;
+  }
 
   &.is-disabled,
   &.is-disabled:hover,
   &.is-disabled:focus,
   &.is-disabled:active {
-    color: $au-button-secondary-color;
+    color: var(--au-gray-700);
     background-color: transparent;
-    border-color: $au-button-secondary-color;
+    border-color: transparent;
   }
 
   &.is-loading,
   &.is-loading:hover,
   &.is-loading:focus {
-    color: transparent;
+    color: var(--au-gray-700);
     background-color: transparent;
-    border-color: $au-button-secondary-color;
-    box-shadow: none;
-  }
-
-  &.is-loading::after {
-    border-color: $au-button-secondary-color;
-    border-top-color: var(--au-blue-300);
+    border-color: transparent;
   }
 }
 
@@ -226,7 +215,7 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
   &.is-disabled:hover,
   &.is-disabled:focus,
   &.is-disabled:active {
-    color: $au-button-contrast-color;
+    color: var(--au-gray-700);
     background-color: transparent;
     text-decoration: none;
     border-color: transparent;
@@ -234,15 +223,10 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
 
   &.is-loading,
   &.is-loading:hover {
-    color: transparent;
-    border-color: transparent;
+    color: var(--au-gray-700);
     background-color: transparent;
+    border-color: transparent;
     text-decoration: none;
-  }
-
-  &.is-loading::after {
-    border-color: $au-button-contrast-color;
-    border-top-color: var(--au-blue-300);
   }
 }
 
@@ -277,7 +261,7 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
   &.is-disabled:hover,
   &.is-disabled:focus,
   &.is-disabled:active {
-    color: $au-button-contrast-color;
+    color: var(--au-gray-700);
     background-color: transparent;
     text-decoration: none;
     border-color: transparent;
@@ -285,15 +269,10 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
 
   &.is-loading,
   &.is-loading:hover {
-    color: transparent;
-    border-color: transparent;
+    color: var(--au-gray-700);
     background-color: transparent;
+    border-color: transparent;
     text-decoration: none;
-  }
-
-  &.is-loading::after {
-    border-color: $au-button-contrast-color;
-    border-top-color: var(--au-blue-300);
   }
 }
 
@@ -309,27 +288,6 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
     color: $au-button-alert-color;
     background-color: $au-button-alert-contrast-hover-color;
     border-color: $au-button-alert-contrast-hover-color;
-  }
-
-  &.is-disabled,
-  &.is-disabled:hover,
-  &.is-disabled:focus,
-  &.is-disabled:active {
-    color: $au-button-alert-color;
-    background-color: $au-button-alert-contrast-color;
-    border-color:  $au-button-alert-contrast-color;
-  }
-
-  &.is-loading,
-  &.is-loading:hover {
-    color: transparent;
-    border-color: $au-button-alert-contrast-color;
-    background-color: $au-button-alert-contrast-color;
-  }
-
-  &.is-loading::after {
-    border-color: $au-button-alert-color;
-    border-top-color: var(--au-red-600);
   }
 
   &.au-c-button--secondary {
@@ -352,19 +310,50 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
     &.is-disabled:hover,
     &.is-disabled:focus,
     &.is-disabled:active {
-      color: $au-button-alert-contrast-hover-color;
-      border-color: $au-button-alert-contrast-hover-color;
+      color: var(--au-gray-700);
+      background-color: var(--au-gray-300);
+      border-color: var(--au-gray-300);
     }
 
     &.is-loading,
     &.is-loading:hover {
-      color: transparent;
-      background-color: transparent;
+      color: var(--au-gray-700);
+      background-color: var(--au-gray-300);
+      border-color: var(--au-gray-300);
+    }
+  }
+
+  &.au-c-button--naked {
+    background-color: transparent;
+
+    &,
+    &:visited {
+      color: $au-button-alert-contrast-color;
+      border-color: transparent;
     }
 
-    &.is-loading::after {
-      border-color: $au-button-alert-contrast-color;
-      border-top-color: var(--au-red-200);
+    &:hover,
+    &:focus,
+    &:active {
+      color: $au-button-alert-contrast-hover-color;
+      border-color: transparent;
+    }
+
+    &.is-disabled,
+    &.is-disabled:hover,
+    &.is-disabled:focus,
+    &.is-disabled:active {
+      color: var(--au-gray-700);
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &.is-loading,
+    &.is-loading:hover,
+    &.is-loading:focus {
+      color: var(--au-gray-700);
+      background-color: transparent;
+      border-color: transparent;
     }
   }
 
@@ -377,7 +366,7 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
     &:visited {
       color: $au-button-alert-contrast-color;
       border-color: transparent;
-      text-decoration-color: var(--au-red-200);
+      text-decoration-color: var(--au-red-300);
     }
 
     &:hover,
@@ -385,27 +374,24 @@ $au-button-alert-contrast-hover-color           : var(--au-red-600) !default;
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
-      text-decoration-color: var(--au-red-100);
+      text-decoration-color: var(--au-red-400);
     }
 
     &.is-disabled,
     &.is-disabled:hover,
     &.is-disabled:focus,
     &.is-disabled:active {
-      color: $au-button-alert-contrast-color;
+      color: var(--au-gray-700);
       background-color: transparent;
       border-color: transparent;
     }
 
     &.is-loading,
-    &.is-loading:hover {
-      color: transparent;
+    &.is-loading:hover,
+    &.is-loading:focus {
+      color: var(--au-gray-700);
       background-color: transparent;
-    }
-
-    &.is-loading::after {
-      border-color: $au-button-alert-contrast-color;
-      border-top-color: var(--au-red-200);
+      border-color: transparent;
     }
   }
 }

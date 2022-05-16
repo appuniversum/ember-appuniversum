@@ -41,8 +41,9 @@ const Template = (args) => ({
       @skin={{this.skin}}
       @size={{this.size}}
       @nowrap={{this.nowrap}}
+      as |Group|
     >
-      <AuToolbarGroup>
+      <Group>
         <AuButtonGroup>
           <AuButton>
             Primary button
@@ -51,12 +52,12 @@ const Template = (args) => ({
             Secondary button
           </AuButton>
         </AuButtonGroup>
-      </AuToolbarGroup>
-      <AuToolbarGroup>
+      </Group>
+      <Group>
         <AuLink @skin="secondary">
           Secondary link
         </AuLink>
-      </AuToolbarGroup>
+      </Group>
     </AuToolbar>`,
   context: args,
 });

@@ -13,6 +13,7 @@ export default class AuButton extends Component {
 
   get skin() {
     if (this.args.skin == 'secondary') return 'au-c-button--secondary';
+    if (this.args.skin == 'naked') return 'au-c-button--naked';
     if (this.args.skin == 'tertiary')
       // DEPRECATED
       return 'au-c-button--link';

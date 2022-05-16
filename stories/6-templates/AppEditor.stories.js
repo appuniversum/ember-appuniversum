@@ -12,15 +12,15 @@ const Template = (args) => ({
     <AuApp>
       <nav>
         <div class="au-c-app-chrome">
-          <AuToolbar @size="small" class="au-u-padding-bottom-none">
-            <AuToolbarGroup>
+          <AuToolbar @size="small" class="au-u-padding-bottom-none" as |Group|>
+            <Group>
               <AuLink @route="docs.templates.app-editor" @skin="secondary">
                 <AuIcon @icon="arrow-left" @alignment="left" />
                 Terug naar overzicht agendapunten
               </AuLink>
               <span class="au-c-app-chrome__entity">Title</span>
-            </AuToolbarGroup>
-            <AuToolbarGroup>
+            </Group>
+            <Group>
               <ul class="au-c-list-horizontal au-u-padding-right-tiny">
                 <li class="au-c-list-horizontal__item">
                   <span class="au-c-app-chrome__status">
@@ -28,10 +28,10 @@ const Template = (args) => ({
                   </span>
                 </li>
               </ul>
-            </AuToolbarGroup>
+            </Group>
           </AuToolbar>
-          <AuToolbar @size="small" class="au-u-padding-top-none">
-            <AuToolbarGroup>
+          <AuToolbar @size="small" class="au-u-padding-top-none" as |Group|>
+            <Group>
               <div>
                 <AuPill @skin="warning">
                   <AuIcon @icon="alert-triangle" @alignment="left" />
@@ -41,8 +41,8 @@ const Template = (args) => ({
               <h1 class="au-c-app-chrome__title">
                 Title
               </h1>
-            </AuToolbarGroup>
-            <AuToolbarGroup class="au-c-toolbar__group--actions">
+            </Group>
+            <Group class="au-c-toolbar__group--actions">
               <AuDropdown @title="Bestand acties" @buttonLabel="Bestand opties" @alignment="right">
                 <AuButton @skin="tertiary" role="menuitem">
                   <AuIcon @icon="copy" @alignment="left" />
@@ -58,7 +58,7 @@ const Template = (args) => ({
                 </AuButton>
               </AuDropdown>
               <AuButton>Bewaar</AuButton>
-            </AuToolbarGroup>
+            </Group>
           </AuToolbar>
         </div>
       </nav>

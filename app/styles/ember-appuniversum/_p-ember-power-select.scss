@@ -139,9 +139,9 @@ $ember-power-select-multiple-option-line-height: 1.45;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: var(--au-h6);
-  line-height: $au-unit-large - $au-unit-small;
+  line-height: 1.25;
   min-height: $au-unit-large - $au-unit-small;
-  padding: 0 $au-unit + $au-unit-small .1ex $au-unit-tiny !important; // Temporary webuniversum override
+  padding: $au-unit-tiny * 1.2 $au-unit-tiny * 5 $au-unit-tiny * 1.2 $au-unit-tiny !important;
   user-select: none;
   color: $ember-power-select-text-color;
   background-color: $ember-power-select-background-color;
@@ -203,7 +203,8 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select-clear-btn {
   position: absolute;
   cursor: pointer;
-  top: .8rem;
+  top: 50%;
+  transform: translateY(-50%);
   width: 2rem;
   height: 2rem;
   line-height: 0;
@@ -531,6 +532,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select-selected-item,
 .ember-power-select-placeholder {
   margin-left: 0;
+  padding-right: $au-unit;
 }
 
 .ember-power-select-status-icon {
