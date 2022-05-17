@@ -4,22 +4,24 @@ import { icons } from '../../assets/icons';
 export default {
   title: 'Components/Content/AuCard',
   argTypes: {
-    title: { control: 'text', description: '' },
-    subtitle: { control: 'text', description: '' },
-    content: { control: 'text', description: '' },
     flex: { control: 'boolean', description: 'Layout elements as flexbox' },
     textCenter: { control: 'boolean', description: 'Centers text' },
     shadow: { control: 'boolean', description: 'Adds a box shadow' },
-    size: {
-      control: 'select',
-      options: ['regular', 'small', 'flush'],
-      description: 'Changes the padding',
-    },
     standOut: {
       control: 'boolean',
-      description: 'Makes background colour stand out',
+      description: 'Makes background colour grey',
+    },
+    divided: {
+      control: 'boolean',
+      description: 'Adds a divider between sections',
+    },
+    size: {
+      control: 'select',
+      options: ['default', 'tiny', 'small', 'flush'],
+      description: 'Changes the padding',
     },
     expandable: { control: 'boolean', description: 'Card becomes expandable ' },
+    expandableReversed: { control: 'boolean', description: 'Reverse position of expandable button' },
     isExpanded: {
       control: 'boolean',
       description: 'Toggle expanded section (when expandable is true).',
@@ -28,6 +30,10 @@ export default {
       control: 'boolean',
       description:
         'Determines whether the card is open initially (when expandable is true)',
+    },
+    manualControl: {
+      control: 'boolean',
+      description: 'Activates manual control of the card component (when expandable is true)',
     },
     badgeIcon: {
       control: 'select',
@@ -52,10 +58,6 @@ export default {
       options: ['default', 'small'],
       description: 'Set the size of the badge',
     },
-    manualControl: {
-      control: 'boolean',
-      description: 'Activates manual control of the card component',
-    },
   },
   parameters: {
     layout: 'padded',
@@ -68,9 +70,11 @@ const Template = (args) => ({
       @flex={{this.flex}}
       @textCenter={{this.textCenter}}
       @shadow={{this.shadow}}
-      @size={{this.size}}
       @standOut={{this.standOut}}
+      @divided={{this.divided}}
+      @size={{this.size}}
       @expandable={{this.expandable}}
+      @expandableReversed={{this.expandableReversed}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
       @manualControl={{this.manualControl}}
@@ -82,17 +86,14 @@ const Template = (args) => ({
         @badgeSize={{this.badgeSize}}
       >
         <AuHeading @level="2" @skin="4">
-          {{this.title}}
+          Title for card
         </AuHeading>
-        <p>
-          {{this.subtitle}}
-        </p>
       </c.header>
       <c.content>
-        <p>{{this.content}}</p>
+        <p>Content of the card.</p>
       </c.content>
       <c.footer>
-        <AuButton>Ga naar toezicht</AuButton>
+        <AuButton>Footer button</AuButton>
       </c.footer>
     </AuCard>`,
   context: args,
@@ -239,21 +240,20 @@ const EditingTemplate = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  title: 'Title for card',
-  subtitle: 'Subtitle for card',
-  content: 'Information in the card that comes below the header. Content.',
   flex: false,
   textCenter: false,
-  shadow: true,
-  size: 'regular',
+  shadow: false,
   standOut: false,
+  divided: false,
+  size: 'default',
   expandable: false,
+  expandableReversed: false,
   isExpanded: false,
   isOpenInitially: false,
+  manualControl: false,
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false,
 };
 
 export const Expandable = ExpandableTemplate.bind({});

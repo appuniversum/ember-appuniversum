@@ -1,38 +1,12 @@
-<article class="au-c-card au-c-card--fill {{this.size}} {{this.flex}} {{this.expandable}} {{this.shadow}} {{this.divided}} {{this.textCenter}} {{this.standOut}}" ...attributes>
+<article class="au-c-card au-c-card--fill {{this.size}} {{this.flex}} {{this.expandable}} {{if @expandableReversed "au-c-card--expandable-reversed"}} {{this.shadow}} {{this.divided}} {{this.textCenter}} {{this.standOut}}" ...attributes>
   {{#if this.expandable}}
-    {{#if this.shadow}}
     <div
       class="au-c-card__clickable"
-      role="button"
-      {{on "click" this.openSection}}
-    >
-      <AuButton class="au-c-card__toggle" @size="small" @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.sectionOpen "true" "false"}}" >
-        {{#if this.sectionOpen}}
-          <AuIcon @icon="remove" @size="large" @ariaHidden="true" />
-          <span class="au-u-hidden-visually au-c-card__toggle-false">
-            Verberg
-          </span>
-        {{else}}
-          <AuIcon @icon="add" @size="large" @ariaHidden="true" />
-          <span class="au-u-hidden-visually au-c-card__toggle-true">
-            Toon
-          </span>
-        {{/if}}
-      </AuButton>
-      {{yield (hash
-        header = (component 'au-card-header')
-      )}}
-    </div>
-    {{else}}
-    <div
-      class="au-c-card__clickable"
-      role="button"
-      {{on "click" this.openSection}}
     >
       {{yield (hash
         header = (component 'au-card-header')
       )}}
-      <AuButton class="au-c-card__toggle" @size="small" @skin="tertiary" aria-hidden="true" focusable="false" aria-expanded="{{if this.sectionOpen "true" "false"}}" >
+      <AuButton class="au-c-card__toggle" @size="small" @skin="naked" aria-hidden="true" focusable="false" aria-expanded="{{if this.sectionOpen "true" "false"}}" {{on "click" this.openSection}}>
         {{#if this.sectionOpen}}
           <AuIcon @icon="nav-up" @size="large" @ariaHidden="true" />
           <span class="au-u-hidden-visually au-c-card__toggle-false">
@@ -46,7 +20,6 @@
         {{/if}}
       </AuButton>
     </div>
-    {{/if}}
     {{#if this.sectionOpen}}
       <div tabindex="0">
         {{yield (hash
