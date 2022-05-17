@@ -34,7 +34,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build-ember": "ember build --environment=production",
-    "release": "release-it"
+    "release": "release-it",
+    "chromatic": "npx chromatic --project-token=c090f6fed707"
   },
   "browserslist": [
     "last 1 Chrome version",
@@ -86,7 +87,7 @@
     "babel-plugin-ember-modules-api-polyfill": "^3.5.0",
     "babel-plugin-htmlbars-inline-precompile": "^5.3.1",
     "broccoli-asset-rev": "^3.0.0",
-    "chromatic": "^6.5.3",
+    "chromatic": "^6.5.4",
     "ember-cli": "^3.28.3",
     "ember-cli-autoprefixer": "^2.0.0",
     "ember-cli-dependency-checker": "^3.2.0",
