@@ -109,9 +109,11 @@ const ExpandableTemplate = (args) => ({
       @flex={{this.flex}}
       @textCenter={{this.textCenter}}
       @shadow={{this.shadow}}
-      @size={{this.size}}
       @standOut={{this.standOut}}
+      @divided={{this.divided}}
+      @size={{this.size}}
       @expandable={{this.expandable}}
+      @expandableReversed={{this.expandableReversed}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
       @manualControl={{this.manualControl}}
@@ -123,11 +125,11 @@ const ExpandableTemplate = (args) => ({
         @badgeSize={{this.badgeSize}}
       >
         <AuHeading @level="3" @skin="5">
-          {{this.title}}
+          Title for card
         </AuHeading>
       </c.header>
       <c.content>
-        <p>{{this.content}}</p>
+        <p>Content of the card.</p>
       </c.content>
     </AuCard>`,
   context: args,
@@ -149,9 +151,11 @@ const EditableTemplate = (args) => ({
       @flex={{this.flex}}
       @textCenter={{this.textCenter}}
       @shadow={{this.shadow}}
-      @size={{this.size}}
       @standOut={{this.standOut}}
+      @divided={{this.divided}}
+      @size={{this.size}}
       @expandable={{this.expandable}}
+      @expandableReversed={{this.expandableReversed}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
       @manualControl={{this.manualControl}}
@@ -200,9 +204,11 @@ const EditingTemplate = (args) => ({
       @flex={{this.flex}}
       @textCenter={{this.textCenter}}
       @shadow={{this.shadow}}
-      @size={{this.size}}
       @standOut={{this.standOut}}
+      @divided={{this.divided}}
+      @size={{this.size}}
       @expandable={{this.expandable}}
+      @expandableReversed={{this.expandableReversed}}
       @isExpanded={{this.isExpanded}}
       @isOpenInitially={{this.isOpenInitially}}
       @manualControl={{this.manualControl}}
@@ -262,22 +268,19 @@ Component.args = {
 
 export const Expandable = ExpandableTemplate.bind({});
 Expandable.args = {
-  title:
-    'Title for card Information in the card that comes below the header. Content. Information in the card that comes below the header. Content.',
-  subtitle: 'Subtitle for card',
-  content: 'Information in the card that comes below the header. Content.',
   flex: false,
   textCenter: false,
   shadow: false,
-  size: 'regular',
   standOut: false,
+  divided: false,
+  size: 'regular',
   expandable: true,
   isExpanded: true,
   isOpenInitially: true,
+  manualControl: false,
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false,
 };
 
 export const Editable = EditableTemplate.bind({});
@@ -285,15 +288,16 @@ Editable.args = {
   flex: false,
   textCenter: false,
   shadow: false,
-  size: 'regular',
   standOut: true,
+  divided: false,
+  size: 'regular',
   expandable: false,
   isExpanded: false,
   isOpenInitially: false,
+  manualControl: false,
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false,
 };
 
 export const Editing = EditingTemplate.bind({});
@@ -301,13 +305,14 @@ Editing.args = {
   flex: false,
   textCenter: false,
   shadow: false,
-  size: 'regular',
   standOut: false,
+  divided: false,
+  size: 'regular',
   expandable: false,
   isExpanded: false,
   isOpenInitially: false,
+  manualControl: false,
   badgeIcon: '',
   badgeSkin: '',
   badgeSize: '',
-  manualControl: false,
 };
