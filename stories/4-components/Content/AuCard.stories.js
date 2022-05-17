@@ -21,7 +21,10 @@ export default {
       description: 'Changes the padding',
     },
     expandable: { control: 'boolean', description: 'Card becomes expandable ' },
-    expandableReversed: { control: 'boolean', description: 'Reverse position of expandable button' },
+    expandableReversed: {
+      control: 'boolean',
+      description: 'Reverse position of expandable button',
+    },
     isExpanded: {
       control: 'boolean',
       description: 'Toggle expanded section (when expandable is true).',
@@ -33,7 +36,8 @@ export default {
     },
     manualControl: {
       control: 'boolean',
-      description: 'Activates manual control of the card component (when expandable is true)',
+      description:
+        'Activates manual control of the card component (when expandable is true)',
     },
     badgeIcon: {
       control: 'select',
