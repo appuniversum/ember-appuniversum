@@ -16,6 +16,16 @@
 
 
 
+
+## v1.0.16 (2022-05-18)
+
+#### :rocket: Enhancement
+* [#261](https://github.com/appuniversum/ember-appuniversum/pull/261) Tabs component ([@Dietr](https://github.com/Dietr))
+* [#264](https://github.com/appuniversum/ember-appuniversum/pull/264) Add agenda icons ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.0.15 (2022-05-16)
 
 #### :rocket: Enhancement
