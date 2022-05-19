@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Install dependencies
-        run: npm
+        run: npm install
         # 👇 Adds Chromatic as a step in the workflow
       - name: Compile
         uses: elstudio/actions-js-build/build@v2
