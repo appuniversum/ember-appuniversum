@@ -35,6 +35,7 @@
     "build-storybook": "build-storybook",
     "build-ember": "ember build --environment=production",
     "build-ember-chromatic": "ember build --environment=chromatic",
+    "prep-chromatic": "run-s icons build-ember-chromatic",
     "release": "release-it",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
