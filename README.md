@@ -35,7 +35,7 @@ Local development:
 - Generate the icons: `npm run icons`
 
 Testing:
-- PR's are available on https://www.chromatic.com/build?appId=61e5835e5fbce3003a653ee6&number=6
+- PR previews and testing is available on [Chromatci](https://www.chromatic.com/build?appId=61e5835e5fbce3003a653ee6)
 
 Releases:
 - Release to npm: `npm run release`
