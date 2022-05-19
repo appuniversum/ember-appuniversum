@@ -36,7 +36,7 @@
     "build-ember": "ember build --environment=production",
     "build-ember-chromatic": "ember build --environment=chromatic",
     "release": "release-it",
-    "chromatic": "chromatic --exit-zero-on-changes",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "browserslist": [
     "last 1 Chrome version",
