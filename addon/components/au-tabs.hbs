@@ -1,5 +1,5 @@
 <nav class="au-c-tabs {{if @reversed 'au-c-tabs--reversed'}}" ...attributes>
   <ul class="au-c-tabs-list">
-    {{yield}}
+    {{yield (component "au-tabs/item" wasYielded=true)}}
   </ul>
 </nav>

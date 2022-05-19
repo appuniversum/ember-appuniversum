@@ -23,16 +23,17 @@ const Template = (args) => ({
     <AuList
       @direction={{this.direction}}
       @divider={{this.divider}}
+      as |Item|
     >
-      <AuList::Item>
+      <Item>
         List item 1
-      </AuList::Item>
-      <AuList::Item>
+      </Item>
+      <Item>
         List item 2
-      </AuList::Item>
-      <AuList::Item>
+      </Item>
+      <Item>
         List item 3
-      </AuList::Item>
+      </Item>
     </AuList>`,
   context: args,
 });
