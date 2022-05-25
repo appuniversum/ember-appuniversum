@@ -16,22 +16,22 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuTabs @reversed={{this.reversed}}>
-      <AuTabs::Item>
+    <AuTabs @reversed={{this.reversed}} as |Tab|>
+      <Tab>
         <AuLink @icon="hierarchal-back" @hideText={{true}}>Back</AuLink>
-      </AuTabs::Item>
-      <AuTabs::Item>
+      </Tab>
+      <Tab>
         <AuLink class="active">Tab 1</AuLink>
-      </AuTabs::Item>
-      <AuTabs::Item>
+      </Tab>
+      <Tab>
         <AuLink>Tab 2</AuLink>
-      </AuTabs::Item>
-      <AuTabs::Item>
+      </Tab>
+      <Tab>
         <AuLink>Tab 3</AuLink>
-      </AuTabs::Item>
-      <AuTabs::Item>
+      </Tab>
+      <Tab>
         <AuLinkExternal @icon="external" @iconAlignment="right">External link</AuLinkExternal>
-      </AuTabs::Item>
+      </Tab>
     </AuTabs>`,
   context: args,
 });
