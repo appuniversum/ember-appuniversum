@@ -15,12 +15,14 @@ export default class AuPillComponent extends Component {
   }
 
   get size() {
-    if (PILL_SIZES.includes(this.args.size)) return `au-c-pill--${this.args.size}`;
+    if (PILL_SIZES.includes(this.args.size))
+      return `au-c-pill--${this.args.size}`;
     return '';
   }
 
   get actionSize() {
-    if (PILL_SIZES.includes(this.args.size)) return `au-c-pill-action--${this.args.size}`;
+    if (PILL_SIZES.includes(this.args.size))
+      return `au-c-pill-action--${this.args.size}`;
     return '';
   }
 
