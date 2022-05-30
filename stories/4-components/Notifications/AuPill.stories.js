@@ -22,6 +22,11 @@ export default {
       control: 'boolean',
       description: 'Applies a dashed line to the pill skin',
     },
+    size: {
+      control: 'select',
+      options: ['regular', 'small'],
+      description: 'Changes the size of the pill',
+    },
     icon: {
       control: 'select',
       options: icons,
@@ -69,6 +74,7 @@ const Template = (args) => ({
     <AuPill
       @skin={{this.skin}}
       @draft={{this.draft}}
+      @size={{this.size}}
       @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
@@ -88,6 +94,7 @@ Component.args = {
   text: 'Pill',
   skin: '',
   draft: false,
+  size: 'regular',
   icon: 'info-circle',
   iconAlignment: 'left',
   hideText: false,
