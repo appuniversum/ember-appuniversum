@@ -1,5 +1,7 @@
 import Component from '@glimmer/component';
 
+const PILL_SIZES = ['small'];
+
 export default class AuPillComponent extends Component {
   get skin() {
     if (this.args.skin == 'border') return 'au-c-pill--border';
@@ -10,6 +12,16 @@ export default class AuPillComponent extends Component {
     if (this.args.skin == 'warning') return 'au-c-pill--warning';
     if (this.args.skin == 'error') return 'au-c-pill--error';
     return 'au-c-pill--default';
+  }
+
+  get size() {
+    if (PILL_SIZES.includes(this.args.size)) return `au-c-pill--${this.args.size}`;
+    return '';
+  }
+
+  get actionSize() {
+    if (PILL_SIZES.includes(this.args.size)) return `au-c-pill-action--${this.args.size}`;
+    return '';
   }
 
   get draft() {
