@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { isPresent } from '@ember/utils';
 
 const PILL_SIZES = ['small'];
 
@@ -29,6 +30,10 @@ export default class AuPillComponent extends Component {
   get draft() {
     if (this.args.draft == true) return 'au-c-pill--draft';
     return '';
+  }
+
+  get hasAction() {
+    return isPresent(this.args.onClickAction);
   }
 
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693

@@ -50,7 +50,7 @@ export default {
       control: 'text',
       description: 'Add a href to the link component',
     },
-    action: {
+    onClickAction: {
       control: 'text',
       description: 'Adds an action to the pill',
     },
@@ -80,7 +80,7 @@ const Template = (args) => ({
       @hideText={{this.hideText}}
       @route={{this.route}}
       @href={{this.href}}
-      @action={{this.action}}
+      @onClickAction={{this.onClickAction}}
       @actionIcon={{this.actionIcon}}
       @actionText={this.actionText}
     >
@@ -100,7 +100,7 @@ Component.args = {
   hideText: false,
   href: '',
   route: '',
-  action: '',
+  onClickAction: '',
   actionIcon: 'cross',
   actionText: 'close',
 };

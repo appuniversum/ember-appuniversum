@@ -1,4 +1,4 @@
-{{#if @action}}
+{{#if this.hasAction}}
 <span class="au-c-pill-container">
   <span class="au-c-pill {{this.skin}} {{this.size}} {{this.draft}}" ...attributes>
     {{#if @icon}}
@@ -17,7 +17,7 @@
       {{/if}}
     {{/if}}
   </span>
-  <button class="au-c-pill-action {{this.actionSize}} {{this.skin}}" type="button" {{@action}}>
+  <button class="au-c-pill-action {{this.actionSize}} {{this.skin}}" type="button" {{on "click" @onClickAction}}>
     <AuIcon @icon="{{@actionIcon}}" />
     <span class="au-u-hidden-visually">{{@actionText}}</span>
   </button>
