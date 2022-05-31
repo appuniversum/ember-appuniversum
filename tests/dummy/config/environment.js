@@ -43,6 +43,11 @@ module.exports = function (environment) {
     ENV.APP.autoboot = false;
   }
 
+  if (environment === 'chromatic') {
+    // here you can enable a production-specific feature
+    ENV.rootURL = '/';
+  }
+
   if (environment === 'production') {
     // here you can enable a production-specific feature
     ENV.rootURL = '/ember-appuniversum';
