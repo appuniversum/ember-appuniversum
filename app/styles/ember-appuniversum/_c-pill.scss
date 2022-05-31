@@ -31,6 +31,10 @@ $au-pill-color-ongoing                : var(--vl-picton-120) !default;
 $au-pill-background-color-ongoing     : transparent !default;
 $au-pill-border-color-ongoing         : var(--vl-picton-120) !default;
 
+$au-pill-font-size-small              : var(--au-tiny) !default;
+$au-pill-line-height-small            : 1.3 !default;
+$au-pill-gap-small                    : .4rem !default;
+
 /* Component
   ========================================================================== */
 
@@ -88,6 +92,25 @@ $au-pill-border-color-ongoing         : var(--vl-picton-120) !default;
     outline: var(--au-outline);
     outline-offset: var(--au-outline-offset);
   }
+}
+
+/* Sizes
+  ========================================================================== */
+
+.au-c-pill--small,
+.au-c-pill-action--small {
+  font-size: $au-pill-font-size-small;
+  line-height: $au-pill-line-height-small;
+  gap: $au-pill-gap-small;
+  min-height: 2.25rem;
+}
+
+.au-c-pill--small {
+  padding: .1rem .4rem 0;
+}
+
+.au-c-pill-action--small {
+  padding: 0 .4rem 0;
 }
 
 /* Modifiers
