@@ -17,6 +17,20 @@
 
 
 
+
+## v1.0.17 (2022-05-31)
+
+#### :bug: Bug Fix
+* [#266](https://github.com/appuniversum/ember-appuniversum/pull/266) Yield tabs item and list item ([@Dietr](https://github.com/Dietr))
+
+#### :house: Internal
+* [#267](https://github.com/appuniversum/ember-appuniversum/pull/267) Setup Chromatic ([@Dietr](https://github.com/Dietr))
+* [#268](https://github.com/appuniversum/ember-appuniversum/pull/268) Replace `{{prop}}` with a custom modifier ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.0.16 (2022-05-18)
 
 #### :rocket: Enhancement
