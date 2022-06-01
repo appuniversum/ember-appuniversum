@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { isPresent } from '@ember/utils';
 
 const PILL_SIZES = ['small'];
 
@@ -31,11 +30,6 @@ export default class AuPillComponent extends Component {
     if (this.args.draft == true) return 'au-c-pill--draft';
     return '';
   }
-
-  get hasAction() {
-    return isPresent(this.args.onClickAction);
-  }
-
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693
   // don't remove until we drop support for ember 3.27 and 3.28
   get queryParams() {
