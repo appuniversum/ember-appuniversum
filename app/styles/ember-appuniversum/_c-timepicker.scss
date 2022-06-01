@@ -37,6 +37,7 @@
 
 .au-time-picker__button {
   @include au-font-size(1.4rem,1);
+  cursor: pointer;
   flex-grow: 1;
   font-family: var(--au-font);
   font-weight: var(--au-medium);

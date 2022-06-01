@@ -1,8 +1,8 @@
-<article class="au-file-card au-o-box au-o-box--small" ...attributes>
+<article class="au-c-file-card au-o-box au-o-box--small" ...attributes>
   {{#if this.isRemovable}}
     <button
       type="button"
-      class="au-file-card__delete"
+      class="au-c-file-card__delete"
       data-test-file-card-delete
       {{on "click" this.delete}}
     >
@@ -16,7 +16,7 @@
 
     {{#if @fileSize}}
       <span
-        class="au-file-card__file-size"
+        class="au-c-file-card__file-size"
         data-test-file-card-file-size
       >({{@fileSize}})</span>
     {{/if}}
