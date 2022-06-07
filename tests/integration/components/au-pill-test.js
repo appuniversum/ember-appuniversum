@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 module('Integration | Component | au-pill', function (hooks) {
@@ -22,5 +22,24 @@ module('Integration | Component | au-pill', function (hooks) {
     `);
 
     assert.dom(this.element).hasText('template block text');
+  });
+
+  test('it calls the provided @onClickAction action when the action button is clicked', async function (assert) {
+    let isButtonClicked = false;
+
+    this.handleClick = () => {
+      isButtonClicked = !isButtonClicked;
+    };
+
+    await render(hbs`
+      <AuPill
+        @onClickAction={{this.handleClick}}
+      >
+        template block text
+      </AuPill>
+    `);
+    await click('button');
+
+    assert.true(isButtonClicked, 'action button is clicked');
   });
 });
