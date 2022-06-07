@@ -80,6 +80,7 @@ $au-alert-radius                        : var(--au-radius) !default;
 }
 
 .au-c-alert__close {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;

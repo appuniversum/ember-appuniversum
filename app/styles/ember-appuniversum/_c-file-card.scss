@@ -11,14 +11,14 @@ $au-file-card-radius: var(--au-radius) !default;
 /* Component
      ========================================================================== */
 
-.au-file-card {
+.au-c-file-card {
   position: relative;
   background-color: var(--au-white);
   border: 0.1rem solid $au-file-card-border-color;
   border-radius: $au-file-card-radius;
 }
 
-.au-file-card__delete {
+.au-c-file-card__delete {
   position: absolute;
   appearance: none;
   border: 0;
@@ -28,6 +28,7 @@ $au-file-card-radius: var(--au-radius) !default;
   top: $au-unit-small;
   right: $au-unit-small;
   color: var(--au-gray-700);
+  cursor: pointer;
 
   &:hover {
     color: var(--au-gray-600);
@@ -38,7 +39,7 @@ $au-file-card-radius: var(--au-radius) !default;
   }
 }
 
-.au-file-card__file-size {
+.au-c-file-card__file-size {
   color: var(--au-gray-700);
   font-style: italic;
   font-weight: normal;

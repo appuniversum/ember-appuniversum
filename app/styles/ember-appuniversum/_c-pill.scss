@@ -81,7 +81,7 @@ $au-pill-gap-small                    : .4rem !default;
   border-radius: $au-unit-tiny;
   min-height: 2.55rem;
   text-decoration: none;
-  cursor: default;
+  cursor: pointer;
 
   &:hover,
   &:focus {

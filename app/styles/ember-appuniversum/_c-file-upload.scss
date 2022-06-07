@@ -48,6 +48,7 @@
 
 .au-c-file-upload-label {
   @include au-font-size(var(--au-h5));
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   padding: $au-unit-small $au-unit-small;
