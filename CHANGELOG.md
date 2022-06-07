@@ -18,6 +18,20 @@
 
 
 
+
+## v1.1.0 (2022-06-07)
+
+#### :rocket: Enhancement
+* [#269](https://github.com/appuniversum/ember-appuniversum/pull/269) Size option(s) for the pill component ([@brenner-company](https://github.com/brenner-company))
+
+#### :bug: Bug Fix
+* [#271](https://github.com/appuniversum/ember-appuniversum/pull/271) Use hand cursor for actions ([@Dietr](https://github.com/Dietr))
+* [#270](https://github.com/appuniversum/ember-appuniversum/pull/270) Rework pill component action ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
 ## v1.0.17 (2022-05-31)
 
 #### :bug: Bug Fix
