@@ -1,5 +1,7 @@
 import Component from '@glimmer/component';
 
+const PILL_SIZES = ['small'];
+
 export default class AuPillComponent extends Component {
   get skin() {
     if (this.args.skin == 'border') return 'au-c-pill--border';
@@ -12,11 +14,22 @@ export default class AuPillComponent extends Component {
     return 'au-c-pill--default';
   }
 
+  get size() {
+    if (PILL_SIZES.includes(this.args.size))
+      return `au-c-pill--${this.args.size}`;
+    return '';
+  }
+
+  get actionSize() {
+    if (PILL_SIZES.includes(this.args.size))
+      return `au-c-pill-action--${this.args.size}`;
+    return '';
+  }
+
   get draft() {
     if (this.args.draft == true) return 'au-c-pill--draft';
     return '';
   }
-
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693
   // don't remove until we drop support for ember 3.27 and 3.28
   get queryParams() {
