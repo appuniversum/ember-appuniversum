@@ -6,7 +6,6 @@
       role="dialog"
       aria-describedby={{concat "au-c-modal-title-" @id}}
       tabindex="-1"
-      {{did-insert (fn this.setInert false)}}
       {{focus-trap
           isActive=@modalOpen
           focusTrapOptions=
