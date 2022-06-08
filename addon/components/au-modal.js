@@ -1,7 +1,6 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { deprecate } from '@ember/debug';
-const LANDMARKS = ['aside', 'footer', 'form', 'header', 'main', 'nav'];
 
 export default class AuModal extends Component {
   get destinationElement() {
@@ -39,19 +38,6 @@ export default class AuModal extends Component {
   }
 
   @action
-  setInert(toggle) {
-    let landmarkElements = document.querySelectorAll(LANDMARKS);
-
-    this.destinationElement.inert = toggle;
-
-    landmarkElements.forEach(function (landmarkElement) {
-      if (landmarkElement.parentElement === document.body) {
-        landmarkElement.inert = !toggle;
-      }
-    });
-  }
-
-  @action
   closeModal() {
     // Prevent that the @closeModal action is run more than once.
     // {{focus-trap}} calls closeModal when it is deactivated which also happens when the element it is attached to is destroyed.
@@ -63,7 +49,6 @@ export default class AuModal extends Component {
     // More information: https://github.com/josemarluedke/ember-focus-trap/issues/36#issuecomment-850844483
     // new focus-trap events issue: https://github.com/focus-trap/focus-trap/issues/126
     if (!this.isDestroying && this.args.modalOpen) {
-      this.setInert(true);
       this.args.closeModal?.();
     }
   }
