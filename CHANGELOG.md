@@ -19,6 +19,15 @@
 
 
 
+
+## v1.1.1 (2022-06-08)
+
+#### :bug: Bug Fix
+* [#274](https://github.com/appuniversum/ember-appuniversum/pull/274) Apply modal fix ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.1.0 (2022-06-07)
 
 #### :rocket: Enhancement
