@@ -5,6 +5,7 @@ import { hbs } from 'ember-cli-htmlbars';
 
 const MODAL = {
   ELEMENT: '[data-test-modal]',
+  BACKDROP: '[data-test-modal-backdrop]',
   HEADER: '[data-test-modal-header]',
   CLOSE: '[data-test-modal-close]',
   TITLE: '[data-test-modal-title]',
@@ -116,7 +117,7 @@ module('Integration | Component | au-modal', function (hooks) {
       this.set('isOpen', false);
     });
 
-    this.set('isOpen', true);
+    this.isOpen = true;
 
     await render(hbs`
       <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}}></AuModal>
@@ -125,14 +126,48 @@ module('Integration | Component | au-modal', function (hooks) {
     let closeButton = document.querySelector(MODAL.CLOSE);
     await click(closeButton);
     assert.equal(timesCalled, 1);
+  });
 
-    this.set('isOpen', true);
-    await triggerKeyEvent(document, 'keydown', 'Escape');
-    assert.equal(timesCalled, 2);
+  test('it calls @closeModal when the `escape` button is pressed', async function (assert) {
+    let timesCalled = 0;
+    this.handleClose = () => {
+      timesCalled++;
+      this.set('isOpen', false);
+    };
 
-    // Verify that it doesn't call the method when closed
+    this.isOpen = true;
+
+    await render(hbs`
+      <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}}></AuModal>
+    `);
+
     await triggerKeyEvent(document, 'keydown', 'Escape');
-    assert.equal(timesCalled, 2);
+    assert.equal(timesCalled, 1, 'it closes the modal when escape is pressed');
+
+    await triggerKeyEvent(document, 'keydown', 'Escape');
+    assert.equal(
+      timesCalled,
+      1,
+      "it doesn't call the @closeModal action if the modal is closed"
+    );
+  });
+
+  test('it calls `@closeModal` when the modal backdrop is clicked', async function (assert) {
+    let timesCalled = 0;
+    this.set('handleClose', () => {
+      timesCalled++;
+      this.set('isOpen', false);
+    });
+
+    this.isOpen = true;
+
+    await render(hbs`
+      <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}}></AuModal>
+    `);
+
+    let backdrop = document.querySelector(MODAL.BACKDROP);
+    await click(backdrop);
+    assert.equal(timesCalled, 1);
   });
 
   test('it calls @onClose only once when the component is rendered conditionally', async function (assert) {

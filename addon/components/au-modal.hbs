@@ -1,6 +1,11 @@
 {{#if @modalOpen}}
   {{#in-element this.destinationElement}}
-    <div {{on "click" this.closeModal}} class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}"  role="button"></div>
+    <div
+      class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}"
+      role="button"
+      data-test-modal-backdrop
+      {{on "click" this.closeModal}}
+    ></div>
     <div id="{{@id}}"
       class={{concat "au-c-modal " this.size this.padding (if @modalOpen " is-visible")}}
       role="dialog"
