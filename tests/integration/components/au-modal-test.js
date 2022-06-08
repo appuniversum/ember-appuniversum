@@ -132,6 +132,12 @@ module('Integration | Component | au-modal', function (hooks) {
     let timesCalled = 0;
     this.handleClose = () => {
       timesCalled++;
+
+      if (timesCalled === 1) {
+        // We want to test if the focus trap is still active if the app doesn't close the modal for some reason
+        return;
+      }
+
       this.set('isOpen', false);
     };
 
@@ -142,12 +148,19 @@ module('Integration | Component | au-modal', function (hooks) {
     `);
 
     await triggerKeyEvent(document, 'keydown', 'Escape');
-    assert.equal(timesCalled, 1, 'it closes the modal when escape is pressed');
+    assert.equal(timesCalled, 1);
 
     await triggerKeyEvent(document, 'keydown', 'Escape');
     assert.equal(
       timesCalled,
-      1,
+      2,
+      'it calls the action as long as the modal stays open'
+    );
+
+    await triggerKeyEvent(document, 'keydown', 'Escape');
+    assert.equal(
+      timesCalled,
+      2,
       "it doesn't call the @closeModal action if the modal is closed"
     );
   });
