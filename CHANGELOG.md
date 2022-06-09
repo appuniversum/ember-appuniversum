@@ -20,6 +20,15 @@
 
 
 
+
+## v1.1.2 (2022-06-09)
+
+#### :house: Internal
+* [#276](https://github.com/appuniversum/ember-appuniversum/pull/276) AuModal improvements ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.1.1 (2022-06-08)
 
 #### :bug: Bug Fix
