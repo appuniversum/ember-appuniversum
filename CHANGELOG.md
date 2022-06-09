@@ -21,6 +21,15 @@
 
 
 
+
+## v1.2.0 (2022-06-09)
+
+#### :rocket: Enhancement
+* [#277](https://github.com/appuniversum/ember-appuniversum/pull/277) Regulatory statement additions ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.1.2 (2022-06-09)
 
 #### :house: Internal
