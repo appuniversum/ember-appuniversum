@@ -71,23 +71,125 @@ const Template = (args) => ({
             </div>
           </div>
           <div class="say-container__aside">
+            <div class="say-editor-hints__insert">
+              <AuAccordion
+                @skin="border"
+                @reverse={{true}}
+                @iconOpen="remove"
+                @iconClosed="add"
+                @buttonLabel="Invoegen"
+              >
+                <AuList @divider={{true}}>
+                  <AuList::Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                    >
+                      Tussentitel
+                    </AuButton>
+                  </AuList::Item>
+                  <AuList::Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                    >
+                      Artikel
+                    </AuButton>
+                  </AuList::Item>
+                  <AuList::Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                      @disabled={{true}}
+                    >
+                      Artikel opschrift
+                    </AuButton>
+                  </AuList::Item>
+                  <AuList::Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                      @disabled={{true}}
+                    >
+                      Paragraaf
+                    </AuButton>
+                  </AuList::Item>
+                  <AuList::Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                      @disabled={{true}}
+                    >
+                      Codelijst
+                    </AuButton>
+                  </AuList::Item>
+                </AuList>
+              </AuAccordion>
+            </div>
             <div class="say-editor-hints">
               <ul class="say-editor-hints__list">
                 <li class="say-editor-hints__list-item">
-                  <AuCard @flex={{true}} @divided={{true}} @shadow={{true}} @size="small" as |c|>
-                    <c.header>
+                  <AuCard @flex={{true}} @divided={{true}} @expandable={{false}} @shadow={{true}} @size="flush" as |c|>
+                    <c.header class="au-u-hidden-visually">
                       <AuHeading @level="3" @skin="6">
                         Title for card
                       </AuHeading>
                     </c.header>
-                    <c.content>
-                      <p>Information in the card that comes below the header. Content.</p>
+                    <c.content class="au-c-content--small">
+                      <AuList @divider={{true}} class="au-u-padding-top-tiny au-u-padding-bottom-tiny">
+                        <AuList::Item>
+                          <AuButton
+                            @icon="nav-up"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Tussentitel naar boven verplaatsen
+                          </AuButton>
+                        </AuList::Item>
+                        <AuList::Item>
+                          <AuButton
+                            @icon="nav-down"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Tussentitel naar beneden verplaatsen
+                          </AuButton>
+                        </AuList::Item>
+                        <AuList::Item>
+                          <AuButton
+                            @icon="nav-up-double"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Niveau hoger
+                          </AuButton>
+                        </AuList::Item>
+                        <AuList::Item>
+                          <AuButton
+                            @icon="nav-down-double"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Niveau lager
+                          </AuButton>
+                        </AuList::Item>
+                        <AuList::Item>
+                          <AuButton
+                            @icon="bin"
+                            @iconAlignment="left"
+                            @skin="link"
+                            @alert={{true}}
+                          >
+                            Tussentitel verwijderen
+                          </AuButton>
+                        </AuList::Item>
+                      </AuList>
                     </c.content>
-                    <c.footer>
-                      <AuButtonGroup class="au-u-text-right">
-                        <AuButton @skin="link" @icon="cross" @iconAlignment="left">Venster sluiten</AuButton>
-                      </AuButtonGroup>
-                    </c.footer>
                   </AuCard>
                 </li>
                 <li class="say-editor-hints__list-item">
