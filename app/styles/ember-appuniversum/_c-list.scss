@@ -11,6 +11,11 @@
   gap: $au-unit-tiny;
   padding-left: 0;
   margin-bottom: 0;
+  list-style: none !important;
+
+  .au-c-list {
+    padding-left: $au-unit-small;
+  }
 }
 
 .au-c-list--horizontal {

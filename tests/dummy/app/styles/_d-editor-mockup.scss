@@ -406,3 +406,18 @@ flex-direction: column;
     }
   }
 }
+
+[property="http://lblod.data.gift/vocabularies/editor/isLumpNode"] {
+  padding: $au-unit-small;
+  position: relative;
+  background-color: var(--au-gray-200);
+  border-radius: 0.2rem;
+  outline: 2px dashed var(--au-gray-300);
+  outline-offset: 0.2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  display: table;
+  width: 100%;
+  cursor: not-allowed; // Show not-allowed cursor
+  user-select: none; // Disable selection
+}

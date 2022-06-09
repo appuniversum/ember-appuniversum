@@ -66,7 +66,60 @@ const Template = (args) => ({
         <div class="say-container__main">
           <div class="say-editor">
             <div class="say-editor__paper">
-              <div class="say-editor__inner say-content">
+              <div class="say-editor__inner say-content au-c-content">
+                <div property="http://lblod.data.gift/vocabularies/editor/isLumpNode">
+                  <AuHeading>Title</AuHeading>
+                  <AuList as |Item|>
+                    <Item>
+                      <a href="#1" class="au-c-link au-c-link--secondary">
+                        Heading
+                      </a>
+                    </Item>
+                    <Item>
+                      <AuList as |Item|>
+                        <Item>
+                          <a href="#2" class="au-c-link au-c-link--secondary">
+                            Subheading
+                          </a>
+                        </Item>
+                        <Item>
+                          <AuList as |Item|>
+                            <Item>
+                              <a href="#3" class="au-c-link au-c-link--secondary">
+                                Article 1
+                              </a>
+                            </Item>
+                            <Item>
+                              <AuList as |Item|>
+                                <Item>
+                                  <a href="#4" class="au-c-link au-c-link--secondary">
+                                    §1.
+                                  </a>
+                                </Item>
+                              </AuList>
+                            </Item>
+                          </AuList>
+                        </Item>
+                      </AuList>
+                    </Item>
+                  </AuList>
+                </div>
+                <div id="1" class="au-o-flow au-o-flow--small">
+                  <AuHeading @level="2" @skin="3">
+                    Heading
+                  </AuHeading>
+                  <div id="2" class="au-o-flow au-o-flow--small">
+                    <AuHeading @level="3" @skin="4">
+                      Subheading
+                    </AuHeading>
+                    <div id="3" class="au-o-flow au-o-flow--small">
+                      <AuHeading @level="4" @skin="5">
+                        Article 1
+                      </AuHeading>
+                      <div id="4"><p><span class="au-u-muted">§1.</span> Paragraph.</p></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -79,8 +132,8 @@ const Template = (args) => ({
                 @iconClosed="add"
                 @buttonLabel="Invoegen"
               >
-                <AuList @divider={{true}}>
-                  <AuList::Item>
+                <AuList @divider={{true}} as |Item|>
+                  <Item>
                     <AuButton
                       @icon="add"
                       @iconAlignment="left"
@@ -88,8 +141,8 @@ const Template = (args) => ({
                     >
                       Tussentitel
                     </AuButton>
-                  </AuList::Item>
-                  <AuList::Item>
+                  </Item>
+                  <Item>
                     <AuButton
                       @icon="add"
                       @iconAlignment="left"
@@ -97,8 +150,8 @@ const Template = (args) => ({
                     >
                       Artikel
                     </AuButton>
-                  </AuList::Item>
-                  <AuList::Item>
+                  </Item>
+                  <Item>
                     <AuButton
                       @icon="add"
                       @iconAlignment="left"
@@ -107,8 +160,8 @@ const Template = (args) => ({
                     >
                       Artikel opschrift
                     </AuButton>
-                  </AuList::Item>
-                  <AuList::Item>
+                  </Item>
+                  <Item>
                     <AuButton
                       @icon="add"
                       @iconAlignment="left"
@@ -117,8 +170,8 @@ const Template = (args) => ({
                     >
                       Paragraaf
                     </AuButton>
-                  </AuList::Item>
-                  <AuList::Item>
+                  </Item>
+                  <Item>
                     <AuButton
                       @icon="add"
                       @iconAlignment="left"
@@ -127,7 +180,7 @@ const Template = (args) => ({
                     >
                       Codelijst
                     </AuButton>
-                  </AuList::Item>
+                  </Item>
                 </AuList>
               </AuAccordion>
             </div>
@@ -141,8 +194,8 @@ const Template = (args) => ({
                       </AuHeading>
                     </c.header>
                     <c.content class="au-c-content--small">
-                      <AuList @divider={{true}} class="au-u-padding-top-tiny au-u-padding-bottom-tiny">
-                        <AuList::Item>
+                      <AuList @divider={{true}} class="au-u-padding-top-tiny au-u-padding-bottom-tiny" as |Item|>
+                        <Item>
                           <AuButton
                             @icon="nav-up"
                             @iconAlignment="left"
@@ -150,8 +203,8 @@ const Template = (args) => ({
                           >
                             Tussentitel naar boven verplaatsen
                           </AuButton>
-                        </AuList::Item>
-                        <AuList::Item>
+                        </Item>
+                        <Item>
                           <AuButton
                             @icon="nav-down"
                             @iconAlignment="left"
@@ -159,8 +212,8 @@ const Template = (args) => ({
                           >
                             Tussentitel naar beneden verplaatsen
                           </AuButton>
-                        </AuList::Item>
-                        <AuList::Item>
+                        </Item>
+                        <Item>
                           <AuButton
                             @icon="nav-up-double"
                             @iconAlignment="left"
@@ -168,8 +221,8 @@ const Template = (args) => ({
                           >
                             Niveau hoger
                           </AuButton>
-                        </AuList::Item>
-                        <AuList::Item>
+                        </Item>
+                        <Item>
                           <AuButton
                             @icon="nav-down-double"
                             @iconAlignment="left"
@@ -177,8 +230,8 @@ const Template = (args) => ({
                           >
                             Niveau lager
                           </AuButton>
-                        </AuList::Item>
-                        <AuList::Item>
+                        </Item>
+                        <Item>
                           <AuButton
                             @icon="bin"
                             @iconAlignment="left"
@@ -187,7 +240,7 @@ const Template = (args) => ({
                           >
                             Tussentitel verwijderen
                           </AuButton>
-                        </AuList::Item>
+                        </Item>
                       </AuList>
                     </c.content>
                   </AuCard>
