@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Compile
-        uses: elstudio/actions-js-build/build@v3
+        uses: elstudio/actions-js-build/build@v4
         with:
-          args: run build
+          args: build
       - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
