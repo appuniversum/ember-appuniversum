@@ -1,10 +1,12 @@
 # How To Contribute
 
 ## New features 
+
 - Use one of the provided issue templates to report a bug or request a new feature.
 - Create a PR for the corresponding issue.
 
 ### Flow for new features
+
 1. Are the requirements clear? If not the requirements need to be further clarified in the issue.
 2. Can an existing component fullfil the requirements or do we need to create a new component?
 3. Is the feature a snowflake?
