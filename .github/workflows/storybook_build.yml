@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Compile
-        uses: elstudio/actions-js-build/build@v4
+        uses: elstudio/actions-js-build/build@v3
         with:
           args: run build
       - name: Deploy
