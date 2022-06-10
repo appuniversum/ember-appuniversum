@@ -1,6 +1,10 @@
 {{#if @onClickAction}}
 <span class="au-c-pill-container">
-  <span class="au-c-pill {{this.skin}} {{this.size}} {{this.draft}}" ...attributes>
+  <span
+    class="au-c-pill {{this.skin}} {{this.size}} {{this.draft}}"
+    data-test-pill
+    ...attributes
+  >
     {{#if @icon}}
       {{#if (not-eq @iconAlignment "right")}}
       <AuIcon @icon="{{@icon}}" />
@@ -17,7 +21,12 @@
       {{/if}}
     {{/if}}
   </span>
-  <button class="au-c-pill-action {{this.actionSize}} {{this.skin}}" type="button" {{on "click" @onClickAction}}>
+  <button
+    type="button"
+    class="au-c-pill-action {{this.actionSize}} {{this.skin}}"
+    {{on "click" @onClickAction}}
+    data-test-pill-action
+  >
     <AuIcon @icon="{{@actionIcon}}" />
     <span class="au-u-hidden-visually">{{@actionText}}</span>
   </button>
@@ -29,7 +38,9 @@
     @route={{@route}}
     @models={{au-link-to-models @model @models}}
     @query={{this.queryParams}}
-    ...attributes>
+    data-test-pill
+    ...attributes
+  >
     {{#if @icon}}
       {{#if (not-eq @iconAlignment "right")}}
       <AuIcon @icon="{{@icon}}" />
@@ -50,7 +61,9 @@
   <a
     href={{@href}}
     class="au-c-pill au-c-pill--link {{this.size}} {{this.draft}}"
-    ...attributes>
+    data-test-pill
+    ...attributes
+  >
     {{#if @icon}}
       {{#if (not-eq @iconAlignment "right")}}
       <AuIcon @icon="{{@icon}}" />
@@ -68,7 +81,11 @@
     {{/if}}
   </a>
   {{else}}
-  <span class="au-c-pill {{this.skin}} {{this.size}} {{this.draft}}" ...attributes>
+  <span
+    class="au-c-pill {{this.skin}} {{this.size}} {{this.draft}}"
+    data-test-pill
+    ...attributes
+  >
     {{#if @icon}}
       {{#if (not-eq @iconAlignment "right")}}
       <AuIcon @icon="{{@icon}}" />
