@@ -25,6 +25,11 @@ Usage
 
 This ember addon wraps a CSS framework for Flanders government applications called appuniversum. It provides components that helps being complient with this framework in Ember apps.
 
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
 
 Development
 ------------------------------------------------------------------------------
@@ -35,7 +40,7 @@ Local development:
 - Generate the icons: `npm run icons`
 
 Testing:
-- PR previews and testing is available on [Chromatci](https://www.chromatic.com/build?appId=61e5835e5fbce3003a653ee6)
+- PR previews and testing is available on [Chromatic](https://www.chromatic.com/build?appId=61e5835e5fbce3003a653ee6)
 
 Releases:
 - Release to npm: `npm run release`
@@ -43,12 +48,6 @@ Releases:
 Link to an ember project:
 - In the addon: `npm link`
 - In the your project: `npm link @appuniversum/ember-appuniversum`
-
-Contributing
-------------------------------------------------------------------------------
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 License
 ------------------------------------------------------------------------------
