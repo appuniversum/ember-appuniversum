@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Compile
-        uses: elstudio/actions-js-build/build@v4
+     - uses: Adzz/jest_test_action@v1.0.0
         with:
-          args: build
+          package-manager: npm
+          command: build
       - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
