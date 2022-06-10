@@ -13,12 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Compile
-        uses: elstudio/actions-js-build/build@v2
+        uses: elstudio/actions-js-build/build@v4
         with:
           args: run build
       - name: Deploy
         if: success()
-        uses: crazy-max/ghaction-github-pages@v2
+        uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
           build_dir: storybook-static
