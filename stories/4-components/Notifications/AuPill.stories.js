@@ -22,6 +22,11 @@ export default {
       control: 'boolean',
       description: 'Applies a dashed line to the pill skin',
     },
+    size: {
+      control: 'select',
+      options: ['regular', 'small'],
+      description: 'Changes the size of the pill',
+    },
     icon: {
       control: 'select',
       options: icons,
@@ -45,7 +50,7 @@ export default {
       control: 'text',
       description: 'Add a href to the link component',
     },
-    action: {
+    onClickAction: {
       control: 'text',
       description: 'Adds an action to the pill',
     },
@@ -69,12 +74,13 @@ const Template = (args) => ({
     <AuPill
       @skin={{this.skin}}
       @draft={{this.draft}}
+      @size={{this.size}}
       @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @route={{this.route}}
       @href={{this.href}}
-      @action={{this.action}}
+      @onClickAction={{this.onClickAction}}
       @actionIcon={{this.actionIcon}}
       @actionText={this.actionText}
     >
@@ -88,12 +94,13 @@ Component.args = {
   text: 'Pill',
   skin: '',
   draft: false,
+  size: 'regular',
   icon: 'info-circle',
   iconAlignment: 'left',
   hideText: false,
   href: '',
   route: '',
-  action: '',
+  onClickAction: '',
   actionIcon: 'cross',
   actionText: 'close',
 };

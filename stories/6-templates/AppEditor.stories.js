@@ -66,28 +66,183 @@ const Template = (args) => ({
         <div class="say-container__main">
           <div class="say-editor">
             <div class="say-editor__paper">
-              <div class="say-editor__inner say-content">
+              <div class="say-editor__inner say-content au-c-content">
+                <div property="http://lblod.data.gift/vocabularies/editor/isLumpNode">
+                  <AuHeading>Title</AuHeading>
+                  <AuList as |Item|>
+                    <Item>
+                      <a href="#1" class="au-c-link au-c-link--secondary">
+                        Heading
+                      </a>
+                    </Item>
+                    <Item>
+                      <AuList as |Item|>
+                        <Item>
+                          <a href="#2" class="au-c-link au-c-link--secondary">
+                            Subheading
+                          </a>
+                        </Item>
+                        <Item>
+                          <AuList as |Item|>
+                            <Item>
+                              <a href="#3" class="au-c-link au-c-link--secondary">
+                                Article 1
+                              </a>
+                            </Item>
+                            <Item>
+                              <AuList as |Item|>
+                                <Item>
+                                  <a href="#4" class="au-c-link au-c-link--secondary">
+                                    §1.
+                                  </a>
+                                </Item>
+                              </AuList>
+                            </Item>
+                          </AuList>
+                        </Item>
+                      </AuList>
+                    </Item>
+                  </AuList>
+                </div>
+                <div id="1" class="au-o-flow au-o-flow--small">
+                  <AuHeading @level="2" @skin="3">
+                    Heading
+                  </AuHeading>
+                  <div id="2" class="au-o-flow au-o-flow--small">
+                    <AuHeading @level="3" @skin="4">
+                      Subheading
+                    </AuHeading>
+                    <div id="3" class="au-o-flow au-o-flow--small">
+                      <AuHeading @level="4" @skin="5">
+                        Article 1
+                      </AuHeading>
+                      <div id="4"><p><span class="au-u-muted">§1.</span> Paragraph.</p></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="say-container__aside">
+            <div class="say-editor-hints__insert">
+              <AuAccordion
+                @skin="border"
+                @reverse={{true}}
+                @iconOpen="remove"
+                @iconClosed="add"
+                @buttonLabel="Invoegen"
+              >
+                <AuList @divider={{true}} as |Item|>
+                  <Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                    >
+                      Tussentitel
+                    </AuButton>
+                  </Item>
+                  <Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                    >
+                      Artikel
+                    </AuButton>
+                  </Item>
+                  <Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                      @disabled={{true}}
+                    >
+                      Artikel opschrift
+                    </AuButton>
+                  </Item>
+                  <Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                      @disabled={{true}}
+                    >
+                      Paragraaf
+                    </AuButton>
+                  </Item>
+                  <Item>
+                    <AuButton
+                      @icon="add"
+                      @iconAlignment="left"
+                      @skin="link"
+                      @disabled={{true}}
+                    >
+                      Codelijst
+                    </AuButton>
+                  </Item>
+                </AuList>
+              </AuAccordion>
+            </div>
             <div class="say-editor-hints">
               <ul class="say-editor-hints__list">
                 <li class="say-editor-hints__list-item">
-                  <AuCard @flex={{true}} @divided={{true}} @shadow={{true}} @size="small" as |c|>
-                    <c.header>
+                  <AuCard @flex={{true}} @divided={{true}} @expandable={{false}} @shadow={{true}} @size="flush" as |c|>
+                    <c.header class="au-u-hidden-visually">
                       <AuHeading @level="3" @skin="6">
                         Title for card
                       </AuHeading>
                     </c.header>
-                    <c.content>
-                      <p>Information in the card that comes below the header. Content.</p>
+                    <c.content class="au-c-content--small">
+                      <AuList @divider={{true}} class="au-u-padding-top-tiny au-u-padding-bottom-tiny" as |Item|>
+                        <Item>
+                          <AuButton
+                            @icon="nav-up"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Tussentitel naar boven verplaatsen
+                          </AuButton>
+                        </Item>
+                        <Item>
+                          <AuButton
+                            @icon="nav-down"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Tussentitel naar beneden verplaatsen
+                          </AuButton>
+                        </Item>
+                        <Item>
+                          <AuButton
+                            @icon="nav-up-double"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Niveau hoger
+                          </AuButton>
+                        </Item>
+                        <Item>
+                          <AuButton
+                            @icon="nav-down-double"
+                            @iconAlignment="left"
+                            @skin="link"
+                          >
+                            Niveau lager
+                          </AuButton>
+                        </Item>
+                        <Item>
+                          <AuButton
+                            @icon="bin"
+                            @iconAlignment="left"
+                            @skin="link"
+                            @alert={{true}}
+                          >
+                            Tussentitel verwijderen
+                          </AuButton>
+                        </Item>
+                      </AuList>
                     </c.content>
-                    <c.footer>
-                      <AuButtonGroup class="au-u-text-right">
-                        <AuButton @skin="link" @icon="cross" @iconAlignment="left">Venster sluiten</AuButton>
-                      </AuButtonGroup>
-                    </c.footer>
                   </AuCard>
                 </li>
                 <li class="say-editor-hints__list-item">

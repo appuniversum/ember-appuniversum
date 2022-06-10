@@ -23,12 +23,13 @@ $au-brand-divider-rotation     : -20deg !default;
   font-weight: var(--au-medium);
   padding-left: $au-unit-small;
   margin-left: $au-unit-small;
+  top: -.1rem;
 
   &::before {
     content: "";
     display: block;
     position: absolute;
-    top: .1rem;
+    top: 0;
     left: 0;
     transform: rotate($au-brand-divider-rotation);
     width: .1rem;

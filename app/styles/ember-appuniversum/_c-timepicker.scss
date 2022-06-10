@@ -9,21 +9,21 @@
 /* Component
    ========================================================================== */
 
-.au-time-picker {
+.au-c-time-picker {
   display: flex;
   align-items: flex-end;
 }
 
-.au-time-picker__input-wrapper {
+.au-c-time-picker__input-wrapper {
   position: relative;
 }
 
-.au-time-picker__input {
+.au-c-time-picker__input {
   width: 100%;
   max-width: 8rem;
 }
 
-.au-time-picker__button-wrapper {
+.au-c-time-picker__button-wrapper {
   position: absolute;
   right: 0;
   height: calc(100% - .2rem);
@@ -35,8 +35,9 @@
   border-left: .1rem solid var(--au-gray-300);
 }
 
-.au-time-picker__button {
+.au-c-time-picker__button {
   @include au-font-size(1.4rem,1);
+  cursor: pointer;
   flex-grow: 1;
   font-family: var(--au-font);
   font-weight: var(--au-medium);
@@ -76,11 +77,11 @@
   }
 }
 
-.au-time-picker__separator {
+.au-c-time-picker__separator {
   font-weight: var(--au-medium);
   padding: $au-unit-tiny;
 }
 
-.au-time-picker__current {
+.au-c-time-picker__current {
   margin-left: $au-unit-small;
 }
