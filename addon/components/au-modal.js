@@ -47,14 +47,6 @@ export default class AuModal extends Component {
   }
 
   @action
-  handleOutsideClick() {
-    this.closeModal();
-
-    // allowOutsideClick can be set to false since we handle the closing here already
-    return false;
-  }
-
-  @action
   closeModal() {
     this.args.closeModal?.();
   }

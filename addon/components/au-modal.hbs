@@ -1,6 +1,11 @@
 {{#if @modalOpen}}
   {{#in-element this.destinationElement}}
-    <div class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}" data-test-modal-backdrop></div>
+    <div
+      class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}"
+      role="button"
+      data-test-modal-backdrop
+      {{on "click" this.closeModal}}
+    ></div>
     <div id="{{@id}}"
       class={{concat "au-c-modal " this.size this.padding (if @modalOpen " is-visible")}}
       role="dialog"
@@ -11,7 +16,7 @@
           focusTrapOptions=
             (hash
               initialFocus=".au-c-modal__title"
-              allowOutsideClick=this.handleOutsideClick
+              allowOutsideClick=true
               escapeDeactivates=this.handleEscapePress
             )
       }}
