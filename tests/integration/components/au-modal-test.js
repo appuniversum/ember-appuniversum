@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { click, render, triggerKeyEvent } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import { selectChoose } from 'ember-power-select/test-support';
 
 const MODAL = {
   ELEMENT: '[data-test-modal]',
@@ -181,6 +182,35 @@ module('Integration | Component | au-modal', function (hooks) {
     let backdrop = document.querySelector(MODAL.BACKDROP);
     await click(backdrop);
     assert.equal(timesCalled, 1);
+  });
+
+  test("it doesn't close the modal when an option in an embedded power-select is clicked", async function (assert) {
+    let timesCalled = 0;
+    this.set('handleClose', () => {
+      timesCalled++;
+      this.set('isOpen', false);
+    });
+
+    this.options = ['foo', 'bar', 'baz'];
+    this.isOpen = true;
+    this.onChange = () => {};
+
+    await render(hbs`
+      <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}}>
+        <:body>
+          <PowerSelect
+            @options={{this.options}}
+            @onChange={{this.onChange}}
+            data-test-select
+            as |option|
+          >{{option}}</PowerSelect>
+        </:body>
+      </AuModal>
+    `);
+
+    await selectChoose('[data-test-select]', 'bar');
+
+    assert.equal(timesCalled, 0);
   });
 
   test('it calls @onClose only once when the component is rendered conditionally', async function (assert) {
