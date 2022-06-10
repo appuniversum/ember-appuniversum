@@ -22,6 +22,21 @@
 
 
 
+
+## v1.2.1 (2022-06-10)
+
+#### :bug: Bug Fix
+* [#283](https://github.com/appuniversum/ember-appuniversum/pull/283) Fix a problem where selecting a PowerSelect option closes the AuModal component ([@Windvis](https://github.com/Windvis))
+* [#281](https://github.com/appuniversum/ember-appuniversum/pull/281) Make tabs border color consistent with toolbar, Closes [#278](https://github.com/appuniversum/ember-appuniversum/issues/278) ([@Dietr](https://github.com/Dietr))
+
+#### :house: Internal
+* [#275](https://github.com/appuniversum/ember-appuniversum/pull/275) Upgrade storybook ([@Dietr](https://github.com/Dietr))
+* [#279](https://github.com/appuniversum/ember-appuniversum/pull/279) Update issue templates ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.2.0 (2022-06-09)
 
 #### :rocket: Enhancement
