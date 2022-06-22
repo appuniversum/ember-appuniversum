@@ -5,8 +5,19 @@ export default {
   argTypes: {
     padding: {
       control: 'select',
-      options: ['', 'default', 'small', 'large'],
+      defaultValue: 'default',
+      options: ['default', 'small', 'large'],
       description: 'Set the padding of the loader',
+    },
+    message: {
+      control: 'text',
+      defaultValue: 'Aan het laden',
+      description: 'Set the hidden loading text',
+    },
+    disableMessage: {
+      control: 'boolean',
+      defaultValue: false,
+      description: 'Remove the loading text',
     },
   },
   parameters: {
@@ -16,7 +27,7 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuLoader @padding={{this.padding}} />`,
+    <AuLoader @padding={{this.padding}} @message={{this.message}} @disableMessage={{this.disableMessage}} />`,
   context: args,
 });
 

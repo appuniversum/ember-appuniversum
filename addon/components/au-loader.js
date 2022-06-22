@@ -12,4 +12,9 @@ export default class AuLoader extends Component {
       return 'au-c-loader--large';
     else return '';
   }
+
+  get message() {
+    if (this.args.message) return this.args.message;
+    else return 'Aan het laden';
+  }
 }

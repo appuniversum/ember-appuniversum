@@ -1,3 +1,6 @@
 <div class="au-c-loader {{this.padding}}" ...attributes>
-  <span class="au-u-hidden-visually">Aan het laden</span>
+  <div class="au-c-loader__animation" aria-hidden="true"></div>
+  {{#unless @disableMessage}}
+  <span class="au-u-hidden-visually">{{this.message}}</span>
+  {{/unless}}
 </div>

@@ -7,9 +7,23 @@
 
 .au-c-loader {
   display: block;
+}
+
+.au-c-loader__animation {
+  display: block;
   position: relative;
   width: 3rem + $au-unit;
   height: 3rem + $au-unit;
+
+  .au-c-loader--small & {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .au-c-loader--large & {
+    width: 3rem + $au-unit-large;
+    height: 3rem + $au-unit-large;
+  }
 
   &::before {
     content: '';
@@ -25,16 +39,6 @@
     box-shadow: 1rem 0 var(--au-white), 2rem 0 var(--au-white), 3rem 0 var(--au-white);
     animation: loader-wave infinite 1s linear;
   }
-}
-
-.au-c-loader--small {
-  width: 3rem;
-  height: 3rem;
-}
-
-.au-c-loader--large {
-  width: 3rem + $au-unit-large;
-  height: 3rem + $au-unit-large;
 }
 
 @keyframes loader-wave {
