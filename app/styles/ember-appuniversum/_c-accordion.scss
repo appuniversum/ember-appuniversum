@@ -55,7 +55,7 @@ $au-accordion-spacing                       : $au-unit !default;
 
 // Border
 .au-c-accordion--border .au-c-toolbar {
-  border: .1rem solid var(--au-gray-200);
+  border: .1rem solid var(--au-divider-color);
   border-radius: var(--au-radius);
   padding: $au-unit-tiny;
   transition: background-color var(--au-transition);

@@ -145,7 +145,7 @@ $au-dropdown-caret-size        : .4rem !default;
 
   &:before {
     border-color: rgba($au-white, 0);
-    border-bottom-color: var(--au-gray-200);
+    border-bottom-color: var(--au-divider-color);
   }
 
   &:after {

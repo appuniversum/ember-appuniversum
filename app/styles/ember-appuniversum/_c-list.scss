@@ -29,11 +29,11 @@
 .au-c-list__item {
   .au-c-list--vertical.au-c-list--divider & + & {
     padding-top: $au-unit-tiny;
-    border-top: .1rem solid var(--au-gray-200);
+    border-top: .1rem solid var(--au-divider-color);
   }
 
   .au-c-list--horizontal.au-c-list--divider & + & {
     padding-left: $au-unit-tiny;
-    border-left: .1rem solid var(--au-gray-200);
+    border-left: .1rem solid var(--au-divider-color);
   }
 }
