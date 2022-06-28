@@ -26,6 +26,11 @@ export const parameters = {
       },
     ],
   },
+  options: {
+    storySort: {
+      order: ['Introduction', 'Outline', ['Getting started', 'Accessibility'], 'Variables', ['Colors', 'Colors: semantic', 'CSS Variables', 'Sass Variables'], 'Utilities', 'Components', 'Patterns', 'Templates'],
+    },
+  },
   docs: {
     theme: vlTheme,
   },
