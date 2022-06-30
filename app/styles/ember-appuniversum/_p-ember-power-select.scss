@@ -415,7 +415,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
   padding: 0;
   user-select: none;
   -webkit-user-select: none;
-  border-top: .1rem solid var(--au-gray-200);
+  border-top: .1rem solid var(--au-divider-color);
 
   &[role="listbox"] {
     overflow-y: auto; /* in firefox in windows this can cause a word-break issue. Try `overflow-y: scroll` if that happens */
