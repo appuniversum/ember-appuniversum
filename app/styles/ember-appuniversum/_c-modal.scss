@@ -67,6 +67,10 @@ $au-modal-backdrop-z-index : 9998 !default;
   }
 }
 
+.au-c-modal--overflow {
+  overflow: visible;
+}
+
 .au-c-modal--large {
   max-width: calc(100% - #{$au-unit-huge});
   max-height: calc(100% - #{$au-unit-huge});
@@ -150,6 +154,15 @@ $au-modal-backdrop-z-index : 9998 !default;
     padding: 0;
   }
 
+  .au-c-modal--overflow & {
+    overflow: visible;
+  }
+
+  .au-c-modal--overflow &:last-child {
+    border-bottom-left-radius: var(--au-radius);
+    border-bottom-right-radius: var(--au-radius);
+  }
+
   @include mq(medium) {
     padding: $au-unit;
   }
@@ -158,6 +171,11 @@ $au-modal-backdrop-z-index : 9998 !default;
 .au-c-modal__footer {
   padding: $au-unit-small;
   border-top: 1px solid var(--au-gray-300);
+
+  .au-c-modal--overflow &:last-child {
+    border-bottom-left-radius: var(--au-radius);
+    border-bottom-right-radius: var(--au-radius);
+  }
 
   @include mq(medium) {
     padding: $au-unit;
