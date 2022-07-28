@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #BOX
+   ========================================================================== */
+
+/**
+ * The box object simply boxes off content. Extend with cosmetic styles in the
+ * Components layer.
+ *
+ * 1. So we can apply the `.au-o-box` class to naturally-inline elements.
+ */
+
+.au-o-box {
+  display: block; /* [1] */
+  padding: $au-unit;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/* Size variants
+   ========================================================================== */
+
+.au-o-box--flush {
+  padding: 0;
+}
+
+.au-o-box--tiny {
+  padding: $au-unit-tiny;
+}
+
+.au-o-box--small {
+  padding: $au-unit-small;
+}
+
+.au-o-box--large {
+  padding: $au-unit-large;
+}
+
+.au-o-box--huge {
+  padding: $au-unit-huge;
+}

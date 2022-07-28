@@ -1,0 +1,106 @@
+/* ==========================================================================
+   #RESPONSIVE-SPACINGS
+   ========================================================================== */
+
+/**
+ * Utility classes enhancing the normal spacing classes by adding responsiveness
+ * to them. By default, there are not responsive spacings defined. You can
+ * generate responsive spacings by adding entries to the following three Sass
+ * maps, e.g.:
+ *
+ *   $au-responsive-spacing-directions: (
+ *     null: null,
+ *     bottom: bottom,
+ *   );
+ *
+ *   $au-responsive-spacing-properties: (
+ *     "margin": "margin",
+ *   );
+ *
+ *   $au-responsive-spacing-sizes: (
+ *     "-small": $au-global-spacing-unit-small,
+ *   );
+ *
+ * This would bring us the following classes:
+ *
+ *   .au-u-margin-small@xsmall {}
+ *   .au-u-margin-small@small {}
+ *   .au-u-margin-small@medium {}
+ *   .au-u-margin-small@large {}
+ *   .au-u-margin-bottom-small@xsmall {}
+ *   .au-u-margin-bottom-small@small {}
+ *   .au-u-margin-bottom-small@medium {}
+ *   .au-u-margin-bottom-small@large {}
+ *
+ * You can change the generated CSS classes by further extending the Sass maps.
+ * If you want every ‘normal’ spacing (those from `utilities.spacings`) also as
+ * a responsive version, you can just mirror the ‘normal’ spacings:
+ *
+ *   $au-responsive-spacing-directions: $au-spacing-directions !default;
+ *
+ *   $au-responsive-spacing-properties: $au-spacing-properties !default;
+ *
+ *   $au-responsive-spacing-sizes: $au-spacing-sizes !default;
+ *
+ * BUT BE AWARE: This can generate a huge chunk of extra CSS, depending on the
+ * amount of breakpoints you defined. So please check your CSS’ output and
+ * filesize!
+ */
+
+/* Generate utility classes
+  ========================================================================== */
+
+// The responsive spacings just make sense and work properly when the ‘normal’
+// spacings are included, too. In case they're not, we set `_u-spacings`
+// to `null`.
+$au-spacing-directions: null !default;
+
+// If the ‘normal’ spacings partial is not included, we provide an error message
+// to indicate this.
+@if $au-spacing-directions == null {
+  @error "In order to use responsive spacings, you also need to include `_utilities.spacings.scss`!";
+}
+@else {
+
+
+
+// When using Sass-MQ, this defines the separator for the breakpoints suffix
+// in the class name. By default, we are generating the responsive suffixes
+// for the classes with a `@` symbol so you get classes like:
+//
+//   <div class="au-u-margin-bottom@small">
+//
+// Be aware that since the `@` symbol is a reserved symbol in CSS, it has to be
+// escaped with a `\`. In the markup though, you write your classes without the
+// backslash (e.g. `au-u-margin-bottom@small`).
+$au-widths-breakpoint-separator: \@ !default;
+$au-responsive-spacing-directions: null !default;
+$au-responsive-spacing-properties: null !default;
+$au-responsive-spacing-sizes: null !default;
+
+
+/* Generate utility classes
+  ========================================================================== */
+
+/* stylelint-disable max-nesting-depth */
+// Don't output anything if no responsive spacings are defined.
+@if ($au-responsive-spacing-properties != null) {
+  @each $property-namespace, $property in $au-responsive-spacing-properties {
+    @each $direction-namespace, $direction-rules in $au-responsive-spacing-directions {
+      @each $size-namespace, $size in $au-responsive-spacing-sizes {
+        @each $au-bp-name, $au-bp-value in $mq-breakpoints {
+          @include mq($from: $au-bp-name) {
+            .au-u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$au-widths-breakpoint-separator}#{$au-bp-name} {
+              @each $direction in $direction-rules {
+                #{$property}#{$direction}: $size !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* stylelint-enable max-nesting-depth */
+}

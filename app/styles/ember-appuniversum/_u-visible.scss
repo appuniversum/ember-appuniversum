@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #VISIBLE
+   ========================================================================== */
+
+/**
+ * Show visually and on screen readers starting from certain breakpoints, but hide visually and for screen readers on others.
+ */
+
+@if (variable-exists(mq-breakpoints)) {
+  @each $au-bp-name, $au-bp-value in $mq-breakpoints {
+    @include mq($until: $au-bp-name) {
+      .au-u-visible-from\@#{$au-bp-name} {
+        display: none !important;
+      }
+    }
+  }
+}

@@ -28,7 +28,7 @@ export const parameters = {
   },
   options: {
     storySort: {
-      order: ['Introduction', 'Outline', ['Getting started', 'Accessibility'], 'Variables', ['Colors', 'Colors: semantic', 'CSS Variables', 'Sass Variables'], 'Utilities', 'Components', 'Patterns', 'Templates'],
+      order: ['Introduction', 'Outline', ['Getting started', 'Accessibility', 'Browser support', 'Coding standards', 'Architecture and namespaces'], 'Variables', ['Colors', 'Colors: semantic', 'CSS Variables', 'Sass Variables'], 'Objects', 'Utilities', 'Components', 'Patterns', 'Templates'],
     },
   },
   docs: {

@@ -1,0 +1,52 @@
+/* ==========================================================================
+   #REGION
+   ========================================================================== */
+
+/**
+ * Creates even spaced responsive region using the default spacing variables.
+ *
+ *   <div class="au-o-region">
+ *     <div class="au-o-layout">
+ *     </div>
+ *   </div>
+ *
+ */
+
+/* Variables
+   ========================================================================== */
+
+$au-region-breakpoint: medium !default;
+
+
+/* Default classes.
+  ========================================================================== */
+
+.au-o-region {
+  padding-top: $au-unit-small;
+  padding-bottom: $au-unit-small;
+
+  @include mq($au-region-breakpoint) {
+    padding-top: $au-unit;
+    padding-bottom: $au-unit;
+  }
+}
+
+.au-o-region-small {
+  padding-top: $au-unit-tiny;
+  padding-bottom: $au-unit-tiny;
+
+  @include mq($au-region-breakpoint) {
+    padding-top: $au-unit-small;
+    padding-bottom: $au-unit-small;
+  }
+}
+
+.au-o-region-large {
+  padding-top: $au-unit;
+  padding-bottom: $au-unit;
+
+  @include mq($au-region-breakpoint) {
+    padding-top: $au-unit-large;
+    padding-bottom: $au-unit-large;
+  }
+}

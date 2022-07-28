@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #FONT FAMILY
+   ========================================================================== */
+
+// Base UI font
+.au-u-font {
+  font-family: var(--au-font) !important;
+}
+
+// Secondary font - DEPRECATED
+.au-u-font-secondary {
+  font-family: var(--au-font-secondary) !important;
+}

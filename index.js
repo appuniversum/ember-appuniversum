@@ -15,10 +15,6 @@ module.exports = {
     app.options.sassOptions = app.options.sassOptions || {};
     app.options.sassOptions.includePaths =
       app.options.sassOptions.includePaths || [];
-
-    app.options.sassOptions.includePaths.push(
-      'node_modules/@appuniversum/appuniversum'
-    );
   },
 
   contentFor: function (type) {
