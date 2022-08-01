@@ -43,6 +43,10 @@ export default {
       control: 'boolean',
       description: 'Adds a loading state to the button',
     },
+    loadingMessage: {
+      control: 'text',
+      description: 'Add a custom loading message. Default is "Aan het laden"',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -61,6 +65,7 @@ const Template = (args) => ({
       @alert={{this.alert}}
       @disabled={{this.disabled}}
       @loading={{this.loading}}
+      @loadingMessage={{this.loadingMessage}}
     >
       {{text}}
     </AuButton>`,
@@ -71,6 +76,7 @@ export const Primary = Template.bind({});
 Primary.args = {
   text: 'Button',
   skin: 'primary',
+  size: '',
   icon: '',
   iconAlignment: 'left',
   hideText: false,
@@ -84,6 +90,7 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   text: 'Button',
   skin: 'secondary',
+  size: '',
   icon: '',
   iconAlignment: 'left',
   hideText: false,
@@ -97,6 +104,7 @@ export const PrimaryLink = Template.bind({});
 PrimaryLink.args = {
   text: 'Primary link',
   skin: 'link',
+  size: '',
   icon: '',
   iconAlignment: 'left',
   hideText: false,
@@ -110,6 +118,7 @@ export const SecondaryLink = Template.bind({});
 SecondaryLink.args = {
   text: 'Secondary link',
   skin: 'link-secondary',
+  size: '',
   icon: '',
   iconAlignment: 'left',
   hideText: false,

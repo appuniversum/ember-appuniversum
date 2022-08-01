@@ -37,4 +37,9 @@ export default class AuButton extends Component {
     if (this.args.loading) return 'is-loading';
     else return '';
   }
+
+  get loadingMessage() {
+    if (this.args.loadingMessage) return this.args.loadingMessage;
+    else return 'Aan het laden';
+  }
 }
