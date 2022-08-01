@@ -21,7 +21,7 @@
     {{/if}}
   {{else}}
     {{#if this.loading}}
-    Aan het laden <AuLoader @padding="small" class="au-u-margin-left-tiny" />
+    {{this.loadingMessage}} <AuLoader @padding="small" class="au-u-margin-left-tiny" />
     {{else}}
     {{yield}}
     {{/if}}
