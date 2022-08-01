@@ -21,6 +21,7 @@ export default {
   title: 'Components/Forms/EmberPowerSelect',
   argTypes: {
     allowClear: { control: 'boolean', description: '' },
+    renderInPlace: { control: 'boolean', description: '' },
     disabled: { control: 'boolean' },
     searchEnabled: { control: 'boolean', description: '' },
     loadingMessage: { control: 'text', description: '' },
@@ -39,6 +40,7 @@ const Template = (args) => ({
   template: hbs`
     <PowerSelect
       @allowClear={{this.allowClear}}
+      @renderInPlace={{this.renderInPlace}}
       @disabled={{this.disabled}}
       @searchEnabled={{this.searchEnabled}}
       @loadingMessage={{this.loadingMessage}}
@@ -56,6 +58,7 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   allowClear: true,
+  renderInPlace: false,
   disabled: '',
   searchEnabled: true,
   loadingMessage: 'Aan het laden...',

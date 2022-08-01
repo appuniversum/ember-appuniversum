@@ -37,6 +37,11 @@ export default class AuModal extends Component {
     }
   }
 
+  get overflow() {
+    if (this.args.overflow) return 'au-c-modal--overflow';
+    else return '';
+  }
+
   @action
   handleEscapePress() {
     this.closeModal();

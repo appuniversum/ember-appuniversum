@@ -7,7 +7,7 @@
       {{on "click" this.closeModal}}
     ></div>
     <div id="{{@id}}"
-      class={{concat "au-c-modal " this.size this.padding (if @modalOpen " is-visible")}}
+      class={{concat "au-c-modal " this.size this.padding this.overflow (if @modalOpen " is-visible")}}
       role="dialog"
       aria-describedby={{concat "au-c-modal-title-" @id}}
       tabindex="-1"

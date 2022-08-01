@@ -1,4 +1,21 @@
 import { hbs } from 'ember-cli-htmlbars';
+const singleselects = [
+  'Advies bij jaarrekening AGB',
+  'Advies bij jaarrekening eredienstbestuur',
+  'Agenda',
+  'Andere documenten BBC',
+  'Besluit budget AGB',
+  'Besluit meerjarenplan(aanpassing) AGB',
+  'Besluit over budget(wijziging) eredienstbestuur',
+  'Besluit over budget(wijziging) OCMW-vereniging',
+  'Besluitenlijst',
+  'Budget',
+  'Goedkeuringstoezicht Voeren',
+  'Meerjarenplan(aanpassing)',
+  'Notulen',
+  'Oprichting autonoom bedrijf',
+  'Oprichting districtbestuur',
+];
 
 export default {
   title: 'Components/Content/AuModal',
@@ -19,6 +36,11 @@ export default {
       options: ['default', 'none'],
       description: 'Set the padding of the modal',
     },
+    overflow: {
+      control: 'boolean',
+      description:
+        'If set to true the modal container and content will be have visible overflow. Useful when using a powerselect component inside a modal.',
+    },
   },
   parameters: {
     layout: 'fullscreen',
@@ -32,10 +54,44 @@ const Template = (args) => ({
       @closeModal={{this.closeModal}}
       @size={{this.size}}
       @padding={{this.padding}}
+      @overflow={{this.overflow}}
     >
       <:title>{{this.title}}</:title>
       <:body>
         <p>Modal content</p>
+      </:body>
+      <:footer>
+        <AuButton>Action</AuButton>
+      </:footer>
+    </AuModal>`,
+  context: args,
+});
+
+const OverflowTemplate = (args) => ({
+  template: hbs`
+    <AuModal
+      @modalOpen={{this.modalOpen}}
+      @closeModal={{this.closeModal}}
+      @size={{this.size}}
+      @padding={{this.padding}}
+      @overflow={{this.overflow}}
+    >
+      <:title>{{this.title}}</:title>
+      <:body>
+        <AuLabel>Power select (rendered in place)</AuLabel>
+        <PowerSelect
+          @allowClear={{true}}
+          @searchEnabled={{true}}
+          @loadingMessage='Aan het laden...'
+          @noMatchesMessage='Geen resultaten'
+          @searchMessage='Typ om te zoeken'
+          @options={{powerselectoptions}}
+          @selected='Budget'
+          @onChange={{fn (mut this.selected)}}
+          @renderInPlace={{true}}
+          as |singleselect|>
+        {{singleselect}}
+      </PowerSelect>
       </:body>
       <:footer>
         <AuButton>Action</AuButton>
@@ -51,4 +107,16 @@ Component.args = {
   title: 'Modal',
   size: 'default',
   padding: 'default',
+  overflow: false,
+};
+
+export const Overflow = OverflowTemplate.bind({});
+Overflow.args = {
+  modalOpen: true,
+  closeModal: null,
+  title: 'Overflow on modal',
+  size: 'default',
+  padding: 'default',
+  overflow: true,
+  powerselectoptions: singleselects,
 };
