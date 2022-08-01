@@ -1,0 +1,59 @@
+/* ==========================================================================
+   #SPACINGS
+   ========================================================================== */
+
+/**
+ * Utility classes to put specific spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .au-u-margin-top {}
+ *   .au-u-padding-left-large {}
+ *   .au-u-margin-right-small {}
+ *   .au-u-padding {}
+ *   .au-u-padding-right-none {}
+ *   .au-u-padding-horizontal {}
+ *   .au-u-padding-vertical-small {}
+ */
+
+/* Variables
+  ========================================================================== */
+
+$au-spacing-directions: (
+  null: null,
+  "-top": "-top",
+  "-right": "-right",
+  "-bottom": "-bottom",
+  "-left": "-left",
+  "-horizontal": "-left" "-right",
+  "-vertical": "-top" "-bottom",
+) !default;
+
+$au-spacing-properties: (
+  "padding": "padding",
+  "margin": "margin",
+) !default;
+
+$au-spacing-sizes: (
+  null: $au-global-spacing-unit,
+  "-tiny": $au-unit-tiny,
+  "-small": $au-unit-small,
+  "-large": $au-unit-large,
+  "-huge": $au-unit-huge,
+  "-none": 0
+) !default;
+
+
+/* Generate utility classes
+  ========================================================================== */
+
+@each $property-namespace, $property in $au-spacing-properties {
+  @each $direction-namespace, $direction-rules in $au-spacing-directions {
+    @each $size-namespace, $size in $au-spacing-sizes {
+      .au-u-#{$property-namespace}#{$direction-namespace}#{$size-namespace} {
+        @each $direction in $direction-rules {
+          #{$property}#{$direction}: $size !important;
+        }
+      }
+    }
+  }
+}

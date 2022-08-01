@@ -88,7 +88,7 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
 
 ``` css
 /* ==================================
-   #APPUNIVERSUM
+   #EMBER-APPUNIVERSUM
    ================================== */
 
 /**
@@ -110,32 +110,33 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
 
 
 // SETTINGS
-@import "appuniversum/s-colors.scss";
-@import "appuniversum/s-global";
-@import "appuniversum/s-utilities";
+@import "ember-appuniversum/s-colors.scss";
+@import "ember-appuniversum/s-global";
+@import "ember-appuniversum/s-utilities";
+@import "ember-appuniversum/s-root";
 
 
 // TOOLS
-@import "appuniversum/t-font-size";
-@import "appuniversum/t-sass-mq";
+@import "ember-appuniversum/t-font-size";
+@import "ember-appuniversum/t-sass-mq";
 
 
 // GENERIC
-@import "appuniversum/g-reset";
-@import "appuniversum/g-box-sizing";
-@import "appuniversum/g-font";
+@import "ember-appuniversum/g-reset";
+@import "ember-appuniversum/g-box-sizing";
+@import "ember-appuniversum/g-font";
 
 
 // ELEMENTS
-@import "appuniversum/e-page";
+@import "ember-appuniversum/e-page";
 
 
 // OBJECTS
-@import "appuniversum/o-box";
-@import "appuniversum/o-flow";
-@import "appuniversum/o-grid";
-@import "appuniversum/o-layout";
-@import "appuniversum/o-region";
+@import "ember-appuniversum/o-box";
+@import "ember-appuniversum/o-flow";
+@import "ember-appuniversum/o-grid";
+@import "ember-appuniversum/o-layout";
+@import "ember-appuniversum/o-region";
 
 
 // COMPONENTS
@@ -164,23 +165,24 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
 @import "ember-appuniversum/c-input";
 @import "ember-appuniversum/c-label";
 @import "ember-appuniversum/c-link";
+@import "ember-appuniversum/c-list";
 @import "ember-appuniversum/c-list-horizontal";
 @import "ember-appuniversum/c-list-navigation";
 @import "ember-appuniversum/c-loader";
-@import "ember-appuniversum/c-pagination";
-@import "ember-appuniversum/c-pill";
 @import "ember-appuniversum/c-main-container";
 @import "ember-appuniversum/c-main-header";
 @import "ember-appuniversum/c-main-footer";
 @import "ember-appuniversum/c-modal";
+@import "ember-appuniversum/c-pagination";
+@import "ember-appuniversum/c-pill";
 @import "ember-appuniversum/c-sidebar";
 @import "ember-appuniversum/c-sidebar-action";
 @import "ember-appuniversum/c-table";
 @import "ember-appuniversum/c-tabs";
 @import "ember-appuniversum/c-textarea";
 @import "ember-appuniversum/c-timepicker";
-@import "ember-appuniversum/c-toolbar";
 @import "ember-appuniversum/c-toggle-switch";
+@import "ember-appuniversum/c-toolbar";
 
 
 // PLUGINS
@@ -189,24 +191,20 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
 
 
 // UTILITIES
-@import "appuniversum/u-align-text";
-@import "appuniversum/u-background";
-@import "appuniversum/u-break-word";
-@import "appuniversum/u-headings";
-@import "appuniversum/u-hide";
-@import "appuniversum/u-flex";
-@import "appuniversum/u-font-family";
-@import "appuniversum/u-font-weights";
-@import "appuniversum/u-max-widths";
-@import "appuniversum/u-paragraphs";
-@import "appuniversum/u-print";
-@import "appuniversum/u-responsive-spacings";
-@import "appuniversum/u-spacings";
-@import "appuniversum/u-visible";
-@import "appuniversum/u-widths";
+@import "ember-appuniversum/u-align-text";
+@import "ember-appuniversum/u-background";
+@import "ember-appuniversum/u-break-word";
+@import "ember-appuniversum/u-flex";
+@import "ember-appuniversum/u-font-family";
+@import "ember-appuniversum/u-font-weights";
+@import "ember-appuniversum/u-headings";
+@import "ember-appuniversum/u-hide";
+@import "ember-appuniversum/u-max-widths";
+@import "ember-appuniversum/u-paragraphs";
+@import "ember-appuniversum/u-print";
+@import "ember-appuniversum/u-responsive-spacings";
+@import "ember-appuniversum/u-spacings";
+@import "ember-appuniversum/u-visible";
+@import "ember-appuniversum/u-widths";
 
 ```
-
-## Note
-Sometimes the [appuniversum](https://github.com/appuniversum/appuniversum) dependency is not installed in the correct location which will break this setup ([see issue #123](https://github.com/appuniversum/ember-appuniversum/issues/123)). To fix you can install the dependecy manually by running
-`npm i @appuniversum/appuniversum --save-dev`.

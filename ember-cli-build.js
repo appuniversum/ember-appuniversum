@@ -7,7 +7,6 @@ module.exports = function (defaults) {
     // Add options here
     sassOptions: {
       sourceMapEmbed: true,
-      includePaths: ['node_modules/@appuniversum/appuniversum'],
     },
     autoprefixer: {
       enabled: true,

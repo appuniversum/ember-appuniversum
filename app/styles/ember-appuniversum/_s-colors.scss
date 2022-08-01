@@ -1,0 +1,60 @@
+// ==================================
+// #COLORS - DEPRECATED - Use CSS variables instead
+// ==================================
+
+// Tint & shade helper functions
+// ---
+// Makes a color lighter
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+
+// Makes a color darker
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+// Color palette
+// ---
+$au-white                    : #FFFFFF;
+
+$au-gray-100                 : #F4F5F6;
+$au-gray-200                 : #E6E8EB;
+$au-gray-300                 : #CCD1D9;
+$au-gray-400                 : #A1ABBA;
+$au-gray-500                 : #8E98A6;
+$au-gray-600                 : #69717C;
+$au-gray-700                 : #545961;
+$au-gray-800                 : #2A2D31;
+$au-gray-900                 : #212326;
+$au-gray-1000                : #000000;
+
+$au-blue-100                 : #EDF6FF;
+$au-blue-200                 : #DCECFD;
+$au-blue-300                 : #C1DDFB;
+$au-blue-500                 : #64A0E2;
+$au-blue-600                 : #0F6FD7;
+$au-blue-700                 : #0E5EB8;
+$au-blue-800                 : #004099;
+$au-blue-900                 : #073261;
+
+$au-yellow-100               : #FFF9D5;
+$au-yellow-200               : #FFF29B;
+$au-yellow-300               : #FEE539;
+$au-yellow-400               : #FFC515;
+$au-yellow-600               : #7F6E3B;
+$au-yellow-900               : #473D21;
+
+$au-red-100                  : #FCF3F3;
+$au-red-200                  : #F7E3E3;
+$au-red-500                  : #FF4141;
+$au-red-600                  : #D92626;
+$au-red-700                  : #AB1F1F;
+$au-red-900                  : #470000;
+
+$au-green-100                : #F7FAE5;
+$au-green-200                : #ECF2CD;
+$au-green-400                : #B3E000;
+$au-green-500                : #8BAE00;
+$au-green-700                : #5F750B;
+$au-green-900                : #323D08;

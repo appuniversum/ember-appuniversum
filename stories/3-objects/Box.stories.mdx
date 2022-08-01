@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/addon-docs';
 
-<Meta title="Introduction" />
+<Meta title="Objects/Box" />
 
 <style>{`
   .sbdocs-p,
@@ -44,13 +44,39 @@ import { Meta } from '@storybook/addon-docs';
   .os-content {
     background-color: var(--au-gray-100);
   }
+
+  .au-d-component + .au-d-component {
+    margin-top: 2rem;
+  }
+
+  .au-d-component p {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
 `}</style>
 
-# Ember Appuniversum
+# Box
 
-<p>This is an overview of the ember-appuniversum components.</p>
+The box object simply boxes off content. Extend with cosmetic styles in the components layer.
 
-<h2>References:</h2>
-<ul>
-  <li><a href="https://overheid.vlaanderen.be/webuniversum/v3/" target="_blank" rel="noopener noreferrer">Webuniversum V3: Official Flanders government styles and components</a></li>
-</ul>
+<div class="au-o-box au-u-text-center au-d-component au-u-margin-bottom">
+  <p class="au-u-h4">.au-o-box</p>
+</div>
+
+## Size modifiers
+
+<div class="au-o-box au-o-box--flush au-u-text-center au-d-component au-u-margin-top">
+  <p class="au-u-h4">.au-o-box--flush</p>
+</div>
+
+<div class="au-o-box au-o-box--tiny au-u-text-center au-d-component">
+  <p class="au-u-h4">.au-o-box--tiny</p>
+</div>
+
+<div class="au-o-box au-o-box--small au-u-text-center au-d-component">
+  <p class="au-u-h4">.au-o-box--small</p>
+</div>
+
+<div class="au-o-box au-o-box--large au-u-text-center au-d-component">
+  <p class="au-u-h4">.au-o-box--large</p>
+</div>

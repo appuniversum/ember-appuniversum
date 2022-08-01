@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #LAYOUT
+   ---
+   NOTICE: Adapted from https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.wrapper.scss
+   ========================================================================== */
+
+/* Variables
+  ========================================================================== */
+
+$au-layout-width      : 900px !default;
+$au-layout-width-small: 600px !default;
+$au-layout-width-large: 1200px !default;
+$au-layout-breakpoint : medium !default;
+
+
+/* Default classes.
+  ========================================================================== */
+
+.au-o-layout {
+  padding-right: $au-unit;
+  padding-left: $au-unit;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $au-layout-width;
+
+  @include mq($au-layout-breakpoint) {
+    padding-right: $au-unit-large;
+    padding-left: $au-unit-large;
+  }
+}
+
+
+/* Size variants.
+   ========================================================================== */
+
+.au-o-layout--small {
+  max-width: $au-layout-width-small;
+}
+
+.au-o-layout--large {
+  max-width: $au-layout-width-large;
+}

@@ -49,7 +49,6 @@
     "last 1 Edge version"
   ],
   "dependencies": {
-    "@appuniversum/appuniversum": "^1.1.0",
     "@duetds/date-picker": "^1.4.0",
     "@glimmer/component": "^1.1.1",
     "@glimmer/tracking": "^1.1.1",

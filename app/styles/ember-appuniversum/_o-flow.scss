@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #FLOW
+   ========================================================================== */
+
+/**
+ * The flow object creates a consistent vertical rhythm
+ *
+ */
+
+.au-o-flow {
+  > * {
+    margin-bottom: 0;
+  }
+
+  > * + * {
+    margin-top: $au-unit;
+  }
+}
+
+
+/* Size variants
+   ========================================================================== */
+
+.au-o-flow--tiny {
+  > * + * {
+    margin-top: $au-unit-tiny;
+  }
+}
+
+.au-o-flow--small {
+  > * + * {
+    margin-top: $au-unit-small;
+  }
+}
+
+.au-o-flow--large {
+  > * + * {
+    margin-top: $au-unit-large;
+  }
+}
+
+.au-o-flow--huge {
+  > * + * {
+    margin-top: $au-unit-huge;
+  }
+}

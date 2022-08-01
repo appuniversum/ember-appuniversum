@@ -1,0 +1,86 @@
+/* ==========================================================================
+   #FONT
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-font-location  : "https://d1l6j3bn1os9t0.cloudfront.net/3.latest/fonts/flanders" !default;
+$au-font-serif-name: "flanders-serif" !default;
+$au-font-sans-name: "flanders-sans" !default;
+
+
+/* Content
+   ========================================================================== */
+
+@font-face {
+  font-family: #{$au-font-serif-name};
+  src: url(#{$au-font-location}/#{$au-font-serif-name}-light.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-serif-name}-light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: #{$au-font-serif-name};
+  src: url(#{$au-font-location}/#{$au-font-serif-name}-regular.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-serif-name}-regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: #{$au-font-serif-name};
+  src: url(#{$au-font-location}/#{$au-font-serif-name}-medium.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-serif-name}-medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: #{$au-font-serif-name};
+  src: url(#{$au-font-location}/#{$au-font-serif-name}-bold.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-serif-name}-bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: #{$au-font-sans-name};
+  src: url(#{$au-font-location}/#{$au-font-sans-name}-light.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-sans-name}-light.woff) format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: #{$au-font-sans-name};
+  src: url(#{$au-font-location}/#{$au-font-sans-name}-regular.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-sans-name}-regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: #{$au-font-sans-name};
+  src: url(#{$au-font-location}/#{$au-font-sans-name}-medium.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-sans-name}-medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: #{$au-font-sans-name};
+  src: url(#{$au-font-location}/#{$au-font-sans-name}-bold.woff2) format("woff2"),
+  url(#{$au-font-location}/#{$au-font-sans-name}-bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}

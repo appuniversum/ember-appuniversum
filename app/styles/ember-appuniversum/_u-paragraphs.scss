@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #PARAGRAPHS
+   ========================================================================== */
+/**
+ * Utility classes to style paragraphs.
+ */
+
+// Sizes
+.au-u-para {
+  @include au-font-size(var(--au-para-small));
+
+  @include mq(medium) {
+    @include au-font-size(var(--au-para));
+  }
+}
+
+.au-u-para-lead {
+  @include au-font-size(var(--au-lead-small), $important: true);
+
+  @include mq(small) {
+    @include au-font-size(var(--au-lead-medium), $important: true);
+  }
+
+  @include mq(medium) {
+    @include au-font-size(var(--au-lead), $important: true);
+  }
+}
+
+.au-u-para-small {
+  @include au-font-size(var(--au-small), $important: true);
+}
+
+.au-u-para-tiny {
+  @include au-font-size(var(--au-tiny), $important: true);
+}
+
+// Styles
+.au-u-muted {
+  color: var(--au-gray-700) !important;
+}
+
+.au-u-italic {
+  font-style: italic !important;
+}
+
+// States
+.au-u-success {
+  color: var(--au-green-700) !important;
+}
+
+.au-u-warning {
+  color: var(--au-orange-700) !important;
+}
+
+.au-u-error {
+  color: var(--au-red-700) !important;
+}

@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/addon-docs';
 
-<Meta title="Utilities/Backgrounds" />
+<Meta title="Objects/Layout" />
 
 <style>{`
   .sbdocs-p,
@@ -44,24 +44,37 @@ import { Meta } from '@storybook/addon-docs';
   .os-content {
     background-color: var(--au-gray-100);
   }
+
+  .au-d-component + .au-d-component {
+    margin-top: 1rem;
+  }
+
+  .au-d-component p {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
 `}</style>
 
-# Backgrounds
+# Layout
 
-Limited set of background color utilities.
+`.au-o-layout`: Horizontal centered layout object with a maximum width and left/right padding.
 
-<div class="au-o-box au-d-component au-u-margin-top">
-  <h2 class="au-u-h4">Gray</h2>
-  <div class="au-o-box au-o-box--flush au-u-margin-top-small">
-    <div class="au-d-swatch au-u-background-gray-100">
-      <p class="au-u-h5 au-u-bold au-d-swatch__name au-u-margin-bottom-none">.au-u-background-gray-100</p>
-      <p class="au-d-swatch__contrast">AA contrast: $au-gray-700 or higher</p>
-    </div>
+<div class="au-o-layout au-u-margin-bottom">
+  <div class="au-o-box au-u-text-center  au-d-component">
+    <p class="au-u-h5">.au-o-layout</p>
   </div>
-  <div class="au-o-box au-o-box--flush au-u-margin-top-small">
-    <div class="au-d-swatch au-u-background-gray-200">
-      <p class="au-u-h5 au-u-bold au-d-swatch__name au-u-margin-bottom-none">.au-u-background-gray-200</p>
-      <p class="au-d-swatch__contrast">AA contrast: $au-gray-700 or higher</p>
-    </div>
+</div>
+
+## Size modifiers
+
+<div class="au-o-layout au-o-layout--small au-u-margin-top">
+  <div class="au-o-box au-u-text-center  au-d-component">
+    <p class="au-u-h5">.au-o-layout--small</p>
+  </div>
+</div>
+
+<div class="au-o-layout au-o-layout--large au-u-margin-top">
+  <div class="au-o-box au-u-text-center  au-d-component">
+    <p class="au-u-h5">.au-o-layout--large</p>
   </div>
 </div>
