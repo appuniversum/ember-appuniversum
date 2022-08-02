@@ -9,7 +9,9 @@ export default class ToasterService extends Service {
 
   get toasts() {
     return this.toasts.filter((toast) =>
-      ['notify', 'success', 'warning', 'error', 'loading'].includes(toast.options.type)
+      ['notify', 'success', 'warning', 'error', 'loading'].includes(
+        toast.options.type
+      )
     );
   }
 
@@ -26,7 +28,7 @@ export default class ToasterService extends Service {
   notify(message, title, options) {
     // eslint-disable-next-line no-param-reassign
     options = options || {};
-    options.icon= 'circle-info';
+    options.icon = 'circle-info';
     if (typeof options.timeOut === 'undefined') {
       options.timeOut = 5000;
     }
