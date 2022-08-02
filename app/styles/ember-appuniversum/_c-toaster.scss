@@ -1,0 +1,19 @@
+.au-c-toaster {
+  position: fixed;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: $au-unit-small;
+  bottom: 0;
+  right: 0;
+  z-index: 9999999;
+  width: 320px;
+
+  > * {
+    margin-right: $au-unit-small;
+    margin-bottom: 0;
+  }
+
+  > *:first-child {
+    margin-bottom: $au-unit-small;
+  }
+}

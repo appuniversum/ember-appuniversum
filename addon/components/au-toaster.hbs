@@ -1,0 +1,23 @@
+{{#in-element this.destinationElement}}
+{{#if @toasts.length}}
+<div class="au-c-toaster">
+  {{#if @toasts.length}}
+  {{#each @toasts as |toast|}}
+    <AuAlert
+      @title={{toast.title}}
+      @skin={{toast.options.type}}
+      @icon={{toast.options.icon}}
+      @size="small"
+      @closable={{true}}
+    >
+      {{#if toast.message}}
+      <p>{{toast.message}}</p>
+      {{/if}}
+    </AuAlert>
+  {{/each}}
+  {{/if}}
+
+  {{yield}}
+</div>
+{{/if}}
+{{/in-element}}
