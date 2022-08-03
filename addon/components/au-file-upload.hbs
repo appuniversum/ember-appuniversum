@@ -27,7 +27,7 @@
   {{/if}}
 </FileDropzone>
 {{#if this.hasErrors}}
-  <AuAlert @alertIcon="alert-triangle" @alertskin="error" @alertsize="small" @closable={{true}} class="au-u-margin-top-tiny">
+  <AuAlert @icon="alert-triangle" @skin="error" @size="small" @closable={{true}} class="au-u-margin-top-tiny">
     <ul>
       {{#each this.uploadErrorData as |data|}}
         <li>Fout bij het opladen van {{data.filename}}.
