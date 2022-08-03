@@ -1,22 +1,14 @@
 import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
-import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
-import { task } from 'ember-concurrency';
 import { guidFor } from '@ember/object/internals';
+import { inject as service } from '@ember/service';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { task } from 'ember-concurrency';
 
 export default class AuFileUploadComponent extends Component {
   @service fileQueue;
   @tracked uploadErrorData = [];
 
-  constructor() {
-    super(...arguments);
-    this.queueName = `${guidFor(this)}-fileUploads`;
-  }
-
-  ////////
-  // Properties which may be overridden
-  ////////
   get uploadingMsg() {
     return `Bezig met het opladen van ${this.queue.files.length} bestand(en). (${this.queue.progress}%)`;
   }
@@ -39,8 +31,12 @@ export default class AuFileUploadComponent extends Component {
     );
   }
 
+  get queueName() {
+    return `${guidFor(this)}-fileUploads`;
+  }
+
   get queue() {
-    return this.fileQueue.find(this.queueName);
+    return this.fileQueue.findOrCreate(this.queueName);
   }
 
   get endPoint() {
@@ -51,14 +47,20 @@ export default class AuFileUploadComponent extends Component {
     return this.args.maxFileSizeMB || 20;
   }
 
-  ////////
-  // Error handling and introspection
-  ////////
   get hasErrors() {
     return this.uploadErrorData.length > 0;
   }
 
-  // uploadFileTask = {};
+  @task
+  *upload(file) {
+    this.resetErrors();
+    let uploadedFile = yield this.uploadFileTask.perform(file);
+
+    this.notifyQueueUpdate();
+
+    if (uploadedFile && this.args.onFinishUpload)
+      this.args.onFinishUpload(uploadedFile, this.calculateQueueInfo());
+  }
 
   @task({ enqueue: true, maxConcurrency: 3 })
   *uploadFileTask(file) {
@@ -70,40 +72,49 @@ export default class AuFileUploadComponent extends Component {
       const fileId = response.body?.data?.id;
       return fileId;
     } catch (e) {
-      this.uploadErrorData = [...this.uploadErrorData, { filename: file.name }];
+      this.addError(file);
       this.removeFileFromQueue(file);
       return null;
     }
   }
 
-  hasValidationErrors(file) {
-    // TODO: see if we can split the side-effects from the
-    // non-side-effects.  The name doesn't suggest this will yield a
-    // state change.
-    if (file.size > this.maxFileSizeMB * Math.pow(1024, 2)) {
-      this.uploadErrorData = [
-        ...this.uploadErrorData,
-        {
-          filename: file.name,
-          error: `Bestand is te groot (max ${this.maxFileSizeMB} MB)`,
-        },
-      ];
-      this.removeFileFromQueue(file);
+  @action
+  filter(file, files, index) {
+    let isFirstFile = index === 0;
+
+    if (isFirstFile) {
+      this.resetErrors();
+    } else {
+      if (!this.args.multiple) {
+        // We only upload the first file if `@multiple` is not set to true. This matches the behavior of ember-file-upload v4.
+        return false;
+      }
+    }
+
+    let hasValidFileSize = file.size < this.maxFileSizeMB * Math.pow(1024, 2);
+    if (!hasValidFileSize) {
+      this.addError(file, `Bestand is te groot (max ${this.maxFileSizeMB} MB)`);
+      return false;
+    }
+
+    if (typeof this.args.filter === 'function') {
+      let shouldBeUploaded = this.args.filter(...arguments);
+
+      if (shouldBeUploaded) {
+        return true;
+      } else {
+        this.addError(file, this.helpTextFileNotSupported);
+        return false;
+      }
+    } else {
       return true;
     }
-    return false;
   }
 
-  @action
-  resetErrors() {
-    this.uploadErrorData = [];
-  }
-
-  ////////
-  // File queue
-  ////////
-  removeFileFromQueue(file) {
-    this.queue.remove(file);
+  notifyQueueUpdate() {
+    if (this.args.onQueueUpdate) {
+      this.args.onQueueUpdate(this.calculateQueueInfo());
+    }
   }
 
   calculateQueueInfo() {
@@ -113,23 +124,21 @@ export default class AuFileUploadComponent extends Component {
     return filesQueueInfo;
   }
 
-  notifyQueueUpdate() {
-    if (this.args.onQueueUpdate) {
-      this.args.onQueueUpdate(this.calculateQueueInfo());
-    }
+  addError(file, errorMessage) {
+    this.uploadErrorData = [
+      ...this.uploadErrorData,
+      {
+        filename: file.name,
+        error: errorMessage,
+      },
+    ];
   }
 
-  ////////
-  // Actions
-  ////////
-  @task
-  *upload(file) {
-    if (this.hasValidationErrors(file)) return;
-    let uploadedFile = yield this.uploadFileTask.perform(file);
+  resetErrors() {
+    this.uploadErrorData = [];
+  }
 
-    this.notifyQueueUpdate();
-
-    if (uploadedFile && this.args.onFinishUpload)
-      this.args.onFinishUpload(uploadedFile, this.calculateQueueInfo());
+  removeFileFromQueue(file) {
+    this.queue.remove(file);
   }
 }

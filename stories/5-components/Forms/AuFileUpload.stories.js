@@ -6,7 +6,7 @@ export default {
     accept: {
       control: 'text',
       description:
-        'A list of MIME types/extensions to be accepted by the input',
+        'A list of MIME types/extensions to be accepted by the input. Note: This does not do actual validation and only provides guidance to the user about which files can be selected. Use `@filter` to add validation if needed.',
     },
     endPoint: {
       control: 'text',
@@ -37,6 +37,11 @@ export default {
       control: 'action',
       description: 'Action called when queue was updated',
     },
+    filter: {
+      control: 'action',
+      description:
+        'Called when new files are selected or dropped. This function should return `true` if the file should be uploaded.',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -55,6 +60,7 @@ const Template = (args) => ({
       @multiple={{this.multiple}}
       @onFinishUpload={{this.onFinishUpload}}
       @onQueueUpdate={{this.onQueueUpdate}}
+      @filter={{this.filter}}
     />`,
   context: args,
 });
@@ -66,8 +72,9 @@ Component.args = {
   title: 'Bestanden toevoegen',
   helpTextDragDrop: 'Sleep de bestanden naar hier om toe te voegen',
   helpTextFileNotSupported: 'Dit bestandsformaat wordt niet ondersteund.',
-  maxFileSizeMB: '20',
+  maxFileSizeMB: 20,
   multiple: false,
   onFinishUpload: null,
   onQueueUpdate: null,
+  filter: null,
 };
