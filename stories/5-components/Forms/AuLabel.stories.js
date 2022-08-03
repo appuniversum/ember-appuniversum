@@ -29,7 +29,7 @@ const Template = (args) => ({
       @error={{this.error}}
       @warning={{this.warning}}
     >
-      {{text}}
+      {{this.text}}
     </AuLabel>`,
   context: args,
 });

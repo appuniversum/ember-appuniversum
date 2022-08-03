@@ -44,7 +44,7 @@ const Template = (args) => ({
       @width={{this.width}}
       @active={{this.active}}
     >
-      {{text}}
+      {{this.text}}
     </AuLinkExternal>`,
   context: args,
 });

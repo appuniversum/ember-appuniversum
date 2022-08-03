@@ -30,7 +30,7 @@ const Template = (args) => ({
           @models={{this.models}}
           @query={{this.query}}
         >
-          {{text}}
+          {{this.text}}
         </AuNavigationLink>
       </li>
     </ul>`,
