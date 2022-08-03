@@ -54,12 +54,10 @@ jobs:
       fail-fast: false
       matrix:
         try-scenario:
-          - ember-lts-3.20
-          - ember-lts-3.24
-          ## This addon isn't compatible with Ember v4 yet
-          # - ember-release
-          # - ember-beta
-          # - ember-canary
+          - ember-lts-3.28
+          - ember-release
+          - ember-beta
+          - ember-canary
           - ember-classic
           - embroider-safe
           - embroider-optimized
