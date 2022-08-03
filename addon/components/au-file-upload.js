@@ -69,7 +69,8 @@ export default class AuFileUploadComponent extends Component {
       const response = yield file.upload(this.endPoint, {
         'Content-Type': 'multipart/form-data',
       });
-      const fileId = response.body?.data?.id;
+      const body = yield response.json();
+      const fileId = body?.data?.id;
       return fileId;
     } catch (e) {
       this.addError(file);
