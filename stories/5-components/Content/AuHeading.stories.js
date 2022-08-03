@@ -26,7 +26,7 @@ const Template = (args) => ({
       @level={{this.level}}
       @skin={{this.skin}}
     >
-      {{text}}
+      {{this.text}}
     </AuHeading>`,
   context: args,
 });

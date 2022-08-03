@@ -67,7 +67,7 @@ const Template = (args) => ({
       @loading={{this.loading}}
       @loadingMessage={{this.loadingMessage}}
     >
-      {{text}}
+      {{this.text}}
     </AuButton>`,
   context: args,
 });

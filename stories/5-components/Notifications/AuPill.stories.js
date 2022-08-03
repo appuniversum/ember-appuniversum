@@ -82,9 +82,9 @@ const Template = (args) => ({
       @href={{this.href}}
       @onClickAction={{this.onClickAction}}
       @actionIcon={{this.actionIcon}}
-      @actionText={this.actionText}
+      @actionText={{this.actionText}}
     >
-      {{text}}
+      {{this.text}}
     </AuPill>`,
   context: args,
 });

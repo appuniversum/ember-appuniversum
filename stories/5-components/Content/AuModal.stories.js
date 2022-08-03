@@ -85,7 +85,7 @@ const OverflowTemplate = (args) => ({
           @loadingMessage='Aan het laden...'
           @noMatchesMessage='Geen resultaten'
           @searchMessage='Typ om te zoeken'
-          @options={{powerselectoptions}}
+          @options={{this.powerselectoptions}}
           @selected='Budget'
           @onChange={{fn (mut this.selected)}}
           @renderInPlace={{true}}
