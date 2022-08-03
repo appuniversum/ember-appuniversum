@@ -1,38 +1,32 @@
-@appuniversum/ember-appuniversum
-==============================================================================
+# @appuniversum/ember-appuniversum
 
 Ember addon wrapping [the appuniversum components](https://appuniversum.github.io/ember-appuniversum/).
 
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
 * Ember.js v3.28 or above
 * Ember CLI v3.28 or above
 * Node.js v14 or above
 
 
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install @appuniversum/ember-appuniversum
 ```
 
 
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 This ember addon wraps a CSS framework for Flanders government applications called appuniversum. It provides components that helps being complient with this framework in Ember apps.
 
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
-Development
-------------------------------------------------------------------------------
+## Development
 
 Local development:
 - Build the CSS and run storybook: `npm start`
@@ -49,7 +43,6 @@ Link to an ember project:
 - In the addon: `npm link`
 - In the your project: `npm link @appuniversum/ember-appuniversum`
 
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).
