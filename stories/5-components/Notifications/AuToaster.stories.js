@@ -3,7 +3,10 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Notifications/AuToaster',
   argTypes: {
-    toasts: { control: 'text', description: '{{this.toaster.toasts}}' },
+    position: { control: 'select', options: [
+      'top',
+      'bottom'
+    ], description: 'Control the position of the toaster. Default is at the bottom.' },
   },
   parameters: {
     layout: 'padded',
@@ -12,7 +15,7 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuToaster @toasts={{this.toasts}} />
+    <AuToaster @position={{this.position}} />
 
     {{!-- Demo --}}
     <AuToastDemo />`,
@@ -21,5 +24,5 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  toasts: '{{this.toaster.toasts}}',
+  position: 'bottom'
 };

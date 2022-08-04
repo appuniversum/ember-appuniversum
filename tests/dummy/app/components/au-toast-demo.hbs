@@ -2,7 +2,7 @@
   <AuHeading @level="1" @skin="4">
     Toaster service
   </AuHeading>
-  <p>Add <AuPill>{{'<AuToaster @toasts={{this.toaster.toasts}} />'}}</AuPill> to your main template.</p>
+  <p>Add <AuPill>{{'<AuToaster />'}}</AuPill> to your main template.</p>
 
   <div class="au-o-flow au-o-flow--tiny">
     <AuHeading @level="2" @skin="5">
@@ -21,7 +21,7 @@
 
     <AuHr/>
 
-    <p class="au-u-margin-bottom-small">Success: <AuPill>{{"this.toaster.success('Message','Title',{ timeOut: 5000 });"}}</AuPill>.</p>
+    <p class="au-u-margin-bottom-small">Success: <AuPill>{{"this.toaster.success('Test','Title',{ timeOut: 5000 });"}}</AuPill>.</p>
 
     <AuButton @skin="secondary" {{on "click" this.triggerSuccessToast}}>Trigger success toast</AuButton>
 
@@ -44,7 +44,13 @@
     <AuButton @skin="secondary" {{on "click" this.triggerLoadingToast}}>Trigger loading toast</AuButton>
   </div>
 
+  <div class="au-o-flow au-o-flow--tiny">
+    <AuHeading @level="2" @skin="5">
+      Closable
+    </AuHeading>
+    <p class="au-u-margin-bottom-small">Closable: <AuPill>{{"this.toaster.notify('Message','Title',{ closable: true });"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerClosableToast}}>Trigger closable toast</AuButton>
+  </div>
+
 </AuContent>
-
-
-<AuToaster @toasts={{this.toaster.toasts}} />

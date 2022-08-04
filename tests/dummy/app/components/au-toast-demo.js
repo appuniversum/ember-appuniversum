@@ -40,4 +40,11 @@ export default class AuToastDemo extends Component {
       timeOut: 5000,
     });
   }
+
+  @action
+  triggerClosableToast() {
+    this.toaster.notify('Message', 'Title', {
+      closable: true,
+    });
+  }
 }

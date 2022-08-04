@@ -86,5 +86,6 @@ export default class AuAlertComponent extends Component {
   @action
   closeAlert() {
     this.isVisible = !this.isVisible;
+    console.log(this.isVisible);
   }
 }
