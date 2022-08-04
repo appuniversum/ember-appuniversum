@@ -7,7 +7,7 @@ export default {
       control: 'select',
       options: ['top', 'bottom'],
       description:
-        'Control the position of the toaster. Default is at the bottom.',
+        'Control the position of the toaster. Default is at the top.',
     },
   },
   parameters: {
@@ -26,5 +26,5 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  position: 'bottom',
+  position: 'top',
 };

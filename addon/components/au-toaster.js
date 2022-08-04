@@ -5,7 +5,7 @@ export default class AuToaster extends Component {
   @service toaster;
 
   get position() {
-    if (this.args.position == 'top') return 'au-c-toaster--top';
-    else return 'au-c-toaster--bottom';
+    if (this.args.position == 'bottom') return 'au-c-toaster--bottom';
+    else return 'au-c-toaster--top';
   }
 }
