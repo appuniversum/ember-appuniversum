@@ -3,7 +3,6 @@ import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 
 export default class AuToastDemo extends Component {
-  @service intl;
   @service toaster;
 
   @action
