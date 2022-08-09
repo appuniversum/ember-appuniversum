@@ -23,6 +23,27 @@
 
 
 
+
+## v1.3.0 (2022-08-09)
+
+#### :rocket: Enhancement
+* [#300](https://github.com/appuniversum/ember-appuniversum/pull/300) Toast/notification system ([@Dietr](https://github.com/Dietr))
+* [#298](https://github.com/appuniversum/ember-appuniversum/pull/298) Add loadingMessage argument to button component ([@Dietr](https://github.com/Dietr))
+* [#295](https://github.com/appuniversum/ember-appuniversum/pull/295) Merge appuniversum styles and documentation ([@Dietr](https://github.com/Dietr))
+* [#293](https://github.com/appuniversum/ember-appuniversum/pull/293) Add modal overflow property ([@Dietr](https://github.com/Dietr))
+* [#287](https://github.com/appuniversum/ember-appuniversum/pull/287) Rework loader, Closes [#286](https://github.com/appuniversum/ember-appuniversum/issues/286) ([@Dietr](https://github.com/Dietr))
+
+#### :bug: Bug Fix
+* [#303](https://github.com/appuniversum/ember-appuniversum/pull/303) Fix `AuAlert` deprecations in the `AuFileUpload` component ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#299](https://github.com/appuniversum/ember-appuniversum/pull/299) Update ember-data-table to v2.1.0 ([@Windvis](https://github.com/Windvis))
+* [#288](https://github.com/appuniversum/ember-appuniversum/pull/288) Use global divider variable ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.2.1 (2022-06-10)
 
 #### :bug: Bug Fix
