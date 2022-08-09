@@ -1,0 +1,41 @@
+.au-c-toaster {
+  position: fixed;
+  display: flex;
+  gap: $au-unit-small;
+  right: 0;
+  z-index: 9999999;
+  width: 320px;
+
+  > * {
+    margin-right: $au-unit-small;
+    margin-bottom: 0;
+  }
+}
+
+.au-c-toaster--top {
+  top: 0;
+  flex-direction: column;
+
+  > * {
+    margin-right: $au-unit-small;
+    margin-bottom: 0;
+  }
+
+  > *:first-child {
+    margin-top: $au-unit-small;
+  }
+}
+
+.au-c-toaster--bottom {
+  bottom: 0;
+  flex-direction: column-reverse;
+
+  > * {
+    margin-right: $au-unit-small;
+    margin-bottom: 0;
+  }
+
+  > *:first-child {
+    margin-bottom: $au-unit-small;
+  }
+}
