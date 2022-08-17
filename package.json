@@ -130,7 +130,7 @@
     "ember-power-select": "2.x || 3.x || 4.x || 5.x"
   },
   "engines": {
-    "node": "12.* || 14.* || >= 16"
+    "node": "14.* || >= 16"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
