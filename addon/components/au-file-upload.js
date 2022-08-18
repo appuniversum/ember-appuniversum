@@ -102,18 +102,7 @@ export default class AuFileUploadComponent extends Component {
       return false;
     }
 
-    if (typeof this.args.filter === 'function') {
-      let shouldBeUploaded = this.args.filter(...arguments);
-
-      if (shouldBeUploaded) {
-        return true;
-      } else {
-        this.addError(file, this.helpTextFileNotSupported);
-        return false;
-      }
-    } else {
-      return true;
-    }
+    return true;
   }
 
   notifyQueueUpdate() {

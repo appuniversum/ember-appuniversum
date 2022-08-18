@@ -37,11 +37,6 @@ export default {
       control: 'action',
       description: 'Action called when queue was updated',
     },
-    filter: {
-      control: 'action',
-      description:
-        'Called when new files are selected or dropped. This function should return `true` if the file should be uploaded.',
-    },
   },
   parameters: {
     layout: 'padded',
@@ -60,7 +55,6 @@ const Template = (args) => ({
       @multiple={{this.multiple}}
       @onFinishUpload={{this.onFinishUpload}}
       @onQueueUpdate={{this.onQueueUpdate}}
-      @filter={{this.filter}}
     />`,
   context: args,
 });
@@ -76,5 +70,4 @@ Component.args = {
   multiple: false,
   onFinishUpload: null,
   onQueueUpdate: null,
-  filter: null,
 };
