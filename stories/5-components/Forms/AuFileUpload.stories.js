@@ -6,7 +6,7 @@ export default {
     accept: {
       control: 'text',
       description:
-        'A list of MIME types/extensions to be accepted by the input. Note: This does not do actual validation and only provides guidance to the user about which files can be selected. Use `@filter` to add validation if needed.',
+        'A list of MIME types/extensions to be accepted by the input',
     },
     endPoint: {
       control: 'text',

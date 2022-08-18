@@ -92,9 +92,13 @@ export default class AuFileUploadComponent extends Component {
       }
     }
 
-    let hasValidFileSize = file.size < this.maxFileSizeMB * Math.pow(1024, 2);
-    if (!hasValidFileSize) {
+    if (!isValidFileSize(file.size, this.maxFileSizeMB)) {
       this.addError(file, `Bestand is te groot (max ${this.maxFileSizeMB} MB)`);
+      return false;
+    }
+
+    if (!isValidFileType(file, this.args.accept)) {
+      this.addError(file, this.helpTextFileNotSupported);
       return false;
     }
 
@@ -142,4 +146,53 @@ export default class AuFileUploadComponent extends Component {
   removeFileFromQueue(file) {
     this.queue.remove(file);
   }
+}
+
+export function isValidFileType(file, accept) {
+  if (!accept) {
+    return true;
+  }
+
+  let tokens = accept.split(',').map(function (token) {
+    return token.trim().toLowerCase();
+  });
+
+  let validMimeTypes = tokens.filter(function (token) {
+    return !token.startsWith('.');
+  });
+  let type = file.type?.toLowerCase();
+
+  let validExtensions = tokens.filter(function (token) {
+    return token.startsWith('.');
+  });
+
+  let extension = null;
+  if (file.name && /(\.[^.]+)$/.test(file.name)) {
+    extension = file.name.toLowerCase().match(/(\.[^.]+)$/)[1];
+  }
+
+  return (
+    isValidMimeType(type, validMimeTypes) ||
+    isValidExtension(extension, validExtensions)
+  );
+}
+
+function isValidMimeType(type, validMimeTypes = []) {
+  return validMimeTypes.some(function (validType) {
+    if (['audio/*', 'video/*', 'image/*'].includes(validType)) {
+      let genericType = validType.split('/')[0];
+
+      return type.startsWith(genericType);
+    } else {
+      return type === validType;
+    }
+  });
+}
+
+function isValidExtension(extension, validExtensions = []) {
+  return validExtensions.includes(extension);
+}
+
+function isValidFileSize(fileSize, maximumSize) {
+  return fileSize < maximumSize * Math.pow(1024, 2);
 }
