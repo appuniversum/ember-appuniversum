@@ -7,6 +7,11 @@ export default {
       control: 'boolean',
       description: 'Make content container scrollable',
     },
+    size: {
+      control: 'select',
+      options: ['collapsed', 'small', 'regular', 'large'],
+      description: 'Set the size of the sidebar container',
+    },
   },
   parameters: {
     layout: 'fullscreen',
@@ -15,24 +20,33 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuMainContainer as |m|>
-      <m.sidebar>
-        <div class="au-d-component-block">
-          Sidebar
-        </div>
-      </m.sidebar>
-      <m.content
-        @scroll={{this.scroll}}
-      >
-        <div class="au-d-component-block au-d-component-block--overflow">
-          Main content
-        </div>
-      </m.content>
-    </AuMainContainer>`,
+    <AuApp>
+      <div class="au-d-component-block" style="height: 40px">
+        Environment banner
+      </div>
+      <div class="au-d-component-block" style="height: 40px">
+        Header
+      </div>
+      <AuMainContainer as |m|>
+        <m.sidebar @size={{this.size}}>
+          <div class="au-d-component-block">
+            Sidebar
+          </div>
+        </m.sidebar>
+        <m.content
+          @scroll={{this.scroll}}
+        >
+          <div class="au-d-component-block au-d-component-block--overflow">
+            Main content
+          </div>
+        </m.content>
+      </AuMainContainer>
+    </AuApp>`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  scroll: false,
+  scroll: true,
+  size: 'regular'
 };
