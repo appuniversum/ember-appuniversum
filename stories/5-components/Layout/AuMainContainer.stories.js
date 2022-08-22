@@ -48,5 +48,5 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   scroll: true,
-  size: 'regular'
+  size: 'regular',
 };
