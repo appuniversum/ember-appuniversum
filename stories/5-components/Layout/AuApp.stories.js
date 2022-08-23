@@ -1,13 +1,8 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Layout/AuBodyContainer',
-  argTypes: {
-    scroll: {
-      control: 'boolean',
-      description: 'Make body container scrollable',
-    },
-  },
+  title: 'Components/Layout/AuApp',
+  argTypes: {},
   parameters: {
     layout: 'fullscreen',
   },
@@ -16,8 +11,14 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuApp>
+      <div class="au-d-component-block" style="height: 40px">
+        Header
+      </div>
+      <div class="au-d-component-block" style="height: 40px">
+        Subheader
+      </div>
       <AuBodyContainer
-        @scroll={{this.scroll}}
+        @scroll=true
       >
         <div class="au-d-component-block au-d-component-block--overflow">
           Content
@@ -28,6 +29,4 @@ const Template = (args) => ({
 });
 
 export const Component = Template.bind({});
-Component.args = {
-  scroll: false,
-};
+Component.args = {};
