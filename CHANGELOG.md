@@ -24,6 +24,19 @@
 
 
 
+
+## v1.4.0 (2022-08-23)
+
+#### :rocket: Enhancement
+* [#307](https://github.com/appuniversum/ember-appuniversum/pull/307) Add support for ember-power-select v6 ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#311](https://github.com/appuniversum/ember-appuniversum/pull/311) Fix App container bug and improve sidebar ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.3.0 (2022-08-09)
 
 #### :rocket: Enhancement
