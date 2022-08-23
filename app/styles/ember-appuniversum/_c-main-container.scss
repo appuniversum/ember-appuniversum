@@ -2,20 +2,17 @@
    #MAIN CONTAINER
    ================================== */
 
-/* Variables
-   ========================================================================== */
-
-$au-main-container-height: calc(100vh - 4.2rem) !default;
-
 /* Component
    ========================================================================== */
 
 .au-c-main-container {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+  flex-grow: 1;
 
   @include mq(medium) {
-    height: $au-main-container-height;
+    overflow: hidden;
   }
 }
 
@@ -26,6 +23,27 @@ $au-main-container-height: calc(100vh - 4.2rem) !default;
     height: 100%;
     flex-basis: 25rem;
     flex-grow: 1;
+  }
+}
+
+.au-c-main-container__sidebar--small {
+  @include mq(medium) {
+    flex-basis: 17rem;
+    width: 17rem;
+  }
+}
+
+.au-c-main-container__sidebar--large {
+  @include mq(medium) {
+    flex-basis: 44rem;
+    width: 44rem;
+  }
+}
+
+.au-c-main-container__sidebar--collapsed {
+  @include mq(medium) {
+    flex-basis: 5rem;
+    width: 5rem;
   }
 }
 
