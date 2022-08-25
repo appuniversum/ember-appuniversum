@@ -3,10 +3,12 @@
   ================================== */
 
 .au-c-body-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   height: 100%;
   overflow: hidden;
   position: relative;
-  flex-grow: 1;
 }
 
 .au-c-body-container--scroll {
