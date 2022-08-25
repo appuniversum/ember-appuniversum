@@ -24,18 +24,6 @@ module('Integration | Component | au-button', function (hooks) {
     assert.dom(this.element).hasText('template block text');
   });
 
-  test('it hides the text when @hideText is set to true', async function (assert) {
-    await render(hbs`
-      <AuButton
-        @hideText={{true}}
-      >
-        template block text
-      </AuButton>
-    `);
-
-    assert.dom('.au-u-hidden-visually').exists();
-  });
-
   test('it adds the icon-only modifier class when an icon is defined and @hideText is set to true', async function (assert) {
     await render(hbs`
       <AuButton
