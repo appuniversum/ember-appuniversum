@@ -25,6 +25,18 @@
 
 
 
+
+## v1.4.1 (2022-08-26)
+
+#### :bug: Bug Fix
+* [#315](https://github.com/appuniversum/ember-appuniversum/pull/315) Revert flex behaviour on AuBodyContainer component ([@Dietr](https://github.com/Dietr))
+
+#### :memo: Documentation
+* [#312](https://github.com/appuniversum/ember-appuniversum/pull/312) Document button placement and best practices ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.4.0 (2022-08-23)
 
 #### :rocket: Enhancement
