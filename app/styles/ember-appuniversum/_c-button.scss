@@ -41,7 +41,6 @@ $au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
 
 .au-c-button {
   @include au-font-size($au-button-font-size, $au-button-height - $au-button-border * 2);
-  cursor: default;
   font-family: var(--au-font);
   font-weight: var(--au-regular);
   cursor: pointer;
