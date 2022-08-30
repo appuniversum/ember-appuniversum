@@ -5,9 +5,9 @@
 /* Variables
    ========================================================================== */
 
-$au-icon-size        : 1.3rem !default;
-$au-icon-size-medium : 1.6rem !default;
-$au-icon-size-large  : 1.9rem !default;
+$au-icon-size        : var(--au-icon-size) !default;
+$au-icon-size-medium : var(--au-icon-size-medium) !default;
+$au-icon-size-large  : var(--au-icon-size-large) !default;
 
 
 /* Component
