@@ -42,4 +42,9 @@ export default class AuButton extends Component {
     if (this.args.loadingMessage) return this.args.loadingMessage;
     else return 'Aan het laden';
   }
+
+  get iconAlignment() {
+    if (this.args.iconAlignment) return this.args.iconAlignment;
+    else return 'left';
+  }
 }
