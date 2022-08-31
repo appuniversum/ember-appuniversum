@@ -26,6 +26,15 @@
 
 
 
+
+## v1.5.0 (2022-08-31)
+
+#### :rocket: Enhancement
+* [#313](https://github.com/appuniversum/ember-appuniversum/pull/313) Various small improvements to button component ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
 ## v1.4.1 (2022-08-26)
 
 #### :bug: Bug Fix
