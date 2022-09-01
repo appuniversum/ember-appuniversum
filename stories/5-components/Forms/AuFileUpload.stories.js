@@ -66,7 +66,7 @@ Component.args = {
   title: 'Bestanden toevoegen',
   helpTextDragDrop: 'Sleep de bestanden naar hier om toe te voegen',
   helpTextFileNotSupported: 'Dit bestandsformaat wordt niet ondersteund.',
-  maxFileSizeMB: '20',
+  maxFileSizeMB: 20,
   multiple: false,
   onFinishUpload: null,
   onQueueUpdate: null,

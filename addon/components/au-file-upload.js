@@ -1,22 +1,14 @@
 import { action } from '@ember/object';
-import { tracked } from '@glimmer/tracking';
-import Component from '@glimmer/component';
-import { inject as service } from '@ember/service';
-import { task } from 'ember-concurrency';
 import { guidFor } from '@ember/object/internals';
+import { inject as service } from '@ember/service';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { task } from 'ember-concurrency';
 
 export default class AuFileUploadComponent extends Component {
   @service fileQueue;
   @tracked uploadErrorData = [];
 
-  constructor() {
-    super(...arguments);
-    this.queueName = `${guidFor(this)}-fileUploads`;
-  }
-
-  ////////
-  // Properties which may be overridden
-  ////////
   get uploadingMsg() {
     return `Bezig met het opladen van ${this.queue.files.length} bestand(en). (${this.queue.progress}%)`;
   }
@@ -39,8 +31,12 @@ export default class AuFileUploadComponent extends Component {
     );
   }
 
+  get queueName() {
+    return `${guidFor(this)}-fileUploads`;
+  }
+
   get queue() {
-    return this.fileQueue.find(this.queueName);
+    return this.fileQueue.findOrCreate(this.queueName);
   }
 
   get endPoint() {
@@ -51,14 +47,20 @@ export default class AuFileUploadComponent extends Component {
     return this.args.maxFileSizeMB || 20;
   }
 
-  ////////
-  // Error handling and introspection
-  ////////
   get hasErrors() {
     return this.uploadErrorData.length > 0;
   }
 
-  // uploadFileTask = {};
+  @task
+  *upload(file) {
+    this.resetErrors();
+    let uploadedFile = yield this.uploadFileTask.perform(file);
+
+    this.notifyQueueUpdate();
+
+    if (uploadedFile && this.args.onFinishUpload)
+      this.args.onFinishUpload(uploadedFile, this.calculateQueueInfo());
+  }
 
   @task({ enqueue: true, maxConcurrency: 3 })
   *uploadFileTask(file) {
@@ -67,43 +69,46 @@ export default class AuFileUploadComponent extends Component {
       const response = yield file.upload(this.endPoint, {
         'Content-Type': 'multipart/form-data',
       });
-      const fileId = response.body?.data?.id;
+      const body = yield response.json();
+      const fileId = body?.data?.id;
       return fileId;
     } catch (e) {
-      this.uploadErrorData = [...this.uploadErrorData, { filename: file.name }];
+      this.addError(file);
       this.removeFileFromQueue(file);
       return null;
     }
   }
 
-  hasValidationErrors(file) {
-    // TODO: see if we can split the side-effects from the
-    // non-side-effects.  The name doesn't suggest this will yield a
-    // state change.
-    if (file.size > this.maxFileSizeMB * Math.pow(1024, 2)) {
-      this.uploadErrorData = [
-        ...this.uploadErrorData,
-        {
-          filename: file.name,
-          error: `Bestand is te groot (max ${this.maxFileSizeMB} MB)`,
-        },
-      ];
-      this.removeFileFromQueue(file);
-      return true;
-    }
-    return false;
-  }
-
   @action
-  resetErrors() {
-    this.uploadErrorData = [];
+  filter(file, files, index) {
+    let isFirstFile = index === 0;
+
+    if (isFirstFile) {
+      this.resetErrors();
+    } else {
+      if (!this.args.multiple) {
+        // We only upload the first file if `@multiple` is not set to true. This matches the behavior of ember-file-upload v4.
+        return false;
+      }
+    }
+
+    if (!isValidFileSize(file.size, this.maxFileSizeMB)) {
+      this.addError(file, `Bestand is te groot (max ${this.maxFileSizeMB} MB)`);
+      return false;
+    }
+
+    if (!isValidFileType(file, this.args.accept)) {
+      this.addError(file, this.helpTextFileNotSupported);
+      return false;
+    }
+
+    return true;
   }
 
-  ////////
-  // File queue
-  ////////
-  removeFileFromQueue(file) {
-    this.queue.remove(file);
+  notifyQueueUpdate() {
+    if (this.args.onQueueUpdate) {
+      this.args.onQueueUpdate(this.calculateQueueInfo());
+    }
   }
 
   calculateQueueInfo() {
@@ -113,23 +118,70 @@ export default class AuFileUploadComponent extends Component {
     return filesQueueInfo;
   }
 
-  notifyQueueUpdate() {
-    if (this.args.onQueueUpdate) {
-      this.args.onQueueUpdate(this.calculateQueueInfo());
+  addError(file, errorMessage) {
+    this.uploadErrorData = [
+      ...this.uploadErrorData,
+      {
+        filename: file.name,
+        error: errorMessage,
+      },
+    ];
+  }
+
+  resetErrors() {
+    this.uploadErrorData = [];
+  }
+
+  removeFileFromQueue(file) {
+    this.queue.remove(file);
+  }
+}
+
+export function isValidFileType(file, accept) {
+  if (!accept) {
+    return true;
+  }
+
+  let tokens = accept.split(',').map(function (token) {
+    return token.trim().toLowerCase();
+  });
+
+  let validMimeTypes = tokens.filter(function (token) {
+    return !token.startsWith('.');
+  });
+  let type = file.type?.toLowerCase();
+
+  let validExtensions = tokens.filter(function (token) {
+    return token.startsWith('.');
+  });
+
+  let extension = null;
+  if (file.name && /(\.[^.]+)$/.test(file.name)) {
+    extension = file.name.toLowerCase().match(/(\.[^.]+)$/)[1];
+  }
+
+  return (
+    isValidMimeType(type, validMimeTypes) ||
+    isValidExtension(extension, validExtensions)
+  );
+}
+
+function isValidMimeType(type, validMimeTypes = []) {
+  return validMimeTypes.some(function (validType) {
+    if (['audio/*', 'video/*', 'image/*'].includes(validType)) {
+      let genericType = validType.split('/')[0];
+
+      return type.startsWith(genericType);
+    } else {
+      return type === validType;
     }
-  }
+  });
+}
 
-  ////////
-  // Actions
-  ////////
-  @task
-  *upload(file) {
-    if (this.hasValidationErrors(file)) return;
-    let uploadedFile = yield this.uploadFileTask.perform(file);
+function isValidExtension(extension, validExtensions = []) {
+  return validExtensions.includes(extension);
+}
 
-    this.notifyQueueUpdate();
-
-    if (uploadedFile && this.args.onFinishUpload)
-      this.args.onFinishUpload(uploadedFile, this.calculateQueueInfo());
-  }
+function isValidFileSize(fileSize, maximumSize) {
+  return fileSize < maximumSize * Math.pow(1024, 2);
 }
