@@ -27,6 +27,15 @@
 
 
 
+
+## v1.6.0 (2022-09-05)
+
+#### :rocket: Enhancement
+* [#316](https://github.com/appuniversum/ember-appuniversum/pull/316) Panel component ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.5.0 (2022-08-31)
 
 #### :rocket: Enhancement
