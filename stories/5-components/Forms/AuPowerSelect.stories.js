@@ -16,11 +16,7 @@ const singleselects = [
   'Oprichting autonoom bedrijf',
   'Oprichting districtbestuur',
 ];
-const multipleselects = [
-  'bar',
-  'baz',
-  'foo'
-];
+const multipleselects = ['bar', 'baz', 'foo'];
 
 export default {
   title: 'Components/Forms/EmberPowerSelect',
@@ -97,7 +93,6 @@ PowerSelect.args = {
   selected: 'Budget',
   onChange: '{{fn (mut this.selected)}}',
 };
-
 
 export const PowerSelectMultiple = TemplateMultiple.bind({});
 PowerSelectMultiple.args = {
