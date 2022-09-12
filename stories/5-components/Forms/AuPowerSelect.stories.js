@@ -16,6 +16,11 @@ const singleselects = [
   'Oprichting autonoom bedrijf',
   'Oprichting districtbestuur',
 ];
+const multipleselects = [
+  'bar',
+  'baz',
+  'foo'
+];
 
 export default {
   title: 'Components/Forms/EmberPowerSelect',
@@ -27,6 +32,7 @@ export default {
     loadingMessage: { control: 'text', description: '' },
     noMatchesMessage: { control: 'text', description: '' },
     searchMessage: { control: 'text', description: '' },
+    placeholder: { control: 'text', description: '' },
     options: { control: 'object', description: '' },
     selected: { control: 'text', description: '' },
     onChange: { control: 'function', description: '' },
@@ -55,8 +61,30 @@ const Template = (args) => ({
   context: args,
 });
 
-export const Component = Template.bind({});
-Component.args = {
+const TemplateMultiple = (args) => ({
+  template: hbs`
+    <PowerSelectMultiple
+      @allowClear={{this.allowClear}}
+      @renderInPlace={{this.renderInPlace}}
+      @disabled={{this.disabled}}
+      @searchEnabled={{this.searchEnabled}}
+      @loadingMessage={{this.loadingMessage}}
+      @noMatchesMessage={{this.noMatchesMessage}}
+      @searchMessage={{this.searchMessage}}
+      @options={{this.options}}
+      @selected={{ this.selected }}
+      @placeholder={{ this.placeholder }}
+      @onChange={{fn (mut this.selected)}}
+      as |multipleselect|
+    >
+      {{multipleselect}}
+    </PowerSelectMultiple>
+  `,
+  context: args,
+});
+
+export const PowerSelect = Template.bind({});
+PowerSelect.args = {
   allowClear: true,
   renderInPlace: false,
   disabled: '',
@@ -64,7 +92,24 @@ Component.args = {
   loadingMessage: 'Aan het laden...',
   noMatchesMessage: 'Geen resultaten',
   searchMessage: 'Typ om te zoeken',
+  placeholder: 'Selecteer waardes',
   options: singleselects,
   selected: 'Budget',
-  onChange: '{{fn (mut this.singleselect)}}',
+  onChange: '{{fn (mut this.selected)}}',
+};
+
+
+export const PowerSelectMultiple = TemplateMultiple.bind({});
+PowerSelectMultiple.args = {
+  allowClear: true,
+  renderInPlace: false,
+  disabled: true,
+  searchEnabled: true,
+  loadingMessage: 'Aan het laden...',
+  noMatchesMessage: 'Geen resultaten',
+  searchMessage: 'Typ om te zoeken',
+  placeholder: 'Selecteer waardes',
+  options: multipleselects,
+  selected: '',
+  onChange: '{{fn (mut this.selected)}}',
 };
