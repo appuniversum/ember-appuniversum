@@ -71,9 +71,9 @@ const Template = (args) => ({
   context: args,
 });
 
-export const Component = Template.bind({});
-Component.args = {
-  text: 'Link',
+export const Primary = Template.bind({});
+Primary.args = {
+  text: 'Primary',
   route: 'index',
   skin: 'primary',
   icon: 'login',
@@ -81,4 +81,61 @@ Component.args = {
   hideText: false,
   width: '',
   active: false,
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  text: 'Secondary',
+  route: 'index',
+  skin: 'secondary',
+  icon: 'login',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  active: false,
+};
+Secondary.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+export const PrimaryButton = Template.bind({});
+PrimaryButton.args = {
+  text: 'Primary Button',
+  route: 'index',
+  skin: 'button',
+  icon: 'login',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  active: false,
+};
+
+export const SecondaryButton = Template.bind({});
+SecondaryButton.args = {
+  text: 'Secondary Button',
+  route: 'index',
+  skin: 'button-secondary',
+  icon: 'login',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  active: false,
+};
+SecondaryButton.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+export const NakedButton = Template.bind({});
+NakedButton.args = {
+  text: 'Naked Button',
+  route: 'index',
+  skin: 'button-naked',
+  icon: 'login',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  active: false,
+};
+NakedButton.parameters = {
+  chromatic: { disableSnapshot: true },
 };

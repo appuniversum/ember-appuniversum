@@ -1,24 +1,9 @@
 import { hbs } from 'ember-cli-htmlbars';
-const singleselects = [
-  'Advies bij jaarrekening AGB',
-  'Advies bij jaarrekening eredienstbestuur',
-  'Agenda',
-  'Andere documenten BBC',
-  'Besluit budget AGB',
-  'Besluit meerjarenplan(aanpassing) AGB',
-  'Besluit over budget(wijziging) eredienstbestuur',
-  'Besluit over budget(wijziging) OCMW-vereniging',
-  'Besluitenlijst',
-  'Budget',
-  'Goedkeuringstoezicht Voeren',
-  'Meerjarenplan(aanpassing)',
-  'Notulen',
-  'Oprichting autonoom bedrijf',
-  'Oprichting districtbestuur',
-];
+
+const options = ['foo', 'bar', 'baz'];
 
 export default {
-  title: 'Components/Forms/EmberPowerSelect',
+  title: 'Components/Forms/PowerSelect/MultipleSelect',
   argTypes: {
     allowClear: { control: 'boolean', description: '' },
     renderInPlace: { control: 'boolean', description: '' },
@@ -27,8 +12,9 @@ export default {
     loadingMessage: { control: 'text', description: '' },
     noMatchesMessage: { control: 'text', description: '' },
     searchMessage: { control: 'text', description: '' },
-    options: { control: 'object', description: '' },
-    selected: { control: 'text', description: '' },
+    placeholder: { control: 'text', description: '' },
+    options: { control: 'array', description: '' },
+    selected: { control: { type: null }, description: '' },
     onChange: { control: 'function', description: '' },
   },
   parameters: {
@@ -38,7 +24,7 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <PowerSelect
+    <PowerSelectMultiple
       @allowClear={{this.allowClear}}
       @renderInPlace={{this.renderInPlace}}
       @disabled={{this.disabled}}
@@ -47,24 +33,33 @@ const Template = (args) => ({
       @noMatchesMessage={{this.noMatchesMessage}}
       @searchMessage={{this.searchMessage}}
       @options={{this.options}}
-      @selected={{this.selected}}
+      @selected={{ this.selected }}
+      @placeholder={{ this.placeholder }}
       @onChange={{fn (mut this.selected)}}
-      as |singleselect|>
-      {{singleselect}}
-    </PowerSelect>`,
+      as |multipleselect|
+    >
+      {{multipleselect}}
+    </PowerSelectMultiple>
+  `,
   context: args,
 });
 
-export const Component = Template.bind({});
-Component.args = {
+export const Default = Template.bind({});
+Default.args = {
   allowClear: true,
   renderInPlace: false,
-  disabled: '',
+  disabled: false,
   searchEnabled: true,
   loadingMessage: 'Aan het laden...',
   noMatchesMessage: 'Geen resultaten',
   searchMessage: 'Typ om te zoeken',
-  options: singleselects,
-  selected: 'Budget',
-  onChange: '{{fn (mut this.singleselect)}}',
+  placeholder: 'Selecteer waardes',
+  options: options,
+  selected: [options[0], options[1]],
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  ...Default.args,
+  disabled: true,
 };

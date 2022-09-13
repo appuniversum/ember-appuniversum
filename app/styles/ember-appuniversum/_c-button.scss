@@ -32,6 +32,8 @@ $au-button-link-active-color                    : var(--au-gray-900) !default;
 $au-button-alert-color                          : var(--au-white) !default;
 $au-button-alert-contrast-color                 : var(--au-red-600) !default;
 $au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
+$au-button-icon-only-width                      : $au-button-height  !default;
+$au-button-icon-only-width-large                : $au-button-height-large  !default;
 
 
 
@@ -41,7 +43,6 @@ $au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
 
 .au-c-button {
   @include au-font-size($au-button-font-size, $au-button-height - $au-button-border * 2);
-  cursor: default;
   font-family: var(--au-font);
   font-weight: var(--au-regular);
   cursor: pointer;
@@ -50,6 +51,7 @@ $au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
   text-align: center;
   appearance: none;
   display: inline-flex;
+  gap: $au-unit-tiny;
   align-items: center;
   padding: 0 $au-unit-small; // Visually center the text in the button
   border-radius: $au-button-border-radius;
@@ -419,6 +421,24 @@ $au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
 .au-c-button--tertiary.is-active {
   color: $au-button-link-active-color;
   font-weight: var(--au-medium);
+}
+
+.au-c-button--icon-only {
+  padding: 0 calc((#{$au-button-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)) / 2); // calculate padding automatically to create square icon-only buttons
+
+  .au-c-icon {
+    width: var(--au-icon-size-medium);
+    height: var(--au-icon-size-medium);
+  }
+}
+
+.au-c-button--icon-only.au-c-button--large {
+  padding: 0 calc((#{$au-button-icon-only-width-large - ($au-button-border * 2)} - var(--au-icon-size-large)) / 2); // calculate padding automatically to create square icon-only buttons
+
+  .au-c-icon {
+    width: var(--au-icon-size-large);
+    height: var(--au-icon-size-large);
+  }
 }
 
 /* Animations

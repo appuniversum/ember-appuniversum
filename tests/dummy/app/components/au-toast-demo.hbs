@@ -1,0 +1,65 @@
+<AuContent>
+  <AuHeading @level="1" @skin="4">
+    Toaster service
+  </AuHeading>
+  <p>Add <AuPill>{{'<AuToaster />'}}</AuPill> to your main template.</p>
+
+  <div class="au-o-flow au-o-flow--tiny">
+    <AuHeading @level="2" @skin="5">
+      Triggering a toast.
+    </AuHeading>
+    <p>You can trigger a toast by calling the service: <AuPill>{{"this.toaster.notify('Message','Title',{ icon: check, timeOut: 5000, closable: true });"}}</AuPill></p>
+
+    <AuHeading @level="3" @skin="6">
+      Options
+    </AuHeading>
+    <ul>
+      <li><AuPill>icon</AuPill>: Override the default icon (defaults are set for each type)</li>
+      <li><AuPill>timeOut</AuPill>: Add a timeout to the toast (default: none)</li>
+      <li><AuPill>closable</AuPill>: Make the item closable (default: true)</li>
+    </ul>
+  </div>
+
+  <div class="au-o-flow au-o-flow--tiny">
+    <AuHeading @level="2" @skin="5">
+      Types
+    </AuHeading>
+    <p class="au-u-margin-bottom-small">Notify: <AuPill>{{"this.toaster.notify('Message','Notify');"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerToast}}>Trigger notify toast</AuButton>
+
+    <AuHr/>
+
+    <p class="au-u-margin-bottom-small">Success: <AuPill>{{"this.toaster.success('Message','Success');"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerSuccessToast}}>Trigger success toast</AuButton>
+
+    <AuHr/>
+
+    <p class="au-u-margin-bottom-small">Loading: <AuPill>{{"this.toaster.warning('Message','Warning');"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerWarningToast}}>Trigger warning toast</AuButton>
+
+    <AuHr/>
+
+     <p class="au-u-margin-bottom-small">Error: <AuPill>{{"this.toaster.error('Message','Error');"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerErrorToast}}>Trigger error toast</AuButton>
+
+    <AuHr/>
+
+    <p class="au-u-margin-bottom-small">Loading: <AuPill>{{"this.toaster.loading('Message','Loading');"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerLoadingToast}}>Trigger loading toast</AuButton>
+  </div>
+
+  <div class="au-o-flow au-o-flow--tiny">
+    <AuHeading @level="2" @skin="5">
+      TimeOut
+    </AuHeading>
+    <p class="au-u-margin-bottom-small">TimeOut: <AuPill>{{"this.toaster.notify('Message','Timeout',{ timeOut: 3000, closable: false });"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerTimeoutToast}}>Trigger toast with a timeout</AuButton>
+  </div>
+
+</AuContent>
