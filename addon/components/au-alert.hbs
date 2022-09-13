@@ -5,18 +5,18 @@
     data-test-alert
     ...attributes
   >
-    {{#if this.icon}}
+    {{#if @icon}}
       <div
         class="au-c-alert__icon"
         aria-hidden={{if @iconVisible "false" "true"}}
         data-test-alert-icon
       >
-        <AuIcon @icon={{this.icon}} />
+        <AuIcon @icon={{@icon}} />
       </div>
     {{/if}}
     <div class="au-c-alert__content">
-      {{#if this.title}}
-        <p class="au-c-alert__title" data-test-alert-title>{{this.title}}</p>
+      {{#if @title}}
+        <p class="au-c-alert__title" data-test-alert-title>{{@title}}</p>
       {{/if}}
       <div class="au-c-alert__message" data-test-alert-message>{{yield}}</div>
     </div>

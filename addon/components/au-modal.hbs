@@ -28,7 +28,7 @@
           {{#if (has-block "title")}}
             {{yield to="title"}}
           {{else}}
-            {{this.title}}
+            {{@title}}
           {{/if}}
         </h1>
         <button
