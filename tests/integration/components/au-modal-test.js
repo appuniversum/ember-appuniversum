@@ -126,7 +126,7 @@ module('Integration | Component | au-modal', function (hooks) {
 
     let closeButton = document.querySelector(MODAL.CLOSE);
     await click(closeButton);
-    assert.equal(timesCalled, 1);
+    assert.strictEqual(timesCalled, 1);
   });
 
   test('it calls @closeModal when the `escape` button is pressed', async function (assert) {
@@ -149,17 +149,17 @@ module('Integration | Component | au-modal', function (hooks) {
     `);
 
     await triggerKeyEvent(document, 'keydown', 'Escape');
-    assert.equal(timesCalled, 1);
+    assert.strictEqual(timesCalled, 1);
 
     await triggerKeyEvent(document, 'keydown', 'Escape');
-    assert.equal(
+    assert.strictEqual(
       timesCalled,
       2,
       'it calls the action as long as the modal stays open'
     );
 
     await triggerKeyEvent(document, 'keydown', 'Escape');
-    assert.equal(
+    assert.strictEqual(
       timesCalled,
       2,
       "it doesn't call the @closeModal action if the modal is closed"
@@ -181,7 +181,7 @@ module('Integration | Component | au-modal', function (hooks) {
 
     let backdrop = document.querySelector(MODAL.BACKDROP);
     await click(backdrop);
-    assert.equal(timesCalled, 1);
+    assert.strictEqual(timesCalled, 1);
   });
 
   test("it doesn't close the modal when an option in an embedded power-select is clicked", async function (assert) {
@@ -210,7 +210,7 @@ module('Integration | Component | au-modal', function (hooks) {
 
     await selectChoose('[data-test-select]', 'bar');
 
-    assert.equal(timesCalled, 0);
+    assert.strictEqual(timesCalled, 0);
   });
 
   test('it calls @onClose only once when the component is rendered conditionally', async function (assert) {
@@ -231,6 +231,6 @@ module('Integration | Component | au-modal', function (hooks) {
 
     let closeButton = document.querySelector(MODAL.CLOSE);
     await click(closeButton);
-    assert.equal(timesCalled, 1);
+    assert.strictEqual(timesCalled, 1);
   });
 });

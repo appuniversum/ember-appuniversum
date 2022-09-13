@@ -42,4 +42,4 @@
 * `npm start`
 * Visit the storybook application at [http://localhost:6006](http://localhost:4200).
 
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+For more information on using ember-cli, visit [https://cli.emberjs.com/release/](https://cli.emberjs.com/release/).
