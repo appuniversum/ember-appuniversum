@@ -28,6 +28,18 @@
 
 
 
+
+## v1.6.1 (2022-09-13)
+
+#### :bug: Bug Fix
+* [#320](https://github.com/appuniversum/ember-appuniversum/pull/320) Fix power select multiple disabled state, #318 ([@Dietr](https://github.com/Dietr))
+* [#319](https://github.com/appuniversum/ember-appuniversum/pull/319) Spacing issue (icon + text) link component with button skin ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 3
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.6.0 (2022-09-05)
 
 #### :rocket: Enhancement
