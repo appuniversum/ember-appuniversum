@@ -14,8 +14,7 @@ const Template = (args) => ({
         <div class="au-c-app-chrome">
           <AuToolbar @size="small" class="au-u-padding-bottom-none" as |Group|>
             <Group>
-              <AuLink @route="docs.templates.app-editor" @skin="secondary">
-                <AuIcon @icon="arrow-left" @alignment="left" />
+              <AuLink @route="docs.templates.app-editor" @skin="secondary" @icon="arrow-left">
                 Terug naar overzicht agendapunten
               </AuLink>
               <span class="au-c-app-chrome__entity">Title</span>
@@ -33,8 +32,7 @@ const Template = (args) => ({
           <AuToolbar @size="small" class="au-u-padding-top-none" as |Group|>
             <Group>
               <div>
-                <AuPill @skin="warning">
-                  <AuIcon @icon="alert-triangle" @alignment="left" />
+                <AuPill @skin="warning" @icon="alert-triangle">
                   Concept niet bewaard
                 </AuPill>
               </div>

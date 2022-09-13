@@ -21,8 +21,7 @@ const Template = (args) => ({
         <Group>
           <ul class="au-c-list-horizontal au-c-list-horizontal--small">
             <li class="au-c-list-horizontal__item">
-              <AuLink @linkRoute="index">
-                <AuIcon @icon="arrow-left" @alignment="left" />
+              <AuLink @linkRoute="index" @icon="arrow-left">
                 Overzicht modules
               </AuLink>
             </li>

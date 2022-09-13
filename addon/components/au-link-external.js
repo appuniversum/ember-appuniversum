@@ -18,4 +18,9 @@ export default class AuLinkExternal extends Component {
     if (this.args.width == 'block') return 'au-c-link--block';
     else return '';
   }
+
+  get iconAlignment() {
+    if (this.args.iconAlignment) return this.args.iconAlignment;
+    else return 'left';
+  }
 }

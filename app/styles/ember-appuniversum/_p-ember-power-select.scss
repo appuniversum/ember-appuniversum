@@ -286,11 +286,12 @@ $ember-power-select-multiple-option-line-height: 1.45;
   color: var(--au-gray-700);
   background-color: var(--au-gray-200);
   border: .1rem solid var(--au-gray-300);
-  padding: 0 $au-unit-tiny 0 0;
+  padding: 0 $au-unit-tiny 0 $au-unit-tiny;
   border-radius: $au-unit-tiny;
   margin-right: $au-unit-tiny;
   margin-top: $au-unit-tiny * .5;
   margin-bottom: $au-unit-tiny * .5;
+  gap: $au-unit-tiny;
 }
 
 .ember-power-select-multiple-remove-btn {
@@ -303,9 +304,9 @@ $ember-power-select-multiple-option-line-height: 1.45;
   color: transparent;
   background-color: var(--au-gray-200);
   transition: color var(--au-transition);
-  margin-right: $au-unit-tiny;
   padding-right: $au-unit-tiny;
   padding-left: $au-unit-tiny;
+  margin-left: -$au-unit-tiny;
   border-right: .1rem dotted var(--au-gray-300);
   border-top-left-radius: var(--au-radius);
   border-bottom-left-radius: var(--au-radius);
