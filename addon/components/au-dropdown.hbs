@@ -1,4 +1,5 @@
 <div class="au-c-dropdown" ...attributes>
+  {{#if this.dropdownOpen}}
   <AuButton
     @skin={{this.skin}}
     @size={{@size}}
@@ -8,12 +9,28 @@
     @alert={{@alert}}
     aria-haspopup="true"
     aria-expanded="{{if this.dropdownOpen "true" "false"}}" type="button"
-    {{on "click" this.toggleDropdown}}>
+    {{on "click" this.closeDropdown}} data-test-dropdown-button>
     <span class="au-c-dropdown__name" data-test-dropdown-title>
       {{this.title}}
     </span>
   </AuButton>
-  <div id="{{this.id}}" class="au-c-dropdown__menu {{this.alignment}} {{if this.dropdownOpen "is-visible" ""}}" role="menu" tabindex="-1" {{focus-trap isActive=this.dropdownOpen shouldSelfFocus=true focusTrapOptions=(hash onDeactivate=this.toggleDropdown clickOutsideDeactivates=true)}} {{on "click" this.toggleDropdown}}>
+  {{else}}
+  <AuButton
+    @skin={{this.skin}}
+    @size={{@size}}
+    @icon={{this.icon}}
+    @iconAlignment={{this.iconAlignment}}
+    @hideText={{@hideText}}
+    @alert={{@alert}}
+    aria-haspopup="true"
+    aria-expanded="{{if this.dropdownOpen "true" "false"}}" type="button"
+    {{on "click" this.openDropdown}} data-test-dropdown-button>
+    <span class="au-c-dropdown__name" data-test-dropdown-title>
+      {{this.title}}
+    </span>
+  </AuButton>
+  {{/if}}
+  <div id="{{this.id}}" class="au-c-dropdown__menu {{this.alignment}} {{if this.dropdownOpen "is-visible" ""}}" role="menu" tabindex="-1" {{focus-trap isActive=this.dropdownOpen shouldSelfFocus=true focusTrapOptions=(hash onDeactivate=this.closeDropdown clickOutsideDeactivates=true)}} {{on "click" this.closeDropdown}}>
     {{yield}}
   </div>
 </div>
