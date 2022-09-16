@@ -8,18 +8,17 @@ module('Integration | Component | au-dropdown', function (hooks) {
 
   test('it renders', async function (assert) {
     await render(hbs`
-      <AuDropdown @title="foo" @buttonLabel="bar">
+      <AuDropdown @title="foo">
         <button type="button" data-test-button>baz</button>
       </AuDropdown>
     `);
 
     assert.dom('[data-test-dropdown-title]').hasText('foo');
-    assert.dom('[data-test-dropdown-button-label]').hasText('bar');
   });
 
   test('it toggles the visibility of its content when clicking the dropdown button', async function (assert) {
     await render(hbs`
-      <AuDropdown @title="foo" @buttonLabel="bar">
+      <AuDropdown @title="foo">
         <button type="button" data-test-button>baz</button>
       </AuDropdown>
     `);

@@ -5,13 +5,6 @@
 /* Variables
    ========================================================================== */
 
-$au-dropdown-color             : var(--au-blue-700) !default;
-$au-dropdown-hover-color       : var(--au-blue-900) !default;
-$au-dropdown-active-color      : var(--au-blue-700) !default;
-$au-dropdown-visited-color     : var(--au-blue-900) !default;
-$au-dropdown-active-color      : var(--au-blue-900) !default;
-$au-dropdown-underline         : var(--au-blue-700) !default;
-$au-dropdown-underline-hover   : var(--au-blue-300) !default;
 $au-dropdown-caret-size        : .4rem !default;
 
 /* Component
@@ -22,40 +15,10 @@ $au-dropdown-caret-size        : .4rem !default;
   display: inline-block;
 }
 
-.au-c-dropdown__toggle {
-  @include au-font-size(var(--au-base),1.2);
-  font-weight: var(--au-regular);
-  color: $au-dropdown-color;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: $au-unit-tiny;
-  border-radius: var(--au-radius);
-
-  &:focus-within {
-    outline: var(--au-outline);
-  }
-
-  &,
-  &:visited {
-    color: $au-dropdown-color;
-  }
-
-  &:hover,
-  &:focus,
-  &:focus-within {
-    color: $au-dropdown-hover-color;
-    background-color: var(--au-gray-100);
-  }
-
-  &:focus,
-  &:focus-within {
-    outline: var(--au-outline);
-  }
-
-  .au-c-dropdown--left & {
-    flex-direction: row-reverse;
-  }
+.au-c-dropdown > .au-c-button--naked {
+  padding: 0 $au-unit-tiny*.5;
+  height: auto;
+  line-height: 1.5;
 }
 
 .au-c-dropdown__name {
@@ -75,41 +38,6 @@ $au-dropdown-caret-size        : .4rem !default;
   }
 }
 
-.au-c-dropdown__button {
-  @include au-font-size(var(--au-base),1);
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin-left: $au-unit-tiny;
-  display: inline-flex;
-  align-items: center;
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  &,
-  &:visited,
-  &:hover,
-  &:focus {
-    color: inherit;
-  }
-
-  &:focus {
-    outline: 0;
-  }
-
-  .au-c-dropdown--left & {
-    margin-left: 0;
-    margin-right: $au-unit-tiny;
-  }
-}
-
 .au-c-dropdown__menu {
   @include au-font-size(var(--au-base),1.5);
   font-family: var(--au-font);
@@ -124,7 +52,7 @@ $au-dropdown-caret-size        : .4rem !default;
   transform: translateX(-50%);
   min-width: 100%;
   width: auto;
-  top: $au-unit + $au-unit-tiny;
+  top: calc(100% + #{$au-unit-tiny});
   box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
   border-radius: var(--au-radius);
   display: none;
@@ -162,34 +90,44 @@ $au-dropdown-caret-size        : .4rem !default;
   }
 
   // Modify the menu position
-  .au-c-dropdown--left &,
-  .au-c-dropdown--right & {
+  &.au-c-dropdown__menu--left,
+  &.au-c-dropdown__menu--right {
     transform: none;
-    text-align: left;
   }
 
-  .au-c-dropdown--left & {
+  &.au-c-dropdown__menu--left {
     left: 0;
   }
 
-  .au-c-dropdown--right & {
+  &.au-c-dropdown__menu--right {
     left: auto;
     right: 0;
   }
 
-  .au-c-dropdown--left &:before,
-  .au-c-dropdown--left &:after {
-    left: $au-unit-tiny + $au-dropdown-caret-size;
+  &.au-c-dropdown__menu--left:after {
+    left: $au-unit-small;
   }
 
-  .au-c-dropdown--right &:before,
-  .au-c-dropdown--right &:after {
-    left: calc(100% - #{$au-unit-small + $au-dropdown-caret-size*.5});
+  &.au-c-dropdown__menu--right:after {
+    right: $au-unit-small + $au-unit-tiny;
+    left: auto;
+  }
+
+  .au-c-button--naked + &.au-c-dropdown__menu--left:after {
+    left: $au-unit-tiny;
+  }
+
+  .au-c-button--naked + &.au-c-dropdown__menu--right:after {
+    right: $au-unit-tiny;
   }
 }
 
+.au-c-dropdown__menu > .au-c-hr {
+  margin: 0;
+}
+
 .au-c-dropdown__menu [role="menuitem"] {
-  padding: $au-unit-small;
+  padding: $au-unit-tiny;
   height: auto;
   overflow: hidden;
   text-decoration: none;
@@ -213,11 +151,13 @@ $au-dropdown-caret-size        : .4rem !default;
 
   &:focus,
   &.active:focus {
-    outline: var(--au-outline);
     outline-offset: var(--au-outline-offset-negative);
   }
 }
 
-.au-c-dropdown__menu [role="menuitem"] + [role="menuitem"] {
-  border-top: 1px dotted var(--au-gray-300);
+.au-c-dropdown__menu > [role="menuitem"] + [role="menuitem"],
+.au-c-dropdown__menu > [role="group"] + [role="group"],
+.au-c-dropdown__menu > [role="group"] + [role="menuitem"],
+.au-c-dropdown__menu > [role="menuitem"] + [role="group"] {
+  border-top: .1rem dotted var(--au-gray-300);
 }

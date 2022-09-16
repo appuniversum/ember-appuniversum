@@ -11,16 +11,15 @@ export default class AuDropdown extends Component {
   // Track dropdown state
   @tracked dropdownOpen = false;
 
-  // Open dropdown
   @action
-  openDropdown() {
+  toggleDropdown() {
     // Toggle dropdown view state
-    if (!this.dropdownOpen) this.dropdownOpen = true;
+    this.dropdownOpen = !this.dropdownOpen;
   }
 
   @action
   closeDropdown() {
-    // Toggle dropdown view state
+    // Close dropdown view state
     if (this.dropdownOpen) this.dropdownOpen = false;
   }
 
@@ -60,7 +59,18 @@ export default class AuDropdown extends Component {
 
       return this.args.dropdownButtonLabel;
     } else if (this.args.buttonLabel) {
-      return this.args.buttonLabel;
+      deprecate(
+        '@dropdownLabel is deprecated',
+        false,
+        {
+          id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
+          until: '2.0.0',
+          for: '@appuniversum/ember-appuniversum',
+          since: {
+            enabled: '1.6.0',
+          },
+        }
+      );
     } else {
       return undefined;
     }
@@ -68,8 +78,26 @@ export default class AuDropdown extends Component {
 
   // Dropdown alignment
   get alignment() {
-    if (this.args.alignment == 'left') return 'au-c-dropdown--left';
-    if (this.args.alignment == 'right') return 'au-c-dropdown--right';
+    if (this.args.alignment == 'left') return 'au-c-dropdown__menu--left';
+    if (this.args.alignment == 'right') return 'au-c-dropdown__menu--right';
     return '';
+  }
+
+  // Set default button skin
+  get skin() {
+    if (this.args.skin) return this.args.skin;
+    else return 'naked';
+  }
+
+  // Set default button icon
+  get icon() {
+    if (this.args.icon) return this.args.icon;
+    else return 'chevron-down';
+  }
+
+  // Set default icon alignment
+  get iconAlignment() {
+    if (this.args.iconAlignment) return this.args.iconAlignment;
+    else return 'right';
   }
 }
