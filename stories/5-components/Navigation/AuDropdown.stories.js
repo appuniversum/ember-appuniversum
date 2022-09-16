@@ -34,7 +34,7 @@ export default {
     alert: {
       control: 'boolean',
       description: 'Adds an alert state to the button',
-    }
+    },
   },
   parameters: {
     layout: 'padded',

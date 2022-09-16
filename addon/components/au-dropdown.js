@@ -59,18 +59,16 @@ export default class AuDropdown extends Component {
 
       return this.args.dropdownButtonLabel;
     } else if (this.args.buttonLabel) {
-      deprecate(
-        '@dropdownLabel is deprecated',
-        false,
-        {
-          id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
-          until: '2.0.0',
-          for: '@appuniversum/ember-appuniversum',
-          since: {
-            enabled: '1.6.0',
-          },
-        }
-      );
+      deprecate('@dropdownLabel is deprecated', false, {
+        id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
+        until: '2.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '1.6.0',
+        },
+      });
+
+      return this.args.buttonLabel;
     } else {
       return undefined;
     }
