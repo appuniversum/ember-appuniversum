@@ -5,23 +5,17 @@ import { tracked } from '@glimmer/tracking';
 import { deprecate } from '@ember/debug';
 
 export default class AuDropdown extends Component {
-  // Create a dropdown ID
   id = 'dropdown-' + guidFor(this);
 
-  // Track dropdown state
   @tracked dropdownOpen = false;
 
-  // Open dropdown
   @action
   openDropdown() {
-    // Open dropdown view state
     if (!this.dropdownOpen) this.dropdownOpen = true;
   }
 
-  // Close dropdown
   @action
   closeDropdown() {
-    // Close dropdown view state
     if (this.dropdownOpen) this.dropdownOpen = false;
   }
 
@@ -61,12 +55,12 @@ export default class AuDropdown extends Component {
 
       return this.args.dropdownButtonLabel;
     } else if (this.args.buttonLabel) {
-      deprecate('@dropdownLabel is deprecated', false, {
+      deprecate('@dropdownLabel is no longer used, use @title instead', false, {
         id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
-        until: '2.0.0',
+        until: '3.0.0',
         for: '@appuniversum/ember-appuniversum',
         since: {
-          enabled: '1.6.0',
+          enabled: '1.7.0',
         },
       });
 
