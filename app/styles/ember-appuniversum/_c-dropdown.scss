@@ -131,6 +131,7 @@ $au-dropdown-caret-size        : .4rem !default;
   height: auto;
   overflow: hidden;
   text-decoration: none;
+  border-radius: 0;
 
   &:first-child {
     border-top-right-radius: var(--au-radius);
