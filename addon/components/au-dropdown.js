@@ -5,18 +5,16 @@ import { tracked } from '@glimmer/tracking';
 import { deprecate } from '@ember/debug';
 
 export default class AuDropdown extends Component {
-  id = 'dropdown-' + guidFor(this);
-
   @tracked dropdownOpen = false;
 
   @action
   openDropdown() {
-    if (!this.dropdownOpen) this.dropdownOpen = true;
+    this.dropdownOpen = true;
   }
 
   @action
   closeDropdown() {
-    if (this.dropdownOpen) this.dropdownOpen = false;
+    this.dropdownOpen = false;
   }
 
   get title() {
