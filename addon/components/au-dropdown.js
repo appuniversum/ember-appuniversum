@@ -16,6 +16,23 @@ export default class AuDropdown extends Component {
     this.dropdownOpen = false;
   }
 
+  @action
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  @action
+  clickOutsideDeactivates(event) {
+    let toggleButton = document.querySelector('[data-au-dropdown-toggle]');
+    let isClosedByToggleButton = toggleButton.contains(event.target);
+
+    if (!isClosedByToggleButton) {
+      this.closeDropdown();
+    }
+
+    return true;
+  }
+
   get title() {
     if (this.args.dropdownTitle) {
       deprecate('@dropdownTitle is deprecated, use @title instead', false, {
