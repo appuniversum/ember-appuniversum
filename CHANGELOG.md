@@ -29,6 +29,16 @@
 
 
 
+
+## v1.7.0 (2022-09-22)
+
+#### :rocket: Enhancement
+* [#323](https://github.com/appuniversum/ember-appuniversum/pull/323) Rework dropdown ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.6.1 (2022-09-13)
 
 #### :bug: Bug Fix
