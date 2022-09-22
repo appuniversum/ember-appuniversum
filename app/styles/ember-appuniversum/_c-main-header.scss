@@ -140,5 +140,5 @@ $au-main-header-divider-rotation      : -19deg !default;
   @include au-font-size(var(--au-base),.7);
   display: flex;
   align-items: center;
-  padding: $au-unit-tiny $au-unit-small ;
+  padding: $au-unit-tiny $au-unit-small;
 }

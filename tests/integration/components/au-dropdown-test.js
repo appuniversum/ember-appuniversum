@@ -8,18 +8,17 @@ module('Integration | Component | au-dropdown', function (hooks) {
 
   test('it renders', async function (assert) {
     await render(hbs`
-      <AuDropdown @title="foo" @buttonLabel="bar">
+      <AuDropdown @title="foo">
         <button type="button" data-test-button>baz</button>
       </AuDropdown>
     `);
 
     assert.dom('[data-test-dropdown-title]').hasText('foo');
-    assert.dom('[data-test-dropdown-button-label]').hasText('bar');
   });
 
   test('it toggles the visibility of its content when clicking the dropdown button', async function (assert) {
     await render(hbs`
-      <AuDropdown @title="foo" @buttonLabel="bar">
+      <AuDropdown @title="foo">
         <button type="button" data-test-button>baz</button>
       </AuDropdown>
     `);
@@ -36,6 +35,28 @@ module('Integration | Component | au-dropdown', function (hooks) {
       .dom('[data-test-button]')
       .isNotVisible(
         'it closes when clicking the button while the dropdown is open'
+      );
+  });
+
+  test('it toggles the visibility of its content when clicking children of the dropdown button', async function (assert) {
+    await render(hbs`
+      <AuDropdown @title="foo">
+        <button type="button" data-test-button>baz</button>
+      </AuDropdown>
+    `);
+
+    assert.dom('[data-test-button]').isNotVisible('it is closed by default');
+
+    await click('[data-test-dropdown-button] *');
+    assert
+      .dom('[data-test-button]')
+      .isVisible('it opens after clicking a child of the button');
+
+    await click('[data-test-dropdown-button] *');
+    assert
+      .dom('[data-test-button]')
+      .isNotVisible(
+        'it closes when clicking a child of the button button while the dropdown is open'
       );
   });
 });

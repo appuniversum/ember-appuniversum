@@ -27,9 +27,9 @@ const Template = (args) => ({
       @homeRoute={{this.homeRoute}}
       @contactRoute={{this.contactRoute}}
     >
-      <AuDropdown @title="Demo dropdown" @buttonLabel="Account settings" @alignment="right">
-        <AuButton @skin="tertiary" role="menuitem">
-          <AuIcon @icon="logout" @alignment="left" />Afmelden
+      <AuDropdown @title="Demo dropdown" @alignment="right">
+        <AuButton @skin="tertiary" @icon="logout" role="menuitem">
+          Afmelden
         </AuButton>
       </AuDropdown>
     </AuMainHeader>`,
