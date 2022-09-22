@@ -139,7 +139,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-secondary-hover-color;
     background-color: transparent;
@@ -161,7 +161,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-secondary-hover-color;
     background-color: transparent;
@@ -170,7 +170,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     color: var(--au-gray-700);
     background-color: transparent;
@@ -179,7 +179,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-loading,
   &.is-loading:hover,
-  &.is-loading:focus {
+  &.is-loading:focus-visible {
     color: var(--au-gray-700);
     background-color: transparent;
     border-color: transparent;
@@ -204,7 +204,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-link-hover-color;
     background-color: transparent;
@@ -216,7 +216,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     color: var(--au-gray-700);
     background-color: transparent;
@@ -250,7 +250,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-link-secondary-hover-color;
     background-color: transparent;
@@ -262,7 +262,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     color: var(--au-gray-700);
     background-color: transparent;
@@ -303,7 +303,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
     }
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: $au-button-alert-contrast-hover-color;
@@ -311,7 +311,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-disabled,
     &.is-disabled:hover,
-    &.is-disabled:focus,
+    &.is-disabled:focus-visible,
     &.is-disabled:active {
       color: var(--au-gray-700);
       background-color: var(--au-gray-300);
@@ -336,7 +336,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
     }
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
@@ -344,7 +344,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-disabled,
     &.is-disabled:hover,
-    &.is-disabled:focus,
+    &.is-disabled:focus-visible,
     &.is-disabled:active {
       color: var(--au-gray-700);
       background-color: transparent;
@@ -353,7 +353,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-loading,
     &.is-loading:hover,
-    &.is-loading:focus {
+    &.is-loading:focus-visible {
       color: var(--au-gray-700);
       background-color: transparent;
       border-color: transparent;
@@ -373,7 +373,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
     }
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
@@ -382,7 +382,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-disabled,
     &.is-disabled:hover,
-    &.is-disabled:focus,
+    &.is-disabled:focus-visible,
     &.is-disabled:active {
       color: var(--au-gray-700);
       background-color: transparent;
@@ -391,7 +391,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-loading,
     &.is-loading:hover,
-    &.is-loading:focus {
+    &.is-loading:focus-visible {
       color: var(--au-gray-700);
       background-color: transparent;
       border-color: transparent;

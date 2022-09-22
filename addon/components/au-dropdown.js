@@ -1,27 +1,36 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
-import { guidFor } from '@ember/object/internals';
 import { tracked } from '@glimmer/tracking';
 import { deprecate } from '@ember/debug';
 
 export default class AuDropdown extends Component {
-  // Create a dropdown ID
-  id = 'dropdown-' + guidFor(this);
-
-  // Track dropdown state
   @tracked dropdownOpen = false;
 
-  // Open dropdown
   @action
   openDropdown() {
-    // Toggle dropdown view state
-    if (!this.dropdownOpen) this.dropdownOpen = true;
+    this.dropdownOpen = true;
   }
 
   @action
   closeDropdown() {
-    // Toggle dropdown view state
-    if (this.dropdownOpen) this.dropdownOpen = false;
+    this.dropdownOpen = false;
+  }
+
+  @action
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+
+  @action
+  clickOutsideDeactivates(event) {
+    let toggleButton = document.querySelector('[data-au-dropdown-toggle]');
+    let isClosedByToggleButton = toggleButton.contains(event.target);
+
+    if (!isClosedByToggleButton) {
+      this.closeDropdown();
+    }
+
+    return true;
   }
 
   get title() {
@@ -60,6 +69,15 @@ export default class AuDropdown extends Component {
 
       return this.args.dropdownButtonLabel;
     } else if (this.args.buttonLabel) {
+      deprecate('@dropdownLabel is no longer used, use @title instead', false, {
+        id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
+        until: '3.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '1.7.0',
+        },
+      });
+
       return this.args.buttonLabel;
     } else {
       return undefined;
@@ -68,8 +86,26 @@ export default class AuDropdown extends Component {
 
   // Dropdown alignment
   get alignment() {
-    if (this.args.alignment == 'left') return 'au-c-dropdown--left';
-    if (this.args.alignment == 'right') return 'au-c-dropdown--right';
+    if (this.args.alignment == 'left') return 'au-c-dropdown__menu--left';
+    if (this.args.alignment == 'right') return 'au-c-dropdown__menu--right';
     return '';
+  }
+
+  // Set default button skin
+  get skin() {
+    if (this.args.skin) return this.args.skin;
+    else return 'naked';
+  }
+
+  // Set default button icon
+  get icon() {
+    if (this.args.icon) return this.args.icon;
+    else return 'chevron-down';
+  }
+
+  // Set default icon alignment
+  get iconAlignment() {
+    if (this.args.iconAlignment) return this.args.iconAlignment;
+    else return 'right';
   }
 }
