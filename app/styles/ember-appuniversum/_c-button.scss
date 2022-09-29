@@ -399,6 +399,13 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 }
 
+// Wrap text inside a button
+.au-c-button--wrap {
+  height: auto;
+  white-space: initial;
+  text-align: left;
+}
+
 // Block button
 .au-c-button--block {
   display: flex;
