@@ -42,6 +42,10 @@ export default class AuModal extends Component {
     else return '';
   }
 
+  get initialFocus() {
+    return this.args.initialFocus ?? '.au-c-modal__title';
+  }
+
   @action
   handleEscapePress() {
     this.closeModal();
