@@ -30,6 +30,17 @@
 
 
 
+
+## v1.8.0 (2022-09-30)
+
+#### :rocket: Enhancement
+* [#325](https://github.com/appuniversum/ember-appuniversum/pull/325) Add wrap property to a button ([@Dietr](https://github.com/Dietr))
+* [#326](https://github.com/appuniversum/ember-appuniversum/pull/326) Add the option to configure the initalFocus of the focus-trap in AuModal ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
 ## v1.7.0 (2022-09-22)
 
 #### :rocket: Enhancement
