@@ -31,6 +31,10 @@ export default {
       options: ['', 'block'],
       description: 'Defines the width of a button',
     },
+    wrap: {
+      control: 'boolean',
+      description: 'Wrap the text inside a button',
+    },
     alert: {
       control: 'boolean',
       description: 'Adds an alert state to the button',
@@ -62,6 +66,7 @@ const Template = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @width={{this.width}}
+      @wrap={{this.wrap}}
       @alert={{this.alert}}
       @disabled={{this.disabled}}
       @loading={{this.loading}}
@@ -81,6 +86,7 @@ Primary.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
+  wrap: '',
   alert: false,
   disabled: false,
   loading: false,
@@ -95,6 +101,7 @@ Secondary.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
+  wrap: '',
   alert: false,
   disabled: false,
   loading: false,
@@ -109,6 +116,7 @@ PrimaryLink.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
+  wrap: '',
   alert: false,
   disabled: false,
   loading: false,
@@ -123,6 +131,7 @@ SecondaryLink.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
+  wrap: '',
   alert: false,
   disabled: false,
   loading: false,
