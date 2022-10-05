@@ -6,11 +6,10 @@ export default class AuButton extends Component {
   constructor() {
     super(...arguments);
 
-    this.skin = SKINS.includes(this.args.skin)
-      ? this.args.skin == 'tertiary' // DEPRECATED
+    this.skin =
+      this.args.skin === 'tertiary' // DEPRECATED
         ? 'link'
-        : this.args.skin
-      : 'primary';
+        : (SKINS.includes(this.args.skin) ? this.args.skin : 'primary'); // eslint-disable-line prettier/prettier
   }
 
   get sizeClass() {
