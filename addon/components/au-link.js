@@ -66,7 +66,8 @@ export default class AuLink extends Component {
 
   get iconOnlyClass() {
     if (this.args.icon && this.args.hideText)
-      if (this.args.skin.startsWith('button')) return 'au-c-button--icon-only';
+      if (this.args.skin && this.args.skin.startsWith('button'))
+        return 'au-c-button--icon-only';
       else return 'au-c-link--icon-only';
     return '';
   }
