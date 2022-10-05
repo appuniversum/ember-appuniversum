@@ -3,13 +3,10 @@ import Component from '@glimmer/component';
 const SKINS = ['primary', 'secondary', 'naked', 'link', 'link-secondary'];
 
 export default class AuButton extends Component {
-  constructor() {
-    super(...arguments);
-
-    this.skin =
-      this.args.skin === 'tertiary' // DEPRECATED
-        ? 'link'
-        : (SKINS.includes(this.args.skin) ? this.args.skin : 'primary'); // eslint-disable-line prettier/prettier
+  get skin() {
+    if (SKINS.includes(this.args.skin)) return this.args.skin;
+    else if (this.args.skin === 'tertiary') return 'link'; // DEPRECATED
+    else return 'primary';
   }
 
   get sizeClass() {
