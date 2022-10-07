@@ -31,6 +31,15 @@
 
 
 
+
+## v1.8.1 (2022-10-07)
+
+#### :bug: Bug Fix
+* [#327](https://github.com/appuniversum/ember-appuniversum/pull/327) Various class issues within button & link component ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
 ## v1.8.0 (2022-09-30)
 
 #### :rocket: Enhancement
