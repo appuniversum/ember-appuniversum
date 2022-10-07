@@ -2,7 +2,7 @@
   @route={{this.route}}
   @models={{au-link-to-models @model @models}}
   @query={{this.queryParams}}
-  class="{{this.skin}} {{this.active}} {{this.width}} {{if @hideText 'au-c-link--icon-only'}}"
+  class="{{this.skinClass}} {{this.activeClass}} {{this.widthClass}} {{this.iconOnlyClass}}"
   ...attributes
 >
   {{#if (and @icon (eq this.iconAlignment "left"))}}
