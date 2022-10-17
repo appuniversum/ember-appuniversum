@@ -92,7 +92,7 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     cursor: not-allowed;
     color: var(--au-gray-700);
@@ -281,13 +281,13 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
 }
 
 // Alert button
-.au-c-button--alert {
+.au-c-button--alert:not([class*="is-"]) {
   color: $au-button-alert-color;
   background-color: $au-button-alert-contrast-color;
   border-color:  $au-button-alert-contrast-color;
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-alert-color;
     background-color: $au-button-alert-contrast-hover-color;
