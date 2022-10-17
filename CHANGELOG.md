@@ -32,6 +32,15 @@
 
 
 
+
+## v1.8.2 (2022-10-17)
+
+#### :bug: Bug Fix
+* [#331](https://github.com/appuniversum/ember-appuniversum/pull/331) Fix focus state on loading buttons ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## v1.8.1 (2022-10-07)
 
 #### :bug: Bug Fix
