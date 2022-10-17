@@ -110,7 +110,7 @@ $au-flex-utilities-responsive: false !default;
 }
 
 .au-u-flex--self-end {
-  align-self: flex-end;
+  align-self: flex-end !important;
 }
 
 .au-u-flex--self-center {
@@ -213,7 +213,7 @@ $au-flex-utilities-responsive: false !default;
         }
 
         .au-u-flex--self-end\@#{$au-bp-name} {
-          align-self: flex-end;
+          align-self: flex-end !important;
         }
 
         .au-u-flex--self-center\@#{$au-bp-name} {
