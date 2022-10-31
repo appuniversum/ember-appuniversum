@@ -106,24 +106,23 @@ $au-flex-utilities-responsive: false !default;
 }
 
 // Child elements alignment
-
-.au-u-flex__self-start {
+.au-u-flex-self-start {
   align-self: flex-start !important;
 }
 
-.au-u-flex__self-end {
+.au-u-flex-self-end {
   align-self: flex-end !important;
 }
 
-.au-u-flex__self-center {
+.au-u-flex-self-center {
   align-self: center !important;
 }
 
-.au-u-flex__self-baseline {
+.au-u-flex-self-baseline {
   align-self: baseline !important;
 }
 
-.au-u-flex__self-stretch {
+.au-u-flex-self-stretch {
   align-self: stretch !important;
 }
 
@@ -210,23 +209,23 @@ $au-flex-utilities-responsive: false !default;
           align-items: baseline !important;
         }
 
-        .au-u-flex__self-start\@#{$au-bp-name} {
+        .au-u-flex-self-start\@#{$au-bp-name} {
           align-self: flex-start !important;
         }
 
-        .au-u-flex__self-end\@#{$au-bp-name} {
+        .au-u-flex-self-end\@#{$au-bp-name} {
           align-self: flex-end !important;
         }
 
-        .au-u-flex__self-center\@#{$au-bp-name} {
+        .au-u-flex-self-center\@#{$au-bp-name} {
           align-self: center !important;
         }
 
-        .au-u-flex__self-baseline\@#{$au-bp-name} {
+        .au-u-flex-self-baseline\@#{$au-bp-name} {
           align-self: baseline !important;
         }
 
-        .au-u-flex__self-stretch\@#{$au-bp-name} {
+        .au-u-flex-self-stretch\@#{$au-bp-name} {
           align-self: stretch !important;
         }
       }
