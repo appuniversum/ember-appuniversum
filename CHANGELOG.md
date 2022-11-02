@@ -33,6 +33,16 @@
 
 
 
+
+## v1.9.0 (2022-11-02)
+
+#### :rocket: Enhancement
+* [#338](https://github.com/appuniversum/ember-appuniversum/pull/338) Update ember-inputmask5 to v4 ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.8.2 (2022-10-17)
 
 #### :bug: Bug Fix
