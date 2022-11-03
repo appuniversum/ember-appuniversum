@@ -50,6 +50,7 @@
   ],
   "dependencies": {
     "@duetds/date-picker": "^1.4.0",
+    "@embroider/macros": "^1.9.0",
     "@glimmer/component": "^1.1.1",
     "@glimmer/tracking": "^1.1.1",
     "@zestia/ember-auto-focus": "^4.2.0",

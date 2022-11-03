@@ -19,6 +19,10 @@ module.exports = function (defaults) {
           '@duetds/date-picker/dist/loader/index.cjs',
       },
     },
+    '@appuniversum/ember-appuniversum': {
+      dutchDatePickerLocalization:
+        process.env.DATE_PICKER_EN_LOCALIZATION === 'true' ? false : true,
+    },
   });
 
   /*
