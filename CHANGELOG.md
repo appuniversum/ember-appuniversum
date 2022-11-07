@@ -23,6 +23,131 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+## v1.9.0 (2022-11-02)
+
+#### :rocket: Enhancement
+* [#338](https://github.com/appuniversum/ember-appuniversum/pull/338) Update ember-inputmask5 to v4 ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+## v1.8.2 (2022-10-17)
+
+#### :bug: Bug Fix
+* [#331](https://github.com/appuniversum/ember-appuniversum/pull/331) Fix focus state on loading buttons ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+## v1.8.1 (2022-10-07)
+
+#### :bug: Bug Fix
+* [#327](https://github.com/appuniversum/ember-appuniversum/pull/327) Various class issues within button & link component ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
+## v1.8.0 (2022-09-30)
+
+#### :rocket: Enhancement
+* [#325](https://github.com/appuniversum/ember-appuniversum/pull/325) Add wrap property to a button ([@Dietr](https://github.com/Dietr))
+* [#326](https://github.com/appuniversum/ember-appuniversum/pull/326) Add the option to configure the initalFocus of the focus-trap in AuModal ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
+## v1.7.0 (2022-09-22)
+
+#### :rocket: Enhancement
+* [#323](https://github.com/appuniversum/ember-appuniversum/pull/323) Rework dropdown ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+## v1.6.1 (2022-09-13)
+
+#### :bug: Bug Fix
+* [#320](https://github.com/appuniversum/ember-appuniversum/pull/320) Fix power select multiple disabled state, #318 ([@Dietr](https://github.com/Dietr))
+* [#319](https://github.com/appuniversum/ember-appuniversum/pull/319) Spacing issue (icon + text) link component with button skin ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 3
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+## v1.6.0 (2022-09-05)
+
+#### :rocket: Enhancement
+* [#316](https://github.com/appuniversum/ember-appuniversum/pull/316) Panel component ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+## v1.5.0 (2022-08-31)
+
+#### :rocket: Enhancement
+* [#313](https://github.com/appuniversum/ember-appuniversum/pull/313) Various small improvements to button component ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
+## v1.4.1 (2022-08-26)
+
+#### :bug: Bug Fix
+* [#315](https://github.com/appuniversum/ember-appuniversum/pull/315) Revert flex behaviour on AuBodyContainer component ([@Dietr](https://github.com/Dietr))
+
+#### :memo: Documentation
+* [#312](https://github.com/appuniversum/ember-appuniversum/pull/312) Document button placement and best practices ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+## v1.4.0 (2022-08-23)
+
+#### :rocket: Enhancement
+* [#307](https://github.com/appuniversum/ember-appuniversum/pull/307) Add support for ember-power-select v6 ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#311](https://github.com/appuniversum/ember-appuniversum/pull/311) Fix App container bug and improve sidebar ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+## v1.3.0 (2022-08-09)
+
+#### :rocket: Enhancement
+* [#300](https://github.com/appuniversum/ember-appuniversum/pull/300) Toast/notification system ([@Dietr](https://github.com/Dietr))
+* [#298](https://github.com/appuniversum/ember-appuniversum/pull/298) Add loadingMessage argument to button component ([@Dietr](https://github.com/Dietr))
+* [#295](https://github.com/appuniversum/ember-appuniversum/pull/295) Merge appuniversum styles and documentation ([@Dietr](https://github.com/Dietr))
+* [#293](https://github.com/appuniversum/ember-appuniversum/pull/293) Add modal overflow property ([@Dietr](https://github.com/Dietr))
+* [#287](https://github.com/appuniversum/ember-appuniversum/pull/287) Rework loader, Closes [#286](https://github.com/appuniversum/ember-appuniversum/issues/286) ([@Dietr](https://github.com/Dietr))
+
+#### :bug: Bug Fix
+* [#303](https://github.com/appuniversum/ember-appuniversum/pull/303) Fix `AuAlert` deprecations in the `AuFileUpload` component ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#299](https://github.com/appuniversum/ember-appuniversum/pull/299) Update ember-data-table to v2.1.0 ([@Windvis](https://github.com/Windvis))
+* [#288](https://github.com/appuniversum/ember-appuniversum/pull/288) Use global divider variable ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v1.2.1 (2022-06-10)
 
 #### :bug: Bug Fix
