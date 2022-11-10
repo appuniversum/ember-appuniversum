@@ -48,7 +48,6 @@ const Template = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @width={{this.width}}
-      @active={{this.active}}
     >
       {{this.text}}
     </AuLinkExternal>`,
@@ -65,7 +64,6 @@ Primary.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
-  active: false,
 };
 
 export const Secondary = Template.bind({});
@@ -78,7 +76,6 @@ Secondary.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
-  active: false,
 };
 Secondary.parameters = {
   chromatic: { disableSnapshot: true },
@@ -94,7 +91,6 @@ PrimaryButton.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
-  active: false,
 };
 
 export const SecondaryButton = Template.bind({});
@@ -107,7 +103,6 @@ SecondaryButton.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
-  active: false,
 };
 SecondaryButton.parameters = {
   chromatic: { disableSnapshot: true },
@@ -123,7 +118,6 @@ NakedButton.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
-  active: false,
 };
 NakedButton.parameters = {
   chromatic: { disableSnapshot: true },

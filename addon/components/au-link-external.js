@@ -24,11 +24,6 @@ export default class AuLinkExternal extends Component {
     else return '';
   }
 
-  get activeClass() {
-    if (this.args.active) return 'is-active';
-    else return '';
-  }
-
   get iconAlignment() {
     if (this.args.iconAlignment) return this.args.iconAlignment;
     else return 'left';
