@@ -77,9 +77,6 @@ Secondary.args = {
   hideText: false,
   width: '',
 };
-Secondary.parameters = {
-  chromatic: { disableSnapshot: true },
-};
 
 export const PrimaryButton = Template.bind({});
 PrimaryButton.args = {
@@ -104,9 +101,6 @@ SecondaryButton.args = {
   hideText: false,
   width: '',
 };
-SecondaryButton.parameters = {
-  chromatic: { disableSnapshot: true },
-};
 
 export const NakedButton = Template.bind({});
 NakedButton.args = {
@@ -118,7 +112,4 @@ NakedButton.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
-};
-NakedButton.parameters = {
-  chromatic: { disableSnapshot: true },
 };
