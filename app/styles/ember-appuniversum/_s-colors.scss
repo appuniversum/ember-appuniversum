@@ -6,7 +6,7 @@
 // ---
 // Makes a color lighter
 @function tint($color, $percent) {
-  @return mix(#fff, $color, $percent);
+  @return mix(#fff, $color, $percent * 1%);
 }
 
 // Makes a color darker
