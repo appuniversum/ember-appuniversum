@@ -34,6 +34,25 @@
 
 
 
+
+## v1.10.0 (2022-11-16)
+
+#### :rocket: Enhancement
+* [#343](https://github.com/appuniversum/ember-appuniversum/pull/343) Resolve a Sass deprecation triggered by the `color.mix()` function ([@abeforgit](https://github.com/abeforgit))
+* [#332](https://github.com/appuniversum/ember-appuniversum/pull/332) Feature/expand flex utilities ([@Dietr](https://github.com/Dietr))
+* [#340](https://github.com/appuniversum/ember-appuniversum/pull/340) Addition of button skins for external link component ([@brenner-company](https://github.com/brenner-company))
+* [#209](https://github.com/appuniversum/ember-appuniversum/pull/209) Add an option to localize the `AuDatePicker` component in Dutch ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#341](https://github.com/appuniversum/ember-appuniversum/pull/341) Use Github Actions to publish to npm ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 4
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v1.9.0 (2022-11-02)
 
 #### :rocket: Enhancement
