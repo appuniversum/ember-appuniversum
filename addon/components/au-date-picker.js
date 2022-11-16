@@ -1,71 +1,57 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { assert, runInDebug } from '@ember/debug';
+import { assert, deprecate, runInDebug } from '@ember/debug';
 import { guidFor } from '@ember/object/internals';
+import { getOwnConfig, macroCondition } from '@embroider/macros';
 import formatISO from 'date-fns/formatISO';
+import { formatDate } from '@appuniversum/ember-appuniversum/utils/date';
 
 const DEFAULT_ADAPTER = {
   parse: function (value = '', createDate) {
-    const matches = value.match(/^(\d{1,2})-(\d{1,2})-(\d{4})$/);
+    let dateRegex = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
+
+    const matches = value.match(dateRegex);
     if (matches) {
       return createDate(matches[3], matches[2], matches[1]);
     }
   },
-  format: function (date) {
-    return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-  },
+  format: formatDate,
 };
 
 const DEFAULT_LOCALIZATION = {
-  buttonLabel: 'Choose date',
-  placeholder: 'DD-MM-YYYY',
-  selectedDateMessage: 'Selected date is',
-  prevMonthLabel: 'Previous month',
-  nextMonthLabel: 'Next month',
-  monthSelectLabel: 'Month',
-  yearSelectLabel: 'Year',
-  closeLabel: 'Close window',
-  keyboardInstruction: 'You can use arrow keys to navigate dates',
-  calendarHeading: 'Choose a date',
-  dayNames: [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ],
-  monthNames: [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ],
-  monthNamesShort: [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ],
+  dayNames: getLocalizedDays(),
+  monthNames: getLocalizedMonths(),
+  monthNamesShort: getLocalizedMonths('short'),
 };
+
+if (macroCondition(getOwnConfig().dutchDatePickerLocalization)) {
+  Object.assign(DEFAULT_LOCALIZATION, {
+    buttonLabel: 'Kies een datum',
+    placeholder: 'DD-MM-JJJJ',
+    selectedDateMessage: 'De geselecteerde datum is',
+    prevMonthLabel: 'Vorige maand',
+    nextMonthLabel: 'Volgende maand',
+    monthSelectLabel: 'Maand',
+    yearSelectLabel: 'Jaar',
+    closeLabel: 'Sluit venster',
+    keyboardInstruction: 'Gebruik de pijltjestoetsen om te navigeren',
+    calendarHeading: 'Kies een datum',
+  });
+} else {
+  Object.assign(DEFAULT_LOCALIZATION, {
+    buttonLabel: 'Choose date',
+    placeholder: 'DD-MM-YYYY',
+    selectedDateMessage: 'Selected date is',
+    prevMonthLabel: 'Previous month',
+    nextMonthLabel: 'Next month',
+    monthSelectLabel: 'Month',
+    yearSelectLabel: 'Year',
+    closeLabel: 'Close window',
+    keyboardInstruction: 'You can use arrow keys to navigate dates',
+    calendarHeading: 'Choose a date',
+  });
+}
 
 export default class AuDatePickerComponent extends Component {
   @asIsoDate value;
@@ -76,6 +62,35 @@ export default class AuDatePickerComponent extends Component {
   constructor() {
     super(...arguments);
     this.registerDuetDatePicker();
+
+    let isNewImplementation = macroCondition(
+      getOwnConfig().dutchDatePickerLocalization
+    )
+      ? true
+      : false;
+
+    deprecate(
+      `[AuDatePicker] The English localization is deprecated. You should explicitly enable the Dutch localization by adding a build-time flag to your ember-cli-build.js file:
+
+      \`\`\`
+      // ember-cli-build.js
+      '@appuniversum/ember-appuniversum': {
+        dutchDatePickerLocalization: true,
+      },
+      \`\`\`
+
+      Note: This only changes the default localization of the component. You can still provide custom @adapter and @localization arguments if needed.
+      `,
+      isNewImplementation,
+      {
+        id: '@appuniversum/ember-appuniversum.au-date-picker.english-localization',
+        until: '3.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '1.9.0',
+        },
+      }
+    );
   }
 
   get adapter() {
@@ -207,4 +222,29 @@ function isIsoDateString(isoDate) {
 
 function isValidDate(date) {
   return !isNaN(date);
+}
+
+function getLocalizedMonths(monthFormat = 'long') {
+  let someYear = 2021;
+  return [...Array(12).keys()].map((monthIndex) => {
+    let date = new Date(someYear, monthIndex);
+    return intl({ month: monthFormat }).format(date);
+  });
+}
+
+function getLocalizedDays(weekdayFormat = 'long') {
+  let someSunday = new Date('2021-01-03');
+  return [...Array(7).keys()].map((index) => {
+    let weekday = new Date(someSunday.getTime());
+    weekday.setDate(someSunday.getDate() + index);
+    return intl({ weekday: weekdayFormat }).format(weekday);
+  });
+}
+
+function intl(options) {
+  let locale = macroCondition(getOwnConfig().dutchDatePickerLocalization)
+    ? 'nl-BE'
+    : 'en';
+
+  return new Intl.DateTimeFormat(locale, options);
 }

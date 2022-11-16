@@ -8,7 +8,13 @@ export default {
     href: { control: 'text', description: '' },
     skin: {
       control: 'select',
-      options: ['primary', 'secondary'],
+      options: [
+        'primary',
+        'secondary',
+        'button',
+        'button-secondary',
+        'button-naked',
+      ],
       description: 'Defines the style of the link',
     },
     icon: { control: 'select', options: icons, description: 'Adds an icon' },
@@ -42,15 +48,14 @@ const Template = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @width={{this.width}}
-      @active={{this.active}}
     >
       {{this.text}}
     </AuLinkExternal>`,
   context: args,
 });
 
-export const Component = Template.bind({});
-Component.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   text: 'External link',
   href: 'https://www.vlaanderen.be/',
   route: 'index',
@@ -59,5 +64,52 @@ Component.args = {
   iconAlignment: 'left',
   hideText: false,
   width: '',
-  active: false,
+};
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  text: 'External link',
+  href: 'https://www.vlaanderen.be/',
+  route: 'index',
+  skin: 'secondary',
+  icon: 'manual',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+};
+
+export const PrimaryButton = Template.bind({});
+PrimaryButton.args = {
+  text: 'External link',
+  href: 'https://www.vlaanderen.be/',
+  route: 'index',
+  skin: 'button',
+  icon: 'manual',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+};
+
+export const SecondaryButton = Template.bind({});
+SecondaryButton.args = {
+  text: 'External link',
+  href: 'https://www.vlaanderen.be/',
+  route: 'index',
+  skin: 'button-secondary',
+  icon: 'manual',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+};
+
+export const NakedButton = Template.bind({});
+NakedButton.args = {
+  text: 'External link',
+  href: 'https://www.vlaanderen.be/',
+  route: 'index',
+  skin: 'button-naked',
+  icon: 'manual',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
 };

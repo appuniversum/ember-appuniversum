@@ -7,6 +7,11 @@ module.exports = {
       // This is needed for dynamic imports to work: https://github.com/ef4/ember-auto-import#installing-ember-auto-import-in-an-addon
       plugins: [require.resolve('ember-auto-import/babel-plugin')],
     },
+    '@embroider/macros': {
+      setOwnConfig: {
+        dutchDatePickerLocalization: false,
+      },
+    },
   },
 
   included: function (app) {
@@ -15,6 +20,13 @@ module.exports = {
     app.options.sassOptions = app.options.sassOptions || {};
     app.options.sassOptions.includePaths =
       app.options.sassOptions.includePaths || [];
+
+    let addonOptions = app.options[this.name];
+    if (addonOptions && addonOptions.dutchDatePickerLocalization) {
+      this.options[
+        '@embroider/macros'
+      ].setOwnConfig.dutchDatePickerLocalization = true;
+    }
   },
 
   contentFor: function (type) {

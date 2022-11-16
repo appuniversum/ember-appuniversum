@@ -41,6 +41,10 @@ export default {
       description:
         'If set to true the modal container and content will be have visible overflow. Useful when using a powerselect component inside a modal.',
     },
+    initialFocus: {
+      control: 'text',
+      description: 'Element which should be focused when opening the modal',
+    },
   },
   parameters: {
     layout: 'fullscreen',
@@ -75,11 +79,13 @@ const OverflowTemplate = (args) => ({
       @size={{this.size}}
       @padding={{this.padding}}
       @overflow={{this.overflow}}
+      @initialFocus='.power-select'
     >
       <:title>{{this.title}}</:title>
       <:body>
         <AuLabel>Power select (rendered in place)</AuLabel>
         <PowerSelect
+          class='power-select'
           @allowClear={{true}}
           @searchEnabled={{true}}
           @loadingMessage='Aan het laden...'
@@ -119,4 +125,5 @@ Overflow.args = {
   padding: 'default',
   overflow: true,
   powerselectoptions: singleselects,
+  initialFocus: '.power-select',
 };

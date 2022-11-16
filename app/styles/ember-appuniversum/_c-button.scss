@@ -34,6 +34,7 @@ $au-button-alert-contrast-color                 : var(--au-red-600) !default;
 $au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
 $au-button-icon-only-width                      : $au-button-height  !default;
 $au-button-icon-only-width-large                : $au-button-height-large  !default;
+$au-button-link-icon-only-width                 : $au-button-link-height  !default;
 
 
 
@@ -91,7 +92,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     cursor: not-allowed;
     color: var(--au-gray-700);
@@ -139,7 +140,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-secondary-hover-color;
     background-color: transparent;
@@ -161,7 +162,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-secondary-hover-color;
     background-color: transparent;
@@ -170,7 +171,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     color: var(--au-gray-700);
     background-color: transparent;
@@ -179,7 +180,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-loading,
   &.is-loading:hover,
-  &.is-loading:focus {
+  &.is-loading:focus-visible {
     color: var(--au-gray-700);
     background-color: transparent;
     border-color: transparent;
@@ -204,7 +205,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-link-hover-color;
     background-color: transparent;
@@ -216,7 +217,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     color: var(--au-gray-700);
     background-color: transparent;
@@ -250,7 +251,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
   }
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-link-secondary-hover-color;
     background-color: transparent;
@@ -262,7 +263,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
   &.is-disabled,
   &.is-disabled:hover,
-  &.is-disabled:focus,
+  &.is-disabled:focus-visible,
   &.is-disabled:active {
     color: var(--au-gray-700);
     background-color: transparent;
@@ -280,13 +281,13 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 }
 
 // Alert button
-.au-c-button--alert {
+.au-c-button--alert:not([class*="is-"]) {
   color: $au-button-alert-color;
   background-color: $au-button-alert-contrast-color;
   border-color:  $au-button-alert-contrast-color;
 
   &:hover,
-  &:focus,
+  &:focus-visible,
   &:active {
     color: $au-button-alert-color;
     background-color: $au-button-alert-contrast-hover-color;
@@ -303,7 +304,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
     }
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: $au-button-alert-contrast-hover-color;
@@ -311,7 +312,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-disabled,
     &.is-disabled:hover,
-    &.is-disabled:focus,
+    &.is-disabled:focus-visible,
     &.is-disabled:active {
       color: var(--au-gray-700);
       background-color: var(--au-gray-300);
@@ -336,7 +337,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
     }
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
@@ -344,7 +345,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-disabled,
     &.is-disabled:hover,
-    &.is-disabled:focus,
+    &.is-disabled:focus-visible,
     &.is-disabled:active {
       color: var(--au-gray-700);
       background-color: transparent;
@@ -353,7 +354,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-loading,
     &.is-loading:hover,
-    &.is-loading:focus {
+    &.is-loading:focus-visible {
       color: var(--au-gray-700);
       background-color: transparent;
       border-color: transparent;
@@ -373,7 +374,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
     }
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
       color: $au-button-alert-contrast-hover-color;
       border-color: transparent;
@@ -382,7 +383,7 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-disabled,
     &.is-disabled:hover,
-    &.is-disabled:focus,
+    &.is-disabled:focus-visible,
     &.is-disabled:active {
       color: var(--au-gray-700);
       background-color: transparent;
@@ -391,12 +392,19 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
     &.is-loading,
     &.is-loading:hover,
-    &.is-loading:focus {
+    &.is-loading:focus-visible {
       color: var(--au-gray-700);
       background-color: transparent;
       border-color: transparent;
     }
   }
+}
+
+// Wrap text inside a button
+.au-c-button--wrap {
+  height: auto;
+  white-space: initial;
+  text-align: left;
 }
 
 // Block button
@@ -425,6 +433,11 @@ $au-button-icon-only-width-large                : $au-button-height-large  !defa
 
 .au-c-button--icon-only {
   padding: 0 calc((#{$au-button-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)) / 2); // calculate padding automatically to create square icon-only buttons
+
+  &.au-c-button--link,
+  &.au-c-button--tertiary {
+    padding: 0 calc((#{$au-button-link-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)) / 2);
+  }
 
   .au-c-icon {
     width: var(--au-icon-size-medium);

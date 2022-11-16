@@ -1,25 +1,35 @@
-<div class="au-c-dropdown {{this.alignment}}" ...attributes>
-  <div class="au-c-dropdown__toggle">
-    <div class="au-c-dropdown__name" data-test-dropdown-title>
+<div class="au-c-dropdown" ...attributes>
+  <AuButton
+    @skin={{this.skin}}
+    @size={{@size}}
+    @icon={{this.icon}}
+    @iconAlignment={{this.iconAlignment}}
+    @hideText={{@hideText}}
+    @alert={{@alert}}
+    aria-haspopup="true"
+    aria-expanded="{{if this.dropdownOpen 'true' 'false'}}"
+    type="button"
+    {{on "click" this.toggleDropdown}}
+    data-test-dropdown-button
+    data-au-dropdown-toggle
+  >
+    <span class="au-c-dropdown__name" data-test-dropdown-title>
       {{@title}}
-    </div>
-    {{#if this.dropdownOpen}}
-    <button class="au-c-dropdown__button" aria-haspopup="true" aria-expanded="{{if this.dropdownOpen "true" "false"}}" type="button" {{on "click" this.closeDropdown}} data-test-dropdown-button>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="au-c-icon" aria-hidden="true">
-        <path d="M32.8714921,25.9083684 L36.2265981,29.3383369 L22,43.8823727 L7.77340188,29.3383369 L11.1285079,25.9083684 L22,37.0224358 L32.8714921,25.9083684 Z M22,-0.117627267 L36.2265981,14.4264086 L32.8714921,17.8563771 L22,6.74230965 L11.1285079,17.8563771 L7.77340188,14.4264086 L22,-0.117627267 Z"/>
-      </svg>
-      <span class="au-u-hidden-visually" data-test-dropdown-button-label>{{@buttonLabel}}</span>
-    </button>
-    {{else}}
-    <button class="au-c-dropdown__button" aria-haspopup="true" aria-expanded="{{if this.dropdownOpen "true" "false"}}" type="button" {{on "click" this.openDropdown}} data-test-dropdown-button>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="au-c-icon" aria-hidden="true">
-        <path d="M32.8714921,25.9083684 L36.2265981,29.3383369 L22,43.8823727 L7.77340188,29.3383369 L11.1285079,25.9083684 L22,37.0224358 L32.8714921,25.9083684 Z M22,-0.117627267 L36.2265981,14.4264086 L32.8714921,17.8563771 L22,6.74230965 L11.1285079,17.8563771 L7.77340188,14.4264086 L22,-0.117627267 Z"/>
-      </svg>
-      <span class="au-u-hidden-visually" data-test-dropdown-button-label>{{@buttonLabel}}</span>
-    </button>
-    {{/if}}
-  </div>
-  <div id="{{this.id}}" class="au-c-dropdown__menu {{if this.dropdownOpen "is-visible" ""}}" role="menu" tabindex="-1" {{focus-trap isActive=this.dropdownOpen shouldSelfFocus=true focusTrapOptions=(hash onDeactivate=this.closeDropdown clickOutsideDeactivates=true)}} {{on "click" this.closeDropdown}}>
+    </span>
+  </AuButton>
+  <div
+    class="au-c-dropdown__menu {{this.alignment}} {{if this.dropdownOpen 'is-visible'}}"
+    role="menu"
+    tabindex="-1"
+    {{focus-trap
+      isActive=this.dropdownOpen
+      shouldSelfFocus=true
+      focusTrapOptions=(hash
+        clickOutsideDeactivates=this.clickOutsideDeactivates
+      )
+    }}
+    {{on "click" this.closeDropdown}}
+  >
     {{yield}}
   </div>
 </div>
