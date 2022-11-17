@@ -1,4 +1,20 @@
 
+
+## v2.0.0 (2022-11-17)
+
+#### :boom: Breaking Change
+* [#322](https://github.com/appuniversum/ember-appuniversum/pull/322) Remove all deprecations targeting the v2 release ([@Windvis](https://github.com/Windvis))
+* [#302](https://github.com/appuniversum/ember-appuniversum/pull/302) ember-file-upload v5+ update ([@Windvis](https://github.com/Windvis))
+* [#306](https://github.com/appuniversum/ember-appuniversum/pull/306) Remove support for Ember 3.20 and 3.24  ([@Windvis](https://github.com/Windvis))
+* [#305](https://github.com/appuniversum/ember-appuniversum/pull/305) Drop node 12 support ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#304](https://github.com/appuniversum/ember-appuniversum/pull/304) Update to Ember 4.4 LTS ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v1.10.0 (2022-11-16)
 
 #### :rocket: Enhancement
