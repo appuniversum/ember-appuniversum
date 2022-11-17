@@ -31,7 +31,7 @@ export default class AuFloatingUiModifier extends Modifier {
 
     const defaultOptions = {
       floater: {
-        offset: 0,
+        offset: 6,
       },
       arrow: {
         offset: 4,
@@ -79,7 +79,7 @@ export default class AuFloatingUiModifier extends Modifier {
         floatingElement,
         {
           middleware: [
-            offset(6),
+            offset(options.floater.offset),
             flip(),
             ...middleware,
             hide({ strategy: 'referenceHidden' }),
@@ -99,7 +99,7 @@ export default class AuFloatingUiModifier extends Modifier {
       });
 
       if (middlewareData.arrow) {
-        const { x, y } = middlewareData.arrow;
+        const { x } = middlewareData.arrow;
         const [side, alignment] = placement.split('-');
         const isAligned = alignment != null;
 
