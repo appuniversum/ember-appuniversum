@@ -51,6 +51,46 @@
   .innerZoomElementWrapper > div > div > div {
     min-height: 300px !important;
   }
+
+  .sb-decorator-example-scroller {
+    position: absolute;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-content: center;
+    overflow: auto;
+    border: solid .1rem rgba(0,0,0,.05);
+    border-right: none;
+    border-bottom: none
+  }
+
+  .sb-decorator-example-scroller-spacer {
+    width: 250%;
+    height: 250%;
+    display: grid;
+    place-content: center;
+  }
+
+  .sb-story-example-floater {
+    background-color: var(--au-gray-1000);
+    border-radius: var(--au-radius);
+  }
+
+  .sb-story-example-floater-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 4px 4px;
+    border-color: transparent transparent var(--au-gray-1000) transparent;
+  }
+
+  .sb-story-example-floater-content {
+    padding: .8rem 1.2rem;
+    color: var(--au-white);
+  }
 </style>
 
 <div id="ember-appuniversum-wormhole"></div>
