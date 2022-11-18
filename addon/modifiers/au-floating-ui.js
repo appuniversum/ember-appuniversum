@@ -81,13 +81,13 @@ export default class AuFloatingUiModifier extends Modifier {
           middleware: [
             offset(options.floater.offset),
             flip(),
-            ...middleware,
-            hide({ strategy: 'referenceHidden' }),
-            hide({ strategy: 'escaped' }),
             arrow({
               element: arrowElement,
               padding: options.arrow.padding,
             }),
+            ...middleware,
+            hide({ strategy: 'referenceHidden' }),
+            hide({ strategy: 'escaped' }),
           ],
           placement: defaultPlacement,
         }
