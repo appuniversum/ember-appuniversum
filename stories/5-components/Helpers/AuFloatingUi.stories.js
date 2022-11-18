@@ -18,6 +18,12 @@ export default {
     options: {
       control: 'object',
       description: 'Set general options of the floater & arrow',
+      defaultValue: {},
+    },
+    middleware: {
+      control: 'object',
+      description: 'Set specific floating-ui options',
+      defaultValue: [],
     },
   },
   parameters: {
