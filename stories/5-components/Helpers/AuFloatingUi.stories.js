@@ -28,32 +28,30 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-  <div class="sb-decorator-example-scroller" data-example-scroller>
-    <div class="sb-decorator-example-scroller-spacer">
-      <AuFloatingUi @defaultPlacement={{this.defaultPlacement}} @options={{this.options}} as |floatingUI|>
-        <AuButton
-          {{floatingUI.reference}}
-          @skin="primary"
-          @text="Reference"
-        >
-          Reference
-        </AuButton>
+  <AuExampleScroller>
+    <AuFloatingUi @defaultPlacement={{this.defaultPlacement}} @options={{this.options}} as |floatingUI|>
+      <AuButton
+        {{floatingUI.reference}}
+        @skin="primary"
+        @text="Reference"
+      >
+        Reference
+      </AuButton>
+      <div
+        {{floatingUI.floater}}
+        class="au-d-example-floater"
+      >
         <div
-          {{floatingUI.floater}}
-          class="sb-story-example-floater"
-        >
-          <div
-            {{floatingUI.arrow}}
-            class="sb-story-example-floater-arrow"
-          ></div>
-          <div class="sb-story-example-floater-content">
-            <strong>Floater</strong><br/>
-            Lorem ipsum dolor sit amet
-          </div>
+          {{floatingUI.arrow}}
+          class="au-d-example-floater-arrow"
+        ></div>
+        <div class="au-d-example-floater-content">
+          <strong>Floater</strong><br/>
+          Lorem ipsum dolor sit amet
         </div>
-      </AuFloatingUi>
-    </div>
-  </div>`,
+      </div>
+    </AuFloatingUi>
+  </AuExampleScroller>`,
   context: args,
 });
 

@@ -1,0 +1,20 @@
+.au-d-example-scroller {
+  position: absolute;
+  width: calc(100% - 4rem);
+  height: calc(100% - 4rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  place-content: center;
+  overflow: auto;
+  border: solid .1rem rgba(0,0,0,.05);
+  border-right: none;
+  border-bottom: none
+}
+
+.au-d-example-scroller-spacer {
+  width: 250%;
+  height: 250%;
+  display: grid;
+  place-content: center;
+}
