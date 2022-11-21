@@ -23,6 +23,11 @@ module.exports = function (defaults) {
       dutchDatePickerLocalization:
         process.env.DATE_PICKER_EN_LOCALIZATION === 'true' ? false : true,
     },
+    fingerprint: {
+      // Disable fingerprinting for now until this ember-cli-storybook issue is resolved:
+      // https://github.com/storybookjs/ember-cli-storybook/issues/158
+      enabled: false,
+    },
   });
 
   /*
