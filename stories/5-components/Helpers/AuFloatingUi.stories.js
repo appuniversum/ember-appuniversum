@@ -30,7 +30,7 @@ const Template = (args) => ({
   template: hbs`
   <div class="sb-decorator-example-scroller" data-example-scroller>
     <div class="sb-decorator-example-scroller-spacer">
-      <AuFloatingUi @defaultPlacement={{this.defaultPlacement}} as |floatingUI|>
+      <AuFloatingUi @defaultPlacement={{this.defaultPlacement}} @options={{this.options}} as |floatingUI|>
         <AuButton
           {{floatingUI.reference}}
           @skin="primary"
