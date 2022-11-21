@@ -17,7 +17,7 @@ export default class AuFloatingUiModifier extends Modifier {
   modify(
     floatingElement,
     [_referenceElement, _arrowElement],
-    { defaultPlacement = 'bottom-start', options = {}, middleware = [] }
+    { defaultPlacement = 'bottom-start', options = {} }
   ) {
     const referenceElement =
       typeof _referenceElement === 'string'
@@ -62,33 +62,34 @@ export default class AuFloatingUiModifier extends Modifier {
         defaultPlacement.startsWith('top')
     );
 
-    assert(
-      `AuFloatingUI (modifier): @middleware must be an array of one or more objects.`,
-      Array.isArray(middleware)
-    );
-
     Object.assign(floatingElement.style, {
       position: 'fixed',
       top: '0',
       left: '0',
     });
 
+    let middleware = [
+      offset(options.floater.offset),
+      flip(),
+      hide({ strategy: 'referenceHidden' }),
+      hide({ strategy: 'escaped' }),
+    ];
+
+    if (arrowElement) {
+      middleware.push(
+        arrow({
+          element: arrowElement,
+          padding: options.arrow.padding,
+        })
+      );
+    }
+
     let update = async () => {
       let { x, y, placement, middlewareData } = await computePosition(
         referenceElement,
         floatingElement,
         {
-          middleware: [
-            offset(options.floater.offset),
-            flip(),
-            arrow({
-              element: arrowElement,
-              padding: options.arrow.padding,
-            }),
-            ...middleware,
-            hide({ strategy: 'referenceHidden' }),
-            hide({ strategy: 'escaped' }),
-          ],
+          middleware,
           placement: defaultPlacement,
         }
       );
