@@ -6,10 +6,16 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Modifier | au-floating-ui', function (hooks) {
   setupRenderingTest(hooks);
 
-  // Replace this with your real tests.
   test('it renders', async function (assert) {
-    await render(hbs`<div {{au-floating-ui}}></div>`);
+    await render(hbs`
+      <button id="reference">Reference</button>
+      <div data-floater {{au-floating-ui "#reference"}}>Floater</div>
+    `);
 
-    assert.ok(true);
+    assert.dom('[data-floater]').hasStyle({
+      position: 'fixed',
+      top: '0px',
+      left: '0px',
+    });
   });
 });

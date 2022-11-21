@@ -7,20 +7,20 @@ module('Integration | Component | au-floating-ui', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<AuFloatingUi />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
     await render(hbs`
-      <AuFloatingUi>
-        template block text
+      <AuFloatingUi as |floatingUI|>
+        <button {{floatingUI.reference}}>Reference</button>
+        <div data-floater {{floatingUI.floater}}>
+          <div {{floatingUI.arrow}}></div>
+          Floater
+        </div>
       </AuFloatingUi>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('[data-floater]').hasStyle({
+      position: 'fixed',
+      top: '0px',
+      left: '0px',
+    });
   });
 });
