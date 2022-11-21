@@ -19,6 +19,16 @@ module('Integration | Component | au-control-checkbox', function (hooks) {
     assert.dom().hasText('foo');
   });
 
+  test('it can show block content', async function (assert) {
+    await render(hbs`<AuControlCheckbox>bar</AuControlCheckbox>`);
+    assert.dom().hasText('bar');
+  });
+
+  test('it will give preference to show block content against a label', async function (assert) {
+    await render(hbs`<AuControlCheckbox @label="foo">bar</AuControlCheckbox>`);
+    assert.dom().hasText('bar');
+  });
+
   test('it can be disabled', async function (assert) {
     this.disabled = true;
 
