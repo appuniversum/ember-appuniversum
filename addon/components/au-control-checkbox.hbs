@@ -13,5 +13,9 @@
     ...attributes
   />
   <span class="au-c-control__indicator"></span>
-  {{@label}}
+  {{#if (has-block)}}
+    {{yield}}
+  {{else}}
+    {{@label}}
+  {{/if}}
 </label>
