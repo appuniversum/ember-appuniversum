@@ -116,6 +116,8 @@ export const icons = [
   'signinghub',
   'sitemap',
   'strikethrough',
+  'subscript',
+  'superscript',
   'switch',
   'synchronize',
   'table-column-end-add',
