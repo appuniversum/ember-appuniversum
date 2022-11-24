@@ -1,5 +1,14 @@
 
 
+
+## v2.1.0 (2022-11-22)
+
+#### :rocket: Enhancement
+* [#345](https://github.com/appuniversum/ember-appuniversum/pull/345) Addition of support for block content within checkbox component ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
 ## v2.0.0 (2022-11-17)
 
 #### :boom: Breaking Change
