@@ -120,6 +120,8 @@ export default class AuIconList extends Component {
     { name: 'signinghub' },
     { name: 'sitemap' },
     { name: 'strikethrough' },
+    { name: 'subscript' },
+    { name: 'superscript' },
     { name: 'switch' },
     { name: 'synchronize' },
     { name: 'table-column-end-add' },
