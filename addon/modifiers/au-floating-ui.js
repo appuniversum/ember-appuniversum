@@ -147,7 +147,7 @@ export default class AuFloatingUiModifier extends Modifier {
         }
 
         Object.assign(arrowElement.style, {
-          [mainSide]: `-${options.arrow.offset}px`,
+          [mainSide]: `${-options.arrow.offset}px`,
         });
       }
     };
