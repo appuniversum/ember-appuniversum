@@ -52,9 +52,9 @@ export default class AuDropdown extends Component {
 
   // Dropdown alignment
   get alignment() {
-    if (this.args.alignment == 'left') return 'au-c-dropdown__menu--left';
-    if (this.args.alignment == 'right') return 'au-c-dropdown__menu--right';
-    return '';
+    if (this.args.alignment == 'left') return 'bottom-start';
+    if (this.args.alignment == 'right') return 'bottom-end';
+    return 'bottom';
   }
 
   // Set default button skin
@@ -73,5 +73,14 @@ export default class AuDropdown extends Component {
   get iconAlignment() {
     if (this.args.iconAlignment) return this.args.iconAlignment;
     else return 'right';
+  }
+
+  // Set options for the floatingUi component
+  get floatingUiOptions() {
+    return {
+      arrow: {
+        offset: 0,
+      },
+    };
   }
 }

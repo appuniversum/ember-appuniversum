@@ -1,35 +1,44 @@
 <div class="au-c-dropdown" ...attributes>
-  <AuButton
-    @skin={{this.skin}}
-    @size={{@size}}
-    @icon={{this.icon}}
-    @iconAlignment={{this.iconAlignment}}
-    @hideText={{@hideText}}
-    @alert={{@alert}}
-    aria-haspopup="true"
-    aria-expanded="{{if this.dropdownOpen 'true' 'false'}}"
-    type="button"
-    {{on "click" this.toggleDropdown}}
-    data-test-dropdown-button
-    data-au-dropdown-toggle
-  >
-    <span class="au-c-dropdown__name" data-test-dropdown-title>
-      {{@title}}
-    </span>
-  </AuButton>
-  <div
-    class="au-c-dropdown__menu {{this.alignment}} {{if this.dropdownOpen 'is-visible'}}"
-    role="menu"
-    tabindex="-1"
-    {{focus-trap
-      isActive=this.dropdownOpen
-      shouldSelfFocus=true
-      focusTrapOptions=(hash
-        clickOutsideDeactivates=this.clickOutsideDeactivates
-      )
-    }}
-    {{on "click" this.closeDropdown}}
-  >
-    {{yield}}
-  </div>
+  <AuFloatingUi @defaultPlacement={{this.alignment}} @options={{this.floatingUiOptions}} as |floatingUI|>
+    <AuButton
+      {{floatingUI.reference}}
+      @skin={{this.skin}}
+      @size={{@size}}
+      @icon={{this.icon}}
+      @iconAlignment={{this.iconAlignment}}
+      @hideText={{@hideText}}
+      @alert={{@alert}}
+      aria-haspopup="true"
+      aria-expanded="{{if this.dropdownOpen 'true' 'false'}}"
+      type="button"
+      {{on "click" this.toggleDropdown}}
+      data-test-dropdown-button
+      data-au-dropdown-toggle
+    >
+      <span class="au-c-dropdown__name" data-test-dropdown-title>
+        {{@title}}
+      </span>
+    </AuButton>
+    <div
+      {{floatingUI.floater}}
+      class="au-c-dropdown__floater {{if this.dropdownOpen 'is-visible'}}"
+    >
+      <div {{floatingUI.arrow}} class="au-c-dropdown__arrow"></div>
+      <div
+        {{focus-trap
+          isActive=this.dropdownOpen
+          shouldSelfFocus=true
+          focusTrapOptions=(hash
+            clickOutsideDeactivates=this.clickOutsideDeactivates
+          )
+        }}
+        {{on "click" this.closeDropdown}}
+        class="au-c-dropdown__menu"
+        role="menu"
+        tabindex="-1"
+      >
+        {{yield}}
+      </div>
+    </div>
+  </AuFloatingUi>
 </div>
