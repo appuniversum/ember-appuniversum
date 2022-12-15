@@ -1,6 +1,5 @@
-import Modifier from 'ember-modifier';
+import { modifier } from 'ember-modifier';
 import { assert } from '@ember/debug';
-import { registerDestructor } from '@ember/destroyable';
 
 import {
   autoUpdate,
@@ -13,12 +12,12 @@ import {
 
 import { merge } from 'merge-anything';
 
-export default class AuFloatingUiModifier extends Modifier {
-  modify(
+export default modifier(
+  (
     floatingElement,
     [_referenceElement, _arrowElement],
     { defaultPlacement = 'bottom-start', options = {} }
-  ) {
+  ) => {
     const referenceElement =
       typeof _referenceElement === 'string'
         ? document.querySelector(_referenceElement)
@@ -154,6 +153,9 @@ export default class AuFloatingUiModifier extends Modifier {
 
     let cleanup = autoUpdate(referenceElement, floatingElement, update);
 
-    registerDestructor(this, cleanup);
-  }
-}
+    return () => {
+      cleanup();
+    };
+  },
+  { eager: false }
+);
