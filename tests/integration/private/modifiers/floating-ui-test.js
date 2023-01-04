@@ -3,18 +3,17 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | au-floating-ui', function (hooks) {
+import FloatingUiModifier from '@appuniversum/ember-appuniversum/private/modifiers/floating-ui';
+
+module('Integration | Private Modifier | floating-ui', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
+    this.set('floatingUi', FloatingUiModifier);
+
     await render(hbs`
-      <AuFloatingUi as |floatingUI|>
-        <button {{floatingUI.reference}}>Reference</button>
-        <div data-floater {{floatingUI.floater}}>
-          <div {{floatingUI.arrow}}></div>
-          Floater
-        </div>
-      </AuFloatingUi>
+      <button id="reference">Reference</button>
+      <div data-floater {{this.floatingUi "#reference"}}>Floater</div>
     `);
 
     assert.dom('[data-floater]').hasStyle({

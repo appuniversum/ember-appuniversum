@@ -41,22 +41,17 @@ export default modifier(
     options = merge(defaultOptions, options);
 
     assert(
-      `AuFloatingUI (modifier): No reference element was defined.`,
+      `FloatingUI (modifier): No reference element was defined.`,
       referenceElement instanceof HTMLElement
     );
 
     assert(
-      `AuFloatingUI (modifier): No floating element was defined.`,
-      floatingElement instanceof HTMLElement
+      `FloatingUI (modifier): The reference and floating elements cannot be the same element.`,
+      floatingElement !== referenceElement
     );
 
     assert(
-      `AuFloatingUI (modifier): The reference and floating elements cannot be the same element.`,
-      floatingElement !== _referenceElement
-    );
-
-    assert(
-      `AuFloatingUI (modifier): @placement must start with either 'bottom' or 'top'.`,
+      `FloatingUI (modifier): @placement must start with either 'bottom' or 'top'.`,
       defaultPlacement.startsWith('bottom') ||
         defaultPlacement.startsWith('top')
     );
