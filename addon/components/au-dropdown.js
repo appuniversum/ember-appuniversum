@@ -3,7 +3,26 @@ import { deprecate } from '@ember/debug';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
+import { modifier } from 'ember-modifier';
+
 export default class AuDropdown extends Component {
+  @tracked referenceElement = undefined;
+  @tracked arrowElement = undefined;
+
+  reference = modifier(
+    (element) => {
+      this.referenceElement = element;
+    },
+    { eager: false }
+  );
+
+  arrow = modifier(
+    (element) => {
+      this.arrowElement = element;
+    },
+    { eager: false }
+  );
+
   @tracked dropdownOpen = false;
 
   @action
