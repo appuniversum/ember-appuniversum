@@ -46,13 +46,8 @@ export default modifier(
     );
 
     assert(
-      `FloatingUI (modifier): No floating element was defined.`,
-      floatingElement instanceof HTMLElement
-    );
-
-    assert(
       `FloatingUI (modifier): The reference and floating elements cannot be the same element.`,
-      floatingElement !== _referenceElement
+      floatingElement !== referenceElement
     );
 
     assert(
