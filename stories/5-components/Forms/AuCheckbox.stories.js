@@ -18,6 +18,10 @@ export default {
       control: 'boolean',
       description: 'Used to set/get checked state of component',
     },
+    indeterminate: {
+      control: 'boolean',
+      description: 'Used to set indeterminate visual state of component',
+    },
     onChange: {
       control: 'text',
       description:
@@ -37,6 +41,7 @@ const Template = (args) => ({
       @disabled={{this.disabled}}
       @name={{this.name}}
       @checked={{this.checked}}
+      @indeterminate={{this.indeterminate}}
       @onChange={{this.onChange}}
     />`,
   context: args,
@@ -46,8 +51,9 @@ export const Component = Template.bind({});
 Component.args = {
   label: 'Ik ga akkoord',
   identifier: 'akkoord',
-  disabled: '',
+  disabled: false,
   name: '',
-  checked: '',
+  checked: false,
+  indeterminate: false,
   onChange: '',
 };
