@@ -2,12 +2,15 @@ import Component from '@glimmer/component';
 import { deprecate } from '@ember/debug';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
-
 import { modifier } from 'ember-modifier';
+
+import FloatingUiModifier from '@appuniversum/ember-appuniversum/private/modifiers/floating-ui';
 
 export default class AuDropdown extends Component {
   @tracked referenceElement = undefined;
   @tracked arrowElement = undefined;
+
+  floatingUi = FloatingUiModifier;
 
   reference = modifier(
     (element) => {

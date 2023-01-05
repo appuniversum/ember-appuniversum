@@ -19,12 +19,11 @@
     </span>
   </AuButton>
   <div
-    {{
-      au-floating-ui
-        this.referenceElement
-        this.arrowElement
-        defaultPlacement=this.alignment
-        options=this.floatingUiOptions
+    {{this.floatingUi
+      this.referenceElement
+      this.arrowElement
+      defaultPlacement=this.alignment
+      options=this.floatingUiOptions
     }}
     class="au-c-dropdown__floater {{if this.dropdownOpen 'is-visible'}}"
   >
