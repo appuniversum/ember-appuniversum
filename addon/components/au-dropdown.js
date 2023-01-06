@@ -45,8 +45,7 @@ export default class AuDropdown extends Component {
 
   @action
   clickOutsideDeactivates(event) {
-    let toggleButton = document.querySelector('[data-au-dropdown-toggle]');
-    let isClosedByToggleButton = toggleButton.contains(event.target);
+    let isClosedByToggleButton = this.referenceElement.contains(event.target);
 
     if (!isClosedByToggleButton) {
       this.closeDropdown();
