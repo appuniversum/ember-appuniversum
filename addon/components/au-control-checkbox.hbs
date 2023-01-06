@@ -1,6 +1,6 @@
 <label
   for={{@identifier}}
-  class="au-c-control au-c-control--checkbox {{this.disabled}}"
+  class="au-c-control au-c-control--checkbox {{this.disabledClass}} {{if (and (not (has-block)) (not @label)) 'au-c-control--labelless'}}"
 >
   <input
     class="au-c-control__input"
@@ -9,6 +9,7 @@
     disabled={{@disabled}}
     type="checkbox"
     checked={{@checked}}
+    indeterminate={{@indeterminate}}
     {{on "change" this.onChange}}
     ...attributes
   />
