@@ -38,7 +38,6 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown__floater {
-  display: none;
   z-index: var(--au-z-index-beta);
   width: auto;
 
@@ -49,10 +48,6 @@ $au-dropdown-caret-size        : .4rem !default;
   @include au-font-size(var(--au-base),1.5);
   font-family: var(--au-font);
   font-weight: var(--au-regular);
-
-  &.is-visible {
-    display: block;
-  }
 }
 
 .au-c-dropdown__arrow {

@@ -18,30 +18,32 @@
       {{@title}}
     </span>
   </AuButton>
-  <div
-    {{this.floatingUi
-      this.referenceElement
-      this.arrowElement
-      defaultPlacement=this.alignment
-      options=this.floatingUiOptions
-    }}
-    class="au-c-dropdown__floater {{if this.dropdownOpen 'is-visible'}}"
-  >
-    <div {{this.arrow}} class="au-c-dropdown__arrow"></div>
+  {{#if this.dropdownOpen}}
     <div
-      {{focus-trap
-        isActive=this.dropdownOpen
-        shouldSelfFocus=true
-        focusTrapOptions=(hash
-          clickOutsideDeactivates=this.clickOutsideDeactivates
-        )
+      {{this.floatingUi
+        this.referenceElement
+        this.arrowElement
+        defaultPlacement=this.alignment
+        options=this.floatingUiOptions
       }}
-      {{on "click" this.closeDropdown}}
-      class="au-c-dropdown__menu"
-      role="menu"
-      tabindex="-1"
+      class="au-c-dropdown__floater"
     >
-      {{yield}}
+      <div {{this.arrow}} class="au-c-dropdown__arrow"></div>
+      <div
+        {{focus-trap
+          isActive=this.dropdownOpen
+          shouldSelfFocus=true
+          focusTrapOptions=(hash
+            clickOutsideDeactivates=this.clickOutsideDeactivates
+          )
+        }}
+        {{on "click" this.closeDropdown}}
+        class="au-c-dropdown__menu"
+        role="menu"
+        tabindex="-1"
+      >
+        {{yield}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 </div>
