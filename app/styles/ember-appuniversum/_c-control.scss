@@ -63,6 +63,15 @@ $au-control-disabled-color            : var(--au-gray-600) !default;
   border-color: var(--au-blue-700);
 }
 
+/* Labelless modifiers */
+.au-c-control--labelless {
+  vertical-align: middle;
+
+  .au-c-control__indicator {
+    margin-top: 0;
+  }
+}
+
 /* Checkbox modifiers */
 .au-c-control--checkbox .au-c-control__indicator {
   border-radius: .25rem;
