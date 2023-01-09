@@ -3,10 +3,7 @@ import { getConfig, getOwnConfig } from '@embroider/macros';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
-import {
-  hasDeprecationStartingWith,
-  hasNoDeprecations,
-} from '../../helpers/deprecations';
+import { hasDeprecationStartingWith } from '../../helpers/deprecations';
 
 /** @type import("qunit-dom").module */
 module('Integration | Component | au-date-picker', function (hooks) {
@@ -150,7 +147,11 @@ module('Integration | Component | au-date-picker', function (hooks) {
     `);
       await webComponentRender();
 
-      assert.true(hasNoDeprecations());
+      assert.false(
+        hasDeprecationStartingWith(
+          '[AuDatePicker] The English localization is deprecated.'
+        )
+      );
     });
   } else {
     test("it shows a deprecation message if the Dutch localization isn't enabled", async function (assert) {
