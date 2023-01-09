@@ -2,8 +2,30 @@ import Component from '@glimmer/component';
 import { deprecate } from '@ember/debug';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { modifier } from 'ember-modifier';
+
+import FloatingUiModifier from '@appuniversum/ember-appuniversum/private/modifiers/floating-ui';
 
 export default class AuDropdown extends Component {
+  @tracked referenceElement = undefined;
+  @tracked arrowElement = undefined;
+
+  floatingUi = FloatingUiModifier;
+
+  reference = modifier(
+    (element) => {
+      this.referenceElement = element;
+    },
+    { eager: false }
+  );
+
+  arrow = modifier(
+    (element) => {
+      this.arrowElement = element;
+    },
+    { eager: false }
+  );
+
   @tracked dropdownOpen = false;
 
   @action
@@ -23,8 +45,7 @@ export default class AuDropdown extends Component {
 
   @action
   clickOutsideDeactivates(event) {
-    let toggleButton = document.querySelector('[data-au-dropdown-toggle]');
-    let isClosedByToggleButton = toggleButton.contains(event.target);
+    let isClosedByToggleButton = this.referenceElement.contains(event.target);
 
     if (!isClosedByToggleButton) {
       this.closeDropdown();
@@ -52,9 +73,9 @@ export default class AuDropdown extends Component {
 
   // Dropdown alignment
   get alignment() {
-    if (this.args.alignment == 'left') return 'au-c-dropdown__menu--left';
-    if (this.args.alignment == 'right') return 'au-c-dropdown__menu--right';
-    return '';
+    if (this.args.alignment == 'left') return 'bottom-start';
+    if (this.args.alignment == 'right') return 'bottom-end';
+    return 'bottom';
   }
 
   // Set default button skin
@@ -73,5 +94,14 @@ export default class AuDropdown extends Component {
   get iconAlignment() {
     if (this.args.iconAlignment) return this.args.iconAlignment;
     else return 'right';
+  }
+
+  // Set options for the floatingUi component
+  get floatingUiOptions() {
+    return {
+      arrow: {
+        offset: 0,
+      },
+    };
   }
 }

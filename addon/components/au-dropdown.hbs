@@ -1,5 +1,6 @@
 <div class="au-c-dropdown" ...attributes>
   <AuButton
+    {{this.reference}}
     @skin={{this.skin}}
     @size={{@size}}
     @icon={{this.icon}}
@@ -17,19 +18,31 @@
       {{@title}}
     </span>
   </AuButton>
-  <div
-    class="au-c-dropdown__menu {{this.alignment}} {{if this.dropdownOpen 'is-visible'}}"
-    role="menu"
-    tabindex="-1"
-    {{focus-trap
-      isActive=this.dropdownOpen
-      shouldSelfFocus=true
-      focusTrapOptions=(hash
-        clickOutsideDeactivates=this.clickOutsideDeactivates
-      )
-    }}
-    {{on "click" this.closeDropdown}}
-  >
-    {{yield}}
-  </div>
+  {{#if this.dropdownOpen}}
+    <div
+      {{this.floatingUi
+        this.referenceElement
+        this.arrowElement
+        defaultPlacement=this.alignment
+        options=this.floatingUiOptions
+      }}
+      class="au-c-dropdown__floater"
+    >
+      <div {{this.arrow}} class="au-c-dropdown__arrow"></div>
+      <div
+        {{focus-trap
+          shouldSelfFocus=true
+          focusTrapOptions=(hash
+            clickOutsideDeactivates=this.clickOutsideDeactivates
+          )
+        }}
+        {{on "click" this.closeDropdown}}
+        class="au-c-dropdown__menu"
+        role="menu"
+        tabindex="-1"
+      >
+        {{yield}}
+      </div>
+    </div>
+  {{/if}}
 </div>

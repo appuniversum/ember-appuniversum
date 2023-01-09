@@ -8,10 +8,9 @@
 $au-dropdown-caret-size        : .4rem !default;
 
 /* Component
-   ========================================================================== */
+  ========================================================================== */
 
 .au-c-dropdown {
-  position: relative;
   display: inline-block;
 }
 
@@ -38,31 +37,28 @@ $au-dropdown-caret-size        : .4rem !default;
   }
 }
 
-.au-c-dropdown__menu {
+.au-c-dropdown__floater {
+  z-index: var(--au-z-index-beta);
+  width: auto;
+
+  box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
+  border-radius: var(--au-radius);
+  background-color: var(--au-white);
+
   @include au-font-size(var(--au-base),1.5);
   font-family: var(--au-font);
   font-weight: var(--au-regular);
+}
+
+.au-c-dropdown__arrow {
   position: absolute;
-  z-index: var(--au-z-index-beta);
-  background-color: var(--au-white);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  left: 50%;
-  transform: translateX(-50%);
-  min-width: 100%;
-  width: auto;
-  top: calc(100% + #{$au-unit-tiny});
-  box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
-  border-radius: var(--au-radius);
-  display: none;
 
   &:before,
   &:after {
     bottom: 100%;
     left: 50%;
     border: solid transparent;
-    content: " ";
+    content: "";
     height: 0;
     width: 0;
     position: absolute;
@@ -80,45 +76,17 @@ $au-dropdown-caret-size        : .4rem !default;
     border-color: rgba($au-white, 0);
     border-bottom-color: var(--au-white);
   }
+}
+
+.au-c-dropdown__menu {
+  position: relative;
+  z-index: var(--au-z-index-beta); // Re-apply z-index to fix overlapping arrow when focussing on a menu item
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
 
   &:focus {
     outline: 0;
-  }
-
-  &.is-visible {
-    display: flex;
-  }
-
-  // Modify the menu position
-  &.au-c-dropdown__menu--left,
-  &.au-c-dropdown__menu--right {
-    transform: none;
-  }
-
-  &.au-c-dropdown__menu--left {
-    left: 0;
-  }
-
-  &.au-c-dropdown__menu--right {
-    left: auto;
-    right: 0;
-  }
-
-  &.au-c-dropdown__menu--left:after {
-    left: $au-unit-small;
-  }
-
-  &.au-c-dropdown__menu--right:after {
-    right: $au-unit-small + $au-unit-tiny;
-    left: auto;
-  }
-
-  .au-c-button--naked + &.au-c-dropdown__menu--left:after {
-    left: $au-unit-tiny;
-  }
-
-  .au-c-button--naked + &.au-c-dropdown__menu--right:after {
-    right: $au-unit-tiny;
   }
 }
 
