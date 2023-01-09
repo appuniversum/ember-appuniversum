@@ -1,6 +1,23 @@
 
 
 
+
+## v2.2.0 (2023-01-09)
+
+#### :rocket: Enhancement
+* [#349](https://github.com/appuniversum/ember-appuniversum/pull/349) Application of floating UI helpers within dropdown component ([@brenner-company](https://github.com/brenner-company))
+* [#352](https://github.com/appuniversum/ember-appuniversum/pull/352) Improvement of solo (label-less) control (checkbox & radio) components ([@brenner-company](https://github.com/brenner-company))
+* [#353](https://github.com/appuniversum/ember-appuniversum/pull/353) Addition of indeterminate state for the checkbox component ([@brenner-company](https://github.com/brenner-company))
+* [#347](https://github.com/appuniversum/ember-appuniversum/pull/347) Add subscript and superscript icons ([@Dietr](https://github.com/Dietr))
+
+#### :house: Internal
+* [#344](https://github.com/appuniversum/ember-appuniversum/pull/344) Addition of floating UI helpers ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 3
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v2.1.0 (2022-11-22)
 
 #### :rocket: Enhancement
