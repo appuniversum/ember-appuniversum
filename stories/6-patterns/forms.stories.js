@@ -30,7 +30,7 @@ const Template = (args) => ({
             @name="radios"
             @value="radioOne"
             @identifier="radioOne"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
           <AuControlRadio
@@ -38,7 +38,7 @@ const Template = (args) => ({
             @name="radios"
             @value="radioTwo"
             @identifier="radioTwo"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
           <AuControlRadio
@@ -46,7 +46,7 @@ const Template = (args) => ({
             @name="radios"
             @value="radioThree"
             @identifier="radioThree"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
         </f.content>
@@ -129,7 +129,7 @@ const TemplateInline = (args) => ({
             @name="radios"
             @value="radioOne"
             @identifier="radioOne"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
           <AuControlRadio
@@ -137,7 +137,7 @@ const TemplateInline = (args) => ({
             @name="radios"
             @value="radioTwo"
             @identifier="radioTwo"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
           <AuControlRadio
@@ -145,7 +145,7 @@ const TemplateInline = (args) => ({
             @name="radios"
             @value="radioThree"
             @identifier="radioThree"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
         </f.content>
@@ -233,7 +233,7 @@ const TemplatePre = (args) => ({
             @name="radios"
             @value="radioOne"
             @identifier="radioOne"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
           <AuControlRadio
@@ -241,7 +241,7 @@ const TemplatePre = (args) => ({
             @name="radios"
             @value="radioTwo"
             @identifier="radioTwo"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
           <AuControlRadio
@@ -249,7 +249,7 @@ const TemplatePre = (args) => ({
             @name="radios"
             @value="radioThree"
             @identifier="radioThree"
-            @checked={{false}}
+            checked={{false}}
             @disabled= {{false}}
           />
         </f.content>
