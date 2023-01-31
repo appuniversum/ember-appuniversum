@@ -27,11 +27,31 @@ module.exports = {
         '@embroider/macros'
       ].setOwnConfig.dutchDatePickerLocalization = true;
     }
+
+    this.shouldDisableWormholeElementRendering = Boolean(
+      addonOptions.disableWormholeElement
+    );
+
+    this.ui.writeDeprecateLine(
+      `\
+The #ember-appuniversum-wormhole element is deprecated. Please use the \`<AuModalContainer />\` component where appropriate and disable this warning by adding the following flag to your ember-cli-build.js file:
+
+//ember-cli-build.js
+'@appuniversum/ember-appuniversum': {
+  disableWormholeElement: true,
+},
+
+More information: https://github.com/appuniversum/ember-appuniversum/issues/258
+`,
+      this.shouldDisableWormholeElementRendering
+    );
   },
 
   contentFor: function (type) {
     if (type === 'body') {
-      return '<div id="ember-appuniversum-wormhole"></div>';
+      return this.shouldDisableWormholeElementRendering
+        ? ''
+        : '<div id="ember-appuniversum-wormhole"></div>';
     } else {
       return '';
     }

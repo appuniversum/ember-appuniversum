@@ -53,6 +53,7 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
+    <AuModalContainer />
     <AuModal
       @modalOpen={{this.modalOpen}}
       @closeModal={{this.closeModal}}
@@ -73,6 +74,7 @@ const Template = (args) => ({
 
 const OverflowTemplate = (args) => ({
   template: hbs`
+    <AuModalContainer />
     <AuModal
       @modalOpen={{this.modalOpen}}
       @closeModal={{this.closeModal}}
