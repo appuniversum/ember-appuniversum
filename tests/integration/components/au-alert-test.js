@@ -71,4 +71,19 @@ module('Integration | Component | au-alert', function (hooks) {
       .dom(ALERT.CONTAINER)
       .isNotVisible('it hides the alert after clicking the close button');
   });
+
+  test('it calls the @onClose function when closed', async function (assert) {
+    this.onClose = () => {
+      assert.step('@onClose was called');
+    };
+
+    await render(hbs`
+      <AuAlert @closable={{true}} @onClose={{this.onClose}}>
+        message
+      </AuAlert>
+    `);
+
+    await click(ALERT.CLOSE);
+    assert.verifySteps(['@onClose was called']);
+  });
 });

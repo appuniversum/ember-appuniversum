@@ -22,10 +22,10 @@ export default class AuAlertComponent extends Component {
     return '';
   }
 
-  // @TODO: add icon switching functionality
-
   @action
   closeAlert() {
-    this.isVisible = !this.isVisible;
+    this.isVisible = false;
+
+    this.args.onClose?.();
   }
 }

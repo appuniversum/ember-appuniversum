@@ -21,6 +21,10 @@ export default {
       description: 'Set the size of the alert',
     },
     closable: { control: 'boolean', description: 'Makes the alert closable' },
+    onClose: {
+      action: 'closed',
+      description: 'Called after the alert is closed',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -35,6 +39,7 @@ const Template = (args) => ({
       @icon={{this.icon}}
       @size={{this.size}}
       @closable={{this.closable}}
+      @onClose={{this.onClose}}
     >
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
     </AuAlert>`,
