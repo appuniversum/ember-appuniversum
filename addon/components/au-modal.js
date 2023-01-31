@@ -1,9 +1,19 @@
+import { assert } from '@ember/debug';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 
 export default class AuModal extends Component {
-  get destinationElement() {
-    return document.getElementById('ember-appuniversum-wormhole');
+  constructor() {
+    super(...arguments);
+
+    this.destinationElement =
+      document.querySelector('[data-au-modal-container]') ||
+      document.getElementById('ember-appuniversum-wormhole');
+
+    assert(
+      'au-modal: No target element was found. Please add the `<AuModalContainer />` component where appropriate.',
+      this.destinationElement
+    );
   }
 
   get size() {

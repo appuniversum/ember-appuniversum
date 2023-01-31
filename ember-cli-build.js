@@ -22,6 +22,7 @@ module.exports = function (defaults) {
     '@appuniversum/ember-appuniversum': {
       dutchDatePickerLocalization:
         process.env.DATE_PICKER_EN_LOCALIZATION === 'true' ? false : true,
+      disableWormholeElement: true,
     },
     fingerprint: {
       // Disable fingerprinting for now until this ember-cli-storybook issue is resolved:
