@@ -36,11 +36,16 @@ export default class AuDropdown extends Component {
   @action
   closeDropdown() {
     this.dropdownOpen = false;
+    this.args.onClose?.();
   }
 
   @action
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
+
+    if (!this.dropdownOpen) {
+      this.args.onClose?.();
+    }
   }
 
   @action

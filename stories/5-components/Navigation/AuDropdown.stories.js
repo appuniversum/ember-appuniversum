@@ -35,6 +35,10 @@ export default {
       control: 'boolean',
       description: 'Adds an alert state to the button',
     },
+    onClose: {
+      action: 'closed',
+      description: 'Called after the dropdown is closed',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -52,6 +56,7 @@ const Template = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @alert={{this.alert}}
+      @onClose={{this.onClose}}
     >
       <AuButton @skin="tertiary" @icon="switch" role="menuitem">
         Switch profile
@@ -74,6 +79,7 @@ const TemplateSeparator = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @alert={{this.alert}}
+      @onClose={{this.onClose}}
     >
       <AuButton @skin="tertiary" role="menuitem">
         Agendapunt toevoegen
