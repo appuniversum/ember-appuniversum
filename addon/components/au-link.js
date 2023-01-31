@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
 
 const SKIN_CLASSES = {
   primary: 'au-c-link',
@@ -9,6 +10,8 @@ const SKIN_CLASSES = {
 };
 
 export default class AuLink extends Component {
+  linkToModels = linkToModels;
+
   get skinClass() {
     if (SKIN_CLASSES[this.args.skin]) {
       return SKIN_CLASSES[this.args.skin];

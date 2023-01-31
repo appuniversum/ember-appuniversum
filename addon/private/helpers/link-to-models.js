@@ -15,7 +15,7 @@ import { assert } from '@ember/debug';
  * https://github.com/emberjs/ember.js/blob/v3.26.1/packages/%40ember/-internals/glimmer/lib/components/link-to.ts#L524-L540
  */
 
-export function auLinkToModels([model, models]) {
+export function linkToModels([model, models]) {
   assert(
     'You cannot provide both the `@model` and `@models` arguments to the component.',
     !model || !models
@@ -30,4 +30,4 @@ export function auLinkToModels([model, models]) {
   }
 }
 
-export default helper(auLinkToModels);
+export default helper(linkToModels);

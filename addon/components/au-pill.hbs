@@ -27,7 +27,7 @@
   <LinkTo
     class="au-c-pill au-c-pill--link {{this.size}} {{this.draft}}"
     @route={{@route}}
-    @models={{au-link-to-models @model @models}}
+    @models={{this.linkToModels @model @models}}
     @query={{this.queryParams}}
     ...attributes>
     {{#if @icon}}

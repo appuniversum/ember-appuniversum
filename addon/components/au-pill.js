@@ -1,8 +1,11 @@
+import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
 import Component from '@glimmer/component';
 
 const PILL_SIZES = ['small'];
 
 export default class AuPillComponent extends Component {
+  linkToModels = linkToModels;
+
   get skin() {
     if (this.args.skin == 'border') return 'au-c-pill--border';
     if (this.args.skin == 'action') return 'au-c-pill--ongoing';
