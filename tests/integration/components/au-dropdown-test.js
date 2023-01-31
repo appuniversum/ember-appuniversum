@@ -59,4 +59,21 @@ module('Integration | Component | au-dropdown', function (hooks) {
         'it closes when clicking a child of the button button while the dropdown is open'
       );
   });
+
+  test('it calls the @onClose function when the dropdown is closed', async function (assert) {
+    this.onClose = () => {
+      assert.step('@onClose');
+    };
+
+    await render(hbs`
+      <AuDropdown @title="foo" @onClose={{this.onClose}}>
+        <button type="button" data-test-button>baz</button>
+      </AuDropdown>
+    `);
+
+    await click('[data-test-dropdown-button]', 'open the dropdown');
+    await click('[data-test-dropdown-button]', 'close the dropdown');
+
+    assert.verifySteps(['@onClose']);
+  });
 });

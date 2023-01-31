@@ -3,13 +3,12 @@ import { deprecate } from '@ember/debug';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
-
 import FloatingUiModifier from '@appuniversum/ember-appuniversum/private/modifiers/floating-ui';
 
 export default class AuDropdown extends Component {
   @tracked referenceElement = undefined;
   @tracked arrowElement = undefined;
-
+  @tracked dropdownOpen = false;
   floatingUi = FloatingUiModifier;
 
   reference = modifier(
@@ -26,8 +25,6 @@ export default class AuDropdown extends Component {
     { eager: false }
   );
 
-  @tracked dropdownOpen = false;
-
   @action
   openDropdown() {
     this.dropdownOpen = true;
@@ -36,11 +33,16 @@ export default class AuDropdown extends Component {
   @action
   closeDropdown() {
     this.dropdownOpen = false;
+    this.args.onClose?.();
   }
 
   @action
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
+
+    if (!this.dropdownOpen) {
+      this.args.onClose?.();
+    }
   }
 
   @action
@@ -71,32 +73,27 @@ export default class AuDropdown extends Component {
     }
   }
 
-  // Dropdown alignment
   get alignment() {
     if (this.args.alignment == 'left') return 'bottom-start';
     if (this.args.alignment == 'right') return 'bottom-end';
     return 'bottom';
   }
 
-  // Set default button skin
   get skin() {
     if (this.args.skin) return this.args.skin;
     else return 'naked';
   }
 
-  // Set default button icon
   get icon() {
     if (this.args.icon) return this.args.icon;
     else return 'chevron-down';
   }
 
-  // Set default icon alignment
   get iconAlignment() {
     if (this.args.iconAlignment) return this.args.iconAlignment;
     else return 'right';
   }
 
-  // Set options for the floatingUi component
   get floatingUiOptions() {
     return {
       arrow: {
