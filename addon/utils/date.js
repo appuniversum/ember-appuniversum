@@ -1,5 +1,3 @@
-import formatISO from 'date-fns/formatISO';
-
 export function formatDate(date) {
   let day = `${date.getDate()}`.padStart(2, '0');
   let month = `${date.getMonth() + 1}`.padStart(2, '0');
@@ -8,7 +6,10 @@ export function formatDate(date) {
 }
 
 export function toIsoDateString(date) {
-  return formatISO(date, { representation: 'date' });
+  let day = `${date.getDate()}`.padStart(2, '0');
+  let month = `${date.getMonth() + 1}`.padStart(2, '0');
+
+  return `${date.getFullYear()}-${month}-${day}`;
 }
 
 export function isIsoDateString(isoDate) {
