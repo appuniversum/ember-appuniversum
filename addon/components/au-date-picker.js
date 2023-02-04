@@ -4,8 +4,11 @@ import { action } from '@ember/object';
 import { assert, deprecate, runInDebug } from '@ember/debug';
 import { guidFor } from '@ember/object/internals';
 import { getOwnConfig, macroCondition } from '@embroider/macros';
-import formatISO from 'date-fns/formatISO';
-import { formatDate } from '@appuniversum/ember-appuniversum/utils/date';
+import {
+  formatDate,
+  toIsoDateString,
+  isIsoDateString,
+} from '@appuniversum/ember-appuniversum/utils/date';
 
 const DEFAULT_ADAPTER = {
   parse: function (value = '', createDate) {
@@ -193,7 +196,7 @@ function asIsoDate(target, key /*, descriptor */) {
       }
 
       assert(
-        `@${key} should be a string or a Date instance but it is a "${typeof valueArg}"`,
+        `@${key} should be a string or a Date instance but it is a "${typeof argValue}"`,
         typeof argValue === 'string' || argValue instanceof Date
       );
 
@@ -208,20 +211,6 @@ function asIsoDate(target, key /*, descriptor */) {
       }
     },
   };
-}
-
-function toIsoDateString(date) {
-  return formatISO(date, { representation: 'date' });
-}
-
-function isIsoDateString(isoDate) {
-  let date = new Date(isoDate);
-
-  return isValidDate(date) && isoDate === toIsoDateString(date);
-}
-
-function isValidDate(date) {
-  return !isNaN(date);
 }
 
 function getLocalizedMonths(monthFormat = 'long') {
