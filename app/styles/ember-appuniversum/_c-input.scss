@@ -60,6 +60,7 @@ $au-input-border-radius             : .3rem !default;
     width: 1.6rem;
     margin-left: $au-unit-small;
     margin-right: $au-unit-small;
+    pointer-events: none; // allow users to focus the field by "clicking" the icon
   }
 
   .au-c-icon--right {
