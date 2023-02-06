@@ -1,29 +1,20 @@
 {{#if @icon}}
   <span class="au-c-input-wrapper {{this.iconAlignment}} {{this.width}}">
-    {{#if @mask}}
-      <Inputmask
-        @value={{@value}}
-        @mask={{@mask}}
-        @placeholder={{@maskPlaceholder}}
-        @update={{this.handleChange}}
-        class="au-c-input au-c-input--mask
-          {{this.error}}
-          {{this.warning}}
-          {{this.width}}
-          {{this.disabled}}"
-        disabled={{@disabled}}
+    {{#if this.isMasked}}
+      <input
         type={{this.type}}
+        value={{@value}}
+        class={{this.classes}}
+        disabled={{@disabled}}
         ...attributes
+        {{on "input" this.handleChange}}
+        {{this.inputmaskModifier inputmaskOptions=this.inputmaskOptions}}
       />
     {{else}}
       <Input
         @value={{@value}}
         @type={{this.type}}
-        class="au-c-input
-          {{this.error}}
-          {{this.warning}}
-          {{this.width}}
-          {{this.disabled}}"
+        class={{this.classes}}
         disabled={{@disabled}}
         ...attributes
       />
@@ -35,30 +26,21 @@
     {{/if}}
   </span>
 {{else}}
-  {{#if @mask}}
-    <Inputmask
-      @value={{@value}}
-      @mask={{@mask}}
-      @placeholder={{@maskPlaceholder}}
-      @update={{this.handleChange}}
-      class="au-c-input au-c-input--mask
-        {{this.error}}
-        {{this.warning}}
-        {{this.width}}
-        {{this.disabled}}"
-      disabled={{@disabled}}
+  {{#if this.isMasked}}
+    <input
       type={{this.type}}
+      value={{@value}}
+      class={{this.classes}}
+      disabled={{@disabled}}
       ...attributes
+      {{on "input" this.handleChange}}
+      {{this.inputmaskModifier inputmaskOptions=this.inputmaskOptions}}
     />
   {{else}}
     <Input
       @value={{@value}}
       @type={{this.type}}
-      class="au-c-input
-        {{this.error}}
-        {{this.warning}}
-        {{this.width}}
-        {{this.disabled}}"
+      class={{this.classes}}
       disabled={{@disabled}}
       ...attributes
     />
