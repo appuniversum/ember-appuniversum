@@ -1,5 +1,23 @@
 
+## v2.3.0 (2023-02-06)
 
+#### :rocket: Enhancement
+* [#369](https://github.com/appuniversum/ember-appuniversum/pull/369) Add a `@maskOptions` argument to the AuInput component  ([@Windvis](https://github.com/Windvis))
+* [#364](https://github.com/appuniversum/ember-appuniversum/pull/364) Add a `<AuDateInput>` component ([@Windvis](https://github.com/Windvis))
+* [#363](https://github.com/appuniversum/ember-appuniversum/pull/363) Add an `@onClose` argument to the `AuAlert` component ([@Windvis](https://github.com/Windvis))
+* [#362](https://github.com/appuniversum/ember-appuniversum/pull/362) Add an `@onClose` argument to the `AuDropdown` component  ([@Windvis](https://github.com/Windvis))
+* [#361](https://github.com/appuniversum/ember-appuniversum/pull/361) Deprecate the `#ember-appuniversum-wormhole` element ([@Windvis](https://github.com/Windvis))
+
+#### :memo: Documentation
+* [#366](https://github.com/appuniversum/ember-appuniversum/pull/366) Use the proper name for the checkbox and radio components in the documentation ([@Windvis](https://github.com/Windvis))
+* [#357](https://github.com/appuniversum/ember-appuniversum/pull/357) Au radio control checked should be without the @ ([@lagartoverde](https://github.com/lagartoverde))
+
+#### :house: Internal
+* [#360](https://github.com/appuniversum/ember-appuniversum/pull/360) Make the au-link-to-models helper truly private ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
 
 
 ## v2.2.0 (2023-01-09)
