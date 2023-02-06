@@ -5,18 +5,15 @@ export default {
   argTypes: {
     padding: {
       control: 'select',
-      defaultValue: 'default',
       options: ['default', 'small', 'large'],
       description: 'Set the padding of the loader',
     },
     message: {
       control: 'text',
-      defaultValue: 'Aan het laden',
       description: 'Set the hidden loading text',
     },
     disableMessage: {
       control: 'boolean',
-      defaultValue: false,
       description: 'Remove the loading text',
     },
   },
@@ -34,4 +31,6 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   padding: 'default',
+  message: 'Aan het laden',
+  disableMessage: false,
 };
