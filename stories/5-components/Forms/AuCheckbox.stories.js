@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Forms/AuCheckbox',
+  title: 'Components/Forms/AuControlCheckbox',
   argTypes: {
     label: { control: 'text', description: 'Set label text' },
     identifier: {
