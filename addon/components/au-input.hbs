@@ -6,11 +6,7 @@
         @mask={{@mask}}
         @placeholder={{@maskPlaceholder}}
         @update={{this.handleChange}}
-        class="au-c-input au-c-input--mask
-          {{this.error}}
-          {{this.warning}}
-          {{this.width}}
-          {{this.disabled}}"
+        class={{this.classes}}
         disabled={{@disabled}}
         type={{this.type}}
         ...attributes
@@ -19,11 +15,7 @@
       <Input
         @value={{@value}}
         @type={{this.type}}
-        class="au-c-input
-          {{this.error}}
-          {{this.warning}}
-          {{this.width}}
-          {{this.disabled}}"
+        class={{this.classes}}
         disabled={{@disabled}}
         ...attributes
       />
@@ -41,11 +33,7 @@
       @mask={{@mask}}
       @placeholder={{@maskPlaceholder}}
       @update={{this.handleChange}}
-      class="au-c-input au-c-input--mask
-        {{this.error}}
-        {{this.warning}}
-        {{this.width}}
-        {{this.disabled}}"
+      class={{this.classes}}
       disabled={{@disabled}}
       type={{this.type}}
       ...attributes
@@ -54,11 +42,7 @@
     <Input
       @value={{@value}}
       @type={{this.type}}
-      class="au-c-input
-        {{this.error}}
-        {{this.warning}}
-        {{this.width}}
-        {{this.disabled}}"
+      class={{this.classes}}
       disabled={{@disabled}}
       ...attributes
     />

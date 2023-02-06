@@ -43,6 +43,19 @@ export default class AuInput extends Component {
     return this.args.type || 'text';
   }
 
+  get classes() {
+    return [
+      'au-c-input',
+      this.isMasked ? 'au-c-input--mask' : '',
+      this.error,
+      this.warning,
+      this.disabled,
+      this.width,
+    ]
+      .filter(Boolean)
+      .join(' ');
+  }
+
   @action
   handleChange(value) {
     this.args.onChange?.(value);
