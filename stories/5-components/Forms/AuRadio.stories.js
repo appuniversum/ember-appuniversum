@@ -40,7 +40,7 @@ const Template = (args) => ({
       @name={{this.name}}
       @value={{this.value}}
       @identifier={{this.identifier}}
-      checked={{this.checked}}
+      @checked={{this.checked}}
       @disabled= {{this.disabled}}
     />`,
   context: args,
