@@ -4,7 +4,6 @@ import { icons } from '../../assets/icons';
 export default {
   title: 'Components/Forms/AuInput',
   argTypes: {
-    id: { control: 'text', description: '' },
     error: { control: 'boolean', description: 'Add an error state' },
     warning: { control: 'boolean', description: 'Add an warning state' },
     disabled: {
@@ -30,14 +29,18 @@ export default {
     mask: {
       control: 'text',
       description:
-        'Define the input mask you want to add. See https://github.com/sinankeskin/ember-inputmask for more options.',
+        'Define the input mask you want to add. See https://github.com/RobinHerbots/Inputmask for more options.',
     },
     maskPlaceholder: {
       control: 'text',
       description: 'Define the input mask placeholder',
     },
-    handleChange: {
-      control: 'function',
+    maskOptions: {
+      description:
+        'A more flexible alternative to the `@mask` and `@maskPlaceholder` arguments. This object will be passed into the InputMask instance. See https://github.com/RobinHerbots/Inputmask for more options.',
+    },
+    onChange: {
+      action: 'change',
       description:
         'This action will be called when the value changes and will be passed to the unmasked value and the masked value.',
     },
@@ -54,7 +57,7 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuInput
-      id={{this.id}}
+      @value={{this.value}}
       @error={{this.error}}
       @warning={{this.warning}}
       @disabled={{this.disabled}}
@@ -63,7 +66,7 @@ const Template = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @mask={{this.mask}}
       @maskPlaceholder={{this.maskPlaceholder}}
-      @handleChange={{this.handleChange}}
+      @maskOptions={{this.maskOptions}}
       @type={{this.type}}
     />`,
   context: args,
@@ -71,7 +74,6 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  id: '',
   error: false,
   warning: false,
   disabled: false,
@@ -84,13 +86,15 @@ Component.args = {
 
 export const InputMask = Template.bind({});
 InputMask.args = {
-  id: '',
+  value: '',
   error: false,
   warning: false,
   disabled: false,
   width: '',
   icon: '',
   iconAlignment: 'left',
-  mask: '99.99.99-999.99',
-  maskPlaceholder: '__.__.__-___.__',
+  maskOptions: {
+    mask: '99.99.99-999.99',
+    placeholder: '__.__.__-___.__',
+  },
 };

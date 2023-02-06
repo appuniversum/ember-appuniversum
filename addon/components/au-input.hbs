@@ -1,15 +1,14 @@
 {{#if @icon}}
   <span class="au-c-input-wrapper {{this.iconAlignment}} {{this.width}}">
-    {{#if @mask}}
-      <Inputmask
-        @value={{@value}}
-        @mask={{@mask}}
-        @placeholder={{@maskPlaceholder}}
-        @update={{this.handleChange}}
+    {{#if this.isMasked}}
+      <input
+        type={{this.type}}
+        value={{@value}}
         class={{this.classes}}
         disabled={{@disabled}}
-        type={{this.type}}
         ...attributes
+        {{on "input" this.handleChange}}
+        {{this.inputmaskModifier inputmaskOptions=this.inputmaskOptions}}
       />
     {{else}}
       <Input
@@ -27,16 +26,15 @@
     {{/if}}
   </span>
 {{else}}
-  {{#if @mask}}
-    <Inputmask
-      @value={{@value}}
-      @mask={{@mask}}
-      @placeholder={{@maskPlaceholder}}
-      @update={{this.handleChange}}
+  {{#if this.isMasked}}
+    <input
+      type={{this.type}}
+      value={{@value}}
       class={{this.classes}}
       disabled={{@disabled}}
-      type={{this.type}}
       ...attributes
+      {{on "input" this.handleChange}}
+      {{this.inputmaskModifier inputmaskOptions=this.inputmaskOptions}}
     />
   {{else}}
     <Input
