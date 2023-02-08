@@ -12,7 +12,7 @@ module('Integration | Private Modifier | floating-ui', function (hooks) {
     this.set('floatingUi', FloatingUiModifier);
 
     await render(hbs`
-      <button id="reference">Reference</button>
+      <button type="button" id="reference">Reference</button>
       <div data-floater {{this.floatingUi "#reference"}}>Floater</div>
     `);
 

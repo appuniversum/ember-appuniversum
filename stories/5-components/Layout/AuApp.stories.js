@@ -11,14 +11,16 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuApp>
+      {{!template-lint-disable no-inline-styles}}
       <div class="au-d-component-block" style="height: 40px">
         Header
       </div>
+      {{!template-lint-disable no-inline-styles}}
       <div class="au-d-component-block" style="height: 40px">
         Subheader
       </div>
       <AuBodyContainer
-        @scroll=true
+        @scroll={{true}}
       >
         <div class="au-d-component-block au-d-component-block--overflow">
           Content

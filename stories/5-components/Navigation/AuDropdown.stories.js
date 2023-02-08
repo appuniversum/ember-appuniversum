@@ -57,6 +57,7 @@ const Template = (args) => ({
       @hideText={{this.hideText}}
       @alert={{this.alert}}
       @onClose={{this.onClose}}
+      role="menu"
     >
       <AuButton @skin="tertiary" @icon="switch" role="menuitem">
         Switch profile
@@ -80,6 +81,7 @@ const TemplateSeparator = (args) => ({
       @hideText={{this.hideText}}
       @alert={{this.alert}}
       @onClose={{this.onClose}}
+      role="menu"
     >
       <AuButton @skin="tertiary" role="menuitem">
         Agendapunt toevoegen

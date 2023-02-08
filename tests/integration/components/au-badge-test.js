@@ -16,7 +16,7 @@ module('Integration | Component | au-badge', function (hooks) {
 
     // Template block usage:
     await render(hbs`
-      <AuBadge @number=2/>
+      <AuBadge @number={{2}}/>
     `);
 
     assert.dom(this.element).hasText('2');

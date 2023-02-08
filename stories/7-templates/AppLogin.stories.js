@@ -11,7 +11,7 @@ const Template = (args) => ({
   template: hbs`
     <AuApp>
       <AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="docs.templates.app-sidebar" @appTitle="App title" @contactRoute="docs.templates.app-sidebar">
-        <AuButton @skin="link" @icon="login" role="menuitem">
+        <AuButton @skin="link" @icon="login">
           Aanmelden
         </AuButton>
       </AuMainHeader>
