@@ -163,7 +163,7 @@ const EditableTemplate = (args) => ({
               </dd>
             </dl>
           </div>
-          <div class="au-o-grid__item  au-u-1-1 au-u-1-2@medium">
+          <div class="au-o-grid__item au-u-1-1 au-u-1-2@medium">
             <dl class="au-o-grid au-o-grid--tiny">
               <dt class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
                 <p><strong>Context</strong></p>
@@ -207,10 +207,10 @@ const EditingTemplate = (args) => ({
           <div class="au-o-grid__item au-u-1-2@medium">
             <div class="au-o-grid au-o-grid--tiny">
               <div class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
-                <AuLabel for="input-subject-object" @inline={{true}} @required={{true}}>Subject</AuLabel>
+                <AuLabel for="input-subject-object-a" @inline={{true}} @required={{true}}>Subject</AuLabel>
               </div>
               <div class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
-                <AuInput id="input-subject-object" @width="block" />
+                <AuInput id="input-subject-object-a" @width="block" />
                 <AuHelpText>Helptext</AuHelpText>
               </div>
             </div>
@@ -218,10 +218,10 @@ const EditingTemplate = (args) => ({
           <div class="au-o-grid__item au-u-1-2@medium">
             <div class="au-o-grid au-o-grid--tiny">
               <div class="au-o-grid__item au-u-1-3@small au-u-1-4@large">
-                <AuLabel for="input-subject-object" @inline={{true}} @required={{true}} @error={{true}}>Subject</AuLabel>
+                <AuLabel for="input-subject-object-b" @inline={{true}} @required={{true}} @error={{true}}>Subject</AuLabel>
               </div>
               <div class="au-o-grid__item au-u-2-3@small au-u-3-4@large">
-                <AuInput id="input-subject-object" @error={{true}} @width="block" />
+                <AuInput id="input-subject-object-b" @error={{true}} @width="block" />
                 <AuHelpText @error={{true}}>Error message</AuHelpText>
               </div>
             </div>

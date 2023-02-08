@@ -21,9 +21,11 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuApp>
+      {{!template-lint-disable no-inline-styles}}
       <div class="au-d-component-block" style="height: 40px">
         Environment banner
       </div>
+      {{!template-lint-disable no-inline-styles}}
       <div class="au-d-component-block" style="height: 40px">
         Header
       </div>
