@@ -8,11 +8,16 @@ jobs:
   build_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: Adzz/jest_test_action@v1.0.0
+      - uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
         with:
-          package-manager: npm
-          command: run-script build
+          node-version: 14.x
+          cache: npm
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
       - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
