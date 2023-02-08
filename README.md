@@ -30,8 +30,8 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 > We still use npm 6 during development since that's the version that's bundled with node 14.
 
 Local development:
-- Build the CSS and run storybook: `npm start`
-- Run the documentation site: `npm run storybook`
+- Build the ember app: `npm run ember`
+- Run the documentation site: `npm run storybook` (make sure the `npm run ember` command is finished)
 - Generate the icons: `npm run icons`
 
 Testing:
