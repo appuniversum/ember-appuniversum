@@ -24,7 +24,7 @@
 
 * `git clone <repository-url>`
 * `cd ember-appuniversum`
-* `npm install`
+* `npm install` (use npm 6 until we drop node 14 support)
 
 ### Linting
 

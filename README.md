@@ -27,6 +27,7 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 
 
 ## Development
+> We still use npm 6 during development since that's the version that's bundled with node 14.
 
 Local development:
 - Build the CSS and run storybook: `npm start`
