@@ -22,14 +22,14 @@ module.exports = {
       app.options.sassOptions.includePaths || [];
 
     let addonOptions = app.options[this.name];
-    if (addonOptions && addonOptions.dutchDatePickerLocalization) {
+    if (addonOptions?.dutchDatePickerLocalization) {
       this.options[
         '@embroider/macros'
       ].setOwnConfig.dutchDatePickerLocalization = true;
     }
 
     this.shouldDisableWormholeElementRendering = Boolean(
-      addonOptions.disableWormholeElement
+      addonOptions?.disableWormholeElement
     );
 
     this.ui.writeDeprecateLine(
