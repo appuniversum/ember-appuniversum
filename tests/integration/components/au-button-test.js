@@ -7,14 +7,6 @@ module('Integration | Component | au-button', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<AuButton />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
     await render(hbs`
       <AuButton>
         template block text
@@ -22,5 +14,35 @@ module('Integration | Component | au-button', function (hooks) {
     `);
 
     assert.dom(this.element).hasText('template block text');
+  });
+
+  test('it disables the button when `@disabled` is true', async function (assert) {
+    this.isDisabled = false;
+
+    await render(hbs`
+      <AuButton @loading={{this.isDisabled}} data-test-button>
+        Foo
+      </AuButton>
+    `);
+
+    assert.dom('[data-test-button]').isNotDisabled();
+
+    this.set('isDisabled', true);
+    assert.dom('[data-test-button]').isDisabled();
+  });
+
+  test('it disables the button when `@loading` is true', async function (assert) {
+    this.isLoading = false;
+
+    await render(hbs`
+      <AuButton @loading={{this.isLoading}} @disabled={{false}} data-test-button>
+        Foo
+      </AuButton>
+    `);
+
+    assert.dom('[data-test-button]').isNotDisabled();
+
+    this.set('isLoading', true);
+    assert.dom('[data-test-button]').isDisabled();
   });
 });

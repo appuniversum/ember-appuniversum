@@ -9,6 +9,10 @@ export default class AuButton extends Component {
     else return 'primary';
   }
 
+  get isDisabled() {
+    return this.args.disabled || this.args.loading;
+  }
+
   get sizeClass() {
     if (this.args.size == 'large' && !this.skin.startsWith('link'))
       return 'au-c-button--large';
@@ -30,7 +34,7 @@ export default class AuButton extends Component {
   }
 
   get disabledClass() {
-    if (this.args.disabled) return 'is-disabled';
+    if (this.isDisabled) return 'is-disabled';
     else return '';
   }
 
