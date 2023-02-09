@@ -3,13 +3,13 @@
    ================================== */
 
 .au-c-file-upload-box {
-  border: .1rem solid var(--au-gray-200);
+  border: 0.1rem solid var(--au-gray-200);
   background-color: var(--au-white);
   margin-bottom: $au-unit;
 }
 
 .au-c-file-upload {
-  border: .2rem dashed var(--au-gray-300);
+  border: 0.2rem dashed var(--au-gray-300);
   background-color: var(--au-white);
   transition: background var(--au-transition);
 
@@ -39,7 +39,7 @@
   justify-content: center;
   color: var(--au-gray-600);
   background-color: var(--au-gray-100);
-  padding: $au-unit + ($au-unit-tiny * .5) $au-unit-small;
+  padding: $au-unit + ($au-unit-tiny * 0.5) $au-unit-small;
 
   > .au-c-help-text {
     margin-top: 0;

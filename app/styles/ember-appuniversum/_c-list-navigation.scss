@@ -7,7 +7,6 @@
 
 $au-list-navigation-border-color: var(--au-divider-color) !default;
 
-
 /* Component
    ========================================================================== */
 
@@ -65,9 +64,11 @@ $au-list-navigation-border-color: var(--au-divider-color) !default;
   transition: color var(--au-transition), text-decoration var(--au-transition);
   font-weight: var(--au-regular);
   padding: $au-unit-tiny * 1.5 $au-unit-small;
-  text-decoration-color: var(--au-blue-300) !important; // @TODO: remove important when webuniversum is removed
+  text-decoration-color: var(
+    --au-blue-300
+  ) !important; // @TODO: remove important when webuniversum is removed
   text-decoration: underline;
-  text-underline-offset: .3ex;
+  text-underline-offset: 0.3ex;
 
   &,
   &:visited {
@@ -96,7 +97,7 @@ $au-list-navigation-border-color: var(--au-divider-color) !default;
     padding: $au-unit-small $au-unit-small + $au-unit-tiny;
 
     &.active {
-      box-shadow: inset -.3rem 0 0 var(--au-gray-300);
+      box-shadow: inset -0.3rem 0 0 var(--au-gray-300);
       background-color: var(--au-gray-200);
     }
   }

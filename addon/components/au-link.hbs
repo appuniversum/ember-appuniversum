@@ -2,11 +2,14 @@
   @route={{@route}}
   @models={{this.linkToModels @model @models}}
   @query={{this.queryParams}}
-  class="{{this.skinClass}} {{this.activeClass}} {{this.widthClass}} {{this.iconOnlyClass}}"
+  class="{{this.skinClass}}
+    {{this.activeClass}}
+    {{this.widthClass}}
+    {{this.iconOnlyClass}}"
   ...attributes
 >
   {{#if (and @icon (eq this.iconAlignment "left"))}}
-    <AuIcon @icon="{{@icon}}"/>
+    <AuIcon @icon="{{@icon}}" />
   {{/if}}
   {{#if @hideText}}
     <span class="au-u-hidden-visually">{{yield}}</span>

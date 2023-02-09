@@ -5,10 +5,10 @@
 /* Variables
    ========================================================================== */
 
-$au-card-border-color                         : var(--au-gray-200) !default;
-$au-card-standout-border-color                : var(--au-gray-300) !default;
-$au-card-standout-color                       : var(--au-gray-100) !default;
-$au-card-radius                               : var(--au-radius) !default;
+$au-card-border-color: var(--au-gray-200) !default;
+$au-card-standout-border-color: var(--au-gray-300) !default;
+$au-card-standout-color: var(--au-gray-100) !default;
+$au-card-radius: var(--au-radius) !default;
 
 /* Component
   ========================================================================== */
@@ -17,13 +17,14 @@ $au-card-radius                               : var(--au-radius) !default;
   display: flex;
   flex-direction: column;
   background-color: var(--au-white);
-  border: .1rem solid $au-card-border-color;
+  border: 0.1rem solid $au-card-border-color;
   border-radius: $au-card-radius;
 }
 
 .au-c-card--shadow {
   border: 0;
-  box-shadow: 0 1px 3px rgba($au-gray-900, .1), 0 4px 20px rgba($au-gray-900, .035), 0 1px 1px rgba($au-gray-900, .025);
+  box-shadow: 0 1px 3px rgba($au-gray-900, 0.1),
+    0 4px 20px rgba($au-gray-900, 0.035), 0 1px 1px rgba($au-gray-900, 0.025);
 }
 
 .au-c-card--standout {
@@ -71,11 +72,9 @@ $au-card-radius                               : var(--au-radius) !default;
     padding: $au-unit;
   }
 
-  .au-c-card--padding-small  & {
+  .au-c-card--padding-small & {
     padding: $au-unit-small;
   }
-
-
 
   .au-c-card--padding:not(.au-c-card--divided) & + &,
   .au-c-card--padding-small:not(.au-c-card--divided) & + & {
@@ -172,7 +171,7 @@ $au-card-radius                               : var(--au-radius) !default;
 
 .au-c-card--divided .au-c-card__content,
 .au-c-card--divided .au-c-card__footer {
-  border-top: .1rem solid $au-card-border-color;
+  border-top: 0.1rem solid $au-card-border-color;
 }
 
 .au-c-card--divided.au-c-card--standout .au-c-card__content,

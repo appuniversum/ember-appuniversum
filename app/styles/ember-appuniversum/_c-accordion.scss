@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$au-accordion-spacing                       : $au-unit !default;
+$au-accordion-spacing: $au-unit !default;
 
 /* Component
   ========================================================================== */
@@ -35,7 +35,7 @@ $au-accordion-spacing                       : $au-unit !default;
 .au-c-accordion .au-c-toolbar .au-c-icon {
   color: var(--au-blue-700);
   transition: color var(--au-transition);
-  margin-top: .4rem;
+  margin-top: 0.4rem;
 
   &:hover,
   &:focus-within {
@@ -55,7 +55,7 @@ $au-accordion-spacing                       : $au-unit !default;
 
 // Border
 .au-c-accordion--border .au-c-toolbar {
-  border: .1rem solid var(--au-divider-color);
+  border: 0.1rem solid var(--au-divider-color);
   border-radius: var(--au-radius);
   padding: $au-unit-tiny;
   transition: background-color var(--au-transition);

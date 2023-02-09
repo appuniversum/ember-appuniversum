@@ -1,6 +1,9 @@
-<div class="au-c-time-picker" >
+<div class="au-c-time-picker">
   <div class="au-c-time-picker__box">
-    <AuLabel for="input-hour" data-test-autimepicker-hourlabel>{{@hoursLabel}}</AuLabel>
+    <AuLabel
+      for="input-hour"
+      data-test-autimepicker-hourlabel
+    >{{@hoursLabel}}</AuLabel>
     <div class="au-c-time-picker__input-wrapper">
       <AuInput
         class="au-c-time-picker__input"
@@ -8,8 +11,8 @@
         id="input-hour"
         data-test-autimepicker-hourinput
         @value={{this.hourValueFormatted}}
-        {{on 'keyup' (fn this.timeValueKeyPress "hourValue")}}
-        {{on 'input' (fn this.validateTime "hourValue")}}
+        {{on "keyup" (fn this.timeValueKeyPress "hourValue")}}
+        {{on "input" (fn this.validateTime "hourValue")}}
       />
       <div class="au-c-time-picker__button-wrapper">
         <button
@@ -18,7 +21,8 @@
           aria-controls="input-hour"
           class="au-c-time-picker__button"
           data-test-autimepicker-hourincrement
-          {{on 'click' (fn this.increment "hourValue")}}>
+          {{on "click" (fn this.increment "hourValue")}}
+        >
           +
         </button>
         <button
@@ -27,7 +31,8 @@
           aria-controls="input-hour"
           class="au-c-time-picker__button"
           data-test-autimepicker-hourdecrement
-          {{on 'click' (fn this.decrement "hourValue")}}>
+          {{on "click" (fn this.decrement "hourValue")}}
+        >
           -
         </button>
       </div>
@@ -37,7 +42,10 @@
   <span class="au-c-time-picker__separator">:</span>
 
   <div class="au-c-time-picker__box">
-    <AuLabel for="input-minute" data-test-autimepicker-minutelabel>{{@minutesLabel}}</AuLabel>
+    <AuLabel
+      for="input-minute"
+      data-test-autimepicker-minutelabel
+    >{{@minutesLabel}}</AuLabel>
     <div class="au-c-time-picker__input-wrapper">
       <AuInput
         class="au-c-time-picker__input"
@@ -45,8 +53,8 @@
         id="input-minute"
         data-test-autimepicker-minuteinput
         @value={{this.minuteValueFormatted}}
-        {{on 'keyup' (fn this.timeValueKeyPress "minuteValue")}}
-        {{on 'input' (fn this.validateTime "minuteValue")}}
+        {{on "keyup" (fn this.timeValueKeyPress "minuteValue")}}
+        {{on "input" (fn this.validateTime "minuteValue")}}
       />
       <div class="au-c-time-picker__button-wrapper">
         <button
@@ -54,8 +62,9 @@
           type="button"
           aria-controls="input-minute"
           class="au-c-time-picker__button"
-            data-test-autimepicker-minuteincrement
-          {{on 'click' (fn this.increment "minuteValue")}}>
+          data-test-autimepicker-minuteincrement
+          {{on "click" (fn this.increment "minuteValue")}}
+        >
           +
         </button>
         <button
@@ -63,8 +72,9 @@
           type="button"
           aria-controls="input-minute"
           class="au-c-time-picker__button"
-            data-test-autimepicker-minutedecrement
-          {{on 'click' (fn this.decrement "minuteValue")}}>
+          data-test-autimepicker-minutedecrement
+          {{on "click" (fn this.decrement "minuteValue")}}
+        >
           -
         </button>
       </div>
@@ -75,7 +85,10 @@
     <span class="au-c-time-picker__separator">:</span>
 
     <div class="au-c-time-picker__box">
-      <AuLabel for="input-second" data-test-autimepicker-secondlabel>{{@secondsLabel}}</AuLabel>
+      <AuLabel
+        for="input-second"
+        data-test-autimepicker-secondlabel
+      >{{@secondsLabel}}</AuLabel>
       <div class="au-c-time-picker__input-wrapper">
         <AuInput
           class="au-c-time-picker__input"
@@ -83,8 +96,8 @@
           id="input-second"
           data-test-autimepicker-secondinput
           @value={{this.secondValueFormatted}}
-          {{on 'keyup' (fn this.timeValueKeyPress "secondValue")}}
-          {{on 'input' (fn this.validateTime "secondValue")}}
+          {{on "keyup" (fn this.timeValueKeyPress "secondValue")}}
+          {{on "input" (fn this.validateTime "secondValue")}}
         />
         <div class="au-c-time-picker__button-wrapper">
           <button
@@ -93,7 +106,8 @@
             aria-controls="input-second"
             class="au-c-time-picker__button"
             data-test-autimepicker-secondincrement
-            {{on 'click' (fn this.increment "secondValue")}}>
+            {{on "click" (fn this.increment "secondValue")}}
+          >
             +
           </button>
           <button
@@ -102,7 +116,8 @@
             aria-controls="input-second"
             class="au-c-time-picker__button"
             data-test-autimepicker-seconddecrement
-            {{on 'click' (fn this.decrement "secondValue")}}>
+            {{on "click" (fn this.decrement "secondValue")}}
+          >
             -
           </button>
         </div>
@@ -115,11 +130,17 @@
       <AuButton
         class="au-c-time-picker__current"
         data-test-autimepicker-nowbutton
-        {{on 'click' this.setCurrentTime}}>
+        {{on "click" this.setCurrentTime}}
+      >
         {{@nowLabel}}
       </AuButton>
     </div>
   {{/if}}
 
-  <span class="au-u-hidden-visually">{{this.hourValue}} {{@hoursLabel}}, {{this.minuteValue}} {{@minutesLabel}}, {{this.secondValue}} {{@secondsLabel}}.</span>
+  <span class="au-u-hidden-visually">{{this.hourValue}}
+    {{@hoursLabel}},
+    {{this.minuteValue}}
+    {{@minutesLabel}},
+    {{this.secondValue}}
+    {{@secondsLabel}}.</span>
 </div>

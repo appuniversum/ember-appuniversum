@@ -23,17 +23,16 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-
 }
 
 .au-c-list__item {
   .au-c-list--vertical.au-c-list--divider & + & {
     padding-top: $au-unit-tiny;
-    border-top: .1rem solid var(--au-divider-color);
+    border-top: 0.1rem solid var(--au-divider-color);
   }
 
   .au-c-list--horizontal.au-c-list--divider & + & {
     padding-left: $au-unit-tiny;
-    border-left: .1rem solid var(--au-divider-color);
+    border-left: 0.1rem solid var(--au-divider-color);
   }
 }

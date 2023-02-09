@@ -8,7 +8,8 @@ export default create({
   colorSecondary: '#1EA7FD',
 
   // Typography
-  fontBase: '"flanders-sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+  fontBase:
+    '"flanders-sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
   fontCode: 'monospace',
 
   // Toolbar default and active colors

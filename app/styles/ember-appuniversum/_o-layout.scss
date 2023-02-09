@@ -7,11 +7,10 @@
 /* Variables
   ========================================================================== */
 
-$au-layout-width      : 900px !default;
+$au-layout-width: 900px !default;
 $au-layout-width-small: 600px !default;
 $au-layout-width-large: 1200px !default;
-$au-layout-breakpoint : medium !default;
-
+$au-layout-breakpoint: medium !default;
 
 /* Default classes.
   ========================================================================== */
@@ -28,7 +27,6 @@ $au-layout-breakpoint : medium !default;
     padding-left: $au-unit-large;
   }
 }
-
 
 /* Size variants.
    ========================================================================== */

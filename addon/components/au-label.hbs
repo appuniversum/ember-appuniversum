@@ -1,23 +1,36 @@
-<label class="au-c-label {{this.error}} {{this.warning}} {{this.inline}}" ...attributes>
+<label
+  class="au-c-label {{this.error}} {{this.warning}} {{this.inline}}"
+  ...attributes
+>
   {{#if this.warning}}
-  <AuBadge @icon="alert-triangle" @size="small" @skin="warning" class="au-u-margin-right-tiny" />
+    <AuBadge
+      @icon="alert-triangle"
+      @size="small"
+      @skin="warning"
+      class="au-u-margin-right-tiny"
+    />
   {{/if}}
   {{#if this.error}}
-  <AuBadge @icon="cross" @size="small" @skin="error" class="au-u-margin-right-tiny" />
+    <AuBadge
+      @icon="cross"
+      @size="small"
+      @skin="error"
+      class="au-u-margin-right-tiny"
+    />
   {{/if}}
   {{yield}}
   {{#if @required}}
     {{#if @inline}}
       {{#if @requiredLabel}}
-      <span class="au-c-label__addendum">{{@requiredLabel}}</span>
+        <span class="au-c-label__addendum">{{@requiredLabel}}</span>
       {{else}}
-      <span class="au-c-label__addendum">*</span>
+        <span class="au-c-label__addendum">*</span>
       {{/if}}
     {{else}}
       {{#if @requiredLabel}}
-      <AuPill>{{@requiredLabel}}</AuPill>
+        <AuPill>{{@requiredLabel}}</AuPill>
       {{else}}
-      <AuPill>Verplicht</AuPill>
+        <AuPill>Verplicht</AuPill>
       {{/if}}
     {{/if}}
   {{/if}}

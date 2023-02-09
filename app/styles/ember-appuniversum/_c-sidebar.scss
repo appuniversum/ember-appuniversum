@@ -5,8 +5,8 @@
 /* Variables
    ========================================================================== */
 
-$au-sidebar-background    : var(--au-gray-100) !default;
-$au-sidebar-border        : var(--au-gray-200) !default;
+$au-sidebar-background: var(--au-gray-100) !default;
+$au-sidebar-border: var(--au-gray-200) !default;
 $au-sidebar-header-padding: $au-unit-small !default;
 $au-sidebar-footer-padding: $au-unit !default;
 
@@ -36,7 +36,8 @@ $au-sidebar-footer-padding: $au-unit !default;
   padding: $au-sidebar-header-padding;
 
   @include mq(medium) {
-    padding: $au-sidebar-header-padding*1.5 $au-sidebar-header-padding*1.5 $au-sidebar-header-padding*0.5;
+    padding: $au-sidebar-header-padding * 1.5 $au-sidebar-header-padding * 1.5
+      $au-sidebar-header-padding * 0.5;
   }
 }
 
@@ -49,7 +50,7 @@ $au-sidebar-footer-padding: $au-unit !default;
 
 .au-c-sidebar__footer {
   @include au-font-size(var(--au-base));
-  padding: $au-sidebar-footer-padding*.5;
+  padding: $au-sidebar-footer-padding * 0.5;
 
   @include mq(medium) {
     text-align: center;

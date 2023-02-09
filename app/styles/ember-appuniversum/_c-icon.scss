@@ -5,10 +5,9 @@
 /* Variables
    ========================================================================== */
 
-$au-icon-size        : var(--au-icon-size) !default;
-$au-icon-size-medium : var(--au-icon-size-medium) !default;
-$au-icon-size-large  : var(--au-icon-size-large) !default;
-
+$au-icon-size: var(--au-icon-size) !default;
+$au-icon-size-medium: var(--au-icon-size-medium) !default;
+$au-icon-size-large: var(--au-icon-size-large) !default;
 
 /* Component
    ========================================================================== */
@@ -19,12 +18,11 @@ $au-icon-size-large  : var(--au-icon-size-large) !default;
   height: $au-icon-size;
   position: relative;
   vertical-align: baseline;
-  bottom: .05ex;
+  bottom: 0.05ex;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
 }
-
 
 /* Modifiers
   ========================================================================== */

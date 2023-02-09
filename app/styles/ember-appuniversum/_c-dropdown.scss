@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$au-dropdown-caret-size        : .4rem !default;
+$au-dropdown-caret-size: 0.4rem !default;
 
 /* Component
   ========================================================================== */
@@ -15,7 +15,7 @@ $au-dropdown-caret-size        : .4rem !default;
 }
 
 .au-c-dropdown > .au-c-button--naked {
-  padding: 0 $au-unit-tiny*.5;
+  padding: 0 $au-unit-tiny * 0.5;
   height: auto;
   line-height: 1.5;
 }
@@ -33,7 +33,7 @@ $au-dropdown-caret-size        : .4rem !default;
 
   @include mq(small) {
     width: auto;
-    max-width: $au-unit-huge*4;
+    max-width: $au-unit-huge * 4;
   }
 }
 
@@ -41,11 +41,11 @@ $au-dropdown-caret-size        : .4rem !default;
   z-index: var(--au-z-index-beta);
   width: auto;
 
-  box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
+  box-shadow: 0 0 12px rgba($au-gray-900, 0.15), 0 0 2px rgba($au-gray-900, 0.1);
   border-radius: var(--au-radius);
   background-color: var(--au-white);
 
-  @include au-font-size(var(--au-base),1.5);
+  @include au-font-size(var(--au-base), 1.5);
   font-family: var(--au-font);
   font-weight: var(--au-regular);
 }
@@ -64,7 +64,7 @@ $au-dropdown-caret-size        : .4rem !default;
     position: absolute;
     pointer-events: none;
     border-width: $au-dropdown-caret-size;
-    margin-left: -$au-dropdown-caret-size*.5;
+    margin-left: -$au-dropdown-caret-size * 0.5;
   }
 
   &:before {
@@ -80,7 +80,9 @@ $au-dropdown-caret-size        : .4rem !default;
 
 .au-c-dropdown__menu {
   position: relative;
-  z-index: var(--au-z-index-beta); // Re-apply z-index to fix overlapping arrow when focussing on a menu item
+  z-index: var(
+    --au-z-index-beta
+  ); // Re-apply z-index to fix overlapping arrow when focussing on a menu item
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -128,5 +130,5 @@ $au-dropdown-caret-size        : .4rem !default;
 .au-c-dropdown__menu > [role="group"] + [role="group"],
 .au-c-dropdown__menu > [role="group"] + [role="menuitem"],
 .au-c-dropdown__menu > [role="menuitem"] + [role="group"] {
-  border-top: .1rem dotted var(--au-gray-300);
+  border-top: 0.1rem dotted var(--au-gray-300);
 }

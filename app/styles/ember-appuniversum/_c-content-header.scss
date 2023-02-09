@@ -40,13 +40,11 @@
     content: "";
     display: block;
     position: absolute;
-    left: -.1rem;
+    left: -0.1rem;
     top: 50%;
     transform: translateY(-50%);
-    border-bottom: 40rem solid
-    var(--au-yellow-300);
-    border-right: 13.68rem solid
-    transparent;
+    border-bottom: 40rem solid var(--au-yellow-300);
+    border-right: 13.68rem solid transparent;
   }
 
   @include mq(medium) {
@@ -67,13 +65,13 @@
 
 .au-c-content-header__top,
 .au-c-content-header__bottom {
-  @include au-font-size(var(--au-h3-small),1);
+  @include au-font-size(var(--au-h3-small), 1);
   font-family: var(--au-font);
   display: inline-block;
   max-width: 60%;
 
   @include mq(medium) {
-    @include au-font-size(var(--au-h3),1.1);
+    @include au-font-size(var(--au-h3), 1.1);
     max-width: 50%;
   }
 }
@@ -85,7 +83,6 @@
 .au-c-content-header__bottom {
   font-weight: var(--au-medium);
 }
-
 
 /* Modifiers
   ========================================================================== */

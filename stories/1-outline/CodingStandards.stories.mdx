@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from "@storybook/addon-docs";
 
 <Meta title="Outline/Coding standards" />
 
@@ -51,9 +51,10 @@ import { Meta } from '@storybook/addon-docs';
 ## Style
 
 ### Use editorconfig logic (spaces/tabs)
+
 Editorconfig is a way to get rid of the spaces vs tabs discussion. It sets up your editor automatically based on rules in an .editorconfig config file contained in the project. When this rule is called, your code does not accord to whatever is set up in editorconfig.
 
-````shell
+```shell
 root = true
 
 [*]
@@ -66,64 +67,67 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
-````
+```
 
 ### Use rems
+
 Use rem units across the board, for declaration, except for media query statements and line-height. ([More info](https://www.24a11y.com/2019/pixels-vs-relative-units-in-css-why-its-still-a-big-deal/?ref=heydesigner))
 
-````scss
+```scss
 .au-c-component {
   font-size: 1.6rem;
   line-height: 1.2; // No unit needed for line-heights
 
-  @include media(min-width:760px) {
+  @include media(min-width: 760px) {
     font-size: 2.4rem;
   }
 }
-````
+```
 
 ### 0 values should be unitless
 
-````scss
+```scss
 .au-c-component {
   margin: 0;
 }
-````
+```
 
 ### No leading 0's
 
-````scss
+```scss
 .au-c-component {
-  margin: .5rem;
+  margin: 0.5rem;
 }
-````
+```
 
 ### Don’t use !important in regular component files but do use !important for utility classes to make them immutable
+
 Respect the ITCSS logic of having more specificity the later a rule occurs in the stylesheet. For the logic concerning this, I would like to refer to Harry Robert’s “forcing immutability in CSS” logic as explained in [this article](https://csswizardry.com/2016/05/the-importance-of-important/).
 
-
-````scss
+```scss
 .au-c-component {
-  margin: .5rem;
+  margin: 0.5rem;
 }
 
 .au-u-margin-bottom-none {
   margin-bottom: 0 !important;
 }
-````
+```
 
-***
+---
 
 ## Structure
 
 ### Accord to internal component structure
+
 You should use a consistent component structure.
+
 1. Every component should start with its component name
 2. Use correct block level comments
 3. Don't specify multiple components in a single CSS file.
 4. A component should be namespaced. Please adhere to our [namespace rules](/documentation/architecture/).
 
-````scss
+```scss
 /* ==================================
    #COMPONENT_NAME
    ================================== */
@@ -131,7 +135,7 @@ You should use a consistent component structure.
 /* Variables
    ========================================================================== */
 
-$au-component-spacing     : 1.5rem !default;
+$au-component-spacing: 1.5rem !default;
 
 /* Main component
    ========================================================================== */
@@ -144,42 +148,44 @@ $au-component-spacing     : 1.5rem !default;
   // Insert styles for the child element
 }
 
-
 /* Modifiers
    ========================================================================== */
 
 .au-c-component-name--modifier {
   // Insert styles for the modifier
 }
-
-````
+```
 
 ### Component cannot contain other component code references
+
 A component cannot contain other component code references - unless dependency is explicitly listed in top level description.
 
-````scss
+```scss
 // @TODO: Not clear in which situation this is relevant.
-````
+```
 
 ### Only load components that are actually being used in the HTML
+
 Only load components in the CSS that will end up being used in the HTML, whether in static or generated classes.
 
-````scss
+```scss
 // COMPONENTS
 @import "_appuniversum/c-brand";
 @import "_appuniversum/c-button";
 // @import "_appuniversum/c-button-link"; // Not used in this project
 @import "_appuniversum/c-icon";
 @import "_appuniversum/c-link";
-````
+```
 
 ### Imports in main file should be ordered alphabetically
+
 Every SCSS partial in a main SCSS file should be ordered alphabetically.
 
 ### Don’t put CSS rules in the main CSS file, only imports
-Use _shame.scss for whatever you are ashamed of and document why they are there so somebody else can refactor later. Try to keep the _shame.scss empty.
 
-````scss
+Use \_shame.scss for whatever you are ashamed of and document why they are there so somebody else can refactor later. Try to keep the \_shame.scss empty.
+
+```scss
 /* ==================================
    #SHAME
    ================================== */
@@ -187,18 +193,20 @@ Use _shame.scss for whatever you are ashamed of and document why they are there 
 // Quickfix to align outline dropdown better in this project.
 // @TODO: implement change in dropdown component.
 .au-c-dropdown--outline {
-  margin-bottom: -.5ex;
+  margin-bottom: -0.5ex;
 }
-````
+```
 
-***
+---
 
 ## BEM
-### Incorrect BEM usage: no usage of BEM children or modifiers.
-Please use ```__``` for any div that is a child of a BEM component.
-Use ```--``` for any div that is a modifier of a BEM component.
 
-````scss
+### Incorrect BEM usage: no usage of BEM children or modifiers.
+
+Please use `__` for any div that is a child of a BEM component.
+Use `--` for any div that is a modifier of a BEM component.
+
+```scss
 .au-c-component {
   // Component styles
 }
@@ -210,14 +218,14 @@ Use ```--``` for any div that is a modifier of a BEM component.
 .au-c-component--modifier {
   // Modiier component styles
 }
-````
+```
 
 ### Don’t nest BEM child selectors
+
 Don’t nest BEM child selectors for CSS specificity reasons. Also, because of the way CSS parsing works, this has performance benefits.
 **Exception:** when a child is dependend on a modifier or when CSS selectors are used this is allowed because this keeps the context of the styles grouped.
 
-
-````scss
+```scss
 .au-c-component {
   // Component styles
 }
@@ -227,20 +235,19 @@ Don’t nest BEM child selectors for CSS specificity reasons. Also, because of t
 
   // Specific CSS selector styles
   & + & {
-
   }
 
   // Modifier context styles
   .au-c-component--large & {
-
   }
 }
-````
+```
 
 ### No BEM grandchildren!
+
 Do not attempt to to recreate HTML structures in CSS; the HTML structure can be nested whereas the CSS structure will be flat.
 
-````scss
+```scss
 .au-c-component {
   // Component styles
 }
@@ -252,31 +259,30 @@ Do not attempt to to recreate HTML structures in CSS; the HTML structure can be 
 .au-c-component__grandchild {
   // Grandchild component styles
 }
-````
+```
 
-***
+---
 
 ## HTML standards
 
 ### Multiple components called in single class="" statement
+
 This problem occurs in the HTML, not in the CSS. It is best to not mix up components and write things separately, as this can cause override problems, since ITCSS components have the same level of CSS specificity.
 
 ### Don't
-````html
+
+```html
 <div class="au-o-grid">
-  <div class="au-o-grid__item au-c-card">
-    Content
-  </div>
+  <div class="au-o-grid__item au-c-card">Content</div>
 </div>
-````
+```
 
 ### Do
-````html
+
+```html
 <div class="au-o-grid">
   <div class="au-o-grid__item">
-    <div class="au-c-card">
-      Content
-    </div>
+    <div class="au-c-card">Content</div>
   </div>
 </div>
-````
+```

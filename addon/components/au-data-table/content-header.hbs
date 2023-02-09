@@ -1,7 +1,9 @@
 {{! template-lint-disable no-html-comments }}
 <tr class="au-c-data-table__header">
   {{#if this.enableSelection}}
-    <th class="au-c-data-table__header-title is-selectable"><!-- Checkbox --></th>
+    <th
+      class="au-c-data-table__header-title is-selectable"
+    ><!-- Checkbox --></th>
   {{/if}}
   {{#if this.enableLineNumbers}}
     <th class="au-c-data-table__header-title"><!-- Linenumbers --></th>
@@ -10,7 +12,11 @@
     {{yield}}
   {{else}}
     {{#each this.fields as |field|}}
-      {{au-data-table-th-sortable field=field label=field currentSorting=this.sort}}
+      {{au-data-table-th-sortable
+        field=field
+        label=field
+        currentSorting=this.sort
+      }}
     {{/each}}
   {{/if}}
 </tr>

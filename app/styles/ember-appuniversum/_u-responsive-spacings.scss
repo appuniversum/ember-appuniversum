@@ -59,40 +59,38 @@ $au-spacing-directions: null !default;
 // to indicate this.
 @if $au-spacing-directions == null {
   @error "In order to use responsive spacings, you also need to include `_utilities.spacings.scss`!";
-}
-@else {
+} @else {
+  // When using Sass-MQ, this defines the separator for the breakpoints suffix
+  // in the class name. By default, we are generating the responsive suffixes
+  // for the classes with a `@` symbol so you get classes like:
+  //
+  //   <div class="au-u-margin-bottom@small">
+  //
+  // Be aware that since the `@` symbol is a reserved symbol in CSS, it has to be
+  // escaped with a `\`. In the markup though, you write your classes without the
+  // backslash (e.g. `au-u-margin-bottom@small`).
+  $au-widths-breakpoint-separator: \@ !default;
+  $au-responsive-spacing-directions: null !default;
+  $au-responsive-spacing-properties: null !default;
+  $au-responsive-spacing-sizes: null !default;
 
-
-
-// When using Sass-MQ, this defines the separator for the breakpoints suffix
-// in the class name. By default, we are generating the responsive suffixes
-// for the classes with a `@` symbol so you get classes like:
-//
-//   <div class="au-u-margin-bottom@small">
-//
-// Be aware that since the `@` symbol is a reserved symbol in CSS, it has to be
-// escaped with a `\`. In the markup though, you write your classes without the
-// backslash (e.g. `au-u-margin-bottom@small`).
-$au-widths-breakpoint-separator: \@ !default;
-$au-responsive-spacing-directions: null !default;
-$au-responsive-spacing-properties: null !default;
-$au-responsive-spacing-sizes: null !default;
-
-
-/* Generate utility classes
+  /* Generate utility classes
   ========================================================================== */
 
-/* stylelint-disable max-nesting-depth */
-// Don't output anything if no responsive spacings are defined.
-@if ($au-responsive-spacing-properties != null) {
-  @each $property-namespace, $property in $au-responsive-spacing-properties {
-    @each $direction-namespace, $direction-rules in $au-responsive-spacing-directions {
-      @each $size-namespace, $size in $au-responsive-spacing-sizes {
-        @each $au-bp-name, $au-bp-value in $mq-breakpoints {
-          @include mq($from: $au-bp-name) {
-            .au-u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$au-widths-breakpoint-separator}#{$au-bp-name} {
-              @each $direction in $direction-rules {
-                #{$property}#{$direction}: $size !important;
+  /* stylelint-disable max-nesting-depth */
+  // Don't output anything if no responsive spacings are defined.
+  @if ($au-responsive-spacing-properties != null) {
+    @each $property-namespace, $property in $au-responsive-spacing-properties {
+      @each $direction-namespace,
+        $direction-rules in $au-responsive-spacing-directions
+      {
+        @each $size-namespace, $size in $au-responsive-spacing-sizes {
+          @each $au-bp-name, $au-bp-value in $mq-breakpoints {
+            @include mq($from: $au-bp-name) {
+              .au-u-#{$property-namespace}#{$direction-namespace}#{$size-namespace}#{$au-widths-breakpoint-separator}#{$au-bp-name} {
+                @each $direction in $direction-rules {
+                  #{$property}#{$direction}: $size !important;
+                }
               }
             }
           }
@@ -100,7 +98,6 @@ $au-responsive-spacing-sizes: null !default;
       }
     }
   }
-}
 
-/* stylelint-enable max-nesting-depth */
+  /* stylelint-enable max-nesting-depth */
 }

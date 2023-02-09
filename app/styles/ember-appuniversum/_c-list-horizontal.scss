@@ -5,9 +5,8 @@
 /* Variables
    ========================================================================== */
 
-$au-list-horizontal-spacing    : $au-unit-small !default;
-$au-list-horizontal-divider    : 1px dotted var(--au-gray-300) !default;
-
+$au-list-horizontal-spacing: $au-unit-small !default;
+$au-list-horizontal-divider: 1px dotted var(--au-gray-300) !default;
 
 /* Component
    ========================================================================== */
@@ -36,6 +35,6 @@ $au-list-horizontal-divider    : 1px dotted var(--au-gray-300) !default;
   > .au-c-dropdown,
   > .au-c-button,
   > .ember-view > .au-c-button {
-    margin-left: -$au-list-horizontal-spacing*.5;
+    margin-left: -$au-list-horizontal-spacing * 0.5;
   }
 }

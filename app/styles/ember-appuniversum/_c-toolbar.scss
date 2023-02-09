@@ -5,11 +5,11 @@
 /* Variables
    ========================================================================== */
 
-$au-toolbar-spacing         : $au-unit-small !default;
-$au-toolbar-border-width    : .1rem !default;
-$au-toolbar-border-color    : var(--au-divider-color) !default;
-$au-toolbar-tint            : var(--au-gray-100) !default;
-$au-toolbar-font-size       : var(--au-h6) !default;
+$au-toolbar-spacing: $au-unit-small !default;
+$au-toolbar-border-width: 0.1rem !default;
+$au-toolbar-border-color: var(--au-divider-color) !default;
+$au-toolbar-tint: var(--au-gray-100) !default;
+$au-toolbar-font-size: var(--au-h6) !default;
 
 /* Component
    ========================================================================== */
@@ -34,7 +34,7 @@ $au-toolbar-font-size       : var(--au-h6) !default;
   .au-c-toolbar--small &,
   .au-c-toolbar--medium &,
   .au-c-toolbar--large & {
-    margin: $au-toolbar-spacing*.5;
+    margin: $au-toolbar-spacing * 0.5;
   }
 }
 
@@ -60,16 +60,16 @@ $au-toolbar-font-size       : var(--au-h6) !default;
 }
 
 .au-c-toolbar--small {
-  padding: $au-toolbar-spacing*.5;
+  padding: $au-toolbar-spacing * 0.5;
   font-size: $au-toolbar-font-size;
 }
 
 .au-c-toolbar--medium {
-  padding: $au-toolbar-spacing*.5 $au-toolbar-spacing*1.5;
+  padding: $au-toolbar-spacing * 0.5 $au-toolbar-spacing * 1.5;
 }
 
 .au-c-toolbar--large {
-  padding: $au-toolbar-spacing*1.5;
+  padding: $au-toolbar-spacing * 1.5;
 }
 
 .au-c-toolbar__group--center {
