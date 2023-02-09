@@ -1,3 +1,23 @@
+## v2.4.0 (2023-02-09)
+
+#### :rocket: Enhancement
+
+- [#370](https://github.com/appuniversum/ember-appuniversum/pull/370) Improve the consistency between the AuControlCheckbox and AuControlRadio components ([@brenner-company](https://github.com/brenner-company))
+
+#### :bug: Bug Fix
+
+- [#373](https://github.com/appuniversum/ember-appuniversum/pull/373) Fix the disableWormholeElement exception ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+
+- [#372](https://github.com/appuniversum/ember-appuniversum/pull/372) Run Prettier on all supported file types ([@Windvis](https://github.com/Windvis))
+- [#371](https://github.com/appuniversum/ember-appuniversum/pull/371) Update to the Ember 4.10 blueprints ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v2.3.0 (2023-02-06)
 
 #### :rocket: Enhancement
