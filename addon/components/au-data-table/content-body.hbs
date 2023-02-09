@@ -8,7 +8,7 @@
           (includes wrapper.item this.data-table.selection)
           "selected"
         }}
-        {{action (optional this.onClickRow) wrapper.item}}
+        {{on "click" (fn (optional this.onClickRow) wrapper.item)}}
       >
         {{#if this.enableSelection}}
           <td class="is-selectable">
