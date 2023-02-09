@@ -8,25 +8,25 @@
   align-items: center;
   justify-content: center;
   height: 130px;
-  box-shadow: 0 0 3px rgba($au-gray-1000,.1);
+  box-shadow: 0 0 3px rgba($au-gray-1000, 0.1);
   text-align: center;
 }
 
 .au-d-swatch__name {
-  @include au-font-size($au-h6,1.2);
+  @include au-font-size($au-h6, 1.2);
   font-family: monospace;
   font-weight: $au-medium;
   margin-bottom: $au-unit-tiny;
 }
 
 .au-d-swatch__value {
-  @include au-font-size($au-h6,1.2);
+  @include au-font-size($au-h6, 1.2);
   font-family: monospace;
   font-weight: $au-medium;
   margin-bottom: $au-unit-tiny;
 }
 
 .au-d-swatch__contrast {
-  @include au-font-size($au-base,1.2);
+  @include au-font-size($au-base, 1.2);
   font-weight: $au-light;
 }

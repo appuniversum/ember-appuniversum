@@ -11,7 +11,6 @@
 
 $au-flex-utilities-responsive: false !default;
 
-
 /* Utility classes
   ========================================================================== */
 
@@ -126,7 +125,6 @@ $au-flex-utilities-responsive: false !default;
   align-self: stretch !important;
 }
 
-
 // Responsive utilities
 // ---
 @if ($au-flex-utilities-responsive == true) {
@@ -141,7 +139,7 @@ $au-flex-utilities-responsive: false !default;
           flex-wrap: nowrap !important;
         }
 
-        .au-u-flex--spaced\@#{$au-bp-name}{
+        .au-u-flex--spaced\@#{$au-bp-name} {
           gap: $au-unit !important;
         }
 

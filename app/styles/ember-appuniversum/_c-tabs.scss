@@ -9,12 +9,12 @@
   padding: 0 $au-unit;
 
   &:not(.au-c-tabs--reversed) {
-    border-bottom: .1rem solid var(--au-divider-color);
+    border-bottom: 0.1rem solid var(--au-divider-color);
   }
 }
 
 .au-c-tabs--reversed {
-  border-top: .1rem solid var(--au-divider-color);
+  border-top: 0.1rem solid var(--au-divider-color);
 }
 
 .au-c-tabs-list {

@@ -5,45 +5,45 @@
 /* Variables
    ========================================================================== */
 
-$au-button-height                               : $au-unit-large - $au-unit-small !default;
-$au-button-height-large                         : $au-unit-large !default;
-$au-button-font-size                            : var(--au-h6) !default;
-$au-button-font-size-large                      : var(--au-h5) !default;
-$au-button-border                               : .2rem !default;
-$au-button-border-radius                        : var(--au-radius) !default;
-$au-button-color                                : var(--au-white) !default;
-$au-button-contrast-color                       : var(--au-blue-700) !default;
-$au-button-contrast-hover-color                 : var(--au-blue-900) !default;
-$au-button-contrast-active-color                : var(--au-blue-900) !default;
-$au-button-contrast-visited-color               : var(--au-blue-700) !default;
-$au-button-secondary-color                      : var(--au-blue-700) !default;
-$au-button-secondary-hover-color                : var(--au-blue-900) !default;
-$au-button-secondary-contrast-active-color      : var(--au-blue-200) !default;
-$au-button-link-height                          : $au-unit !default;
-$au-button-link-color                           : var(--au-blue-700) !default;
-$au-button-link-color-underline                 : var(--au-blue-300) !default;
-$au-button-link-hover-color                     : var(--au-blue-900) !default;
-$au-button-link-hover-color-underline           : var(--au-blue-200) !default;
-$au-button-link-secondary-color                 : var(--au-gray-700) !default;
-$au-button-link-secondary-color-underline       : var(--au-gray-300) !default;
-$au-button-link-secondary-hover-color           : var(--au-gray-900) !default;
-$au-button-link-secondary-hover-color-underline : var(--au-gray-200) !default;
-$au-button-link-active-color                    : var(--au-gray-900) !default;
-$au-button-alert-color                          : var(--au-white) !default;
-$au-button-alert-contrast-color                 : var(--au-red-600) !default;
-$au-button-alert-contrast-hover-color           : var(--au-red-700) !default;
-$au-button-icon-only-width                      : $au-button-height  !default;
-$au-button-icon-only-width-large                : $au-button-height-large  !default;
-$au-button-link-icon-only-width                 : $au-button-link-height  !default;
-
-
-
+$au-button-height: $au-unit-large - $au-unit-small !default;
+$au-button-height-large: $au-unit-large !default;
+$au-button-font-size: var(--au-h6) !default;
+$au-button-font-size-large: var(--au-h5) !default;
+$au-button-border: 0.2rem !default;
+$au-button-border-radius: var(--au-radius) !default;
+$au-button-color: var(--au-white) !default;
+$au-button-contrast-color: var(--au-blue-700) !default;
+$au-button-contrast-hover-color: var(--au-blue-900) !default;
+$au-button-contrast-active-color: var(--au-blue-900) !default;
+$au-button-contrast-visited-color: var(--au-blue-700) !default;
+$au-button-secondary-color: var(--au-blue-700) !default;
+$au-button-secondary-hover-color: var(--au-blue-900) !default;
+$au-button-secondary-contrast-active-color: var(--au-blue-200) !default;
+$au-button-link-height: $au-unit !default;
+$au-button-link-color: var(--au-blue-700) !default;
+$au-button-link-color-underline: var(--au-blue-300) !default;
+$au-button-link-hover-color: var(--au-blue-900) !default;
+$au-button-link-hover-color-underline: var(--au-blue-200) !default;
+$au-button-link-secondary-color: var(--au-gray-700) !default;
+$au-button-link-secondary-color-underline: var(--au-gray-300) !default;
+$au-button-link-secondary-hover-color: var(--au-gray-900) !default;
+$au-button-link-secondary-hover-color-underline: var(--au-gray-200) !default;
+$au-button-link-active-color: var(--au-gray-900) !default;
+$au-button-alert-color: var(--au-white) !default;
+$au-button-alert-contrast-color: var(--au-red-600) !default;
+$au-button-alert-contrast-hover-color: var(--au-red-700) !default;
+$au-button-icon-only-width: $au-button-height !default;
+$au-button-icon-only-width-large: $au-button-height-large !default;
+$au-button-link-icon-only-width: $au-button-link-height !default;
 
 /* Component
   ========================================================================== */
 
 .au-c-button {
-  @include au-font-size($au-button-font-size, $au-button-height - $au-button-border * 2);
+  @include au-font-size(
+    $au-button-font-size,
+    $au-button-height - $au-button-border * 2
+  );
   font-family: var(--au-font);
   font-weight: var(--au-regular);
   cursor: pointer;
@@ -59,7 +59,8 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color var(--au-transition), background-color var(--au-transition), border-color var(--au-transition), box-shadow var(--au-transition);
+  transition: color var(--au-transition), background-color var(--au-transition),
+    border-color var(--au-transition), box-shadow var(--au-transition);
 
   &,
   &:visited {
@@ -109,13 +110,12 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
   }
 }
 
-
 /* Modifiers
   ========================================================================== */
 
 .au-c-button--large {
   @include au-font-size($au-button-font-size-large);
-  padding: $au-unit-small $au-unit-small $au-unit-small + .1rem;
+  padding: $au-unit-small $au-unit-small $au-unit-small + 0.1rem;
   height: $au-button-height-large;
 }
 
@@ -189,7 +189,8 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
 
 // Link button
 .au-c-button--link,
-.au-c-button--tertiary { // support for deprecated naming
+.au-c-button--tertiary {
+  // support for deprecated naming
   font-size: inherit;
   border-color: transparent;
   padding: 0 $au-unit-tiny 0;
@@ -284,7 +285,7 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
 .au-c-button--alert:not([class*="is-"]) {
   color: $au-button-alert-color;
   background-color: $au-button-alert-contrast-color;
-  border-color:  $au-button-alert-contrast-color;
+  border-color: $au-button-alert-contrast-color;
 
   &:hover,
   &:focus-visible,
@@ -415,7 +416,9 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
 }
 
 // Active buttons
-.au-c-button:not(.au-c-button--secondary):not(.au-c-button--link):not(.au-c-button--tertiary).is-active {
+.au-c-button:not(.au-c-button--secondary):not(.au-c-button--link):not(
+    .au-c-button--tertiary
+  ).is-active {
   background-color: $au-button-contrast-active-color;
   border-color: $au-button-contrast-active-color;
 }
@@ -432,11 +435,21 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
 }
 
 .au-c-button--icon-only {
-  padding: 0 calc((#{$au-button-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)) / 2); // calculate padding automatically to create square icon-only buttons
+  padding: 0
+    calc(
+      (
+          #{$au-button-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)
+        ) / 2
+    ); // calculate padding automatically to create square icon-only buttons
 
   &.au-c-button--link,
   &.au-c-button--tertiary {
-    padding: 0 calc((#{$au-button-link-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)) / 2);
+    padding: 0
+      calc(
+        (
+            #{$au-button-link-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)
+          ) / 2
+      );
   }
 
   .au-c-icon {
@@ -446,7 +459,12 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
 }
 
 .au-c-button--icon-only.au-c-button--large {
-  padding: 0 calc((#{$au-button-icon-only-width-large - ($au-button-border * 2)} - var(--au-icon-size-large)) / 2); // calculate padding automatically to create square icon-only buttons
+  padding: 0
+    calc(
+      (
+          #{$au-button-icon-only-width-large - ($au-button-border * 2)} - var(--au-icon-size-large)
+        ) / 2
+    ); // calculate padding automatically to create square icon-only buttons
 
   .au-c-icon {
     width: var(--au-icon-size-large);
@@ -458,6 +476,10 @@ $au-button-link-icon-only-width                 : $au-button-link-height  !defau
   ========================================================================== */
 
 @keyframes buttonLoading {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

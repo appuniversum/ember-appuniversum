@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--au-white);
-  border: .1rem solid var(--au-gray-200);
+  border: 0.1rem solid var(--au-gray-200);
   border-radius: var(--au-radius);
 }
 
@@ -16,6 +16,6 @@
 
 .au-c-panel__section {
   & + & {
-    border-top: .1rem solid var(--au-gray-200);
+    border-top: 0.1rem solid var(--au-gray-200);
   }
 }

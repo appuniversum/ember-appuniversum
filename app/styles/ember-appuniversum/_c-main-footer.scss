@@ -5,10 +5,9 @@
 /* Variables
    ========================================================================== */
 
-$au-footer-bg        : var(--au-white) !default;
-$au-footer-border    : .1rem solid var(--au-divider-color) !default;
-$au-footer-padding   : $au-unit !default;
-
+$au-footer-bg: var(--au-white) !default;
+$au-footer-border: 0.1rem solid var(--au-divider-color) !default;
+$au-footer-padding: $au-unit !default;
 
 /* Component
    ========================================================================== */
@@ -26,6 +25,6 @@ $au-footer-padding   : $au-unit !default;
   padding-bottom: $au-footer-padding;
 
   @include mq(large) {
-    padding-right: $au-footer-padding*2;
+    padding-right: $au-footer-padding * 2;
   }
 }

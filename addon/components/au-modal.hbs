@@ -1,30 +1,41 @@
 {{#if @modalOpen}}
   {{#in-element this.destinationElement}}
     <div
-      class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}"
+      class="au-c-modal-backdrop {{if @modalOpen 'is-visible'}}"
       role="button"
       data-test-modal-backdrop
       {{on "click" this.closeModal}}
     ></div>
-    <div id="{{@id}}"
-      class={{concat "au-c-modal " this.size this.padding this.overflow (if @modalOpen " is-visible")}}
+    <div
+      id="{{@id}}"
+      class={{concat
+        "au-c-modal "
+        this.size
+        this.padding
+        this.overflow
+        (if @modalOpen " is-visible")
+      }}
       role="dialog"
       aria-describedby={{concat "au-c-modal-title-" @id}}
       tabindex="-1"
       {{focus-trap
-          isActive=@modalOpen
-          focusTrapOptions=
-            (hash
-              initialFocus=this.initialFocus
-              allowOutsideClick=true
-              escapeDeactivates=this.handleEscapePress
-            )
+        isActive=@modalOpen
+        focusTrapOptions=(hash
+          initialFocus=this.initialFocus
+          allowOutsideClick=true
+          escapeDeactivates=this.handleEscapePress
+        )
       }}
       data-test-modal
       ...attributes
     >
       <div class="au-c-modal__header" data-test-modal-header>
-        <h1 id="au-c-modal-title-{{@id}}" class="au-c-modal__title" tabindex="-1" data-test-modal-title>
+        <h1
+          id="au-c-modal-title-{{@id}}"
+          class="au-c-modal__title"
+          tabindex="-1"
+          data-test-modal-title
+        >
           {{#if (has-block "title")}}
             {{yield to="title"}}
           {{else}}
@@ -42,11 +53,7 @@
         </button>
       </div>
 
-      {{#if (or
-        (has-block "title")
-        (has-block "body")
-        (has-block "footer")
-      )}}
+      {{#if (or (has-block "title") (has-block "body") (has-block "footer"))}}
         {{#if (has-block "body")}}
           <div class="au-c-modal__body" data-test-modal-body>
             {{yield to="body"}}
@@ -59,9 +66,12 @@
           </div>
         {{/if}}
       {{else}}
-        {{yield (hash
+        {{yield
+          (hash
             Body=(component "au-modal-body")
-            Footer=(component "au-modal-footer"))}}
+            Footer=(component "au-modal-footer")
+          )
+        }}
       {{/if}}
     </div>
   {{/in-element}}

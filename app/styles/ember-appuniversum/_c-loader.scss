@@ -26,17 +26,18 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(calc(-50% - 2rem),-50%);
-    width: .4rem;
-    height: .4rem;
+    transform: translate(calc(-50% - 2rem), -50%);
+    width: 0.4rem;
+    height: 0.4rem;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 1rem 0 var(--au-white), 2rem 0 var(--au-white), 3rem 0 var(--au-white);
+    box-shadow: 1rem 0 var(--au-white), 2rem 0 var(--au-white),
+      3rem 0 var(--au-white);
     animation: loader-wave infinite 1s linear;
   }
 }
@@ -45,21 +46,27 @@
   0%,
   100%,
   60% {
-    box-shadow: 1rem 0 var(--au-gray-600), 2rem 0 var(--au-gray-600), 3rem 0 var(--au-gray-600)
+    box-shadow: 1rem 0 var(--au-gray-600), 2rem 0 var(--au-gray-600),
+      3rem 0 var(--au-gray-600);
   }
   10% {
-    box-shadow: 1rem -.3rem var(--au-gray-600), 2rem 0 var(--au-gray-600), 3rem 0 var(--au-gray-600)
+    box-shadow: 1rem -0.3rem var(--au-gray-600), 2rem 0 var(--au-gray-600),
+      3rem 0 var(--au-gray-600);
   }
   20% {
-    box-shadow: 1rem -.6rem var(--au-gray-600), 2rem -.3rem var(--au-gray-600), 3rem 0 var(--au-gray-600)
+    box-shadow: 1rem -0.6rem var(--au-gray-600), 2rem -0.3rem var(--au-gray-600),
+      3rem 0 var(--au-gray-600);
   }
   30% {
-    box-shadow: 1rem -.3rem var(--au-gray-600), 2rem -.6rem var(--au-gray-600), 3rem -.3rem var(--au-gray-600)
+    box-shadow: 1rem -0.3rem var(--au-gray-600), 2rem -0.6rem var(--au-gray-600),
+      3rem -0.3rem var(--au-gray-600);
   }
   40% {
-    box-shadow: 1rem 0 var(--au-gray-600), 2rem -.3rem var(--au-gray-600), 3rem -.6rem var(--au-gray-600)
+    box-shadow: 1rem 0 var(--au-gray-600), 2rem -0.3rem var(--au-gray-600),
+      3rem -0.6rem var(--au-gray-600);
   }
   50% {
-    box-shadow: 1rem 0 var(--au-gray-600), 2rem 0 var(--au-gray-600), 3rem -.3rem var(--au-gray-600)
+    box-shadow: 1rem 0 var(--au-gray-600), 2rem 0 var(--au-gray-600),
+      3rem -0.3rem var(--au-gray-600);
   }
 }

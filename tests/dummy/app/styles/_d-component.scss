@@ -4,12 +4,12 @@
 
 .au-d-component {
   border: 2px solid var(--au-gray-100);
-  background-color: tint($au-gray-100,50);
+  background-color: tint($au-gray-100, 50);
   border-radius: var(--au-radius);
 }
 
 .au-d-component__contrast {
-  box-shadow: 0 0 $au-unit-small rgba($au-gray-900,.1);
+  box-shadow: 0 0 $au-unit-small rgba($au-gray-900, 0.1);
 }
 
 .au-d-component-block {
@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--au-gray-200);
-  border: $au-unit-tiny solid tint($au-gray-100,50);
+  border: $au-unit-tiny solid tint($au-gray-100, 50);
   padding: $au-unit;
 }
 

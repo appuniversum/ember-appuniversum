@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta } from "@storybook/addon-docs";
 
 <Meta title="Outline/Getting started" />
 
@@ -61,6 +61,7 @@ You can install the [ember-appuniversum](https://www.npmjs.com/package/@appunive
 `ember-appuniversum` uses SCSS so you will need to add a SCSS compiler to your project. This can be done by installing [ember-cli-sass](https://www.npmjs.com/package/ember-cli-sass).
 
 ### Autoprefixer
+
 `ember-appuniversum` doesn't use any CSS vendor prefixes in its code and it depends on `autoprefixer` to add those when needed. Make sure to set up autoprefixer in your project.
 
 The easiest way to do this in an ember project is by installing the [`ember-cli-autoprefixer` addon](https://github.com/kimroen/ember-cli-autoprefixer).
@@ -68,12 +69,14 @@ The easiest way to do this in an ember project is by installing the [`ember-cli-
 ## Customising the SCSS for your project
 
 Then load the SCSS in your `app.scss` file:
-``` css
+
+```css
 @import "ember-appuniversum";
 ```
 
 If you want more control over the order that SCSS partials are rendered you can import them as groups.
-``` css
+
+```css
 @import "ember-appuniversum/a-settings";
 @import "ember-appuniversum/a-tools";
 @import "ember-appuniversum/a-generic";
@@ -86,7 +89,7 @@ If you want more control over the order that SCSS partials are rendered you can 
 
 Alternatively you can also load every SCSS partial in your `app.scss` file for more control over which components you want to use:
 
-``` css
+```css
 /* ==================================
    #EMBER-APPUNIVERSUM
    ================================== */
@@ -108,28 +111,23 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
  * UTILITIES: Single function helper classes (namespace: '.au-u-...')
  */
 
-
 // SETTINGS
 @import "ember-appuniversum/s-colors.scss";
 @import "ember-appuniversum/s-global";
 @import "ember-appuniversum/s-utilities";
 @import "ember-appuniversum/s-root";
 
-
 // TOOLS
 @import "ember-appuniversum/t-font-size";
 @import "ember-appuniversum/t-sass-mq";
-
 
 // GENERIC
 @import "ember-appuniversum/g-reset";
 @import "ember-appuniversum/g-box-sizing";
 @import "ember-appuniversum/g-font";
 
-
 // ELEMENTS
 @import "ember-appuniversum/e-page";
-
 
 // OBJECTS
 @import "ember-appuniversum/o-box";
@@ -137,7 +135,6 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
 @import "ember-appuniversum/o-grid";
 @import "ember-appuniversum/o-layout";
 @import "ember-appuniversum/o-region";
-
 
 // COMPONENTS
 @import "ember-appuniversum/c-accordion";
@@ -184,11 +181,9 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
 @import "ember-appuniversum/c-toggle-switch";
 @import "ember-appuniversum/c-toolbar";
 
-
 // PLUGINS
 @import "ember-appuniversum/p-ember-power-select";
 @import "ember-appuniversum/p-duet-datepicker";
-
 
 // UTILITIES
 @import "ember-appuniversum/u-align-text";
@@ -206,5 +201,4 @@ Alternatively you can also load every SCSS partial in your `app.scss` file for m
 @import "ember-appuniversum/u-spacings";
 @import "ember-appuniversum/u-visible";
 @import "ember-appuniversum/u-widths";
-
 ```

@@ -1,5 +1,14 @@
 <button
-  class="au-c-button {{this.widthClass}} {{this.sizeClass}} {{this.skinClass}} {{this.alertClass}} {{this.loadingClass}} {{this.disabledClass}} {{this.iconOnlyClass}} {{if @wrap 'au-c-button--wrap'}}" disabled={{@disabled}}
+  class="au-c-button
+    {{this.widthClass}}
+    {{this.sizeClass}}
+    {{this.skinClass}}
+    {{this.alertClass}}
+    {{this.loadingClass}}
+    {{this.disabledClass}}
+    {{this.iconOnlyClass}}
+    {{if @wrap 'au-c-button--wrap'}}"
+  disabled={{@disabled}}
   type="button"
   ...attributes
 >
@@ -10,13 +19,16 @@
   {{/unless}}
   {{#if @hideText}}
     {{#if @loading}}
-      <span class="au-u-hidden-visually">Aan het laden</span><AuLoader @padding="small" />
+      <span class="au-u-hidden-visually">Aan het laden</span><AuLoader
+        @padding="small"
+      />
     {{else}}
       <span class="au-u-hidden-visually">{{yield}}</span>
     {{/if}}
   {{else}}
     {{#if @loading}}
-      {{this.loadingMessage}} <AuLoader @padding="small" />
+      {{this.loadingMessage}}
+      <AuLoader @padding="small" />
     {{else}}
       {{yield}}
     {{/if}}

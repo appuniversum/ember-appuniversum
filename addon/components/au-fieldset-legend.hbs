@@ -1,28 +1,42 @@
 {{#if (has-block)}}
-<div ...attributes>
-  <legend class="au-c-fieldset-legend {{this.skin}} {{this.error}} {{this.warning}}">
-    {{#if this.warning}}
-    <AuBadge @icon="alert-triangle" @size="small" @skin="warning" class="au-u-margin-right-tiny" />
-    {{/if}}
-    {{#if this.error}}
-    <AuBadge @icon="cross" @size="small" @skin="error" class="au-u-margin-right-tiny" />
-    {{/if}}
-    {{yield}}
-    {{#if @required}}
-      {{#if @inline}}
-        {{#if @requiredLabel}}
-        <span class="au-c-fieldset-legend__addendum">{{@requiredLabel}}</span>
+  <div ...attributes>
+    <legend
+      class="au-c-fieldset-legend {{this.skin}} {{this.error}} {{this.warning}}"
+    >
+      {{#if this.warning}}
+        <AuBadge
+          @icon="alert-triangle"
+          @size="small"
+          @skin="warning"
+          class="au-u-margin-right-tiny"
+        />
+      {{/if}}
+      {{#if this.error}}
+        <AuBadge
+          @icon="cross"
+          @size="small"
+          @skin="error"
+          class="au-u-margin-right-tiny"
+        />
+      {{/if}}
+      {{yield}}
+      {{#if @required}}
+        {{#if @inline}}
+          {{#if @requiredLabel}}
+            <span
+              class="au-c-fieldset-legend__addendum"
+            >{{@requiredLabel}}</span>
+          {{else}}
+            <span class="au-c-fieldset-legend__addendum">*</span>
+          {{/if}}
         {{else}}
-        <span class="au-c-fieldset-legend__addendum">*</span>
-        {{/if}}
-      {{else}}
-        {{#if @requiredLabel}}
-        <AuPill>{{@requiredLabel}}</AuPill>
-        {{else}}
-        <AuPill>Verplicht</AuPill>
+          {{#if @requiredLabel}}
+            <AuPill>{{@requiredLabel}}</AuPill>
+          {{else}}
+            <AuPill>Verplicht</AuPill>
+          {{/if}}
         {{/if}}
       {{/if}}
-    {{/if}}
-  </legend>
-</div>
+    </legend>
+  </div>
 {{/if}}

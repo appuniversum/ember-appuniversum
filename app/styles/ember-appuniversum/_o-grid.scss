@@ -52,7 +52,6 @@
  * There are plenty more options available to us: explore them below.
  */
 
-
 /* Default/mandatory classes.
    ========================================================================== */
 
@@ -72,7 +71,6 @@
   margin: -$au-unit; /* [4] */
 }
 
-
 /**
   * 1. By default, all grid items are full-width (mobile first).
   * 2. Gutters provided by padding:
@@ -82,7 +80,6 @@
   width: 100%; /* [1] */
   padding: $au-unit;
 }
-
 
 /* Gutter size modifiers.
    ========================================================================== */
@@ -127,7 +124,6 @@
   }
 }
 
-
 /* Vertical alignment modifiers.
    ========================================================================== */
 
@@ -151,7 +147,6 @@
   }
 }
 
-
 /* Fill order modifiers.
    ========================================================================== */
 
@@ -163,7 +158,6 @@
   justify-content: center;
 }
 
-
 /**
  * Fill up the grid system from the right-hand side.
  */
@@ -171,7 +165,6 @@
 .au-o-grid--right {
   justify-content: flex-end;
 }
-
 
 /**
  * Reverse the rendered order of the grid system.
@@ -181,14 +174,12 @@
   flex-direction: row-reverse;
 }
 
-
 /**
  * Stretch the grid in the available space
  */
 .au-o-grid--stretch {
   height: 100%;
 }
-
 
 /**
  * Fix the grid in the available space
