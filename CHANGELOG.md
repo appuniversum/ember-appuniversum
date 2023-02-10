@@ -1,3 +1,13 @@
+
+## v2.4.1 (2023-02-10)
+
+#### :bug: Bug Fix
+* [#374](https://github.com/appuniversum/ember-appuniversum/pull/374) Disable the `AuButton` component when it is in the loading state ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.4.0 (2023-02-09)
 
 #### :rocket: Enhancement
