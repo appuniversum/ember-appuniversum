@@ -29,7 +29,7 @@ $au-toggle-switch-background-color-on-disabled   : var(--au-gray-400) !default;
   position: relative;
   cursor: pointer;
   height: $au-toggle-switch-height - .4rem;
-  width: $au-toggle-switch-width * 1.5;
+  width: $au-toggle-switch-width * 2;
   background-color: $au-toggle-switch-background-color;
   border-radius: $au-toggle-switch-border-radius;
   transition: transform var(--au-transition), color var(--au-transition);
@@ -80,7 +80,7 @@ $au-toggle-switch-background-color-on-disabled   : var(--au-gray-400) !default;
 }
 
 .au-c-toggle-switch__input:checked + .au-c-toggle-switch__toggle:before {
-  transform: translateX($au-toggle-switch-width*.5 + .2rem);
+  transform: translateX($au-toggle-switch-width*.7);
 }
 
 
