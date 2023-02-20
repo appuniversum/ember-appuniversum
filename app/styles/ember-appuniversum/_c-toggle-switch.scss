@@ -33,6 +33,7 @@ $au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
   background-color: $au-toggle-switch-background-color;
   border-radius: $au-toggle-switch-border-radius;
   transition: transform var(--au-transition), color var(--au-transition);
+  flex-shrink: 0;
 
   &:before {
     content: "";
