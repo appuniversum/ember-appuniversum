@@ -1,4 +1,15 @@
 
+
+## v2.4.2 (2023-02-20)
+
+#### :bug: Bug Fix
+* [#380](https://github.com/appuniversum/ember-appuniversum/pull/380) Fix a `<AuToggleSwitch>` shrinking issue ([@Windvis](https://github.com/Windvis))
+* [#379](https://github.com/appuniversum/ember-appuniversum/pull/379) Only call `.focus` if the element exist ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.4.1 (2023-02-10)
 
 #### :bug: Bug Fix
