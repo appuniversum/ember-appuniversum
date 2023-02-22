@@ -1,0 +1,18 @@
+<label
+  class="au-c-control au-c-control--radio
+    {{if (and (not @inGroup) (not (has-block))) 'au-c-control--labelless'}}
+    {{if @disabled 'is-disabled'}}"
+>
+  <input
+    type="radio"
+    name={{@name}}
+    value={{this.value}}
+    checked={{this.checked}}
+    disabled={{@disabled}}
+    class="au-c-control__input"
+    {{on "change" this.onChange}}
+    ...attributes
+  />
+  <span class="au-c-control__indicator"></span>
+  {{yield}}
+</label>

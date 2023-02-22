@@ -1,0 +1,19 @@
+<div
+  class="au-c-control-group {{this.alignmentClass}}"
+  role="group"
+  ...attributes
+  data-test-radio-group
+>
+  {{yield
+    (hash
+      Radio=(component
+        "au-radio"
+        name=(or @name this.uniqueName)
+        groupValue=@value
+        disabled=@disabled
+        onChangeGroup=@onChange
+        inGroup=true
+      )
+    )
+  }}
+</div>

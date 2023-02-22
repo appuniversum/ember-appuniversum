@@ -1,0 +1,19 @@
+/* ==================================
+   #Control group
+   ================================== */
+
+/* Component
+   ========================================================================== */
+
+.au-c-control-group {
+  display: flex;
+  flex-direction: column;
+  gap: $au-unit-small;
+
+  &--inline {
+    flex-direction: row;
+    gap: $au-unit;
+    // width: 100%;
+    align-items: center;
+  }
+}
