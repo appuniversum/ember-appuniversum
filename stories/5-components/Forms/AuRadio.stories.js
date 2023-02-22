@@ -1,18 +1,12 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Forms/AuControlRadio',
+  title: 'Components/Forms/AuRadio',
   argTypes: {
-    label: { control: 'text', description: 'Set label text' },
     name: {
       control: 'text',
       description:
         'Groups radio buttons, to make sure their checked statuses are related',
-    },
-    identifier: {
-      control: 'text',
-      description:
-        'Makes sure the label is linked to the checkbox and clicking it will only activate the checkbox you clicked.',
     },
     value: {
       control: 'text',
@@ -21,11 +15,11 @@ export default {
     },
     checked: {
       control: 'boolean',
-      description: 'Adds a checked state to the radiobutton',
+      description: 'Adds a checked state to the radio button',
     },
     disabled: {
       control: 'boolean',
-      description: 'Adds a disabled state to the radiobutton',
+      description: 'Adds a disabled state to the radio button',
     },
   },
   parameters: {
@@ -35,23 +29,21 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuControlRadio
-      @label={{this.label}}
+    <AuRadio
       @name={{this.name}}
       @value={{this.value}}
-      @identifier={{this.identifier}}
       @checked={{this.checked}}
       @disabled= {{this.disabled}}
-    />`,
+    >
+      Ja
+    </AuRadio>`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  label: 'Ja',
   name: 'ja-nee',
   value: 'ja',
-  identifier: 'ja',
   checked: false,
   disabled: false,
 };
