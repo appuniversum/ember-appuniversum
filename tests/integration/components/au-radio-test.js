@@ -48,7 +48,7 @@ module('Integration | Component | au-radio', function (hooks) {
     await render(hbs`<AuRadio @value="foo" @onChange={{this.handleChange}} />`);
     await click('label');
 
-    assert.strictEqual(this.value, 'foo')
+    assert.strictEqual(this.value, 'foo');
   });
 
   test('it adds any extra attributes to the input element', async function (assert) {

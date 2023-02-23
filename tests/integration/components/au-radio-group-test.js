@@ -70,10 +70,10 @@ module('Integration | Component | au-radio-group', function (hooks) {
     `);
 
     await click('[data-test-bar]');
-    assert.strictEqual(this.value, 'bar')
+    assert.strictEqual(this.value, 'bar');
 
     await click('[data-test-foo]');
-    assert.strictEqual(this.value, 'foo')
+    assert.strictEqual(this.value, 'foo');
   });
 
   test('it adds any extra attributes to the group element', async function (assert) {

@@ -21,7 +21,7 @@ export default {
     onChange: {
       control: 'string',
       description:
-      'Expects a function that gets called when the radio button state changes. The function receives the radio button value & event context as parameters.',
+        'Expects a function that gets called when the radio button state changes. The function receives the radio button value & event context as parameters.',
     },
     disabled: {
       control: 'boolean',
