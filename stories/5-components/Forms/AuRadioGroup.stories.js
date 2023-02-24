@@ -18,14 +18,14 @@ export default {
       description:
         'Used to identify which radio button in the group is selected.',
     },
+    disabled: {
+      control: 'boolean',
+      description: 'Adds a disabled state to all the radio buttons.',
+    },
     onChange: {
       control: 'string',
       description:
         'Expects a function that gets called when the radio button state changes. The function receives the radio button value & event context as parameters.',
-    },
-    disabled: {
-      control: 'boolean',
-      description: 'Adds a disabled state to all the radio buttons.',
     },
   },
   parameters: {

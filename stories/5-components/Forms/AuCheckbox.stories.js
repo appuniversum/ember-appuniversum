@@ -1,18 +1,8 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Forms/AuControlCheckbox',
+  title: 'Components/Forms/AuCheckbox',
   argTypes: {
-    label: { control: 'text', description: 'Set label text' },
-    identifier: {
-      control: 'text',
-      description:
-        'Makes sure the label is linked to the checkbox and clicking it will only activate the checkbox you clicked.',
-    },
-    disabled: {
-      control: 'boolean',
-      description: 'Adds a disabled state to the checkbox',
-    },
     name: { control: 'text', description: 'Groups checkboxes for server side' },
     checked: {
       control: 'boolean',
@@ -21,6 +11,10 @@ export default {
     indeterminate: {
       control: 'boolean',
       description: 'Used to set indeterminate visual state of component',
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Adds a disabled state to the checkbox',
     },
     onChange: {
       control: 'text',
@@ -36,12 +30,10 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuControlCheckbox
-      @label={{this.label}}
-      @identifier={{this.identifier}}
-      @disabled={{this.disabled}}
       @name={{this.name}}
       @checked={{this.checked}}
       @indeterminate={{this.indeterminate}}
+      @disabled={{this.disabled}}
       @onChange={{this.onChange}}
     />`,
   context: args,
@@ -49,11 +41,9 @@ const Template = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
-  label: 'Ik ga akkoord',
-  identifier: 'akkoord',
-  disabled: false,
   name: '',
   checked: false,
   indeterminate: false,
+  disabled: false,
   onChange: '',
 };

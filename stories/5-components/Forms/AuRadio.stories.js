@@ -21,6 +21,11 @@ export default {
       control: 'boolean',
       description: 'Adds a disabled state to the radio button',
     },
+    onChange: {
+      control: 'string',
+      description:
+        'Expects a function that gets called when the radio button state changes. The function receives the radio button value & event context as parameters.',
+    },
   },
   parameters: {
     layout: 'padded',
