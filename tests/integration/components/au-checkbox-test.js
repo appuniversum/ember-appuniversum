@@ -36,7 +36,7 @@ module('Integration | Component | au-checkbox', function (hooks) {
     assert.dom('input').hasAttribute('name', 'foo');
   });
 
-  test('it calls the provided @onChange action when its value changes', async function (assert) {
+  test('it calls the provided @onChange action when its checked state changes', async function (assert) {
     this.handleChange = (checked) => {
       assert.step(`value changed to "${checked}"`);
     };

@@ -2,13 +2,12 @@
   class="au-c-control-group {{this.alignmentClass}}"
   role="group"
   ...attributes
-  data-test-radio-group
+  data-test-checkbox-group
 >
   {{yield
     (hash
-      Radio=(component
-        "au-radio"
-        name=(or @name this.uniqueName)
+      Checkbox=(component
+        "au-checkbox"
         inGroup=true
         groupValue=@value
         disabled=@disabled

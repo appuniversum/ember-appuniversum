@@ -2,22 +2,13 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 export default class AuCheckboxComponent extends Component {
-  get groupValueAsArray() {
+  get groupValue() {
     return this.args.groupValue || [];
   }
 
-  get groupValueAsObject() {
-    return this.args.groupValue || {};
-  }
-
   get isCheckedInGroup() {
-    const name = this.args.name;
-
-    if (this.args.groupValueIsObject) {
-      return this.groupValueAsObject[name] === true;
-    }
-
-    return this.groupValueAsArray.includes(name);
+    const { name } = this.args;
+    return this.groupValue.includes(name);
   }
 
   get checked() {
@@ -35,20 +26,18 @@ export default class AuCheckboxComponent extends Component {
     const { inGroup, onChange, onChangeGroup } = this.args;
 
     if (inGroup && typeof onChangeGroup === 'function') {
-      const { groupValueAsArray, groupValueAsObject } = this;
-      const { groupValueIsObject, name } = this.args;
+      const { groupValue } = this;
+      const { name } = this.args;
 
-      let groupValue;
+      let updatedGroupValue;
 
-      if (groupValueIsObject) {
-        groupValue = { ...groupValueAsObject, name: checked };
-      } else if (checked) {
-        groupValue = [...groupValueAsArray, name];
+      if (checked) {
+        updatedGroupValue = [...groupValue, name];
       } else {
-        groupValue = groupValueAsArray.filter((n) => n !== name);
+        updatedGroupValue = groupValue.filter((n) => n !== name);
       }
 
-      onChangeGroup(groupValue, event);
+      onChangeGroup(updatedGroupValue, event);
     } else if (typeof onChange === 'function') {
       onChange(checked, event);
     }
