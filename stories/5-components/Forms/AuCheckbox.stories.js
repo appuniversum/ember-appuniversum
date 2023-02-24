@@ -29,13 +29,15 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuControlCheckbox
+    <AuCheckbox
       @name={{this.name}}
       @checked={{this.checked}}
       @indeterminate={{this.indeterminate}}
       @disabled={{this.disabled}}
       @onChange={{this.onChange}}
-    />`,
+    >
+      Ik ga akkoord
+    </AuCheckbox>`,
   context: args,
 });
 
