@@ -6,14 +6,18 @@ export default class AuControlCheckbox extends Component {
   constructor() {
     super(...arguments);
 
-    deprecate('[AuControlCheckbox] This component is deprecated in favour of AuCheckbox', false, {
-      id: '@appuniversum/ember-appuniversum.au-control-checkbox',
-      until: '3.0.0',
-      for: '@appuniversum/ember-appuniversum',
-      since: {
-        enabled: '2.5.0',
-      },
-    });
+    deprecate(
+      '[AuControlCheckbox] This component is deprecated in favour of AuCheckbox',
+      false,
+      {
+        id: '@appuniversum/ember-appuniversum.au-control-checkbox',
+        until: '3.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '2.5.0',
+        },
+      }
+    );
   }
 
   get disabledClass() {
