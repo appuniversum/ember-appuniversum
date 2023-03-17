@@ -18,7 +18,7 @@ export default {
       description: 'Adds a disabled state to all the checkboxes.',
     },
     onChange: {
-      control: 'function',
+      action: 'change',
       description:
         'Expects a function that gets called when the state of the checkboxes change. The function receives the checked state of the checkboxs & event context as parameters.',
     },
@@ -48,5 +48,4 @@ Component.args = {
   alignment: 'default',
   value: ['checkboxTwo', 'checkboxThree'],
   disabled: false,
-  onChange: '',
 };

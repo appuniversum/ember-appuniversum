@@ -1,12 +1,12 @@
 <label
   class="au-c-control au-c-control--checkbox
-    {{if (and (not @inGroup) (not (has-block))) 'au-c-control--labelless'}}
+    {{if (not (has-block)) 'au-c-control--labelless'}}
     {{if @disabled 'is-disabled'}}"
 >
   <input
     type="checkbox"
     name={{@name}}
-    checked={{this.checked}}
+    checked={{@checked}}
     indeterminate={{@indeterminate}}
     disabled={{@disabled}}
     class="au-c-control__input"
