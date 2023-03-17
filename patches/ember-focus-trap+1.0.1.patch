@@ -1,0 +1,21 @@
+diff --git a/node_modules/ember-focus-trap/dist/modifiers/focus-trap.js b/node_modules/ember-focus-trap/dist/modifiers/focus-trap.js
+index c5383fa..ddb71cf 100644
+--- a/node_modules/ember-focus-trap/dist/modifiers/focus-trap.js
++++ b/node_modules/ember-focus-trap/dist/modifiers/focus-trap.js
+@@ -29,6 +29,7 @@ var focusTrap = setModifierManager(() => {
+         isPaused,
+         shouldSelfFocus,
+         focusTrapOptions,
++        additionalElements = [],
+         _createFocusTrap
+       }
+     }) {
+@@ -59,7 +60,7 @@ var focusTrap = setModifierManager(() => {
+         state.focusTrapOptions.returnFocusOnDeactivate = true;
+       }
+ 
+-      state.focusTrap = createFocusTrap$1(element, state.focusTrapOptions);
++      state.focusTrap = createFocusTrap$1([element, ...additionalElements], state.focusTrapOptions);
+ 
+       if (state.isActive) {
+         state.focusTrap.activate();
