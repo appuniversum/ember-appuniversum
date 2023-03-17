@@ -17,6 +17,7 @@
     "test": "tests"
   },
   "scripts": {
+    "postinstall": "patch-package",
     "build": "run-s icons build-ember build-storybook",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
