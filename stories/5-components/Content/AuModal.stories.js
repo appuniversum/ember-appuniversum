@@ -85,6 +85,42 @@ const OverflowTemplate = (args) => ({
     >
       <:title>{{this.title}}</:title>
       <:body>
+        <AuLabel>Power select (rendered in place)</AuLabel>
+        <PowerSelect
+          class='power-select'
+          @allowClear={{true}}
+          @searchEnabled={{true}}
+          @loadingMessage='Aan het laden...'
+          @noMatchesMessage='Geen resultaten'
+          @searchMessage='Typ om te zoeken'
+          @options={{this.powerselectoptions}}
+          @selected='Budget'
+          @onChange={{fn (mut this.selected)}}
+          @renderInPlace={{false}}
+          as |singleselect|>
+        {{singleselect}}
+      </PowerSelect>
+      </:body>
+      <:footer>
+        <AuButton>Action</AuButton>
+      </:footer>
+    </AuModal>`,
+  context: args,
+});
+
+const FocusTrapPatchTemplate = (args) => ({
+  template: hbs`
+    <AuModalContainer />
+    <AuModal
+      @modalOpen={{this.modalOpen}}
+      @closeModal={{this.closeModal}}
+      @size={{this.size}}
+      @padding={{this.padding}}
+      @overflow={{this.overflow}}
+      @initialFocus='.power-select'
+    >
+      <:title>{{this.title}}</:title>
+      <:body>
         <AuLabel>Power select</AuLabel>
         <PowerSelect
           class='power-select'
@@ -126,6 +162,18 @@ Overflow.args = {
   size: 'default',
   padding: 'default',
   overflow: true,
+  powerselectoptions: singleselects,
+  initialFocus: '.power-select',
+};
+
+export const FocusTrapPatch = FocusTrapPatchTemplate.bind({});
+FocusTrapPatch.args = {
+  modalOpen: true,
+  closeModal: null,
+  title: 'Modal (@overflow disabled) with ember-focus-trap-patch',
+  size: 'default',
+  padding: 'default',
+  overflow: false,
   powerselectoptions: singleselects,
   initialFocus: '.power-select',
 };
