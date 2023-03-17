@@ -85,7 +85,7 @@ const OverflowTemplate = (args) => ({
     >
       <:title>{{this.title}}</:title>
       <:body>
-        <AuLabel>Power select (rendered in place)</AuLabel>
+        <AuLabel>Power select</AuLabel>
         <PowerSelect
           class='power-select'
           @allowClear={{true}}
@@ -96,7 +96,7 @@ const OverflowTemplate = (args) => ({
           @options={{this.powerselectoptions}}
           @selected='Budget'
           @onChange={{fn (mut this.selected)}}
-          @renderInPlace={{true}}
+          @renderInPlace={{false}}
           as |singleselect|>
         {{singleselect}}
       </PowerSelect>
