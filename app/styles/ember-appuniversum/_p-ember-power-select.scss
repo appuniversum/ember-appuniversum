@@ -388,6 +388,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
   box-shadow: $ember-power-select-dropdown-box-shadow;
   overflow: hidden;
   color: $ember-power-select-text-color;
+  z-index: 10000;
 }
 
 .ember-power-select-dropdown.ember-basic-dropdown-content--above {
