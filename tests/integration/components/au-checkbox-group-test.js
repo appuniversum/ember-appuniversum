@@ -60,7 +60,7 @@ module('Integration | Component | au-checkbox-group', function (hooks) {
 
   test('it adds any extra attributes to the group element', async function (assert) {
     await render(hbs`
-      <AuCheckboxGroup foo="bar" as |Group|>
+      <AuCheckboxGroup foo="bar" data-test-checkbox-group as |Group|>
         <Group.Checkbox>Foo</Group.Checkbox>
       </AuCheckboxGroup>
     `);

@@ -78,7 +78,7 @@ module('Integration | Component | au-radio-group', function (hooks) {
 
   test('it adds any extra attributes to the group element', async function (assert) {
     await render(hbs`
-      <AuRadioGroup foo="bar" as |Group|>
+      <AuRadioGroup foo="bar" data-test-radio-group as |Group|>
         <Group.Radio>Foo</Group.Radio>
       </AuRadioGroup>
     `);
