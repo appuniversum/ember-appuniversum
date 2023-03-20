@@ -23,7 +23,7 @@ export default {
       description: 'Adds a disabled state to all the radio buttons.',
     },
     onChange: {
-      control: 'string',
+      action: 'change',
       description:
         'Expects a function that gets called when the radio button state changes. The function receives the radio button value & event context as parameters.',
     },
@@ -55,5 +55,4 @@ Component.args = {
   name: 'radios',
   value: 'radioTwo',
   disabled: false,
-  onChange: '',
 };

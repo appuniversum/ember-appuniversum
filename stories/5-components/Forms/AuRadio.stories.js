@@ -22,7 +22,7 @@ export default {
       description: 'Adds a disabled state to the radio button',
     },
     onChange: {
-      control: 'string',
+      action: 'change',
       description:
         'Expects a function that gets called when the radio button state changes. The function receives the radio button value & event context as parameters.',
     },
@@ -39,6 +39,7 @@ const Template = (args) => ({
       @value={{this.value}}
       @checked={{this.checked}}
       @disabled= {{this.disabled}}
+      @onChange={{this.onChange}}
     >
       Ja
     </AuRadio>`,

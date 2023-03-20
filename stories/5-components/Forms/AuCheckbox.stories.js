@@ -17,7 +17,7 @@ export default {
       description: 'Adds a disabled state to the checkbox',
     },
     onChange: {
-      control: 'text',
+      action: 'change',
       description:
         'Expects a function that gets called when the checkbox state changes. The function receives the checkbox state & event context as parameters.',
     },
@@ -47,5 +47,4 @@ Component.args = {
   checked: false,
   indeterminate: false,
   disabled: false,
-  onChange: '',
 };
