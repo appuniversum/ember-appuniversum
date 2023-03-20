@@ -7,11 +7,6 @@ export default class AuRadioComponent extends Component {
     return inGroup ? value === groupValue : checked;
   }
 
-  get value() {
-    const { value } = this.args;
-    return value === undefined ? undefined : String(value);
-  }
-
   @action
   onChange(event) {
     const { inGroup, onChange, onChangeGroup, value } = this.args;
