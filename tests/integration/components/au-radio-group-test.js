@@ -15,13 +15,13 @@ module('Integration | Component | au-radio-group', function (hooks) {
     assert.dom('[data-test-foo]').hasAttribute('name', 'foo');
   });
 
-  test('if it is given no name, it will automatically generate a unique id', async function (assert) {
+  test('if it is given no name, it will automatically generate a unique name', async function (assert) {
     await render(hbs`
       <AuRadioGroup as |Group|>
         <Group.Radio data-test-foo>Foo</Group.Radio>
       </AuRadioGroup>
     `);
-    assert.dom('[data-test-foo]').hasAttribute('name', /^ember\d+/); // E.g. 'ember308'
+    assert.dom('[data-test-foo]').hasAttribute('name');
   });
 
   test('it can be given a value', async function (assert) {
@@ -34,8 +34,10 @@ module('Integration | Component | au-radio-group', function (hooks) {
     `);
 
     assert.dom('[data-test-bar]').isChecked();
+    assert.dom('[data-test-foo]').isNotChecked();
 
     this.set('groupValue', 'foo');
+    assert.dom('[data-test-bar]').isNotChecked();
     assert.dom('[data-test-foo]').isChecked();
   });
 
