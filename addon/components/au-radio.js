@@ -14,10 +14,6 @@ export default class AuRadioComponent extends Component {
 
   @action
   onChange(event) {
-    if (this.args.disabled === true) {
-      return;
-    }
-
     const { inGroup, onChange, onChangeGroup, value } = this.args;
 
     if (inGroup && typeof onChangeGroup === 'function') {

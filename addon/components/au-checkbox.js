@@ -18,10 +18,6 @@ export default class AuCheckboxComponent extends Component {
 
   @action
   onChange(event) {
-    if (this.args.isDisabled === true) {
-      return;
-    }
-
     const { checked } = event.target;
     const { inGroup, onChange, onChangeGroup } = this.args;
 
