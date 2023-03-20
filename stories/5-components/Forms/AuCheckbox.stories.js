@@ -4,6 +4,7 @@ export default {
   title: 'Components/Forms/AuCheckbox',
   argTypes: {
     name: { control: 'text', description: 'Groups checkboxes for server side' },
+    value: { control: 'text', description: 'Sets the current value of the checkbox' },
     checked: {
       control: 'boolean',
       description: 'Used to set/get checked state of component',
@@ -31,6 +32,7 @@ const Template = (args) => ({
   template: hbs`
     <AuCheckbox
       @name={{this.name}}
+      @value={{this.value}}
       @checked={{this.checked}}
       @indeterminate={{this.indeterminate}}
       @disabled={{this.disabled}}
@@ -44,6 +46,7 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   name: '',
+  value: '',
   checked: false,
   indeterminate: false,
   disabled: false,

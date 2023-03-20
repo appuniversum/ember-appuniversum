@@ -7,8 +7,8 @@ export default class AuCheckboxComponent extends Component {
   }
 
   get isCheckedInGroup() {
-    const { name } = this.args;
-    return this.groupValue.includes(name);
+    const { value } = this.args;
+    return this.groupValue.includes(value);
   }
 
   get checked() {
@@ -23,14 +23,14 @@ export default class AuCheckboxComponent extends Component {
 
     if (inGroup && typeof onChangeGroup === 'function') {
       const { groupValue } = this;
-      const { name } = this.args;
+      const { value } = this.args;
 
       let updatedGroupValue;
 
       if (checked) {
-        updatedGroupValue = [...groupValue, name];
+        updatedGroupValue = [...groupValue, value];
       } else {
-        updatedGroupValue = groupValue.filter((n) => n !== name);
+        updatedGroupValue = groupValue.filter((n) => n !== value);
       }
 
       onChangeGroup(updatedGroupValue, event);

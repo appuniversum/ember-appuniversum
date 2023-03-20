@@ -31,9 +31,9 @@ module('Integration | Component | au-checkbox', function (hooks) {
     assert.dom('input').isNotDisabled();
   });
 
-  test('it can be given a name', async function (assert) {
-    await render(hbs`<AuCheckbox @name="foo" />`);
-    assert.dom('input').hasAttribute('name', 'foo');
+  test('it can be given a value', async function (assert) {
+    await render(hbs`<AuCheckbox @value="foo" />`);
+    assert.dom('input').hasAttribute('value', 'foo');
   });
 
   test('it calls the provided @onChange action when its checked state changes', async function (assert) {
