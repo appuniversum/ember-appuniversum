@@ -7,7 +7,7 @@ export default class AuControlRadio extends Component {
     super(...arguments);
 
     deprecate(
-      '[AuControlRadio] This component is deprecated in favour of AuRadio',
+      '[AuControlRadio] This component is deprecated in favour of AuRadioGroup (or AuRadio in specific scenarios)',
       false,
       {
         id: '@appuniversum/ember-appuniversum.au-control-radio',
