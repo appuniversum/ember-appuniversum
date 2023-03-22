@@ -10,8 +10,7 @@ export default {
     },
     name: {
       control: 'text',
-      description:
-        'Groups checkboxes for server side.',
+      description: 'Groups checkboxes for server side.',
     },
     selected: {
       control: 'array',
