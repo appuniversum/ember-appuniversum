@@ -9,7 +9,7 @@ module('Integration | Component | au-checkbox-group', function (hooks) {
   test('it can be given a value', async function (assert) {
     this.groupValue = ['bar'];
     await render(hbs`
-      <AuCheckboxGroup @value={{this.groupValue}} as |Group|>
+      <AuCheckboxGroup @selected={{this.groupValue}} as |Group|>
         <Group.Checkbox @value="foo" data-test-foo>Foo</Group.Checkbox>
         <Group.Checkbox @value="bar" data-test-bar>Bar</Group.Checkbox>
       </AuCheckboxGroup>
@@ -45,7 +45,7 @@ module('Integration | Component | au-checkbox-group', function (hooks) {
     };
 
     await render(hbs`
-      <AuCheckboxGroup @value={{this.groupValue}} @onChange={{this.handleChange}} as |Group|>
+      <AuCheckboxGroup @selected={{this.groupValue}} @onChange={{this.handleChange}} as |Group|>
         <Group.Checkbox @value="foo" data-test-foo>Foo</Group.Checkbox>
         <Group.Checkbox @value="bar" data-test-bar>Bar</Group.Checkbox>
       </AuCheckboxGroup>

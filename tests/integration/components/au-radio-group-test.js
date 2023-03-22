@@ -27,7 +27,7 @@ module('Integration | Component | au-radio-group', function (hooks) {
   test('it can be given a value', async function (assert) {
     this.groupValue = 'bar';
     await render(hbs`
-      <AuRadioGroup @value={{this.groupValue}} as |Group|>
+      <AuRadioGroup @selected={{this.groupValue}} as |Group|>
         <Group.Radio @value="foo" data-test-foo>Foo</Group.Radio>
         <Group.Radio @value="bar" data-test-bar>Bar</Group.Radio>
       </AuRadioGroup>

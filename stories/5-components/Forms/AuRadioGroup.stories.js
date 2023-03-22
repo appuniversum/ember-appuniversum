@@ -13,7 +13,7 @@ export default {
       description:
         'Groups radio buttons, to make sure their checked statuses are related',
     },
-    value: {
+    selected: {
       control: 'text',
       description:
         'Used to identify which radio button in the group is selected.',
@@ -38,7 +38,7 @@ const Template = (args) => ({
     <AuRadioGroup
       @alignment={{this.alignment}}
       @name={{this.name}}
-      @value={{this.value}}
+      @selected={{this.selected}}
       @disabled= {{this.disabled}}
       @onChange={{this.onChange}}
     as |Group|>
@@ -53,6 +53,6 @@ export const Component = Template.bind({});
 Component.args = {
   alignment: 'default',
   name: 'radios',
-  value: 'radioTwo',
+  selected: 'radioTwo',
   disabled: false,
 };

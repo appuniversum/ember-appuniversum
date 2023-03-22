@@ -8,7 +8,12 @@ export default {
       options: ['default', 'inline'],
       description: 'Choose the layout of the group.',
     },
-    value: {
+    name: {
+      control: 'text',
+      description:
+        'Groups checkboxes for server side.',
+    },
+    selected: {
       control: 'array',
       description:
         'Used to identify which checkboxes in the group are selected.',
@@ -32,13 +37,14 @@ const Template = (args) => ({
   template: hbs`
     <AuCheckboxGroup
       @alignment={{this.alignment}}
-      @value={{this.value}}
+      @name={{this.name}}
+      @selected={{this.selected}}
       @disabled= {{this.disabled}}
       @onChange={{this.onChange}}
     as |Group|>
-      <Group.Checkbox @name="checkboxOne">Checkbox 1</Group.Checkbox>
-      <Group.Checkbox @name="checkboxTwo">Checkbox 2</Group.Checkbox>
-      <Group.Checkbox @name="checkboxThree">Checkbox 3</Group.Checkbox>
+      <Group.Checkbox @value="checkboxOne">Checkbox 1</Group.Checkbox>
+      <Group.Checkbox @value="checkboxTwo">Checkbox 2</Group.Checkbox>
+      <Group.Checkbox @value="checkboxThree">Checkbox 3</Group.Checkbox>
     </AuCheckboxGroup>`,
   context: args,
 });
@@ -46,6 +52,7 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   alignment: 'default',
-  value: ['checkboxTwo', 'checkboxThree'],
+  name: '',
+  selected: ['checkboxTwo', 'checkboxThree'],
   disabled: false,
 };
