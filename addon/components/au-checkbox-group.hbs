@@ -1,0 +1,18 @@
+<div
+  class="au-c-control-group {{this.alignmentClass}}"
+  role="group"
+  ...attributes
+>
+  {{yield
+    (hash
+      Checkbox=(component
+        "au-checkbox"
+        name=@name
+        inGroup=true
+        groupValue=@selected
+        disabled=@disabled
+        onChangeGroup=@onChange
+      )
+    )
+  }}
+</div>

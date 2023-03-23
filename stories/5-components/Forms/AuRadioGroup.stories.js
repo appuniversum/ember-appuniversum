@@ -1,25 +1,26 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Forms/AuRadio',
+  title: 'Components/Forms/AuRadioGroup',
   argTypes: {
+    alignment: {
+      control: 'select',
+      options: ['default', 'inline'],
+      description: 'Choose the layout of the group.',
+    },
     name: {
       control: 'text',
       description:
         'Groups radio buttons, to make sure their checked statuses are related',
     },
-    value: {
+    selected: {
       control: 'text',
       description:
-        'Used to identify which radio button in a group is selected.',
-    },
-    checked: {
-      control: 'boolean',
-      description: 'Adds a checked state to the radio button',
+        'Used to identify which radio button in the group is selected.',
     },
     disabled: {
       control: 'boolean',
-      description: 'Adds a disabled state to the radio button',
+      description: 'Adds a disabled state to all the radio buttons.',
     },
     onChange: {
       action: 'change',
@@ -34,22 +35,24 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuRadio
+    <AuRadioGroup
+      @alignment={{this.alignment}}
       @name={{this.name}}
-      @value={{this.value}}
-      @checked={{this.checked}}
+      @selected={{this.selected}}
       @disabled= {{this.disabled}}
       @onChange={{this.onChange}}
-    >
-      Ja
-    </AuRadio>`,
+    as |Group|>
+      <Group.Radio @value="radioOne">Radio 1</Group.Radio>
+      <Group.Radio @value="radioTwo">Radio 2</Group.Radio>
+      <Group.Radio @value="radioThree">Radio 3</Group.Radio>
+    </AuRadioGroup>`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  name: 'ja-nee',
-  value: 'ja',
-  checked: false,
+  alignment: 'default',
+  name: 'radios',
+  selected: 'radioTwo',
   disabled: false,
 };

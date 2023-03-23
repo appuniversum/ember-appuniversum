@@ -40,16 +40,12 @@ module('Integration | Component | au-control-checkbox', function (hooks) {
   });
 
   test('it can be given a unique identifier', async function (assert) {
-    this.disabled = true;
-
     await render(hbs`<AuControlCheckbox @identifier="123" />`);
     assert.dom('label').hasAttribute('for', '123');
     assert.dom('input').hasAttribute('id', '123');
   });
 
   test('it can be given a name', async function (assert) {
-    this.disabled = true;
-
     await render(hbs`<AuControlCheckbox @name="foo" />`);
     assert.dom('input').hasAttribute('name', 'foo');
   });

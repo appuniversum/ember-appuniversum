@@ -1,19 +1,13 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Forms/AuControlCheckbox',
+  title: 'Components/Forms/AuCheckbox',
   argTypes: {
-    label: { control: 'text', description: 'Set label text' },
-    identifier: {
-      control: 'text',
-      description:
-        'Makes sure the label is linked to the checkbox and clicking it will only activate the checkbox you clicked.',
-    },
-    disabled: {
-      control: 'boolean',
-      description: 'Adds a disabled state to the checkbox',
-    },
     name: { control: 'text', description: 'Groups checkboxes for server side' },
+    value: {
+      control: 'text',
+      description: 'Sets the current value of the checkbox',
+    },
     checked: {
       control: 'boolean',
       description: 'Used to set/get checked state of component',
@@ -22,8 +16,12 @@ export default {
       control: 'boolean',
       description: 'Used to set indeterminate visual state of component',
     },
+    disabled: {
+      control: 'boolean',
+      description: 'Adds a disabled state to the checkbox',
+    },
     onChange: {
-      control: 'text',
+      action: 'change',
       description:
         'Expects a function that gets called when the checkbox state changes. The function receives the checkbox state & event context as parameters.',
     },
@@ -35,25 +33,24 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuControlCheckbox
-      @label={{this.label}}
-      @identifier={{this.identifier}}
-      @disabled={{this.disabled}}
+    <AuCheckbox
       @name={{this.name}}
+      @value={{this.value}}
       @checked={{this.checked}}
       @indeterminate={{this.indeterminate}}
+      @disabled={{this.disabled}}
       @onChange={{this.onChange}}
-    />`,
+    >
+      Ik ga akkoord
+    </AuCheckbox>`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  label: 'Ik ga akkoord',
-  identifier: 'akkoord',
-  disabled: false,
   name: '',
+  value: '',
   checked: false,
   indeterminate: false,
-  onChange: '',
+  disabled: false,
 };
