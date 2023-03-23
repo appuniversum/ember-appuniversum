@@ -1,5 +1,14 @@
 
 
+
+## v2.5.0 (2023-03-23)
+
+#### :rocket: Enhancement
+* [#381](https://github.com/appuniversum/ember-appuniversum/pull/381) Addition of new radio, checkbox and group components ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
 ## v2.4.2 (2023-02-20)
 
 #### :bug: Bug Fix
