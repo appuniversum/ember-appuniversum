@@ -21,7 +21,8 @@ $au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
 
 .au-c-toggle-switch {
   position: relative;
-  display: flex;
+  display: inline-flex;
+  gap: $au-unit-tiny;
   align-items: center;
 }
 
@@ -64,7 +65,6 @@ $au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
   color: var(--au-gray-700);
   font-family: var(--au-font);
   font-weight: var(--au-regular);
-  margin-left: $au-unit-tiny;
 
   .is-disabled & {
     color: var(--au-gray-600);
@@ -88,4 +88,14 @@ $au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
 .au-c-toggle-switch__input:focus + .au-c-toggle-switch__toggle {
   outline: var(--au-outline);
   outline-offset: var(--au-outline-offset);
+}
+
+// Alignment
+.au-c-toggle-switch--alignment-right {
+  flex-direction: row-reverse;
+}
+
+// Labelless
+.au-c-toggle-switch--labelless {
+  vertical-align: middle;
 }

@@ -4,6 +4,12 @@ export default {
   title: 'Components/Forms/AuToggleSwitch',
   argTypes: {
     label: { control: 'text', description: 'Set label text' },
+    alignment: {
+      control: 'select',
+      options: ['', 'left', 'right'],
+      description:
+        'Defines the alignment of the label',
+    },
     identifier: {
       control: 'text',
       description:
@@ -36,6 +42,7 @@ const Template = (args) => ({
   template: hbs`
     <AuToggleSwitch
       @label={{this.label}}
+      @alignment={{this.alignment}}
       @identifier={{this.identifier}}
       @disabled={{this.disabled}}
       @name={{this.name}}
@@ -48,6 +55,7 @@ const Template = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   label: 'Toggle this feature',
+  alignment: '',
   identifier: 'toggle',
   disabled: false,
   name: '',
