@@ -3,7 +3,8 @@ import { action } from '@ember/object';
 
 export default class AuToggleSwitch extends Component {
   get alignmentClass() {
-    if (this.args.alignment === 'right') return 'au-c-toggle-switch--alignment-right';
+    if (this.args.alignment === 'right')
+      return 'au-c-toggle-switch--alignment-right';
     else return '';
   }
 

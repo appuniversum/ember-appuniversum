@@ -7,8 +7,7 @@ export default {
     alignment: {
       control: 'select',
       options: ['', 'left', 'right'],
-      description:
-        'Defines the alignment of the label',
+      description: 'Defines the alignment of the label',
     },
     identifier: {
       control: 'text',
