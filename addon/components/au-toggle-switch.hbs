@@ -21,8 +21,6 @@
   {{#if (has-block)}}
     {{yield}}
   {{else if @label}}
-    <span class="au-c-toggle-switch__label">
-      {{@label}}
-    </span>
+    {{@label}}
   {{/if}}
 </label>
