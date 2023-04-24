@@ -2,6 +2,8 @@ import { assert } from '@ember/debug';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 
+const FOCUS_TRAP_ADDITIONAL_ELEMENTS = ['#ember-basic-dropdown-wormhole'];
+
 export default class AuModal extends Component {
   constructor() {
     super(...arguments);
@@ -34,6 +36,12 @@ export default class AuModal extends Component {
 
   get initialFocus() {
     return this.args.initialFocus ?? '.au-c-modal__title';
+  }
+
+  get additionalElements() {
+    return FOCUS_TRAP_ADDITIONAL_ELEMENTS.filter(
+      (element) => document.querySelector(element) !== null
+    );
   }
 
   @action
