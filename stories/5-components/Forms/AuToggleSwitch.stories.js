@@ -40,14 +40,13 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuToggleSwitch
-      @label={{this.label}}
       @alignment={{this.alignment}}
       @identifier={{this.identifier}}
       @disabled={{this.disabled}}
       @name={{this.name}}
       @checked={{this.checked}}
       @onChange={{this.onchange}}
-    />`,
+    >{{this.label}}</AuToggleSwitch>`,
   context: args,
 });
 
