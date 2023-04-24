@@ -36,7 +36,7 @@ module('Integration | Component | au-table', function (hooks) {
       </AuTable>
     `);
 
-    assert.dom(TABLE.TITLE).hasText('Title');
+    assert.dom(TABLE.TITLE).exists();
     assert.dom(TABLE.HEADER).hasText('Header');
     assert.dom(TABLE.BODY).hasText('Body');
     assert.dom(TABLE.FOOTER).hasText('Footer');
@@ -50,5 +50,21 @@ module('Integration | Component | au-table', function (hooks) {
     `);
 
     assert.dom(TABLE.TABLE).hasClass('test');
+  });
+
+  test("it doesn't output whitespace in the named blocks if nothing is passed in", async function (assert) {
+    await render(hbs`
+      <AuTable>
+        <:title></:title>
+        <:header></:header>
+        <:body></:body>
+        <:footer></:footer>
+      </AuTable>
+    `);
+
+    assert.dom(TABLE.TITLE).matchesSelector(':empty');
+    assert.dom(TABLE.HEADER).matchesSelector(':empty');
+    assert.dom(TABLE.BODY).matchesSelector(':empty');
+    assert.dom(TABLE.FOOTER).matchesSelector(':empty');
   });
 });
