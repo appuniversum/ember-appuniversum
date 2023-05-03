@@ -1,6 +1,19 @@
 
 
 
+## v2.6.0 (2023-05-03)
+
+#### :rocket: Enhancement
+* [#393](https://github.com/appuniversum/ember-appuniversum/pull/393) Addition of various functionality for the toggle-switch component ([@brenner-company](https://github.com/brenner-company))
+
+#### :bug: Bug Fix
+* [#396](https://github.com/appuniversum/ember-appuniversum/pull/396) Disable autofill for AuDateInput components ([@Riadabd](https://github.com/Riadabd))
+
+#### Committers: 2
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Riad Abdallah ([@Riadabd](https://github.com/Riadabd))
+
+
 ## v2.5.0 (2023-03-23)
 
 #### :rocket: Enhancement
