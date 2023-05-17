@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import { hasDeprecationStartingWith } from '../../helpers/deprecations';
 
 const TOGGLE_SWITCH = {
   LABEL: '[data-test-toggle-switch-label]',
@@ -46,6 +47,18 @@ module('Integration | Component | au-toggle-switch', function (hooks) {
 
   test('it shows the provided label text', async function (assert) {
     await render(hbs`<AuToggleSwitch @label="Choose me!" />`);
+
+    assert.dom(TOGGLE_SWITCH.LABEL).hasText('Choose me!');
+    assert.true(
+      hasDeprecationStartingWith(
+        '[AuToggleSwitch] The @label argument for this component is deprecated in favour of using block content.'
+      ),
+      '@label throws a deprecation warning'
+    );
+  });
+
+  test('it uses the block content as a label', async function (assert) {
+    await render(hbs`<AuToggleSwitch>Choose me!</AuToggleSwitch>`);
 
     assert.dom(TOGGLE_SWITCH.LABEL).hasText('Choose me!');
   });

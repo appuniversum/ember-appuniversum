@@ -21,13 +21,20 @@ $au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
 
 .au-c-toggle-switch {
   position: relative;
-  display: flex;
+  display: inline-flex;
+  gap: $au-unit-tiny;
   align-items: center;
+  color: var(--au-gray-900);
+  cursor: pointer;
+
+  &.is-disabled {
+    color: var(--au-gray-600);
+    cursor: not-allowed;
+  }
 }
 
 .au-c-toggle-switch__toggle {
   position: relative;
-  cursor: pointer;
   height: $au-toggle-switch-height - 0.4rem;
   width: $au-toggle-switch-width * 1.5;
   background-color: $au-toggle-switch-background-color;
@@ -51,23 +58,10 @@ $au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
   .is-disabled & {
     background-color: $au-toggle-switch-color-disabled;
     border-radius: $au-toggle-switch-border-radius;
-    cursor: not-allowed;
   }
 
   .is-disabled &:before {
     background-color: $au-toggle-switch-background-color-disabled;
-  }
-}
-
-.au-c-toggle-switch__label {
-  @include au-font-size(var(--au-h6));
-  color: var(--au-gray-700);
-  font-family: var(--au-font);
-  font-weight: var(--au-regular);
-  margin-left: $au-unit-tiny;
-
-  .is-disabled & {
-    color: var(--au-gray-600);
   }
 }
 
@@ -88,4 +82,14 @@ $au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
 .au-c-toggle-switch__input:focus + .au-c-toggle-switch__toggle {
   outline: var(--au-outline);
   outline-offset: var(--au-outline-offset);
+}
+
+// Alignment
+.au-c-toggle-switch--alignment-right {
+  flex-direction: row-reverse;
+}
+
+// Labelless
+.au-c-toggle-switch--labelless {
+  vertical-align: middle;
 }

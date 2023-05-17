@@ -1,6 +1,9 @@
 <label
   for="{{@identifier}}"
-  class="au-c-toggle-switch {{this.disabled}}"
+  class="au-c-toggle-switch
+    {{this.alignmentClass}}
+    {{if (and (not (has-block)) (not @label)) 'au-c-toggle-switch--labelless'}}
+    {{if @disabled 'is-disabled'}}"
   data-test-toggle-switch-label
 >
   <Input
@@ -15,5 +18,9 @@
     ...attributes
   />
   <span class="au-c-toggle-switch__toggle"></span>
-  <span class="au-c-toggle-switch__label">{{@label}}</span>
+  {{#if (has-block)}}
+    {{yield}}
+  {{else if @label}}
+    {{@label}}
+  {{/if}}
 </label>
