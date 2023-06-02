@@ -70,6 +70,9 @@ $ember-power-select-opened-border-radius: 0; // Border radius of the side of the
 $ember-power-select-search-input-border-radius: 0.3rem;
 $ember-power-select-multiple-option-border-radius: $ember-power-select-default-border-radius;
 
+// Z-index
+$ember-power-select-dropdown-z-index: 10000; // Z-index of the dropdown when it is not rendered in place (needs to be higher then z-index of the modal component)
+
 // Other
 $ember-power-select-focus-box-shadow: none;
 $ember-power-select-dropdown-margin: 0; // Margin between the dropdown and the trigger
@@ -388,6 +391,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
   box-shadow: $ember-power-select-dropdown-box-shadow;
   overflow: hidden;
   color: $ember-power-select-text-color;
+  z-index: $ember-power-select-dropdown-z-index;
 }
 
 .ember-power-select-dropdown.ember-basic-dropdown-content--above {
@@ -414,6 +418,7 @@ $ember-power-select-multiple-option-line-height: 1.45;
 .ember-power-select-dropdown.ember-basic-dropdown-content--in-place {
   // Dropdown when rendered in place
   width: 100%;
+  z-index: auto;
 }
 
 // Options
