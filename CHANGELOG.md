@@ -1,6 +1,15 @@
 
 
 
+
+## v2.7.0 (2023-06-02)
+
+#### :rocket: Enhancement
+* [#395](https://github.com/appuniversum/ember-appuniversum/pull/395) Update of ember-focus-trap package and application of additional elements argument to modal component ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
 ## v2.6.0 (2023-05-03)
 
 #### :rocket: Enhancement
