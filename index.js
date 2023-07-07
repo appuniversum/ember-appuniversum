@@ -28,12 +28,13 @@ module.exports = {
       ].setOwnConfig.dutchDatePickerLocalization = true;
     }
 
-    this.shouldDisableWormholeElementRendering = Boolean(
-      addonOptions?.disableWormholeElement
-    );
+    if (isIncludedByApp(this)) {
+      this.shouldDisableWormholeElementRendering = Boolean(
+        addonOptions?.disableWormholeElement
+      );
 
-    this.ui.writeDeprecateLine(
-      `\
+      this.ui.writeDeprecateLine(
+        `\
 The #ember-appuniversum-wormhole element is deprecated. Please use the \`<AuModalContainer />\` component where appropriate and disable this warning by adding the following flag to your ember-cli-build.js file:
 
 //ember-cli-build.js
@@ -43,12 +44,13 @@ The #ember-appuniversum-wormhole element is deprecated. Please use the \`<AuModa
 
 More information: https://github.com/appuniversum/ember-appuniversum/issues/258
 `,
-      this.shouldDisableWormholeElementRendering
-    );
+        this.shouldDisableWormholeElementRendering
+      );
+    }
   },
 
   contentFor: function (type) {
-    if (type === 'body') {
+    if (isIncludedByApp(this) && type === 'body') {
       return this.shouldDisableWormholeElementRendering
         ? ''
         : '<div id="ember-appuniversum-wormhole"></div>';
@@ -57,3 +59,7 @@ More information: https://github.com/appuniversum/ember-appuniversum/issues/258
     }
   },
 };
+
+function isIncludedByApp(addonInstance) {
+  return addonInstance.parent === addonInstance.project;
+}
