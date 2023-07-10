@@ -37,7 +37,7 @@ export default class AuToastDemo extends Component {
         icon: 'download',
         text: 'Action button',
         handler: this.triggerToast,
-      }
+      },
     });
   }
 
