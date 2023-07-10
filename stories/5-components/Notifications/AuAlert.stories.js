@@ -46,8 +46,42 @@ const Template = (args) => ({
   context: args,
 });
 
-export const Component = Template.bind({});
-Component.args = {
+const TemplateWithActionButton = (args) => ({
+  template: hbs`
+    <AuAlert
+      @title={{this.title}}
+      @skin={{this.skin}}
+      @icon={{this.icon}}
+      @size={{this.size}}
+      @closable={{this.closable}}
+      @onClose={{this.onClose}}
+    >
+      <:default>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+      </:default>
+      <:action>
+        <AuButton
+          @skin="primary"
+          @icon="download"
+        >
+          Action button
+        </AuButton>
+      </:action>
+    </AuAlert>`,
+  context: args,
+});
+
+export const Alert = Template.bind({});
+Alert.args = {
+  title: 'Alert',
+  skin: 'warning',
+  icon: 'download',
+  size: 'default',
+  closable: false,
+};
+
+export const AlertWithActionButton = TemplateWithActionButton.bind({});
+AlertWithActionButton.args = {
   title: 'Alert',
   skin: 'warning',
   icon: 'download',

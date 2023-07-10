@@ -31,6 +31,17 @@ export default class AuToastDemo extends Component {
   }
 
   @action
+  triggerToastWithActionButton() {
+    this.toaster.success('Message', 'Notify with action', {
+      action: {
+        icon: 'download',
+        text: 'Action button',
+        handler: this.triggerToast,
+      }
+    });
+  }
+
+  @action
   triggerTimeoutToast() {
     this.toaster.notify('Message', 'Timeout', {
       timeOut: 3000,

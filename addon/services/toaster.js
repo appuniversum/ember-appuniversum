@@ -2,6 +2,7 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { task, timeout } from 'ember-concurrency';
 import { A } from '@ember/array';
+import { assert } from '@ember/debug';
 
 export default class ToasterService extends Service {
   @tracked toasts = A([]);
@@ -14,6 +15,20 @@ export default class ToasterService extends Service {
 
     if (typeof toast.options.closable === 'undefined') {
       toast.options.closable = true;
+    }
+
+    if (typeof toast.options.action === 'undefined') {
+      toast.options.action = null;
+    } else {
+      assert(
+        'Toaster (service): No text for the action button was defined.',
+        Object.hasOwn(toast.options.action, 'text')
+      );
+
+      assert(
+        'Toaster (service): No handler for the action button was defined.',
+        Object.hasOwn(toast.options.action, 'handler')
+      );
     }
 
     this.toasts.pushObject(toast);

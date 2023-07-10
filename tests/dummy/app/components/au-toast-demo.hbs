@@ -64,6 +64,15 @@
 
     <AuButton @skin="secondary" {{on "click" this.triggerLoadingToast}}>Trigger
       loading toast</AuButton>
+
+    <AuHr />
+
+    <p class="au-u-margin-bottom-small">With action button:
+      <AuPill>{{"this.toaster.success('Message','Notify',{ action: { icon: 'download', text: 'Action button', handler: this.triggerToast } });"}}</AuPill>.</p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerToastWithActionButton}}>
+      Trigger success toast with action button
+    </AuButton>
   </div>
 
   <div class="au-o-flow au-o-flow--tiny">

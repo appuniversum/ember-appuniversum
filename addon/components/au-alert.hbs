@@ -1,6 +1,6 @@
 {{#if this.isVisible}}
   <div
-    class="au-c-alert {{this.skin}} {{this.size}}"
+    class="au-c-alert {{this.skin}} {{this.size}} {{if @isAToast "au-c-alert--toast"}}"
     role="alert"
     data-test-alert
     ...attributes
@@ -14,11 +14,18 @@
         <AuIcon @icon={{@icon}} />
       </div>
     {{/if}}
-    <div class="au-c-alert__content">
-      {{#if @title}}
-        <p class="au-c-alert__title" data-test-alert-title>{{@title}}</p>
+    <div class="au-c-alert__container">
+      <div class="au-c-alert__content">
+        {{#if @title}}
+          <p class="au-c-alert__title" data-test-alert-title>{{@title}}</p>
+        {{/if}}
+        <div class="au-c-alert__message" data-test-alert-message>{{yield}}</div>
+      </div>
+      {{#if (has-block "action")}}
+        <div class="au-c-alert__action" data-test-alert-action>
+          {{yield to="action"}}
+        </div>
       {{/if}}
-      <div class="au-c-alert__message" data-test-alert-message>{{yield}}</div>
     </div>
     {{#if @closable}}
       <button

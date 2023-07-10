@@ -31,6 +31,7 @@ $au-alert-radius: var(--au-radius) !default;
 .au-c-alert {
   color: $au-alert-color;
   display: flex;
+  gap: $au-unit-large * 0.5;
   font-family: var(--au-font);
   font-size: $au-alert-font-size;
   padding: $au-unit;
@@ -53,7 +54,6 @@ $au-alert-radius: var(--au-radius) !default;
   border-radius: $au-unit-large;
   height: $au-unit-large - 0.1rem; // compensate for visual distortion of perfect circle
   width: $au-unit-large;
-  margin-right: $au-unit-large * 0.5;
 
   display: flex;
   align-items: center;
@@ -65,6 +65,14 @@ $au-alert-radius: var(--au-radius) !default;
     width: $au-alert-icon-size;
     bottom: 0;
   }
+}
+
+.au-c-alert__container {
+  display: flex;
+  gap: $au-unit-large * 0.5;
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .au-c-alert__content {
@@ -110,12 +118,12 @@ $au-alert-radius: var(--au-radius) !default;
 }
 
 .au-c-alert--small {
+  gap: $au-unit * 0.5;
   padding: $au-unit-small;
 
   .au-c-alert__icon {
     height: $au-unit - 0.1rem; // compensate for visual distortion of perfect circle
     width: $au-unit;
-    margin-right: $au-unit * 0.5;
   }
 
   .au-c-icon {
@@ -160,5 +168,22 @@ $au-alert-radius: var(--au-radius) !default;
     .au-c-icon {
       fill: $au-alert-error-icon-color;
     }
+  }
+}
+
+.au-c-alert--toast {
+  .au-c-alert__container {
+    gap: $au-unit-tiny;
+    flex-direction: column;
+    align-items: normal;
+    justify-content: center;
+  }
+
+  .au-c-alert__content {
+    flex-grow: 0;
+  }
+
+  .au-c-alert__action {
+    margin-left: -($au-unit-tiny + 0.2rem); // use negative horizontal button padding + button border width for better alignment
   }
 }

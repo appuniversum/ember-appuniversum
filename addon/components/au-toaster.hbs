@@ -1,17 +1,45 @@
 {{#if this.toaster.toasts.length}}
   <div class="au-c-toaster {{this.position}}">
     {{#each this.toaster.toasts as |toast|}}
-      <AuAlert
-        @title={{toast.title}}
-        @skin={{toast.options.type}}
-        @icon={{toast.options.icon}}
-        @size="small"
-        @closable={{toast.options.closable}}
-      >
-        {{#if toast.message}}
-          <p>{{toast.message}}</p>
-        {{/if}}
-      </AuAlert>
+      {{#if toast.options.action}}
+        <AuAlert
+          @title={{toast.title}}
+          @skin={{toast.options.type}}
+          @icon={{toast.options.icon}}
+          @size="small"
+          @closable={{toast.options.closable}}
+          @isAToast={{true}}
+        >
+          <:default>
+            {{#if toast.message}}
+              <p>{{toast.message}}</p>
+            {{/if}}
+          </:default>
+          <:action>
+            <AuButton
+              @skin="link"
+              @icon={{toast.options.action.icon}}
+              @alert={{toast.options.action.alert}}
+              {{on "click" toast.options.action.handler}}
+            >
+              {{toast.options.action.text}}
+            </AuButton>
+          </:action>
+        </AuAlert>
+      {{else}}
+        <AuAlert
+          @title={{toast.title}}
+          @skin={{toast.options.type}}
+          @icon={{toast.options.icon}}
+          @size="small"
+          @closable={{toast.options.closable}}
+          @isAToast={{true}}
+        >
+          {{#if toast.message}}
+            <p>{{toast.message}}</p>
+          {{/if}}
+        </AuAlert>
+      {{/if}}
     {{/each}}
   </div>
 {{/if}}
