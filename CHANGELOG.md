@@ -2,6 +2,22 @@
 
 
 
+
+## v2.8.0 (2023-07-14)
+
+#### :rocket: Enhancement
+* [#403](https://github.com/appuniversum/ember-appuniversum/pull/403) Add bnb icons ([@Dietr](https://github.com/Dietr))
+* [#399](https://github.com/appuniversum/ember-appuniversum/pull/399) Addition of bundled (flanders-serif & flanders-sans) font files ([@brenner-company](https://github.com/brenner-company))
+
+#### :bug: Bug Fix
+* [#400](https://github.com/appuniversum/ember-appuniversum/pull/400) Only show the wormhole deprecation in apps ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 3
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.7.0 (2023-06-02)
 
 #### :rocket: Enhancement
