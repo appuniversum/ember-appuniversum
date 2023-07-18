@@ -33,6 +33,7 @@ const Template = (args) => ({
       @options={{this.options}}
       @selected={{this.selected}}
       @onChange={{fn (mut this.selected)}}
+      @placeholder={{this.placeholder}}
       as |singleselect|>
       {{singleselect}}
     </PowerSelect>`,
