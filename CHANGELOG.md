@@ -3,6 +3,16 @@
 
 
 
+
+## v2.9.0 (2023-07-18)
+
+#### :rocket: Enhancement
+* [#404](https://github.com/appuniversum/ember-appuniversum/pull/404) Accessibility fixes ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+
 ## v2.8.0 (2023-07-14)
 
 #### :rocket: Enhancement
