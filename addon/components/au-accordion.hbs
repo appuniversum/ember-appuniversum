@@ -10,8 +10,6 @@
       <div>
         <AuButton
           @skin="tertiary"
-          aria-hidden="true"
-          focusable="false"
           aria-expanded="{{if this.openAccordion 'true' 'false'}}"
           data-test-accordion-button
         >
@@ -28,7 +26,7 @@
           @icon={{this.iconOpen}}
           @alignment="left"
           @size="large"
-          @ariaHidden="true"
+          @ariaHidden={{true}}
           data-test-accordion-icon-open={{this.iconOpen}}
         />
         <span class="au-u-hidden-visually">
@@ -39,7 +37,7 @@
           @icon={{this.iconClosed}}
           @alignment="left"
           @size="large"
-          @ariaHidden="true"
+          @ariaHidden={{true}}
           data-test-accordion-icon-closed={{this.iconClosed}}
         />
         <span class="au-u-hidden-visually">

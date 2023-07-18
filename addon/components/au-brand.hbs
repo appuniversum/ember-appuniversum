@@ -2,6 +2,7 @@
   <a
     href={{@link}}
     class="au-c-brand au-c-brand--link {{this.tagline}}"
+    aria-labelledby="{{this.id}}-brandTitle"
     ...attributes
   >
     <div class="au-c-brand__logo">
@@ -22,7 +23,10 @@
       </svg>
     </div>
     <p class="au-c-brand__logotype">
-      <span class="au-c-brand__main">Vlaanderen</span>
+      <span
+        id="{{this.id}}-brandTitle"
+        class="au-c-brand__main"
+      >Vlaanderen</span>
       {{#if @tagline}}
         <span class="au-c-brand__tagline">{{@tagline}}</span>
       {{/if}}
