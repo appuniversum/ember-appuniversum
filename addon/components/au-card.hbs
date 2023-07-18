@@ -27,12 +27,12 @@
           aria-expanded="{{if this.sectionOpen 'true' 'false'}}"
         >
           {{#if this.sectionOpen}}
-            <AuIcon @icon="remove" @size="large" @ariaHidden="true" />
+            <AuIcon @icon="remove" @size="large" @ariaHidden={{true}} />
             <span class="au-u-hidden-visually au-c-card__toggle-false">
               Verberg
             </span>
           {{else}}
-            <AuIcon @icon="add" @size="large" @ariaHidden="true" />
+            <AuIcon @icon="add" @size="large" @ariaHidden={{true}} />
             <span class="au-u-hidden-visually au-c-card__toggle-true">
               Toon
             </span>
@@ -58,12 +58,12 @@
           aria-expanded="{{if this.sectionOpen 'true' 'false'}}"
         >
           {{#if this.sectionOpen}}
-            <AuIcon @icon="nav-up" @size="large" @ariaHidden="true" />
+            <AuIcon @icon="nav-up" @size="large" @ariaHidden={{true}} />
             <span class="au-u-hidden-visually au-c-card__toggle-false">
               Verberg
             </span>
           {{else}}
-            <AuIcon @icon="nav-down" @size="large" @ariaHidden="true" />
+            <AuIcon @icon="nav-down" @size="large" @ariaHidden={{true}} />
             <span class="au-u-hidden-visually au-c-card__toggle-true">
               Toon
             </span>
