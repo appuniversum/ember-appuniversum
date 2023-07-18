@@ -5,6 +5,16 @@
 
 
 
+
+## v2.9.2 (2023-07-18)
+
+#### :bug: Bug Fix
+* [#406](https://github.com/appuniversum/ember-appuniversum/pull/406) Fix aria-expanded on the accordion component ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+
 ## v2.9.1 (2023-07-18)
 
 #### :bug: Bug Fix
