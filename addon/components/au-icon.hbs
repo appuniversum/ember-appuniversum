@@ -2,9 +2,9 @@
   role="img"
   class="au-c-icon au-c-icon--{{@icon}} {{this.alignment}} {{this.size}}"
   aria-hidden="{{if
-    (or (eq @ariaHidden true) (eq @ariaHidden 'true'))
-    'true'
+    (or (eq @ariaHidden false) (eq @ariaHidden 'false'))
     'false'
+    'true'
   }}"
   ...attributes
 >

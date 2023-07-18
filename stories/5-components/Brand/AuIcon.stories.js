@@ -54,7 +54,7 @@ Component.args = {
   icon: 'info-circle',
   size: 'large',
   alignment: '',
-  ariaHidden: false,
+  ariaHidden: true,
 };
 
 export const Icons = IconList.bind({});
