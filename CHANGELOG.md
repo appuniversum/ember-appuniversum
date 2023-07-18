@@ -4,6 +4,16 @@
 
 
 
+
+## v2.9.1 (2023-07-18)
+
+#### :bug: Bug Fix
+* [#405](https://github.com/appuniversum/ember-appuniversum/pull/405) Use aria-hidden=true as default on icons ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+
 ## v2.9.0 (2023-07-18)
 
 #### :rocket: Enhancement
