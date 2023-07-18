@@ -10,14 +10,16 @@
       <div>
         <AuButton
           @skin="tertiary"
-          aria-expanded="{{if this.openAccordion 'true' 'false'}}"
+          aria-expanded="{{if this.accordionOpen 'true' 'false'}}"
           data-test-accordion-button
         >
           {{@buttonLabel}}
         </AuButton>
+        {{#if @subtitle}}
         <p data-test-accordion-subtitle>
           {{@subtitle}}
         </p>
+        {{/if}}
       </div>
     </Group>
     <Group>
