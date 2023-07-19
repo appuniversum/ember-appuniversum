@@ -6,6 +6,16 @@
 
 
 
+
+## v2.9.3 (2023-07-19)
+
+#### :bug: Bug Fix
+* [#407](https://github.com/appuniversum/ember-appuniversum/pull/407) Additional accessibility errors ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
+
 ## v2.9.2 (2023-07-18)
 
 #### :bug: Bug Fix
