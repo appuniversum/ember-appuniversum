@@ -7,6 +7,7 @@
 
 $au-badge-icon-size: 2rem !default;
 $au-badge-small-icon-size: 1.5rem !default;
+$au-badge-medium-icon-size: $au-badge-icon-size !default;
 $au-badge-icon-color: var(--au-gray-700) !default;
 $au-badge-contrast-color: var(--au-white) !default;
 $au-badge-border-color: var(--au-gray-300) !default;
@@ -93,7 +94,7 @@ $au-badge-error-contrast-color: var(--au-red-600) !default;
 }
 
 .au-c-badge--small {
-  height: $au-unit-large - $au-unit; // compensate for visual distortion of perfect circle
+  height: $au-unit-large - $au-unit - 0.1rem; // compensate for visual distortion of perfect circle
   width: $au-unit-large - $au-unit;
   margin-right: 0;
 
@@ -104,5 +105,20 @@ $au-badge-error-contrast-color: var(--au-red-600) !default;
 
   .au-c-badge__number {
     font-size: 1.3rem;
+  }
+}
+
+.au-c-badge--medium {
+  height: $au-unit + $au-unit-small - 0.1rem; // compensate for visual distortion of perfect circle
+  width: $au-unit + $au-unit-small;
+  margin-right: 0;
+
+  .au-c-icon {
+    height: $au-badge-medium-icon-size - 0.1rem; // compensate for visual distortion of perfect circle
+    width: $au-badge-medium-icon-size;
+  }
+
+  .au-c-badge__number {
+    font-size: 1.8rem;
   }
 }

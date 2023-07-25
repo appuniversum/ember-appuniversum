@@ -12,6 +12,7 @@ export default class AuBadgeComponent extends Component {
   }
   get size() {
     if (this.args.size == 'small') return 'au-c-badge--small';
+    if (this.args.size == 'medium') return 'au-c-badge--medium';
     return '';
   }
 }

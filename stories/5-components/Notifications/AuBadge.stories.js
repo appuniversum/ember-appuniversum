@@ -20,7 +20,7 @@ export default {
     },
     size: {
       control: 'select',
-      options: ['', 'small'],
+      options: ['', 'small', 'medium'],
       description: 'Change the size of the badge',
     },
     icon: {
