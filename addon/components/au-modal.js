@@ -7,7 +7,7 @@ const CLOSE_TRIGGERS = {
   escape: true,
   x: true,
   outside: true,
-}
+};
 
 export default class AuModal extends Component {
   constructor() {
@@ -22,7 +22,9 @@ export default class AuModal extends Component {
       this.destinationElement
     );
 
-    this.closeTriggers = this.args.closeTriggers ? {...CLOSE_TRIGGERS, ...this.args.closeTriggers} : CLOSE_TRIGGERS;
+    this.closeTriggers = this.args.closeTriggers
+      ? { ...CLOSE_TRIGGERS, ...this.args.closeTriggers }
+      : CLOSE_TRIGGERS;
   }
 
   get size() {
