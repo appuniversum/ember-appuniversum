@@ -3,6 +3,11 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 
 const FOCUS_TRAP_ADDITIONAL_ELEMENTS = ['#ember-basic-dropdown-wormhole'];
+const CLOSE_TRIGGERS = {
+  escape: true,
+  x: true,
+  outside: true,
+}
 
 export default class AuModal extends Component {
   constructor() {
@@ -16,6 +21,8 @@ export default class AuModal extends Component {
       'au-modal: No target element was found. Please add the `<AuModalContainer />` component where appropriate.',
       this.destinationElement
     );
+
+    this.closeTriggers = this.args.closeTriggers ? {...CLOSE_TRIGGERS, ...this.args.closeTriggers} : CLOSE_TRIGGERS;
   }
 
   get size() {
@@ -44,9 +51,29 @@ export default class AuModal extends Component {
     );
   }
 
+  get isClosable() {
+    return this.args.closable ?? true;
+  }
+
+  @action
+  handleOutsideClick() {
+    if (this.isClosable && this.closeTriggers.outside) {
+      this.closeModal();
+    }
+  }
+
+  @action
+  handleCloseClick() {
+    if (this.isClosable && this.closeTriggers.x) {
+      this.closeModal();
+    }
+  }
+
   @action
   handleEscapePress() {
-    this.closeModal();
+    if (this.isClosable && this.closeTriggers.escape) {
+      this.closeModal();
+    }
 
     // escapeDeactivates should be set to false since we don't want the focus-trap to deactivate if the modal stays open
     // which could happen if the consumer doesn't change the `@modalOpen` argument in the callback.
