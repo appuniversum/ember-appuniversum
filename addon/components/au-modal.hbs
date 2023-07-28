@@ -47,7 +47,7 @@
           <button
             class="au-c-modal__close"
             type="button"
-            disabled={{this.isClosable}}
+            disabled={{not this.isClosable}}
             data-test-modal-close
             {{on "click" this.handleCloseClick}}
           >
