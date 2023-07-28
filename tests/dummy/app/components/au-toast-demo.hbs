@@ -78,4 +78,19 @@
       toast with a timeout</AuButton>
   </div>
 
+  <div class="au-o-flow au-o-flow--tiny">
+    <AuHeading @level="2" @skin="5">
+      Clear
+    </AuHeading>
+    <p class="au-u-margin-bottom-small">Clear:
+      <AuPill>{{"this.toaster.clear(this.clearableToast);"}}</AuPill>.</p>
+
+    <AuButton
+      @skin="secondary"
+      {{on "click" this.triggerClearableToast}}
+    >Trigger toast</AuButton>
+    <AuButton @skin="secondary" {{on "click" this.triggerClearToast}}>Clear
+      toast</AuButton>
+  </div>
+
 </AuContent>

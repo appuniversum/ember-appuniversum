@@ -113,4 +113,10 @@ export default class ToasterService extends Service {
     this.displayToast.perform(toast);
     return toast;
   }
+
+  clear(toast) {
+    if (this.toasts.includes(toast)) {
+      this.toasts.removeObject(toast);
+    }
+  }
 }

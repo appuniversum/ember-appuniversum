@@ -1,9 +1,11 @@
 import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 export default class AuToastDemo extends Component {
   @service toaster;
+  @tracked clearableToast;
 
   @action
   triggerToast() {
@@ -36,5 +38,17 @@ export default class AuToastDemo extends Component {
       timeOut: 3000,
       closable: false,
     });
+  }
+
+  @action
+  triggerClearableToast() {
+    this.clearableToast = this.toaster.warning('Message', 'Warning');
+  }
+
+  @action
+  triggerClearToast() {
+    if (this.clearableToast) {
+      this.toaster.clear(this.clearableToast);
+    }
   }
 }
