@@ -2,6 +2,11 @@
    #MAIN CONTAINER
    ================================== */
 
+/* Variables
+   ========================================================================== */
+
+$au-main-container-breakpoint: medium !default;
+
 /* Component
    ========================================================================== */
 
@@ -14,7 +19,7 @@
     flex-grow: 1;
   }
 
-  @include mq(medium) {
+  @include mq($au-main-container-breakpoint) {
     height: calc(100vh - 4.2rem);
 
     .au-c-app & {
@@ -27,7 +32,7 @@
 .au-c-main-container__sidebar {
   flex-basis: 100%;
 
-  @include mq(medium) {
+  @include mq($au-main-container-breakpoint) {
     height: 100%;
     flex-basis: 25rem;
     flex-grow: 1;
@@ -35,21 +40,21 @@
 }
 
 .au-c-main-container__sidebar--small {
-  @include mq(medium) {
+  @include mq($au-main-container-breakpoint) {
     flex-basis: 17rem;
     width: 17rem;
   }
 }
 
 .au-c-main-container__sidebar--large {
-  @include mq(medium) {
+  @include mq($au-main-container-breakpoint) {
     flex-basis: 44rem;
     width: 44rem;
   }
 }
 
 .au-c-main-container__sidebar--collapsed {
-  @include mq(medium) {
+  @include mq($au-main-container-breakpoint) {
     flex-basis: 5rem;
     width: 5rem;
   }
@@ -59,7 +64,7 @@
   flex-basis: 100%;
   max-width: 100%;
 
-  @include mq(medium) {
+  @include mq($au-main-container-breakpoint) {
     height: 100%;
     flex-basis: 0;
     flex-grow: 999;
@@ -67,7 +72,7 @@
 }
 
 .au-c-main-container__content--scroll {
-  @include mq(medium) {
+  @include mq($au-main-container-breakpoint) {
     height: 100%;
     overflow: auto;
   }
