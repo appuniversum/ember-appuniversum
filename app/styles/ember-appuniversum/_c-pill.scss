@@ -6,11 +6,13 @@
    ========================================================================== */
 
 $au-pill-color: var(--vl-grey-70) !default;
+$au-pill-color-hover: var(--vl-grey-80) !default;
 $au-pill-background-color: var(--vl-grey-05) !default;
 $au-pill-border-width: 0.1rem !default;
 $au-pill-border-color: var(--vl-grey-50) !default;
 $au-pill-font-size: var(--au-small) !default;
 $au-pill-color-border: var(--vl-grey-70) !default;
+$au-pill-color-border-hover: var(--vl-grey-80) !default;
 $au-pill-background-color-border: var(--au-white) !default;
 $au-pill-border-color-border: var(--vl-grey-20) !default;
 $au-pill-color-success: var(--vl-green-130) !default;
@@ -49,6 +51,16 @@ $au-pill-gap-small: 0.4rem !default;
   padding: 0.1rem $au-unit-tiny 0; // Visually center the text in the pill
   border-radius: $au-unit-tiny;
   min-height: 2.55rem;
+
+  &.au-c-pill--hover {
+    text-decoration: none;
+    cursor: default;
+  }
+  
+  &.au-c-pill--hover:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
 }
 
 .au-c-pill-container {
@@ -120,36 +132,45 @@ $au-pill-gap-small: 0.4rem !default;
   color: $au-pill-color;
   background-color: $au-pill-background-color;
   border-color: $au-pill-border-color;
+
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
+    background-color: $au-pill-background-color-link-hover;
+  }
 }
 
 .au-c-pill--border {
   color: $au-pill-color-border;
   background-color: $au-pill-background-color-border;
   border-color: $au-pill-border-color-border;
+
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
+    color: $au-pill-color-border-hover;
+    background-color: $au-pill-background-color-link-hover;
+  }
 }
 
 .au-c-pill--ongoing {
   color: $au-pill-color-ongoing;
   background-color: $au-pill-background-color-ongoing;
   border-color: $au-pill-border-color-ongoing;
+
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
+    background-color: $au-pill-background-color-link-hover;
+  }
 }
 
 .au-c-pill--link {
-  text-decoration: none;
-  cursor: default;
   color: $au-pill-color-link;
   background-color: $au-pill-background-color-link;
   border-color: $au-pill-border-color-link;
 
-  &:hover,
-  &:focus {
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
     color: $au-pill-color-link-hover;
     background-color: $au-pill-background-color-link-hover;
-  }
-
-  &:focus {
-    outline: var(--au-outline);
-    outline-offset: var(--au-outline-offset);
   }
 }
 
@@ -157,21 +178,41 @@ $au-pill-gap-small: 0.4rem !default;
   color: $au-pill-color-success;
   background-color: $au-pill-background-color-success;
   border-color: $au-pill-border-color-success;
+
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
+    background-color: $au-pill-background-color-link-hover;
+  }
 }
 
 .au-c-pill--warning {
   color: $au-pill-color-warning;
   background-color: $au-pill-background-color-warning;
   border-color: $au-pill-border-color-warning;
+
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
+    background-color: $au-pill-background-color-link-hover;
+  }
 }
 
 .au-c-pill--error {
   color: $au-pill-color-error;
   background-color: $au-pill-background-color-error;
   border-color: $au-pill-border-color-error;
+
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
+    background-color: $au-pill-background-color-link-hover;
+  }
 }
 
 .au-c-pill--draft {
   border-style: dashed;
   background-color: transparent;
+
+  &.au-c-pill--hover:hover,
+  &.au-c-pill--hover:focus {
+    background-color: $au-pill-background-color-link-hover;
+  }
 }
