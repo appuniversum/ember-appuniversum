@@ -7,6 +7,18 @@
 
 
 
+
+## v2.10.0 (2023-08-01)
+
+#### :rocket: Enhancement
+* [#415](https://github.com/appuniversum/ember-appuniversum/pull/415) Make all pill skins available for href and route options ([@Dietr](https://github.com/Dietr))
+* [#408](https://github.com/appuniversum/ember-appuniversum/pull/408) Addition of in-between breakpoint variable within main container styling ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
+
 ## v2.9.3 (2023-07-19)
 
 #### :bug: Bug Fix
