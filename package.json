@@ -102,7 +102,7 @@
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
     "ember-load-initializers": "^2.1.2",
-    "ember-power-select": "^6.0.0",
+    "ember-power-select": "^7.1.0",
     "ember-qunit": "^6.2.0",
     "ember-resolver": "^10.0.0",
     "ember-root-url": "^1.0.1",
@@ -128,7 +128,7 @@
   },
   "optionalDependencies": {
     "ember-concurrency": "2.x",
-    "ember-power-select": "2.x || 3.x || 4.x || 5.x || 6.x"
+    "ember-power-select": "2.x || 3.x || 4.x || 5.x || 6.x || 7.x"
   },
   "peerDependencies": {
     "ember-source": "^3.28.0 || ^4.0.0"
