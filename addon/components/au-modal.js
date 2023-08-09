@@ -3,11 +3,6 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 
 const FOCUS_TRAP_ADDITIONAL_ELEMENTS = ['#ember-basic-dropdown-wormhole'];
-const CLOSE_TRIGGERS = {
-  escape: true,
-  x: true,
-  outside: true,
-};
 
 export default class AuModal extends Component {
   constructor() {
@@ -21,10 +16,6 @@ export default class AuModal extends Component {
       'au-modal: No target element was found. Please add the `<AuModalContainer />` component where appropriate.',
       this.destinationElement
     );
-
-    this.closeTriggers = this.args.closeTriggers
-      ? { ...CLOSE_TRIGGERS, ...this.args.closeTriggers }
-      : CLOSE_TRIGGERS;
   }
 
   get size() {
@@ -58,22 +49,15 @@ export default class AuModal extends Component {
   }
 
   @action
-  handleOutsideClick() {
-    if (this.isClosable && this.closeTriggers.outside) {
-      this.closeModal();
-    }
-  }
-
-  @action
   handleCloseClick() {
-    if (this.isClosable && this.closeTriggers.x) {
+    if (this.isClosable) {
       this.closeModal();
     }
   }
 
   @action
   handleEscapePress() {
-    if (this.isClosable && this.closeTriggers.escape) {
+    if (this.isClosable) {
       this.closeModal();
     }
 

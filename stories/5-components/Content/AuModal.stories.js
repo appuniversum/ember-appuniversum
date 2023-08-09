@@ -29,10 +29,6 @@ export default {
       control: 'function',
       description: 'Add the action to close the modal',
     },
-    closeTriggers: {
-      control: 'object',
-      description: 'Set which triggers should close the modal',
-    },
     title: { control: 'text', description: 'Set the title of the modal' },
     size: {
       control: 'select',
@@ -69,7 +65,6 @@ const Template = (args) => ({
       @padding={{this.padding}}
       @overflow={{this.overflow}}
       @closable={{this.closable}}
-      @closeTriggers={{this.closeTriggers}}
     >
       <:title>{{this.title}}</:title>
       <:body>
@@ -123,11 +118,6 @@ Component.args = {
   modalOpen: true,
   closable: true,
   closeModal: null,
-  closeTriggers: {
-    escape: true,
-    x: true,
-    outside: true,
-  },
   title: 'Modal',
   size: 'default',
   padding: 'default',

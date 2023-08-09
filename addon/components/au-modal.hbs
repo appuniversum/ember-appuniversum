@@ -1,11 +1,6 @@
 {{#if @modalOpen}}
   {{#in-element this.destinationElement}}
-    <div
-      class="au-c-modal-backdrop {{if @modalOpen 'is-visible'}}"
-      role="button"
-      data-test-modal-backdrop
-      {{on "click" this.handleOutsideClick}}
-    ></div>
+    <div class="au-c-modal-backdrop {{if @modalOpen 'is-visible'}}"></div>
     <div
       id="{{@id}}"
       class={{concat
@@ -43,18 +38,16 @@
             {{@title}}
           {{/if}}
         </h1>
-        {{#if this.closeTriggers.x}}
-          <button
-            class="au-c-modal__close"
-            type="button"
-            disabled={{not this.isClosable}}
-            data-test-modal-close
-            {{on "click" this.handleCloseClick}}
-          >
-            <AuIcon @icon="cross" @size="large" />
-            <span class="au-u-hidden-visually">Venster sluiten</span>
-          </button>
-        {{/if}}
+        <button
+          class="au-c-modal__close"
+          type="button"
+          disabled={{not this.isClosable}}
+          data-test-modal-close
+          {{on "click" this.handleCloseClick}}
+        >
+          <AuIcon @icon="cross" @size="large" />
+          <span class="au-u-hidden-visually">Venster sluiten</span>
+        </button>
       </div>
 
       {{#if (or (has-block "title") (has-block "body") (has-block "footer"))}}
