@@ -124,6 +124,7 @@ $au-modal-backdrop-z-index: 9998 !default;
   justify-content: center;
   appearance: none;
   border: 0;
+  border-radius: var(--au-radius);
   padding: 0;
   text-align: center;
   color: var(--au-gray-700);
@@ -135,7 +136,20 @@ $au-modal-backdrop-z-index: 9998 !default;
   }
 
   &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
     outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus-visible,
+  &.is-disabled:active {
+    color: var(--au-gray-700);
+    cursor: not-allowed;
   }
 }
 

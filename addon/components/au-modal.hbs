@@ -39,7 +39,7 @@
           {{/if}}
         </h1>
         <button
-          class="au-c-modal__close"
+          class="au-c-modal__close {{unless this.isClosable 'is-disabled'}}"
           type="button"
           disabled={{not this.isClosable}}
           data-test-modal-close
