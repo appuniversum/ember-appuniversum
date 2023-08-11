@@ -190,6 +190,25 @@ module('Integration | Component | au-modal', function (hooks) {
     );
   });
 
+  test("it doesn't close the modal when @closable is set to false", async function (assert) {
+    let timesCalled = 0;
+    this.set('handleClose', () => {
+      timesCalled++;
+      this.set('isOpen', false);
+    });
+
+    this.isOpen = true;
+
+    await render(hbs`
+      <AuModalContainer />
+      <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}} @closable={{false}}></AuModal>
+    `);
+
+    let closeButton = document.querySelector(MODAL.CLOSE);
+    await click(closeButton);
+    assert.strictEqual(timesCalled, 0);
+  });
+
   test("it doesn't close the modal when an option in an embedded power-select is clicked", async function (assert) {
     let timesCalled = 0;
     this.set('handleClose', () => {
