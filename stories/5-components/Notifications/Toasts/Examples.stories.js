@@ -1,7 +1,7 @@
 import { hbs } from 'ember-cli-htmlbars';
 
 export default {
-  title: 'Components/Notifications/AuToaster',
+  title: 'Components/Notifications/Toasts/Examples',
   argTypes: {
     position: {
       control: 'select',
@@ -18,8 +18,6 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuToaster @position={{this.position}} />
-
-    {{!-- Demo --}}
     <AuToastDemo />`,
   context: args,
 });
