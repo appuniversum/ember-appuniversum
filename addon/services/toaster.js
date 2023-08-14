@@ -25,6 +25,13 @@ export default class ToasterService extends Service {
     }
   }
 
+  show(component, options = {}) {
+    this.displayToast.perform({
+      component: component,
+      options,
+    });
+  }
+
   notify(message, title, options = {}) {
     if (typeof options.icon === 'undefined') {
       options.icon = 'circle-info';

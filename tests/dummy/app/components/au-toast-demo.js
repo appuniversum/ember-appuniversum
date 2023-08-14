@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import CustomToast from './custom-toast';
 
 export default class AuToastDemo extends Component {
   @service toaster;
@@ -50,5 +51,12 @@ export default class AuToastDemo extends Component {
     if (this.clearableToast) {
       this.toaster.close(this.clearableToast);
     }
+  }
+
+  @action
+  triggerCustomToast() {
+    this.toaster.show(CustomToast, {
+      someHandler: () => { alert('Custom handler triggered')}
+    });
   }
 }

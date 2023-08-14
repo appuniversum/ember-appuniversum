@@ -8,4 +8,8 @@ export default class AuToaster extends Component {
     if (this.args.position == 'bottom') return 'au-c-toaster--bottom';
     else return 'au-c-toaster--top';
   }
+
+  closeToast = (toast) => {
+    this.toaster.close(toast);
+  }
 }
