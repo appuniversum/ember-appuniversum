@@ -11,5 +11,5 @@ export default class AuToaster extends Component {
 
   closeToast = (toast) => {
     this.toaster.close(toast);
-  }
+  };
 }

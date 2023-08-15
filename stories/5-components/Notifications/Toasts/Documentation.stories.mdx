@@ -52,9 +52,8 @@ The `show` method can be used to display custom toaster components. This allows 
 Custom toaster components are regular components that you have full control over. Each component instance will receive an `@options` argument containing the options that were passed into the `show` method. This can be used to pass dynamic data to the custom component.
 They will also receive a `@close` argument that can be used to close the toaster from inside the custom toaster class itself.
 
-
 ```ts
-import CustomToaster from 'some-project/components/custom-toaster';
+import CustomToaster from "some-project/components/custom-toaster";
 
 // ..
 this.toaster.show(CustomToaster, options);

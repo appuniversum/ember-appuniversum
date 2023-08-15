@@ -59,7 +59,9 @@ export default class AuToastDemo extends Component {
   @action
   triggerCustomToast() {
     this.toaster.show(CustomToast, {
-      someHandler: () => { alert('Custom handler triggered')}
+      someHandler: () => {
+        alert('Custom handler triggered');
+      },
     });
   }
 }
