@@ -1,0 +1,11 @@
+<AuAlert
+  @title={{@title}}
+  @skin={{@options.type}}
+  @icon={{@options.icon}}
+  @size="small"
+  @closable={{@options.closable}}
+>
+  {{#if @message}}
+    <p>{{@message}}</p>
+  {{/if}}
+</AuAlert>

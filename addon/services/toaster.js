@@ -3,6 +3,8 @@ import { tracked } from '@glimmer/tracking';
 import { task, timeout } from 'ember-concurrency';
 import { A } from '@ember/array';
 
+import AuToast from '@appuniversum/ember-appuniversum/components/au-toast';
+
 export default class ToasterService extends Service {
   @tracked toasts = A([]);
 
@@ -27,12 +29,23 @@ export default class ToasterService extends Service {
     }
   }
 
+  show(name, options = {}) {
+    const toast = {
+      name,
+      options,
+    };
+
+    this.displayToast.perform(toast);
+    return toast;
+  }
+
   notify(message, title, options = {}) {
     if (typeof options.icon === 'undefined') {
       options.icon = 'circle-info';
     }
 
     const toast = {
+      name: AuToast,
       title,
       message,
       options,
@@ -52,6 +65,7 @@ export default class ToasterService extends Service {
     }
 
     const toast = {
+      name: AuToast,
       title,
       message,
       options,
@@ -71,6 +85,7 @@ export default class ToasterService extends Service {
     }
 
     const toast = {
+      name: AuToast,
       title,
       message,
       options,
@@ -90,6 +105,7 @@ export default class ToasterService extends Service {
     }
 
     const toast = {
+      name: AuToast,
       title,
       message,
       options,
@@ -105,6 +121,7 @@ export default class ToasterService extends Service {
     }
 
     const toast = {
+      name: AuToast,
       title,
       message,
       options,
