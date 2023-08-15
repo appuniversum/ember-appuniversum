@@ -42,13 +42,16 @@ export default class AuToastDemo extends Component {
 
   @action
   triggerClearableToast() {
-    this.clearableToast = this.toaster.warning('Message', 'Warning');
+    this.clearableToast = this.toaster.warning(
+      'This toast will be closed when clicking the "Close toast" button',
+      'Close me with code'
+    );
   }
 
   @action
   triggerClearToast() {
     if (this.clearableToast) {
-      this.toaster.clear(this.clearableToast);
+      this.toaster.close(this.clearableToast);
     }
   }
 }
