@@ -21,9 +21,7 @@ export default class ToasterService extends Service {
     if (toast.options.timeOut) {
       yield timeout(toast.options.timeOut);
 
-      if (this.toasts.includes(toast)) {
-        this.toasts.removeObject(toast);
-      }
+      this.close(toast);
     }
   }
 
@@ -112,5 +110,11 @@ export default class ToasterService extends Service {
 
     this.displayToast.perform(toast);
     return toast;
+  }
+
+  close(toast) {
+    if (this.toasts.includes(toast)) {
+      this.toasts.removeObject(toast);
+    }
   }
 }
