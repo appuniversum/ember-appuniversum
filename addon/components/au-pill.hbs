@@ -32,7 +32,10 @@
 {{else}}
   {{#if @route}}
     <LinkTo
-      class="au-c-pill au-c-pill--link {{this.size}} {{this.draft}}"
+      class="au-c-pill au-c-pill--hover
+        {{this.skin}}
+        {{this.size}}
+        {{this.draft}}"
       @route={{@route}}
       @models={{this.linkToModels @model @models}}
       @query={{this.queryParams}}
@@ -57,7 +60,10 @@
   {{else if @href}}
     <a
       href={{@href}}
-      class="au-c-pill au-c-pill--link {{this.size}} {{this.draft}}"
+      class="au-c-pill au-c-pill--hover
+        {{this.skin}}
+        {{this.size}}
+        {{this.draft}}"
       ...attributes
     >
       {{#if @icon}}

@@ -1,10 +1,23 @@
 
+## v2.11.0 (2023-08-02)
+
+#### :rocket: Enhancement
+* [#417](https://github.com/appuniversum/ember-appuniversum/pull/417) Support ember-concurrency v3 ([@Windvis](https://github.com/Windvis))
+* [#416](https://github.com/appuniversum/ember-appuniversum/pull/416) Support ember-power-select v7 ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
 
 
+## v2.10.0 (2023-08-01)
 
+#### :rocket: Enhancement
+* [#415](https://github.com/appuniversum/ember-appuniversum/pull/415) Make all pill skins available for href and route options ([@Dietr](https://github.com/Dietr))
+* [#408](https://github.com/appuniversum/ember-appuniversum/pull/408) Addition of in-between breakpoint variable within main container styling ([@brenner-company](https://github.com/brenner-company))
 
-
-
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
 
 
 ## v2.9.3 (2023-07-19)
