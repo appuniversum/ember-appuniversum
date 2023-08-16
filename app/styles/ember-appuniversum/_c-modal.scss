@@ -148,7 +148,7 @@ $au-modal-backdrop-z-index: 9998 !default;
   &.is-disabled:hover,
   &.is-disabled:focus-visible,
   &.is-disabled:active {
-    color: var(--au-gray-700);
+    color: var(--au-gray-300);
     cursor: not-allowed;
   }
 }
