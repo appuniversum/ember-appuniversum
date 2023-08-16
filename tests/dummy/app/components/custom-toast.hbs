@@ -6,6 +6,8 @@
   @closable={{@options.closable}}
   @onClose={{@close}}
 >
-  <AuButton {{on "click" @options.someHandler}}>Custom action</AuButton>
-  <AuLinkExternal href="https://vlaanderen.be">Meer info</AuLinkExternal>
+  <AuButtonGroup>
+    <AuButton {{on "click" @options.someHandler}}>Custom action</AuButton>
+    <AuLinkExternal href="https://vlaanderen.be">Meer info</AuLinkExternal>
+  </AuButtonGroup>
 </AuAlert>
