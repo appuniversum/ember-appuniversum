@@ -1,5 +1,5 @@
 {{#if this.toaster.toasts.length}}
-  <div class="au-c-toaster {{this.position}}">
+  <div class="au-c-toaster {{this.position}}" ...attributes>
     {{#each this.toaster.toasts as |toast|}}
       {{#if toast.component}}
         <toast.component
@@ -14,6 +14,7 @@
           @size="small"
           @closable={{toast.options.closable}}
           @onClose={{fn this.closeToast toast}}
+          data-test-toast
         >
           {{#if toast.message}}
             <p>{{toast.message}}</p>
