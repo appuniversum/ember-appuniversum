@@ -38,6 +38,10 @@ export default class AuModal extends Component {
     return this.args.initialFocus ?? '.au-c-modal__title';
   }
 
+  get fallbackFocus() {
+    return '.au-c-modal';
+  }
+
   get additionalElements() {
     return FOCUS_TRAP_ADDITIONAL_ELEMENTS.filter(
       (element) => document.querySelector(element) !== null
