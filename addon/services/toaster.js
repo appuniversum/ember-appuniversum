@@ -26,10 +26,13 @@ export default class ToasterService extends Service {
   }
 
   show(component, options = {}) {
-    this.displayToast.perform({
-      component: component,
+    const toast = {
+      component,
       options,
-    });
+    };
+
+    this.displayToast.perform(toast);
+    return toast;
   }
 
   notify(message, title, options = {}) {
