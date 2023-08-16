@@ -204,8 +204,9 @@ module('Integration | Component | au-modal', function (hooks) {
       <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}} @closable={{false}}></AuModal>
     `);
 
-    let closeButton = document.querySelector(MODAL.CLOSE);
-    await click(closeButton);
+    assert.dom(MODAL.CLOSE).isDisabled();
+
+    await triggerKeyEvent(document, 'keydown', 'Escape');
     assert.strictEqual(timesCalled, 0);
   });
 
