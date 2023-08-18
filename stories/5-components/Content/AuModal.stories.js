@@ -21,6 +21,10 @@ export default {
   title: 'Components/Content/AuModal',
   argTypes: {
     modalOpen: { control: 'boolean', description: 'Show or hide the modal' },
+    closable: {
+      control: 'boolean',
+      description: 'Set if the modal can be closed',
+    },
     closeModal: {
       control: 'function',
       description: 'Add the action to close the modal',
@@ -56,6 +60,7 @@ const Template = (args) => ({
     <AuModalContainer />
     <AuModal
       @modalOpen={{this.modalOpen}}
+      @closable={{this.closable}}
       @closeModal={{this.closeModal}}
       @size={{this.size}}
       @padding={{this.padding}}
@@ -77,6 +82,7 @@ const OverflowTemplate = (args) => ({
     <AuModalContainer />
     <AuModal
       @modalOpen={{this.modalOpen}}
+      @closable={{this.closable}}
       @closeModal={{this.closeModal}}
       @size={{this.size}}
       @padding={{this.padding}}
@@ -111,6 +117,7 @@ const OverflowTemplate = (args) => ({
 export const Component = Template.bind({});
 Component.args = {
   modalOpen: true,
+  closable: true,
   closeModal: null,
   title: 'Modal',
   size: 'default',
@@ -121,6 +128,7 @@ Component.args = {
 export const Overflow = OverflowTemplate.bind({});
 Overflow.args = {
   modalOpen: true,
+  closable: true,
   closeModal: null,
   title: 'Overflow on modal',
   size: 'default',

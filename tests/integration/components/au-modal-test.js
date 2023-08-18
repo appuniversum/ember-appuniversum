@@ -12,7 +12,6 @@ import { selectChoose } from 'ember-power-select/test-support';
 
 const MODAL = {
   ELEMENT: '[data-test-modal]',
-  BACKDROP: '[data-test-modal-backdrop]',
   HEADER: '[data-test-modal-header]',
   CLOSE: '[data-test-modal-close]',
   TITLE: '[data-test-modal-title]',
@@ -191,7 +190,7 @@ module('Integration | Component | au-modal', function (hooks) {
     );
   });
 
-  test('it calls `@closeModal` when the modal backdrop is clicked', async function (assert) {
+  test("it doesn't close the modal when @closable is set to false", async function (assert) {
     let timesCalled = 0;
     this.set('handleClose', () => {
       timesCalled++;
@@ -202,12 +201,13 @@ module('Integration | Component | au-modal', function (hooks) {
 
     await render(hbs`
       <AuModalContainer />
-      <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}}></AuModal>
+      <AuModal @modalOpen={{this.isOpen}} @closeModal={{this.handleClose}} @closable={{false}}></AuModal>
     `);
 
-    let backdrop = document.querySelector(MODAL.BACKDROP);
-    await click(backdrop);
-    assert.strictEqual(timesCalled, 1);
+    assert.dom(MODAL.CLOSE).isDisabled();
+
+    await triggerKeyEvent(document, 'keydown', 'Escape');
+    assert.strictEqual(timesCalled, 0);
   });
 
   test("it doesn't close the modal when an option in an embedded power-select is clicked", async function (assert) {

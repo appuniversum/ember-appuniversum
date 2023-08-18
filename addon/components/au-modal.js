@@ -38,15 +38,32 @@ export default class AuModal extends Component {
     return this.args.initialFocus ?? '.au-c-modal__title';
   }
 
+  get fallbackFocus() {
+    return '.au-c-modal';
+  }
+
   get additionalElements() {
     return FOCUS_TRAP_ADDITIONAL_ELEMENTS.filter(
       (element) => document.querySelector(element) !== null
     );
   }
 
+  get isClosable() {
+    return this.args.closable ?? true;
+  }
+
+  @action
+  handleCloseClick() {
+    if (this.isClosable) {
+      this.closeModal();
+    }
+  }
+
   @action
   handleEscapePress() {
-    this.closeModal();
+    if (this.isClosable) {
+      this.closeModal();
+    }
 
     // escapeDeactivates should be set to false since we don't want the focus-trap to deactivate if the modal stays open
     // which could happen if the consumer doesn't change the `@modalOpen` argument in the callback.
