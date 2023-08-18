@@ -1,0 +1,68 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Components/Notifications/Toasts/Documentation" />
+
+## Getting started
+
+### Add the `<AuToaster />` component
+
+To use the Appuniversum toaster service you first need to add the `<AuToaster />` component to your app. Usually at the bottom of the `application.hbs` file is a good place for this.
+
+```handlebars
+{{! application.hbs }}
+<AuToaster />
+```
+
+### Display some toasts
+
+```ts
+
+import { service } from "@ember/service';
+
+class SomeContainerAwareClass {
+  @service toaster;
+
+  displayToaster() {
+    this.toaster.notify('toaster content', 'Hello toasters!');
+  }
+}
+```
+
+## `Toaster` service API
+
+### `notify` / `success` / `warning` / `error` / `loading`
+
+All these methods have the same API. The only difference is the default icon and type that is used.
+
+```ts
+interface ToastOptions {
+  type?: "info" | "success" | "warning" | "error"; // Default depends on the used display method
+  icon?: string; // Any valid Appuniversum icon name, default depends on the used display method
+  timeOut?: number; // delay in milliseconds after which the toast auto-closes
+  closable?: boolean; // Can the toast be closed by users, defaults to `true`
+}
+
+const toast = this.toaster.notify(message, title, options);
+```
+
+### `show`
+
+The `show` method can be used to display custom toaster components. This allows for more flexibility in case the default display methods are missing some features.
+
+Custom toaster components are regular components that you have full control over. Each component instance will receive an `@options` argument containing the options that were passed into the `show` method. This can be used to pass dynamic data to the custom component.
+They will also receive a `@close` argument that can be used to close the toaster from inside the custom toaster class itself.
+
+```ts
+import CustomToaster from "some-project/components/custom-toaster";
+
+// ..
+this.toaster.show(CustomToaster, options);
+```
+
+### `close`
+
+This method can be used to close toasts manually from code. It accepts a toasts object as an argument (which is returned by one of the display methods).
+
+```ts
+this.toaster.close(toast);
+```
