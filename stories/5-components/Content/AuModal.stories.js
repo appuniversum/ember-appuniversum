@@ -60,11 +60,11 @@ const Template = (args) => ({
     <AuModalContainer />
     <AuModal
       @modalOpen={{this.modalOpen}}
+      @closable={{this.closable}}
       @closeModal={{this.closeModal}}
       @size={{this.size}}
       @padding={{this.padding}}
       @overflow={{this.overflow}}
-      @closable={{this.closable}}
     >
       <:title>{{this.title}}</:title>
       <:body>
@@ -82,6 +82,7 @@ const OverflowTemplate = (args) => ({
     <AuModalContainer />
     <AuModal
       @modalOpen={{this.modalOpen}}
+      @closable={{this.closable}}
       @closeModal={{this.closeModal}}
       @size={{this.size}}
       @padding={{this.padding}}
@@ -127,6 +128,7 @@ Component.args = {
 export const Overflow = OverflowTemplate.bind({});
 Overflow.args = {
   modalOpen: true,
+  closable: true,
   closeModal: null,
   title: 'Overflow on modal',
   size: 'default',
