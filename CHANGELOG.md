@@ -1,4 +1,16 @@
 
+
+## v2.12.0 (2023-08-18)
+
+#### :rocket: Enhancement
+* [#412](https://github.com/appuniversum/ember-appuniversum/pull/412) Removal of backdrop click close trigger & addition of closable boolean for modal component ([@brenner-company](https://github.com/brenner-company))
+* [#419](https://github.com/appuniversum/ember-appuniversum/pull/419) Add support for custom toaster components ([@Windvis](https://github.com/Windvis))
+* [#414](https://github.com/appuniversum/ember-appuniversum/pull/414) Addition of clear action within toaster service ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 2
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## v2.11.0 (2023-08-02)
 
 #### :rocket: Enhancement
