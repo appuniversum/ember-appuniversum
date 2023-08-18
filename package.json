@@ -88,6 +88,7 @@
     "@storybook/ember-cli-storybook": "^0.6.0",
     "@storybook/manager-webpack5": "^6.5.7",
     "@storybook/theming": "^6.5.7",
+    "@testing-library/dom": "^9.3.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.4",
     "babel-plugin-ember-modules-api-polyfill": "^3.5.0",

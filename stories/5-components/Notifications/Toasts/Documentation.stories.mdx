@@ -45,6 +45,20 @@ interface ToastOptions {
 const toast = this.toaster.notify(message, title, options);
 ```
 
+### `show`
+
+The `show` method can be used to display custom toaster components. This allows for more flexibility in case the default display methods are missing some features.
+
+Custom toaster components are regular components that you have full control over. Each component instance will receive an `@options` argument containing the options that were passed into the `show` method. This can be used to pass dynamic data to the custom component.
+They will also receive a `@close` argument that can be used to close the toaster from inside the custom toaster class itself.
+
+```ts
+import CustomToaster from "some-project/components/custom-toaster";
+
+// ..
+this.toaster.show(CustomToaster, options);
+```
+
 ### `close`
 
 This method can be used to close toasts manually from code. It accepts a toasts object as an argument (which is returned by one of the display methods).

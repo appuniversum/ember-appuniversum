@@ -105,4 +105,18 @@
       Close toast
     </AuButton>
   </div>
+
+  <div class="au-o-flow au-o-flow--tiny">
+    <AuHeading @level="2" @skin="3">
+      Custom toast components
+    </AuHeading>
+    <p class="au-u-margin-bottom-small">
+      <AuPill>this.toaster.show(CustomToastClass);</AuPill>
+    </p>
+
+    <AuButton @skin="secondary" {{on "click" this.triggerCustomToast}}>
+      Trigger custom toast
+    </AuButton>
+  </div>
+
 </AuContent>
