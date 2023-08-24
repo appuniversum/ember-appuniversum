@@ -75,7 +75,7 @@
     "@ember/optional-features": "^2.0.0",
     "@ember/string": "^3.0.1",
     "@ember/test-helpers": "^2.9.3",
-    "@embroider/test-setup": "^2.0.2",
+    "@embroider/test-setup": "^3.0.1",
     "@etchteam/storybook-addon-status": "^4.2.1",
     "@storybook/addon-a11y": "^6.5.7",
     "@storybook/addon-actions": "^6.5.7",
