@@ -1,5 +1,14 @@
 
 
+
+## v2.12.1 (2023-09-11)
+
+#### :bug: Bug Fix
+* [#423](https://github.com/appuniversum/ember-appuniversum/pull/423) Clicking issue for wormhole elements/components within the modal component ([@brenner-company](https://github.com/brenner-company))
+
+#### Committers: 1
+- Karel Persoons ([@brenner-company](https://github.com/brenner-company))
+
 ## v2.12.0 (2023-08-18)
 
 #### :rocket: Enhancement
