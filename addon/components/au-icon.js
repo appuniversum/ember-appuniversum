@@ -24,7 +24,7 @@ export default class AuButton extends Component {
   }
 
   get ariaHiddenAttribute() {
-    if (!this.args.ariaHidden || this.args.ariaHidden === 'false') {
+    if (this.args.ariaHidden === false || this.args.ariaHidden === 'false') {
       return 'false';
     } else {
       return 'true';
