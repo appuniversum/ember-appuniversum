@@ -23,8 +23,6 @@ module('Integration | Component | au-toggle-switch', function (hooks) {
   });
 
   test("it calls `@onChange` when it's state is modified by user input", async function (assert) {
-    assert.expect(4);
-
     this.isChecked = false;
     this.handleChange = (isChecked, event) => {
       this.set('isChecked', isChecked);

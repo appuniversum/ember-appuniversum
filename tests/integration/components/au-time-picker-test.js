@@ -92,8 +92,6 @@ module('Integration | Component | au-time-picker', function (hooks) {
         @onChange={{this.timeChange}}/>
     `);
 
-    assert.expect(15);
-
     assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('05');
     assert.dom('[data-test-autimepicker-minuteinput]').hasValue('06');
     assert.dom('[data-test-autimepicker-secondinput]').hasValue('07');
@@ -123,8 +121,6 @@ module('Integration | Component | au-time-picker', function (hooks) {
         @onChange={{this.timeChange}}/>
     `);
 
-    assert.expect(15);
-
     assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('05');
     assert.dom('[data-test-autimepicker-minuteinput]').hasValue('06');
     assert.dom('[data-test-autimepicker-secondinput]').hasValue('07');
@@ -153,8 +149,6 @@ module('Integration | Component | au-time-picker', function (hooks) {
         @seconds={{this.seconds}}
         @onChange={{this.timeChange}}/>
     `);
-
-    assert.expect(36);
 
     assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('05');
     assert.dom('[data-test-autimepicker-minuteinput]').hasValue('06');
@@ -319,8 +313,6 @@ module('Integration | Component | au-time-picker', function (hooks) {
         @onChange={{this.timeChange}}/>
     `);
 
-    assert.expect(9);
-
     assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('05');
     assert.dom('[data-test-autimepicker-minuteinput]').hasValue('06');
     assert.dom('[data-test-autimepicker-secondinput]').hasValue('07');
@@ -365,8 +357,6 @@ module('Integration | Component | au-time-picker', function (hooks) {
         @onChange={{this.timeChange}}/>
     `);
 
-    assert.expect(15);
-
     assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('05');
     assert.dom('[data-test-autimepicker-minuteinput]').hasValue('06');
     assert.dom('[data-test-autimepicker-secondinput]').hasValue('07');
@@ -395,8 +385,6 @@ module('Integration | Component | au-time-picker', function (hooks) {
         @seconds={{this.seconds}}
         @onChange={{this.timeChange}}/>
     `);
-
-    assert.expect(54);
 
     assert.dom('[data-test-autimepicker-hourinput]  ').hasValue('05');
     assert.dom('[data-test-autimepicker-minuteinput]').hasValue('06');

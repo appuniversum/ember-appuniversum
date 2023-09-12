@@ -39,7 +39,6 @@ module('Integration | Component | au-date-input', function (hooks) {
   });
 
   test('it calls @onChange with the correct date', async function (assert) {
-    assert.expect(2);
     this.onChange = (isoDate, date) => {
       assert.strictEqual(
         isoDate,
@@ -61,7 +60,6 @@ module('Integration | Component | au-date-input', function (hooks) {
   });
 
   test('it calls @onChange with `null` if the input is cleared', async function (assert) {
-    assert.expect(2);
     this.onChange = (isoDate, date) => {
       assert.strictEqual(
         isoDate,

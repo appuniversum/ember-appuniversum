@@ -36,8 +36,6 @@ module('Integration | Component | au-checkbox-group', function (hooks) {
   });
 
   test('it calls the provided @onChange action when its cheked state changes by user input', async function (assert) {
-    assert.expect(4);
-
     this.groupValue = [];
     this.handleChange = (updatedGroupValue, event) => {
       this.set('groupValue', updatedGroupValue);

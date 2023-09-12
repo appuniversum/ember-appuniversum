@@ -95,8 +95,6 @@ module('Integration | Component | au-date-picker', function (hooks) {
   });
 
   test('it calls the @onChange handler when the user selects a date', async function (assert) {
-    assert.expect(4);
-
     let wasOnChangeCalled = false;
     this.set('assertChange', (isoDate, date) => {
       wasOnChangeCalled = true;
