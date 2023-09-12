@@ -43,11 +43,11 @@ module('Integration | Component | au-date-input', function (hooks) {
       assert.strictEqual(
         isoDate,
         '2023-02-02',
-        'it returns the date in iso string format'
+        'it returns the date in iso string format',
       );
       assert.true(
         date instanceof Date,
-        'it returns a date object as the second argument'
+        'it returns a date object as the second argument',
       );
     };
 
@@ -64,7 +64,7 @@ module('Integration | Component | au-date-input', function (hooks) {
       assert.strictEqual(
         isoDate,
         null,
-        'it returns null if the input is cleared'
+        'it returns null if the input is cleared',
       );
       assert.strictEqual(date, null, 'it returns null if the input is cleared');
     };

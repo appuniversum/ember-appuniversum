@@ -6,5 +6,5 @@ export default modifier(
       element[propertyName] = properties[propertyName];
     }
   },
-  { eager: false }
+  { eager: false },
 );

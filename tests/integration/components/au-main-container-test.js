@@ -80,13 +80,13 @@ module('Integration | Component | au-main-container', function (hooks) {
     let containerElement = document.querySelector(MAIN_CONTAINER.CONTENT);
     assert.notStrictEqual(
       getComputedStyle(containerElement).getPropertyValue('overflow-y'),
-      'auto'
+      'auto',
     );
 
     this.set('shouldScroll', true);
     assert.strictEqual(
       getComputedStyle(containerElement).getPropertyValue('overflow-y'),
-      'auto'
+      'auto',
     );
   });
 });

@@ -11,7 +11,7 @@ export default class AuInput extends Component {
     assert(
       '<AuInput>: An `@onChange` handler was provided but that will only be called if `@mask` or `@maskOptions` is provided as well.',
       !this.args.onChange ||
-        (typeof this.args.onChange === 'function' && this.isMasked)
+        (typeof this.args.onChange === 'function' && this.isMasked),
     );
   }
 
@@ -107,5 +107,5 @@ const InputmaskModifier = modifier(
       input.inputmask.remove();
     };
   },
-  { eager: false }
+  { eager: false },
 );

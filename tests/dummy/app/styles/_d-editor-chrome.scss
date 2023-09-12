@@ -14,8 +14,10 @@ $au-brand-divider-rotation: -20deg !default;
   position: relative;
   z-index: 8;
   background-color: var(--au-white);
-  box-shadow: 0 1px 3px rgba($au-gray-900, 0.1),
-    0 4px 20px rgba($au-gray-900, 0.035), 0 1px 1px rgba($au-gray-900, 0.025);
+  box-shadow:
+    0 1px 3px rgba($au-gray-900, 0.1),
+    0 4px 20px rgba($au-gray-900, 0.035),
+    0 1px 1px rgba($au-gray-900, 0.025);
 }
 
 .au-c-app-chrome__entity {
@@ -97,7 +99,9 @@ $au-brand-divider-rotation: -20deg !default;
 }
 
 .au-c-app-chrome__title--edit {
-  transition: color var(--au-transition), border var(--au-transition);
+  transition:
+    color var(--au-transition),
+    border var(--au-transition);
   color: var(--au-gray-800);
 
   &:hover,

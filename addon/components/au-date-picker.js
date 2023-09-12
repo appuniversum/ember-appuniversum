@@ -67,7 +67,7 @@ export default class AuDatePickerComponent extends Component {
     this.registerDuetDatePicker();
 
     let isNewImplementation = macroCondition(
-      getOwnConfig().dutchDatePickerLocalization
+      getOwnConfig().dutchDatePickerLocalization,
     )
       ? true
       : false;
@@ -92,7 +92,7 @@ export default class AuDatePickerComponent extends Component {
         since: {
           enabled: '1.9.0',
         },
-      }
+      },
     );
   }
 
@@ -161,13 +161,13 @@ export default class AuDatePickerComponent extends Component {
 function validateAdapter(adapterArg) {
   assert(
     `The @adapter argument needs to be an object but it is a "${typeof adapterArg}"`,
-    Boolean(adapterArg) && typeof adapterArg === 'object'
+    Boolean(adapterArg) && typeof adapterArg === 'object',
   );
 
   Object.keys(adapterArg).map((key) => {
     assert(
       `"${key}" is not a property of adapter, maybe it is just a typo?`,
-      key in DEFAULT_ADAPTER
+      key in DEFAULT_ADAPTER,
     );
   });
 }
@@ -175,13 +175,13 @@ function validateAdapter(adapterArg) {
 function validateLocalization(localizationArg) {
   assert(
     `The @localization argument needs to be an object but it is a "${typeof localizationArg}"`,
-    Boolean(localizationArg) && typeof localizationArg === 'object'
+    Boolean(localizationArg) && typeof localizationArg === 'object',
   );
 
   Object.keys(localizationArg).map((key) => {
     assert(
       `"${key}" is not a property of localization, maybe it is just a typo?`,
-      key in DEFAULT_LOCALIZATION
+      key in DEFAULT_LOCALIZATION,
     );
   });
 }
@@ -197,7 +197,7 @@ function asIsoDate(target, key /*, descriptor */) {
 
       assert(
         `@${key} should be a string or a Date instance but it is a "${typeof argValue}"`,
-        typeof argValue === 'string' || argValue instanceof Date
+        typeof argValue === 'string' || argValue instanceof Date,
       );
 
       if (argValue instanceof Date) {
@@ -205,7 +205,7 @@ function asIsoDate(target, key /*, descriptor */) {
       } else {
         assert(
           `@${key} ("${argValue}") should be a valid ISO 8601 formatted date`,
-          isIsoDateString(argValue)
+          isIsoDateString(argValue),
         );
         return argValue;
       }

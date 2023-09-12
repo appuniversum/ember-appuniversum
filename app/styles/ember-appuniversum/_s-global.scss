@@ -40,8 +40,15 @@ $au-region-breakpoint: medium !default;
 // ---
 $au-global-font-size: 1.5rem !default;
 $au-global-line-height: 1.5 !default;
-$au-font: "flanders-sans", BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto,
-  Helvetica, Arial, sans-serif !default;
+$au-font:
+  "flanders-sans",
+  BlinkMacSystemFont,
+  -apple-system,
+  "Segoe UI",
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif !default;
 $au-font-secondary: "flanders-serif" !default;
 $au-font-tertiary: courier, monospace !default;
 $au-light: 300 !default;

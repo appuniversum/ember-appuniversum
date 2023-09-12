@@ -18,7 +18,7 @@ import { assert } from '@ember/debug';
 export function linkToModels([model, models]) {
   assert(
     'You cannot provide both the `@model` and `@models` arguments to the component.',
-    !model || !models
+    !model || !models,
   );
 
   if (model) {

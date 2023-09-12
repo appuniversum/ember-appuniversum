@@ -179,14 +179,14 @@ module('Integration | Component | au-modal', function (hooks) {
     assert.strictEqual(
       timesCalled,
       2,
-      'it calls the action as long as the modal stays open'
+      'it calls the action as long as the modal stays open',
     );
 
     await triggerKeyEvent(document, 'keydown', 'Escape');
     assert.strictEqual(
       timesCalled,
       2,
-      "it doesn't call the @closeModal action if the modal is closed"
+      "it doesn't call the @closeModal action if the modal is closed",
     );
   });
 

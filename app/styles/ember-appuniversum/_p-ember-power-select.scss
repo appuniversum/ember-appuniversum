@@ -76,7 +76,8 @@ $ember-power-select-dropdown-z-index: 10000; // Z-index of the dropdown when it 
 // Other
 $ember-power-select-focus-box-shadow: none;
 $ember-power-select-dropdown-margin: 0; // Margin between the dropdown and the trigger
-$ember-power-select-dropdown-box-shadow: 0 0 12px rgba($au-gray-900, 0.15),
+$ember-power-select-dropdown-box-shadow:
+  0 0 12px rgba($au-gray-900, 0.15),
   0 0 2px rgba($au-gray-900, 0.1);
 $ember-power-select-line-height: 1.75;
 $ember-power-select-trigger-icon-color: $ember-power-select-border-color;

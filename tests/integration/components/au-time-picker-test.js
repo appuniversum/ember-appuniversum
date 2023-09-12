@@ -20,7 +20,7 @@ module('Integration | Component | au-time-picker', function (hooks) {
             @hoursLabel="uren"
             @minutesLabel="minuten"
             @secondsLabel="seconden"
-            @nowLabel="Nu"/>`
+            @nowLabel="Nu"/>`,
     );
     assert.dom('[data-test-autimepicker-hourinput]').exists();
     assert.dom('[data-test-autimepicker-minuteinput]').exists();
@@ -334,8 +334,8 @@ module('Integration | Component | au-time-picker', function (hooks) {
         assert,
         now.getHours(),
         now.getMinutes(),
-        now.getSeconds()
-      )
+        now.getSeconds(),
+      ),
     );
     await click('[data-test-autimepicker-nowbutton]');
 

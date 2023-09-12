@@ -15,14 +15,14 @@ export default class AuDropdown extends Component {
     (element) => {
       this.referenceElement = element;
     },
-    { eager: false }
+    { eager: false },
   );
 
   arrow = modifier(
     (element) => {
       this.arrowElement = element;
     },
-    { eager: false }
+    { eager: false },
   );
 
   @action

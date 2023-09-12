@@ -34,7 +34,7 @@ module('Integration | Component | au-dropdown', function (hooks) {
     assert
       .dom('[data-test-button]')
       .isNotVisible(
-        'it closes when clicking the button while the dropdown is open'
+        'it closes when clicking the button while the dropdown is open',
       );
   });
 
@@ -56,7 +56,7 @@ module('Integration | Component | au-dropdown', function (hooks) {
     assert
       .dom('[data-test-button]')
       .isNotVisible(
-        'it closes when clicking a child of the button button while the dropdown is open'
+        'it closes when clicking a child of the button button while the dropdown is open',
       );
   });
 
