@@ -65,6 +65,7 @@
     "ember-file-upload": "^7.0.3",
     "ember-focus-trap": "^1.0.2",
     "ember-modifier": "^3.2.7",
+    "ember-svg-jar": "^2.4.6",
     "ember-test-selectors": "^6.0.0",
     "inputmask": "^5.0.7",
     "merge-anything": "^5.1.3",

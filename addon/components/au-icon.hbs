@@ -1,14 +1,3 @@
-<svg
-  role="img"
-  class="au-c-icon au-c-icon--{{@icon}} {{this.alignment}} {{this.size}}"
-  aria-hidden="{{if
-    (or (eq @ariaHidden false) (eq @ariaHidden 'false'))
-    'false'
-    'true'
-  }}"
-  ...attributes
->
-  <use
-    xlink:href="{{this.iconPrefix}}@appuniversum/ember-appuniversum/appuniversum-symbolset.svg#{{@icon}}"
-  ></use>
-</svg>
+<span ...attributes>
+  {{svg-jar @icon role="img" class=this.classAttribute aria-hidden=this.ariaHiddenAttribute}}
+</span>

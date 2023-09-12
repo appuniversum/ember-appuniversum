@@ -18,4 +18,16 @@ export default class AuButton extends Component {
     if (this.args.alignment == 'right') return 'au-c-icon--right';
     else return '';
   }
+
+  get classAttribute(){
+    return `au-c-icon au-c-icon--${this.args.icon} ${this.alignment} ${this.size}`
+  }
+
+  get ariaHiddenAttribute(){
+    if(!this.args.ariaHidden || this.args.ariaHidden === 'false'){
+      return 'false';
+    } else {
+      return 'true';
+    }
+  }
 }
