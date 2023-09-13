@@ -11,13 +11,23 @@
         {{this.inputmaskModifier options=this.inputmaskOptions}}
       />
     {{else}}
-      <Input
-        @value={{@value}}
-        @type={{this.type}}
-        class={{this.classes}}
-        disabled={{@disabled}}
-        ...attributes
-      />
+      {{#if this.useDeprecatedInput}}
+        <Input
+          @value={{@value}}
+          @type={{this.type}}
+          class={{this.classes}}
+          disabled={{@disabled}}
+          ...attributes
+        />
+      {{else}}
+        <input
+          type={{this.type}}
+          value={{@value}}
+          class={{this.classes}}
+          disabled={{@disabled}}
+          ...attributes
+        />
+      {{/if}}
     {{/if}}
     {{#if (eq @iconAlignment "right")}}
       <AuIcon @icon={{@icon}} @alignment="right" />
@@ -37,12 +47,22 @@
       {{this.inputmaskModifier options=this.inputmaskOptions}}
     />
   {{else}}
-    <Input
-      @value={{@value}}
-      @type={{this.type}}
-      class={{this.classes}}
-      disabled={{@disabled}}
-      ...attributes
-    />
+    {{#if this.useDeprecatedInput}}
+      <Input
+        @value={{@value}}
+        @type={{this.type}}
+        class={{this.classes}}
+        disabled={{@disabled}}
+        ...attributes
+      />
+    {{else}}
+      <input
+        type={{this.type}}
+        value={{@value}}
+        class={{this.classes}}
+        disabled={{@disabled}}
+        ...attributes
+      />
+    {{/if}}
   {{/if}}
 {{/if}}
