@@ -23,8 +23,6 @@ module('Integration | Component | au-toggle-switch', function (hooks) {
   });
 
   test("it calls `@onChange` when it's state is modified by user input", async function (assert) {
-    assert.expect(4);
-
     this.isChecked = false;
     this.handleChange = (isChecked, event) => {
       this.set('isChecked', isChecked);
@@ -51,9 +49,9 @@ module('Integration | Component | au-toggle-switch', function (hooks) {
     assert.dom(TOGGLE_SWITCH.LABEL).hasText('Choose me!');
     assert.true(
       hasDeprecationStartingWith(
-        '[AuToggleSwitch] The @label argument for this component is deprecated in favour of using block content.'
+        '[AuToggleSwitch] The @label argument for this component is deprecated in favour of using block content.',
       ),
-      '@label throws a deprecation warning'
+      '@label throws a deprecation warning',
     );
   });
 

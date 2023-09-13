@@ -19,7 +19,7 @@ module('Integration | Modifier | au-props', function (hooks) {
       .hasProperty(
         'foo',
         'baz',
-        'it updates the property if the value changes'
+        'it updates the property if the value changes',
       );
   });
 

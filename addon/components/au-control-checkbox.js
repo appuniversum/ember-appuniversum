@@ -16,7 +16,7 @@ export default class AuControlCheckbox extends Component {
         since: {
           enabled: '2.5.0',
         },
-      }
+      },
     );
   }
 

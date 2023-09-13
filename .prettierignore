@@ -1,29 +1,17 @@
 # unconventional js
 /blueprints/*/files/
-/vendor/
 
 # compiled output
 /dist/
-/tmp/
 /storybook-static/
-
-# dependencies
-/bower_components/
-/node_modules/
 
 # misc
 /coverage/
 !.*
-.eslintcache
-.lint-todo/
+.*/
 
 # This is updated by lerna-changelog which doesn't confirm with the prettier formatting. Since we can't easily run prettier during releases we disable the formatting for now.
 CHANGELOG.md
 
 # ember-try
 /.node_modules.ember-try/
-/bower.json.ember-try
-/npm-shrinkwrap.json.ember-try
-/package.json.ember-try
-/package-lock.json.ember-try
-/yarn.lock.ember-try

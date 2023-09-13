@@ -30,7 +30,7 @@ module.exports = {
 
     if (isIncludedByApp(this)) {
       this.shouldDisableWormholeElementRendering = Boolean(
-        addonOptions?.disableWormholeElement
+        addonOptions?.disableWormholeElement,
       );
 
       this.ui.writeDeprecateLine(
@@ -44,7 +44,7 @@ The #ember-appuniversum-wormhole element is deprecated. Please use the \`<AuModa
 
 More information: https://github.com/appuniversum/ember-appuniversum/issues/258
 `,
-        this.shouldDisableWormholeElementRendering
+        this.shouldDisableWormholeElementRendering,
       );
     }
   },

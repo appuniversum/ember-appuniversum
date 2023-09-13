@@ -27,8 +27,10 @@ $say-editor-sidebar-large: 30% !default;
 $say-paper-min-height: calc(100vh + #{$au-unit}) !default;
 $say-paper-padding: $au-unit-large !default;
 $say-paper-background: var(--au-white) !default;
-$say-paper-box-shadow: 0 1px 3px rgba($au-gray-900, 0.1),
-  0 4px 20px rgba($au-gray-900, 0.035), 0 1px 1px rgba($au-gray-900, 0.025) !default;
+$say-paper-box-shadow:
+  0 1px 3px rgba($au-gray-900, 0.1),
+  0 4px 20px rgba($au-gray-900, 0.035),
+  0 1px 1px rgba($au-gray-900, 0.025) !default;
 
 // Semantic color variables
 $say-primary-200: #f2e0ff !default;
@@ -39,8 +41,14 @@ $say-primary-800: #7700ce !default;
 $say-primary-900: #550094 !default;
 
 // Typography
-$say-font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto,
-  Helvetica, Arial, sans-serif !default;
+$say-font-family:
+  BlinkMacSystemFont,
+  -apple-system,
+  "Segoe UI",
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif !default;
 $say-h1-font-family: $say-font-family !default;
 $say-h1-font-weight: var(--au-medium) !default;
 $say-h1-font-size: $au-h1 !default;
@@ -408,7 +416,8 @@ $au-toggle-switch-background-color-on: $say-primary-600 !default;
       border-radius: var(--au-radius);
       border: 0.1rem solid var(--au-gray-200);
       background-color: var(--au-white);
-      box-shadow: 0 1px 3px rgba($au-gray-900, 0.1),
+      box-shadow:
+        0 1px 3px rgba($au-gray-900, 0.1),
         0 4px 20px rgba($au-gray-900, 0.035),
         0 1px 1px rgba($au-gray-900, 0.025);
     }

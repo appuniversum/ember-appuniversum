@@ -14,7 +14,7 @@ export default class AuModal extends Component {
 
     assert(
       'au-modal: No target element was found. Please add the `<AuModalContainer />` component where appropriate.',
-      this.destinationElement
+      this.destinationElement,
     );
   }
 
@@ -44,7 +44,7 @@ export default class AuModal extends Component {
 
   get additionalElements() {
     return FOCUS_TRAP_ADDITIONAL_ELEMENTS.filter(
-      (element) => document.querySelector(element) !== null
+      (element) => document.querySelector(element) !== null,
     );
   }
 

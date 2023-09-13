@@ -45,7 +45,7 @@ export default class AuToastDemo extends Component {
   triggerClearableToast() {
     this.clearableToast = this.toaster.warning(
       'This toast will be closed when clicking the "Close toast" button',
-      'Close me with code'
+      'Close me with code',
     );
   }
 

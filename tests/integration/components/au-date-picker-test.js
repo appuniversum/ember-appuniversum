@@ -44,7 +44,7 @@ module('Integration | Component | au-date-picker', function (hooks) {
       .getAttribute('for');
 
     let inputId = this.element.querySelector(
-      '[data-test-au-date-picker-component] input'
+      '[data-test-au-date-picker-component] input',
     ).id;
 
     assert.strictEqual(labelFor, inputId);
@@ -85,18 +85,16 @@ module('Integration | Component | au-date-picker', function (hooks) {
       () => {
         return (
           this.element.querySelector(
-            '[data-test-au-date-picker-component] input'
+            '[data-test-au-date-picker-component] input',
           ).value !== '01-01-2021'
         );
       },
-      { timeout: 2000 }
+      { timeout: 2000 },
     );
     input.hasValue('31-12-2021');
   });
 
   test('it calls the @onChange handler when the user selects a date', async function (assert) {
-    assert.expect(4);
-
     let wasOnChangeCalled = false;
     this.set('assertChange', (isoDate, date) => {
       wasOnChangeCalled = true;
@@ -121,7 +119,7 @@ module('Integration | Component | au-date-picker', function (hooks) {
             .innerText !== ''
         );
       },
-      { timeout: 2000 }
+      { timeout: 2000 },
     );
 
     let availableDateButtons = this.element.querySelectorAll('.duet-date__day');
@@ -149,8 +147,8 @@ module('Integration | Component | au-date-picker', function (hooks) {
 
       assert.false(
         hasDeprecationStartingWith(
-          '[AuDatePicker] The English localization is deprecated.'
-        )
+          '[AuDatePicker] The English localization is deprecated.',
+        ),
       );
     });
   } else {
@@ -162,9 +160,9 @@ module('Integration | Component | au-date-picker', function (hooks) {
 
       assert.true(
         hasDeprecationStartingWith(
-          '[AuDatePicker] The English localization is deprecated.'
+          '[AuDatePicker] The English localization is deprecated.',
         ),
-        'it shows a deprecation message'
+        'it shows a deprecation message',
       );
     });
   }

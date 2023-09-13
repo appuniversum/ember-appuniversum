@@ -16,7 +16,7 @@ export default modifier(
   (
     floatingElement,
     [_referenceElement, _arrowElement],
-    { defaultPlacement = 'bottom-start', options = {} }
+    { defaultPlacement = 'bottom-start', options = {} },
   ) => {
     const referenceElement =
       typeof _referenceElement === 'string'
@@ -42,18 +42,18 @@ export default modifier(
 
     assert(
       `FloatingUI (modifier): No reference element was defined.`,
-      referenceElement instanceof HTMLElement
+      referenceElement instanceof HTMLElement,
     );
 
     assert(
       `FloatingUI (modifier): The reference and floating elements cannot be the same element.`,
-      floatingElement !== referenceElement
+      floatingElement !== referenceElement,
     );
 
     assert(
       `FloatingUI (modifier): @placement must start with either 'bottom' or 'top'.`,
       defaultPlacement.startsWith('bottom') ||
-        defaultPlacement.startsWith('top')
+        defaultPlacement.startsWith('top'),
     );
 
     Object.assign(floatingElement.style, {
@@ -74,7 +74,7 @@ export default modifier(
         arrow({
           element: arrowElement,
           padding: options.arrow.padding,
-        })
+        }),
       );
     }
 
@@ -85,7 +85,7 @@ export default modifier(
         {
           middleware,
           placement: defaultPlacement,
-        }
+        },
       );
 
       Object.assign(floatingElement.style, {
@@ -152,5 +152,5 @@ export default modifier(
       cleanup();
     };
   },
-  { eager: false }
+  { eager: false },
 );

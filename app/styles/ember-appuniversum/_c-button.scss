@@ -59,8 +59,11 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: color var(--au-transition), background-color var(--au-transition),
-    border-color var(--au-transition), box-shadow var(--au-transition);
+  transition:
+    color var(--au-transition),
+    background-color var(--au-transition),
+    border-color var(--au-transition),
+    box-shadow var(--au-transition);
 
   &,
   &:visited {

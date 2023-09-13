@@ -56,8 +56,6 @@ module('Integration | Component | au-radio-group', function (hooks) {
   });
 
   test('it calls the provided @onChange action when its state changes by user input', async function (assert) {
-    assert.expect(4);
-
     this.value = null;
     this.handleChange = (value, event) => {
       this.set('value', value);

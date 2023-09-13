@@ -17,7 +17,7 @@ export default class AuToggleSwitch extends Component {
         since: {
           enabled: '2.6.0',
         },
-      }
+      },
     );
   }
 

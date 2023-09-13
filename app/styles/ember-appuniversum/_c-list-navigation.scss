@@ -61,7 +61,9 @@ $au-list-navigation-border-color: var(--au-divider-color) !default;
   display: flex;
   align-items: center;
   font-family: var(--au-font);
-  transition: color var(--au-transition), text-decoration var(--au-transition);
+  transition:
+    color var(--au-transition),
+    text-decoration var(--au-transition);
   font-weight: var(--au-regular);
   padding: $au-unit-tiny * 1.5 $au-unit-small;
   text-decoration-color: var(

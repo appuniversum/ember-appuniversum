@@ -144,7 +144,7 @@ module('Integration | Component | au-toaster', function (hooks) {
             </p>
             <button {{on "click" @close}} type="button">Close me</button>
           </div>`,
-      templateOnlyComponent()
+      templateOnlyComponent(),
     );
 
     this.toaster.show(CustomToast, { foo: 'Foo' });
@@ -159,7 +159,7 @@ module('Integration | Component | au-toaster', function (hooks) {
     assert
       .dom(CUSTOM_TOAST)
       .doesNotExist(
-        'It receives a `@close` action that can be used to close the toast from the custom toast component itself'
+        'It receives a `@close` action that can be used to close the toast from the custom toast component itself',
       );
 
     const toast = this.toaster.show(CustomToast, { foo: 'Foo' });
@@ -171,7 +171,7 @@ module('Integration | Component | au-toaster', function (hooks) {
     assert
       .dom(CUSTOM_TOAST)
       .doesNotExist(
-        'Custom toasts components can be closed with the `close` method'
+        'Custom toasts components can be closed with the `close` method',
       );
   });
 });

@@ -113,7 +113,7 @@ function ensureIsoDate(argValue) {
 
   assert(
     `@value should be a ISO 8601 formatted date string or a Date instance but it is a "${typeof argValue}"`,
-    typeof argValue === 'string' || argValue instanceof Date
+    typeof argValue === 'string' || argValue instanceof Date,
   );
 
   if (argValue instanceof Date) {
@@ -121,7 +121,7 @@ function ensureIsoDate(argValue) {
   } else {
     assert(
       `@value ("${argValue}") should be a valid ISO 8601 formatted date`,
-      isIsoDateString(argValue)
+      isIsoDateString(argValue),
     );
     return argValue;
   }
