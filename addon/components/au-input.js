@@ -1,8 +1,7 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { assert } from '@ember/debug';
-import { modifier } from 'ember-modifier';
-import Inputmask from 'inputmask';
+import auInputmask from '@appuniversum/ember-appuniversum/modifiers/au-inputmask';
 
 export default class AuInput extends Component {
   constructor() {
@@ -63,7 +62,7 @@ export default class AuInput extends Component {
   }
 
   get inputmaskModifier() {
-    return this.isMasked ? InputmaskModifier : undefined;
+    return this.isMasked ? auInputmask : undefined;
   }
 
   get inputmaskOptions() {
@@ -90,22 +89,9 @@ export default class AuInput extends Component {
 
   @action
   handleChange(event) {
-    let value = event.target.inputmask.unmaskedvalue();
+    // Inputmask is a no-op if no options are provided when setting it up, as a result, the .inputmask property won't be set on the element
+    // In that situation we fall back to the regular value.
+    let value = event.target.inputmask?.unmaskedvalue() || event.target.value;
     this.args.onChange?.(value);
   }
 }
-
-const InputmaskModifier = modifier(
-  (input, positional, { inputmaskOptions }) => {
-    let inputmask = new Inputmask({
-      ...inputmaskOptions,
-    });
-
-    inputmask.mask(input);
-
-    return () => {
-      input.inputmask.remove();
-    };
-  },
-  { eager: false },
-);
