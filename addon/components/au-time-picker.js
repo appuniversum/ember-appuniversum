@@ -15,6 +15,7 @@ export default class AuTimePickerComponent extends Component {
     },
   })
   hourValue = 12;
+
   @trackedReset({
     memo: 'args.minutes',
     update() {
@@ -22,6 +23,7 @@ export default class AuTimePickerComponent extends Component {
     },
   })
   minuteValue = 0;
+
   @trackedReset({
     memo: 'args.seconds',
     update() {
