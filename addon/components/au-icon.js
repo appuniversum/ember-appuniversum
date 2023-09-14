@@ -1,11 +1,17 @@
 import Component from '@glimmer/component';
 import { getOwner } from '@ember/application';
 
-export default class AuButton extends Component {
+export default class AuIcon extends Component {
   get iconPrefix() {
     const config = getOwner(this).resolveRegistration('config:environment');
+    const prefix = config.rootURL || '/';
+    const symbolset = document.querySelectorAll('.au-c-symbols');
 
-    return config.rootURL || '/';
+    if (symbolset.length > 0) {
+      return;
+    } else {
+      return prefix + '@appuniversum/ember-appuniversum/appuniversum-symbolset.svg';
+    }
   }
 
   get size() {

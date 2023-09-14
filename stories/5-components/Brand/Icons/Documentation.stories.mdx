@@ -1,0 +1,33 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Components/Brand/Icons/Documentation" />
+
+## Choose how to load the icons
+The appuniversum icons are grouped in a svg symbolset and are loaded with a `<use>` element. 
+
+You can either choose to link to the symbolset as an external file or place the symbols inline in the beginning of your main template.
+
+### Usage with an inline symbolset
+
+```handlebars
+{{!-- Load this component once in your main template. --}}
+<AuSymbols />
+
+{{!-- 
+   You can now use the icon component. 
+   These icons will reference the id of the svg's contained in the AuSymbols component 
+--}}
+<AuIcon @icon="add" />
+<AuIcon @icon="book" />
+```
+
+### Usage with an external symbolset
+
+You can use the icon component without the AuSymbols component but now the icon reference will be prefixed with the svg's location. Make sure that your application has access to this svg. 
+
+The default location is '@appuniversum/ember-appuniversum/appuniversum-symbolset.svg'. 
+
+```handlebars
+<AuIcon @icon="add" />
+<AuIcon @icon="book" />
+```

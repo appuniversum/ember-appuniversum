@@ -1,8 +1,8 @@
 import { hbs } from 'ember-cli-htmlbars';
-import { icons } from '../../assets/icons';
+import { icons } from '../../../assets/icons';
 
 export default {
-  title: 'Components/Brand/AuIcon',
+  title: 'Components/Brand/Icons',
   argTypes: {
     icon: {
       control: 'select',
@@ -33,6 +33,7 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
+    <AuSymbols />
     <AuIcon
       @icon={{this.icon}}
       @size={{this.size}}
@@ -44,6 +45,7 @@ const Template = (args) => ({
 
 const IconList = (args) => ({
   template: hbs`
+    <AuSymbols />
     <AuIconList />
   `,
   context: args,
@@ -57,5 +59,5 @@ Component.args = {
   ariaHidden: true,
 };
 
-export const Icons = IconList.bind({});
+export const IconsLibrary = IconList.bind({});
 IconList.args = {};
