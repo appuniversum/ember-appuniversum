@@ -1,6 +1,20 @@
 
 
 
+## v2.13.0 (2023-09-14)
+
+#### :rocket: Enhancement
+* [#429](https://github.com/appuniversum/ember-appuniversum/pull/429) Deprecate some `AuInput` features ([@Windvis](https://github.com/Windvis))
+* [#428](https://github.com/appuniversum/ember-appuniversum/pull/428) Add a `{{au-inputmask}}` modifier ([@Windvis](https://github.com/Windvis))
+* [#427](https://github.com/appuniversum/ember-appuniversum/pull/427) Add Ember v5 support ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#426](https://github.com/appuniversum/ember-appuniversum/pull/426) Ember v5.2 blueprint update ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.12.1 (2023-09-11)
 
 #### :bug: Bug Fix
