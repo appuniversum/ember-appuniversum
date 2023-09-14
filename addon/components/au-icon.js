@@ -10,7 +10,9 @@ export default class AuIcon extends Component {
     if (symbolset.length > 0) {
       return;
     } else {
-      return prefix + '@appuniversum/ember-appuniversum/appuniversum-symbolset.svg';
+      return (
+        prefix + '@appuniversum/ember-appuniversum/appuniversum-symbolset.svg'
+      );
     }
   }
 
