@@ -2,7 +2,6 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { hasDeprecationStartingWith } from '../../helpers/deprecations';
 
 module('Integration | Component | au-loader', function (hooks) {
   setupRenderingTest(hooks);
@@ -23,22 +22,5 @@ module('Integration | Component | au-loader', function (hooks) {
     await render(hbs`<AuLoader @disableMessage={{true}} />`);
 
     assert.dom().hasNoText();
-  });
-
-  test('it triggers a deprecation when the `@size` argument is used', async function (assert) {
-    await render(hbs`<AuLoader @padding="small" />`);
-
-    assert.false(
-      hasDeprecationStartingWith(
-        '[AuLoader] The `@size` argument is deprecated. Use `@padding` instead.',
-      ),
-    );
-
-    await render(hbs`<AuLoader @size="small" />`);
-    assert.true(
-      hasDeprecationStartingWith(
-        '[AuLoader] The `@size` argument is deprecated. Use `@padding` instead.',
-      ),
-    );
   });
 });

@@ -17,10 +17,10 @@ const Template = (args) => ({
   template: hbs`
     <AuButtonGroup @inline={{this.inline}}>
       <AuButton>
-        Tertiary button in group
+        Primary button in group
       </AuButton>
       <AuButton @skin="secondary">
-        Tertiary button in group - active
+        Secondary button in group - active
       </AuButton>
     </AuButtonGroup>`,
   context: args,
@@ -30,10 +30,10 @@ const TemplateTwo = (args) => ({
   template: hbs`
     <AuButtonGroup @inline={{this.inline}}>
       <AuButton>
-        Tertiary button in group
+        Primary button in group
       </AuButton>
       <AuButton class="is-active">
-        Tertiary button in group - active
+        Primary button in group - active
       </AuButton>
     </AuButtonGroup>`,
   context: args,

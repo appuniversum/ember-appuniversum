@@ -2,7 +2,6 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { fillIn, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { hasDeprecationStartingWith } from '../../helpers/deprecations';
 
 module('Integration | Component | au-textarea', function (hooks) {
   setupRenderingTest(hooks);
@@ -15,22 +14,6 @@ module('Integration | Component | au-textarea', function (hooks) {
 
     this.set('isDisabled', false);
     assert.dom('textarea').isNotDisabled();
-  });
-
-  test('it updates the `@value` through 2-way-binding', async function (assert) {
-    this.value = '';
-
-    await render(hbs`<AuTextarea @value={{this.value}} />`);
-
-    await fillIn('textarea', 'foo');
-    assert.dom('textarea').hasValue('foo');
-    assert.strictEqual(this.value, 'foo');
-
-    assert.true(
-      hasDeprecationStartingWith(
-        '[AuTextarea] The `@value` argument is deprecated. Use the `value` attribute and the `{{on}}` modifier instead.',
-      ),
-    );
   });
 
   test('it supports the `value` attribute', async function (assert) {
@@ -49,11 +32,6 @@ module('Integration | Component | au-textarea', function (hooks) {
 
     await fillIn('textarea', 'bar');
     assert.strictEqual(this.value, 'bar');
-    assert.false(
-      hasDeprecationStartingWith(
-        '[AuTextarea] The `@value` argument is deprecated. Use the `value` attribute and the `{{on}}` modifier instead.',
-      ),
-    );
   });
 
   test('it supports updating the value through the block contents', async function (assert) {
@@ -73,10 +51,5 @@ module('Integration | Component | au-textarea', function (hooks) {
     await fillIn('textarea', 'bar');
     assert.dom('textarea').hasValue('bar');
     assert.strictEqual(this.value, 'bar');
-    assert.false(
-      hasDeprecationStartingWith(
-        '[AuTextarea] The `@value` argument is deprecated. Use the `value` attribute and the `{{on}}` modifier instead.',
-      ),
-    );
   });
 });

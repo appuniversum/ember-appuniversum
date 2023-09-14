@@ -1,29 +1,9 @@
-import { deprecate } from '@ember/debug';
 import Component from '@glimmer/component';
 
 export default class AuLoader extends Component {
   get padding() {
-    deprecate(
-      '[AuLoader] The `@size` argument is deprecated. Use `@padding` instead.',
-      !('size' in this.args),
-      {
-        id: '@appuniversum/ember-appuniversum.au-loader-size',
-        until: '3.0.0',
-        for: '@appuniversum/ember-appuniversum',
-        since: {
-          enabled: '2.17.0',
-        },
-      },
-    );
-
     if (this.args.padding == 'small') return 'au-c-loader--small';
     if (this.args.padding == 'large') return 'au-c-loader--large';
-    if (this.args.size == 'small')
-      // Deprecated: remove in next major release
-      return 'au-c-loader--small';
-    if (this.args.size == 'large')
-      // Deprecated: remove in next major release
-      return 'au-c-loader--large';
     else return '';
   }
 

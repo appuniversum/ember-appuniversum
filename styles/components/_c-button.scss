@@ -191,8 +191,7 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
 }
 
 // Link button
-.au-c-button--link,
-.au-c-button--tertiary {
+.au-c-button--link {
   // support for deprecated naming
   font-size: inherit;
   border-color: transparent;
@@ -366,8 +365,7 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
   }
 
   &.au-c-button--link,
-  &.au-c-button--link-secondary,
-  &.au-c-button--tertiary {
+  &.au-c-button--link-secondary {
     background-color: transparent;
 
     &,
@@ -419,9 +417,7 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
 }
 
 // Active buttons
-.au-c-button:not(.au-c-button--secondary):not(.au-c-button--link):not(
-    .au-c-button--tertiary
-  ).is-active {
+.au-c-button:not(.au-c-button--secondary):not(.au-c-button--link).is-active {
   background-color: $au-button-contrast-active-color;
   border-color: $au-button-contrast-active-color;
 }
@@ -431,8 +427,7 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
   background-color: $au-button-secondary-contrast-active-color;
 }
 
-.au-c-button--link.is-active,
-.au-c-button--tertiary.is-active {
+.au-c-button--link.is-active {
   color: $au-button-link-active-color;
   font-weight: var(--au-medium);
 }
@@ -445,8 +440,7 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
         ) / 2
     ); // calculate padding automatically to create square icon-only buttons
 
-  &.au-c-button--link,
-  &.au-c-button--tertiary {
+  &.au-c-button--link {
     padding: 0
       calc(
         (

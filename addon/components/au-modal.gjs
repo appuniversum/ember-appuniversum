@@ -16,9 +16,9 @@ export default class AuModal extends Component {
   constructor() {
     super(...arguments);
 
-    this.destinationElement =
-      document.querySelector('[data-au-modal-container]') ||
-      document.getElementById('ember-appuniversum-wormhole');
+    this.destinationElement = document.querySelector(
+      '[data-au-modal-container]',
+    );
 
     assert(
       'au-modal: No target element was found. Please add the `<AuModalContainer />` component where appropriate.',

@@ -25,59 +25,27 @@ const Template = (args) => ({
       <AuFieldset as |f|>
         <f.legend @required={{true}}>Radio list</f.legend>
         <f.content>
-          <AuControlRadio
-            @label="radio 1"
+          <AuRadioGroup
             @name="radios"
-            @value="radioOne"
-            @identifier="radioOne"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlRadio
-            @label="radio 2"
-            @name="radios"
-            @value="radioTwo"
-            @identifier="radioTwo"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlRadio
-            @label="radio 3"
-            @name="radios"
-            @value="radioThree"
-            @identifier="radioThree"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
+            as |Group|
+          >
+            <Group.Radio @value="radioOne">Radio 1</Group.Radio>
+            <Group.Radio @value="radioTwo">Radio 2</Group.Radio>
+            <Group.Radio @value="radioThree">Radio 3</Group.Radio>
+          </AuRadioGroup>
         </f.content>
       </AuFieldset>
       <AuFieldset as |f|>
         <f.legend>Check list</f.legend>
         <f.content>
-          <AuControlCheckbox
-            @label="Checkbox 1"
-            @name="Checkboxs"
-            @value="CheckboxOne"
-            @identifier="CheckboxOne"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlCheckbox
-            @label="Checkbox 2"
-            @name="Checkboxs"
-            @value="CheckboxTwo"
-            @identifier="CheckboxTwo"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlCheckbox
-            @label="Checkbox 3"
-            @name="Checkboxs"
-            @value="CheckboxThree"
-            @identifier="CheckboxThree"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
+          <AuCheckboxGroup
+            @name="checkboxes"
+            as |Group|
+          >
+            <Group.Checkbox @value="checkboxOne">Checkbox 1</Group.Checkbox>
+            <Group.Checkbox @value="checkboxTwo">Checkbox 2</Group.Checkbox>
+            <Group.Checkbox @value="checkboxThree">Checkbox 3</Group.Checkbox>
+          </AuCheckboxGroup>
         </f.content>
       </AuFieldset>
       <AuFormRow @alignment="default">
@@ -124,30 +92,15 @@ const TemplateInline = (args) => ({
           Radio list
         </f.legend>
         <f.content>
-          <AuControlRadio
-            @label="radio 1"
+          <AuRadioGroup
             @name="radios"
-            @value="radioOne"
-            @identifier="radioOne"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlRadio
-            @label="radio 2"
-            @name="radios"
-            @value="radioTwo"
-            @identifier="radioTwo"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlRadio
-            @label="radio 3"
-            @name="radios"
-            @value="radioThree"
-            @identifier="radioThree"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
+            @alignment="inline"
+            as |Group|
+          >
+            <Group.Radio @value="radioOne">Radio 1</Group.Radio>
+            <Group.Radio @value="radioTwo">Radio 2</Group.Radio>
+            <Group.Radio @value="radioThree">Radio 3</Group.Radio>
+          </AuRadioGroup>
         </f.content>
       </AuFieldset>
       <AuFieldset
@@ -158,30 +111,15 @@ const TemplateInline = (args) => ({
           Check list
         </f.legend>
         <f.content>
-          <AuControlCheckbox
-            @label="Checkbox 1"
-            @name="Checkboxs"
-            @value="CheckboxOne"
-            @identifier="CheckboxOne"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlCheckbox
-            @label="Checkbox 2"
-            @name="Checkboxs"
-            @value="CheckboxTwo"
-            @identifier="CheckboxTwo"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlCheckbox
-            @label="Checkbox 3"
-            @name="Checkboxs"
-            @value="CheckboxThree"
-            @identifier="CheckboxThree"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
+          <AuCheckboxGroup
+            @name="checkboxes"
+            @alignment="inline"
+            as |Group|
+          >
+            <Group.Checkbox @value="checkboxOne">Checkbox 1</Group.Checkbox>
+            <Group.Checkbox @value="checkboxTwo">Checkbox 2</Group.Checkbox>
+            <Group.Checkbox @value="checkboxThree">Checkbox 3</Group.Checkbox>
+          </AuCheckboxGroup>
         </f.content>
       </AuFieldset>
       <AuFormRow @alignment="inline">
@@ -228,30 +166,15 @@ const TemplatePre = (args) => ({
           Radio list
         </f.legend>
         <f.content>
-          <AuControlRadio
-            @label="radio 1"
+          <AuRadioGroup
             @name="radios"
-            @value="radioOne"
-            @identifier="radioOne"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlRadio
-            @label="radio 2"
-            @name="radios"
-            @value="radioTwo"
-            @identifier="radioTwo"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlRadio
-            @label="radio 3"
-            @name="radios"
-            @value="radioThree"
-            @identifier="radioThree"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
+            @alignment="inline"
+            as |Group|
+          >
+            <Group.Radio @value="radioOne">Radio 1</Group.Radio>
+            <Group.Radio @value="radioTwo">Radio 2</Group.Radio>
+            <Group.Radio @value="radioThree">Radio 3</Group.Radio>
+          </AuRadioGroup>
         </f.content>
       </AuFieldset>
       <AuFieldset @alignment="inline" as |f|>
@@ -259,30 +182,15 @@ const TemplatePre = (args) => ({
           Check list
         </f.legend>
         <f.content>
-          <AuControlCheckbox
-            @label="Checkbox 1"
-            @name="Checkboxs"
-            @value="CheckboxOne"
-            @identifier="CheckboxOne"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlCheckbox
-            @label="Checkbox 2"
-            @name="Checkboxs"
-            @value="CheckboxTwo"
-            @identifier="CheckboxTwo"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
-          <AuControlCheckbox
-            @label="Checkbox 3"
-            @name="Checkboxs"
-            @value="CheckboxThree"
-            @identifier="CheckboxThree"
-            @checked={{false}}
-            @disabled= {{false}}
-          />
+          <AuCheckboxGroup
+            @name="checkboxes"
+            @alignment="inline"
+            as |Group|
+          >
+            <Group.Checkbox @value="checkboxOne">Checkbox 1</Group.Checkbox>
+            <Group.Checkbox @value="checkboxTwo">Checkbox 2</Group.Checkbox>
+            <Group.Checkbox @value="checkboxThree">Checkbox 3</Group.Checkbox>
+          </AuCheckboxGroup>
         </f.content>
       </AuFieldset>
       <AuFormRow @alignment="pre">
