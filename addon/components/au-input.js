@@ -1,6 +1,6 @@
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
-import { assert } from '@ember/debug';
+import { assert, deprecate } from '@ember/debug';
 import auInputmask from '@appuniversum/ember-appuniversum/modifiers/au-inputmask';
 
 export default class AuInput extends Component {
@@ -12,6 +12,23 @@ export default class AuInput extends Component {
       !this.args.onChange ||
         (typeof this.args.onChange === 'function' && this.isMasked),
     );
+
+    deprecate(
+      '[AuInput] The `@value` argument is deprecated. Use the `value` attribute and the `{{on}}` modifier instead.',
+      !('value' in this.args),
+      {
+        id: '@appuniversum/ember-appuniversum.au-input',
+        until: '3.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '2.13.0',
+        },
+      },
+    );
+  }
+
+  get useDeprecatedInput() {
+    return 'value' in this.args || 'type' in this.args;
   }
 
   get width() {
@@ -41,6 +58,18 @@ export default class AuInput extends Component {
   }
 
   get type() {
+    deprecate(
+      '[AuInput] The `@type` argument is deprecated. Use the `type` attribute instead.',
+      !('type' in this.args),
+      {
+        id: '@appuniversum/ember-appuniversum.au-input',
+        until: '3.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '2.13.0',
+        },
+      },
+    );
     return this.args.type || 'text';
   }
 
@@ -69,6 +98,19 @@ export default class AuInput extends Component {
     if (!this.isMasked) {
       return {};
     }
+
+    deprecate(
+      '[AuInput] The masking feature is deprecated. Use the `{{au-inputmask}}` modifier instead.',
+      false,
+      {
+        id: '@appuniversum/ember-appuniversum.au-input',
+        until: '3.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '2.13.0',
+        },
+      },
+    );
 
     let { mask, maskPlaceholder, maskOptions = {} } = this.args;
 
