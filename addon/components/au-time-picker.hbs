@@ -9,8 +9,8 @@
         class="au-c-time-picker__input"
         name="input-hour"
         id="input-hour"
+        value={{this.hourValueFormatted}}
         data-test-autimepicker-hourinput
-        @value={{this.hourValueFormatted}}
         {{on "keyup" (fn this.timeValueKeyPress "hourValue")}}
         {{on "input" (fn this.validateTime "hourValue")}}
       />
@@ -51,8 +51,8 @@
         class="au-c-time-picker__input"
         name="input-minute"
         id="input-minute"
+        value={{this.minuteValueFormatted}}
         data-test-autimepicker-minuteinput
-        @value={{this.minuteValueFormatted}}
         {{on "keyup" (fn this.timeValueKeyPress "minuteValue")}}
         {{on "input" (fn this.validateTime "minuteValue")}}
       />
@@ -94,8 +94,8 @@
           class="au-c-time-picker__input"
           name="input-second"
           id="input-second"
+          value={{this.secondValueFormatted}}
           data-test-autimepicker-secondinput
-          @value={{this.secondValueFormatted}}
           {{on "keyup" (fn this.timeValueKeyPress "secondValue")}}
           {{on "input" (fn this.validateTime "secondValue")}}
         />
