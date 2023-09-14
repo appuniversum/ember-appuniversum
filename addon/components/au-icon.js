@@ -12,6 +12,10 @@ export default class AuButton extends Component {
     else return '';
   }
 
+  get classAttribute() {
+    return `au-c-icon au-c-icon--${this.args.icon} ${this.alignment} ${this.size}`;
+  }
+  
   get ariaHiddenAttribute() {
     if (this.args.ariaHidden === false || this.args.ariaHidden === 'false') {
       return 'false';

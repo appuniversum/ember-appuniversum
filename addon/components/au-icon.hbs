@@ -1,6 +1,6 @@
-<span
-  class="au-c-icon au-c-icon--{{@icon}} {{this.alignment}} {{this.size}}"
-  ...attributes
->
-  {{svg-jar @icon role="img" aria-hidden=this.ariaHiddenAttribute}}
-</span>
+{{svg-jar
+    @icon
+    role="img"
+    class=this.classAttribute
+    aria-hidden=this.ariaHiddenAttribute
+  }}
