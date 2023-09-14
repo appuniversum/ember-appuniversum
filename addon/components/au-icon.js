@@ -8,7 +8,7 @@ export default class AuIcon extends Component {
     const symbolset = document.querySelectorAll('.au-c-symbols');
 
     if (symbolset.length > 0) {
-      return;
+      return '';
     } else {
       return (
         prefix + '@appuniversum/ember-appuniversum/appuniversum-symbolset.svg'

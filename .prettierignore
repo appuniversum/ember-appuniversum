@@ -4,6 +4,7 @@
 # compiled output
 /dist/
 /storybook-static/
+/addon/components/au-symbols/
 
 # misc
 /coverage/

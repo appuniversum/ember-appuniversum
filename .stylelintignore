@@ -3,6 +3,7 @@
 
 # compiled output
 /dist/
+addon/components/au-symbols/
 
 # addons
 /.node_modules.ember-try/
