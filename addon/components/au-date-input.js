@@ -11,28 +11,6 @@ import {
 
 export default class AuDateInputComponent extends Component {
   dateInput = DateInputModifier;
-
-  // These getters need to be kept in sync with the AuInput component.
-  // Once we refactor that component so it no longer uses `<Input>` we can remove the duplication and wrap AuInput instead.
-  get width() {
-    if (this.args.width == 'block') return 'au-c-input--block';
-    else return '';
-  }
-
-  get error() {
-    if (this.args.error) return 'au-c-input--error';
-    else return '';
-  }
-
-  get warning() {
-    if (this.args.warning) return 'au-c-input--warning';
-    else return '';
-  }
-
-  get disabled() {
-    if (this.args.disabled) return 'is-disabled';
-    else return '';
-  }
 }
 
 class DateInputModifier extends Modifier {

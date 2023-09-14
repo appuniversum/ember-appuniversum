@@ -1,15 +1,11 @@
-<span class="au-c-input-wrapper {{this.width}}">
-  <input
-    class="au-c-input
-      {{this.error}}
-      {{this.warning}}
-      {{this.width}}
-      {{this.disabled}}"
-    disabled={{@disabled}}
-    placeholder="DD-MM-JJJJ"
-    autocomplete="off"
-    ...attributes
-    {{this.dateInput value=@value prefillYear=@prefillYear onChange=@onChange}}
-  />
-  <AuIcon @icon="calendar" @alignment="left" />
-</span>
+<AuInput
+  @disabled={{@disabled}}
+  @error={{@error}}
+  @icon="calendar"
+  @warning={{@warning}}
+  @width={{@width}}
+  autocomplete="off"
+  placeholder="DD-MM-JJJJ"
+  {{this.dateInput value=@value prefillYear=@prefillYear onChange=@onChange}}
+  ...attributes
+/>
