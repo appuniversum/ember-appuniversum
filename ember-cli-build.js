@@ -31,7 +31,7 @@ module.exports = function (defaults) {
     },
     svgJar: {
       strategy: ['inline'],
-      sourceDirs: ['public/icons']
+      sourceDirs: ['public/icons'],
     },
   });
 

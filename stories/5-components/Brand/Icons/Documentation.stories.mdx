@@ -14,9 +14,9 @@ Set the strategy to 'symbol'
 
 ```js
 var app = new EmberApp(defaults, {
-   svgJar: {
-      strategy: 'symbol',
-   }
+  svgJar: {
+    strategy: "symbol",
+  },
 });
 ```
 
@@ -28,15 +28,15 @@ Set the strategy to 'symbol'
 
 ```js
 var app = new EmberApp(defaults, {
-   svgJar: {
-      strategy: 'inline',
-   }
+  svgJar: {
+    strategy: "inline",
+  },
 });
 ```
 
 ### Additional options
 
-Add extra locations for custom application icons. 
+Add extra locations for custom application icons.
 
 You can also mix the symbol and inline strategy.
 
@@ -44,14 +44,14 @@ For more information see the [ember-svg-jar documentation](https://github.com/gh
 
 ```js
 var app = new EmberApp(defaults, {
-   strategy: ['symbol', 'inline'],
+  strategy: ["symbol", "inline"],
 
-   symbol: {
-      sourceDirs: ['public/images/svg/icons']
-   },
+  symbol: {
+    sourceDirs: ["public/images/svg/icons"],
+  },
 
-   inline: {
-      sourceDirs: ['public/images/svg/illustrations']
-   }
+  inline: {
+    sourceDirs: ["public/images/svg/illustrations"],
+  },
 });
 ```
