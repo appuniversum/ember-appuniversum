@@ -17,7 +17,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "run-s icons build-ember build-storybook",
+    "build": "run-s build-ember build-storybook",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:css": "stylelint --allow-empty-input \"**/*.css\"",
     "lint:css:fix": "concurrently \"npm:lint:css -- --fix\"",
@@ -37,7 +37,7 @@
     "build-storybook": "build-storybook",
     "build-ember": "ember build --environment=production",
     "build-ember-chromatic": "ember build --environment=chromatic",
-    "prep-chromatic": "run-s icons build-ember-chromatic",
+    "prep-chromatic": "run-s build-ember-chromatic",
     "release": "release-it",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
