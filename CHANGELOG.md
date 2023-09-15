@@ -1,6 +1,20 @@
 
 
 
+## v2.14.0 (2023-09-15)
+
+#### :rocket: Enhancement
+* [#435](https://github.com/appuniversum/ember-appuniversum/pull/435) Add a `{{au-date-input}}` modifier ([@Windvis](https://github.com/Windvis))
+* [#434](https://github.com/appuniversum/ember-appuniversum/pull/434) Deprecate the 2-way-binding setup in the AuToggleSwitch component ([@Windvis](https://github.com/Windvis))
+* [#433](https://github.com/appuniversum/ember-appuniversum/pull/433) Deprecate the `tertiary` button skin ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#432](https://github.com/appuniversum/ember-appuniversum/pull/432) Resolve `AuInput` deprecations in the `AuTimePicker` component ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.13.0 (2023-09-14)
 
 #### :rocket: Enhancement
