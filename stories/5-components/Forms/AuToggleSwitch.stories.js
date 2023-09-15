@@ -27,7 +27,7 @@ export default {
       description: 'Used to set/get checked state of component',
     },
     onChange: {
-      control: 'function',
+      action: 'change',
       description:
         'Expects a function that gets called when the toggle switch state changes. The function receives the toggle switch state & event context as parameters.',
     },
@@ -45,7 +45,7 @@ const Template = (args) => ({
       @disabled={{this.disabled}}
       @name={{this.name}}
       @checked={{this.checked}}
-      @onChange={{this.onchange}}
+      @onChange={{this.onChange}}
     >{{this.label}}</AuToggleSwitch>`,
   context: args,
 });
@@ -58,5 +58,4 @@ Component.args = {
   disabled: false,
   name: '',
   checked: false,
-  onChange: '',
 };
