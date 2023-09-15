@@ -11,7 +11,8 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuDataTable
-      @content={{this.model}}
+      @content={{this.getData this.page this.itemsPerPage this.totalItems}}
+      @page={{this.page}}
       @fields="title description"
       @noDataMessage="Geen documenten"
       @sort={{this.sort}}
@@ -53,8 +54,57 @@ const Template = (args) => ({
         </c.body>
       </t.content>
     </AuDataTable>`,
-  context: args,
+  context: {
+    ...args,
+    getData: function (page = 0, perPage = 5, totalItems = 100) {
+      const baseNumber = perPage * page + 1;
+      const lastPage = totalItems / perPage - 1;
+
+      let data = [];
+
+      if (page <= lastPage && page >= 0) {
+        data = Array(perPage)
+          .fill(null)
+          .map((_, index) => {
+            return {
+              title: `title ${index + baseNumber}`,
+              description: `description ${index + baseNumber}`,
+            };
+          });
+      }
+
+      data.meta = {
+        count: totalItems,
+        pagination: {
+          first: {
+            number: 0,
+          },
+          last: {
+            number: lastPage,
+          },
+        },
+      };
+
+      if (page > 0) {
+        data.meta.pagination.prev = {
+          number: page - 1,
+        };
+      }
+
+      if (page < lastPage) {
+        data.meta.pagination.next = {
+          number: page + 1,
+        };
+      }
+
+      return data;
+    },
+  },
 });
 
 export const Component = Template.bind({});
-Component.args = {};
+Component.args = {
+  page: 0,
+  itemsPerPage: 5,
+  totalItems: 100,
+};
