@@ -3,6 +3,7 @@
 
 # compiled output
 /dist/
+/storybook-static/
 
 # addons
 /.node_modules.ember-try/
