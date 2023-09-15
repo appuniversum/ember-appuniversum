@@ -91,7 +91,7 @@ const Template = (args) => ({
           <AuButton>
             Submit
           </AuButton>
-          <AuButton @skin="tertiary">
+          <AuButton @skin="link">
             Cancel
           </AuButton>
         </AuButtonGroup>
@@ -198,7 +198,7 @@ const TemplateInline = (args) => ({
           <AuButton>
             Submit
           </AuButton>
-          <AuButton @skin="tertiary">
+          <AuButton @skin="link">
             Cancel
           </AuButton>
         </AuButtonGroup>
@@ -299,7 +299,7 @@ const TemplatePre = (args) => ({
           <AuButton>
             Submit
           </AuButton>
-          <AuButton @skin="tertiary">
+          <AuButton @skin="link">
             Cancel
           </AuButton>
         </AuButtonGroup>
