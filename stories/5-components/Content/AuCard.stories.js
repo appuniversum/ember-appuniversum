@@ -135,7 +135,7 @@ const EditableTemplate = (args) => ({
         <AuHeading @level="4" @skin="5">Card – editable</AuHeading>
       </Group>
       <Group>
-        <AuButton @skin="tertiary" @icon="pencil" @iconAlignment="right">
+        <AuButton @skin="link" @icon="pencil" @iconAlignment="right">
           Bewerk
         </AuButton>
       </Group>

@@ -10,26 +10,27 @@
     {{#if this.hasMultiplePages}}
       {{#unless this.isFirstPage}}
         <li class="au-c-pagination__list-item">
-          <button
+          <AuButton
+            @skin="link"
+            @icon="nav-left"
             {{action "changePage" this.links.prev}}
-            class="au-c-button au-c-button--tertiary"
           >
-            <AuIcon @icon="nav-left" @alignment="left" />
             vorige
             <span class="au-u-hidden-visually"> {{this.pageSize}} rijen</span>
-          </button>
+          </AuButton>
         </li>
       {{/unless}}
       {{#unless this.isLastPage}}
         <li class="au-c-pagination__list-item">
-          <button
+          <AuButton
+            @skin="link"
+            @icon="nav-right"
+            @iconAlignment="right"
             {{action "changePage" this.links.next}}
-            class="au-c-button au-c-button--tertiary"
           >
             volgende
             <span class="au-u-hidden-visually"> {{this.pageSize}} rijen</span>
-            <AuIcon @icon="nav-right" @alignment="right" />
-          </button>
+          </AuButton>
         </li>
       {{/unless}}
     {{/if}}

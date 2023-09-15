@@ -59,10 +59,10 @@ const Template = (args) => ({
       @onClose={{this.onClose}}
       role="menu"
     >
-      <AuButton @skin="tertiary" @icon="switch" role="menuitem">
+      <AuButton @skin="link" @icon="switch" role="menuitem">
         Switch profile
       </AuButton>
-      <AuButton @skin="tertiary" @icon="logout" role="menuitem">
+      <AuButton @skin="link" @icon="logout" role="menuitem">
         Afmelden
       </AuButton>
     </AuDropdown>`,
@@ -83,24 +83,24 @@ const TemplateSeparator = (args) => ({
       @onClose={{this.onClose}}
       role="menu"
     >
-      <AuButton @skin="tertiary" role="menuitem">
+      <AuButton @skin="link" role="menuitem">
         Agendapunt toevoegen
       </AuButton>
-      <AuButton @skin="tertiary" role="menuitem">
+      <AuButton @skin="link" role="menuitem">
         Beslissingen bekijken
       </AuButton>
-      <AuButton @skin="tertiary" role="menuitem">
+      <AuButton @skin="link" role="menuitem">
         Download alle documenten
       </AuButton>
       <AuHr />
-      <AuButton @skin="tertiary" role="menuitem">
+      <AuButton @skin="link" role="menuitem">
         Vergadering wijzigen
       </AuButton>
-      <AuButton @skin="tertiary" role="menuitem">
+      <AuButton @skin="link" role="menuitem">
         Alles formeel goedkeuren
       </AuButton>
       <AuHr />
-      <AuButton @alert="true" @skin="tertiary" @icon="bin" role="menuitem">
+      <AuButton @alert="true" @skin="link" @icon="bin" role="menuitem">
         Verwijder
       </AuButton>
     </AuDropdown>`,
