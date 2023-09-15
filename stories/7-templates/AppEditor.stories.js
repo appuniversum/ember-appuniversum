@@ -42,15 +42,15 @@ const Template = (args) => ({
             </Group>
             <Group class="au-c-toolbar__group--actions">
               <AuDropdown @title="Bestand acties" @alignment="right" role="menu">
-                <AuButton @skin="tertiary" role="menuitem">
+                <AuButton @skin="link" role="menuitem">
                   <AuIcon @icon="copy" @alignment="left" />
                   Kopieer agendapunt
                 </AuButton>
-                <AuButton @skin="tertiary" role="menuitem">
+                <AuButton @skin="link" role="menuitem">
                   <AuIcon @icon="export" @alignment="left" />
                   Exporteer als HTML
                 </AuButton>
-                <AuButton @skin="tertiary" @alert="true" role="menuitem">
+                <AuButton @skin="link" @alert="true" role="menuitem">
                   <AuIcon @icon="bin" @alignment="left" />
                   Naar prullenmand
                 </AuButton>

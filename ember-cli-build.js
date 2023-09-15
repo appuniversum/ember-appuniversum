@@ -30,7 +30,7 @@ module.exports = function (defaults) {
       enabled: false,
     },
     svgJar: {
-      strategy: ['symbol'],
+      strategy: ['inline'],
       sourceDirs: ['public/icons']
     },
   });

@@ -6,16 +6,16 @@ import { Meta } from "@storybook/addon-docs";
 
 The appuniversum icon component is a wrapper around [Ember SVG Jar]('https://www.npmjs.com/package/ember-svg-jar').
 
-### Usage as a symbolset (default)
+### Usage as a symbolset
 
-Recommended when there's a lot of repetition.
+Recommended when there's a lot of repeating icons (e.g. in a table).
 
 Set the strategy to 'symbol'
 
 ```js
 var app = new EmberApp(defaults, {
    svgJar: {
-      strategy: 'inline',
+      strategy: 'symbol',
    }
 });
 ```

@@ -12,7 +12,7 @@ const Template = (args) => ({
     <AuApp>
       <AuMainHeader @brandLink="https://www.vlaanderen.be/nl" @homeRoute="docs.templates.app-sidebar" @appTitle="App title" @contactRoute="docs.templates.app-sidebar">
         <AuDropdown @title="Aangemeld als ..." @alignment="right" role="menu">
-          <AuButton @skin="tertiary" role="menuitem">
+          <AuButton @skin="link" role="menuitem">
             <AuIcon @icon="logout" @alignment="left" />Afmelden
           </AuButton>
         </AuDropdown>
