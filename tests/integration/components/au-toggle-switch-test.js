@@ -22,7 +22,7 @@ module('Integration | Component | au-toggle-switch', function (hooks) {
     assert.dom(TOGGLE_SWITCH.INPUT).isChecked();
   });
 
-  test("it calls `@onChange` when it's state is modified by user input", async function (assert) {
+  test('it calls `@onChange` when its state is modified by user input', async function (assert) {
     this.isChecked = false;
     this.handleChange = (isChecked, event) => {
       this.set('isChecked', isChecked);
@@ -41,6 +41,36 @@ module('Integration | Component | au-toggle-switch', function (hooks) {
 
     await toggleSwitch();
     assert.false(this.isChecked);
+
+    assert.false(
+      hasDeprecationStartingWith(
+        '[AuToggleSwitch] The 2-way-binding setup has been deprecated.',
+      ),
+      '2-way-binding deprecation message is not shown if `@onChange` is set',
+    );
+  });
+
+  test('it updates the value with 2-way-binding', async function (assert) {
+    this.isChecked = false;
+
+    await render(hbs`
+      <AuToggleSwitch
+        @checked={{this.isChecked}}
+      />
+    `);
+
+    await toggleSwitch();
+    assert.true(this.isChecked);
+
+    await toggleSwitch();
+    assert.false(this.isChecked);
+
+    assert.true(
+      hasDeprecationStartingWith(
+        '[AuToggleSwitch] The 2-way-binding setup has been deprecated.',
+      ),
+      '2-way-binding is deprecated',
+    );
   });
 
   test('it shows the provided label text', async function (assert) {
