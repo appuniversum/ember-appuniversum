@@ -1,19 +1,14 @@
-import Component from '@glimmer/component';
-import { assert } from '@ember/debug';
-import { registerDestructor } from '@ember/destroyable';
-import Modifier from 'ember-modifier';
-import Inputmask from 'inputmask';
 import {
   toIsoDateString,
   isIsoDateString,
   isoDateToBelgianFormat,
 } from '@appuniversum/ember-appuniversum/utils/date';
+import { assert } from '@ember/debug';
+import { registerDestructor } from '@ember/destroyable';
+import Modifier from 'ember-modifier';
+import Inputmask from 'inputmask';
 
-export default class AuDateInputComponent extends Component {
-  dateInput = DateInputModifier;
-}
-
-class DateInputModifier extends Modifier {
+export default class AuDateInputModifier extends Modifier {
   input;
   argValue;
   argOnChange;

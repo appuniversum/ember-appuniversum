@@ -35,7 +35,18 @@ const Template = (args) => ({
       @disabled={{this.disabled}}
       @prefillYear={{this.prefillYear}}
       @onChange={{this.onChange}}
-    />`,
+    />
+
+    <AuAlert @icon="circle-info" @size="small" class="au-u-margin-top au-u-max-width-small">
+      <AuContent @skin="small">
+        <p>If you need more control over the styling of the input field,
+        you can use the <AuPill>{{"{{au-date-input}}"}}</AuPill> modifier.</p>
+
+        <p>It provides the same functionality (without the styling), so you can apply
+        it to your own input component.</p>
+      </AuContent>
+    </AuAlert>
+    `,
   context: args,
 });
 
