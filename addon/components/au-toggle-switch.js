@@ -19,6 +19,19 @@ export default class AuToggleSwitch extends Component {
         },
       },
     );
+
+    deprecate(
+      '[AuToggleSwitch] The 2-way-binding setup has been deprecated. Use the `@onChange` argument to update the checked state.',
+      'checked' in this.args && 'onChange' in this.args,
+      {
+        id: '@appuniversum/ember-appuniversum.au-toggle-switch.2-way-binding',
+        until: '3.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          enabled: '2.14.0',
+        },
+      },
+    );
   }
 
   get alignmentClass() {
