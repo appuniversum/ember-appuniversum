@@ -29,6 +29,10 @@ module.exports = function (defaults) {
       // https://github.com/storybookjs/ember-cli-storybook/issues/158
       enabled: false,
     },
+    svgJar: {
+      strategy: ['symbol'],
+      sourceDirs: ['public/icons']
+    },
   });
 
   /*

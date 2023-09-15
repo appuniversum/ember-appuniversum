@@ -33,7 +33,6 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuSymbols />
     <AuIcon
       @icon={{this.icon}}
       @size={{this.size}}
@@ -45,7 +44,6 @@ const Template = (args) => ({
 
 const IconList = (args) => ({
   template: hbs`
-    <AuSymbols />
     <AuIconList />
   `,
   context: args,

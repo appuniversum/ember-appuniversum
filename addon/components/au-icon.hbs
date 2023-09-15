@@ -1,12 +1,8 @@
-<svg
-  role="img"
-  class="au-c-icon au-c-icon--{{@icon}} {{this.alignment}} {{this.size}}"
-  aria-hidden="{{if
-    (or (eq @ariaHidden false) (eq @ariaHidden 'false'))
-    'false'
-    'true'
-  }}"
-  ...attributes
->
-  <use xlink:href="{{this.iconPrefix}}#{{@icon}}"></use>
-</svg>
+<span class="au-c-icon {{this.alignment}} {{this.size}}" ...attributes>
+  {{svg-jar
+    @icon
+    role="img"
+    class="au-c-icon__svg"
+    aria-hidden=this.ariaHiddenAttribute
+  }}
+</span>

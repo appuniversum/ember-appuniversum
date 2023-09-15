@@ -1,23 +1,13 @@
 import Component from '@glimmer/component';
-import { getOwner } from '@ember/application';
 
 export default class AuIcon extends Component {
-  get iconPrefix() {
-    const config = getOwner(this).resolveRegistration('config:environment');
-    const prefix = config.rootURL || '/';
-    const symbolset = document.querySelectorAll('.au-c-symbols');
-
-    if (symbolset.length > 0) {
-      return '';
-    } else {
-      return (
-        prefix + '@appuniversum/ember-appuniversum/appuniversum-symbolset.svg'
-      );
-    }
+  get icon() {
+    return `#${this.args.icon}`;
   }
 
   get size() {
     if (this.args.size == 'large') return 'au-c-icon--large';
+    if (this.args.size == 'medium') return 'au-c-icon--medium';
     else return '';
   }
 
@@ -25,5 +15,13 @@ export default class AuIcon extends Component {
     if (this.args.alignment == 'left') return 'au-c-icon--left';
     if (this.args.alignment == 'right') return 'au-c-icon--right';
     else return '';
+  }
+
+  get ariaHiddenAttribute() {
+    if (this.args.ariaHidden === false || this.args.ariaHidden === 'false') {
+      return 'false';
+    } else {
+      return 'true';
+    }
   }
 }

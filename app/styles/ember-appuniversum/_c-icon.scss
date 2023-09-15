@@ -24,9 +24,18 @@ $au-icon-size-large: var(--au-icon-size-large) !default;
   fill: currentColor;
 }
 
+.au-c-icon__svg {
+  display: block;
+  width: inherit;
+  height: inherit;
+  position: relative;
+  stroke-width: 0;
+  stroke: inherit;
+  fill: inherit;
+}
+
 /* Modifiers
   ========================================================================== */
-
 .au-c-icon--medium {
   width: $au-icon-size-medium;
   height: $au-icon-size-medium;
