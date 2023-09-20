@@ -15,6 +15,12 @@ export default {
       control: 'boolean',
       description: 'Adds a disabled state to the textarea',
     },
+    value: {
+      control: 'text',
+    },
+    handleChange: {
+      action: 'change',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -24,13 +30,14 @@ export default {
 const Template = (args) => ({
   template: hbs`
     <AuTextarea
-      id={{this.id}}
       @width={{this.width}}
       @error={{this.error}}
       @warning={{this.warning}}
       @disabled={{this.disabled}}
-    >
-    </AuTextarea>`,
+      id={{this.id}}
+      value={{this.value}}
+      {{on "change" this.handleChange}}
+    />`,
   context: args,
 });
 
