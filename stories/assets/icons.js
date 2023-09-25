@@ -70,6 +70,7 @@ export const icons = [
   'html-dot',
   'html-plus',
   'html',
+  'image',
   'import',
   'indent',
   'info-circle',

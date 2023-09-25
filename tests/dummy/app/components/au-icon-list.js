@@ -74,6 +74,7 @@ export default class AuIconList extends Component {
     { name: 'html-dot' },
     { name: 'html-plus' },
     { name: 'html' },
+    { name: 'image' },
     { name: 'import' },
     { name: 'indent' },
     { name: 'info-circle' },
