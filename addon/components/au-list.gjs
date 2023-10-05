@@ -10,4 +10,16 @@ export default class AuList extends Component {
     if (this.args.divider) return 'au-c-list--divider';
     else return '';
   }
+
+  <template>
+    <ul class="au-c-list {{this.direction}} {{this.divider}}" ...attributes>
+      {{yield ListItem}}
+    </ul>
+  </template>
 }
+
+const ListItem = <template>
+  <li class="au-c-list__item" ...attributes>
+    {{yield}}
+  </li>
+</template>;
