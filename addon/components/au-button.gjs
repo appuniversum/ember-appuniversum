@@ -1,5 +1,10 @@
+import { AuIcon, AuLoader } from '@appuniversum/ember-appuniversum';
 import { deprecate } from '@ember/debug';
 import Component from '@glimmer/component';
+
+// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
+import and from 'ember-truth-helpers/helpers/and';
+import eq from 'ember-truth-helpers/helpers/eq';
 
 const SKINS = ['primary', 'secondary', 'naked', 'link', 'link-secondary'];
 
@@ -71,4 +76,49 @@ export default class AuButton extends Component {
     if (this.args.icon && this.args.hideText) return 'au-c-button--icon-only';
     return '';
   }
+
+  <template>
+    <button
+      class="au-c-button
+        {{this.widthClass}}
+        {{this.sizeClass}}
+        {{this.skinClass}}
+        {{this.alertClass}}
+        {{this.loadingClass}}
+        {{this.disabledClass}}
+        {{this.iconOnlyClass}}
+        {{if @wrap 'au-c-button--wrap'}}"
+      disabled={{this.isDisabled}}
+      type="button"
+      ...attributes
+    >
+      {{#unless @loading}}
+        {{#if (and @icon (eq this.iconAlignment "left"))}}
+          <AuIcon @icon={{@icon}} />
+        {{/if}}
+      {{/unless}}
+
+      {{#if @hideText}}
+        {{#if @loading}}
+          <span class="au-u-hidden-visually">{{this.loadingMessage}}</span>
+          <AuLoader @padding="small" />
+        {{else}}
+          <span class="au-u-hidden-visually">{{yield}}</span>
+        {{/if}}
+      {{else}}
+        {{#if @loading}}
+          {{this.loadingMessage}}
+          <AuLoader @padding="small" />
+        {{else}}
+          {{yield}}
+        {{/if}}
+      {{/if}}
+
+      {{#unless @loading}}
+        {{#if (and @icon (eq this.iconAlignment "right"))}}
+          <AuIcon @icon={{@icon}} />
+        {{/if}}
+      {{/unless}}
+    </button>
+  </template>
 }
