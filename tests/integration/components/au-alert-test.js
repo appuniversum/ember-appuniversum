@@ -52,7 +52,7 @@ module('Integration | Component | au-alert', function (hooks) {
 
   test('it can be closed', async function (assert) {
     await render(hbs`
-      <AuAlert @closable={{this.closable}}>
+      <AuAlert @closable={{this.closable}} data-test-alert>
         message
       </AuAlert>
     `);
