@@ -1,5 +1,6 @@
-import Component from '@glimmer/component';
+import { Textarea } from '@ember/component';
 import { deprecate } from '@ember/debug';
+import Component from '@glimmer/component';
 
 export default class AuTextarea extends Component {
   constructor() {
@@ -42,4 +43,33 @@ export default class AuTextarea extends Component {
     if (this.args.disabled) return 'is-disabled';
     else return '';
   }
+
+  <template>
+    {{~#if this.useDeprecatedTextarea~}}
+      <Textarea
+        @value={{@value}}
+        class="au-c-textarea
+          {{this.error}}
+          {{this.warning}}
+          {{this.width}}
+          {{this.disabled}}"
+        disabled={{@disabled}}
+        ...attributes
+      >
+        {{yield}}
+      </Textarea>
+    {{~else~}}
+      <textarea
+        class="au-c-textarea
+          {{this.error}}
+          {{this.warning}}
+          {{this.width}}
+          {{this.disabled}}"
+        disabled={{@disabled}}
+        ...attributes
+      >
+        {{~yield~}}
+      </textarea>
+    {{~/if~}}
+  </template>
 }
