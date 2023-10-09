@@ -1,5 +1,11 @@
-import Component from '@glimmer/component';
 import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
+import { AuIcon } from '@appuniversum/ember-appuniversum';
+import { LinkTo } from '@ember/routing';
+import Component from '@glimmer/component';
+
+// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
+import and from 'ember-truth-helpers/helpers/and';
+import eq from 'ember-truth-helpers/helpers/eq';
 
 const SKIN_CLASSES = {
   primary: 'au-c-link',
@@ -10,8 +16,6 @@ const SKIN_CLASSES = {
 };
 
 export default class AuLink extends Component {
-  linkToModels = linkToModels;
-
   get skinClass() {
     if (SKIN_CLASSES[this.args.skin]) {
       return SKIN_CLASSES[this.args.skin];
@@ -33,7 +37,6 @@ export default class AuLink extends Component {
   }
 
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693
-  // don't remove until we drop support for ember 3.27 and 3.28
   get queryParams() {
     if (this.args.query) {
       return this.args.query;
@@ -54,4 +57,31 @@ export default class AuLink extends Component {
       else return 'au-c-link--icon-only';
     return '';
   }
+
+  <template>
+    {{~!~}}
+    <LinkTo
+      @route={{@route}}
+      @models={{linkToModels @model @models}}
+      @query={{this.queryParams}}
+      class="{{this.skinClass}}
+        {{this.activeClass}}
+        {{this.widthClass}}
+        {{this.iconOnlyClass}}"
+      ...attributes
+    >
+      {{#if (and @icon (eq this.iconAlignment "left"))}}
+        <AuIcon @icon={{@icon}} />
+      {{/if}}
+      {{#if @hideText}}
+        <span class="au-u-hidden-visually">{{yield}}</span>
+      {{else}}
+        {{yield}}
+      {{/if}}
+      {{#if (and @icon (eq this.iconAlignment "right"))}}
+        <AuIcon @icon={{@icon}} />
+      {{/if}}
+    </LinkTo>
+    {{~!~}}
+  </template>
 }
