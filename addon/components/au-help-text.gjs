@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-export default class AuHelpTextComponent extends Component {
+export default class AuHelpText extends Component {
   get skin() {
     if (this.args.skin == 'secondary') return 'au-c-help-text--secondary';
     if (this.args.skin == 'tertiary') return 'au-c-help-text--tertiary';
@@ -22,4 +22,17 @@ export default class AuHelpTextComponent extends Component {
     if (this.args.warning) return 'au-c-help-text--warning';
     else return '';
   }
+
+  <template>
+    <span
+      class="au-c-help-text
+        {{this.skin}}
+        {{this.size}}
+        {{this.error}}
+        {{this.warning}}"
+      ...attributes
+    >
+      {{yield}}
+    </span>
+  </template>
 }
