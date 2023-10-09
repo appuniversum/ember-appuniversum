@@ -6,4 +6,8 @@ export default class AuHr extends Component {
     if (this.args.size == 'huge') return 'au-c-hr--huge';
     else return '';
   }
+
+  <template>
+    <hr class="au-c-hr {{this.size}}" ...attributes />
+  </template>
 }
