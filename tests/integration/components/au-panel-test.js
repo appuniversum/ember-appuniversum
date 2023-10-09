@@ -6,21 +6,18 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | au-panel', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
-    await render(hbs`<AuPanel />`);
-
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
+  test('it yields a `Section` component', async function (assert) {
     await render(hbs`
-      <AuPanel>
-        template block text
+      <AuPanel data-test-panel as |Section|>
+        <Section data-test-panel-section="foo">Foo</Section>
+        <Section data-test-panel-section="bar">Bar</Section>
       </AuPanel>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert
+      .dom('[data-test-panel] [data-test-panel-section]')
+      .exists({ count: 2 });
+    assert.dom('[data-test-panel-section="foo"]').hasText('Foo');
+    assert.dom('[data-test-panel-section="bar"]').hasText('Bar');
   });
 });
