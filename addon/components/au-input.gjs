@@ -1,7 +1,13 @@
+import { AuIcon } from '@appuniversum/ember-appuniversum';
+import auInputmask from '@appuniversum/ember-appuniversum/modifiers/au-inputmask';
+import { Input } from '@ember/component';
+import { assert, deprecate } from '@ember/debug';
+import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
-import { assert, deprecate } from '@ember/debug';
-import auInputmask from '@appuniversum/ember-appuniversum/modifiers/au-inputmask';
+
+// TODO: replace this with the named import from ember-truth-helpers v4 once our dependencies support that version
+import eq from 'ember-truth-helpers/helpers/eq';
 
 export default class AuInput extends Component {
   constructor() {
@@ -136,4 +142,75 @@ export default class AuInput extends Component {
     let value = event.target.inputmask?.unmaskedvalue() || event.target.value;
     this.args.onChange?.(value);
   }
+
+  <template>
+    {{~#if @icon~}}
+      <span class="au-c-input-wrapper {{this.iconAlignment}} {{this.width}}">
+        {{#if this.isMasked}}
+          <input
+            type={{this.type}}
+            value={{@value}}
+            class={{this.classes}}
+            disabled={{@disabled}}
+            ...attributes
+            {{on "input" this.handleChange}}
+            {{this.inputmaskModifier options=this.inputmaskOptions}}
+          />
+        {{else}}
+          {{#if this.useDeprecatedInput}}
+            <Input
+              @value={{@value}}
+              @type={{this.type}}
+              class={{this.classes}}
+              disabled={{@disabled}}
+              ...attributes
+            />
+          {{else}}
+            <input
+              type={{this.type}}
+              value={{@value}}
+              class={{this.classes}}
+              disabled={{@disabled}}
+              ...attributes
+            />
+          {{/if}}
+        {{/if}}
+        {{#if (eq @iconAlignment "right")}}
+          <AuIcon @icon={{@icon}} @alignment="right" />
+        {{else}}
+          <AuIcon @icon={{@icon}} @alignment="left" />
+        {{/if}}
+      </span>
+    {{~else~}}
+      {{~#if this.isMasked~}}
+        <input
+          type={{this.type}}
+          value={{@value}}
+          class={{this.classes}}
+          disabled={{@disabled}}
+          ...attributes
+          {{on "input" this.handleChange}}
+          {{this.inputmaskModifier options=this.inputmaskOptions}}
+        />
+      {{~else~}}
+        {{~#if this.useDeprecatedInput~}}
+          <Input
+            @value={{@value}}
+            @type={{this.type}}
+            class={{this.classes}}
+            disabled={{@disabled}}
+            ...attributes
+          />
+        {{~else~}}
+          <input
+            type={{this.type}}
+            value={{@value}}
+            class={{this.classes}}
+            disabled={{@disabled}}
+            ...attributes
+          />
+        {{~/if~}}
+      {{~/if~}}
+    {{~/if~}}
+  </template>
 }
