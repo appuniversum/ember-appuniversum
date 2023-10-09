@@ -28,4 +28,24 @@ export default class AuToolbar extends Component {
     if (this.args.nowrap) return 'au-c-toolbar--nowrap';
     else return '';
   }
+
+  <template>
+    <div
+      class="au-c-toolbar
+        {{this.reverse}}
+        {{this.border}}
+        {{this.skin}}
+        {{this.size}}
+        {{this.nowrap}}"
+      ...attributes
+    >
+      {{yield Group}}
+    </div>
+  </template>
 }
+
+const Group = <template>
+  <div class="au-c-toolbar__group" ...attributes>
+    {{yield}}
+  </div>
+</template>;
