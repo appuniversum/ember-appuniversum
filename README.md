@@ -24,8 +24,6 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 
 ## Development
 
-> We still use npm 6 during development since that's the version that's bundled with node 14.
-
 Local development:
 
 - Build the ember app: `npm run ember`
