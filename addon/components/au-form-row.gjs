@@ -9,4 +9,10 @@ export default class AuFormRow extends Component {
       return 'au-c-form-row--inline au-c-form-row--post';
     else return '';
   }
+
+  <template>
+    <div class="au-c-form-row {{this.alignment}}" ...attributes>
+      {{yield}}
+    </div>
+  </template>
 }
