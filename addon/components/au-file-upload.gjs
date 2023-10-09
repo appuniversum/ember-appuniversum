@@ -1,11 +1,15 @@
+import { AuAlert, AuHelpText, AuIcon } from '@appuniversum/ember-appuniversum';
 import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { task } from 'ember-concurrency';
+import perform from 'ember-concurrency/helpers/perform';
+import FileDropzone from 'ember-file-upload/components/file-dropzone';
+import fileQueue from 'ember-file-upload/helpers/file-queue';
 
-export default class AuFileUploadComponent extends Component {
+export default class AuFileUpload extends Component {
   @service fileQueue;
   @tracked uploadErrorData = [];
 
@@ -135,8 +139,79 @@ export default class AuFileUploadComponent extends Component {
   removeFileFromQueue(file) {
     this.queue.remove(file);
   }
+
+  <template>
+    {{#let
+      (fileQueue name=this.queueName onFileAdded=(perform this.upload))
+      as |queue|
+    }}
+      <FileDropzone
+        @queue={{queue}}
+        @filter={{this.filter}}
+        class="au-c-file-upload"
+        ...attributes
+        as |dropzone|
+      >
+        {{#if dropzone.active}}
+          <p class="au-c-file-upload-message">
+            <AuIcon @icon="attachment" @alignment="left" />
+            <AuHelpText @skin="secondary">{{this.helpTextDragDrop}}</AuHelpText>
+          </p>
+        {{else if queue.files.length}}
+          <p class="au-c-file-upload-message">
+            <small class="au-c-small-text">{{this.uploadingMsg}}</small>
+          </p>
+        {{else}}
+          <label>
+            <input
+              accept={{@accept}}
+              multiple={{@multiple}}
+              type="file"
+              hidden=""
+              {{queue.selectFile filter=this.filter}}
+            />
+            <span class="au-c-file-upload-label">
+              <span class="au-c-file-upload-label__title">
+                <AuIcon @icon="attachment" @alignment="left" />
+                {{this.title}}
+              </span>
+              {{#if dropzone.supported}}
+                <AuHelpText
+                  @skin="secondary"
+                >{{this.helpTextDragDrop}}</AuHelpText>
+              {{/if}}
+            </span>
+          </label>
+        {{/if}}
+      </FileDropzone>
+    {{/let}}
+
+    {{#if this.hasErrors}}
+      <AuAlert
+        @icon="alert-triangle"
+        @skin="error"
+        @size="small"
+        @closable={{false}}
+        class="au-u-margin-top-tiny"
+      >
+        <ul>
+          {{#each this.uploadErrorData as |data|}}
+            <li>
+              Fout bij het opladen van
+              {{data.filename}}.
+              {{#if data.error}}
+                (Foutmelding:
+                {{data.error}})
+              {{/if}}
+            </li>
+          {{/each}}
+        </ul>
+      </AuAlert>
+    {{/if}}
+  </template>
 }
 
+// Private util that is exported for testing purposes
 export function isValidFileType(file, accept) {
   if (!accept) {
     return true;
