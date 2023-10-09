@@ -1,14 +1,26 @@
-import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
-import { action } from '@ember/object';
-import { assert, deprecate, runInDebug } from '@ember/debug';
-import { guidFor } from '@ember/object/internals';
-import { getOwnConfig, macroCondition } from '@embroider/macros';
+import { AuLabel } from '@appuniversum/ember-appuniversum';
 import {
   formatDate,
-  toIsoDateString,
   isIsoDateString,
+  toIsoDateString,
 } from '@appuniversum/ember-appuniversum/utils/date';
+import { assert, deprecate, runInDebug } from '@ember/debug';
+import { on } from '@ember/modifier';
+import { action } from '@ember/object';
+import { guidFor } from '@ember/object/internals';
+import { getOwnConfig, macroCondition } from '@embroider/macros';
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { modifier } from 'ember-modifier';
+
+const props = modifier(
+  function props(element, positional, properties) {
+    for (let propertyName in properties) {
+      element[propertyName] = properties[propertyName];
+    }
+  },
+  { eager: false },
+);
 
 const DEFAULT_ADAPTER = {
   parse: function (value = '', createDate) {
@@ -56,7 +68,7 @@ if (macroCondition(getOwnConfig().dutchDatePickerLocalization)) {
   });
 }
 
-export default class AuDatePickerComponent extends Component {
+export default class AuDatePicker extends Component {
   @asIsoDate value;
   @asIsoDate min;
   @asIsoDate max;
@@ -156,6 +168,36 @@ export default class AuDatePickerComponent extends Component {
       this.isInitialized = true;
     }
   }
+
+  <template>
+    <div class="au-c-datepicker {{this.alignment}}" data-test-au-date-picker>
+      {{#if @label}}
+        <AuLabel
+          @error={{@error}}
+          @warning={{@warning}}
+          for={{this.id}}
+          data-test-au-date-picker-label
+        >{{@label}}</AuLabel>
+      {{/if}}
+
+      {{#if this.isInitialized}}
+        <duet-date-picker
+          class={{this.error}}
+          disabled={{@disabled}}
+          buttonLabel={{@buttonLabel}}
+          identifier={{this.id}}
+          value={{this.value}}
+          min={{this.min}}
+          max={{this.max}}
+          first-day-of-week={{@first-day}}
+          data-test-au-date-picker-component
+          {{on "duetChange" this.handleDuetDateChange}}
+          {{props localization=this.localization dateAdapter=this.adapter}}
+          ...attributes
+        ></duet-date-picker>
+      {{/if}}
+    </div>
+  </template>
 }
 
 function validateAdapter(adapterArg) {
