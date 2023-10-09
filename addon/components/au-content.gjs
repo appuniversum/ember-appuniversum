@@ -7,4 +7,10 @@ export default class AuContent extends Component {
     if (this.args.skin == 'large') return 'au-c-content--large';
     else return '';
   }
+
+  <template>
+    <div class="au-c-content {{this.skin}}" ...attributes>
+      {{yield}}
+    </div>
+  </template>
 }
