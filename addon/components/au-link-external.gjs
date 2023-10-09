@@ -1,4 +1,9 @@
+import { AuIcon } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
+
+// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
+import and from 'ember-truth-helpers/helpers/and';
+import eq from 'ember-truth-helpers/helpers/eq';
 
 const SKIN_CLASSES = {
   primary: 'au-c-link',
@@ -36,4 +41,28 @@ export default class AuLinkExternal extends Component {
       else return 'au-c-link--icon-only';
     return '';
   }
+
+  <template>
+    {{~!~}}
+    <a
+      class="{{this.skinClass}} {{this.widthClass}} {{this.iconOnlyClass}}"
+      target="_blank"
+      rel="noopener noreferrer"
+      href=""
+      ...attributes
+    >
+      {{#if (and @icon (eq this.iconAlignment "left"))}}
+        <AuIcon @icon={{@icon}} />
+      {{/if}}
+      {{#if @hideText}}
+        <span class="au-u-hidden-visually">{{yield}}</span>
+      {{else}}
+        {{yield}}
+      {{/if}}
+      {{#if (and @icon (eq this.iconAlignment "right"))}}
+        <AuIcon @icon={{@icon}} />
+      {{/if}}
+    </a>
+    {{~!~}}
+  </template>
 }
