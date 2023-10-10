@@ -28,7 +28,7 @@
 
 - `git clone <repository-url>`
 - `cd ember-appuniversum`
-- `npm install` (use npm 6 until we drop node 14 support)
+- `npm install`
 
 ### Linting
 
@@ -37,13 +37,12 @@
 
 ### Running tests
 
-- `ember test` – Runs the test suite on the current Ember version
-- `ember test --server` – Runs the test suite in "watch mode"
-- `ember try:each` – Runs the test suite against multiple Ember versions
+- start the development server `npm run ember` and go to the `/tests` route
+- `npm run test:ember` – Runs the test suite on the current Ember version
 
 ### Running the dummy application
 
 - `npm start`
-- Visit the storybook application at [http://localhost:6006](http://localhost:4200).
+- Visit the storybook application at [http://localhost:6006](http://localhost:6006).
 
 For more information on using ember-cli, visit [https://cli.emberjs.com/release/](https://cli.emberjs.com/release/).
