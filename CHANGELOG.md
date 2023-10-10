@@ -1,6 +1,20 @@
 
 
 
+## v2.16.0 (2023-10-10)
+
+#### :rocket: Enhancement
+* [#442](https://github.com/appuniversum/ember-appuniversum/pull/442) Update `tracked-toolbox` to v2 ([@Windvis](https://github.com/Windvis))
+* [#438](https://github.com/appuniversum/ember-appuniversum/pull/438) Addition of an image icon ([@elpoelma](https://github.com/elpoelma))
+
+#### :house: Internal
+* [#440](https://github.com/appuniversum/ember-appuniversum/pull/440) .gjs conversion ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.15.0 (2023-09-20)
 
 #### :rocket: Enhancement
