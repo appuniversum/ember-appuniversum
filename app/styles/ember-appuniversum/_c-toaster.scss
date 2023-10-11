@@ -1,3 +1,6 @@
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-toaster");
+
 .au-c-toaster {
   position: fixed;
   display: flex;

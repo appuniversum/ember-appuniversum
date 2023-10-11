@@ -4,4 +4,7 @@
    File namespace: _e-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-elements");
+
 @import "e-page";

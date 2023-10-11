@@ -1,6 +1,10 @@
 /* ==========================================================================
    #PARAGRAPHS
    ========================================================================== */
+
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-paragraphs");
+
 /**
  * Utility classes to style paragraphs.
  */

@@ -2,6 +2,9 @@
    #FLOW
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/o-flow");
+
 /**
  * The flow object creates a consistent vertical rhythm
  *

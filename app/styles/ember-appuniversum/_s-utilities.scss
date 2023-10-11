@@ -1,3 +1,6 @@
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/s-utilities");
+
 // ==================================
 // #GENERATE UTILITIES
 // ==================================

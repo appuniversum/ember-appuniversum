@@ -5,6 +5,9 @@
 /* Variables
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-accordion");
+
 $au-accordion-spacing: $au-unit !default;
 
 /* Component

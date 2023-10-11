@@ -4,5 +4,8 @@
    File namespace: _p-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-plugins");
+
 @import "p-ember-power-select";
 @import "p-duet-datepicker";

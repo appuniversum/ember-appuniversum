@@ -2,6 +2,9 @@
    #RESPONSIVE-SPACINGS
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-responsive-spacings");
+
 /**
  * Utility classes enhancing the normal spacing classes by adding responsiveness
  * to them. By default, there are not responsive spacings defined. You can

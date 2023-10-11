@@ -5,6 +5,9 @@
    Style namespace: .au-u-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-utilities");
+
 @import "u-align-text";
 @import "u-background";
 @import "u-break-word";

@@ -2,6 +2,9 @@
    #DATA TABLE (DRAFT)
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-data-table");
+
 .au-c-data-table {
   position: relative;
   display: flex;

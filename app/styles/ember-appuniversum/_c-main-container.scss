@@ -2,6 +2,9 @@
    #MAIN CONTAINER
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-main-container");
+
 /* Variables
    ========================================================================== */
 

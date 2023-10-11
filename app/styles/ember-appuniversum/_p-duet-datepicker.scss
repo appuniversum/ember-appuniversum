@@ -3,6 +3,9 @@
    https://github.com/duetds/date-picker#theming
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/p-duet-datepicker");
+
 /* Variables
    ========================================================================== */
 

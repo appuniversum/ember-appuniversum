@@ -2,6 +2,9 @@
    #Background
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-background");
+
 .au-u-background-gray-100 {
   background-color: var(--au-gray-100);
 }

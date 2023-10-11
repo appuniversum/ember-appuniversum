@@ -4,6 +4,9 @@
    Style namespace: .au-c-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-components");
+
 @import "c-accordion";
 @import "c-alert";
 @import "c-app";

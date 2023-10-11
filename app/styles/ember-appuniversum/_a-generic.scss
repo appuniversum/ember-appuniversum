@@ -4,6 +4,9 @@
    File namespace: _g-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-generic");
+
 @import "g-reset";
 @import "g-box-sizing";
 @import "g-font";

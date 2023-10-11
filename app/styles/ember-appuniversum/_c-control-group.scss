@@ -2,6 +2,9 @@
    #Control group
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-control-group");
+
 /* Component
    ========================================================================== */
 

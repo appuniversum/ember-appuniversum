@@ -2,6 +2,9 @@
    #MAX WIDTH
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-max-widths");
+
 @if (variable-exists(mq-breakpoints)) {
   @each $au-bp-name, $au-bp-value in $mq-breakpoints {
     .au-u-max-width-#{$au-bp-name} {

@@ -3,6 +3,9 @@
    Global app container
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-app");
+
 .au-c-app {
   display: flex;
   flex-direction: column;

@@ -8,6 +8,9 @@
 // Fixes an issue where Ruby locale is not set properly
 // See https://github.com/sass-mq/sass-mq/pull/10
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/t-sass-mq");
+
 // Base font size on the `<body>` element
 //
 // Do not override this value, or things will break

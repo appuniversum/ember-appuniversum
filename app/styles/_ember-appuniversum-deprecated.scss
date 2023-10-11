@@ -1,0 +1,8 @@
+$-au-import-path-warning-already-shown: false;
+
+@mixin paths($import-path) {
+  @if not $-au-import-path-warning-already-shown {
+    $-au-import-path-warning-already-shown: true !global;
+    @warn "The `@import \"#{$import-path}\";` import path is deprecated. Use the new import paths instead: https://appuniversum.github.io/ember-appuniversum/?path=/story/outline-getting-started--page#customising-the-scss-for-your-project";
+  }
+}

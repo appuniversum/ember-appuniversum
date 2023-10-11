@@ -2,6 +2,9 @@
    #PANEL
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-panel");
+
 .au-c-panel {
   display: flex;
   flex-direction: column;

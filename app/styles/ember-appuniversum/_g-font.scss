@@ -2,6 +2,9 @@
    #FONT
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/g-font");
+
 /* Variables
    ========================================================================== */
 

@@ -4,5 +4,8 @@
    File namespace: _t-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-tools");
+
 @import "t-font-size";
 @import "t-sass-mq";

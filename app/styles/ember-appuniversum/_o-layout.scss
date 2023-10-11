@@ -4,6 +4,9 @@
    NOTICE: Adapted from https://github.com/inuitcss/inuitcss/blob/develop/objects/_objects.wrapper.scss
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/o-layout");
+
 /* Variables
   ========================================================================== */
 

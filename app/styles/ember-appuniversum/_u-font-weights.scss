@@ -2,6 +2,9 @@
    #FONT WEIGHTS
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-font-weights");
+
 /**
  * Utility classes to put specific font-size values onto elements. The below loop
  * will generate us a suite of classes like:
