@@ -76,14 +76,15 @@ Then load the SCSS in your `app.scss` file:
 
 > You may need to configure your SCSS compiler so that it looks at the `node_modules` folder when importing files.
 > For ember-cli-sass this can be done by using the `includePaths` option.
+>
 > ```js
 > // ember-cli-build.js
 > var app = new EmberApp({
->  sassOptions: {
->    includePaths: ["node_modules"],
->  },
->});
->```
+>   sassOptions: {
+>     includePaths: ["node_modules/@appuniversum/ember-appuniversum"], // just "node_modules" would also work, but it seems to slow (re)builds down a lot
+>   },
+> });
+> ```
 
 If you want more control over the order that SCSS partials are rendered you can import them as groups.
 
