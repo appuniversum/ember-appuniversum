@@ -1,0 +1,170 @@
+/* ==================================
+   #DUET DATEPICKER
+   https://github.com/duetds/date-picker#theming
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+:root {
+  --duet-color-primary: #{var(--au-blue-700)};
+  --duet-color-text: #{var(--au-gray-1000)};
+  --duet-color-text-active: #{var(--au-white)};
+  --duet-color-placeholder: #{var(--au-gray-700)};
+  --duet-color-button: #{var(--au-white)};
+  --duet-color-surface: #{var(--au-white)};
+  --duet-color-overlay: rgba(0, 0, 0, 0.3);
+
+  --duet-font: #{var(--au-font)};
+  --duet-font-normal: 400;
+  --duet-font-bold: 500;
+
+  --duet-radius: 0.3rem;
+  --duet-z-index: 10;
+}
+
+/* Overrides
+   ========================================================================== */
+
+// Tweak position of dialog
+.duet-date__dialog {
+  overflow: hidden;
+  @media (min-width: 35.9375em) {
+    left: auto;
+    right: 0;
+    min-width: 220px;
+    max-width: 220px;
+
+    .au-c-datepicker--top & {
+      top: auto;
+      bottom: 100%;
+      transform: scale(0.96) translateZ(0) translateY(20px);
+      transform-origin: bottom right;
+    }
+
+    .au-c-datepicker--top &.is-active {
+      top: auto;
+      bottom: calc(100% + 0.5rem);
+      transform: scale(0.96) translateZ(0) translateY(0);
+    }
+  }
+}
+
+.duet-date__dialog-content {
+  @media (min-width: 35.9375em) {
+    min-width: 220px;
+    max-width: 220px;
+    padding: $au-unit-tiny * 0.5 $au-unit-tiny $au-unit-tiny;
+  }
+}
+
+.duet-date__input {
+  height: $au-unit-large - $au-unit-small;
+  border-color: var(--au-gray-300);
+
+  &:focus {
+    outline: none;
+    border-width: 0.1rem !important; // Temporary overide for Webuniversum
+    border-color: var(
+      --au-outline-color
+    ) !important; // Temporary overide for Webuniversum
+    box-shadow: 0 0 0 0.2rem var(--au-outline-color) !important; // Temporary overide for Webuniversum
+  }
+}
+
+.duet-date__input[disabled=""] {
+  background-color: var(--au-gray-100);
+}
+
+.duet-date__toggle {
+  width: $au-unit + $au-unit-small;
+  transition: background var(--au-transition);
+
+  &,
+  &:focus {
+    box-shadow: none;
+    border-left: 0.1rem solid var(--au-gray-300);
+  }
+
+  &:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  &:hover {
+    background-color: var(--au-gray-100);
+  }
+
+  &[disabled=""] {
+    background-color: var(--au-gray-100);
+    cursor: default;
+  }
+}
+
+.duet-date__table {
+  font-size: 1.4rem;
+}
+
+.duet-date__toggle-icon svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+.duet-date__select-label {
+  font-size: 1.6rem;
+}
+
+.duet-date__table-header {
+  font-size: 1.2rem;
+}
+
+.duet-date__cell {
+  padding-top: $au-unit-tiny * 0.25;
+  padding-bottom: $au-unit-tiny * 0.25;
+}
+
+.duet-date__day.is-today {
+  box-shadow: 0 0 0 1px var(--au-blue-700);
+}
+
+[aria-selected="true"] .duet-date__day {
+  background: var(--au-blue-700);
+}
+
+.duet-date__day {
+  font-size: 1.4rem;
+  line-height: 1;
+  width: 26px;
+  height: 26px;
+}
+
+.duet-date__day:focus {
+  color: var(--au-blue-700);
+  background-color: var(--au-blue-200);
+  border: 0.2rem solid var(--au-blue-300);
+  box-shadow: none;
+}
+
+.duet-date__day:active {
+  color: var(--au-white);
+  background: var(--au-blue-700);
+  box-shadow: 0 0 5px var(--au-blue-700);
+}
+
+.duet-date__day:hover::before,
+.duet-date__day.is-today::before {
+  background: var(--au-blue-700);
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.duet-date-error .duet-date__input {
+  border-color: var(--au-red-600);
+  box-shadow: 0 0 0 0.2rem var(--au-red-600);
+}
+
+.duet-date-warning .duet-date__input {
+  border-color: var(--au-orange-500);
+  box-shadow: 0 0 0 0.2rem var(--au-orange-500);
+}

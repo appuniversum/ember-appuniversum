@@ -1,0 +1,74 @@
+/* ==================================
+   #BUTTON-GROUP
+   ================================== */
+
+.au-c-button-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $au-unit-tiny;
+}
+
+/* Modifiers
+========================================================================== */
+
+.au-c-button-group--inline {
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.au-c-button-group--inline {
+  .au-c-button {
+    margin-right: -2px;
+    margin-top: 0;
+  }
+
+  .au-c-button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .au-c-button + .au-c-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+/* Active buttons within inline button groups */
+.au-c-button-group--inline {
+  .au-c-button:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-color-underline;
+  }
+
+  .au-c-button:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
+  }
+
+  .au-c-button--secondary:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-color-underline;
+    background: var(--au-white);
+  }
+
+  .au-c-button--secondary:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
+    background: var(--au-white);
+  }
+
+  .au-c-button-link:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-color-underline;
+  }
+
+  .au-c-button-link:hover:not(.is-active) {
+    text-decoration: underline;
+    text-decoration-color: $au-button-link-hover-color-underline;
+  }
+
+  .au-c-button--link.is-active {
+    text-decoration: none;
+  }
+}

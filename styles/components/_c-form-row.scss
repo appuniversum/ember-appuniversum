@@ -1,0 +1,85 @@
+/* ==================================
+   #FORM-ROW
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+/* Component
+   ========================================================================== */
+
+.au-c-form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.au-c-form-row--inline {
+  flex-direction: row;
+  gap: $au-unit;
+
+  > .au-c-label {
+    margin-bottom: 0;
+    min-height: $au-unit-large - $au-unit-small;
+  }
+
+  > .au-c-input,
+  > .au-c-textarea,
+  > .au-c-datepicker {
+    display: block;
+    width: 100%;
+  }
+}
+
+.au-c-form-row--pre,
+.au-c-form-row--post {
+  align-items: stretch;
+  gap: 0;
+
+  > .au-c-label {
+    padding-right: $au-unit-small;
+    padding-left: $au-unit-small;
+    background-color: var(--au-gray-100);
+    border: 0.1rem solid var(--au-gray-300);
+  }
+
+  > .au-c-textarea {
+    margin: 0;
+  }
+}
+
+.au-c-form-row--pre {
+  > .au-c-label {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--au-radius);
+    border-bottom-left-radius: var(--au-radius);
+  }
+
+  > .au-c-input,
+  > .au-c-textarea,
+  > .au-c-datepicker .duet-date__input {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.au-c-form-row--post {
+  flex-direction: row-reverse;
+
+  > .au-c-label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--au-radius);
+    border-bottom-right-radius: var(--au-radius);
+  }
+
+  > .au-c-input,
+  > .au-c-textarea,
+  > .au-c-datepicker .duet-date__input {
+    border-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}

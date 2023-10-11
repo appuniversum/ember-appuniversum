@@ -1,0 +1,72 @@
+/* ==================================
+   #ACCORDION
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-accordion-spacing: $au-unit !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-accordion {
+  padding-bottom: $au-accordion-spacing;
+}
+
+.au-c-accordion__subtitle {
+  margin-left: $au-accordion-spacing;
+}
+
+.au-c-accordion .au-c-toolbar {
+  margin-bottom: $au-unit-tiny;
+  cursor: pointer;
+}
+
+.au-c-accordion .au-c-button {
+  padding-left: 0;
+  text-align: left;
+  white-space: initial;
+  overflow: visible;
+  height: auto;
+  cursor: inherit;
+}
+
+.au-c-accordion .au-c-toolbar .au-c-icon {
+  color: var(--au-blue-700);
+  transition: color var(--au-transition);
+  margin-top: 0.4rem;
+
+  &:hover,
+  &:focus-within {
+    color: var(--au-blue-900);
+  }
+}
+
+.au-c-accordion .au-c-content {
+  &:focus {
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: var(--au-outline);
+  }
+}
+
+// Border
+.au-c-accordion--border .au-c-toolbar {
+  border: 0.1rem solid var(--au-divider-color);
+  border-radius: var(--au-radius);
+  padding: $au-unit-tiny;
+  transition: background-color var(--au-transition);
+
+  &:hover,
+  &:focus-within {
+    background-color: var(--au-white);
+  }
+}
+
+// Reversed
+.au-c-accordion--reverse .au-c-toolbar {
+  justify-content: flex-end;
+}

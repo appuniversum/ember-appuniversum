@@ -1,0 +1,56 @@
+/* ==================================
+   #TABS
+   ================================== */
+
+/* Component
+  ========================================================================== */
+.au-c-tabs {
+  @include au-font-size($au-h6);
+  padding: 0 $au-unit;
+
+  &:not(.au-c-tabs--reversed) {
+    border-bottom: 0.1rem solid var(--au-divider-color);
+  }
+}
+
+.au-c-tabs--reversed {
+  border-top: 0.1rem solid var(--au-divider-color);
+}
+
+.au-c-tabs-list {
+  display: flex;
+  flex-direction: flex-start;
+  flex-wrap: nowrap;
+}
+
+.au-c-tabs-list__item {
+  & + & {
+    margin-left: $au-unit;
+  }
+
+  .au-c-link {
+    font-weight: var(--au-medium);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none;
+    padding: $au-unit-small 0;
+    min-height: 4.8rem;
+  }
+
+  .au-c-link:hover,
+  .au-c-link:focus {
+    text-decoration: none;
+  }
+
+  .au-c-link.active {
+    color: var(--au-gray-900);
+  }
+
+  :not(.au-c-tabs--reversed) & .au-c-link.active {
+    box-shadow: 0 -3px 0 0 inset var(--au-gray-900);
+  }
+
+  .au-c-tabs--reversed & .au-c-link.active {
+    box-shadow: 0 3px 0 0 inset var(--au-gray-900);
+  }
+}

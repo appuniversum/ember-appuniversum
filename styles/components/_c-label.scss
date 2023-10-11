@@ -1,0 +1,50 @@
+/* ==================================
+   #LABELS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-label-color: var(--au-gray-900) !default;
+$au-label-height: $au-unit-large - $au-unit-small !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-label {
+  @include au-font-size(var(--au-h6));
+  color: $au-label-color;
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
+  margin-bottom: $au-unit-tiny;
+  display: flex;
+  align-items: center;
+
+  > .au-c-pill {
+    margin-left: $au-unit-tiny;
+  }
+}
+
+.au-c-label__addendum {
+  position: relative;
+  bottom: 0.5ex;
+  font-weight: var(--au-regular);
+  margin-left: $au-unit-tiny * 0.5;
+  color: var(--au-gray-500);
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-label--inline {
+  margin-bottom: 0;
+
+  @include mq(small) {
+    min-height: $au-label-height;
+  }
+}
+
+.au-c-label--error,
+.au-c-label--warning {
+  position: relative;
+}

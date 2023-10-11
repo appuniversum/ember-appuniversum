@@ -1,0 +1,97 @@
+/* ==================================
+   #TOGGLE SWITCH
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+$au-toggle-switch-height: 2rem !default;
+$au-toggle-switch-width: 2rem !default;
+$au-toggle-switch-border-radius: 1rem !default;
+$au-toggle-switch-border-width: 0.1rem !default;
+$au-toggle-switch-border-color: var(--au-gray-300) !default;
+$au-toggle-switch-color: var(--au-white) !default;
+$au-toggle-switch-background-color: var(--au-gray-200) !default;
+$au-toggle-switch-color-disabled: var(--au-gray-200) !default;
+$au-toggle-switch-background-color-disabled: var(--au-gray-300) !default;
+$au-toggle-switch-background-color-on: var(--au-blue-700) !default;
+$au-toggle-switch-background-color-on-disabled: var(--au-gray-400) !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-toggle-switch {
+  position: relative;
+  display: inline-flex;
+  gap: $au-unit-tiny;
+  align-items: center;
+  color: var(--au-gray-900);
+  cursor: pointer;
+
+  &.is-disabled {
+    color: var(--au-gray-600);
+    cursor: not-allowed;
+  }
+}
+
+.au-c-toggle-switch__toggle {
+  position: relative;
+  height: $au-toggle-switch-height - 0.4rem;
+  width: $au-toggle-switch-width * 1.5;
+  background-color: $au-toggle-switch-background-color;
+  border-radius: $au-toggle-switch-border-radius;
+  transition:
+    transform var(--au-transition),
+    color var(--au-transition);
+  flex-shrink: 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    height: $au-toggle-switch-height;
+    width: $au-toggle-switch-width;
+    background-color: $au-toggle-switch-color;
+    border-radius: $au-toggle-switch-border-radius;
+    border: $au-toggle-switch-border-width solid $au-toggle-switch-border-color;
+    left: -0.1rem;
+    top: -0.2rem;
+    transition: transform var(--au-transition);
+  }
+
+  .is-disabled & {
+    background-color: $au-toggle-switch-color-disabled;
+    border-radius: $au-toggle-switch-border-radius;
+  }
+
+  .is-disabled &:before {
+    background-color: $au-toggle-switch-background-color-disabled;
+  }
+}
+
+// Checked state
+.au-c-toggle-switch__input:checked + .au-c-toggle-switch__toggle {
+  background-color: $au-toggle-switch-background-color-on;
+
+  .is-disabled & {
+    background-color: $au-toggle-switch-background-color-on-disabled;
+  }
+}
+
+.au-c-toggle-switch__input:checked + .au-c-toggle-switch__toggle:before {
+  transform: translateX($au-toggle-switch-width * 0.5 + 0.2rem);
+}
+
+// Focus
+.au-c-toggle-switch__input:focus + .au-c-toggle-switch__toggle {
+  outline: var(--au-outline);
+  outline-offset: var(--au-outline-offset);
+}
+
+// Alignment
+.au-c-toggle-switch--alignment-right {
+  flex-direction: row-reverse;
+}
+
+// Labelless
+.au-c-toggle-switch--labelless {
+  vertical-align: middle;
+}

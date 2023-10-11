@@ -1,0 +1,25 @@
+/* ==================================
+   #Horizontal Ruler
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-hr-border-color: var(--au-gray-300);
+
+/* Component
+   ========================================================================== */
+
+.au-c-hr {
+  margin: $au-unit-small 0;
+  border: none;
+  border-bottom: 1px solid $au-hr-border-color;
+}
+
+.au-c-hr--large {
+  margin: $au-unit 0;
+}
+
+.au-c-hr--huge {
+  margin: $au-unit-large 0;
+}

@@ -1,0 +1,116 @@
+/* ==================================
+   #CONTENT HEADER
+   ================================== */
+
+/* Component
+   ========================================================================== */
+
+.au-c-content-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  max-height: 40rem;
+  min-height: 10rem;
+  color: var(--au-gray-900);
+  background-color: var(--au-yellow-300);
+}
+
+.au-c-content-header__bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 40%;
+  overflow: hidden;
+  transform-origin: 100% 50%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-bottom: 40rem solid var(--au-yellow-300);
+    border-right: 13.68rem solid transparent;
+  }
+
+  @include mq(medium) {
+    width: 50%;
+  }
+}
+
+.au-c-content-header__wrapper {
+  width: 100%;
+  padding-top: $au-unit;
+  padding-bottom: $au-unit;
+
+  @include mq(medium) {
+    padding-top: $au-unit-large;
+    padding-bottom: $au-unit-large;
+  }
+}
+
+.au-c-content-header__top,
+.au-c-content-header__bottom {
+  @include au-font-size(var(--au-h3-small), 1);
+  font-family: var(--au-font);
+  display: inline-block;
+  max-width: 60%;
+
+  @include mq(medium) {
+    @include au-font-size(var(--au-h3), 1.1);
+    max-width: 50%;
+  }
+}
+
+.au-c-content-header__top {
+  font-weight: var(--au-regular);
+}
+
+.au-c-content-header__bottom {
+  font-weight: var(--au-medium);
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-content-header--large {
+  .au-c-content-header__bg {
+    width: 100%;
+
+    &::after {
+      content: normal;
+    }
+  }
+
+  .au-c-content-header__top,
+  .au-c-content-header__bottom {
+    background: var(--au-white);
+    display: inline;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .au-c-content-header__wrapper {
+    z-index: 1;
+    padding-top: $au-unit-large;
+    padding-bottom: $au-unit-large;
+
+    @include mq(medium) {
+      padding-top: $au-unit-huge;
+      padding-bottom: $au-unit-huge;
+    }
+  }
+}
