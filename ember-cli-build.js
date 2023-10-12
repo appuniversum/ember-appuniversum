@@ -20,11 +20,6 @@ module.exports = function (defaults) {
           '@duetds/date-picker/dist/loader/index.cjs',
       },
     },
-    '@appuniversum/ember-appuniversum': {
-      dutchDatePickerLocalization:
-        process.env.DATE_PICKER_EN_LOCALIZATION === 'true' ? false : true,
-      disableWormholeElement: true,
-    },
     fingerprint: {
       // Disable fingerprinting for now until this ember-cli-storybook issue is resolved:
       // https://github.com/storybookjs/ember-cli-storybook/issues/158

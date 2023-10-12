@@ -4,11 +4,10 @@ import {
   isIsoDateString,
   toIsoDateString,
 } from '@appuniversum/ember-appuniversum/utils/date';
-import { assert, deprecate, runInDebug } from '@ember/debug';
+import { assert, runInDebug } from '@ember/debug';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
-import { getOwnConfig, macroCondition } from '@embroider/macros';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
@@ -38,35 +37,17 @@ const DEFAULT_LOCALIZATION = {
   dayNames: getLocalizedDays(),
   monthNames: getLocalizedMonths(),
   monthNamesShort: getLocalizedMonths('short'),
+  buttonLabel: 'Kies een datum',
+  placeholder: 'DD-MM-JJJJ',
+  selectedDateMessage: 'De geselecteerde datum is',
+  prevMonthLabel: 'Vorige maand',
+  nextMonthLabel: 'Volgende maand',
+  monthSelectLabel: 'Maand',
+  yearSelectLabel: 'Jaar',
+  closeLabel: 'Sluit venster',
+  keyboardInstruction: 'Gebruik de pijltjestoetsen om te navigeren',
+  calendarHeading: 'Kies een datum',
 };
-
-if (macroCondition(getOwnConfig().dutchDatePickerLocalization)) {
-  Object.assign(DEFAULT_LOCALIZATION, {
-    buttonLabel: 'Kies een datum',
-    placeholder: 'DD-MM-JJJJ',
-    selectedDateMessage: 'De geselecteerde datum is',
-    prevMonthLabel: 'Vorige maand',
-    nextMonthLabel: 'Volgende maand',
-    monthSelectLabel: 'Maand',
-    yearSelectLabel: 'Jaar',
-    closeLabel: 'Sluit venster',
-    keyboardInstruction: 'Gebruik de pijltjestoetsen om te navigeren',
-    calendarHeading: 'Kies een datum',
-  });
-} else {
-  Object.assign(DEFAULT_LOCALIZATION, {
-    buttonLabel: 'Choose date',
-    placeholder: 'DD-MM-YYYY',
-    selectedDateMessage: 'Selected date is',
-    prevMonthLabel: 'Previous month',
-    nextMonthLabel: 'Next month',
-    monthSelectLabel: 'Month',
-    yearSelectLabel: 'Year',
-    closeLabel: 'Close window',
-    keyboardInstruction: 'You can use arrow keys to navigate dates',
-    calendarHeading: 'Choose a date',
-  });
-}
 
 export default class AuDatePicker extends Component {
   @asIsoDate value;
@@ -77,35 +58,6 @@ export default class AuDatePicker extends Component {
   constructor() {
     super(...arguments);
     this.registerDuetDatePicker();
-
-    let isNewImplementation = macroCondition(
-      getOwnConfig().dutchDatePickerLocalization,
-    )
-      ? true
-      : false;
-
-    deprecate(
-      `[AuDatePicker] The English localization is deprecated. You should explicitly enable the Dutch localization by adding a build-time flag to your ember-cli-build.js file:
-
-      \`\`\`
-      // ember-cli-build.js
-      '@appuniversum/ember-appuniversum': {
-        dutchDatePickerLocalization: true,
-      },
-      \`\`\`
-
-      Note: This only changes the default localization of the component. You can still provide custom @adapter and @localization arguments if needed.
-      `,
-      isNewImplementation,
-      {
-        id: '@appuniversum/ember-appuniversum.au-date-picker.english-localization',
-        until: '3.0.0',
-        for: '@appuniversum/ember-appuniversum',
-        since: {
-          enabled: '1.9.0',
-        },
-      },
-    );
   }
 
   get adapter() {
@@ -273,9 +225,5 @@ function getLocalizedDays(weekdayFormat = 'long') {
 }
 
 function intl(options) {
-  let locale = macroCondition(getOwnConfig().dutchDatePickerLocalization)
-    ? 'nl-BE'
-    : 'en';
-
-  return new Intl.DateTimeFormat(locale, options);
+  return new Intl.DateTimeFormat('nl-BE', options);
 }
