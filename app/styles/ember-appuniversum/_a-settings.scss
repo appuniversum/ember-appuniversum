@@ -4,6 +4,9 @@
    File namespace: _s-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-settings");
+
 @import "s-colors.scss";
 @import "s-global";
 @import "s-utilities";

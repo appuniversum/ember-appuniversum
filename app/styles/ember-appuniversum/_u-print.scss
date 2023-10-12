@@ -2,6 +2,9 @@
    #PRINT
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-print");
+
 /**
  * Very crude, reset-like styles taken from the HTML5 Boilerplate:
  * https://github.com/h5bp/html5-boilerplate/blob/5.3.0/dist/doc/css.md#print-styles

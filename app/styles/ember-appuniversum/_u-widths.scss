@@ -2,6 +2,9 @@
    #WIDTHS
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-widths");
+
 /**
  * Appuniversum generates a series of utility classes that give a fluid width to
  * whichever element they’re applied, e.g.:

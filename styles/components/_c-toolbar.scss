@@ -1,0 +1,82 @@
+/* ==================================
+   #TOOLBAR
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-toolbar-spacing: $au-unit-small !default;
+$au-toolbar-border-width: 0.1rem !default;
+$au-toolbar-border-color: var(--au-divider-color) !default;
+$au-toolbar-tint: var(--au-gray-100) !default;
+$au-toolbar-font-size: var(--au-h6) !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: $au-toolbar-font-size;
+}
+
+.au-c-toolbar__group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+
+  > * + * {
+    margin-left: $au-toolbar-spacing;
+  }
+
+  .au-c-toolbar--small &,
+  .au-c-toolbar--medium &,
+  .au-c-toolbar--large & {
+    margin: $au-toolbar-spacing * 0.5;
+  }
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-toolbar--reverse {
+  flex-direction: row-reverse;
+}
+
+.au-c-toolbar--top {
+  border-top: $au-toolbar-border-width solid $au-toolbar-border-color;
+  padding-top: $au-unit-tiny;
+}
+
+.au-c-toolbar--bottom {
+  border-bottom: $au-toolbar-border-width solid $au-toolbar-border-color;
+  padding-bottom: $au-unit-tiny;
+}
+
+.au-c-toolbar--tint {
+  background-color: $au-toolbar-tint;
+}
+
+.au-c-toolbar--small {
+  padding: $au-toolbar-spacing * 0.5;
+  font-size: $au-toolbar-font-size;
+}
+
+.au-c-toolbar--medium {
+  padding: $au-toolbar-spacing * 0.5 $au-toolbar-spacing * 1.5;
+}
+
+.au-c-toolbar--large {
+  padding: $au-toolbar-spacing * 1.5;
+}
+
+.au-c-toolbar__group--center {
+  align-items: center;
+}
+
+.au-c-toolbar--nowrap {
+  flex-wrap: nowrap;
+  align-items: normal;
+}

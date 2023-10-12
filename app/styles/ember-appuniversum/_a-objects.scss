@@ -5,6 +5,9 @@
    Style namespace: .au-o-...
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/a-objects");
+
 @import "o-box";
 @import "o-flow";
 @import "o-grid";

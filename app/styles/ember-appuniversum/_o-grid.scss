@@ -4,6 +4,9 @@
    NOTICE: Adapted from https://github.com/Dietr/inuitcss-plugin-flexlayout
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/o-grid");
+
 /**
  * Grid-like layout system.
  *

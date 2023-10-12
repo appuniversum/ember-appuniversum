@@ -7,6 +7,7 @@ module.exports = function (defaults) {
     // Add options here
     sassOptions: {
       sourceMapEmbed: true,
+      includePaths: ['./styles'], // This ensures that the /styles folder is watched and auto-reloading works.
     },
     autoprefixer: {
       enabled: true,

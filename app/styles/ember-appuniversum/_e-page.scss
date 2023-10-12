@@ -2,6 +2,9 @@
    #PAGE
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/e-page");
+
 /**
  * Simple page-level setup.
  *

@@ -2,6 +2,9 @@
    #BOX-SIZING
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/g-box-sizing");
+
 /**
  * More sensible default box-sizing:
  * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice

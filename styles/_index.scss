@@ -1,0 +1,29 @@
+/* ==================================
+   #APPUNIVERSUM
+   ================================== */
+
+/**
+ * A design universe for Flanders GOV applications
+ */
+
+/**
+ * CONTENTS
+ * ---
+ * SETTINGS: Project settings and variables
+ * TOOLS: Mixins
+ * GENERIC: Reset, global box-sizing and font-styles
+ * ELEMENTS: Plain html tag styling
+ * OBJECTS: OOCSS unstyled objects (namespace: '.au-o-...')
+ * COMPONENTS: Components (namespace: '.au-c-...')
+ * PLUGINS: Third-party styles
+ * UTILITIES: Single function helper classes (namespace: '.au-u-...')
+ */
+
+@import "./a-settings";
+@import "./a-tools";
+@import "./a-generic";
+@import "./a-elements";
+@import "./a-objects";
+@import "./a-components";
+@import "./a-plugins";
+@import "./a-utilities";

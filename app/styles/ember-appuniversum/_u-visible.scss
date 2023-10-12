@@ -2,6 +2,9 @@
    #VISIBLE
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-visible");
+
 /**
  * Show visually and on screen readers starting from certain breakpoints, but hide visually and for screen readers on others.
  */

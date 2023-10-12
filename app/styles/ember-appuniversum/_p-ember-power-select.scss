@@ -3,6 +3,9 @@
    https://ember-power-select.com/
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/p-ember-power-select");
+
 /* Variables
    ========================================================================== */
 

@@ -1,3 +1,6 @@
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/s-root");
+
 :root {
   // Colors
   --au-white: #ffffff;

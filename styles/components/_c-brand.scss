@@ -1,0 +1,127 @@
+/* ==================================
+   #BRAND
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-brand-color: var(--au-gray-900) !default;
+$au-brand-highlight-color: var(--au-gray-200) !default;
+$au-brand-bg: var(--au-white) !default;
+$au-brand-text: var(--au-gray-900) !default;
+$au-brand-border: var(--au-gray-300) !default;
+$au-brand-size: 4.2rem !default;
+$au-brand-divider-rotation: -19deg !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  background-color: var(--au-white);
+}
+
+.au-c-brand--link {
+  &:focus {
+    outline: none;
+  }
+}
+
+.au-c-brand__logo {
+  position: relative;
+  width: $au-brand-size;
+  height: $au-brand-size;
+  padding-left: 0.75rem;
+  overflow: hidden;
+  background-color: $au-brand-bg;
+  transition: background-color var(--au-transition);
+
+  svg {
+    fill: $au-brand-color;
+    height: 100%;
+    width: 56%;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -0.1rem;
+    bottom: -0.3rem;
+    border-top: 9rem solid var(--au-white);
+    border-left: 3.07818rem solid transparent;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.2rem;
+    right: 17%;
+    transform: rotate($au-brand-divider-rotation);
+    width: 0.1rem;
+    height: calc(100% + 0.4rem);
+    background-color: $au-brand-border;
+  }
+
+  .au-c-brand--link:hover &,
+  .au-c-brand--link:focus & {
+    background-color: $au-brand-highlight-color;
+  }
+
+  .au-c-brand--tagline & {
+    width: $au-brand-size + $au-unit-tiny;
+    height: $au-brand-size + $au-unit-tiny;
+  }
+}
+
+.au-c-brand__logotype {
+  @include au-font-size(1.8rem, 1);
+  display: none;
+  position: relative;
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
+  color: $au-brand-text;
+  margin-left: $au-unit-tiny;
+  transition: color var(--au-transition);
+
+  .au-c-brand--tagline & {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: $au-brand-size;
+    padding-right: $au-unit-small;
+  }
+
+  @include mq(small) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: $au-brand-size;
+    padding-right: $au-unit-small;
+
+    .au-c-brand--link:hover &,
+    .au-c-brand--link:focus & {
+      color: var(--au-blue-700);
+    }
+
+    .au-c-brand--link:focus & {
+      outline: var(--au-outline);
+    }
+  }
+}
+
+.au-c-brand__main {
+  @include au-font-size(var(--au-h5), 1.2);
+  display: block;
+}
+
+.au-c-brand__tagline {
+  @include au-font-size(1.2rem, 1.2);
+  font-weight: var(--au-regular);
+  display: block;
+  color: var(--au-gray-900);
+}

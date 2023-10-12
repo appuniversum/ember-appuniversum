@@ -3,6 +3,9 @@
    https://github.com/mdo/wtf-forms/blob/master/wtf-forms.css
    ================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/c-control");
+
 /* Variables
    ========================================================================== */
 

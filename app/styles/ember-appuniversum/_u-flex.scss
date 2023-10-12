@@ -2,6 +2,9 @@
    #FLEX
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-flex");
+
 /**
  * Utility classes to put specific flex options on an element:
  */

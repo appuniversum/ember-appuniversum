@@ -1,0 +1,61 @@
+/* ==================================
+   #Fieldset
+   ================================== */
+
+/* Component
+  ========================================================================== */
+
+.au-c-fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $au-unit-small;
+}
+
+.au-c-fieldset--inline {
+  flex-direction: row;
+  gap: $au-unit;
+}
+
+.au-c-fieldset-legend {
+  font-family: var(--au-font);
+  font-weight: var(--au-medium);
+  color: var(--au-gray-900);
+  display: flex;
+  align-items: center;
+
+  > .au-c-pill {
+    margin-left: $au-unit-tiny;
+  }
+
+  .au-c-fieldset--inline & {
+    min-height: $au-unit-large - $au-unit-small;
+  }
+}
+
+.au-c-fieldset-legend--error,
+.au-c-fieldset-legend--warning {
+  position: relative;
+}
+
+.au-c-fieldset-legend__addendum {
+  position: relative;
+  bottom: 0.5ex;
+  font-weight: var(--au-regular);
+  margin-left: $au-unit-tiny * 0.5;
+  color: var(--au-gray-500);
+}
+
+.au-c-fieldset__content {
+  display: flex;
+  flex-direction: column;
+  gap: $au-unit-small;
+
+  .au-c-fieldset--inline & {
+    flex-direction: row;
+    gap: $au-unit;
+    width: 100%;
+    min-height: $au-unit-large - $au-unit-small;
+    align-items: center;
+  }
+}

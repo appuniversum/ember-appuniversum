@@ -1,3 +1,6 @@
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/t-font-size");
+
 /*  ========================================================================
 //  #FONT-SIZE - DEPRECATED (set font size in css)
 //  ======================================================================== */

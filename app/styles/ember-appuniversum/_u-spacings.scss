@@ -2,6 +2,9 @@
    #SPACINGS
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-spacings");
+
 /**
  * Utility classes to put specific spacing values onto elements. The below loop
  * will generate us a suite of classes like:

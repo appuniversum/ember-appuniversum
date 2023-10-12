@@ -2,6 +2,9 @@
    #FONT FAMILY
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-font-family");
+
 // Base UI font
 .au-u-font {
   font-family: var(--au-font) !important;

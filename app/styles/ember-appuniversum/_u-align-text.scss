@@ -2,6 +2,9 @@
    #TEXT ALIGNMENT
    ========================================================================== */
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/u-align-text");
+
 /**
  * Utility classes to align text. Use text alignment like this:
  *

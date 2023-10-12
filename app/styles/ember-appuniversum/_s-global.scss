@@ -2,6 +2,9 @@
 // #GLOBAL
 // ==================================
 
+@use "../ember-appuniversum-deprecated" as deprecated;
+@include deprecated.paths("ember-appuniversum/s-global");
+
 // The global settings file contains any project-wide variables; things that
 // need to be made available to the entire codebase.
 
