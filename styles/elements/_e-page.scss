@@ -1,0 +1,36 @@
+/* ==========================================================================
+   #PAGE
+   ========================================================================== */
+
+/**
+ * Simple page-level setup.
+ *
+ * 1. Set the default `line-height` for the entire project,
+ *    sourced from our default variables. The `line-height` is calculated to exist unitlessly.
+ * 2. Ensure the page always fills at least the entire height of the viewport.
+ * 3. Set font size to be compatible with WU3 en LNE webcomponents
+ */
+
+html {
+  font-family: var(--au-font);
+  font-size: 62.5%; /* [4] */
+  min-height: 100%; /* [3] */
+  background-color: var(--au-page-bg);
+  text-rendering: optimizeLegibility;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-size: var(--au-global-font-size); /* [4] */
+  line-height: var(--au-global-line-height); /* [1] */
+}
+
+::-moz-selection {
+  color: var(--au-select-text-color);
+  background-color: var(--au-select-text-bg);
+}
+
+::selection {
+  color: var(--au-select-text-color);
+  background-color: var(--au-select-text-bg);
+}

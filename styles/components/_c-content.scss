@@ -1,0 +1,231 @@
+/* ==================================
+   #CONTENT
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-content-heading-1: var(--au-h1) !default;
+$au-content-heading-1-small: var(--au-h1-small) !default;
+$au-content-heading-1-medium: var(--au-h1-medium) !default;
+$au-content-heading-2: var(--au-h2) !default;
+$au-content-heading-2-small: var(--au-h2-small) !default;
+$au-content-heading-3: var(--au-h3) !default;
+$au-content-heading-3-small: var(--au-h3-small) !default;
+$au-content-heading-4: var(--au-h4) !default;
+$au-content-heading-5: var(--au-h5) !default;
+$au-content-heading-6: var(--au-h6) !default;
+$au-content-base: var(--au-para) !default;
+$au-content-base-small: var(--au-para-small) !default;
+$au-content-base-large: var(--au-lead-small) !default;
+$au-content-small: var(--au-para-small) !default;
+$au-content-tiny: var(--au-small) !default;
+
+/* Component
+   ========================================================================== */
+
+// @TODO: add base styling for common elements (tables, hr, blockquote, ...)
+.au-c-content {
+  @include au-font-size($au-content-base-small);
+  color: var(--au-gray-900);
+
+  h1,
+  .au-c-heading--1 {
+    @include au-font-size($au-content-heading-1-small);
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
+  }
+
+  h2,
+  .au-c-heading--2 {
+    @include au-font-size($au-content-heading-2-small);
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
+  }
+
+  h3,
+  .au-c-heading--3 {
+    @include au-font-size($au-content-heading-3-small);
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
+  }
+
+  h4,
+  .au-c-heading--4 {
+    @include au-font-size($au-content-heading-4);
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
+  }
+
+  h5,
+  .au-c-heading--5 {
+    @include au-font-size($au-content-heading-5);
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
+  }
+
+  h6,
+  .au-c-heading--6 {
+    @include au-font-size($au-content-heading-6);
+    font-family: var(--au-font);
+    font-weight: var(--au-medium);
+  }
+
+  // @TODO: list-horizontal needs to be refactored to the list component.
+  ul:not(.au-c-list-horizontal) {
+    list-style: disc;
+    margin-left: $au-unit;
+  }
+
+  ul.au-c-list {
+    list-style: none;
+    margin-left: 0;
+  }
+
+  // @TODO: list-horizontal needs to be refactored to the list component.
+  ul:not(.au-c-list-horizontal) ul {
+    list-style: circle;
+  }
+
+  // @TODO: list-horizontal needs to be refactored to the list component.
+  ul:not(.au-c-list-horizontal) li + li {
+    margin-top: $au-unit-tiny;
+  }
+
+  ul.au-c-list li + li {
+    margin-top: 0;
+  }
+
+  > * + * {
+    margin-top: $au-unit;
+  }
+
+  > * + h1,
+  > * + h2,
+  > * + h3 {
+    margin-top: $au-unit-large;
+  }
+
+  > * + h4,
+  > * + h5,
+  > * + h6 {
+    margin-top: $au-unit;
+  }
+
+  em {
+    font-style: italic;
+    color: var(--au-gray-700);
+  }
+
+  @include mq(small) {
+    h1,
+    .au-c-heading--1 {
+      @include au-font-size($au-content-heading-1-medium);
+    }
+  }
+
+  @include mq(medium) {
+    @include au-font-size($au-content-base);
+
+    h1,
+    .au-c-heading--1 {
+      @include au-font-size($au-content-heading-1);
+    }
+
+    h2,
+    .au-c-heading--2 {
+      @include au-font-size($au-content-heading-2);
+    }
+
+    h3,
+    .au-c-heading--3 {
+      @include au-font-size($au-content-heading-3);
+    }
+  }
+}
+
+.au-c-content--small {
+  @include au-font-size($au-content-small);
+
+  > * + * {
+    margin-top: $au-unit-small;
+  }
+
+  > * + h1,
+  > * + h2,
+  > * + h3 {
+    margin-top: $au-unit-small;
+  }
+
+  > * + h4,
+  > * + h5,
+  > * + h6 {
+    margin-top: $au-unit-tiny;
+  }
+
+  @include mq(medium) {
+    @include au-font-size($au-content-base-small);
+
+    h1,
+    .au-c-heading--1 {
+      @include au-font-size($au-content-heading-1-small);
+    }
+
+    h2,
+    .au-c-heading--2 {
+      @include au-font-size($au-content-heading-2-small);
+    }
+
+    h3,
+    .au-c-heading--3 {
+      @include au-font-size($au-content-heading-3-small);
+    }
+  }
+}
+
+.au-c-content--tiny {
+  @include au-font-size($au-content-tiny);
+
+  > * + * {
+    margin-top: $au-unit-small;
+  }
+
+  > * + h1,
+  > * + h2,
+  > * + h3 {
+    margin-top: $au-unit-small;
+  }
+
+  > * + h4,
+  > * + h5,
+  > * + h6 {
+    margin-top: $au-unit-tiny;
+  }
+
+  @include mq(medium) {
+    @include au-font-size($au-content-tiny);
+
+    h1,
+    .au-c-heading--1 {
+      @include au-font-size($au-content-heading-1-small);
+    }
+
+    h2,
+    .au-c-heading--2 {
+      @include au-font-size($au-content-heading-2-small);
+    }
+
+    h3,
+    .au-c-heading--3 {
+      @include au-font-size($au-content-heading-3-small);
+    }
+  }
+}
+
+.au-c-content--large {
+  @include au-font-size($au-content-base);
+
+  @include mq(medium) {
+    @include au-font-size($au-content-base-large);
+  }
+}

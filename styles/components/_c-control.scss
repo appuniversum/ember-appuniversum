@@ -1,0 +1,114 @@
+/* ==================================
+   #CONTROL: radio/checkbox
+   https://github.com/mdo/wtf-forms/blob/master/wtf-forms.css
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-control-disabled-color: var(--au-gray-600) !default;
+
+/* Component
+   ========================================================================== */
+
+.au-c-control {
+  position: relative;
+  display: inline-flex;
+  gap: $au-unit-tiny;
+  color: var(--au-gray-900);
+  cursor: pointer;
+}
+
+.au-c-control__input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+}
+
+.au-c-control__indicator {
+  position: relative;
+  bottom: 0.1ex;
+  display: block;
+  min-width: $au-unit-small + $au-unit-tiny;
+  height: $au-unit-small + $au-unit-tiny;
+  line-height: $au-unit-small + $au-unit-tiny;
+  color: var(--au-gray-100);
+  text-align: center;
+  background-color: var(--au-gray-100);
+  background-size: $au-unit-small;
+  background-position: center center;
+  background-repeat: no-repeat;
+  user-select: none;
+  border: 0.1rem solid var(--au-gray-300);
+  margin-top: $au-unit-tiny * 0.5;
+}
+
+/* Focus */
+.au-c-control__input:focus ~ .au-c-control__indicator {
+  outline: var(--au-outline);
+  outline-offset: 0.2rem;
+}
+
+/* Checked state */
+.au-c-control__input:checked ~ .au-c-control__indicator {
+  color: var(--au-white);
+  background-color: var(--au-blue-700);
+  border-color: var(--au-blue-700);
+}
+
+/* Active */
+.au-c-control__input:active ~ .au-c-control__indicator {
+  color: var(--au-white);
+  background-color: var(--au-blue-700);
+  border-color: var(--au-blue-700);
+}
+
+/* Labelless modifiers */
+.au-c-control--labelless {
+  vertical-align: middle;
+
+  .au-c-control__indicator {
+    margin-top: 0;
+  }
+}
+
+/* Checkbox modifiers */
+.au-c-control--checkbox .au-c-control__indicator {
+  border-radius: 0.25rem;
+}
+
+.au-c-control--checkbox
+  .au-c-control__input:checked
+  ~ .au-c-control__indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTYuNCwxTDUuNywxLjdMMi45LDQuNUwyLjEsMy43TDEuNCwzTDAsNC40bDAuNywwLjdsMS41LDEuNWwwLjcsMC43bDAuNy0wLjdsMy41LTMuNWwwLjctMC43TDYuNCwxTDYuNCwxeiINCgkvPg0KPC9zdmc+DQo=);
+}
+
+.au-c-control--checkbox
+  .au-c-control__input:indeterminate
+  ~ .au-c-control__indicator {
+  color: var(--au-white);
+  background-color: var(--au-blue-700);
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgOCA4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbDpzcGFjZT0icHJlc2VydmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMiI+CiAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTS4xNTIgMy4wMWg3LjcwMnYxLjk4SC4xNTJ6Ii8+Cjwvc3ZnPgo=);
+  border-color: var(--au-blue-700);
+}
+
+/* Radio modifiers */
+.au-c-control--radio .au-c-control__indicator {
+  border-radius: 50%;
+}
+
+.au-c-control--radio .au-c-control__input:checked ~ .au-c-control__indicator {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgOCA4IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA4IDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTQsMUMyLjMsMSwxLDIuMywxLDRzMS4zLDMsMywzczMtMS4zLDMtM1M1LjcsMSw0LDF6Ii8+DQo8L3N2Zz4NCg==);
+}
+
+/* Shared modifiers */
+
+.au-c-control .au-c-control__input[disabled] + .au-c-control__indicator {
+  background-color: var(--au-gray-300);
+  border-color: var(--au-gray-500);
+}
+
+.au-c-control.is-disabled {
+  color: $au-control-disabled-color;
+  cursor: not-allowed;
+}
