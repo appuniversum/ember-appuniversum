@@ -1,6 +1,16 @@
 
 
 
+## v2.17.0 (2023-10-12)
+
+#### :rocket: Enhancement
+* [#445](https://github.com/appuniversum/ember-appuniversum/pull/445) Deprecate the `@size` argument for the `AuLoader` component ([@Windvis](https://github.com/Windvis))
+* [#444](https://github.com/appuniversum/ember-appuniversum/pull/444) Deprecate the  `app/styles/*` import paths ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.16.0 (2023-10-10)
 
 #### :rocket: Enhancement
