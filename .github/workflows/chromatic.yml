@@ -1,11 +1,7 @@
 name: "Chromatic"
 
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request: {}
+# Manually trigger the workflow when needed
+on: workflow_dispatch
 
 jobs:
   chromatic-deployment:
