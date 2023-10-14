@@ -13,10 +13,6 @@ export default {
   // You can augment this if you need to.
   output: addon.output(),
 
-  // Add the package name as an external so Rollup doesn't display a "Unresolved dependencies" warning
-  // https://rollupjs.org/troubleshooting/#warning-treating-module-as-external-dependency
-  external: ['@appuniversum/ember-appuniversum'],
-
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.

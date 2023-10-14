@@ -1,5 +1,6 @@
-import { AuIcon, AuLoader } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
+import AuIcon from './au-icon.gjs';
+import AuLoader from './au-loader.gjs';
 
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import and from 'ember-truth-helpers/helpers/and';

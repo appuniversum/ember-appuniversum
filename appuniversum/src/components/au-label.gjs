@@ -1,5 +1,6 @@
 import Component from '@glimmer/component';
-import { AuBadge, AuPill } from '@appuniversum/ember-appuniversum';
+import AuBadge from './au-badge.gjs';
+import AuPill from './au-pill.gjs';
 
 export default class AuLabel extends Component {
   get inline() {

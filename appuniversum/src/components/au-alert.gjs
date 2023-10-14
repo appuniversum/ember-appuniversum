@@ -1,8 +1,8 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import AuIcon from './au-icon.gjs';
 
 export default class AuAlert extends Component {
   @tracked isVisible = true;

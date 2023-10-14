@@ -1,4 +1,3 @@
-import { AuAlert, AuHelpText, AuIcon } from '@appuniversum/ember-appuniversum';
 import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import { inject as service } from '@ember/service';
@@ -8,6 +7,9 @@ import { task } from 'ember-concurrency';
 import perform from 'ember-concurrency/helpers/perform';
 import FileDropzone from 'ember-file-upload/components/file-dropzone';
 import fileQueue from 'ember-file-upload/helpers/file-queue';
+import AuAlert from './au-alert.gjs';
+import AuHelpText from './au-help-text.gjs';
+import AuIcon from './au-icon.gjs';
 
 export default class AuFileUpload extends Component {
   @service fileQueue;

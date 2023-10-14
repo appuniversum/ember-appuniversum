@@ -1,7 +1,8 @@
-import { AuHeading, AuIcon } from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
+import AuHeading from './au-heading.gjs';
+import AuIcon from './au-icon.gjs';
 
 export default class AuFileCard extends Component {
   get isRemovable() {

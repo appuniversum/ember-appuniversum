@@ -1,14 +1,13 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import { assert } from '@ember/debug';
 import { concat, hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { focusTrap } from 'ember-focus-trap';
-
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import not from 'ember-truth-helpers/helpers/not';
 import or from 'ember-truth-helpers/helpers/or';
+import AuIcon from './au-icon.gjs';
 
 const FOCUS_TRAP_ADDITIONAL_ELEMENTS = ['#ember-basic-dropdown-wormhole'];
 

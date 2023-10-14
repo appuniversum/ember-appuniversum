@@ -1,5 +1,5 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
+import AuIcon from './au-icon.gjs';
 
 // TODO: replace this with the named import from ember-truth-helpers v4 once our dependencies support that version
 import eq from 'ember-truth-helpers/helpers/eq';
@@ -39,11 +39,11 @@ export default class AuInput extends Component {
 
   <template>
     {{~#if @icon~}}
-      <span class="au-c-input-wrapper {{this.iconAlignment}} {{this.width}}">
+      <span class='au-c-input-wrapper {{this.iconAlignment}} {{this.width}}'>
         <input class={{this.classes}} disabled={{@disabled}} ...attributes />
         <AuIcon
           @icon={{@icon}}
-          @alignment={{if (eq @iconAlignment "right") "right" "left"}}
+          @alignment={{if (eq @iconAlignment 'right') 'right' 'left'}}
         />
       </span>
     {{~else~}}

@@ -1,8 +1,8 @@
 /* eslint-disable no-undef -- This is a workaround for a false-positive bug: https://github.com/ember-cli/eslint-plugin-ember/issues/1747 */
-import { AuAlert } from '@appuniversum/ember-appuniversum';
 import { fn } from '@ember/helper';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
+import AuAlert from './au-alert.gjs';
 
 export default class AuToaster extends Component {
   @service toaster;

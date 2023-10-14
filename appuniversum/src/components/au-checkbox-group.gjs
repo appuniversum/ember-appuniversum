@@ -1,6 +1,6 @@
-import { AuCheckbox } from '@appuniversum/ember-appuniversum';
 import { hash } from '@ember/helper';
 import Component from '@glimmer/component';
+import AuCheckbox from './au-checkbox.gjs';
 
 export default class AuCheckboxGroup extends Component {
   get alignmentClass() {

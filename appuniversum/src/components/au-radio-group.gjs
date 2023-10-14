@@ -1,10 +1,9 @@
-import { AuRadio } from '@appuniversum/ember-appuniversum';
 import { hash } from '@ember/helper';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
-
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import or from 'ember-truth-helpers/helpers/or';
+import AuRadio from './au-radio.gjs';
 
 export default class AuRadioGroup extends Component {
   uniqueName = guidFor(this);

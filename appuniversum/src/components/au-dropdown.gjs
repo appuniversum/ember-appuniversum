@@ -1,4 +1,3 @@
-import { AuButton } from '@appuniversum/ember-appuniversum';
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
@@ -6,6 +5,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { focusTrap } from 'ember-focus-trap';
 import { modifier } from 'ember-modifier';
+import AuButton from './au-button.gjs';
 import floatingUi from '../private/modifiers/floating-ui.js';
 
 export default class AuDropdown extends Component {

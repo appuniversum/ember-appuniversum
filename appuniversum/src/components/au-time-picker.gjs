@@ -1,10 +1,12 @@
-import { AuButton, AuInput, AuLabel } from '@appuniversum/ember-appuniversum';
 import { fn } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import Component from '@glimmer/component';
 import { trackedReset } from 'tracked-toolbox';
+import AuButton from './au-button.gjs';
+import AuInput from './au-input.gjs';
+import AuLabel from './au-label.gjs';
 
 export default class AuTimePicker extends Component {
   @trackedReset({

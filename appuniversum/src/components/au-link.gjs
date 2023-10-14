@@ -1,9 +1,9 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import and from 'ember-truth-helpers/helpers/and';
 import eq from 'ember-truth-helpers/helpers/eq';
+import AuIcon from './au-icon.gjs';
 import linkToModels from '../private/helpers/link-to-models.js';
 
 const SKIN_CLASSES = {

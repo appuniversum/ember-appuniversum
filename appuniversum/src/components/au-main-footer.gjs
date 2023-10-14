@@ -1,4 +1,4 @@
-import { AuBrand } from '@appuniversum/ember-appuniversum';
+import AuBrand from './au-brand.gjs';
 
 <template>
   <footer class="au-c-main-footer" ...attributes>

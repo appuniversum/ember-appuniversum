@@ -1,4 +1,5 @@
-import { auDateInput, AuInput } from '@appuniversum/ember-appuniversum';
+import AuInput from './au-input.gjs';
+import auDateInput from '../modifiers/au-date-input.js';
 
 <template>
   {{~!~}}

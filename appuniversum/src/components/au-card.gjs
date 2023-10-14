@@ -1,14 +1,12 @@
-import {
-  AuBadge,
-  AuButton,
-  AuContent,
-  AuIcon,
-} from '@appuniversum/ember-appuniversum';
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import AuBadge from './au-badge.gjs';
+import AuButton from './au-button.gjs';
+import AuContent from './au-content.gjs';
+import AuIcon from './au-icon.gjs';
 
 export default class AuCard extends Component {
   @tracked isExpanded = false;
@@ -77,41 +75,41 @@ export default class AuCard extends Component {
 
   <template>
     <article
-      class="au-c-card au-c-card--fill
+      class='au-c-card au-c-card--fill
         {{this.size}}
         {{this.flex}}
         {{this.expandable}}
         {{this.shadow}}
         {{this.divided}}
         {{this.textCenter}}
-        {{this.standOut}}"
+        {{this.standOut}}'
       ...attributes
     >
       {{#if this.expandable}}
         {{#if this.shadow}}
           <div
-            class="au-c-card__clickable"
-            role="button"
-            {{on "click" this.openSection}}
+            class='au-c-card__clickable'
+            role='button'
+            {{on 'click' this.openSection}}
             {{! template-lint-disable require-presentational-children}}
             {{! this triggers a false positive for components: https://github.com/ember-template-lint/ember-template-lint/issues/2334}}
           >
             <AuButton
-              @size="small"
-              @skin="link"
-              class="au-c-card__toggle"
-              aria-hidden="true"
-              focusable="false"
-              aria-expanded={{if this.sectionOpen "true" "false"}}
+              @size='small'
+              @skin='link'
+              class='au-c-card__toggle'
+              aria-hidden='true'
+              focusable='false'
+              aria-expanded={{if this.sectionOpen 'true' 'false'}}
             >
               {{#if this.sectionOpen}}
-                <AuIcon @icon="remove" @size="large" @ariaHidden={{true}} />
-                <span class="au-u-hidden-visually au-c-card__toggle-false">
+                <AuIcon @icon='remove' @size='large' @ariaHidden={{true}} />
+                <span class='au-u-hidden-visually au-c-card__toggle-false'>
                   Verberg
                 </span>
               {{else}}
-                <AuIcon @icon="add" @size="large" @ariaHidden={{true}} />
-                <span class="au-u-hidden-visually au-c-card__toggle-true">
+                <AuIcon @icon='add' @size='large' @ariaHidden={{true}} />
+                <span class='au-u-hidden-visually au-c-card__toggle-true'>
                   Toon
                 </span>
               {{/if}}
@@ -120,29 +118,29 @@ export default class AuCard extends Component {
           </div>
         {{else}}
           <div
-            class="au-c-card__clickable"
-            role="button"
-            {{on "click" this.openSection}}
+            class='au-c-card__clickable'
+            role='button'
+            {{on 'click' this.openSection}}
             {{! template-lint-disable require-presentational-children}}
             {{! this triggers a false positive for components: https://github.com/ember-template-lint/ember-template-lint/issues/2334}}
           >
             {{yield (hash header=Header)}}
             <AuButton
-              @size="small"
-              @skin="link"
-              class="au-c-card__toggle"
-              aria-hidden="true"
-              focusable="false"
-              aria-expanded={{if this.sectionOpen "true" "false"}}
+              @size='small'
+              @skin='link'
+              class='au-c-card__toggle'
+              aria-hidden='true'
+              focusable='false'
+              aria-expanded={{if this.sectionOpen 'true' 'false'}}
             >
               {{#if this.sectionOpen}}
-                <AuIcon @icon="nav-up" @size="large" @ariaHidden={{true}} />
-                <span class="au-u-hidden-visually au-c-card__toggle-false">
+                <AuIcon @icon='nav-up' @size='large' @ariaHidden={{true}} />
+                <span class='au-u-hidden-visually au-c-card__toggle-false'>
                   Verberg
                 </span>
               {{else}}
-                <AuIcon @icon="nav-down" @size="large" @ariaHidden={{true}} />
-                <span class="au-u-hidden-visually au-c-card__toggle-true">
+                <AuIcon @icon='nav-down' @size='large' @ariaHidden={{true}} />
+                <span class='au-u-hidden-visually au-c-card__toggle-true'>
                   Toon
                 </span>
               {{/if}}
@@ -150,7 +148,7 @@ export default class AuCard extends Component {
           </div>
         {{/if}}
         {{#if this.sectionOpen}}
-          <div tabindex="0">
+          <div tabindex='0'>
             {{yield (hash content=Content)}}
           </div>
         {{/if}}
@@ -181,18 +179,18 @@ class Header extends Component {
   }
 
   <template>
-    <div class="au-c-card__header" ...attributes>
+    <div class='au-c-card__header' ...attributes>
       {{#if @badgeIcon}}
         <AuBadge
-          @size="{{@badgeSize}}"
-          @skin="{{@badgeSkin}}"
-          @icon="{{@badgeIcon}}"
+          @size='{{@badgeSize}}'
+          @skin='{{@badgeSkin}}'
+          @icon='{{@badgeIcon}}'
         />
       {{else if @badgeNumber}}
         <AuBadge
-          @size="{{@badgeSize}}"
-          @skin="{{@badgeSkin}}"
-          @number="{{@badgeNumber}}"
+          @size='{{@badgeSize}}'
+          @skin='{{@badgeSkin}}'
+          @number='{{@badgeNumber}}'
         />
       {{/if}}
 
@@ -207,7 +205,7 @@ class Header extends Component {
 
 const Content = <template>
   {{#if (has-block)}}
-    <AuContent class="au-c-card__content" ...attributes>
+    <AuContent class='au-c-card__content' ...attributes>
       {{yield}}
     </AuContent>
   {{/if}}
@@ -215,7 +213,7 @@ const Content = <template>
 
 const Footer = <template>
   {{#if (has-block)}}
-    <AuContent class="au-c-card__footer" ...attributes>
+    <AuContent class='au-c-card__footer' ...attributes>
       {{yield}}
     </AuContent>
   {{/if}}

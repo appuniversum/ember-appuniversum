@@ -1,9 +1,10 @@
-import { AuBrand, AuLink } from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { LinkTo } from '@ember/routing';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
+import AuBrand from './au-brand.gjs';
+import AuLink from './au-link.gjs';
 
 export default class AuMainHeader extends Component {
   @action

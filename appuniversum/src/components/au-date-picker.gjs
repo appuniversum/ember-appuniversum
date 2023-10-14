@@ -1,4 +1,3 @@
-import { AuLabel } from '@appuniversum/ember-appuniversum';
 import { assert, runInDebug } from '@ember/debug';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
@@ -6,6 +5,7 @@ import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
+import AuLabel from './au-label.gjs';
 import {
   formatDate,
   isIsoDateString,

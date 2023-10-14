@@ -1,6 +1,7 @@
-import { AuBadge, AuPill } from '@appuniversum/ember-appuniversum';
 import { hash } from '@ember/helper';
 import Component from '@glimmer/component';
+import AuBadge from './au-badge.gjs';
+import AuPill from './au-pill.gjs';
 
 export default class AuFieldset extends Component {
   get alignment() {
@@ -9,7 +10,7 @@ export default class AuFieldset extends Component {
   }
 
   <template>
-    <fieldset class="au-c-fieldset {{this.alignment}}" ...attributes>
+    <fieldset class='au-c-fieldset {{this.alignment}}' ...attributes>
       {{yield (hash legend=Legend)}}
       {{yield (hash content=Content)}}
     </fieldset>
@@ -47,25 +48,25 @@ class Legend extends Component {
     {{#if (has-block)}}
       <div ...attributes>
         <legend
-          class="au-c-fieldset-legend
+          class='au-c-fieldset-legend
             {{this.skin}}
             {{this.error}}
-            {{this.warning}}"
+            {{this.warning}}'
         >
           {{#if this.warning}}
             <AuBadge
-              @icon="alert-triangle"
-              @size="small"
-              @skin="warning"
-              class="au-u-margin-right-tiny"
+              @icon='alert-triangle'
+              @size='small'
+              @skin='warning'
+              class='au-u-margin-right-tiny'
             />
           {{/if}}
           {{#if this.error}}
             <AuBadge
-              @icon="cross"
-              @size="small"
-              @skin="error"
-              class="au-u-margin-right-tiny"
+              @icon='cross'
+              @size='small'
+              @skin='error'
+              class='au-u-margin-right-tiny'
             />
           {{/if}}
 
@@ -73,11 +74,11 @@ class Legend extends Component {
 
           {{#if @required}}
             {{#if @inline}}
-              <span class="au-c-fieldset-legend__addendum">
-                {{~if @requiredLabel @requiredLabel "*"~}}
+              <span class='au-c-fieldset-legend__addendum'>
+                {{~if @requiredLabel @requiredLabel '*'~}}
               </span>
             {{else}}
-              <AuPill>{{if @requiredLabel @requiredLabel "Verplicht"}}</AuPill>
+              <AuPill>{{if @requiredLabel @requiredLabel 'Verplicht'}}</AuPill>
             {{/if}}
           {{/if}}
         </legend>
@@ -88,7 +89,7 @@ class Legend extends Component {
 
 const Content = <template>
   {{#if (has-block)}}
-    <div class="au-c-fieldset__content" ...attributes>
+    <div class='au-c-fieldset__content' ...attributes>
       {{yield}}
     </div>
   {{/if}}

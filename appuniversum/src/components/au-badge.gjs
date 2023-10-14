@@ -1,5 +1,5 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
+import AuIcon from './au-icon.gjs';
 
 const SKIN_CLASSES = {
   border: 'au-c-badge--border',

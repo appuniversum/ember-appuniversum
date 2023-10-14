@@ -1,15 +1,13 @@
-import {
-  AuButton,
-  AuContent,
-  AuIcon,
-  AuLoader,
-  AuToolbar,
-} from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import autoFocus from '@zestia/ember-auto-focus/modifiers/auto-focus';
+import AuButton from './au-button.gjs';
+import AuContent from './au-content.gjs';
+import AuIcon from './au-icon.gjs';
+import AuLoader from './au-loader.gjs';
+import AuToolbar from './au-toolbar.gjs';
 
 export default class AuAccordion extends Component {
   @tracked isOpen = false;
