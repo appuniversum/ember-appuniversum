@@ -1,6 +1,7 @@
 import { babel } from '@rollup/plugin-babel';
 import copy from 'rollup-plugin-copy';
 import { Addon } from '@embroider/addon-dev/rollup';
+import publicAssets from './build/rollup-plugin-public-assets.mjs';
 
 const addon = new Addon({
   srcDir: 'src',
@@ -57,6 +58,15 @@ export default {
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
     addon.keepAssets(['**/*.css']),
+
+    // We want to push the fonts and icons into the public directory of the app
+    // so the scss files can depend on them.
+    // TODO: switch to the addon-dev plugin once it supports customizing the output path:
+    // https://github.com/embroider-build/embroider/issues/1569
+    publicAssets({
+      from: 'public',
+      toPublicPath: '@appuniversum/ember-appuniversum',
+    }),
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),

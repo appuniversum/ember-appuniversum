@@ -1,0 +1,94 @@
+/* ==================================
+   #LINKS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-link-color: var(--au-blue-700) !default;
+$au-link-color-underline: var(--au-blue-300) !default;
+$au-link-hover-color: var(--au-blue-900) !default;
+$au-link-hover-color-underline: var(--au-blue-200) !default;
+$au-link-active-color: var(--au-gray-900) !default;
+$au-link-secondary-color: var(--au-gray-700) !default;
+$au-link-secondary-color-underline: var(--au-gray-300) !default;
+$au-link-secondary-hover-color: var(--au-gray-900) !default;
+$au-link-secondary-hover-color-underline: var(--au-gray-200) !default;
+$au-link-secondary-active-color: var(--au-gray-900) !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-link {
+  display: inline-flex;
+  gap: $au-unit-tiny;
+  align-items: center;
+  font-family: var(--au-font);
+  transition:
+    color var(--au-transition),
+    text-decoration var(--au-transition);
+  font-weight: var(--au-regular);
+  text-decoration-color: $au-link-color-underline;
+
+  &,
+  &:visited {
+    color: $au-link-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-link-hover-color;
+    text-decoration-color: $au-link-hover-color-underline;
+  }
+
+  &:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  &.is-active {
+    font-weight: var(--au-medium);
+    color: $au-link-active-color;
+    text-decoration: none;
+    pointer-events: none;
+  }
+}
+
+/* Modifiers
+  ========================================================================== */
+
+.au-c-link--secondary {
+  &,
+  &:visited {
+    color: $au-link-secondary-color;
+    text-decoration-color: $au-link-secondary-color-underline;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-link-secondary-hover-color;
+    text-decoration-color: $au-link-secondary-hover-color-underline;
+  }
+
+  .is-active > & {
+    color: $au-link-active-color;
+    text-decoration: none;
+  }
+
+  &.is-active {
+    color: $au-link-secondary-active-color;
+  }
+}
+
+.au-c-link--icon-only {
+  .au-c-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+.au-c-link--block {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

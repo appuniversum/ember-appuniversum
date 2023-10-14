@@ -1,0 +1,61 @@
+// ==================================
+// #GENERATE UTILITIES
+// ==================================
+
+// Widths
+// ---
+$au-fractions: 1 2 3 4 5 6 !default;
+// Be aware that enabling offsets produces a large chunk of classes which might
+// bloat your CSS, depending of the amount of breakpoints you defined.
+// Only set this to `true` if you are absolutely sure about what you are doing.
+$au-offsets: false !default;
+
+// Flex utilities
+// ---
+$au-flex-utilities-responsive: false !default;
+
+// Spacing
+// ---
+$au-spacing-directions: (
+  null: null,
+  "-top": "-top",
+  "-right": "-right",
+  "-bottom": "-bottom",
+  "-left": "-left",
+) !default;
+
+$au-spacing-properties: (
+  "padding": "padding",
+  "margin": "margin",
+) !default;
+
+$au-spacing-sizes: (
+  null: $au-unit,
+  "-tiny": $au-unit-tiny,
+  "-small": $au-unit-small,
+  "-large": $au-unit-large,
+  "-huge": $au-unit-huge,
+  "-none": 0,
+) !default;
+
+$au-responsive-spacing-directions: (
+  null: null,
+  "-top": "-top",
+  "-right": "-right",
+  "-bottom": "-bottom",
+  "-left": "-left",
+);
+
+$au-responsive-spacing-properties: (
+  "padding": "padding",
+  "margin": "margin",
+);
+
+$au-responsive-spacing-sizes: (
+  null: $au-unit,
+  "-tiny": $au-unit-tiny,
+  "-small": $au-unit-small,
+  "-large": $au-unit-large,
+  "-huge": $au-unit-huge,
+  "-none": 0,
+);

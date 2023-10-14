@@ -1,0 +1,11 @@
+/* ==========================================================================
+   #MAX WIDTH
+   ========================================================================== */
+
+@if (variable-exists(mq-breakpoints)) {
+  @each $au-bp-name, $au-bp-value in $mq-breakpoints {
+    .au-u-max-width-#{$au-bp-name} {
+      max-width: $au-bp-value;
+    }
+  }
+}
