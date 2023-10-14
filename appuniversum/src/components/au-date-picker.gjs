@@ -1,9 +1,4 @@
 import { AuLabel } from '@appuniversum/ember-appuniversum';
-import {
-  formatDate,
-  isIsoDateString,
-  toIsoDateString,
-} from '@appuniversum/ember-appuniversum/utils/date';
 import { assert, runInDebug } from '@ember/debug';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
@@ -11,6 +6,11 @@ import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
+import {
+  formatDate,
+  isIsoDateString,
+  toIsoDateString,
+} from '../private/utils/date.js';
 
 const props = modifier(
   function props(element, positional, properties) {
@@ -122,7 +122,7 @@ export default class AuDatePicker extends Component {
   }
 
   <template>
-    <div class="au-c-datepicker {{this.alignment}}" data-test-au-date-picker>
+    <div class='au-c-datepicker {{this.alignment}}' data-test-au-date-picker>
       {{#if @label}}
         <AuLabel
           @error={{@error}}
@@ -143,7 +143,7 @@ export default class AuDatePicker extends Component {
           max={{this.max}}
           first-day-of-week={{@first-day}}
           data-test-au-date-picker-component
-          {{on "duetChange" this.handleDuetDateChange}}
+          {{on 'duetChange' this.handleDuetDateChange}}
           {{props localization=this.localization dateAdapter=this.adapter}}
           ...attributes
         ></duet-date-picker>

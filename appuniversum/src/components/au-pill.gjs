@@ -1,12 +1,11 @@
 import { AuIcon } from '@appuniversum/ember-appuniversum';
-import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
 import { on } from '@ember/modifier';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
-
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import eq from 'ember-truth-helpers/helpers/eq';
 import notEq from 'ember-truth-helpers/helpers/not-eq';
+import linkToModels from '../private/helpers/link-to-models.js';
 
 const PILL_SIZES = ['small'];
 

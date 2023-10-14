@@ -1,8 +1,8 @@
-import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
+import linkToModels from '../private/helpers/link-to-models.js';
 
 export default class AuNavigationLink extends Component {
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693
