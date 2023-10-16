@@ -155,7 +155,7 @@ export default class AuIconList extends Component {
     { name: 'users-two-of-four' },
     { name: 'visible' },
     { name: 'vote' },
-    { name: 'vote-star-filled'},
+    { name: 'vote-star-filled' },
     { name: 'website' },
     { name: 'word-dot' },
     { name: 'word-plus' },
