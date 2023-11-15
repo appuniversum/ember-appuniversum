@@ -26,6 +26,7 @@ $au-link-secondary-active-color: var(--au-gray-900) !default;
   display: inline-flex;
   gap: $au-unit-tiny;
   align-items: center;
+  vertical-align: top;
   font-family: var(--au-font);
   transition:
     color var(--au-transition),

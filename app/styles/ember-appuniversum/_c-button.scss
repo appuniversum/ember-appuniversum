@@ -57,6 +57,7 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
   display: inline-flex;
   gap: $au-unit-tiny;
   align-items: center;
+  vertical-align: top;
   padding: 0 $au-unit-small; // Visually center the text in the button
   border-radius: $au-button-border-radius;
   white-space: nowrap;
