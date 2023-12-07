@@ -5,6 +5,7 @@
   "author": "",
   "workspaces": [
     "appuniversum",
+    "docs-app",
     "test-app"
   ],
   "scripts": {
