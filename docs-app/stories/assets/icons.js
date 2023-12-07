@@ -151,7 +151,6 @@ export const icons = [
   'users-two-of-four',
   'visible',
   'vote',
-  'vote-star-filled',
   'website',
   'word-dot',
   'word-plus',

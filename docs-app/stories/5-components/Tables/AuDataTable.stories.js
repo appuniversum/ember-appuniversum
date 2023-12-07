@@ -27,7 +27,7 @@ const Template = (args) => ({
               </AuHeading>
             </Group>
             <Group class="au-c-toolbar__group--center">
-              <AuDataTableTextSearch @filter={{this.title}} @placeholder="Zoek titel notulen" />
+              <AuDataTable::TextSearch @filter={{this.title}} @placeholder="Zoek titel notulen" />
               <AuButton>
                 Nieuwe zitting
               </AuButton>
@@ -37,12 +37,12 @@ const Template = (args) => ({
       </t.menu>
       <t.content as |c|>
         <c.header>
-          <AuDataTableThSortable
+          <AuDataTable::ThSortable
             @field="title"
             @currentSorting={{this.sort}}
             @label="Titel notulen" @class="data-table__header-title"
           />
-          <AuDataTableThSortable
+          <AuDataTable::ThSortable
             @field="description"
             @currentSorting={{this.sort}}
             @label="Omschrijving" @class="data-table__header-title"

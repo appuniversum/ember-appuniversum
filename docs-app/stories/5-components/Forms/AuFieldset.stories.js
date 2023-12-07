@@ -56,30 +56,14 @@ const Template = (args) => ({
         Legend
       </f.legend>
       <f.content>
-        <AuControlRadio
-          @label="Radio 1"
+        <AuRadioGroup
           @name="radios"
-          @value="radioOne"
-          @identifier="radioOne"
-          @checked={{false}}
-          @disabled= {{false}}
-        />
-        <AuControlRadio
-          @label="Radio 2"
-          @name="radios"
-          @value="radioTwo"
-          @identifier="radioTwo"
-          @checked={{false}}
-          @disabled= {{false}}
-        />
-        <AuControlRadio
-          @label="Radio 3"
-          @name="radios"
-          @value="radioThree"
-          @identifier="radioThree"
-          @checked={{false}}
-          @disabled= {{false}}
-        />
+          as |Group|
+        >
+          <Group.Radio @value="radioOne">Radio 1</Group.Radio>
+          <Group.Radio @value="radioTwo">Radio 2</Group.Radio>
+          <Group.Radio @value="radioThree">Radio 3</Group.Radio>
+        </AuRadioGroup>
       </f.content>
     </AuFieldset>
     `,
