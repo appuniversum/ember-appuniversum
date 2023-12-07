@@ -1,6 +1,15 @@
 
 
 
+## v2.18.0 (2023-10-17)
+
+#### :rocket: Enhancement
+* [#449](https://github.com/appuniversum/ember-appuniversum/pull/449) Add vote star filled icon ([@lagartoverde](https://github.com/lagartoverde))
+
+#### Committers: 1
+- Oscar Rodriguez Villalobos ([@lagartoverde](https://github.com/lagartoverde))
+
+
 ## v2.17.0 (2023-10-12)
 
 #### :rocket: Enhancement
