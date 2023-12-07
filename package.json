@@ -65,7 +65,7 @@
     "@floating-ui/dom": "^1.1.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "@zestia/ember-auto-focus": "^4.2.0",
+    "@zestia/ember-auto-focus": "^5.1.0",
     "ember-auto-import": "^2.6.3",
     "ember-cli-babel": "^8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
