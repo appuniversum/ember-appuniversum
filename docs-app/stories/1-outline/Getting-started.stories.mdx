@@ -1,0 +1,216 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Outline/Getting started" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-700);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-700);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-900);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+`}</style>
+
+# Getting started
+
+## Installation
+
+You can install the [ember-appuniversum](https://www.npmjs.com/package/@appuniversum/ember-appuniversum) addon with ember-cli:
+
+`ember install @appuniversum/ember-appuniversum`
+
+## Set up the build pipeline
+
+### SCSS
+
+`ember-appuniversum` uses SCSS so you will need to add a SCSS compiler to your project. This can be done by installing [ember-cli-sass](https://www.npmjs.com/package/ember-cli-sass).
+
+### Autoprefixer
+
+`ember-appuniversum` doesn't use any CSS vendor prefixes in its code and it depends on `autoprefixer` to add those when needed. Make sure to set up autoprefixer in your project.
+
+The easiest way to do this in an ember project is by installing the [`ember-cli-autoprefixer` addon](https://github.com/kimroen/ember-cli-autoprefixer).
+
+## Customising the SCSS for your project
+
+Then load the SCSS in your `app.scss` file:
+
+```css
+@import "@appuniversum/ember-appuniversum/styles";
+```
+
+> You may need to configure your SCSS compiler so that it looks at the `node_modules` folder when importing files.
+> For ember-cli-sass this can be done by using the `includePaths` option.
+>
+> ```js
+> // ember-cli-build.js
+> var app = new EmberApp({
+>   sassOptions: {
+>     includePaths: ["node_modules/@appuniversum/ember-appuniversum"], // just "node_modules" would also work, but it seems to slow (re)builds down a lot
+>   },
+> });
+> ```
+
+If you want more control over the order that SCSS partials are rendered you can import them as groups.
+
+```css
+@import "@appuniversum/ember-appuniversum/styles/a-settings";
+@import "@appuniversum/ember-appuniversum/styles/a-tools";
+@import "@appuniversum/ember-appuniversum/styles/a-generic";
+@import "@appuniversum/ember-appuniversum/styles/a-elements";
+@import "@appuniversum/ember-appuniversum/styles/a-objects";
+@import "@appuniversum/ember-appuniversum/styles/a-components";
+@import "@appuniversum/ember-appuniversum/styles/a-plugins";
+@import "@appuniversum/ember-appuniversum/styles/a-utilities";
+```
+
+Alternatively you can also load every SCSS partial in your `app.scss` file for more control over which components you want to use:
+
+```css
+/* ==================================
+   #EMBER-APPUNIVERSUM
+   ================================== */
+
+/**
+ * A design universe for Flanders GOV applications
+ */
+
+/**
+ * CONTENTS
+ * ---
+ * SETTINGS: Project settings and variables
+ * TOOLS: Mixins
+ * GENERIC: Reset, global box-sizing and font-styles
+ * ELEMENTS: Plain html tag styling
+ * OBJECTS: OOCSS unstyled objects (namespace: '.au-o-...')
+ * COMPONENTS: Components (namespace: '.au-c-...')
+ * PLUGINS: Third-party styles
+ * UTILITIES: Single function helper classes (namespace: '.au-u-...')
+ */
+
+// SETTINGS
+@import "@appuniversum/ember-appuniversum/styles/settings/s-colors.scss";
+@import "@appuniversum/ember-appuniversum/styles/settings/s-global";
+@import "@appuniversum/ember-appuniversum/styles/settings/s-utilities";
+@import "@appuniversum/ember-appuniversum/styles/settings/s-root";
+
+// TOOLS
+@import "@appuniversum/ember-appuniversum/styles/tools/t-font-size";
+@import "@appuniversum/ember-appuniversum/styles/tools/t-sass-mq";
+
+// GENERIC
+@import "@appuniversum/ember-appuniversum/styles/generic/g-reset";
+@import "@appuniversum/ember-appuniversum/styles/generic/g-box-sizing";
+@import "@appuniversum/ember-appuniversum/styles/generic/g-font";
+
+// ELEMENTS
+@import "@appuniversum/ember-appuniversum/styles/elements/e-page";
+
+// OBJECTS
+@import "@appuniversum/ember-appuniversum/styles/objects/o-box";
+@import "@appuniversum/ember-appuniversum/styles/objects/o-flow";
+@import "@appuniversum/ember-appuniversum/styles/objects/o-grid";
+@import "@appuniversum/ember-appuniversum/styles/objects/o-layout";
+@import "@appuniversum/ember-appuniversum/styles/objects/o-region";
+
+// COMPONENTS
+@import "@appuniversum/ember-appuniversum/styles/components/c-accordion";
+@import "@appuniversum/ember-appuniversum/styles/components/c-alert";
+@import "@appuniversum/ember-appuniversum/styles/components/c-app";
+@import "@appuniversum/ember-appuniversum/styles/components/c-badge";
+@import "@appuniversum/ember-appuniversum/styles/components/c-body-container";
+@import "@appuniversum/ember-appuniversum/styles/components/c-brand";
+@import "@appuniversum/ember-appuniversum/styles/components/c-button";
+@import "@appuniversum/ember-appuniversum/styles/components/c-button-group";
+@import "@appuniversum/ember-appuniversum/styles/components/c-card";
+@import "@appuniversum/ember-appuniversum/styles/components/c-content";
+@import "@appuniversum/ember-appuniversum/styles/components/c-content-header";
+@import "@appuniversum/ember-appuniversum/styles/components/c-control";
+@import "@appuniversum/ember-appuniversum/styles/components/c-data-table";
+@import "@appuniversum/ember-appuniversum/styles/components/c-dropdown";
+@import "@appuniversum/ember-appuniversum/styles/components/c-fieldset";
+@import "@appuniversum/ember-appuniversum/styles/components/c-file-upload";
+@import "@appuniversum/ember-appuniversum/styles/components/c-form";
+@import "@appuniversum/ember-appuniversum/styles/components/c-form-row";
+@import "@appuniversum/ember-appuniversum/styles/components/c-heading";
+@import "@appuniversum/ember-appuniversum/styles/components/c-help-text";
+@import "@appuniversum/ember-appuniversum/styles/components/c-hr";
+@import "@appuniversum/ember-appuniversum/styles/components/c-icon";
+@import "@appuniversum/ember-appuniversum/styles/components/c-input";
+@import "@appuniversum/ember-appuniversum/styles/components/c-label";
+@import "@appuniversum/ember-appuniversum/styles/components/c-link";
+@import "@appuniversum/ember-appuniversum/styles/components/c-list";
+@import "@appuniversum/ember-appuniversum/styles/components/c-list-horizontal";
+@import "@appuniversum/ember-appuniversum/styles/components/c-list-navigation";
+@import "@appuniversum/ember-appuniversum/styles/components/c-loader";
+@import "@appuniversum/ember-appuniversum/styles/components/c-main-container";
+@import "@appuniversum/ember-appuniversum/styles/components/c-main-header";
+@import "@appuniversum/ember-appuniversum/styles/components/c-main-footer";
+@import "@appuniversum/ember-appuniversum/styles/components/c-modal";
+@import "@appuniversum/ember-appuniversum/styles/components/c-pagination";
+@import "@appuniversum/ember-appuniversum/styles/components/c-pill";
+@import "@appuniversum/ember-appuniversum/styles/components/c-sidebar";
+@import "@appuniversum/ember-appuniversum/styles/components/c-sidebar-action";
+@import "@appuniversum/ember-appuniversum/styles/components/c-table";
+@import "@appuniversum/ember-appuniversum/styles/components/c-tabs";
+@import "@appuniversum/ember-appuniversum/styles/components/c-textarea";
+@import "@appuniversum/ember-appuniversum/styles/components/c-timepicker";
+@import "@appuniversum/ember-appuniversum/styles/components/c-toggle-switch";
+@import "@appuniversum/ember-appuniversum/styles/components/c-toolbar";
+
+// PLUGINS
+@import "@appuniversum/ember-appuniversum/styles/plugins/p-ember-power-select";
+@import "@appuniversum/ember-appuniversum/styles/plugins/p-duet-datepicker";
+
+// UTILITIES
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-align-text";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-background";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-break-word";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-flex";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-font-family";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-font-weights";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-headings";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-hide";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-max-widths";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-paragraphs";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-print";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-responsive-spacings";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-spacings";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-visible";
+@import "@appuniversum/ember-appuniversum/styles/utilities/u-widths";
+```

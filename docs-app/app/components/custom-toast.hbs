@@ -1,0 +1,13 @@
+<AuAlert
+  @title={{@options.title}}
+  @skin={{@options.skin}}
+  @icon={{@options.icon}}
+  @size="small"
+  @closable={{@options.closable}}
+  @onClose={{@close}}
+>
+  <AuButtonGroup>
+    <AuButton {{on "click" @options.someHandler}}>Custom action</AuButton>
+    <AuLinkExternal href="https://vlaanderen.be">Meer info</AuLinkExternal>
+  </AuButtonGroup>
+</AuAlert>

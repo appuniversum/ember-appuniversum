@@ -1,0 +1,80 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Objects/Layout" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-700);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-700);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-900);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+
+  .au-d-component + .au-d-component {
+    margin-top: 1rem;
+  }
+
+  .au-d-component p {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
+`}</style>
+
+# Layout
+
+`.au-o-layout`: Horizontal centered layout object with a maximum width and left/right padding.
+
+<div class="au-o-layout au-u-margin-bottom">
+  <div class="au-o-box au-u-text-center  au-d-component">
+    <p class="au-u-h5">.au-o-layout</p>
+  </div>
+</div>
+
+## Size modifiers
+
+<div class="au-o-layout au-o-layout--small au-u-margin-top">
+  <div class="au-o-box au-u-text-center  au-d-component">
+    <p class="au-u-h5">.au-o-layout--small</p>
+  </div>
+</div>
+
+<div class="au-o-layout au-o-layout--large au-u-margin-top">
+  <div class="au-o-box au-u-text-center  au-d-component">
+    <p class="au-u-h5">.au-o-layout--large</p>
+  </div>
+</div>
