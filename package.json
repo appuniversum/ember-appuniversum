@@ -65,24 +65,23 @@
     "@floating-ui/dom": "^1.1.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "@zestia/ember-auto-focus": "^4.2.0",
+    "@zestia/ember-auto-focus": "^5.1.0",
     "ember-auto-import": "^2.6.3",
-    "ember-cli-babel": "^7.26.11",
+    "ember-cli-babel": "^8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
-    "ember-concurrency": "2.x || ^3.1.0",
+    "ember-concurrency": "^3.1.0",
     "ember-data-table": "^2.1.0",
-    "ember-file-upload": "^7.0.3",
+    "ember-file-upload": "^8.4.0",
     "ember-focus-trap": "^1.1.0",
-    "ember-modifier": "^3.2.7",
+    "ember-modifier": "^4.1.0",
     "ember-template-imports": "^3.4.2",
     "ember-test-selectors": "^6.0.0",
-    "ember-truth-helpers": "^3.1.1",
+    "ember-truth-helpers": "^3.1.1 || ^4.0.3",
     "inputmask": "^5.0.7",
     "merge-anything": "^5.1.3",
     "tracked-toolbox": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.9",
     "@babel/eslint-parser": "^7.22.10",
     "@babel/plugin-proposal-decorators": "^7.22.10",
     "@ember/optional-features": "^2.0.0",
@@ -114,7 +113,7 @@
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
     "ember-load-initializers": "^2.1.2",
-    "ember-power-select": "^7.1.0",
+    "ember-power-select": "^7.2.0",
     "ember-qunit": "^7.0.0",
     "ember-resolver": "^11.0.1",
     "ember-root-url": "^1.0.1",
@@ -140,13 +139,15 @@
     "stylelint-config-standard": "^34.0.0",
     "stylelint-prettier": "^4.0.2",
     "svg-symbols": "^1.0.5",
+    "tracked-built-ins": "^3.3.0",
     "webpack": "^5.88.2"
   },
   "optionalDependencies": {
     "ember-power-select": "2.x || 3.x || 4.x || 5.x || 6.x || 7.x"
   },
   "peerDependencies": {
-    "ember-source": "^4.8.0 || ^5.0.0"
+    "ember-source": "^4.8.0 || ^5.0.0",
+    "tracked-built-ins": "^3.3.0"
   },
   "engines": {
     "node": ">= 18"
