@@ -11,7 +11,9 @@
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/*.js",
-    "./addon-main.js": "./addon-main.cjs"
+    "./addon-main.js": "./addon-main.cjs",
+    "./styles": "./styles/_index.scss",
+    "./styles/**/*.scss": "./styles/**/*.scss"
   },
   "files": [
     "addon-main.cjs",
