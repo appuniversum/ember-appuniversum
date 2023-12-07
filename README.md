@@ -6,7 +6,7 @@ Ember addon that provides components for Flanders themed applications.
 
 - Ember.js v4.8 or above
 - Ember CLI v4.8 or above
-- Node.js v14 or above
+- Node.js v18 or above
 
 ## Installation
 
