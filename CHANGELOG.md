@@ -1,6 +1,21 @@
 
 
 
+## v3.0.0 (2024-01-12)
+
+Upgrade guide: https://github.com/appuniversum/ember-appuniversum/pull/459
+
+#### :boom: Breaking Change
+* [#446](https://github.com/appuniversum/ember-appuniversum/pull/446) Remove all deprecated code targetting v3 ([@Windvis](https://github.com/Windvis))
+* [#454](https://github.com/appuniversum/ember-appuniversum/pull/454) Update dependencies to newest majors matching our support range ([@Windvis](https://github.com/Windvis))
+* [#447](https://github.com/appuniversum/ember-appuniversum/pull/447) Drop Ember 3.28 and 4.4 support ([@Windvis](https://github.com/Windvis))
+* [#457](https://github.com/appuniversum/ember-appuniversum/pull/457) Drop Ember 4.8 LTS support ([@Windvis](https://github.com/Windvis))
+* [#453](https://github.com/appuniversum/ember-appuniversum/pull/453) Drop support for node 14 and 16 ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v2.18.0 (2023-10-17)
 
 #### :rocket: Enhancement
