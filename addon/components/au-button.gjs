@@ -1,5 +1,4 @@
 import { AuIcon, AuLoader } from '@appuniversum/ember-appuniversum';
-import { deprecate } from '@ember/debug';
 import Component from '@glimmer/component';
 
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
@@ -10,21 +9,7 @@ const SKINS = ['primary', 'secondary', 'naked', 'link', 'link-secondary'];
 
 export default class AuButton extends Component {
   get skin() {
-    deprecate(
-      '[AuButton] The `tertiary` skin is deprecated. Use the `link` skin instead.',
-      this.args.skin !== 'tertiary',
-      {
-        id: '@appuniversum/ember-appuniversum.au-button-tertiary',
-        until: '3.0.0',
-        for: '@appuniversum/ember-appuniversum',
-        since: {
-          enabled: '2.14.0',
-        },
-      },
-    );
-
     if (SKINS.includes(this.args.skin)) return this.args.skin;
-    else if (this.args.skin === 'tertiary') return 'link'; // DEPRECATED
     else return 'primary';
   }
 

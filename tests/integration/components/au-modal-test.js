@@ -30,20 +30,7 @@ module('Integration | Component | au-modal', function (hooks) {
     assert.dom(MODAL.ELEMENT).exists();
   });
 
-  test("it falls back to the #ember-appuniversum-wormhole element if the AuModalContainer component isn't used", async function (assert) {
-    function getFallbackWormholeElement() {
-      return document.querySelector('#ember-appuniversum-wormhole');
-    }
-
-    await render(hbs`
-      <div id="ember-appuniversum-wormhole"></div>
-      <AuModal @modalOpen={{true}} />
-    `);
-
-    assert.dom(MODAL.ELEMENT, getFallbackWormholeElement()).exists();
-  });
-
-  test('it throws an error if no target element was found', async function (assert) {
+  test("it throws an error if the `<AuModalContainer />` component wasn't found", async function (assert) {
     setupOnerror((error) => {
       if (error.message.includes('au-modal: No target element was found')) {
         assert.step('correct error thrown');

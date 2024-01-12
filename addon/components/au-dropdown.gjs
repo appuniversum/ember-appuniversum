@@ -1,6 +1,5 @@
 import { AuButton } from '@appuniversum/ember-appuniversum';
 import FloatingUiModifier from '@appuniversum/ember-appuniversum/private/modifiers/floating-ui';
-import { deprecate } from '@ember/debug';
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
@@ -58,23 +57,6 @@ export default class AuDropdown extends Component {
     }
 
     return true;
-  }
-
-  get buttonLabel() {
-    if (this.args.buttonLabel) {
-      deprecate('@dropdownLabel is no longer used, use @title instead', false, {
-        id: '@appuniversum/ember-appuniversum.au-dropdown.dropdownButtonLabel-argument',
-        until: '3.0.0',
-        for: '@appuniversum/ember-appuniversum',
-        since: {
-          enabled: '1.7.0',
-        },
-      });
-
-      return this.args.buttonLabel;
-    } else {
-      return undefined;
-    }
   }
 
   get alignment() {
