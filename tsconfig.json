@@ -15,6 +15,16 @@
         "addon-test-support/*"
       ],
       "*": ["types/*"]
-    }
+    },
+    //These are copied from the tsconfig.declarations.json file since glint doesn't support different configs yet
+    "declarationDir": "declarations",
+    "emitDeclarationOnly": true, // This probably isn't doing anything under Glint
+    "noEmit": false,
+    "noEmitOnError": false,
+    "rootDir": "."
+  },
+  "glint": {
+    "environment": ["ember-loose", "ember-template-imports"],
+    "checkStandaloneTemplates": false
   }
 }
