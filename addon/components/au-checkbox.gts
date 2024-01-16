@@ -6,14 +6,32 @@ import Component from '@glimmer/component';
 import and from 'ember-truth-helpers/helpers/and';
 import not from 'ember-truth-helpers/helpers/not';
 
-export default class AuCheckbox extends Component {
+export interface AuCheckboxSignature {
+  Args: {
+    checked?: boolean;
+    disabled?: boolean;
+    groupValue?: string[];
+    indeterminate?: boolean;
+    inGroup?: boolean;
+    name?: string;
+    onChange?: (checked: boolean, event: Event) => void;
+    onChangeGroup?: (newValue: string[], event: Event) => void;
+    value?: string;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLInputElement;
+}
+
+export default class AuCheckbox extends Component<AuCheckboxSignature> {
   get groupValue() {
     return this.args.groupValue || [];
   }
 
   get isCheckedInGroup() {
     const { value } = this.args;
-    return this.groupValue.includes(value);
+    return value ? this.groupValue.includes(value) : false;
   }
 
   get checked() {
@@ -22,23 +40,25 @@ export default class AuCheckbox extends Component {
   }
 
   @action
-  onChange(event) {
-    const { checked } = event.target;
+  onChange(event: Event) {
+    const { checked } = event.target as HTMLInputElement;
     const { inGroup, onChange, onChangeGroup } = this.args;
 
     if (inGroup && typeof onChangeGroup === 'function') {
       const { groupValue } = this;
       const { value } = this.args;
 
-      let updatedGroupValue;
+      if (value) {
+        let updatedGroupValue: string[];
 
-      if (checked) {
-        updatedGroupValue = [...groupValue, value];
-      } else {
-        updatedGroupValue = groupValue.filter((n) => n !== value);
+        if (checked) {
+          updatedGroupValue = [...groupValue, value];
+        } else {
+          updatedGroupValue = groupValue.filter((n) => n !== value);
+        }
+
+        onChangeGroup(updatedGroupValue, event);
       }
-
-      onChangeGroup(updatedGroupValue, event);
     } else if (typeof onChange === 'function') {
       onChange(checked, event);
     }
