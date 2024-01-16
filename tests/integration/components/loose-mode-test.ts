@@ -26,6 +26,16 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-badge]').exists();
   });
 
+  test('<AuBodyContainer> resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuBodyContainer data-test-body-container>
+        template block text
+      </AuBodyContainer>
+    `);
+
+    assert.dom('[data-test-body-container]').hasText('template block text');
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 

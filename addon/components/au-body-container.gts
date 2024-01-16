@@ -1,6 +1,16 @@
 import Component from '@glimmer/component';
 
-export default class AuBodyContainer extends Component {
+export interface AuBodyContainerSignature {
+  Args: {
+    scroll?: boolean;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuBodyContainer extends Component<AuBodyContainerSignature> {
   get scroll() {
     if (this.args.scroll) return 'au-c-body-container--scroll';
     else return '';
