@@ -1,10 +1,26 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import AuIcon from './au-icon';
 
-export default class AuAlert extends Component {
+export interface AuAlertSignature {
+  Args: {
+    closable?: boolean;
+    icon?: string;
+    iconVisible?: boolean;
+    onClose?: () => void;
+    size?: 'tiny' | 'small';
+    skin?: 'info' | 'success' | 'warning' | 'error';
+    title?: string;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuAlert extends Component<AuAlertSignature> {
   @tracked isVisible = true;
 
   get skin() {

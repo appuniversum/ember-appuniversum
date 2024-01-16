@@ -8,6 +8,12 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | Loose mode', function (hooks) {
   setupRenderingTest(hooks);
 
+  test('`<AuAlert>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuAlert data-test-alert />`);
+
+    assert.dom('[data-test-alert]').exists();
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 
