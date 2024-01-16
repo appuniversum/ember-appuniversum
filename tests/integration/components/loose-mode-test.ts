@@ -42,6 +42,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-brand]').exists();
   });
 
+  test('`<AuButtonGroup>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuButtonGroup data-test-button-group />`);
+
+    assert.dom('[data-test-button-group]').exists();
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 
