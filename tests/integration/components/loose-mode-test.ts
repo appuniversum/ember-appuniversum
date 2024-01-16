@@ -14,6 +14,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-alert]').exists();
   });
 
+  test('`<AuApp>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuApp data-test-app />`);
+
+    assert.dom('[data-test-app]').exists();
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 
