@@ -20,6 +20,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-app]').exists();
   });
 
+  test('`<AuBadge>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuBadge data-test-badge />`);
+
+    assert.dom('[data-test-badge]').exists();
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 

@@ -1,5 +1,16 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
+import AuIcon from './au-icon';
+
+export interface AuBadgeSignature {
+  Args: {
+    icon?: string;
+    iconVisible?: boolean;
+    number?: number;
+    size?: 'small';
+    skin?: 'action' | 'border' | 'brand' | 'error' | 'success' | 'warning';
+  };
+  Element: HTMLSpanElement;
+}
 
 const SKIN_CLASSES = {
   border: 'au-c-badge--border',
@@ -8,12 +19,17 @@ const SKIN_CLASSES = {
   success: 'au-c-badge--success',
   warning: 'au-c-badge--warning',
   error: 'au-c-badge--error',
+  default: 'au-c-badge--default',
 };
 
-export default class AuBadge extends Component {
+export default class AuBadge extends Component<AuBadgeSignature> {
   get skin() {
+    if (!this.args.skin) {
+      return SKIN_CLASSES.default;
+    }
+
     const skin = SKIN_CLASSES[this.args.skin];
-    return skin ? skin : 'au-c-badge--default';
+    return skin ? skin : SKIN_CLASSES.default;
   }
 
   get size() {
