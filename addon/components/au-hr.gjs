@@ -7,7 +7,5 @@ export default class AuHr extends Component {
     else return '';
   }
 
-  <template>
-    <hr class="au-c-hr {{this.size}}" ...attributes />
-  </template>
+  <template><hr class="au-c-hr {{this.size}}" ...attributes /></template>
 }
