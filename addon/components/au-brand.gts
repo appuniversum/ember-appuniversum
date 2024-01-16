@@ -1,7 +1,15 @@
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 
-export default class AuBrand extends Component {
+export interface AuBrandSignature {
+  Args: {
+    link?: string;
+    tagline?: string;
+  };
+  Element: HTMLDivElement | HTMLAnchorElement;
+}
+
+export default class AuBrand extends Component<AuBrandSignature> {
   id = guidFor(this);
 
   get tagline() {

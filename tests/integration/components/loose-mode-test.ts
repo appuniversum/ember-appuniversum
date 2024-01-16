@@ -36,6 +36,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-body-container]').hasText('template block text');
   });
 
+  test('`<AuBrand>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuBrand data-test-brand />`);
+
+    assert.dom('[data-test-brand]').exists();
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 
