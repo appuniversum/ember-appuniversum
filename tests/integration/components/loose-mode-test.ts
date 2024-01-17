@@ -89,4 +89,11 @@ module('Integration | Component | Loose mode', function (hooks) {
     `);
     assert.dom('[data-test-input]').exists();
   });
+
+  test('`<AuLinkExternal>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuLinkExternal data-test-link-external>Foo</AuLinkExternal>
+    `);
+    assert.dom('[data-test-link-external]').exists();
+  });
 });

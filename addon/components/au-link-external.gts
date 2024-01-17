@@ -1,9 +1,5 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
-
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import and from 'ember-truth-helpers/helpers/and';
-import eq from 'ember-truth-helpers/helpers/eq';
+import AuIcon from './au-icon';
 
 const SKIN_CLASSES = {
   primary: 'au-c-link',
@@ -13,20 +9,43 @@ const SKIN_CLASSES = {
   'button-naked': 'au-c-button au-c-button--naked',
 };
 
-export default class AuLinkExternal extends Component {
+export interface AuLinkExternalSignature {
+  Args: {
+    hideText?: boolean;
+    icon?: string;
+    iconAlignment?: 'left' | 'right';
+    skin?:
+      | 'primary'
+      | 'secondary'
+      | 'button'
+      | 'button-secondary'
+      | 'button-naked';
+    width?: 'block';
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLAnchorElement;
+}
+
+export default class AuLinkExternal extends Component<AuLinkExternalSignature> {
   get skinClass() {
-    if (SKIN_CLASSES[this.args.skin]) {
-      return SKIN_CLASSES[this.args.skin];
-    } else {
-      return SKIN_CLASSES.primary;
-    }
+    return this.args.skin ? SKIN_CLASSES[this.args.skin] : SKIN_CLASSES.primary;
   }
 
   get widthClass() {
-    if (this.args.width == 'block')
-      if (this.args.skin.startsWith('button')) return 'au-c-button--block';
+    if (this.args.width === 'block')
+      if (this.args.skin?.startsWith('button')) return 'au-c-button--block';
       else return 'au-c-link--block';
     else return '';
+  }
+
+  get isIconLeft() {
+    return !!this.args.icon && this.iconAlignment === 'left';
+  }
+
+  get isIconRight() {
+    return !!this.args.icon && this.iconAlignment === 'right';
   }
 
   get iconAlignment() {
@@ -51,7 +70,8 @@ export default class AuLinkExternal extends Component {
       href=""
       ...attributes
     >
-      {{#if (and @icon (eq this.iconAlignment "left"))}}
+      {{#if this.isIconLeft}}
+        {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
         <AuIcon @icon={{@icon}} />
       {{/if}}
       {{#if @hideText}}
@@ -59,7 +79,8 @@ export default class AuLinkExternal extends Component {
       {{else}}
         {{yield}}
       {{/if}}
-      {{#if (and @icon (eq this.iconAlignment "right"))}}
+      {{#if this.isIconRight}}
+        {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
         <AuIcon @icon={{@icon}} />
       {{/if}}
     </a>
