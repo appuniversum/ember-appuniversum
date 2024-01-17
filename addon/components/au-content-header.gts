@@ -1,6 +1,18 @@
 import Component from '@glimmer/component';
 
-export default class AuContentHeader extends Component {
+export interface AuContentHeaderSignature {
+  Args: {
+    pictureSize?: 'large';
+    titlePartOne?: string;
+    titlePartTwo?: string;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLElement;
+}
+
+export default class AuContentHeader extends Component<AuContentHeaderSignature> {
   get pictureSize() {
     if (this.args.pictureSize == 'large') return 'au-c-content-header--large';
     else return '';
@@ -10,6 +22,7 @@ export default class AuContentHeader extends Component {
     <section
       aria-label="pagina introductie"
       class="au-c-content-header {{this.pictureSize}}"
+      ...attributes
     >
       <picture class="au-c-content-header__bg">
         {{yield}}
