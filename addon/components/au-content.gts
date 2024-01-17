@@ -1,6 +1,16 @@
 import Component from '@glimmer/component';
 
-export default class AuContent extends Component {
+export interface AuContentSignature {
+  Args: {
+    skin?: 'tiny' | 'small' | 'large';
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuContent extends Component<AuContentSignature> {
   get skin() {
     if (this.args.skin == 'tiny') return 'au-c-content--tiny';
     if (this.args.skin == 'small') return 'au-c-content--small';

@@ -70,6 +70,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-content-header]').exists();
   });
 
+  test('`<AuContent>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuContent data-test-content></AuContent>
+    `);
+    assert.dom('[data-test-content]').exists();
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 
