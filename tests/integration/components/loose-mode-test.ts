@@ -54,6 +54,15 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-checkbox]').exists();
   });
 
+  test('`<AuCheckboxGroup>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuCheckboxGroup foo="bar" data-test-checkbox-group as |Group|>
+        <Group.Checkbox>Foo</Group.Checkbox>
+      </AuCheckboxGroup>
+    `);
+    assert.dom('[data-test-checkbox-group]').hasAttribute('foo', 'bar');
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 
