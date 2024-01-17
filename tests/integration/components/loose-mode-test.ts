@@ -82,4 +82,11 @@ module('Integration | Component | Loose mode', function (hooks) {
 
     assert.dom('[data-test-icon]').exists();
   });
+
+  test('`<AuInput>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuInput data-test-input />
+    `);
+    assert.dom('[data-test-input]').exists();
+  });
 });

@@ -1,16 +1,29 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
+import AuIcon from './au-icon';
 
-// TODO: replace this with the named import from ember-truth-helpers v4 once our dependencies support that version
-import eq from 'ember-truth-helpers/helpers/eq';
+export interface AuInputSignature {
+  Args: {
+    disabled?: boolean;
+    error?: boolean;
+    icon?: string;
+    iconAlignment?: 'left' | 'right';
+    warning?: boolean;
+    width?: 'block';
+  };
+  Element: HTMLInputElement;
+}
 
-export default class AuInput extends Component {
+export default class AuInput extends Component<AuInputSignature> {
   get width() {
     if (this.args.width == 'block') return 'au-c-input--block';
     else return '';
   }
 
   get iconAlignment() {
+    return this.args.iconAlignment === 'right' ? 'right' : 'left';
+  }
+
+  get iconAlignmentClass() {
     if (this.args.iconAlignment == 'left') return 'au-c-input-wrapper--left';
     if (this.args.iconAlignment == 'right') return 'au-c-input-wrapper--right';
     else return '';
@@ -39,12 +52,11 @@ export default class AuInput extends Component {
 
   <template>
     {{~#if @icon~}}
-      <span class="au-c-input-wrapper {{this.iconAlignment}} {{this.width}}">
+      <span
+        class="au-c-input-wrapper {{this.iconAlignmentClass}} {{this.width}}"
+      >
         <input class={{this.classes}} disabled={{@disabled}} ...attributes />
-        <AuIcon
-          @icon={{@icon}}
-          @alignment={{if (eq @iconAlignment "right") "right" "left"}}
-        />
+        <AuIcon @icon={{@icon}} @alignment={{this.iconAlignment}} />
       </span>
     {{~else~}}
       <input class={{this.classes}} disabled={{@disabled}} ...attributes />

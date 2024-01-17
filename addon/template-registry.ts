@@ -9,6 +9,7 @@ import type AuCheckboxGroup from '@appuniversum/ember-appuniversum/components/au
 import type AuContentHeader from '@appuniversum/ember-appuniversum/components/au-content-header';
 import type AuContent from '@appuniversum/ember-appuniversum/components/au-content';
 import type AuIcon from '@appuniversum/ember-appuniversum/components/au-icon';
+import type AuInput from '@appuniversum/ember-appuniversum/components/au-input';
 
 export default interface AppuniversumRegistry {
   AuAlert: typeof AuAlert;
@@ -22,4 +23,5 @@ export default interface AppuniversumRegistry {
   AuContentHeader: typeof AuContentHeader;
   AuContent: typeof AuContent;
   AuIcon: typeof AuIcon;
+  AuInput: typeof AuInput;
 }
