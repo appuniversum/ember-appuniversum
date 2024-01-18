@@ -103,4 +103,11 @@ module('Integration | Component | Loose mode', function (hooks) {
     `);
     assert.dom('[data-test-link]').exists();
   });
+
+  test('`<AuList>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuList data-test-list></AuList>
+    `);
+    assert.dom('[data-test-list]').exists();
+  });
 });
