@@ -1,4 +1,4 @@
-import { linkToModels } from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
+import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
@@ -6,16 +6,16 @@ module('Unit | Helper | Private | link-to-models', function (hooks) {
   setupTest(hooks);
 
   test('it supports passing in a model as the first positional argument', function (assert) {
-    let modelId = 1;
-    let result = linkToModels([modelId]);
+    const modelId = 1;
+    const result = linkToModels(modelId);
 
-    assert.ok(Array.isArray(result));
+    assert.true(Array.isArray(result));
     assert.strictEqual(result[0], 1);
   });
 
   test('it supports passing in a models array as the second positional argument', function (assert) {
-    let models = [1, 2, 3];
-    let result = linkToModels([undefined, models]);
+    const models = [1, 2, 3];
+    const result = linkToModels(undefined, models);
 
     assert.ok(Array.isArray(result));
     assert.strictEqual(result[0], 1);
@@ -24,15 +24,17 @@ module('Unit | Helper | Private | link-to-models', function (hooks) {
   });
 
   test('it passes through models as provided so the `<LinkTo>` component validation can be reused', function (assert) {
-    let models = 1;
-    let result = linkToModels([undefined, models]);
+    const models = 1;
+    // @ts-expect-error: required for runtime validation
+    const result = linkToModels(undefined, models);
 
     assert.notOk(Array.isArray(result));
+    // @ts-expect-error: required for runtime validation
     assert.strictEqual(result, 1);
   });
 
   test('it returns an empty array if no model or models are provided', function (assert) {
-    let result = linkToModels([]);
+    const result = linkToModels();
 
     assert.ok(Array.isArray(result));
     assert.strictEqual(result.length, 0);
@@ -42,7 +44,7 @@ module('Unit | Helper | Private | link-to-models', function (hooks) {
     let result;
 
     assert.throws(() => {
-      result = linkToModels([1, [1, 2]]);
+      result = linkToModels(1, [1, 2]);
     });
 
     assert.notOk(result);
