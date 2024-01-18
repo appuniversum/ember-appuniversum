@@ -11,6 +11,7 @@ import type AuContent from '@appuniversum/ember-appuniversum/components/au-conte
 import type AuIcon from '@appuniversum/ember-appuniversum/components/au-icon';
 import type AuInput from '@appuniversum/ember-appuniversum/components/au-input';
 import type AuLinkExternal from '@appuniversum/ember-appuniversum/components/au-link-external';
+import type AuLink from '@appuniversum/ember-appuniversum/components/au-link';
 
 export default interface AppuniversumRegistry {
   AuAlert: typeof AuAlert;
@@ -26,4 +27,5 @@ export default interface AppuniversumRegistry {
   AuIcon: typeof AuIcon;
   AuInput: typeof AuInput;
   AuLinkExternal: typeof AuLinkExternal;
+  AuLink: typeof AuLink;
 }

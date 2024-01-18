@@ -1,11 +1,7 @@
-import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
-import { AuIcon } from '@appuniversum/ember-appuniversum';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
-
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import and from 'ember-truth-helpers/helpers/and';
-import eq from 'ember-truth-helpers/helpers/eq';
+import AuIcon from './au-icon';
+import linkToModels from '../private/helpers/link-to-models';
 
 const SKIN_CLASSES = {
   primary: 'au-c-link',
@@ -15,18 +11,38 @@ const SKIN_CLASSES = {
   'button-naked': 'au-c-button au-c-button--naked',
 };
 
-export default class AuLink extends Component {
+export interface AuLinkSignature {
+  Args: {
+    active?: boolean;
+    skin?:
+      | 'primary'
+      | 'secondary'
+      | 'button'
+      | 'button-secondary'
+      | 'button-naked';
+    width?: 'block';
+    query?: Record<string, unknown>;
+    icon?: string;
+    route: string;
+    hideText?: boolean;
+    model?: unknown;
+    models?: unknown[];
+    iconAlignment?: 'left' | 'right';
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLAnchorElement; // TODO: Retrieve this from the LinkTo component types in some way
+}
+
+export default class AuLink extends Component<AuLinkSignature> {
   get skinClass() {
-    if (SKIN_CLASSES[this.args.skin]) {
-      return SKIN_CLASSES[this.args.skin];
-    } else {
-      return SKIN_CLASSES.primary;
-    }
+    return this.args.skin ? SKIN_CLASSES[this.args.skin] : SKIN_CLASSES.primary;
   }
 
   get widthClass() {
-    if (this.args.width == 'block')
-      if (this.args.skin.startsWith('button')) return 'au-c-button--block';
+    if (this.args.width === 'block')
+      if (this.args.skin?.startsWith('button')) return 'au-c-button--block';
       else return 'au-c-link--block';
     else return '';
   }
@@ -43,6 +59,14 @@ export default class AuLink extends Component {
     } else {
       return {};
     }
+  }
+
+  get isIconLeft() {
+    return !!this.args.icon && this.iconAlignment === 'left';
+  }
+
+  get isIconRight() {
+    return !!this.args.icon && this.iconAlignment === 'right';
   }
 
   get iconAlignment() {
@@ -70,7 +94,8 @@ export default class AuLink extends Component {
         {{this.iconOnlyClass}}"
       ...attributes
     >
-      {{#if (and @icon (eq this.iconAlignment "left"))}}
+      {{#if this.isIconLeft}}
+        {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
         <AuIcon @icon={{@icon}} />
       {{/if}}
       {{#if @hideText}}
@@ -78,7 +103,8 @@ export default class AuLink extends Component {
       {{else}}
         {{yield}}
       {{/if}}
-      {{#if (and @icon (eq this.iconAlignment "right"))}}
+      {{#if this.isIconRight}}
+        {{! @glint-expect-error: this.isIconRight ensures that @icon is set }}
         <AuIcon @icon={{@icon}} />
       {{/if}}
     </LinkTo>

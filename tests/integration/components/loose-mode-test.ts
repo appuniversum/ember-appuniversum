@@ -96,4 +96,11 @@ module('Integration | Component | Loose mode', function (hooks) {
     `);
     assert.dom('[data-test-link-external]').exists();
   });
+
+  test('`<AuLink>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuLink @route="index" data-test-link>Foo</AuLink>
+    `);
+    assert.dom('[data-test-link]').exists();
+  });
 });
