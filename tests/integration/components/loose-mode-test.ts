@@ -48,6 +48,15 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-button-group]').exists();
   });
 
+  test('`<AuButton>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuButton data-test-button>
+        template block text
+      </AuButton>
+    `);
+    assert.dom('[data-test-button]').exists();
+  });
+
   test('`<AuCheckbox>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuCheckbox data-test-checkbox />`);
 

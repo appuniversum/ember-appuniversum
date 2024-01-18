@@ -1,15 +1,38 @@
-import { AuIcon, AuLoader } from '@appuniversum/ember-appuniversum';
 import Component from '@glimmer/component';
+import AuIcon from './au-icon';
+import AuLoader from './au-loader';
 
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import and from 'ember-truth-helpers/helpers/and';
-import eq from 'ember-truth-helpers/helpers/eq';
+const SKINS = [
+  'primary',
+  'secondary',
+  'naked',
+  'link',
+  'link-secondary',
+] as const;
 
-const SKINS = ['primary', 'secondary', 'naked', 'link', 'link-secondary'];
+export interface AuButtonSignature {
+  Args: {
+    alert?: boolean;
+    disabled?: boolean;
+    hideText?: boolean;
+    icon?: string;
+    iconAlignment?: 'left' | 'right';
+    loading?: boolean;
+    loadingMessage?: string;
+    size?: 'large';
+    skin?: (typeof SKINS)[number];
+    width?: 'block';
+    wrap?: boolean;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLButtonElement;
+}
 
-export default class AuButton extends Component {
+export default class AuButton extends Component<AuButtonSignature> {
   get skin() {
-    if (SKINS.includes(this.args.skin)) return this.args.skin;
+    if (this.args.skin && SKINS.includes(this.args.skin)) return this.args.skin;
     else return 'primary';
   }
 
@@ -52,6 +75,14 @@ export default class AuButton extends Component {
     else return 'Aan het laden';
   }
 
+  get isIconLeft() {
+    return !!this.args.icon && this.iconAlignment === 'left';
+  }
+
+  get isIconRight() {
+    return !!this.args.icon && this.iconAlignment === 'right';
+  }
+
   get iconAlignment() {
     if (this.args.iconAlignment) return this.args.iconAlignment;
     else return 'left';
@@ -78,7 +109,8 @@ export default class AuButton extends Component {
       ...attributes
     >
       {{#unless @loading}}
-        {{#if (and @icon (eq this.iconAlignment "left"))}}
+        {{#if this.isIconLeft}}
+          {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
           <AuIcon @icon={{@icon}} />
         {{/if}}
       {{/unless}}
@@ -100,7 +132,8 @@ export default class AuButton extends Component {
       {{/if}}
 
       {{#unless @loading}}
-        {{#if (and @icon (eq this.iconAlignment "right"))}}
+        {{#if this.isIconRight}}
+          {{! @glint-expect-error: this.isIconRight ensures that @icon is set }}
           <AuIcon @icon={{@icon}} />
         {{/if}}
       {{/unless}}
