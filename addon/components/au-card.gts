@@ -1,20 +1,44 @@
-import {
-  AuBadge,
-  AuButton,
-  AuContent,
-  AuIcon,
-} from '@appuniversum/ember-appuniversum';
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
+import AuBadge from './au-badge';
+import AuButton from './au-button';
+import AuContent, { type AuContentSignature } from './au-content';
+import AuIcon from './au-icon';
 
-export default class AuCard extends Component {
+export interface AuCardSignature {
+  Args: {
+    divided?: boolean;
+    expandable?: boolean;
+    flex?: boolean;
+    isExpanded?: boolean;
+    isOpenInitially?: boolean;
+    manualControl?: boolean;
+    openSection?: () => void;
+    size?: 'small' | 'tiny' | 'flush';
+    shadow?: boolean;
+    standOut?: boolean;
+    textCenter?: boolean;
+  };
+  Blocks: {
+    default: [
+      {
+        header?: typeof Header;
+        content?: typeof Content;
+        footer?: typeof Footer;
+      },
+    ];
+  };
+  Element: HTMLElement;
+}
+
+export default class AuCard extends Component<AuCardSignature> {
   @tracked isExpanded = false;
 
-  constructor() {
-    super(...arguments);
+  constructor(owner: unknown, args: AuCardSignature['Args']) {
+    super(owner, args);
 
     if (this.args.isOpenInitially) {
       this.isExpanded = true;
@@ -69,7 +93,7 @@ export default class AuCard extends Component {
   @action
   openSection() {
     if (this.args.manualControl) {
-      this.args.openSection();
+      this.args.openSection?.();
     } else {
       this.isExpanded = !this.isExpanded;
     }
@@ -97,7 +121,6 @@ export default class AuCard extends Component {
             {{! this triggers a false positive for components: https://github.com/ember-template-lint/ember-template-lint/issues/2334}}
           >
             <AuButton
-              @size="small"
               @skin="link"
               class="au-c-card__toggle"
               aria-hidden="true"
@@ -128,7 +151,6 @@ export default class AuCard extends Component {
           >
             {{yield (hash header=Header)}}
             <AuButton
-              @size="small"
               @skin="link"
               class="au-c-card__toggle"
               aria-hidden="true"
@@ -164,7 +186,20 @@ export default class AuCard extends Component {
   </template>
 }
 
-class Header extends Component {
+interface HeaderSignature {
+  Args: {
+    badgeIcon?: string;
+    badgeNumber?: number;
+    badgeSize?: 'small';
+    badgeSkin?: 'border' | 'action' | 'brand' | 'success' | 'warning' | 'error';
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+class Header extends Component<HeaderSignature> {
   get badgeSkin() {
     if (this.args.badgeSkin == 'border') return 'au-c-badge--border';
     if (this.args.badgeSkin == 'action') return 'au-c-badge--action';
@@ -184,15 +219,15 @@ class Header extends Component {
     <div class="au-c-card__header" ...attributes>
       {{#if @badgeIcon}}
         <AuBadge
-          @size="{{@badgeSize}}"
-          @skin="{{@badgeSkin}}"
-          @icon="{{@badgeIcon}}"
+          @size={{@badgeSize}}
+          @skin={{@badgeSkin}}
+          @icon={{@badgeIcon}}
         />
       {{else if @badgeNumber}}
         <AuBadge
-          @size="{{@badgeSize}}"
-          @skin="{{@badgeSkin}}"
-          @number="{{@badgeNumber}}"
+          @size={{@badgeSize}}
+          @skin={{@badgeSkin}}
+          @number={{@badgeNumber}}
         />
       {{/if}}
 
@@ -205,18 +240,36 @@ class Header extends Component {
   </template>
 }
 
-const Content = <template>
-  {{#if (has-block)}}
-    <AuContent class="au-c-card__content" ...attributes>
-      {{yield}}
-    </AuContent>
-  {{/if}}
-</template>;
+interface ContentSignature {
+  Blocks: {
+    default: [];
+  };
+  Element: AuContentSignature['Element'];
+}
 
-const Footer = <template>
-  {{#if (has-block)}}
-    <AuContent class="au-c-card__footer" ...attributes>
-      {{yield}}
-    </AuContent>
-  {{/if}}
-</template>;
+class Content extends Component<ContentSignature> {
+  <template>
+    {{#if (has-block)}}
+      <AuContent class="au-c-card__content" ...attributes>
+        {{yield}}
+      </AuContent>
+    {{/if}}
+  </template>
+}
+
+interface FooterSignature {
+  Blocks: {
+    default: [];
+  };
+  Element: AuContentSignature['Element'];
+}
+
+class Footer extends Component<FooterSignature> {
+  <template>
+    {{#if (has-block)}}
+      <AuContent class="au-c-card__footer" ...attributes>
+        {{yield}}
+      </AuContent>
+    {{/if}}
+  </template>
+}

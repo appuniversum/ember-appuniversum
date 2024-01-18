@@ -57,6 +57,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-button]').exists();
   });
 
+  test('`<AuCard>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuCard data-test-card />`);
+
+    assert.dom('[data-test-card]').exists();
+  });
+
   test('`<AuCheckbox>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuCheckbox data-test-checkbox />`);
 
