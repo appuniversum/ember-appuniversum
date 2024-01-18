@@ -110,4 +110,11 @@ module('Integration | Component | Loose mode', function (hooks) {
     `);
     assert.dom('[data-test-list]').exists();
   });
+
+  test('`<AuLoader>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuLoader data-test-loader />
+    `);
+    assert.dom('[data-test-loader]').exists();
+  });
 });

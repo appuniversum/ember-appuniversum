@@ -1,6 +1,15 @@
 import Component from '@glimmer/component';
 
-export default class AuLoader extends Component {
+export interface AuLoaderSignature {
+  Args: {
+    disableMessage?: boolean;
+    message?: string;
+    padding?: 'small' | 'large';
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuLoader extends Component<AuLoaderSignature> {
   get padding() {
     if (this.args.padding == 'small') return 'au-c-loader--small';
     if (this.args.padding == 'large') return 'au-c-loader--large';
@@ -8,8 +17,7 @@ export default class AuLoader extends Component {
   }
 
   get message() {
-    if (this.args.message) return this.args.message;
-    else return 'Aan het laden';
+    return this.args.message || 'Aan het laden';
   }
 
   <template>
