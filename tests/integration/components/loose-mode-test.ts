@@ -133,3 +133,15 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-loader]').exists();
   });
 });
+
+module('Integration | Modifier | Loose mode', function (hooks) {
+  setupRenderingTest(hooks);
+
+  test('`{{au-date-input}}` resolves in loose mode', async function (assert) {
+    await render(hbs`
+    <AuInput data-test-date-input {{au-date-input value="2023-02-02"}} />
+  `);
+
+    assert.dom('[data-test-date-input]').hasValue('02-02-2023');
+  });
+});

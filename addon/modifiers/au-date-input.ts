@@ -1,21 +1,35 @@
+import { assert } from '@ember/debug';
+import { registerDestructor } from '@ember/destroyable';
+import type Owner from '@ember/owner';
+import Modifier, { type ArgsFor } from 'ember-modifier';
+import Inputmask from 'inputmask';
 import {
   toIsoDateString,
   isIsoDateString,
   isoDateToBelgianFormat,
-} from '@appuniversum/ember-appuniversum/utils/date';
-import { assert } from '@ember/debug';
-import { registerDestructor } from '@ember/destroyable';
-import Modifier from 'ember-modifier';
-import Inputmask from 'inputmask';
+} from '../utils/date';
 
-export default class AuDateInputModifier extends Modifier {
-  input;
-  argValue;
-  argOnChange;
-  currentIsoDate;
+export interface AuDateInputModifierSignature {
+  Args: {
+    Named: {
+      value?: string | Date;
+      prefillYear?: boolean;
+      onChange?: (isoDate: string | null, date: Date | null) => void;
+    };
+  };
+  Element: HTMLInputElement;
+}
 
-  constructor() {
-    super(...arguments);
+type Signature = AuDateInputModifierSignature;
+
+export default class AuDateInputModifier extends Modifier<Signature> {
+  input!: Signature['Element'];
+  argValue?: Signature['Args']['Named']['value'];
+  argOnChange?: Signature['Args']['Named']['onChange'];
+  currentIsoDate?: string | null;
+
+  constructor(owner: Owner, args: ArgsFor<Signature>) {
+    super(owner, args);
     registerDestructor(this, this.removeInputmask);
   }
 
@@ -23,12 +37,16 @@ export default class AuDateInputModifier extends Modifier {
     return Boolean(this.input);
   }
 
-  modify(input, positional, { value, onChange, prefillYear = false }) {
-    let valueHasChanged = this.argValue !== value;
+  modify(
+    input: Signature['Element'],
+    _positional: never,
+    { value, onChange, prefillYear = false }: Signature['Args']['Named'],
+  ) {
+    const valueHasChanged = this.argValue !== value;
 
     if (valueHasChanged || !this.isInitialized) {
       this.argValue = value;
-      let isoDate = ensureIsoDate(value);
+      const isoDate = ensureIsoDate(value);
       this.currentIsoDate = isoDate;
       input.value = isoDate ? isoDateToBelgianFormat(isoDate) : '';
     }
@@ -42,17 +60,17 @@ export default class AuDateInputModifier extends Modifier {
     }
   }
 
-  initialize(input, prefillYear) {
+  initialize(input: Signature['Element'], prefillYear?: boolean) {
     this.input = input;
 
-    let inputmask = new Inputmask({
+    const inputmask = new Inputmask({
       alias: 'datetime',
       inputFormat: 'dd-mm-yyyy',
       outputFormat: 'yyyy-mm-dd',
       placeholder: 'DD-MM-JJJJ',
       prefillYear,
       oncomplete: () => {
-        let isoDate = this.input.inputmask.unmaskedvalue();
+        const isoDate = this.input.inputmask!.unmaskedvalue();
 
         if (isoDate !== this.currentIsoDate) {
           this.currentIsoDate = isoDate;
@@ -70,7 +88,7 @@ export default class AuDateInputModifier extends Modifier {
     inputmask.mask(input);
   }
 
-  onChange(isoDate, date) {
+  onChange(isoDate: string | null, date: Date | null) {
     this.argOnChange?.(isoDate, date);
   }
 
@@ -79,7 +97,7 @@ export default class AuDateInputModifier extends Modifier {
   };
 }
 
-function ensureIsoDate(argValue) {
+function ensureIsoDate(argValue?: unknown): string | undefined {
   if (!argValue) {
     return;
   }
