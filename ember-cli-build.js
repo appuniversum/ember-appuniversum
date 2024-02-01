@@ -4,7 +4,7 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
   const app = new EmberAddon(defaults, {
-    // Add options here
+    'ember-cli-babel': { enableTypeScriptTransform: true },
     sassOptions: {
       sourceMapEmbed: true,
       includePaths: ['./styles'], // This ensures that the /styles folder is watched and auto-reloading works.

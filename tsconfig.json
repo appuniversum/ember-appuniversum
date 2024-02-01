@@ -1,0 +1,30 @@
+{
+  "extends": "@tsconfig/ember/tsconfig.json",
+  "compilerOptions": {
+    // The combination of `baseUrl` with `paths` allows Ember's classic package
+    // layout, which is not resolvable with the Node resolution algorithm, to
+    // work with TypeScript.
+    "baseUrl": ".",
+    "paths": {
+      "dummy/tests/*": ["tests/*"],
+      "dummy/*": ["tests/dummy/app/*", "app/*"],
+      "@appuniversum/ember-appuniversum": ["addon"],
+      "@appuniversum/ember-appuniversum/*": ["addon/*"],
+      "@appuniversum/ember-appuniversum/test-support": ["addon-test-support"],
+      "@appuniversum/ember-appuniversum/test-support/*": [
+        "addon-test-support/*"
+      ],
+      "*": ["types/*"]
+    },
+    //These are copied from the tsconfig.declarations.json file since glint doesn't support different configs yet
+    "declarationDir": "declarations",
+    "emitDeclarationOnly": true, // This probably isn't doing anything under Glint
+    "noEmit": false,
+    "noEmitOnError": false,
+    "rootDir": "."
+  },
+  "glint": {
+    "environment": ["ember-loose", "ember-template-imports"],
+    "checkStandaloneTemplates": false
+  }
+}

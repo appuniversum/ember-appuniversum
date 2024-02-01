@@ -1,0 +1,12 @@
+{
+  // This file isn't used at the moment since Glint only supports the base tsconfig.json file",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declarationDir": "declarations",
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "noEmitOnError": false,
+    "rootDir": "."
+  },
+  "include": ["addon", "addon-test-support"]
+}

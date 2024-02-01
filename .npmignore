@@ -2,6 +2,9 @@
 /dist/
 /tmp/
 /storybook-static/
+# We don't want to publish the declaration files for the tests folder, but we can't prevent it
+# with only a single tsconfig file and Glint doesn't support multiple tsconfig files yet.
+/declarations/tests/
 
 # misc
 /.editorconfig
@@ -25,6 +28,8 @@
 /jsconfig.json
 /RELEASE.md
 /testem.js
+/tsconfig.json
+/tsconfig.declarations.json
 /tests/
 /yarn-error.log
 /yarn.lock
@@ -32,10 +37,12 @@
 /.storybook
 /stories/
 /build-storybook.log
+# These types are local types that are only needed for development of the addon
+/types/
+/unpublished-development-types/
 
 # ember-try
 /.node_modules.ember-try/
-/bower.json.ember-try
 /npm-shrinkwrap.json.ember-try
 /package.json.ember-try
 /package-lock.json.ember-try
