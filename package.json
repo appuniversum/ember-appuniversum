@@ -127,6 +127,7 @@
     "@storybook/theming": "^6.5.7",
     "@testing-library/dom": "^9.3.1",
     "@tsconfig/ember": "^3.0.2",
+    "@types/inputmask": "^5.0.7",
     "@types/qunit": "^2.19.9",
     "@types/rsvp": "^4.0.8",
     "@typescript-eslint/eslint-plugin": "^6.14.0",

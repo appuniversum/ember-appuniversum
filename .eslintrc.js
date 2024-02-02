@@ -20,7 +20,11 @@ module.exports = {
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
       ],
-      rules: {},
+      rules: {
+        // This works around an issue in Glint https://github.com/typed-ember/glint/issues/697
+        // It also makes adding state to a component easier, since no other code changes would be needed.
+        'ember/no-empty-glimmer-component-classes': 'off',
+      },
     },
     // node files
     {
