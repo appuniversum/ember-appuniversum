@@ -135,7 +135,7 @@ module('Integration | Component | Loose mode', function (hooks) {
 
   test('`<AuLoader>` resolves in loose mode', async function (assert) {
     await render(hbs`
-      <AuLoader data-test-loader />
+      <AuLoader data-test-loader></AuLoader>
     `);
     assert.dom('[data-test-loader]').exists();
   });
