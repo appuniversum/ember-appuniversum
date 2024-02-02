@@ -92,6 +92,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-content]').exists();
   });
 
+  test('`<AuDateInput>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuDateInput data-test-date-input />
+    `);
+    assert.dom('[data-test-date-input]').exists();
+  });
+
   test('`<AuIcon>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuIcon data-test-icon @icon="test" />`);
 
