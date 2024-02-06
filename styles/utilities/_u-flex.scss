@@ -10,6 +10,7 @@
   ========================================================================== */
 
 $au-flex-utilities-responsive: false !default;
+$au-flex-utilities-reverse-responsive-breakpoints: false !default;
 
 /* Utility classes
   ========================================================================== */
@@ -130,7 +131,21 @@ $au-flex-utilities-responsive: false !default;
 @if ($au-flex-utilities-responsive == true) {
   @if (variable-exists(mq-breakpoints)) {
     @each $au-bp-name, $au-bp-value in $mq-breakpoints {
-      @include mq($until: $au-bp-name) {
+      $from: false;
+      $until: $au-bp-name;
+
+      @if $au-flex-utilities-reverse-responsive-breakpoints {
+        $from: $au-bp-name;
+        $until: false;
+      } @else {
+        $warning-message: "\
+The current breakpoint behavior of the responsive `au-u-flex` utilities is deprecated. Instead of `max-width` they will use `min-width` queries to make them consistent with other responsive util classes.\
+Set the global `$au-flex-utilities-reverse-responsive-breakpoints` variable to `true` and modify the responsive classes where needed.";
+
+        @warn $warning-message;
+      }
+
+      @include mq($from: $from, $until: $until) {
         .au-u-flex--wrap\@#{$au-bp-name} {
           flex-wrap: wrap !important;
         }
