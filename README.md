@@ -30,8 +30,10 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 - Run the documentation site: `npm run storybook` (make sure the `npm run ember` command is finished)
 - Generate the icons: `npm run icons`
 
-> We use the "template tag" (.gjs) format for component authoring which has been described in detail in the [RFC](https://github.com/emberjs/rfcs/blob/master/text/0779-first-class-component-templates.md).
+> We use the "template tag" (.gjs/.gts) format for component authoring which has been described in detail in the [RFC](https://github.com/emberjs/rfcs/blob/master/text/0779-first-class-component-templates.md).
 > A summarized version can be found in the ember-template-imports library which also has some information about [how to setup your dev environment](https://github.com/ember-template-imports/ember-template-imports#editor-integrations) for a better experience.
+> 
+> We're also converting the code to TypeScript and [Glint](https://typed-ember.gitbook.io/glint/).
 
 ### Testing:
 
@@ -51,6 +53,7 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 [yalc](https://github.com/wclr/yalc) is a good alternative if the npm link setup doesn't work as expected.
 
 ### Releases:
+> Make sure all the merged PRs have the correct label, so they show up in the changelog
 
 Release to npm: `GITHUB_AUTH=your-token npm run release` and follow the prompts
 
