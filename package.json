@@ -78,7 +78,7 @@
   },
   "overridesComments": {
     "@glimmer/validator and util": "https://github.com/emberjs/ember.js/issues/20502",
-    "ember-source": "storybook/ember, zestia/auto-focus and focus-trap all depend on ember-source peerDeps that don't match all our test scenarios"
+    "ember-source": "storybook/ember and focus-trap all depend on ember-source peerDeps that don't match all our test scenarios"
   },
   "dependencies": {
     "@babel/core": "^7.23.2",
@@ -87,7 +87,6 @@
     "@floating-ui/dom": "^1.1.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
-    "@zestia/ember-auto-focus": "^5.1.0",
     "ember-auto-import": "^2.6.3",
     "ember-cli-babel": "^8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
