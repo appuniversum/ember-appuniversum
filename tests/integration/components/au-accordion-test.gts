@@ -35,6 +35,18 @@ module('Integration | Component | au-accordion', function (hooks) {
     assert.dom(ACCORDION.CONTENT).doesNotExist();
   });
 
+  test('it renders the content by default if `isOpenInitially` is set to `true`', async function (assert) {
+    await render(
+      <template>
+        <AuAccordion @isOpenInitially={{true}}>
+          Content
+        </AuAccordion>
+      </template>,
+    );
+
+    assert.dom(ACCORDION.CONTENT).exists().hasText('Content');
+  });
+
   test('it toggles its content rendering when clicking it', async function (assert) {
     await render(
       <template>

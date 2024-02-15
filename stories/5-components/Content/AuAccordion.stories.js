@@ -34,6 +34,11 @@ export default {
       control: 'boolean',
       description: 'Adds a loading state to the button',
     },
+    isOpenInitially: {
+      control: 'boolean',
+      description:
+        'When set to `true`, this will render the accordion in the "open" state from the start.',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -50,6 +55,7 @@ const Template = (args) => ({
       @iconClosed={{this.iconClosed}}
       @buttonLabel={{this.buttonLabel}}
       @loading={{this.loading}}
+      @isOpenInitially={{this.isOpenInitially}}
     >
       <p>I am information. I can even contain a <AuLink>A Link</AuLink>!</p>
     </AuAccordion>`,
@@ -65,4 +71,5 @@ Component.args = {
   iconClosed: 'nav-right',
   buttonLabel: 'Accordion with arrows',
   loading: false,
+  isOpenInitially: false,
 };

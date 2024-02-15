@@ -18,6 +18,7 @@ export interface AuAccordionSignature {
     buttonLabel?: string;
     iconClosed?: string;
     iconOpen?: string;
+    isOpenInitially?: boolean;
     loading?: boolean;
     reverse?: boolean;
     skin?: 'border';
@@ -30,7 +31,13 @@ export interface AuAccordionSignature {
 }
 
 export default class AuAccordion extends Component<AuAccordionSignature> {
-  @tracked isOpen = false;
+  @tracked isOpen;
+
+  constructor(owner: unknown, args: AuAccordionSignature['Args']) {
+    super(owner, args);
+
+    this.isOpen = Boolean(this.args.isOpenInitially);
+  }
 
   get loading() {
     if (this.args.loading) return 'is-loading';
