@@ -9,7 +9,11 @@ import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import autoFocus from '@zestia/ember-auto-focus/modifiers/auto-focus';
+import { modifier } from 'ember-modifier';
+
+const autofocus = modifier(function autofocus(element) {
+  element.focus();
+});
 
 export default class AuAccordion extends Component {
   @tracked isOpen = false;
@@ -96,7 +100,7 @@ export default class AuAccordion extends Component {
         </Group>
       </AuToolbar>
       {{#if this.isOpen}}
-        <AuContent {{autoFocus}} tabindex="0" data-test-accordion-content>
+        <AuContent tabindex="0" data-test-accordion-content {{autofocus}}>
           {{#if this.loading}}
             <AuLoader data-test-accordion-loader />
           {{else}}
