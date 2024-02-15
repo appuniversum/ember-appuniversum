@@ -18,6 +18,7 @@ import type AuLinkExternal from '@appuniversum/ember-appuniversum/components/au-
 import type AuLink from '@appuniversum/ember-appuniversum/components/au-link';
 import type AuList from '@appuniversum/ember-appuniversum/components/au-list';
 import type AuLoader from '@appuniversum/ember-appuniversum/components/au-loader';
+import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
 
 // Modifiers
 import type AuDateInputModifier from '@appuniversum/ember-appuniversum/modifiers/au-date-input';
@@ -43,6 +44,7 @@ export default interface AppuniversumRegistry {
   AuLink: typeof AuLink;
   AuList: typeof AuList;
   AuLoader: typeof AuLoader;
+  AuToolbar: typeof AuToolbar;
 
   // Modifiers
   'au-date-input': typeof AuDateInputModifier;

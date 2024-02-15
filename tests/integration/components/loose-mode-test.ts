@@ -139,6 +139,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     `);
     assert.dom('[data-test-loader]').exists();
   });
+
+  test('`<AuToolbar>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuToolbar data-test-toolbar></AuToolbar>
+    `);
+    assert.dom('[data-test-toolbar]').exists();
+  });
 });
 
 module('Integration | Modifier | Loose mode', function (hooks) {
