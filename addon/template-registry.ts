@@ -1,4 +1,5 @@
 // Components
+import type AuAccordion from '@appuniversum/ember-appuniversum/components/au-accordion';
 import type AuAlert from '@appuniversum/ember-appuniversum/components/au-alert';
 import type AuApp from '@appuniversum/ember-appuniversum/components/au-app';
 import type AuBadge from '@appuniversum/ember-appuniversum/components/au-badge';
@@ -25,6 +26,7 @@ import type AuDateInputModifier from '@appuniversum/ember-appuniversum/modifiers
 
 export default interface AppuniversumRegistry {
   // Components
+  AuAccordion: typeof AuAccordion;
   AuAlert: typeof AuAlert;
   AuApp: typeof AuApp;
   AuBadge: typeof AuBadge;

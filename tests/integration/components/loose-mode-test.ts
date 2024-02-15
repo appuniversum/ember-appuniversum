@@ -8,6 +8,14 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | Loose mode', function (hooks) {
   setupRenderingTest(hooks);
 
+  test('`<AuAccordion>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuAccordion data-test-accordion-external></AuAccordion>
+    `);
+
+    assert.dom('[data-test-accordion-external]').exists();
+  });
+
   test('`<AuAlert>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuAlert data-test-alert />`);
 

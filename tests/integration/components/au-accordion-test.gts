@@ -1,7 +1,8 @@
-import { module, test } from 'qunit';
+import AuAccordion from '@appuniversum/ember-appuniversum/components/au-accordion';
+import { click, settled, render } from '@ember/test-helpers';
+import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'ember-qunit';
-import { click, render } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
+import { module, test } from 'qunit';
 
 const ACCORDION = {
   TOGGLE: '[data-test-accordion-toggle]',
@@ -13,25 +14,35 @@ const ACCORDION = {
   LOADER: '[data-test-accordion-loader]',
 };
 
+class TestState {
+  @tracked iconClosed?: string;
+  @tracked iconOpen?: string;
+  @tracked isLoading?: boolean;
+}
+
 module('Integration | Component | au-accordion', function (hooks) {
   setupRenderingTest(hooks);
 
   test("it doesn't render any content when initially rendered", async function (assert) {
-    await render(hbs`
-      <AuAccordion>
-        Content
-      </AuAccordion>
-    `);
+    await render(
+      <template>
+        <AuAccordion>
+          Content
+        </AuAccordion>
+      </template>,
+    );
 
     assert.dom(ACCORDION.CONTENT).doesNotExist();
   });
 
   test('it toggles its content rendering when clicking it', async function (assert) {
-    await render(hbs`
-      <AuAccordion>
-        Some content
-      </AuAccordion>
-    `);
+    await render(
+      <template>
+        <AuAccordion>
+          Some content
+        </AuAccordion>
+      </template>,
+    );
 
     await toggleAccordion();
     assert.dom(ACCORDION.CONTENT).exists().hasText('Some content');
@@ -41,31 +52,37 @@ module('Integration | Component | au-accordion', function (hooks) {
   });
 
   test('it can display a subtitle', async function (assert) {
-    await render(hbs`
-      <AuAccordion @subtitle="Foo">
-        Some content
-      </AuAccordion>
-    `);
+    await render(
+      <template>
+        <AuAccordion @subtitle="Foo">
+          Some content
+        </AuAccordion>
+      </template>,
+    );
 
     assert.dom(ACCORDION.SUBTITLE).exists().hasText('Foo');
   });
 
   test('it supports changing the label of the toggle button', async function (assert) {
-    await render(hbs`
-      <AuAccordion @buttonLabel="Foo button">
-        Some content
-      </AuAccordion>
-    `);
+    await render(
+      <template>
+        <AuAccordion @buttonLabel="Foo button">
+          Some content
+        </AuAccordion>
+      </template>,
+    );
 
     assert.dom(ACCORDION.BUTTON).exists().hasText('Foo button');
   });
 
   test('it shows a different icon depending on the open state', async function (assert) {
-    await render(hbs`
-      <AuAccordion>
-        Some content
-      </AuAccordion>
-    `);
+    await render(
+      <template>
+        <AuAccordion>
+          Some content
+        </AuAccordion>
+      </template>,
+    );
 
     assert.dom(ACCORDION.ICON_OPEN).doesNotExist();
     assert.dom(ACCORDION.ICON_CLOSED).exists();
@@ -76,17 +93,24 @@ module('Integration | Component | au-accordion', function (hooks) {
   });
 
   test('it supports choosing different icons', async function (assert) {
-    await render(hbs`
-      <AuAccordion @iconOpen={{this.iconOpen}} @iconClosed={{this.iconClosed}}>
-        Some content
-      </AuAccordion>
-    `);
+    const state = new TestState();
+    await render(
+      <template>
+        <AuAccordion
+          @iconOpen={{state.iconOpen}}
+          @iconClosed={{state.iconClosed}}
+        >
+          Some content
+        </AuAccordion>
+      </template>,
+    );
 
     assert
       .dom(ACCORDION.ICON_CLOSED)
       .hasAttribute('data-test-accordion-icon-closed', 'nav-right');
 
-    this.set('iconClosed', 'other-closed-icon');
+    state.iconClosed = 'other-closed-icon';
+    await settled();
 
     assert
       .dom(ACCORDION.ICON_CLOSED)
@@ -97,7 +121,8 @@ module('Integration | Component | au-accordion', function (hooks) {
       .dom(ACCORDION.ICON_OPEN)
       .hasAttribute('data-test-accordion-icon-open', 'nav-down');
 
-    this.set('iconOpen', 'other-open-icon');
+    state.iconOpen = 'other-open-icon';
+    await settled();
 
     assert
       .dom(ACCORDION.ICON_OPEN)
@@ -105,11 +130,14 @@ module('Integration | Component | au-accordion', function (hooks) {
   });
 
   test('it can show a loading indicator instead of content', async function (assert) {
-    this.isLoading = true;
+    const state = new TestState();
+    state.isLoading = true;
 
-    await render(hbs`
-      <AuAccordion @loading={{this.isLoading}}>Some content</AuAccordion>
-    `);
+    await render(
+      <template>
+        <AuAccordion @loading={{state.isLoading}}>Some content</AuAccordion>
+      </template>,
+    );
 
     assert.dom(ACCORDION.LOADER).doesNotExist();
 
@@ -117,15 +145,18 @@ module('Integration | Component | au-accordion', function (hooks) {
     assert.dom(ACCORDION.LOADER).exists();
     assert.dom(ACCORDION.CONTENT).doesNotContainText('Some content');
 
-    this.set('isLoading', false);
+    state.isLoading = false;
+    await settled();
     assert.dom(ACCORDION.LOADER).doesNotExist();
     assert.dom(ACCORDION.CONTENT).containsText('Some content');
   });
 
   test("it's possible to add extra html attributes", async function (assert) {
-    await render(hbs`
-      <AuAccordion class="test" data-test-accordion-external></AuAccordion>
-    `);
+    await render(
+      <template>
+        <AuAccordion class="test" data-test-accordion-external />
+      </template>,
+    );
 
     assert.dom('[data-test-accordion-external]').exists().hasClass('test');
   });
