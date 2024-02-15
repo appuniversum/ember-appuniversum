@@ -3,18 +3,17 @@ import { hbs } from 'ember-cli-htmlbars';
 export default {
   title: 'Components/Notifications/AuLoader',
   argTypes: {
-    padding: {
-      control: 'select',
-      options: ['default', 'small', 'large'],
-      description: 'Set the padding of the loader',
-    },
     message: {
       control: 'text',
-      description: 'Set the hidden loading text',
+      description: 'Set the loading text',
     },
-    disableMessage: {
+    inline: {
       control: 'boolean',
-      description: 'Remove the loading text',
+      description: 'Use the inline version of the loader',
+    },
+    hideMessage: {
+      control: 'boolean',
+      description: 'Hide the loading text',
     },
   },
   parameters: {
@@ -24,13 +23,16 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
-    <AuLoader @padding={{this.padding}} @message={{this.message}} @disableMessage={{this.disableMessage}} />`,
+    <AuLoader
+      @inline={{this.inline}}
+      @hideMessage={{this.hideMessage}}
+    >{{this.message}}</AuLoader>`,
   context: args,
 });
 
 export const Component = Template.bind({});
 Component.args = {
-  padding: 'default',
   message: 'Aan het laden',
-  disableMessage: false,
+  inline: false,
+  hideMessage: false,
 };

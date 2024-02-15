@@ -9,6 +9,15 @@
   display: block;
 }
 
+// .au-p- = private class
+.au-p-c-loading-animation {
+  display: inline-block;
+  position: relative;
+  width: 3rem;
+  height: 1.8rem;
+}
+
+// TODO: Remove this once we drop support for the "old" AuLoader setup
 .au-c-loader__animation {
   display: block;
   position: relative;
@@ -24,7 +33,11 @@
     width: 3rem + $au-unit-large;
     height: 3rem + $au-unit-large;
   }
+}
 
+.au-p-c-loading-animation,
+// TODO: Remove this once we drop support for the "old" AuLoader setup
+.au-c-loader__animation {
   &::before {
     content: "";
     display: block;

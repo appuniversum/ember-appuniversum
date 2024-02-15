@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 import AuIcon from './au-icon';
-import AuLoader from './au-loader';
+import { LoadingAnimation } from '../private/components/loading-animation';
 
 const SKINS = [
   'primary',
@@ -118,14 +118,14 @@ export default class AuButton extends Component<AuButtonSignature> {
       {{#if @hideText}}
         {{#if @loading}}
           <span class="au-u-hidden-visually">{{this.loadingMessage}}</span>
-          <AuLoader @padding="small" />
+          <LoadingAnimation />
         {{else}}
           <span class="au-u-hidden-visually">{{yield}}</span>
         {{/if}}
       {{else}}
         {{#if @loading}}
           {{this.loadingMessage}}
-          <AuLoader @padding="small" />
+          <LoadingAnimation />
         {{else}}
           {{yield}}
         {{/if}}
