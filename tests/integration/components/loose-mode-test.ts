@@ -107,6 +107,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-date-input]').exists();
   });
 
+  test('`<AuFormRow>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuFormRow data-test-form-row />`);
+
+    assert.dom('[data-test-form-row]').exists();
+  });
+
   test('`<AuHr>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuHr data-test-hr />`);
 
