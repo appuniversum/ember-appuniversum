@@ -1,5 +1,23 @@
 
 
+## v3.1.0 (2024-02-16)
+
+#### :rocket: Enhancement
+* [#469](https://github.com/appuniversum/ember-appuniversum/pull/469) Add an `isOpenInitially` argument to the `AuAccordion` component ([@Windvis](https://github.com/Windvis))
+* [#464](https://github.com/appuniversum/ember-appuniversum/pull/464) `AuLoader` updates ([@Windvis](https://github.com/Windvis))
+* [#465](https://github.com/appuniversum/ember-appuniversum/pull/465) Fix the responsive flex utilities ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#467](https://github.com/appuniversum/ember-appuniversum/pull/467) Fix a FastBoot issue caused by inputmask ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#468](https://github.com/appuniversum/ember-appuniversum/pull/468) Replace the `@zestia/ember-auto-focus` addon with a simple custom modifier ([@Windvis](https://github.com/Windvis))
+  * ⚠️ If you are using the `{{auto-focus}}` modifier, be sure to check that you have `@zestia/ember-auto-focus` installed in your app as well. You might have accidentally been depending on the one bundled with ember-appuniversum.
+* [#463](https://github.com/appuniversum/ember-appuniversum/pull/463) Partial TypeScript conversion ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 
 ## v3.0.0 (2024-01-12)
 
