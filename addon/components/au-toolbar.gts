@@ -1,6 +1,21 @@
+import type { TOC } from '@ember/component/template-only';
 import Component from '@glimmer/component';
 
-export default class AuToolbar extends Component {
+export interface AuToolbarSignature {
+  Args: {
+    reverse?: boolean;
+    border?: 'top' | 'bottom';
+    skin?: 'tint';
+    size?: 'small' | 'medium' | 'large';
+    nowrap?: boolean;
+  };
+  Blocks: {
+    default: [typeof Group];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuToolbar extends Component<AuToolbarSignature> {
   get reverse() {
     if (this.args.reverse) return 'au-c-toolbar--reverse';
     else return '';
@@ -44,7 +59,14 @@ export default class AuToolbar extends Component {
   </template>
 }
 
-const Group = <template>
+interface GroupSignature {
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+const Group: TOC<GroupSignature> = <template>
   <div class="au-c-toolbar__group" ...attributes>
     {{yield}}
   </div>

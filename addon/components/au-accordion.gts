@@ -1,22 +1,43 @@
-import {
-  AuButton,
-  AuContent,
-  AuIcon,
-  AuLoader,
-  AuToolbar,
-} from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
+import AuButton from './au-button';
+import AuContent from './au-content';
+import AuIcon from './au-icon';
+import AuLoader from './au-loader';
+import AuToolbar from './au-toolbar';
 
-const autofocus = modifier(function autofocus(element) {
+const autofocus = modifier(function autofocus(element: HTMLElement) {
   element.focus();
 });
 
-export default class AuAccordion extends Component {
-  @tracked isOpen = false;
+export interface AuAccordionSignature {
+  Args: {
+    buttonLabel?: string;
+    iconClosed?: string;
+    iconOpen?: string;
+    isOpenInitially?: boolean;
+    loading?: boolean;
+    reverse?: boolean;
+    skin?: 'border';
+    subtitle?: string;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuAccordion extends Component<AuAccordionSignature> {
+  @tracked isOpen;
+
+  constructor(owner: unknown, args: AuAccordionSignature['Args']) {
+    super(owner, args);
+
+    this.isOpen = Boolean(this.args.isOpenInitially);
+  }
 
   get loading() {
     if (this.args.loading) return 'is-loading';
