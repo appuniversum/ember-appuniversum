@@ -1,6 +1,16 @@
 import Component from '@glimmer/component';
 
-export default class AuFormRow extends Component {
+export interface AuFormRowSignature {
+  Args: {
+    alignment?: 'inline' | 'pre' | 'post';
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuFormRow extends Component<AuFormRowSignature> {
   get alignment() {
     if (this.args.alignment == 'inline') return 'au-c-form-row--inline';
     if (this.args.alignment == 'pre')
