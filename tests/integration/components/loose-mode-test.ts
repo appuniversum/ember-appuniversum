@@ -119,6 +119,14 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-heading]').exists();
   });
 
+  test('`<AuHelpText>` resolves in loose mode', async function (assert) {
+    await render(
+      hbs`<AuHelpText data-test-help-text>Some help text</AuHelpText>`,
+    );
+
+    assert.dom('[data-test-help-text]').exists();
+  });
+
   test('`<AuHr>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuHr data-test-hr />`);
 

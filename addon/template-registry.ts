@@ -15,6 +15,7 @@ import type AuContent from '@appuniversum/ember-appuniversum/components/au-conte
 import type AuDateInput from '@appuniversum/ember-appuniversum/components/au-date-input';
 import type AuFormRow from '@appuniversum/ember-appuniversum/components/au-form-row';
 import type AuHeading from '@appuniversum/ember-appuniversum/components/au-heading';
+import type AuHelpText from '@appuniversum/ember-appuniversum/components/au-help-text';
 import type AuHr from '@appuniversum/ember-appuniversum/components/au-hr';
 import type AuIcon from '@appuniversum/ember-appuniversum/components/au-icon';
 import type AuInput from '@appuniversum/ember-appuniversum/components/au-input';
@@ -45,6 +46,7 @@ export default interface AppuniversumRegistry {
   AuDateInput: typeof AuDateInput;
   AuFormRow: typeof AuFormRow;
   AuHeading: typeof AuHeading;
+  AuHelpText: typeof AuHelpText;
   AuHr: typeof AuHr;
   AuIcon: typeof AuIcon;
   AuInput: typeof AuInput;

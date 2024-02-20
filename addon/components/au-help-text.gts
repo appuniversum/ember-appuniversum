@@ -1,6 +1,19 @@
 import Component from '@glimmer/component';
 
-export default class AuHelpText extends Component {
+export interface AuHelpTextSignature {
+  Args: {
+    skin?: 'secondary' | 'tertiary';
+    size?: 'normal' | 'large';
+    error?: boolean;
+    warning?: boolean;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLSpanElement;
+}
+
+export default class AuHelpText extends Component<AuHelpTextSignature> {
   get skin() {
     if (this.args.skin == 'secondary') return 'au-c-help-text--secondary';
     if (this.args.skin == 'tertiary') return 'au-c-help-text--tertiary';
