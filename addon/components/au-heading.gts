@@ -3,7 +3,18 @@ import Component from '@glimmer/component';
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import eq from 'ember-truth-helpers/helpers/eq';
 
-export default class AuHeading extends Component {
+export interface AuHeadingSignature {
+  Args: {
+    level?: '1' | '2' | '3' | '4' | '5' | '6';
+    skin?: '1' | '2' | '3' | '4' | '5' | '6' | 'functional';
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLHeadingElement;
+}
+
+export default class AuHeading extends Component<AuHeadingSignature> {
   get skin() {
     if (this.args.skin == '1') return 'au-c-heading--1';
     if (this.args.skin == '2') return 'au-c-heading--2';
