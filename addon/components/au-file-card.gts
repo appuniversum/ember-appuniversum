@@ -1,9 +1,20 @@
-import { AuHeading, AuIcon } from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
+import AuHeading from './au-heading';
+import AuIcon from './au-icon';
 
-export default class AuFileCard extends Component {
+export interface AuFileCardSignature {
+  Args: {
+    filename: string;
+    fileSize?: string;
+    downloadLink?: string;
+    onDelete?: () => void;
+  };
+  Element: HTMLElement;
+}
+
+export default class AuFileCard extends Component<AuFileCardSignature> {
   get isRemovable() {
     return typeof this.args.onDelete === 'function';
   }
@@ -16,9 +27,9 @@ export default class AuFileCard extends Component {
   }
 
   @action
-  delete(event) {
+  delete(event: Event) {
     event.preventDefault();
-    this.args.onDelete();
+    this.args.onDelete?.();
   }
 
   <template>
