@@ -36,12 +36,12 @@ const TEST_FILE = {
 
 module('Unit | Private Utility | is-valid-file-type', function () {
   test('it returns true if no `accept` value is passed', function (assert) {
-    let file = {
+    const file = {
       name: 'test.png',
       type: 'image/png',
     };
 
-    let isValid = isValidFileType(file, undefined);
+    const isValid = isValidFileType(file, undefined);
     assert.true(isValid);
   });
 
@@ -97,7 +97,7 @@ module('Unit | Private Utility | is-valid-file-type', function () {
   });
 
   test('it supports combining extensions and MIME types', function (assert) {
-    let accept = [MIME_TYPE.IMAGE, MIME_TYPE.VIDEO, '.pdf'].join();
+    const accept = [MIME_TYPE.IMAGE, MIME_TYPE.VIDEO, '.pdf'].join();
 
     assert.true(isValidFileType(TEST_FILE.PNG, accept));
     assert.true(isValidFileType(TEST_FILE.MP4, accept));

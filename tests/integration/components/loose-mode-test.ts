@@ -113,6 +113,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-file-card]').exists();
   });
 
+  test('`<AuFileUpload>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuFileUpload data-test-file-upload />`);
+
+    assert.dom('[data-test-file-upload]').exists();
+  });
+
   test('`<AuFormRow>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuFormRow data-test-form-row />`);
 
