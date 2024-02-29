@@ -27,6 +27,7 @@ export interface AuLoaderSignature {
   Args: {
     inline?: boolean;
     hideMessage?: boolean;
+    centered?: boolean;
     // Deprecated arguments
     disableMessage?: boolean;
     message?: string;
@@ -49,9 +50,17 @@ export default class AuLoader extends Component<AuLoaderSignature> {
     return this.args.message || 'Aan het laden';
   }
 
+  get centered() {
+    if (typeof this.args.centered === 'undefined' || this.args.centered) {
+      return 'au-u-text-center';
+    }
+
+    return '';
+  }
+
   <template>
     {{#if (has-block)}}
-      <div class="au-c-loader au-u-text-center" role="status" ...attributes>
+      <div class="au-c-loader {{this.centered}}" role="status" ...attributes>
         <LoadingAnimation />
         {{#if @inline}}
           <span
