@@ -1,5 +1,17 @@
 
 
+## v3.2.0 (2024-02-29)
+
+#### :rocket: Enhancement
+* [#473](https://github.com/appuniversum/ember-appuniversum/pull/473) Add a `@centered` argument to the `AuLoader` component ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#471](https://github.com/appuniversum/ember-appuniversum/pull/471) More Glint / TS conversion ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.1.0 (2024-02-16)
 
 #### :rocket: Enhancement
