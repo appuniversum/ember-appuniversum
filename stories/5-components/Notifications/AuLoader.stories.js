@@ -15,6 +15,11 @@ export default {
       control: 'boolean',
       description: 'Hide the loading text',
     },
+    centered: {
+      control: 'boolean',
+      description:
+        'Allows you to opt-out of the centered positioning. defaults to `true`',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -26,6 +31,7 @@ const Template = (args) => ({
     <AuLoader
       @inline={{this.inline}}
       @hideMessage={{this.hideMessage}}
+      @centered={{this.centered}}
     >{{this.message}}</AuLoader>`,
   context: args,
 });
@@ -35,4 +41,5 @@ Component.args = {
   message: 'Aan het laden',
   inline: false,
   hideMessage: false,
+  centered: true,
 };
