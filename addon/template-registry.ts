@@ -25,6 +25,7 @@ import type AuLinkExternal from '@appuniversum/ember-appuniversum/components/au-
 import type AuLink from '@appuniversum/ember-appuniversum/components/au-link';
 import type AuList from '@appuniversum/ember-appuniversum/components/au-list';
 import type AuLoader from '@appuniversum/ember-appuniversum/components/au-loader';
+import type AuMainContainer from '@appuniversum/ember-appuniversum/components/au-main-container';
 import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
 
 // Modifiers
@@ -58,6 +59,7 @@ export default interface AppuniversumRegistry {
   AuLink: typeof AuLink;
   AuList: typeof AuList;
   AuLoader: typeof AuLoader;
+  AuMainContainer: typeof AuMainContainer;
   AuToolbar: typeof AuToolbar;
 
   // Modifiers

@@ -1,20 +1,39 @@
+import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import Component from '@glimmer/component';
 
-<template>
-  <main
-    id="main"
-    class="au-c-main-container"
-    tabindex="-1"
-    data-test-main-container
-    ...attributes
-  >
+export interface AuMainContainerSignature {
+  Element: HTMLElement;
+  Blocks: {
+    default: [
+      {
+        sidebar?: typeof Sidebar;
+        content?: typeof Content;
+      },
+    ];
+  };
+}
+
+const AuMainContainer: TOC<AuMainContainerSignature> = <template>
+  <main id="main" class="au-c-main-container" tabindex="-1" ...attributes>
     {{yield (hash sidebar=Sidebar)}}
     {{yield (hash content=Content)}}
   </main>
-</template>
+</template>;
 
-class Sidebar extends Component {
+export default AuMainContainer;
+
+interface SidebarSignature {
+  Args: {
+    size?: 'collapsed' | 'small' | 'large';
+  };
+  Element: HTMLDivElement;
+  Blocks: {
+    default: [];
+  };
+}
+
+class Sidebar extends Component<SidebarSignature> {
   get size() {
     if (this.args.size == 'collapsed')
       return 'au-c-main-container__sidebar--collapsed';
@@ -27,7 +46,6 @@ class Sidebar extends Component {
     {{#if (has-block)}}
       <div
         class="au-c-main-container__sidebar {{this.size}} au-u-hide-on-print"
-        data-test-main-container-sidebar
         ...attributes
       >
         {{yield}}
@@ -36,7 +54,17 @@ class Sidebar extends Component {
   </template>
 }
 
-class Content extends Component {
+interface ContentSignature {
+  Args: {
+    scroll?: boolean;
+  };
+  Element: HTMLDivElement;
+  Blocks: {
+    default: [];
+  };
+}
+
+class Content extends Component<ContentSignature> {
   get scroll() {
     if (this.args.scroll) return 'au-c-main-container__content--scroll';
     return '';
@@ -48,7 +76,6 @@ class Content extends Component {
         id="content"
         class="au-c-main-container__content {{this.scroll}} au-u-wide-on-print"
         tabindex="-1"
-        data-test-main-container-content
         ...attributes
       >
         {{yield}}
