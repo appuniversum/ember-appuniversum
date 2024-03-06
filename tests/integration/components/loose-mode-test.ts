@@ -193,6 +193,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-main-container]').exists();
   });
 
+  test('`<AuMainFooter>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuMainFooter data-test-main-footer />
+    `);
+    assert.dom('[data-test-main-footer]').exists();
+  });
+
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuToolbar data-test-toolbar></AuToolbar>
