@@ -200,6 +200,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-main-footer]').exists();
   });
 
+  test('`<AuMainHeader>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuMainHeader @appTitle="Appuniversum" data-test-main-header />
+    `);
+    assert.dom('[data-test-main-header]').exists();
+  });
+
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuToolbar data-test-toolbar></AuToolbar>
