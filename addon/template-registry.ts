@@ -28,6 +28,7 @@ import type AuLoader from '@appuniversum/ember-appuniversum/components/au-loader
 import type AuMainContainer from '@appuniversum/ember-appuniversum/components/au-main-container';
 import type AuMainFooter from '@appuniversum/ember-appuniversum/components/au-main-footer';
 import type AuMainHeader from '@appuniversum/ember-appuniversum/components/au-main-header';
+import type AuModalContainer from '@appuniversum/ember-appuniversum/components/au-modal-container';
 import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
 
 // Modifiers
@@ -64,6 +65,7 @@ export default interface AppuniversumRegistry {
   AuMainContainer: typeof AuMainContainer;
   AuMainFooter: typeof AuMainFooter;
   AuMainHeader: typeof AuMainHeader;
+  AuModalContainer: typeof AuModalContainer;
   AuToolbar: typeof AuToolbar;
 
   // Modifiers
