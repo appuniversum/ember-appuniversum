@@ -158,6 +158,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-input]').exists();
   });
 
+  test('`<AuLabel>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuLabel data-test-label>Some label</AuLabel>
+    `);
+    assert.dom('[data-test-label]').exists();
+  });
+
   test('`<AuLinkExternal>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuLinkExternal data-test-link-external>Foo</AuLinkExternal>
