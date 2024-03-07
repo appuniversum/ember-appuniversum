@@ -221,6 +221,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-navigation-link]').exists();
   });
 
+  test('`<AuPanel>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuPanel data-test-panel />
+    `);
+    assert.dom('[data-test-panel]').exists();
+  });
+
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuToolbar data-test-toolbar></AuToolbar>
