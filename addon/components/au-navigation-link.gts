@@ -4,7 +4,20 @@ import { action } from '@ember/object';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
 
-export default class AuNavigationLink extends Component {
+export interface AuNavigationLinkSignature {
+  Args: {
+    model?: unknown;
+    models?: unknown[];
+    query?: Record<string, unknown>;
+    route: string;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLAnchorElement; // TODO: Retrieve this from the LinkTo component types in some way
+}
+
+export default class AuNavigationLink extends Component<AuNavigationLinkSignature> {
   // this is a workaround for https://github.com/emberjs/ember.js/issues/19693
   get queryParams() {
     if (this.args.query) {
@@ -16,8 +29,7 @@ export default class AuNavigationLink extends Component {
 
   @action
   linkFocus() {
-    // Focus content window
-    document.querySelectorAll('#content')[0].focus();
+    document.querySelector<HTMLElement>('#content')?.focus?.();
   }
 
   <template>
