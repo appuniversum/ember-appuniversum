@@ -228,6 +228,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-panel]').exists();
   });
 
+  test('`<AuPill>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuPill data-test-pill />
+    `);
+    assert.dom('[data-test-pill]').exists();
+  });
+
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuToolbar data-test-toolbar></AuToolbar>
