@@ -107,6 +107,12 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-date-input]').exists();
   });
 
+  test('`<AuFieldset>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuFieldset data-test-fieldset />`);
+
+    assert.dom('[data-test-fieldset]').exists();
+  });
+
   test('`<AuFileCard>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuFileCard @filename="test.txt" data-test-file-card />`);
 
