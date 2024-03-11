@@ -24,7 +24,7 @@ export default class AuAlert extends Component<AuAlertSignature> {
   @tracked isVisible = true;
 
   get skin() {
-    let skin = this.args.skin;
+    const { skin } = this.args;
 
     if (skin === 'info') return 'au-c-alert--info';
     if (skin === 'success') return 'au-c-alert--success';
@@ -34,7 +34,7 @@ export default class AuAlert extends Component<AuAlertSignature> {
   }
 
   get size() {
-    let size = this.args.size;
+    const { size } = this.args;
     if (size === 'tiny') return 'au-c-alert--tiny';
     if (size === 'small') return 'au-c-alert--small';
     return '';
