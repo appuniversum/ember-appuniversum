@@ -85,7 +85,7 @@ export default class AuModal extends Component {
 
   <template>
     {{#if @modalOpen}}
-      {{#in-element this.destinationElement}}
+      {{#in-element this.destinationElement insertBefore=null}}
         <div class="au-c-modal-backdrop {{if @modalOpen 'is-visible'}}"></div>
         <div
           id="{{@id}}"
