@@ -1,17 +1,51 @@
-import { AuAlert, AuHelpText, AuIcon } from '@appuniversum/ember-appuniversum';
 import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import { inject as service } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { task } from 'ember-concurrency';
-import perform from 'ember-concurrency/helpers/perform';
 import FileDropzone from 'ember-file-upload/components/file-dropzone';
 import fileQueue from 'ember-file-upload/helpers/file-queue';
+import type { FileQueueService, UploadFile } from 'ember-file-upload';
+import AuAlert from './au-alert';
+import AuHelpText from './au-help-text';
+import AuIcon from './au-icon';
 
-export default class AuFileUpload extends Component {
-  @service fileQueue;
-  @tracked uploadErrorData = [];
+export interface AuFileUploadSignature {
+  Args: {
+    accept?: string;
+    endPoint?: string;
+    helpTextDragDrop?: string;
+    helpTextFileNotSupported?: string;
+    maxFileSizeMB?: number;
+    multiple?: boolean;
+    onFinishUpload?: (uploadedFile: number, queueInfo: QueueInfo) => void;
+    onQueueUpdate?: (queueInfo: QueueInfo) => void;
+    title?: string;
+  };
+  // ember-file-upload doesn't seem to expose the signature of the FileDropzone component
+  // We just hardcode what they have defined in the addon for now.
+  Element: HTMLElement;
+}
+
+export type QueueInfo = {
+  isQueueEmpty: boolean;
+};
+
+// A simpler version of the File and UploadFile types
+type BasicFile = {
+  name: string;
+  type: string;
+};
+
+type UploadError = {
+  filename: string;
+  error?: string;
+};
+
+export default class AuFileUpload extends Component<AuFileUploadSignature> {
+  @service declare fileQueue: FileQueueService;
+  @tracked uploadErrorData: UploadError[] = [];
 
   get uploadingMsg() {
     return `Bezig met het opladen van ${this.queue.files.length} bestand(en). (${this.queue.progress}%)`;
@@ -55,37 +89,43 @@ export default class AuFileUpload extends Component {
     return this.uploadErrorData.length > 0;
   }
 
-  @task
-  *upload(file) {
+  @action
+  upload(file: UploadFile): void | undefined {
+    this.uploadTask.perform(file);
+  }
+
+  uploadTask = task(async (file: UploadFile) => {
     this.resetErrors();
-    let uploadedFile = yield this.uploadFileTask.perform(file);
+    const uploadedFile = await this.uploadFileTask.perform(file);
 
     this.notifyQueueUpdate();
 
     if (uploadedFile && this.args.onFinishUpload)
       this.args.onFinishUpload(uploadedFile, this.calculateQueueInfo());
-  }
+  });
 
-  @task({ enqueue: true, maxConcurrency: 3 })
-  *uploadFileTask(file) {
-    this.notifyQueueUpdate();
-    try {
-      const response = yield file.upload(this.endPoint, {
-        'Content-Type': 'multipart/form-data',
-      });
-      const body = yield response.json();
-      const fileId = body?.data?.id;
-      return fileId;
-    } catch (e) {
-      this.addError(file);
-      this.removeFileFromQueue(file);
-      return null;
-    }
-  }
+  uploadFileTask = task(
+    { enqueue: true, maxConcurrency: 3 },
+    async (file: UploadFile): Promise<number | null> => {
+      this.notifyQueueUpdate();
+      try {
+        const response = await file.upload(this.endPoint, {
+          contentType: 'multipart/form-data',
+        });
+        const body = await response.json();
+        const fileId = body?.data?.id;
+        return fileId;
+      } catch (e) {
+        this.addError(file);
+        this.removeFileFromQueue(file);
+        return null;
+      }
+    },
+  );
 
   @action
-  filter(file, files, index) {
-    let isFirstFile = index === 0;
+  filter(file: File, files: File[], index: number) {
+    const isFirstFile = index === 0;
 
     if (isFirstFile) {
       this.resetErrors();
@@ -115,14 +155,14 @@ export default class AuFileUpload extends Component {
     }
   }
 
-  calculateQueueInfo() {
+  calculateQueueInfo(): QueueInfo {
     const filesQueueInfo = {
       isQueueEmpty: this.uploadFileTask.isIdle,
     };
     return filesQueueInfo;
   }
 
-  addError(file, errorMessage) {
+  addError(file: BasicFile, errorMessage?: string) {
     this.uploadErrorData = [
       ...this.uploadErrorData,
       {
@@ -136,13 +176,13 @@ export default class AuFileUpload extends Component {
     this.uploadErrorData = [];
   }
 
-  removeFileFromQueue(file) {
+  removeFileFromQueue(file: UploadFile) {
     this.queue.remove(file);
   }
 
   <template>
     {{#let
-      (fileQueue name=this.queueName onFileAdded=(perform this.upload))
+      (fileQueue name=this.queueName onFileAdded=this.uploadTask.perform)
       as |queue|
     }}
       <FileDropzone
@@ -212,39 +252,39 @@ export default class AuFileUpload extends Component {
 }
 
 // Private util that is exported for testing purposes
-export function isValidFileType(file, accept) {
+export function isValidFileType(file: Partial<BasicFile>, accept?: string) {
   if (!accept) {
     return true;
   }
 
-  let tokens = accept.split(',').map(function (token) {
+  const tokens = accept.split(',').map(function (token) {
     return token.trim().toLowerCase();
   });
 
-  let validMimeTypes = tokens.filter(function (token) {
+  const validMimeTypes = tokens.filter(function (token) {
     return !token.startsWith('.');
   });
-  let type = file.type?.toLowerCase();
+  const type = file.type?.toLowerCase();
 
-  let validExtensions = tokens.filter(function (token) {
+  const validExtensions = tokens.filter(function (token) {
     return token.startsWith('.');
   });
 
   let extension = null;
   if (file.name && /(\.[^.]+)$/.test(file.name)) {
-    extension = file.name.toLowerCase().match(/(\.[^.]+)$/)[1];
+    extension = file.name.toLowerCase().match(/(\.[^.]+)$/)?.[1];
   }
 
   return (
-    isValidMimeType(type, validMimeTypes) ||
-    isValidExtension(extension, validExtensions)
+    (!!type && isValidMimeType(type, validMimeTypes)) ||
+    (!!extension && isValidExtension(extension, validExtensions))
   );
 }
 
-function isValidMimeType(type, validMimeTypes = []) {
+function isValidMimeType(type: string, validMimeTypes: string[] = []) {
   return validMimeTypes.some(function (validType) {
     if (['audio/*', 'video/*', 'image/*'].includes(validType)) {
-      let genericType = validType.split('/')[0];
+      const genericType = validType.split('/')[0] as string;
 
       return type.startsWith(genericType);
     } else {
@@ -253,10 +293,13 @@ function isValidMimeType(type, validMimeTypes = []) {
   });
 }
 
-function isValidExtension(extension, validExtensions = []) {
+function isValidExtension(
+  extension: string,
+  validExtensions: string[] = [],
+): boolean {
   return validExtensions.includes(extension);
 }
 
-function isValidFileSize(fileSize, maximumSize) {
+function isValidFileSize(fileSize: number, maximumSize: number): boolean {
   return fileSize < maximumSize * Math.pow(1024, 2);
 }

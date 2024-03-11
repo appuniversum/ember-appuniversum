@@ -1,18 +1,33 @@
-import { AuBrand, AuLink } from '@appuniversum/ember-appuniversum';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { LinkTo } from '@ember/routing';
-import { inject as service } from '@ember/service';
+import type RouterService from '@ember/routing/router-service';
+import { service } from '@ember/service';
 import Component from '@glimmer/component';
+import AuBrand from './au-brand';
+import AuLink from './au-link';
 
-export default class AuMainHeader extends Component {
+export interface AuMainHeaderSignature {
+  Args: {
+    appTitle: string;
+    brandLink?: string;
+    contactRoute?: string;
+    homeRoute?: string;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLElement;
+}
+
+export default class AuMainHeader extends Component<AuMainHeaderSignature> {
   @action
   headerLinkFocus() {
-    document.querySelector('#main')?.focus();
+    document.querySelector<HTMLElement>('#main')?.focus();
   }
 
   <template>
-    <header class="au-c-main-header">
+    <header class="au-c-main-header" ...attributes>
       <div class="au-c-main-header__title-group">
         <NavigationNarrator />
         <AuBrand @link="{{@brandLink}}" />
@@ -56,7 +71,7 @@ export default class AuMainHeader extends Component {
 }
 
 class NavigationNarrator extends Component {
-  @service router;
+  @service declare router: RouterService;
 
   get activeRoute() {
     return 'Nieuwe pagina: ' + this.router.currentRouteName;

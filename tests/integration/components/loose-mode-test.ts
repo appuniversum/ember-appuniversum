@@ -107,6 +107,24 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-date-input]').exists();
   });
 
+  test('`<AuFieldset>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuFieldset data-test-fieldset />`);
+
+    assert.dom('[data-test-fieldset]').exists();
+  });
+
+  test('`<AuFileCard>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuFileCard @filename="test.txt" data-test-file-card />`);
+
+    assert.dom('[data-test-file-card]').exists();
+  });
+
+  test('`<AuFileUpload>` resolves in loose mode', async function (assert) {
+    await render(hbs`<AuFileUpload data-test-file-upload />`);
+
+    assert.dom('[data-test-file-upload]').exists();
+  });
+
   test('`<AuFormRow>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuFormRow data-test-form-row />`);
 
@@ -146,6 +164,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-input]').exists();
   });
 
+  test('`<AuLabel>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuLabel data-test-label>Some label</AuLabel>
+    `);
+    assert.dom('[data-test-label]').exists();
+  });
+
   test('`<AuLinkExternal>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuLinkExternal data-test-link-external>Foo</AuLinkExternal>
@@ -172,6 +197,55 @@ module('Integration | Component | Loose mode', function (hooks) {
       <AuLoader data-test-loader></AuLoader>
     `);
     assert.dom('[data-test-loader]').exists();
+  });
+
+  test('`<AuMainContainer>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuMainContainer data-test-main-container />
+    `);
+    assert.dom('[data-test-main-container]').exists();
+  });
+
+  test('`<AuMainFooter>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuMainFooter data-test-main-footer />
+    `);
+    assert.dom('[data-test-main-footer]').exists();
+  });
+
+  test('`<AuMainHeader>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuMainHeader @appTitle="Appuniversum" data-test-main-header />
+    `);
+    assert.dom('[data-test-main-header]').exists();
+  });
+
+  test('`<AuModalContainer>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuModalContainer data-test-modal-container />
+    `);
+    assert.dom('[data-test-modal-container]').exists();
+  });
+
+  test('`<AuNavigationLink>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuNavigationLink @route="index" data-test-navigation-link>Foo</AuNavigationLink>
+    `);
+    assert.dom('[data-test-navigation-link]').exists();
+  });
+
+  test('`<AuPanel>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuPanel data-test-panel />
+    `);
+    assert.dom('[data-test-panel]').exists();
+  });
+
+  test('`<AuPill>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuPill data-test-pill />
+    `);
+    assert.dom('[data-test-pill]').exists();
   });
 
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {

@@ -1,7 +1,22 @@
 import Component from '@glimmer/component';
-import { AuBadge, AuPill } from '@appuniversum/ember-appuniversum';
+import AuBadge from './au-badge';
+import AuPill from './au-pill';
 
-export default class AuLabel extends Component {
+export interface AuLabelSignature {
+  Args: {
+    error?: boolean;
+    inline?: boolean;
+    required?: boolean;
+    requiredLabel?: string;
+    warning?: boolean;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLLabelElement;
+}
+
+export default class AuLabel extends Component<AuLabelSignature> {
   get inline() {
     if (this.args.inline) return 'au-c-label--inline';
     else return '';

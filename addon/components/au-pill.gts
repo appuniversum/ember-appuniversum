@@ -1,16 +1,39 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
-import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
 import { on } from '@ember/modifier';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
-
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import eq from 'ember-truth-helpers/helpers/eq';
-import notEq from 'ember-truth-helpers/helpers/not-eq';
+import AuIcon from './au-icon';
+import linkToModels from '../private/helpers/link-to-models';
 
 const PILL_SIZES = ['small'];
 
-export default class AuPill extends Component {
+export interface AuPillSignature {
+  Args: {
+    actionIcon?: string;
+    actionText?: string;
+    draft?: boolean;
+    href?: string;
+    model?: unknown;
+    models?: unknown[];
+    onClickAction?: () => void;
+    route?: string;
+    size?: 'small';
+    skin?:
+      | 'action'
+      | 'border'
+      | 'error'
+      | 'link'
+      | 'ongoing'
+      | 'success'
+      | 'warning';
+    query?: Record<string, unknown>;
+  } & InnerSignature['Args'];
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLSpanElement | HTMLAnchorElement;
+}
+
+export default class AuPill extends Component<AuPillSignature> {
   get skin() {
     if (this.args.skin == 'border') return 'au-c-pill--border';
     if (this.args.skin == 'action') return 'au-c-pill--ongoing';
@@ -23,13 +46,13 @@ export default class AuPill extends Component {
   }
 
   get size() {
-    if (PILL_SIZES.includes(this.args.size))
+    if (this.args.size && PILL_SIZES.includes(this.args.size))
       return `au-c-pill--${this.args.size}`;
     return '';
   }
 
   get actionSize() {
-    if (PILL_SIZES.includes(this.args.size))
+    if (this.args.size && PILL_SIZES.includes(this.args.size))
       return `au-c-pill-action--${this.args.size}`;
     return '';
   }
@@ -66,7 +89,7 @@ export default class AuPill extends Component {
           type="button"
           {{on "click" @onClickAction}}
         >
-          <AuIcon @icon={{@actionIcon}} />
+          {{#if @actionIcon}}<AuIcon @icon={{@actionIcon}} />{{/if}}
           <span class="au-u-hidden-visually">{{@actionText}}</span>
         </button>
       </span>
@@ -119,20 +142,41 @@ export default class AuPill extends Component {
   </template>
 }
 
-const Inner = <template>
-  {{#if @icon}}
-    {{#if (notEq @iconAlignment "right")}}
-      <AuIcon @icon={{@icon}} />
+interface InnerSignature {
+  Args: {
+    icon?: string;
+    iconAlignment?: 'left' | 'right';
+    hideText?: boolean;
+  };
+  Blocks: {
+    default: [];
+  };
+}
+
+class Inner extends Component<InnerSignature> {
+  get isIconLeft() {
+    return !!this.args.icon && this.args.iconAlignment !== 'right';
+  }
+
+  get isIconRight() {
+    return !!this.args.icon && this.args.iconAlignment === 'right';
+  }
+
+  <template>
+    {{#if @icon}}
+      {{#if this.isIconLeft}}
+        <AuIcon @icon={{@icon}} />
+      {{/if}}
     {{/if}}
-  {{/if}}
-  {{#if @hideText}}
-    <span class="au-u-hidden-visually">{{yield}}</span>
-  {{else}}
-    {{yield}}
-  {{/if}}
-  {{#if @icon}}
-    {{#if (eq @iconAlignment "right")}}
-      <AuIcon @icon={{@icon}} />
+    {{#if @hideText}}
+      <span class="au-u-hidden-visually">{{yield}}</span>
+    {{else}}
+      {{yield}}
     {{/if}}
-  {{/if}}
-</template>;
+    {{#if @icon}}
+      {{#if this.isIconRight}}
+        <AuIcon @icon={{@icon}} />
+      {{/if}}
+    {{/if}}
+  </template>
+}

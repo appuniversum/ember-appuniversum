@@ -1,8 +1,25 @@
-import { AuBadge, AuPill } from '@appuniversum/ember-appuniversum';
+import type { TOC } from '@ember/component/template-only';
 import { hash } from '@ember/helper';
 import Component from '@glimmer/component';
+import AuBadge from './au-badge';
+import AuPill from './au-pill';
 
-export default class AuFieldset extends Component {
+export interface AuFieldsetSignature {
+  Args: {
+    alignment?: 'inline';
+  };
+  Blocks: {
+    default: [
+      {
+        legend?: typeof Legend;
+        content?: typeof Content;
+      },
+    ];
+  };
+  Element: HTMLFieldSetElement;
+}
+
+export default class AuFieldset extends Component<AuFieldsetSignature> {
   get alignment() {
     if (this.args.alignment == 'inline') return 'au-c-fieldset--inline';
     else return '';
@@ -16,7 +33,22 @@ export default class AuFieldset extends Component {
   </template>
 }
 
-class Legend extends Component {
+interface LegendSignature {
+  Args: {
+    error?: boolean;
+    inline?: boolean;
+    required?: boolean;
+    requiredLabel?: string;
+    skin?: '1' | '2' | '3' | '4' | '5' | '6' | 'functional';
+    warning?: boolean;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+class Legend extends Component<LegendSignature> {
   get skin() {
     if (this.args.skin == '1') return 'au-u-h1';
     if (this.args.skin == '2') return 'au-u-h2';
@@ -86,7 +118,13 @@ class Legend extends Component {
   </template>
 }
 
-const Content = <template>
+interface ContentSignature {
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+const Content: TOC<ContentSignature> = <template>
   {{#if (has-block)}}
     <div class="au-c-fieldset__content" ...attributes>
       {{yield}}
