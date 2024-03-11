@@ -89,7 +89,7 @@ module('Integration | Component | au-main-container', function (hooks) {
       </template>,
     );
 
-    let containerElement = document.querySelector(
+    const containerElement = document.querySelector(
       MAIN_CONTAINER.CONTENT,
     ) as HTMLElement;
     assert.notStrictEqual(
