@@ -5,6 +5,7 @@ import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { focusTrap } from 'ember-focus-trap';
+import { cn } from '../private/helpers/class-names';
 
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import not from 'ember-truth-helpers/helpers/not';
@@ -33,7 +34,7 @@ export default class AuModal extends Component {
   }
 
   get padding() {
-    if (this.args.padding === 'none') return ' au-c-modal--flush';
+    if (this.args.padding === 'none') return 'au-c-modal--flush';
     else return '';
   }
 
@@ -89,12 +90,12 @@ export default class AuModal extends Component {
         <div class="au-c-modal-backdrop {{if @modalOpen 'is-visible'}}"></div>
         <div
           id="{{@id}}"
-          class={{concat
-            "au-c-modal "
+          class={{cn
+            "au-c-modal"
             this.size
             this.padding
             this.overflow
-            (if @modalOpen " is-visible")
+            (if @modalOpen "is-visible")
           }}
           role="dialog"
           aria-describedby={{concat "au-c-modal-title-" @id}}
