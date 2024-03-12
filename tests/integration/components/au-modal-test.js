@@ -248,4 +248,19 @@ module('Integration | Component | au-modal', function (hooks) {
     await click(closeButton);
     assert.strictEqual(timesCalled, 1);
   });
+
+  test('it can render multiple modals at once', async function (assert) {
+    await render(hbs`
+      <AuModalContainer />
+      <AuModal @modalOpen={{true}}>
+        <div data-test-content-one>One!</div>
+      </AuModal>
+      <AuModal @modalOpen={{true}}>
+        <div data-test-content-two>Two!</div>
+      </AuModal>
+    `);
+
+    assert.dom('[data-test-content-one]').containsText('One!');
+    assert.dom('[data-test-content-two]').containsText('Two!');
+  });
 });
