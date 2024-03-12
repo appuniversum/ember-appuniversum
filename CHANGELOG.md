@@ -1,5 +1,15 @@
 
 
+
+## v3.3.1 (2024-03-12)
+
+#### :bug: Bug Fix
+* [#479](https://github.com/appuniversum/ember-appuniversum/pull/479) Fix incompatibilities between some `AuModal` arguments ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.3.0 (2024-03-12)
 
 #### :rocket: Enhancement
