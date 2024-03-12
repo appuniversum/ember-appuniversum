@@ -6,7 +6,11 @@
    ========================================================================== */
 
 $au-modal-z-index: 9999 !default;
-$au-modal-backdrop-z-index: 9998 !default;
+$au-modal-backdrop-z-index: $au-modal-z-index !default;
+
+@if $au-modal-z-index != $au-modal-backdrop-z-index {
+  @warn "DEPRECATED $au-modal-backdrop-z-index. This property has been deprecated and $au-modal-z-index and $au-modal-backdrop-z-index have different values. This will result in unexpected behavior when showing multiple modals.";
+}
 
 /* Component
   ========================================================================== */
