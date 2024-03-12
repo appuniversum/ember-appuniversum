@@ -1,5 +1,18 @@
 
 
+## v3.3.0 (2024-03-12)
+
+#### :rocket: Enhancement
+* [#476](https://github.com/appuniversum/ember-appuniversum/pull/476) Add support for displaying multiple modals at the same time ([@Rahien](https://github.com/Rahien))
+
+#### :house: Internal
+* [#474](https://github.com/appuniversum/ember-appuniversum/pull/474) More Glint / TS conversion ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Karel Kremer ([@Rahien](https://github.com/Rahien))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.2.0 (2024-02-29)
 
 #### :rocket: Enhancement
