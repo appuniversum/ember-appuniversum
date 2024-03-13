@@ -6,7 +6,7 @@ import { tracked } from '@glimmer/tracking';
 import AuBadge from './au-badge';
 import AuButton from './au-button';
 import AuContent, { type AuContentSignature } from './au-content';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 
 export interface AuCardSignature {
   Args: {
@@ -188,7 +188,7 @@ export default class AuCard extends Component<AuCardSignature> {
 
 interface HeaderSignature {
   Args: {
-    badgeIcon?: string;
+    badgeIcon?: AuIconSignature['Args']['icon'];
     badgeNumber?: number;
     badgeSize?: 'small';
     badgeSkin?: 'border' | 'action' | 'brand' | 'success' | 'warning' | 'error';

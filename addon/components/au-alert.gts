@@ -2,12 +2,12 @@ import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 
 export interface AuAlertSignature {
   Args: {
     closable?: boolean;
-    icon?: string;
+    icon?: AuIconSignature['Args']['icon'];
     iconVisible?: boolean;
     onClose?: () => void;
     size?: 'tiny' | 'small';

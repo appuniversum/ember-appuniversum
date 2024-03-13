@@ -1,11 +1,11 @@
 import Component from '@glimmer/component';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 
 export interface AuInputSignature {
   Args: {
     disabled?: boolean;
     error?: boolean;
-    icon?: string;
+    icon?: AuIconSignature['Args']['icon'];
     iconAlignment?: 'left' | 'right';
     warning?: boolean;
     width?: 'block';
