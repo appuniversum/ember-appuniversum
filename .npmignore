@@ -1,3 +1,6 @@
+# build scripts
+/lib/generate-icon-components.mjs
+
 # compiled output
 /dist/
 /tmp/
