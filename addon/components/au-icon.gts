@@ -7,10 +7,10 @@ export interface AuIconSignature {
     alignment?: 'left' | 'right';
     // TODO: We should deprecate the non-boolean versions since there is no reason to support them
     ariaHidden?: boolean | 'true' | 'false';
-    icon: string | ComponentLike<Record<string, never>>;
+    icon: string | ComponentLike<{ Element: Element }>;
     size?: 'large';
   };
-  Element: SVGSVGElement;
+  Element: Element;
 }
 
 export default class AuIcon extends Component<AuIconSignature> {
@@ -47,10 +47,10 @@ export default class AuIcon extends Component<AuIconSignature> {
   <template>
     {{#if this.iconComponent}}
       {{#let this.iconComponent as |Icon|}}
-        {{! @glint-expect-error: glint doesn't like us setting attributes on the passed component }}
         <Icon
           class="au-c-icon {{this.alignment}} {{this.size}}"
           aria-hidden={{this.ariaHidden}}
+          ...attributes
         />
       {{/let}}
     {{else}}

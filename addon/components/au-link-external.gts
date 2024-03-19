@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 
 const SKIN_CLASSES = {
   primary: 'au-c-link',
@@ -12,7 +12,7 @@ const SKIN_CLASSES = {
 export interface AuLinkExternalSignature {
   Args: {
     hideText?: boolean;
-    icon?: string;
+    icon?: AuIconSignature['Args']['icon'];
     iconAlignment?: 'left' | 'right';
     skin?:
       | 'primary'

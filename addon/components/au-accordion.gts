@@ -5,7 +5,7 @@ import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
 import AuButton from './au-button';
 import AuContent from './au-content';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 import AuLoader from './au-loader';
 import AuToolbar from './au-toolbar';
 
@@ -16,8 +16,8 @@ const autofocus = modifier(function autofocus(element: HTMLElement) {
 export interface AuAccordionSignature {
   Args: {
     buttonLabel?: string;
-    iconClosed?: string;
-    iconOpen?: string;
+    iconClosed?: AuIconSignature['Args']['icon'];
+    iconOpen?: AuIconSignature['Args']['icon'];
     isOpenInitially?: boolean;
     loading?: boolean;
     reverse?: boolean;
