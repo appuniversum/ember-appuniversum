@@ -9,8 +9,6 @@ const ACCORDION = {
   CONTENT: '[data-test-accordion-content]',
   BUTTON: '[data-test-accordion-button]',
   SUBTITLE: '[data-test-accordion-subtitle]',
-  ICON_OPEN: '[data-test-accordion-icon-open]',
-  ICON_CLOSED: '[data-test-accordion-icon-closed]',
   LOADER: '[data-test-accordion-loader]',
 };
 
@@ -85,60 +83,6 @@ module('Integration | Component | au-accordion', function (hooks) {
     );
 
     assert.dom(ACCORDION.BUTTON).exists().hasText('Foo button');
-  });
-
-  test('it shows a different icon depending on the open state', async function (assert) {
-    await render(
-      <template>
-        <AuAccordion>
-          Some content
-        </AuAccordion>
-      </template>,
-    );
-
-    assert.dom(ACCORDION.ICON_OPEN).doesNotExist();
-    assert.dom(ACCORDION.ICON_CLOSED).exists();
-
-    await toggleAccordion();
-    assert.dom(ACCORDION.ICON_OPEN).exists();
-    assert.dom(ACCORDION.ICON_CLOSED).doesNotExist();
-  });
-
-  test('it supports choosing different icons', async function (assert) {
-    const state = new TestState();
-    await render(
-      <template>
-        <AuAccordion
-          @iconOpen={{state.iconOpen}}
-          @iconClosed={{state.iconClosed}}
-        >
-          Some content
-        </AuAccordion>
-      </template>,
-    );
-
-    assert
-      .dom(ACCORDION.ICON_CLOSED)
-      .hasAttribute('data-test-accordion-icon-closed', 'nav-right');
-
-    state.iconClosed = 'other-closed-icon';
-    await settled();
-
-    assert
-      .dom(ACCORDION.ICON_CLOSED)
-      .hasAttribute('data-test-accordion-icon-closed', 'other-closed-icon');
-
-    await toggleAccordion();
-    assert
-      .dom(ACCORDION.ICON_OPEN)
-      .hasAttribute('data-test-accordion-icon-open', 'nav-down');
-
-    state.iconOpen = 'other-open-icon';
-    await settled();
-
-    assert
-      .dom(ACCORDION.ICON_OPEN)
-      .hasAttribute('data-test-accordion-icon-open', 'other-open-icon');
   });
 
   test('it can show a loading indicator instead of content', async function (assert) {

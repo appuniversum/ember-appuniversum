@@ -101,23 +101,12 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
           </div>
         </Group>
         <Group>
-          {{#if this.isOpen}}
-            <AuIcon
-              @icon={{this.iconOpen}}
-              @alignment="left"
-              @size="large"
-              @ariaHidden={{true}}
-              data-test-accordion-icon-open={{this.iconOpen}}
-            />
-          {{else}}
-            <AuIcon
-              @icon={{this.iconClosed}}
-              @alignment="left"
-              @size="large"
-              @ariaHidden={{true}}
-              data-test-accordion-icon-closed={{this.iconClosed}}
-            />
-          {{/if}}
+          <AuIcon
+            @icon={{if this.isOpen this.iconOpen this.iconClosed}}
+            @alignment="left"
+            @size="large"
+            @ariaHidden={{true}}
+          />
         </Group>
       </AuToolbar>
       {{#if this.isOpen}}
