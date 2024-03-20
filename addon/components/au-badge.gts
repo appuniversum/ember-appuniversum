@@ -1,9 +1,9 @@
 import Component from '@glimmer/component';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 
 export interface AuBadgeSignature {
   Args: {
-    icon?: string;
+    icon?: AuIconSignature['Args']['icon'];
     iconVisible?: boolean;
     number?: number;
     size?: 'small';

@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 import { LoadingAnimation } from '../private/components/loading-animation';
 
 const SKINS = [
@@ -15,7 +15,7 @@ export interface AuButtonSignature {
     alert?: boolean;
     disabled?: boolean;
     hideText?: boolean;
-    icon?: string;
+    icon?: AuIconSignature['Args']['icon'];
     iconAlignment?: 'left' | 'right';
     loading?: boolean;
     loadingMessage?: string;

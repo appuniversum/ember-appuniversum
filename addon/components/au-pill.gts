@@ -1,14 +1,14 @@
 import { on } from '@ember/modifier';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 import linkToModels from '../private/helpers/link-to-models';
 
 const PILL_SIZES = ['small'];
 
 export interface AuPillSignature {
   Args: {
-    actionIcon?: string;
+    actionIcon?: AuIconSignature['Args']['icon'];
     actionText?: string;
     draft?: boolean;
     href?: string;
@@ -144,7 +144,7 @@ export default class AuPill extends Component<AuPillSignature> {
 
 interface InnerSignature {
   Args: {
-    icon?: string;
+    icon?: AuIconSignature['Args']['icon'];
     iconAlignment?: 'left' | 'right';
     hideText?: boolean;
   };

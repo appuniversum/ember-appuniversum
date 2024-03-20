@@ -1,15 +1,16 @@
 import { getOwner } from '@ember/owner';
 import Component from '@glimmer/component';
+import { type ComponentLike } from '@glint/template';
 
 export interface AuIconSignature {
   Args: {
     alignment?: 'left' | 'right';
     // TODO: We should deprecate the non-boolean versions since there is no reason to support them
     ariaHidden?: boolean | 'true' | 'false';
-    icon: string;
+    icon: string | ComponentLike<{ Element: Element }>;
     size?: 'large';
   };
-  Element: SVGSVGElement;
+  Element: Element;
 }
 
 export default class AuIcon extends Component<AuIconSignature> {
@@ -39,16 +40,30 @@ export default class AuIcon extends Component<AuIconSignature> {
     }
   }
 
+  get iconComponent() {
+    return typeof this.args.icon !== 'string' && this.args.icon;
+  }
+
   <template>
-    <svg
-      role="img"
-      class="au-c-icon au-c-icon--{{@icon}} {{this.alignment}} {{this.size}}"
-      aria-hidden={{this.ariaHidden}}
-      ...attributes
-    >
-      <use
-        xlink:href="{{this.iconPrefix}}@appuniversum/ember-appuniversum/appuniversum-symbolset.svg#{{@icon}}"
-      ></use>
-    </svg>
+    {{#if this.iconComponent}}
+      {{#let this.iconComponent as |Icon|}}
+        <Icon
+          class="au-c-icon {{this.alignment}} {{this.size}}"
+          aria-hidden={{this.ariaHidden}}
+          ...attributes
+        />
+      {{/let}}
+    {{else}}
+      <svg
+        role="img"
+        class="au-c-icon au-c-icon--{{@icon}} {{this.alignment}} {{this.size}}"
+        aria-hidden={{this.ariaHidden}}
+        ...attributes
+      >
+        <use
+          xlink:href="{{this.iconPrefix}}@appuniversum/ember-appuniversum/appuniversum-symbolset.svg#{{@icon}}"
+        ></use>
+      </svg>
+    {{/if}}
   </template>
 }

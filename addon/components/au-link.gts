@@ -1,6 +1,6 @@
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
-import AuIcon from './au-icon';
+import AuIcon, { type AuIconSignature } from './au-icon';
 import linkToModels from '../private/helpers/link-to-models';
 
 const SKIN_CLASSES = {
@@ -22,7 +22,7 @@ export interface AuLinkSignature {
       | 'button-naked';
     width?: 'block';
     query?: Record<string, unknown>;
-    icon?: string;
+    icon?: AuIconSignature['Args']['icon'];
     route: string;
     hideText?: boolean;
     model?: unknown;
