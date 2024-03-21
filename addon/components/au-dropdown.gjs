@@ -7,6 +7,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { focusTrap } from 'ember-focus-trap';
 import { modifier } from 'ember-modifier';
+import { ChevronDownIcon } from './icons/chevron-down';
 
 export default class AuDropdown extends Component {
   @tracked referenceElement = undefined;
@@ -72,7 +73,7 @@ export default class AuDropdown extends Component {
 
   get icon() {
     if (this.args.icon) return this.args.icon;
-    else return 'chevron-down';
+    else return ChevronDownIcon;
   }
 
   get iconAlignment() {

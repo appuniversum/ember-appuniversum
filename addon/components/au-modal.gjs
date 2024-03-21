@@ -5,6 +5,7 @@ import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { focusTrap } from 'ember-focus-trap';
+import { CrossIcon } from './icons/cross';
 import { cn } from '../private/helpers/class-names';
 
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
@@ -133,7 +134,7 @@ export default class AuModal extends Component {
               data-test-modal-close
               {{on "click" this.handleCloseClick}}
             >
-              <AuIcon @icon="cross" @size="large" />
+              <AuIcon @icon={{CrossIcon}} @size="large" />
               <span class="au-u-hidden-visually">Venster sluiten</span>
             </button>
           </div>

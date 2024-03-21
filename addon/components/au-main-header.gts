@@ -6,6 +6,7 @@ import { service } from '@ember/service';
 import Component from '@glimmer/component';
 import AuBrand from './au-brand';
 import AuLink from './au-link';
+import { QuestionCircleIcon } from './icons/question-circle';
 
 export interface AuMainHeaderSignature {
   Args: {
@@ -55,7 +56,7 @@ export default class AuMainHeader extends Component<AuMainHeaderSignature> {
               <AuLink
                 @route={{@contactRoute}}
                 @skin="secondary"
-                @icon="question-circle"
+                @icon={{QuestionCircleIcon}}
               >
                 Contacteer ons
               </AuLink>

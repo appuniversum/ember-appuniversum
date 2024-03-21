@@ -7,6 +7,10 @@ import AuBadge from './au-badge';
 import AuButton from './au-button';
 import AuContent, { type AuContentSignature } from './au-content';
 import AuIcon, { type AuIconSignature } from './au-icon';
+import { AddIcon } from './icons/add';
+import { NavDownIcon } from './icons/nav-down';
+import { NavUpIcon } from './icons/nav-up';
+import { RemoveIcon } from './icons/remove';
 
 export interface AuCardSignature {
   Args: {
@@ -128,12 +132,16 @@ export default class AuCard extends Component<AuCardSignature> {
               aria-expanded={{if this.sectionOpen "true" "false"}}
             >
               {{#if this.sectionOpen}}
-                <AuIcon @icon="remove" @size="large" @ariaHidden={{true}} />
+                <AuIcon
+                  @icon={{RemoveIcon}}
+                  @size="large"
+                  @ariaHidden={{true}}
+                />
                 <span class="au-u-hidden-visually au-c-card__toggle-false">
                   Verberg
                 </span>
               {{else}}
-                <AuIcon @icon="add" @size="large" @ariaHidden={{true}} />
+                <AuIcon @icon={{AddIcon}} @size="large" @ariaHidden={{true}} />
                 <span class="au-u-hidden-visually au-c-card__toggle-true">
                   Toon
                 </span>
@@ -158,12 +166,20 @@ export default class AuCard extends Component<AuCardSignature> {
               aria-expanded={{if this.sectionOpen "true" "false"}}
             >
               {{#if this.sectionOpen}}
-                <AuIcon @icon="nav-up" @size="large" @ariaHidden={{true}} />
+                <AuIcon
+                  @icon={{NavUpIcon}}
+                  @size="large"
+                  @ariaHidden={{true}}
+                />
                 <span class="au-u-hidden-visually au-c-card__toggle-false">
                   Verberg
                 </span>
               {{else}}
-                <AuIcon @icon="nav-down" @size="large" @ariaHidden={{true}} />
+                <AuIcon
+                  @icon={{NavDownIcon}}
+                  @size="large"
+                  @ariaHidden={{true}}
+                />
                 <span class="au-u-hidden-visually au-c-card__toggle-true">
                   Toon
                 </span>

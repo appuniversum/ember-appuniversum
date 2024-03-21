@@ -3,6 +3,8 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import AuHeading from './au-heading';
 import AuIcon from './au-icon';
+import { CrossIcon } from './icons/cross';
+import { DownloadIcon } from './icons/download';
 
 export interface AuFileCardSignature {
   Args: {
@@ -41,7 +43,7 @@ export default class AuFileCard extends Component<AuFileCardSignature> {
           data-test-file-card-delete
           {{on "click" this.delete}}
         >
-          <AuIcon @icon="cross" @size="large" />
+          <AuIcon @icon={{CrossIcon}} @size="large" />
           <span class="au-u-hidden-visually">Verwijderen</span>
         </button>
       {{/if}}
@@ -65,7 +67,7 @@ export default class AuFileCard extends Component<AuFileCardSignature> {
             download={{@filename}}
             data-test-file-card-download
           >
-            <AuIcon @icon="download" />
+            <AuIcon @icon={{DownloadIcon}} />
             Download bestand
           </a>
         </div>

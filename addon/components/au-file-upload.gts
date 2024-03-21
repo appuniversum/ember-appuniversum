@@ -10,6 +10,8 @@ import type { FileQueueService, UploadFile } from 'ember-file-upload';
 import AuAlert from './au-alert';
 import AuHelpText from './au-help-text';
 import AuIcon from './au-icon';
+import { AttachmentIcon } from './icons/attachment';
+import { AlertTriangleIcon } from './icons/alert-triangle';
 
 export interface AuFileUploadSignature {
   Args: {
@@ -194,7 +196,7 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
       >
         {{#if dropzone.active}}
           <p class="au-c-file-upload-message">
-            <AuIcon @icon="attachment" @alignment="left" />
+            <AuIcon @icon={{AttachmentIcon}} @alignment="left" />
             <AuHelpText @skin="secondary">{{this.helpTextDragDrop}}</AuHelpText>
           </p>
         {{else if queue.files.length}}
@@ -212,7 +214,7 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
             />
             <span class="au-c-file-upload-label">
               <span class="au-c-file-upload-label__title">
-                <AuIcon @icon="attachment" @alignment="left" />
+                <AuIcon @icon={{AttachmentIcon}} @alignment="left" />
                 {{this.title}}
               </span>
               {{#if dropzone.supported}}
@@ -228,7 +230,7 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
 
     {{#if this.hasErrors}}
       <AuAlert
-        @icon="alert-triangle"
+        @icon={{AlertTriangleIcon}}
         @skin="error"
         @size="small"
         @closable={{false}}
