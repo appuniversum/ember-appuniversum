@@ -3,6 +3,7 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import AuIcon, { type AuIconSignature } from './au-icon';
+import { CrossIcon } from './icons/cross';
 
 export interface AuAlertSignature {
   Args: {
@@ -79,7 +80,7 @@ export default class AuAlert extends Component<AuAlertSignature> {
             data-test-alert-close
             {{on "click" this.closeAlert}}
           >
-            <AuIcon @icon="cross" @size="large" />
+            <AuIcon @icon={{CrossIcon}} @size="large" />
             <span class="au-u-hidden-visually">Sluit</span>
           </button>
         {{/if}}

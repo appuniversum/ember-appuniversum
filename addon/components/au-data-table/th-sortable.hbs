@@ -10,7 +10,7 @@
       class="au-c-data-table__sort"
     >
       <span class="au-u-hidden-visually">Oplopend sorteren</span>
-      <AuIcon @icon="nav-up" />
+      <AuIcon @icon={{this.NavUpIcon}} />
     </button>
   {{else if (eq this.order "asc")}}
     <button
@@ -19,7 +19,7 @@
       class="au-c-data-table__sort"
     >
       <span class="au-u-hidden-visually">Aflopend sorteren</span>
-      <AuIcon @icon="nav-down" />
+      <AuIcon @icon={{this.NavDownIcon}} />
     </button>
   {{else}}
     <button
@@ -28,7 +28,7 @@
       class="au-c-data-table__sort"
     >
       <span class="au-u-hidden-visually">Sorteren</span>
-      <AuIcon @icon="nav-up-down" />
+      <AuIcon @icon={{this.NavUpDownIcon}} />
     </button>
   {{/if}}
 </span>

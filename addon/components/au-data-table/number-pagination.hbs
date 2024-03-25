@@ -12,7 +12,7 @@
         <li class="au-c-pagination__list-item">
           <AuButton
             @skin="link"
-            @icon="nav-left"
+            @icon={{this.NavLeftIcon}}
             {{action "changePage" this.links.prev}}
           >
             vorige
@@ -24,7 +24,7 @@
         <li class="au-c-pagination__list-item">
           <AuButton
             @skin="link"
-            @icon="nav-right"
+            @icon={{this.NavRightIcon}}
             @iconAlignment="right"
             {{action "changePage" this.links.next}}
           >

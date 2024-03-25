@@ -8,6 +8,8 @@ import AuContent from './au-content';
 import AuIcon, { type AuIconSignature } from './au-icon';
 import AuLoader from './au-loader';
 import AuToolbar from './au-toolbar';
+import { NavDownIcon } from './icons/nav-down';
+import { NavRightIcon } from './icons/nav-right';
 
 const autofocus = modifier(function autofocus(element: HTMLElement) {
   element.focus();
@@ -48,7 +50,7 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
     if (this.args.iconOpen) {
       return this.args.iconOpen;
     } else {
-      return 'nav-down';
+      return NavDownIcon;
     }
   }
 
@@ -56,7 +58,7 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
     if (this.args.iconClosed) {
       return this.args.iconClosed;
     } else {
-      return 'nav-right';
+      return NavRightIcon;
     }
   }
 

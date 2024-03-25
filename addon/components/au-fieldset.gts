@@ -3,6 +3,8 @@ import { hash } from '@ember/helper';
 import Component from '@glimmer/component';
 import AuBadge from './au-badge';
 import AuPill from './au-pill';
+import { AlertTriangleIcon } from './icons/alert-triangle';
+import { CrossIcon } from './icons/cross';
 
 export interface AuFieldsetSignature {
   Args: {
@@ -86,7 +88,7 @@ class Legend extends Component<LegendSignature> {
         >
           {{#if this.warning}}
             <AuBadge
-              @icon="alert-triangle"
+              @icon={{AlertTriangleIcon}}
               @size="small"
               @skin="warning"
               class="au-u-margin-right-tiny"
@@ -94,7 +96,7 @@ class Legend extends Component<LegendSignature> {
           {{/if}}
           {{#if this.error}}
             <AuBadge
-              @icon="cross"
+              @icon={{CrossIcon}}
               @size="small"
               @skin="error"
               class="au-u-margin-right-tiny"

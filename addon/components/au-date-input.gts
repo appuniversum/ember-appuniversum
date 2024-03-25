@@ -3,6 +3,7 @@ import AuInput, { type AuInputSignature } from './au-input';
 import auDateInput, {
   type AuDateInputModifierSignature,
 } from '../modifiers/au-date-input';
+import { CalendarIcon } from './icons/calendar';
 
 export interface AuDateInputSignature {
   Args: {
@@ -23,7 +24,7 @@ export default class AuDateInput extends Component<AuDateInputSignature> {
     <AuInput
       @disabled={{@disabled}}
       @error={{@error}}
-      @icon="calendar"
+      @icon={{CalendarIcon}}
       @warning={{@warning}}
       @width={{@width}}
       autocomplete="off"
