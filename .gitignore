@@ -5,6 +5,7 @@
 /build-storybook.log
 /.storybook/preview-head.html
 /declarations/
+/addon/components/icons/
 
 # dependencies
 /node_modules/
