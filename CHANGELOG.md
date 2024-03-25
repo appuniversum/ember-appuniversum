@@ -1,6 +1,20 @@
 
 
 
+## v3.4.0 (2024-03-25)
+
+#### :rocket: Enhancement
+* [#487](https://github.com/appuniversum/ember-appuniversum/pull/487) [Experimental] Add icon components ([@Windvis](https://github.com/Windvis))
+* [#481](https://github.com/appuniversum/ember-appuniversum/pull/481) [Experimental] Add support for using components as icons ([@piemonkey](https://github.com/piemonkey))
+
+#### :house: Internal
+* [#486](https://github.com/appuniversum/ember-appuniversum/pull/486) Use the icon components internally ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+- [@piemonkey](https://github.com/piemonkey)
+
+
 ## v3.3.1 (2024-03-12)
 
 #### :bug: Bug Fix
