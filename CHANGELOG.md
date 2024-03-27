@@ -1,6 +1,16 @@
 
 
 
+
+## v3.4.1 (2024-03-27)
+
+#### :bug: Bug Fix
+* [#488](https://github.com/appuniversum/ember-appuniversum/pull/488) Remove the fill attribute from all icons ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.4.0 (2024-03-25)
 
 #### :rocket: Enhancement
