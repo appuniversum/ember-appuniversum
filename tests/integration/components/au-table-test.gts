@@ -1,7 +1,7 @@
-import { module, test } from 'qunit';
-import { setupRenderingTest } from 'ember-qunit';
+import AuTable from '@appuniversum/ember-appuniversum/components/au-table';
 import { render } from '@ember/test-helpers';
-import { hbs } from 'ember-cli-htmlbars';
+import { setupRenderingTest } from 'ember-qunit';
+import { module, test } from 'qunit';
 
 const TABLE = {
   TABLE: '[data-test-table]',
@@ -15,11 +15,7 @@ module('Integration | Component | au-table', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it has optional named blocks', async function (assert) {
-    await render(hbs`
-      <AuTable>
-        default block content
-      </AuTable>
-    `);
+    await render(<template><AuTable /></template>);
 
     assert.dom(TABLE.TABLE).hasNoText();
     assert.dom(TABLE.TITLE).doesNotExist();
@@ -27,14 +23,16 @@ module('Integration | Component | au-table', function (hooks) {
     assert.dom(TABLE.BODY).doesNotExist();
     assert.dom(TABLE.FOOTER).doesNotExist();
 
-    await render(hbs`
-      <AuTable>
-        <:title>Title</:title>
-        <:header>Header</:header>
-        <:body>Body</:body>
-        <:footer>Footer</:footer>
-      </AuTable>
-    `);
+    await render(
+      <template>
+        <AuTable>
+          <:title>Title</:title>
+          <:header>Header</:header>
+          <:body>Body</:body>
+          <:footer>Footer</:footer>
+        </AuTable>
+      </template>,
+    );
 
     assert.dom(TABLE.TITLE).hasText('Title');
     assert.dom(TABLE.HEADER).hasText('Header');
@@ -43,11 +41,7 @@ module('Integration | Component | au-table', function (hooks) {
   });
 
   test('it accepts extra html attributes', async function (assert) {
-    await render(hbs`
-      <AuTable class="test">
-        default block content
-      </AuTable>
-    `);
+    await render(<template><AuTable class="test" /></template>);
 
     assert.dom(TABLE.TABLE).hasClass('test');
   });
