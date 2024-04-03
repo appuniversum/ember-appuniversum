@@ -6,22 +6,43 @@ import { action } from '@ember/object';
 import and from 'ember-truth-helpers/helpers/and';
 import not from 'ember-truth-helpers/helpers/not';
 
-export default class AuRadio extends Component {
+interface PrivateArgs {
+  groupValue?: unknown;
+  inGroup?: boolean;
+  onChangeGroup?: (selected: string | undefined, event: Event) => void;
+}
+
+export interface AuRadioSignature {
+  Args: {
+    checked?: boolean;
+    disabled?: boolean;
+    name?: string;
+    onChange?: (selected: string, event: Event) => void;
+    value?: string;
+  } & PrivateArgs;
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLInputElement;
+}
+
+export default class AuRadio extends Component<AuRadioSignature> {
   get checked() {
     const { inGroup, checked, groupValue, value } = this.args;
     return inGroup ? value === groupValue : checked;
   }
 
   @action
-  onChange(event) {
+  onChange(event: Event) {
     const { inGroup, onChange, onChangeGroup, value } = this.args;
 
     if (inGroup && typeof onChangeGroup === 'function') {
       onChangeGroup(value, event);
     } else if (typeof onChange === 'function') {
-      onChange(event.target.value, event);
+      onChange((event.target as AuRadioSignature['Element']).value, event);
     }
   }
+
   <template>
     {{~!~}}
     <label
