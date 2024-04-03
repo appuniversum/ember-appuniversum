@@ -227,6 +227,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-modal-container]').exists();
   });
 
+  test('`<AuModal>` resolves in loose mode', async function (assert) {
+    await render(
+      hbs`<AuModalContainer /><AuModal @modalOpen={{true}} data-test-modal />`,
+    );
+    assert.dom('[data-test-modal]').exists();
+  });
+
   test('`<AuNavigationLink>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuNavigationLink @route="index" data-test-navigation-link>Foo</AuNavigationLink>

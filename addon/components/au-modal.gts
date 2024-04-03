@@ -1,4 +1,4 @@
-import { AuIcon } from '@appuniversum/ember-appuniversum';
+import type { TOC } from '@ember/component/template-only';
 import { assert } from '@ember/debug';
 import { concat, hash } from '@ember/helper';
 import { on } from '@ember/modifier';
@@ -7,6 +7,7 @@ import Component from '@glimmer/component';
 import { focusTrap } from 'ember-focus-trap';
 import { CrossIcon } from './icons/cross';
 import { cn } from '../private/helpers/class-names';
+import AuIcon from './au-icon';
 
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import not from 'ember-truth-helpers/helpers/not';
@@ -14,13 +15,41 @@ import or from 'ember-truth-helpers/helpers/or';
 
 const FOCUS_TRAP_ADDITIONAL_ELEMENTS = ['#ember-basic-dropdown-wormhole'];
 
-export default class AuModal extends Component {
-  constructor() {
-    super(...arguments);
+export interface AuModalSignature {
+  Args: {
+    closable?: boolean;
+    closeModal?: () => void;
+    id?: string;
+    initialFocus?: string;
+    modalOpen?: boolean;
+    overflow?: boolean;
+    padding?: 'none';
+    size?: 'large' | 'fullscreen';
+    title?: string;
+  };
+  Blocks: {
+    body: [];
+    footer: [];
+    title: [];
+    default: [
+      {
+        Body: typeof Body;
+        Footer: typeof Footer;
+      },
+    ];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuModal extends Component<AuModalSignature> {
+  destinationElement: HTMLElement;
+
+  constructor(owner: unknown, args: AuModalSignature['Args']) {
+    super(owner, args);
 
     this.destinationElement = document.querySelector(
       '[data-au-modal-container]',
-    );
+    ) as HTMLElement;
 
     assert(
       'au-modal: No target element was found. Please add the `<AuModalContainer />` component where appropriate.',
@@ -161,13 +190,13 @@ export default class AuModal extends Component {
     {{/if}}
   </template>
 }
-const Body = <template>
+const Body: TOC<{ Blocks: { default: [] } }> = <template>
   <div class="au-c-modal__body" data-test-modal-body>
     {{yield}}
   </div>
 </template>;
 
-const Footer = <template>
+const Footer: TOC<{ Blocks: { default: [] } }> = <template>
   <div class="au-c-modal__footer" data-test-modal-footer>
     {{yield}}
   </div>
