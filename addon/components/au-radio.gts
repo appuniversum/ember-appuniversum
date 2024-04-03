@@ -9,7 +9,7 @@ import not from 'ember-truth-helpers/helpers/not';
 interface PrivateArgs {
   groupValue?: unknown;
   inGroup?: boolean;
-  onChangeGroup?: (selected: unknown, event: Event) => void;
+  onChangeGroup?: (selected: string | undefined, event: Event) => void;
 }
 
 export interface AuRadioSignature {
