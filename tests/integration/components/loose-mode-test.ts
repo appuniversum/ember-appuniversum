@@ -269,6 +269,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-radio]').exists();
   });
 
+  test('`<AuTable>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuTable data-test-table />
+    `);
+    assert.dom('[data-test-table]').exists();
+  });
+
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuToolbar data-test-toolbar></AuToolbar>

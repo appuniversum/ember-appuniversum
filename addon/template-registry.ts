@@ -37,6 +37,7 @@ import type AuPanel from '@appuniversum/ember-appuniversum/components/au-panel';
 import type AuPill from '@appuniversum/ember-appuniversum/components/au-pill';
 import type AuRadioGroup from '@appuniversum/ember-appuniversum/components/au-radio-group';
 import type AuRadio from '@appuniversum/ember-appuniversum/components/au-radio';
+import type AuTable from '@appuniversum/ember-appuniversum/components/au-table';
 import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
 
 // Modifiers
@@ -82,6 +83,7 @@ export default interface AppuniversumRegistry {
   AuPill: typeof AuPill;
   AuRadioGroup: typeof AuRadioGroup;
   AuRadio: typeof AuRadio;
+  AuTable: typeof AuTable;
   AuToolbar: typeof AuToolbar;
 
   // Modifiers
