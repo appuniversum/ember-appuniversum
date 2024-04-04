@@ -1,13 +1,29 @@
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { task, timeout } from 'ember-concurrency';
-import { A } from '@ember/array';
+import { A, type NativeArray } from '@ember/array';
+import type { ComponentLike } from '@glint/template';
+
+export type ToastData = {
+  component?: ComponentLike;
+  title?: string;
+  message?: string;
+  options: ToastOptions;
+};
+
+export type ToastOptions = {
+  icon?: string | ComponentLike;
+  closable?: boolean;
+  timeOut?: number | null;
+  type?: 'error' | 'success' | 'warning';
+};
 
 export default class ToasterService extends Service {
-  @tracked toasts = A([]);
+  // TS was complaining without the explicit NativeArray import and type here, not sure why.
+  // TODO: Replace A with a regular array
+  @tracked toasts: NativeArray<ToastData> = A<ToastData>([]);
 
-  @task
-  *displayToast(toast) {
+  displayToast = task(async (toast: ToastData) => {
     if (typeof toast.options.timeOut === 'undefined') {
       toast.options.timeOut = null;
     }
@@ -19,13 +35,13 @@ export default class ToasterService extends Service {
     this.toasts.pushObject(toast);
 
     if (toast.options.timeOut) {
-      yield timeout(toast.options.timeOut);
+      await timeout(toast.options.timeOut);
 
       this.close(toast);
     }
-  }
+  });
 
-  show(component, options = {}) {
+  show(component: ComponentLike, options: ToastOptions = {}) {
     const toast = {
       component,
       options,
@@ -35,7 +51,7 @@ export default class ToasterService extends Service {
     return toast;
   }
 
-  notify(message, title, options = {}) {
+  notify(message: string, title: string, options: ToastOptions = {}) {
     if (typeof options.icon === 'undefined') {
       options.icon = 'circle-info';
     }
@@ -50,7 +66,7 @@ export default class ToasterService extends Service {
     return toast;
   }
 
-  success(message, title, options = {}) {
+  success(message: string, title: string, options: ToastOptions = {}) {
     if (typeof options.type === 'undefined') {
       options.type = 'success';
     }
@@ -69,7 +85,7 @@ export default class ToasterService extends Service {
     return toast;
   }
 
-  warning(message, title, options = {}) {
+  warning(message: string, title: string, options: ToastOptions = {}) {
     if (typeof options.type === 'undefined') {
       options.type = 'warning';
     }
@@ -88,7 +104,7 @@ export default class ToasterService extends Service {
     return toast;
   }
 
-  error(message, title, options = {}) {
+  error(message?: string, title?: string, options: ToastOptions = {}) {
     if (typeof options.type === 'undefined') {
       options.type = 'error';
     }
@@ -107,7 +123,7 @@ export default class ToasterService extends Service {
     return toast;
   }
 
-  loading(message, title, options = {}) {
+  loading(message?: string, title?: string, options: ToastOptions = {}) {
     if (typeof options.icon === 'undefined') {
       options.icon = 'renew';
     }
@@ -122,7 +138,7 @@ export default class ToasterService extends Service {
     return toast;
   }
 
-  close(toast) {
+  close(toast: ToastData) {
     if (this.toasts.includes(toast)) {
       this.toasts.removeObject(toast);
     }
