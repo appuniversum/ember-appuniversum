@@ -5,15 +5,11 @@ import { A, type NativeArray } from '@ember/array';
 import type { ComponentLike } from '@glint/template';
 
 export type ToastData = {
+  component?: ComponentLike<CustomToastSignature>;
   title?: string;
   message?: string;
-  options: ToastOptions;
+  options: ToastOptions | Record<string, unknown>;
 };
-
-export type CustomToastData = {
-  component?: ComponentLike<CustomToastSignature>;
-  options: object;
-}
 
 export type ToastOptions = {
   icon?: string | ComponentLike<{ Element: Element }>;
@@ -24,7 +20,7 @@ export type ToastOptions = {
 
 export interface CustomToastSignature {
   Args: {
-    options: object;
+    options: Record<string, unknown>;
     close: () => void;
   };
 }
@@ -35,26 +31,26 @@ export default class ToasterService extends Service {
   @tracked toasts: NativeArray<ToastData> = A<ToastData>([]);
 
   displayToast = task(async (toast: ToastData) => {
-    if (typeof toast.options.timeOut === 'undefined') {
-      toast.options.timeOut = null;
+    if (typeof toast.options['timeOut'] === 'undefined') {
+      toast.options['timeOut'] = null;
     }
 
-    if (typeof toast.options.closable === 'undefined') {
-      toast.options.closable = true;
+    if (typeof toast.options['closable'] === 'undefined') {
+      toast.options['closable'] = true;
     }
 
     this.toasts.pushObject(toast);
 
-    if (toast.options.timeOut) {
-      await timeout(toast.options.timeOut);
+    if (toast.options['timeOut']) {
+      await timeout(toast.options['timeOut']);
 
       this.close(toast);
     }
   });
 
   show(
-    component: ComponentLike<CustomToastSignature>,
-    options: object = {},
+    component: ComponentLike<unknown>,
+    options: Record<string, unknown> = {},
   ) {
     const toast = {
       component,

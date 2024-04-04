@@ -153,10 +153,10 @@ module('Integration | Component | au-toaster', function (hooks) {
 
     const CustomToast: TOC<{
       Args: {
-        options: {
-          foo: string
-        };
-        // options: ToastOptionsWithFoo; // Doesn't work
+        // options: {
+        //   foo: string
+        // };
+        options: ToastOptionsWithFoo; // Doesn't work
         // options: ToastOptions; // Works, but fails on the `@options.foo` usage in the template
         // options: ToastOptions & { foo: string }; // Doesn't work
         close: CustomToastSignature['Args']['close'];
