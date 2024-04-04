@@ -5,18 +5,25 @@ import { A, type NativeArray } from '@ember/array';
 import type { ComponentLike } from '@glint/template';
 
 export type ToastData = {
-  component?: ComponentLike;
+  component?: ComponentLike<CustomToastSignature>;
   title?: string;
   message?: string;
   options: ToastOptions;
 };
 
 export type ToastOptions = {
-  icon?: string | ComponentLike;
+  icon?: string | ComponentLike<{ Element: Element }>;
   closable?: boolean;
   timeOut?: number | null;
   type?: 'error' | 'success' | 'warning';
 };
+
+export interface CustomToastSignature {
+  Args: {
+    options: ToastOptions;
+    close: () => void;
+  };
+}
 
 export default class ToasterService extends Service {
   // TS was complaining without the explicit NativeArray import and type here, not sure why.
@@ -41,7 +48,10 @@ export default class ToasterService extends Service {
     }
   });
 
-  show(component: ComponentLike, options: ToastOptions = {}) {
+  show(
+    component: ComponentLike<CustomToastSignature>,
+    options: ToastOptions = {},
+  ) {
     const toast = {
       component,
       options,
