@@ -1,6 +1,19 @@
 import Component from '@glimmer/component';
 
-export default class AuTextarea extends Component {
+export interface AuTextareaSignature {
+  Args: {
+    disabled?: boolean;
+    error?: boolean;
+    warning?: boolean;
+    width?: 'block';
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLTextAreaElement;
+}
+
+export default class AuTextarea extends Component<AuTextareaSignature> {
   get width() {
     if (this.args.width == 'block') return 'au-c-textarea--block';
     else return '';

@@ -227,6 +227,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-modal-container]').exists();
   });
 
+  test('`<AuModal>` resolves in loose mode', async function (assert) {
+    await render(
+      hbs`<AuModalContainer /><AuModal @modalOpen={{true}} data-test-modal />`,
+    );
+    assert.dom('[data-test-modal]').exists();
+  });
+
   test('`<AuNavigationLink>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuNavigationLink @route="index" data-test-navigation-link>Foo</AuNavigationLink>
@@ -246,6 +253,41 @@ module('Integration | Component | Loose mode', function (hooks) {
       <AuPill data-test-pill />
     `);
     assert.dom('[data-test-pill]').exists();
+  });
+
+  test('`<AuRadioGroup>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuRadioGroup data-test-radio-group />
+    `);
+    assert.dom('[data-test-radio-group]').exists();
+  });
+
+  test('`<AuRadio>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuRadio data-test-radio />
+    `);
+    assert.dom('[data-test-radio]').exists();
+  });
+
+  test('`<AuTable>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuTable data-test-table />
+    `);
+    assert.dom('[data-test-table]').exists();
+  });
+
+  test('`<AuTabs>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuTabs data-test-tabs />
+    `);
+    assert.dom('[data-test-tabs]').exists();
+  });
+
+  test('`<AuTextarea>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuTextarea data-test-textarea />
+    `);
+    assert.dom('[data-test-textarea]').exists();
   });
 
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {

@@ -31,9 +31,15 @@ import type AuMainContainer from '@appuniversum/ember-appuniversum/components/au
 import type AuMainFooter from '@appuniversum/ember-appuniversum/components/au-main-footer';
 import type AuMainHeader from '@appuniversum/ember-appuniversum/components/au-main-header';
 import type AuModalContainer from '@appuniversum/ember-appuniversum/components/au-modal-container';
+import type AuModal from '@appuniversum/ember-appuniversum/components/au-modal';
 import type AuNavigationLink from '@appuniversum/ember-appuniversum/components/au-navigation-link';
 import type AuPanel from '@appuniversum/ember-appuniversum/components/au-panel';
 import type AuPill from '@appuniversum/ember-appuniversum/components/au-pill';
+import type AuRadioGroup from '@appuniversum/ember-appuniversum/components/au-radio-group';
+import type AuRadio from '@appuniversum/ember-appuniversum/components/au-radio';
+import type AuTable from '@appuniversum/ember-appuniversum/components/au-table';
+import type AuTabs from '@appuniversum/ember-appuniversum/components/au-tabs';
+import type AuTextarea from '@appuniversum/ember-appuniversum/components/au-textarea';
 import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
 
 // Modifiers
@@ -73,9 +79,15 @@ export default interface AppuniversumRegistry {
   AuMainFooter: typeof AuMainFooter;
   AuMainHeader: typeof AuMainHeader;
   AuModalContainer: typeof AuModalContainer;
+  AuModal: typeof AuModal;
   AuNavigationLink: typeof AuNavigationLink;
   AuPanel: typeof AuPanel;
   AuPill: typeof AuPill;
+  AuRadioGroup: typeof AuRadioGroup;
+  AuRadio: typeof AuRadio;
+  AuTable: typeof AuTable;
+  AuTabs: typeof AuTabs;
+  AuTextarea: typeof AuTextarea;
   AuToolbar: typeof AuToolbar;
 
   // Modifiers

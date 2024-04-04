@@ -1,6 +1,19 @@
 import Component from '@glimmer/component';
 
-export default class AuTable extends Component {
+export interface AuTableSignature {
+  Args: {
+    size?: 'small';
+  };
+  Blocks: {
+    body: [];
+    footer: [];
+    header: [];
+    title: [];
+  };
+  Element: HTMLTableElement;
+}
+
+export default class AuTable extends Component<AuTableSignature> {
   get size() {
     if (this.args.size == 'small') return 'au-c-table--small';
     else return '';
