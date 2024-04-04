@@ -283,6 +283,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-tabs]').exists();
   });
 
+  test('`<AuTextarea>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuTextarea data-test-textarea />
+    `);
+    assert.dom('[data-test-textarea]').exists();
+  });
+
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuToolbar data-test-toolbar></AuToolbar>
