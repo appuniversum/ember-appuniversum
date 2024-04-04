@@ -1,17 +1,43 @@
-import { AuButton, AuInput, AuLabel } from '@appuniversum/ember-appuniversum';
 import { fn } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import Component from '@glimmer/component';
 import { trackedReset } from 'tracked-toolbox';
+import AuButton from './au-button';
+import AuInput, { type AuInputSignature } from './au-input';
+import AuLabel from './au-label';
 
-export default class AuTimePicker extends Component {
-  @trackedReset({
+export interface AuTimePickerSignature {
+  Args: {
+    hours?: number;
+    hoursLabel?: string;
+    minutes?: number;
+    minutesLabel?: string;
+    nowLabel?: string;
+    onChange?: (data: TimeData) => void;
+    seconds?: number;
+    secondsLabel?: string;
+    showNow?: boolean;
+    showSeconds?: boolean;
+  };
+}
+
+export type TimeData = {
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
+
+export default class AuTimePicker extends Component<AuTimePickerSignature> {
+  @trackedReset<AuTimePicker, number>({
     memo: 'args.hours',
-    update() {
-      if (this.args.hours || this.args.hours == 0) {
-        return this.validateTimeValue(this.args.hours, 'hourValue');
+    update(component: AuTimePicker) {
+      if (component.args.hours || component.args.hours == 0) {
+        return component.validateTimeValue(
+          component.args.hours.toString(),
+          'hourValue',
+        );
       } else {
         return 12;
       }
@@ -19,18 +45,21 @@ export default class AuTimePicker extends Component {
   })
   hourValue = 12;
 
-  @trackedReset({
+  @trackedReset<AuTimePicker, number>({
     memo: 'args.minutes',
-    update() {
-      return this.validateTimeValue(this.args.minutes, 'minuteValue');
+    update(component: AuTimePicker) {
+      return component.validateTimeValue(
+        component.args.minutes.toString(),
+        'minuteValue',
+      );
     },
   })
   minuteValue = 0;
 
-  @trackedReset({
+  @trackedReset<AuTimePicker, number>({
     memo: 'args.seconds',
-    update() {
-      return this.validateTimeValue(this.args.seconds, 'secondValue');
+    update(component: AuTimePicker) {
+      return component.validateTimeValue(component.args.seconds, 'secondValue');
     },
   })
   secondValue = 0;
@@ -45,7 +74,7 @@ export default class AuTimePicker extends Component {
     return this.formatTimeNumber(this.secondValue);
   }
 
-  get getTimeObject() {
+  get getTimeObject(): TimeData {
     return {
       hours: this.hourValue,
       minutes: this.minuteValue,
@@ -62,19 +91,22 @@ export default class AuTimePicker extends Component {
   }
 
   @action
-  increment(elem) {
+  increment(elem: 'hourValue' | 'minuteValue' | 'secondValue') {
     this[elem] = this.validateTimeValue(this[elem] + 1, elem);
     this.callBackParent(this.getTimeObject);
   }
 
   @action
-  decrement(elem) {
+  decrement(elem: 'hourValue' | 'minuteValue' | 'secondValue') {
     this[elem] = this.validateTimeValue(this[elem] - 1, elem);
     this.callBackParent(this.getTimeObject);
   }
 
   @action
-  timeValueKeyPress(type, event) {
+  timeValueKeyPress(
+    type: 'hourValue' | 'minuteValue' | 'secondValue',
+    event: KeyboardEvent,
+  ) {
     switch (event.key) {
       case 'ArrowUp':
         this.increment(type);
@@ -86,12 +118,21 @@ export default class AuTimePicker extends Component {
   }
 
   @action
-  validateTime(type, event) {
-    this[type] = this.validateTimeValue(event.target.value, type);
+  validateTime(
+    type: 'hourValue' | 'minuteValue' | 'secondValue',
+    event: Event,
+  ) {
+    this[type] = this.validateTimeValue(
+      (event.target as AuInputSignature['Element']).value,
+      type,
+    );
     this.callBackParent(this.getTimeObject);
   }
 
-  validateTimeValue(value, type) {
+  validateTimeValue(
+    value: string,
+    type: 'hourValue' | 'minuteValue' | 'secondValue',
+  ) {
     let tempValue = parseInt(value, 10);
     if (isNaN(tempValue)) tempValue = 0;
     const max = type === 'hourValue' ? 23 : 59;
@@ -101,7 +142,7 @@ export default class AuTimePicker extends Component {
   }
 
   @action
-  callBackParent(value) {
+  callBackParent(value: TimeData) {
     if (typeof this.args.onChange === 'function') {
       this.args.onChange(value);
     }
@@ -109,15 +150,15 @@ export default class AuTimePicker extends Component {
 
   @action
   setCurrentTime() {
-    let current = new Date();
+    const current = new Date();
     this.hourValue = current.getHours();
     this.minuteValue = current.getMinutes();
     this.secondValue = current.getSeconds();
     this.callBackParent(this.getTimeObject);
   }
 
-  formatTimeNumber(number) {
-    return number.toString().padStart(2, 0);
+  formatTimeNumber(number: number): string {
+    return number.toString().padStart(2, '0');
   }
 
   <template>
