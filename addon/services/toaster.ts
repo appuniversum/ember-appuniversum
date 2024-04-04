@@ -5,11 +5,15 @@ import { A, type NativeArray } from '@ember/array';
 import type { ComponentLike } from '@glint/template';
 
 export type ToastData = {
-  component?: ComponentLike<CustomToastSignature>;
   title?: string;
   message?: string;
   options: ToastOptions;
 };
+
+export type CustomToastData = {
+  component?: ComponentLike<CustomToastSignature>;
+  options: object;
+}
 
 export type ToastOptions = {
   icon?: string | ComponentLike<{ Element: Element }>;
@@ -20,7 +24,7 @@ export type ToastOptions = {
 
 export interface CustomToastSignature {
   Args: {
-    options: ToastOptions;
+    options: object;
     close: () => void;
   };
 }
@@ -50,7 +54,7 @@ export default class ToasterService extends Service {
 
   show(
     component: ComponentLike<CustomToastSignature>,
-    options: ToastOptions = {},
+    options: object = {},
   ) {
     const toast = {
       component,
