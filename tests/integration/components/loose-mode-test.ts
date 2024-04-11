@@ -315,4 +315,12 @@ module('Integration | Modifier | Loose mode', function (hooks) {
 
     assert.dom('[data-test-date-input]').hasValue('02-02-2023');
   });
+
+  test('{{au-inputmask}} resolves in loose mode', async function (assert) {
+    await render(
+      hbs`<label>Foo<input value="123" {{au-inputmask options=(hash mask="9.9.9")}} /></label>`,
+    );
+
+    assert.dom('input').hasValue('1.2.3');
+  });
 });
