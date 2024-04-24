@@ -1,6 +1,6 @@
 import { getOwner } from '@ember/owner';
 import Component from '@glimmer/component';
-import { type ComponentLike } from '@glint/template';
+import type { ComponentLike } from '@glint/template';
 
 export interface AuIconSignature {
   Args: {
