@@ -67,9 +67,9 @@ module('Integration | Modifier | au-date-input', function (hooks) {
       </template>,
     );
 
-    const input = find('input');
+    const inputElement = find('input');
 
-    await clearInput(input!);
+    await clearInput(inputElement!);
     assert.verifySteps(
       ['true', 'true'],
       '`@onChange` returns `null` if the input is cleared',
