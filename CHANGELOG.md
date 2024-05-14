@@ -2,6 +2,15 @@
 
 
 
+## v3.4.2 (2024-05-14)
+
+#### :bug: Bug Fix
+* [#492](https://github.com/appuniversum/ember-appuniversum/pull/492) Resolve some issues with `babel-plugin-ember-template-compilation` v2.2.2+ ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#489](https://github.com/appuniversum/ember-appuniversum/pull/489) More Glint / TS conversion ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.4.1 (2024-03-27)
 
 #### :bug: Bug Fix
