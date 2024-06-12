@@ -1,18 +1,26 @@
-/* eslint-disable no-undef -- This is a workaround for a false-positive bug: https://github.com/ember-cli/eslint-plugin-ember/issues/1747 */
-import { AuAlert } from '@appuniversum/ember-appuniversum';
 import { fn } from '@ember/helper';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import Component from '@glimmer/component';
+import AuAlert from './au-alert';
+import type ToasterService from '../services/toaster';
+import type { ToastData } from '../services/toaster';
 
-export default class AuToaster extends Component {
-  @service toaster;
+export interface AuToasterSignature {
+  Args: {
+    position?: 'top' | 'bottom';
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuToaster extends Component<AuToasterSignature> {
+  @service declare toaster: ToasterService;
 
   get position() {
     if (this.args.position == 'bottom') return 'au-c-toaster--bottom';
     else return 'au-c-toaster--top';
   }
 
-  closeToast = (toast) => {
+  closeToast = (toast: ToastData) => {
     this.toaster.close(toast);
   };
 
