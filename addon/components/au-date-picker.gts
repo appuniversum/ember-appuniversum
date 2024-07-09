@@ -1,4 +1,3 @@
-import { AuLabel } from '@appuniversum/ember-appuniversum';
 import {
   formatDate,
   isIsoDateString,
@@ -11,29 +10,42 @@ import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
+import AuLabel from './au-label';
+import type { DuetDatePickerChangeEvent } from '@duetds/date-picker/dist/types/components/duet-date-picker/duet-date-picker';
+import type { DuetLocalizedText } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-localization';
+import type { DuetDateAdapter } from '@duetds/date-picker/dist/types/components/duet-date-picker/date-adapter';
 
-const props = modifier(
-  function props(element, positional, properties) {
-    for (let propertyName in properties) {
-      element[propertyName] = properties[propertyName];
-    }
-  },
-  { eager: false },
-);
+type IsoDate = string;
+type Adapter = DuetDateAdapter;
+type Localization = DuetLocalizedText;
+type DayOfWeek = 0 | 1 | 2 | 3 | 4 | 5 | 6; // Based on this enum: https://github.com/duetds/date-picker/blob/a89499198d6e5555073bb0dec3a3dab9a5b3648b/src/components/duet-date-picker/date-utils.ts#L3
 
-const DEFAULT_ADAPTER = {
-  parse: function (value = '', createDate) {
-    let dateRegex = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
+export interface AuDatePickerSignature {
+  Args: {
+    alignment?: 'top';
+    adapter?: Adapter;
+    buttonLabel?: string;
+    disabled?: boolean;
+    error?: boolean;
+    'first-day'?: DayOfWeek;
+    firstDay?: DayOfWeek;
+    id?: string;
+    label?: string;
+    localization?: Localization;
+    max?: IsoDate | Date;
+    min?: IsoDate | Date;
+    value?: IsoDate | Date;
+    warning?: boolean;
+    onChange?: (isoDate: IsoDate | null, date: Date | null) => void;
+  };
+  Element: HTMLDuetDatePickerElement;
+}
 
-    const matches = value.match(dateRegex);
-    if (matches) {
-      return createDate(matches[3], matches[2], matches[1]);
-    }
-  },
-  format: formatDate,
-};
+type DayNames = [string, string, string, string, string, string, string];
+// prettier-ignore
+type MonthNames = [string, string, string, string, string, string, string, string, string, string, string, string];
 
-const DEFAULT_LOCALIZATION = {
+const DEFAULT_LOCALIZATION: Localization = {
   dayNames: getLocalizedDays(),
   monthNames: getLocalizedMonths(),
   monthNamesShort: getLocalizedMonths('short'),
@@ -45,18 +57,40 @@ const DEFAULT_LOCALIZATION = {
   monthSelectLabel: 'Maand',
   yearSelectLabel: 'Jaar',
   closeLabel: 'Sluit venster',
-  keyboardInstruction: 'Gebruik de pijltjestoetsen om te navigeren',
   calendarHeading: 'Kies een datum',
+  locale: 'nl-BE',
 };
 
-export default class AuDatePicker extends Component {
-  @asIsoDate value;
-  @asIsoDate min;
-  @asIsoDate max;
+const DEFAULT_ADAPTER: Adapter = {
+  parse: function (
+    value = '',
+    createDate: (day: string, month: string, year: string) => Date,
+  ) {
+    const dateRegex = /^(\d{1,2})-(\d{1,2})-(\d{4})$/;
+
+    const matches = value.match(dateRegex);
+    if (matches) {
+      return createDate(
+        matches[3] as string,
+        matches[2] as string,
+        matches[1] as string,
+      );
+    }
+  },
+  format: formatDate,
+};
+
+export default class AuDatePicker extends Component<AuDatePickerSignature> {
+  // @ts-expect-error TODO: Something is wrong with the decorator types, but I'm not sure how to fix it.
+  @asIsoDate declare value: IsoDate;
+  // @ts-expect-error TODO: Something is wrong with the decorator types, but I'm not sure how to fix it.
+  @asIsoDate declare min: IsoDate;
+  // @ts-expect-error TODO: Something is wrong with the decorator types, but I'm not sure how to fix it.
+  @asIsoDate declare max: IsoDate;
   @tracked isInitialized = false;
 
-  constructor() {
-    super(...arguments);
+  constructor(owner: unknown, args: AuDatePickerSignature['Args']) {
+    super(owner, args);
     this.registerDuetDatePicker();
   }
 
@@ -101,9 +135,13 @@ export default class AuDatePicker extends Component {
     else return '';
   }
 
+  get firstDayOfWeek() {
+    return this.args.firstDay || this.args['first-day'];
+  }
+
   @action
-  handleDuetDateChange(event) {
-    let wasDatePickerCleared = !event.detail.value;
+  handleDuetDateChange(event: CustomEvent<DuetDatePickerChangeEvent>) {
+    const wasDatePickerCleared = !event.detail.value;
     if (wasDatePickerCleared) {
       this.args.onChange?.(null, null);
     } else {
@@ -112,7 +150,7 @@ export default class AuDatePicker extends Component {
   }
 
   async registerDuetDatePicker() {
-    if (typeof FastBoot === 'undefined') {
+    if (typeof globalThis.FastBoot === 'undefined') {
       const { defineCustomElements: registerDuetDatePicker } = await import(
         '@duetds/date-picker/custom-element'
       );
@@ -141,8 +179,9 @@ export default class AuDatePicker extends Component {
           value={{this.value}}
           min={{this.min}}
           max={{this.max}}
-          first-day-of-week={{@first-day}}
+          first-day-of-week={{this.firstDayOfWeek}}
           data-test-au-date-picker-component
+          {{! @glint-expect-error duetChange is a custom event but the types expect Event instead}}
           {{on "duetChange" this.handleDuetDateChange}}
           {{props localization=this.localization dateAdapter=this.adapter}}
           ...attributes
@@ -152,7 +191,7 @@ export default class AuDatePicker extends Component {
   </template>
 }
 
-function validateAdapter(adapterArg) {
+function validateAdapter(adapterArg?: Adapter) {
   assert(
     `The @adapter argument needs to be an object but it is a "${typeof adapterArg}"`,
     Boolean(adapterArg) && typeof adapterArg === 'object',
@@ -166,7 +205,7 @@ function validateAdapter(adapterArg) {
   });
 }
 
-function validateLocalization(localizationArg) {
+function validateLocalization(localizationArg?: Localization) {
   assert(
     `The @localization argument needs to be an object but it is a "${typeof localizationArg}"`,
     Boolean(localizationArg) && typeof localizationArg === 'object',
@@ -180,10 +219,10 @@ function validateLocalization(localizationArg) {
   });
 }
 
-function asIsoDate(target, key /*, descriptor */) {
+function asIsoDate(target: unknown, key: string /*, descriptor */) {
   return {
-    get() {
-      let argValue = this.args[key];
+    get(this: AuDatePicker): string | undefined {
+      const argValue = (this.args as { [key: string]: unknown })[key];
 
       if (!argValue) {
         return;
@@ -207,23 +246,34 @@ function asIsoDate(target, key /*, descriptor */) {
   };
 }
 
-function getLocalizedMonths(monthFormat = 'long') {
-  let someYear = 2021;
+function getLocalizedMonths(monthFormat = 'long'): MonthNames {
+  const someYear = 2021;
   return [...Array(12).keys()].map((monthIndex) => {
-    let date = new Date(someYear, monthIndex);
+    const date = new Date(someYear, monthIndex);
     return intl({ month: monthFormat }).format(date);
-  });
+  }) as MonthNames;
 }
 
-function getLocalizedDays(weekdayFormat = 'long') {
-  let someSunday = new Date('2021-01-03');
+function getLocalizedDays(weekdayFormat = 'long'): DayNames {
+  const someSunday = new Date('2021-01-03');
   return [...Array(7).keys()].map((index) => {
-    let weekday = new Date(someSunday.getTime());
+    const weekday = new Date(someSunday.getTime());
     weekday.setDate(someSunday.getDate() + index);
     return intl({ weekday: weekdayFormat }).format(weekday);
-  });
+  }) as DayNames;
 }
 
-function intl(options) {
+function intl(options: object) {
   return new Intl.DateTimeFormat('nl-BE', options);
 }
+
+const props = modifier(function props(
+  element: HTMLElement,
+  positional,
+  properties: { [key: string]: unknown },
+) {
+  for (const propertyName in properties) {
+    (element as unknown as { [key: string]: unknown })[propertyName] =
+      properties[propertyName];
+  }
+});

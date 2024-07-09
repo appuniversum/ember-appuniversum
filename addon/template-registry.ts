@@ -13,6 +13,7 @@ import type AuCheckboxGroup from '@appuniversum/ember-appuniversum/components/au
 import type AuContentHeader from '@appuniversum/ember-appuniversum/components/au-content-header';
 import type AuContent from '@appuniversum/ember-appuniversum/components/au-content';
 import type AuDateInput from '@appuniversum/ember-appuniversum/components/au-date-input';
+import type AuDatePicker from '@appuniversum/ember-appuniversum/components/au-date-picker';
 import type AuFieldset from '@appuniversum/ember-appuniversum/components/au-fieldset';
 import type AuFileCard from '@appuniversum/ember-appuniversum/components/au-file-card';
 import type AuFileUpload from '@appuniversum/ember-appuniversum/components/au-file-upload';
@@ -62,6 +63,7 @@ export default interface AppuniversumRegistry {
   AuContentHeader: typeof AuContentHeader;
   AuContent: typeof AuContent;
   AuDateInput: typeof AuDateInput;
+  AuDatePicker: typeof AuDatePicker;
   AuFieldset: typeof AuFieldset;
   AuFileCard: typeof AuFileCard;
   AuFileUpload: typeof AuFileUpload;

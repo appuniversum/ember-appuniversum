@@ -107,6 +107,14 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-date-input]').exists();
   });
 
+  test('`<AuDatePicker>` resolves in loose mode', async function (assert) {
+    assert.expect(0);
+
+    await render(hbs`
+      <AuDatePicker />
+    `);
+  });
+
   test('`<AuFieldset>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuFieldset data-test-fieldset />`);
 
