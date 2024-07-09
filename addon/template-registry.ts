@@ -46,6 +46,7 @@ import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolb
 
 // Modifiers
 import type AuDateInputModifier from '@appuniversum/ember-appuniversum/modifiers/au-date-input';
+import type AuInputMaskModifier from '@appuniversum/ember-appuniversum/modifiers/au-inputmask';
 
 export default interface AppuniversumRegistry {
   // Components
@@ -96,4 +97,5 @@ export default interface AppuniversumRegistry {
 
   // Modifiers
   'au-date-input': typeof AuDateInputModifier;
+  'au-inputmask': typeof AuInputMaskModifier;
 }
