@@ -14,6 +14,7 @@ import type AuContentHeader from '@appuniversum/ember-appuniversum/components/au
 import type AuContent from '@appuniversum/ember-appuniversum/components/au-content';
 import type AuDateInput from '@appuniversum/ember-appuniversum/components/au-date-input';
 import type AuDatePicker from '@appuniversum/ember-appuniversum/components/au-date-picker';
+import type AuDropdown from '@appuniversum/ember-appuniversum/components/au-dropdown';
 import type AuFieldset from '@appuniversum/ember-appuniversum/components/au-fieldset';
 import type AuFileCard from '@appuniversum/ember-appuniversum/components/au-file-card';
 import type AuFileUpload from '@appuniversum/ember-appuniversum/components/au-file-upload';
@@ -65,6 +66,7 @@ export default interface AppuniversumRegistry {
   AuContent: typeof AuContent;
   AuDateInput: typeof AuDateInput;
   AuDatePicker: typeof AuDatePicker;
+  AuDropdown: typeof AuDropdown;
   AuFieldset: typeof AuFieldset;
   AuFileCard: typeof AuFileCard;
   AuFileUpload: typeof AuFileUpload;

@@ -115,6 +115,13 @@ module('Integration | Component | Loose mode', function (hooks) {
     `);
   });
 
+  test('`<AuDropdown>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuDropdown data-test-dropdown />
+    `);
+    assert.dom('[data-test-dropdown]').exists();
+  });
+
   test('`<AuFieldset>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuFieldset data-test-fieldset />`);
 

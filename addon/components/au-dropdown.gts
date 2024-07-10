@@ -1,5 +1,3 @@
-import { AuButton } from '@appuniversum/ember-appuniversum';
-import FloatingUiModifier from '@appuniversum/ember-appuniversum/private/modifiers/floating-ui';
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
@@ -8,26 +6,41 @@ import { tracked } from '@glimmer/tracking';
 import { focusTrap } from 'ember-focus-trap';
 import { modifier } from 'ember-modifier';
 import { ChevronDownIcon } from './icons/chevron-down';
+import AuButton from './au-button';
+import type { AuButtonSignature } from './au-button';
+import floatingUi from '../private/modifiers/floating-ui';
 
-export default class AuDropdown extends Component {
-  @tracked referenceElement = undefined;
-  @tracked arrowElement = undefined;
+export interface AuDropdownSignature {
+  Args: {
+    alignment?: 'left' | 'right';
+    alert?: boolean;
+    hideText?: boolean;
+    icon?: AuButtonSignature['Args']['icon'];
+    iconAlignment?: AuButtonSignature['Args']['iconAlignment'];
+    onClose?: () => unknown;
+    size?: AuButtonSignature['Args']['size'];
+    skin?: AuButtonSignature['Args']['skin'];
+    title?: string;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuDropdown extends Component<AuDropdownSignature> {
+  // We use declare here, so TS doesn't consider `undefined` as part of the type since the initialisation happens after the constructor.
+  @tracked declare referenceElement: HTMLElement;
+  @tracked declare arrowElement: HTMLElement;
   @tracked dropdownOpen = false;
-  floatingUi = FloatingUiModifier;
 
-  reference = modifier(
-    (element) => {
-      this.referenceElement = element;
-    },
-    { eager: false },
-  );
+  reference = modifier((element: HTMLElement) => {
+    this.referenceElement = element;
+  });
 
-  arrow = modifier(
-    (element) => {
-      this.arrowElement = element;
-    },
-    { eager: false },
-  );
+  arrow = modifier((element: HTMLElement) => {
+    this.arrowElement = element;
+  });
 
   @action
   openDropdown() {
@@ -50,8 +63,10 @@ export default class AuDropdown extends Component {
   }
 
   @action
-  clickOutsideDeactivates(event) {
-    let isClosedByToggleButton = this.referenceElement.contains(event.target);
+  clickOutsideDeactivates(event: Event) {
+    const isClosedByToggleButton = this.referenceElement?.contains(
+      event.target as HTMLElement,
+    );
 
     if (!isClosedByToggleButton) {
       this.closeDropdown();
@@ -113,7 +128,7 @@ export default class AuDropdown extends Component {
       </AuButton>
       {{#if this.dropdownOpen}}
         <div
-          {{this.floatingUi
+          {{floatingUi
             this.referenceElement
             this.arrowElement
             defaultPlacement=this.alignment

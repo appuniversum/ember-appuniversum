@@ -5,6 +5,7 @@ type FocusTrapOptions = {
   fallbackFocus?: string;
   escapeDeactivates?: () => boolean;
   allowOutsideClick?: boolean;
+  clickOutsideDeactivates?: (Event) => boolean;
 };
 
 interface Signature {
@@ -14,6 +15,7 @@ interface Signature {
       isActive?: boolean;
       additionalElements?: string[] | Element[];
       focusTrapOptions?: FocusTrapOptions;
+      shouldSelfFocus?: boolean;
     };
   };
 }
