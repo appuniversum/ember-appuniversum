@@ -42,6 +42,7 @@ import type AuRadio from '@appuniversum/ember-appuniversum/components/au-radio';
 import type AuTable from '@appuniversum/ember-appuniversum/components/au-table';
 import type AuTabs from '@appuniversum/ember-appuniversum/components/au-tabs';
 import type AuTextarea from '@appuniversum/ember-appuniversum/components/au-textarea';
+import type AuTimePicker from '@appuniversum/ember-appuniversum/components/au-time-picker';
 import type AuToggleSwitch from '@appuniversum/ember-appuniversum/components/au-toggle-switch';
 import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
 
@@ -94,6 +95,7 @@ export default interface AppuniversumRegistry {
   AuTable: typeof AuTable;
   AuTabs: typeof AuTabs;
   AuTextarea: typeof AuTextarea;
+  AuTimePicker: typeof AuTimePicker;
   AuToggleSwitch: typeof AuToggleSwitch;
   AuToolbar: typeof AuToolbar;
 

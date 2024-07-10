@@ -1,55 +1,92 @@
-import { AuButton, AuInput, AuLabel } from '@appuniversum/ember-appuniversum';
 import { fn } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import Component from '@glimmer/component';
 import { trackedReset } from 'tracked-toolbox';
+import AuButton from './au-button';
+import AuInput from './au-input';
+import type { AuInputSignature } from './au-input';
+import AuLabel from './au-label';
 
-export default class AuTimePicker extends Component {
-  @trackedReset({
+export interface AuTimePickerSignature {
+  Args: {
+    hours?: number;
+    hoursLabel?: string;
+    minutes?: number;
+    minutesLabel?: string;
+    nowLabel?: string;
+    onChange?: (data: TimeData) => void;
+    seconds?: number;
+    secondsLabel?: string;
+    showNow?: boolean;
+    showSeconds?: boolean;
+  };
+}
+
+type TimeData = {
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
+
+type TimeProperty = 'hours' | 'minutes' | 'seconds';
+
+export default class AuTimePicker extends Component<AuTimePickerSignature> {
+  @trackedReset<AuTimePicker, number>({
     memo: 'args.hours',
-    update() {
-      if (this.args.hours || this.args.hours == 0) {
-        return this.validateTimeValue(this.args.hours, 'hourValue');
+    update(component: AuTimePicker) {
+      const { hours } = component.args;
+      if (hours || hours == 0) {
+        return component.normalizeTimeValue(hours, 'hours');
       } else {
         return 12;
       }
     },
   })
-  hourValue = 12;
+  hours = 12;
 
-  @trackedReset({
+  @trackedReset<AuTimePicker, number>({
     memo: 'args.minutes',
-    update() {
-      return this.validateTimeValue(this.args.minutes, 'minuteValue');
+    update(component: AuTimePicker) {
+      let { minutes } = component.args;
+
+      if (typeof minutes !== 'number' && typeof minutes !== 'string') {
+        return 0;
+      }
+
+      if (typeof minutes === 'string') {
+        minutes = parseInt(minutes, 10);
+      }
+
+      return component.normalizeTimeValue(minutes, 'minutes');
     },
   })
-  minuteValue = 0;
+  minutes = 0;
 
-  @trackedReset({
+  @trackedReset<AuTimePicker, number>({
     memo: 'args.seconds',
-    update() {
-      return this.validateTimeValue(this.args.seconds, 'secondValue');
+    update(component: AuTimePicker) {
+      let { seconds } = component.args;
+
+      if (typeof seconds !== 'number' && typeof seconds !== 'string') {
+        return 0;
+      }
+
+      if (typeof seconds === 'string') {
+        seconds = parseInt(seconds, 10);
+      }
+
+      return component.normalizeTimeValue(seconds, 'seconds');
     },
   })
-  secondValue = 0;
+  seconds = 0;
 
-  get hourValueFormatted() {
-    return this.formatTimeNumber(this.hourValue);
-  }
-  get minuteValueFormatted() {
-    return this.formatTimeNumber(this.minuteValue);
-  }
-  get secondValueFormatted() {
-    return this.formatTimeNumber(this.secondValue);
-  }
-
-  get getTimeObject() {
+  get timeData(): TimeData {
     return {
-      hours: this.hourValue,
-      minutes: this.minuteValue,
-      seconds: this.secondValue,
+      hours: this.hours,
+      minutes: this.minutes,
+      seconds: this.seconds,
     };
   }
 
@@ -62,19 +99,25 @@ export default class AuTimePicker extends Component {
   }
 
   @action
-  increment(elem) {
-    this[elem] = this.validateTimeValue(this[elem] + 1, elem);
-    this.callBackParent(this.getTimeObject);
+  increment(propertyName: TimeProperty) {
+    this[propertyName] = this.normalizeTimeValue(
+      this[propertyName] + 1,
+      propertyName,
+    );
+    this.onChange(this.timeData);
   }
 
   @action
-  decrement(elem) {
-    this[elem] = this.validateTimeValue(this[elem] - 1, elem);
-    this.callBackParent(this.getTimeObject);
+  decrement(propertyName: TimeProperty) {
+    this[propertyName] = this.normalizeTimeValue(
+      this[propertyName] - 1,
+      propertyName,
+    );
+    this.onChange(this.timeData);
   }
 
   @action
-  timeValueKeyPress(type, event) {
+  timeValueKeyPress(type: TimeProperty, event: KeyboardEvent) {
     switch (event.key) {
       case 'ArrowUp':
         this.increment(type);
@@ -86,22 +129,25 @@ export default class AuTimePicker extends Component {
   }
 
   @action
-  validateTime(type, event) {
-    this[type] = this.validateTimeValue(event.target.value, type);
-    this.callBackParent(this.getTimeObject);
+  validateTime(type: TimeProperty, event: Event) {
+    const newValue = parseInt(
+      // We can't use .valueAsNumber since we're using a type="text" input field, which always returns NaN
+      (event.target as AuInputSignature['Element']).value,
+      10,
+    );
+    this[type] = this.normalizeTimeValue(newValue, type);
+    this.onChange(this.timeData);
   }
 
-  validateTimeValue(value, type) {
-    let tempValue = parseInt(value, 10);
-    if (isNaN(tempValue)) tempValue = 0;
-    const max = type === 'hourValue' ? 23 : 59;
-    tempValue = tempValue < 0 ? 0 : tempValue;
-    tempValue = tempValue > max ? max : tempValue;
-    return tempValue;
+  normalizeTimeValue(value: number, type: TimeProperty) {
+    let normalizedValue = !isNaN(value) ? value : 0;
+    const max = type === 'hours' ? 23 : 59;
+    normalizedValue = normalizedValue < 0 ? 0 : normalizedValue;
+    normalizedValue = normalizedValue > max ? max : normalizedValue;
+    return normalizedValue;
   }
 
-  @action
-  callBackParent(value) {
+  onChange(value: TimeData) {
     if (typeof this.args.onChange === 'function') {
       this.args.onChange(value);
     }
@@ -109,15 +155,11 @@ export default class AuTimePicker extends Component {
 
   @action
   setCurrentTime() {
-    let current = new Date();
-    this.hourValue = current.getHours();
-    this.minuteValue = current.getMinutes();
-    this.secondValue = current.getSeconds();
-    this.callBackParent(this.getTimeObject);
-  }
-
-  formatTimeNumber(number) {
-    return number.toString().padStart(2, 0);
+    const current = new Date();
+    this.hours = current.getHours();
+    this.minutes = current.getMinutes();
+    this.seconds = current.getSeconds();
+    this.onChange(this.timeData);
   }
 
   <template>
@@ -132,10 +174,10 @@ export default class AuTimePicker extends Component {
             class="au-c-time-picker__input"
             name="input-hour"
             id="input-hour"
-            value={{this.hourValueFormatted}}
+            value={{formatTime this.hours}}
             data-test-autimepicker-hourinput
-            {{on "keyup" (fn this.timeValueKeyPress "hourValue")}}
-            {{on "input" (fn this.validateTime "hourValue")}}
+            {{on "keyup" (fn this.timeValueKeyPress "hours")}}
+            {{on "input" (fn this.validateTime "hours")}}
           />
           <div class="au-c-time-picker__button-wrapper">
             <button
@@ -144,7 +186,7 @@ export default class AuTimePicker extends Component {
               aria-controls="input-hour"
               class="au-c-time-picker__button"
               data-test-autimepicker-hourincrement
-              {{on "click" (fn this.increment "hourValue")}}
+              {{on "click" (fn this.increment "hours")}}
             >
               +
             </button>
@@ -154,7 +196,7 @@ export default class AuTimePicker extends Component {
               aria-controls="input-hour"
               class="au-c-time-picker__button"
               data-test-autimepicker-hourdecrement
-              {{on "click" (fn this.decrement "hourValue")}}
+              {{on "click" (fn this.decrement "hours")}}
             >
               -
             </button>
@@ -174,10 +216,10 @@ export default class AuTimePicker extends Component {
             class="au-c-time-picker__input"
             name="input-minute"
             id="input-minute"
-            value={{this.minuteValueFormatted}}
+            value={{formatTime this.minutes}}
             data-test-autimepicker-minuteinput
-            {{on "keyup" (fn this.timeValueKeyPress "minuteValue")}}
-            {{on "input" (fn this.validateTime "minuteValue")}}
+            {{on "keyup" (fn this.timeValueKeyPress "minutes")}}
+            {{on "input" (fn this.validateTime "minutes")}}
           />
           <div class="au-c-time-picker__button-wrapper">
             <button
@@ -186,7 +228,7 @@ export default class AuTimePicker extends Component {
               aria-controls="input-minute"
               class="au-c-time-picker__button"
               data-test-autimepicker-minuteincrement
-              {{on "click" (fn this.increment "minuteValue")}}
+              {{on "click" (fn this.increment "minutes")}}
             >
               +
             </button>
@@ -196,7 +238,7 @@ export default class AuTimePicker extends Component {
               aria-controls="input-minute"
               class="au-c-time-picker__button"
               data-test-autimepicker-minutedecrement
-              {{on "click" (fn this.decrement "minuteValue")}}
+              {{on "click" (fn this.decrement "minutes")}}
             >
               -
             </button>
@@ -217,10 +259,10 @@ export default class AuTimePicker extends Component {
               class="au-c-time-picker__input"
               name="input-second"
               id="input-second"
-              value={{this.secondValueFormatted}}
+              value={{formatTime this.seconds}}
               data-test-autimepicker-secondinput
-              {{on "keyup" (fn this.timeValueKeyPress "secondValue")}}
-              {{on "input" (fn this.validateTime "secondValue")}}
+              {{on "keyup" (fn this.timeValueKeyPress "seconds")}}
+              {{on "input" (fn this.validateTime "seconds")}}
             />
             <div class="au-c-time-picker__button-wrapper">
               <button
@@ -229,7 +271,7 @@ export default class AuTimePicker extends Component {
                 aria-controls="input-second"
                 class="au-c-time-picker__button"
                 data-test-autimepicker-secondincrement
-                {{on "click" (fn this.increment "secondValue")}}
+                {{on "click" (fn this.increment "seconds")}}
               >
                 +
               </button>
@@ -239,7 +281,7 @@ export default class AuTimePicker extends Component {
                 aria-controls="input-second"
                 class="au-c-time-picker__button"
                 data-test-autimepicker-seconddecrement
-                {{on "click" (fn this.decrement "secondValue")}}
+                {{on "click" (fn this.decrement "seconds")}}
               >
                 -
               </button>
@@ -260,12 +302,16 @@ export default class AuTimePicker extends Component {
         </div>
       {{/if}}
 
-      <span class="au-u-hidden-visually">{{this.hourValue}}
+      <span class="au-u-hidden-visually">{{this.hours}}
         {{@hoursLabel}},
-        {{this.minuteValue}}
+        {{this.minutes}}
         {{@minutesLabel}},
-        {{this.secondValue}}
+        {{this.seconds}}
         {{@secondsLabel}}.</span>
     </div>
   </template>
+}
+
+function formatTime(number: number): string {
+  return number.toString().padStart(2, '0');
 }
