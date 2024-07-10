@@ -6,7 +6,23 @@ import Component from '@glimmer/component';
 import and from 'ember-truth-helpers/helpers/and';
 import not from 'ember-truth-helpers/helpers/not';
 
-export default class AuToggleSwitch extends Component {
+export interface AuToggleSwitchSignature {
+  Args: {
+    alignment?: 'right';
+    checked?: boolean;
+    disabled?: boolean;
+    identifier?: string;
+    label?: string;
+    name?: string;
+    onChange?: (checked: boolean, event: Event) => void;
+  };
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLInputElement;
+}
+
+export default class AuToggleSwitch extends Component<AuToggleSwitchSignature> {
   get alignmentClass() {
     if (this.args.alignment === 'right')
       return 'au-c-toggle-switch--alignment-right';
@@ -14,9 +30,12 @@ export default class AuToggleSwitch extends Component {
   }
 
   @action
-  onChange(event) {
+  onChange(event: Event) {
     if (this.args.onChange) {
-      this.args.onChange(event.target.checked, event);
+      this.args.onChange(
+        (event.target as AuToggleSwitchSignature['Element']).checked,
+        event,
+      );
     }
   }
 
@@ -31,7 +50,6 @@ export default class AuToggleSwitch extends Component {
           'au-c-toggle-switch--labelless'
         }}
         {{if @disabled 'is-disabled'}}"
-      data-test-toggle-switch-label
     >
       <input
         checked={{@checked}}
@@ -40,7 +58,6 @@ export default class AuToggleSwitch extends Component {
         id={{@identifier}}
         name={{@name}}
         disabled={{@disabled}}
-        data-test-toggle-switch-input
         {{on "change" this.onChange}}
         ...attributes
       />

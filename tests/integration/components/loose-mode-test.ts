@@ -107,6 +107,21 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-date-input]').exists();
   });
 
+  test('`<AuDatePicker>` resolves in loose mode', async function (assert) {
+    assert.expect(0);
+
+    await render(hbs`
+      <AuDatePicker />
+    `);
+  });
+
+  test('`<AuDropdown>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuDropdown data-test-dropdown />
+    `);
+    assert.dom('[data-test-dropdown]').exists();
+  });
+
   test('`<AuFieldset>` resolves in loose mode', async function (assert) {
     await render(hbs`<AuFieldset data-test-fieldset />`);
 
@@ -290,6 +305,21 @@ module('Integration | Component | Loose mode', function (hooks) {
     assert.dom('[data-test-textarea]').exists();
   });
 
+  test('`<AuTimePicker>` resolves in loose mode', async function (assert) {
+    assert.expect(0);
+
+    await render(hbs`
+      <AuTimePicker />
+    `);
+  });
+
+  test('`<AuToggleSwitch>` resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuToggleSwitch data-test-toggle-switch />
+    `);
+    assert.dom('[data-test-toggle-switch]').exists();
+  });
+
   test('`<AuToolbar>` resolves in loose mode', async function (assert) {
     await render(hbs`
       <AuToolbar data-test-toolbar></AuToolbar>
@@ -307,5 +337,13 @@ module('Integration | Modifier | Loose mode', function (hooks) {
   `);
 
     assert.dom('[data-test-date-input]').hasValue('02-02-2023');
+  });
+
+  test('`{{au-inputmask}}` resolves in loose mode', async function (assert) {
+    await render(hbs`
+    <AuInput data-test-inputmask value="123" {{au-inputmask options=(hash mask="9.9.9")}} />
+  `);
+
+    assert.dom('[data-test-inputmask]').hasValue('1.2.3');
   });
 });

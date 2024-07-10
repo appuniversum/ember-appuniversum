@@ -13,6 +13,8 @@ import type AuCheckboxGroup from '@appuniversum/ember-appuniversum/components/au
 import type AuContentHeader from '@appuniversum/ember-appuniversum/components/au-content-header';
 import type AuContent from '@appuniversum/ember-appuniversum/components/au-content';
 import type AuDateInput from '@appuniversum/ember-appuniversum/components/au-date-input';
+import type AuDatePicker from '@appuniversum/ember-appuniversum/components/au-date-picker';
+import type AuDropdown from '@appuniversum/ember-appuniversum/components/au-dropdown';
 import type AuFieldset from '@appuniversum/ember-appuniversum/components/au-fieldset';
 import type AuFileCard from '@appuniversum/ember-appuniversum/components/au-file-card';
 import type AuFileUpload from '@appuniversum/ember-appuniversum/components/au-file-upload';
@@ -40,10 +42,13 @@ import type AuRadio from '@appuniversum/ember-appuniversum/components/au-radio';
 import type AuTable from '@appuniversum/ember-appuniversum/components/au-table';
 import type AuTabs from '@appuniversum/ember-appuniversum/components/au-tabs';
 import type AuTextarea from '@appuniversum/ember-appuniversum/components/au-textarea';
+import type AuTimePicker from '@appuniversum/ember-appuniversum/components/au-time-picker';
+import type AuToggleSwitch from '@appuniversum/ember-appuniversum/components/au-toggle-switch';
 import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
 
 // Modifiers
 import type AuDateInputModifier from '@appuniversum/ember-appuniversum/modifiers/au-date-input';
+import type AuInputMaskModifier from '@appuniversum/ember-appuniversum/modifiers/au-inputmask';
 
 export default interface AppuniversumRegistry {
   // Components
@@ -61,6 +66,8 @@ export default interface AppuniversumRegistry {
   AuContentHeader: typeof AuContentHeader;
   AuContent: typeof AuContent;
   AuDateInput: typeof AuDateInput;
+  AuDatePicker: typeof AuDatePicker;
+  AuDropdown: typeof AuDropdown;
   AuFieldset: typeof AuFieldset;
   AuFileCard: typeof AuFileCard;
   AuFileUpload: typeof AuFileUpload;
@@ -88,8 +95,11 @@ export default interface AppuniversumRegistry {
   AuTable: typeof AuTable;
   AuTabs: typeof AuTabs;
   AuTextarea: typeof AuTextarea;
+  AuTimePicker: typeof AuTimePicker;
+  AuToggleSwitch: typeof AuToggleSwitch;
   AuToolbar: typeof AuToolbar;
 
   // Modifiers
   'au-date-input': typeof AuDateInputModifier;
+  'au-inputmask': typeof AuInputMaskModifier;
 }

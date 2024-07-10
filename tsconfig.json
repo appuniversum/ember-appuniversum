@@ -21,7 +21,8 @@
     "emitDeclarationOnly": true, // This probably isn't doing anything under Glint
     "noEmit": false,
     "noEmitOnError": false,
-    "rootDir": "."
+    "rootDir": ".",
+    "skipLibCheck": true // The duet-date-picker types cause issues on our TypeScript version and the library is no longer maintained..
   },
   "glint": {
     "environment": ["ember-loose", "ember-template-imports"],
