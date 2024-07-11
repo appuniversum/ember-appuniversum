@@ -3,10 +3,12 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
 import AuButton from '@appuniversum/ember-appuniversum/components/au-button';
 import { tracked } from '@glimmer/tracking';
+import { hasDeprecationStartingWith } from 'dummy/tests/helpers/deprecations';
 
 class TestState {
   @tracked isDisabled?: boolean;
   @tracked isLoading?: boolean;
+  @tracked loadingMessage?: string;
 }
 
 module('Integration | Component | au-button', function (hooks) {
@@ -65,4 +67,47 @@ module('Integration | Component | au-button', function (hooks) {
     await settled();
     assert.dom('[data-test-button]').isDisabled();
   });
+
+  test('the default loading message is deprecated', async function (assert) {
+    const state = new TestState();
+    state.isLoading = false;
+
+    await render(
+      <template>
+        <AuButton
+          @loading={{state.isLoading}}
+          @loadingMessage={{state.loadingMessage}}
+          data-test-button
+        >
+          Foo
+        </AuButton>
+      </template>,
+    );
+
+    assert.false(
+      showsDeprecationMessage(),
+      "it does't show the deprecation if @loading isn't true",
+    );
+
+    state.isLoading = true;
+    state.loadingMessage = 'Loading';
+    await settled();
+    assert.false(
+      showsDeprecationMessage(),
+      "it does't show the deprecation if @loadingMessage is set",
+    );
+
+    state.loadingMessage = undefined;
+    await settled();
+    assert.true(
+      showsDeprecationMessage(),
+      "it shows the deprecation message if @loadingMessage isn't set",
+    );
+  });
 });
+
+function showsDeprecationMessage() {
+  return hasDeprecationStartingWith(
+    '[AuButton] Not providing `@loadingMessage` when setting `@loading` to `true` is deprecated.',
+  );
+}

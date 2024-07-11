@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { deprecate } from '@ember/debug';
 import AuIcon, { type AuIconSignature } from './au-icon';
 import { LoadingAnimation } from '../private/components/loading-animation';
 
@@ -71,8 +72,31 @@ export default class AuButton extends Component<AuButtonSignature> {
   }
 
   get loadingMessage() {
-    if (this.args.loadingMessage) return this.args.loadingMessage;
-    else return 'Aan het laden';
+    if (this.args.loadingMessage) {
+      return this.args.loadingMessage;
+    }
+
+    deprecate(
+      `[AuButton] Not providing \`@loadingMessage\` when setting \`@loading\` to \`true\` is deprecated. Add the \`@loadingMessage\` argument explicitly.
+
+Use \`@loadingMessage="Aan het laden"\` to get the same behavior as before.
+
+More info in the migration guide: https://github.com/appuniversum/ember-appuniversum/pull/497
+
+`,
+      false,
+      {
+        id: '@appuniversum/ember-appuniversum.au-button-loading-message',
+        until: '4.0.0',
+        for: '@appuniversum/ember-appuniversum',
+        since: {
+          available: '3.5.0',
+          enabled: '3.5.0',
+        },
+      },
+    );
+
+    return 'Aan het laden';
   }
 
   get isIconLeft() {
