@@ -18,6 +18,8 @@ npm install --save-dev @appuniversum/ember-appuniversum
 
 This ember addon wraps a CSS framework for Flanders government applications called Appuniversum. It provides components that helps being compliant with this framework in Ember apps.
 
+To get started using this addon in your Ember.js app, follow the [Getting started](https://appuniversum.github.io/ember-appuniversum/?path=/story/outline-getting-started--page) guide.
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
