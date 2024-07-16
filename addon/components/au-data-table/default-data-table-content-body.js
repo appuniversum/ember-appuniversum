@@ -1,47 +1,22 @@
-/* eslint-disable ember/no-actions-hash, ember/no-classic-classes, ember/no-classic-components, ember/no-get, ember/require-tagless-components */
-import { set } from '@ember/object';
+/* eslint-disable ember/no-actions-hash, ember/no-classic-classes, ember/no-classic-components, ember/no-get */
+import { A } from '@ember/array';
 import { computed } from '@ember/object';
+import { oneWay } from '@ember/object/computed';
 import Component from '@ember/component';
 
 // Source: https://github.com/mu-semtech/ember-data-table/blob/c690a3948b2d9d5f91d69f0a935c6b5cdb4862ca/addon/components/default-data-table-content-body.js
+
 export default Component.extend({
-  tagName: 'tbody',
-  init() {
-    this._super(...arguments);
-    if (!this['data-table']) this.set('data-table', {});
-    if (!this['content']) this.set('content', []);
-  },
-  offset: computed('data-table.{page,size}', function () {
-    var offset = 1; //to avoid having 0. row
-    var page = this.get('data-table.page');
-    var size = this.get('data-table.size');
-    if (page && size) {
-      offset += page * size;
-    }
-    return offset;
+  tagName: '',
+  allFields: oneWay('data-table.parsedFields'),
+  firstColumn: computed('data-table.parsedFields', function () {
+    const parsedFields = A(this.get('data-table.parsedFields'));
+    return parsedFields.get('firstObject');
   }),
-  wrappedItems: computed(
-    'content',
-    'content.[]',
-    'data-table.selection.[]',
-    function () {
-      const selection = this.get('data-table.selection') || [];
-      const content = this.content || [];
-      return content.map(function (item) {
-        return { item: item, isSelected: selection.includes(item) };
-      });
-    },
-  ),
-  actions: {
-    updateSelection(selectedWrapper, event) {
-      set(selectedWrapper, 'isSelected', event.target.checked);
-      this.wrappedItems.forEach((wrapper) => {
-        if (wrapper.isSelected) {
-          this.get('data-table').addItemToSelection(wrapper.item);
-        } else {
-          this.get('data-table').removeItemFromSelection(wrapper.item);
-        }
-      });
-    },
-  },
+  otherColumns: computed('data-table.parsedFields', function () {
+    let fields;
+    [, ...fields] = this.get('data-table.parsedFields');
+    return fields;
+  }),
+  linkedRoute: oneWay('data-table.link'),
 });
