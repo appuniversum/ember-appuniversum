@@ -13,7 +13,7 @@
 {{#each this.otherColumns as |field|}}
   <td>
     {{! This should be based on the type of the field }}
-    {{get this.item this.field}}
+    {{get this.item field}}
   </td>
 {{/each}}
 {{yield}}
