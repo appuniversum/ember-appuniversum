@@ -5,7 +5,6 @@ import { oneWay } from '@ember/object/computed';
 import Component from '@ember/component';
 
 // Source: https://github.com/mu-semtech/ember-data-table/blob/c690a3948b2d9d5f91d69f0a935c6b5cdb4862ca/addon/components/default-data-table-content-body.js
-
 export default Component.extend({
   tagName: '',
   allFields: oneWay('data-table.parsedFields'),
