@@ -2,6 +2,21 @@
 
 
 
+## v3.5.0 (2024-07-31)
+
+#### :rocket: Enhancement
+* [#497](https://github.com/appuniversum/ember-appuniversum/pull/497) [AuButton] deprecate the default loading message ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#503](https://github.com/appuniversum/ember-appuniversum/pull/503) Fix a styling issue in the `AuMainHeader` component ([@Windvis](https://github.com/Windvis))
+* [#501](https://github.com/appuniversum/ember-appuniversum/pull/501) Fix the order of the "spacing" utilities ([@Windvis](https://github.com/Windvis))
+* [#502](https://github.com/appuniversum/ember-appuniversum/pull/502) Fix the "reverse" flex utilities ([@Windvis](https://github.com/Windvis))
+* [#500](https://github.com/appuniversum/ember-appuniversum/pull/500) Add missing responsive flex utilities ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#494](https://github.com/appuniversum/ember-appuniversum/pull/494) More Glint / TS conversion ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.4.2 (2024-05-14)
 
 #### :bug: Bug Fix
