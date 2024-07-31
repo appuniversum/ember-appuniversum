@@ -146,6 +146,14 @@ Set the global `$au-flex-utilities-reverse-responsive-breakpoints` variable to `
       }
 
       @include mq($from: $from, $until: $until) {
+        .au-u-flex\@#{$au-bp-name} {
+          display: flex !important;
+        }
+
+        .au-u-flex--inline\@#{$au-bp-name} {
+          display: inline-flex !important;
+        }
+
         .au-u-flex--wrap\@#{$au-bp-name} {
           flex-wrap: wrap !important;
         }
