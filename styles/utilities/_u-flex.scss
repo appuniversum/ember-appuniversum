@@ -62,11 +62,11 @@ $au-flex-utilities-reverse-responsive-breakpoints: false !default;
 }
 
 .au-u-flex--row-reverse {
-  flex-direction: row !important;
+  flex-direction: row-reverse !important;
 }
 
 .au-u-flex--column-reverse {
-  flex-direction: column !important;
+  flex-direction: column-reverse !important;
 }
 
 .au-u-flex--start {
@@ -187,11 +187,11 @@ Set the global `$au-flex-utilities-reverse-responsive-breakpoints` variable to `
         }
 
         .au-u-flex--row-reverse\@#{$au-bp-name} {
-          flex-direction: row !important;
+          flex-direction: row-reverse !important;
         }
 
         .au-u-flex--column-reverse\@#{$au-bp-name} {
-          flex-direction: column !important;
+          flex-direction: column-reverse !important;
         }
 
         .au-u-flex--start\@#{$au-bp-name} {
