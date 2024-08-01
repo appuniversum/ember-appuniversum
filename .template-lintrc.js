@@ -12,6 +12,7 @@ module.exports = {
       files: ['tests/integration/**'],
       rules: {
         'require-input-label': 'off',
+        'no-curly-component-invocation': 'off', // Disabled until we refactor the table tests
       },
     },
   ],
