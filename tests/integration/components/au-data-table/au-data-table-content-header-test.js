@@ -9,7 +9,7 @@ module(
     setupRenderingTest(hooks);
 
     test('it renders', async function (assert) {
-      await render(hbs`{{au-data-table-content-header}}`);
+      await render(hbs`<AuDataTableContentHeader />`);
       assert.dom('thead').exists({ count: 1 });
 
       assert.dom('*').hasText('');
