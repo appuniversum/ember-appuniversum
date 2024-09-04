@@ -81,7 +81,6 @@ class NavigationNarrator extends Component {
   <template>
     <div
       aria-live="assertive"
-      aria-controls="main"
       aria-atomic="true"
       aria-relevant="all"
     >
