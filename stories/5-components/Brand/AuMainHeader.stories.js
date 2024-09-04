@@ -13,6 +13,10 @@ export default {
       control: 'text',
       description: 'Pass a route for the contact link',
     },
+    contactLabel: {
+      control: 'text',
+      description: 'Set the label for the contact link (default: Contacteer ons)',
+    },
   },
   parameters: {
     layout: 'padded',
@@ -26,6 +30,7 @@ const Template = (args) => ({
       @appTitle={{this.appTitle}}
       @homeRoute={{this.homeRoute}}
       @contactRoute={{this.contactRoute}}
+      @contactLabel={{this.contactLabel}}
     >
       <AuDropdown @title="Demo dropdown" @alignment="right" role="menu">
         <AuButton @skin="link" @icon="logout" role="menuitem">
@@ -42,4 +47,5 @@ Component.args = {
   appTitle: 'App title',
   homeRoute: 'home',
   contactRoute: 'contact',
+  contactLabel: 'Contacteer ons',
 };

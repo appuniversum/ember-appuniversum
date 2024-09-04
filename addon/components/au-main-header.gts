@@ -13,6 +13,7 @@ export interface AuMainHeaderSignature {
     appTitle: string;
     brandLink?: string;
     contactRoute?: string;
+    contactLabel?: string;
     homeRoute?: string;
   };
   Blocks: {
@@ -22,6 +23,11 @@ export interface AuMainHeaderSignature {
 }
 
 export default class AuMainHeader extends Component<AuMainHeaderSignature> {
+  get contactLabel() {
+    if (this.args.contactLabel) return this.args.contactLabel;
+    else return 'Contacteer ons';
+  }
+
   @action
   headerLinkFocus() {
     document.querySelector<HTMLElement>('#main')?.focus();
@@ -58,7 +64,7 @@ export default class AuMainHeader extends Component<AuMainHeaderSignature> {
                 @skin="secondary"
                 @icon={{QuestionCircleIcon}}
               >
-                Contacteer ons
+                {{@contactLabel}}
               </AuLink>
             </li>
           {{/if}}
