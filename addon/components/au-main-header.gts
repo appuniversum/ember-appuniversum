@@ -64,7 +64,7 @@ export default class AuMainHeader extends Component<AuMainHeaderSignature> {
                 @skin="secondary"
                 @icon={{QuestionCircleIcon}}
               >
-                {{@contactLabel}}
+                {{this.contactLabel}}
               </AuLink>
             </li>
           {{/if}}
