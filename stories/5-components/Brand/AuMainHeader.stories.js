@@ -15,7 +15,8 @@ export default {
     },
     contactLabel: {
       control: 'text',
-      description: 'Set the label for the contact link (default: Contacteer ons)',
+      description:
+        'Set the label for the contact link (default: Contacteer ons)',
     },
   },
   parameters: {
