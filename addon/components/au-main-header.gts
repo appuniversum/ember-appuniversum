@@ -62,7 +62,7 @@ export default class AuMainHeader extends Component<AuMainHeaderSignature> {
         </a>
       </div>
       <nav
-        aria-label="{{this.navigationAriaLabel}}"
+        aria-label={{this.navigationAriaLabel}}
         class="au-c-main-header__actions"
       >
         <ul class="au-c-list-horizontal">
