@@ -47,6 +47,7 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
+    {{! template-lint-disable require-context-role }}
     <AuDropdown
       @title={{this.title}}
       @alignment={{this.alignment}}
@@ -57,7 +58,6 @@ const Template = (args) => ({
       @hideText={{this.hideText}}
       @alert={{this.alert}}
       @onClose={{this.onClose}}
-      role="menu"
     >
       <AuButton @skin="link" @icon="switch" role="menuitem">
         Switch profile
@@ -65,12 +65,15 @@ const Template = (args) => ({
       <AuButton @skin="link" @icon="logout" role="menuitem">
         Afmelden
       </AuButton>
-    </AuDropdown>`,
+    </AuDropdown>
+    {{! template-lint-enable require-context-role }}
+  `,
   context: args,
 });
 
 const TemplateSeparator = (args) => ({
   template: hbs`
+    {{! template-lint-disable require-context-role }}
     <AuDropdown
       @title={{this.title}}
       @alignment={{this.alignment}}
@@ -81,7 +84,6 @@ const TemplateSeparator = (args) => ({
       @hideText={{this.hideText}}
       @alert={{this.alert}}
       @onClose={{this.onClose}}
-      role="menu"
     >
       <AuButton @skin="link" role="menuitem">
         Agendapunt toevoegen
@@ -103,9 +105,12 @@ const TemplateSeparator = (args) => ({
       <AuButton @alert="true" @skin="link" @icon="bin" role="menuitem">
         Verwijder
       </AuButton>
-    </AuDropdown>`,
+    </AuDropdown>
+    {{! template-lint-enable require-context-role }}
+  `,
   context: args,
 });
+/* prettier-ignore-end */
 
 export const Component = Template.bind({});
 Component.args = {

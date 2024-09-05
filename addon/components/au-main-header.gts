@@ -13,7 +13,9 @@ export interface AuMainHeaderSignature {
     appTitle: string;
     brandLink?: string;
     contactRoute?: string;
+    contactLabel?: string;
     homeRoute?: string;
+    navigationAriaLabel?: string;
   };
   Blocks: {
     default: [];
@@ -22,6 +24,16 @@ export interface AuMainHeaderSignature {
 }
 
 export default class AuMainHeader extends Component<AuMainHeaderSignature> {
+  get contactLabel() {
+    if (this.args.contactLabel) return this.args.contactLabel;
+    else return 'Contacteer ons';
+  }
+
+  get navigationAriaLabel() {
+    if (this.args.navigationAriaLabel) return this.args.navigationAriaLabel;
+    else return 'Informatie en instellingen';
+  }
+
   @action
   headerLinkFocus() {
     document.querySelector<HTMLElement>('#main')?.focus();
@@ -49,7 +61,10 @@ export default class AuMainHeader extends Component<AuMainHeaderSignature> {
           Naar de hoofdinhoud
         </a>
       </div>
-      <nav class="au-c-main-header__actions">
+      <nav
+        aria-label={{this.navigationAriaLabel}}
+        class="au-c-main-header__actions"
+      >
         <ul class="au-c-list-horizontal">
           {{#if @contactRoute}}
             <li class="au-c-list-horizontal__item">
@@ -58,7 +73,7 @@ export default class AuMainHeader extends Component<AuMainHeaderSignature> {
                 @skin="secondary"
                 @icon={{QuestionCircleIcon}}
               >
-                Contacteer ons
+                {{this.contactLabel}}
               </AuLink>
             </li>
           {{/if}}
@@ -79,12 +94,7 @@ class NavigationNarrator extends Component {
   }
 
   <template>
-    <div
-      aria-live="assertive"
-      aria-controls="main"
-      aria-atomic="true"
-      aria-relevant="all"
-    >
+    <div aria-live="assertive" aria-atomic="true" aria-relevant="all">
       <span class="au-u-hidden-visually">
         {{this.activeRoute}}
       </span>
