@@ -55,7 +55,7 @@ export default class AuMainHeader extends Component<AuMainHeaderSignature> {
           Naar de hoofdinhoud
         </a>
       </div>
-      <nav class="au-c-main-header__actions">
+      <nav aria-label="Informatie en instellingen" class="au-c-main-header__actions">
         <ul class="au-c-list-horizontal">
           {{#if @contactRoute}}
             <li class="au-c-list-horizontal__item">
