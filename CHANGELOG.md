@@ -2,6 +2,20 @@
 
 
 
+
+## v3.6.0 (2024-09-06)
+
+#### :rocket: Enhancement
+* [#508](https://github.com/appuniversum/ember-appuniversum/pull/508) Accessibility update / Tested for frontend-subsidiepunt ([@Dietr](https://github.com/Dietr))
+
+#### :bug: Bug Fix
+* [#505](https://github.com/appuniversum/ember-appuniversum/pull/505) Add missing content styles ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.5.0 (2024-07-31)
 
 #### :rocket: Enhancement
