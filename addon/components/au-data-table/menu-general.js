@@ -1,3 +1,4 @@
-import DataTableMenuGeneral from 'ember-data-table/components/data-table-menu-general';
+/* eslint-disable ember/no-classic-classes, ember/no-classic-components, ember/require-tagless-components */
+import Component from '@ember/component';
 
-export default DataTableMenuGeneral.extend({});
+export default Component.extend({});
