@@ -7,6 +7,11 @@ module.exports = {
     'addon/components/au-data-table/**',
     'tests/dummy/app/components/docs*/**',
   ],
+  rules: {
+    'require-presentational-children': ['error', {
+      additionalNonSemanticTags: ['AuIcon']
+    }]
+  },
   overrides: [
     {
       files: ['tests/integration/**'],
