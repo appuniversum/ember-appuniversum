@@ -43,9 +43,9 @@ export default class AuRadio extends Component<AuRadioSignature> {
     }
   }
 
-  <template>
-    {{~!~}}
-    <label
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><label
       class="au-c-control au-c-control--radio
         {{if (and (not @inGroup) (not (has-block))) 'au-c-control--labelless'}}
         {{if @disabled 'is-disabled'}}"
@@ -62,7 +62,5 @@ export default class AuRadio extends Component<AuRadioSignature> {
       />
       <span class="au-c-control__indicator"></span>
       {{yield}}
-    </label>
-    {{~!~}}
-  </template>
+    </label></template>
 }

@@ -18,7 +18,7 @@ export default class AuBrand extends Component<AuBrandSignature> {
   }
 
   <template>
-    {{#if @link}}
+    {{~#if @link~}}
       <a
         href={{@link}}
         class="au-c-brand au-c-brand--link {{this.tagline}}"
@@ -52,7 +52,7 @@ export default class AuBrand extends Component<AuBrandSignature> {
           {{/if}}
         </p>
       </a>
-    {{else}}
+    {{~else~}}
       <div class="au-c-brand {{this.tagline}}" ...attributes>
         <div class="au-c-brand__logo">
           <svg
@@ -78,6 +78,6 @@ export default class AuBrand extends Component<AuBrandSignature> {
           {{/if}}
         </p>
       </div>
-    {{/if}}
+    {{~/if~}}
   </template>
 }

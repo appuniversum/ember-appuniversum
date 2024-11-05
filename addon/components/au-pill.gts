@@ -72,7 +72,7 @@ export default class AuPill extends Component<AuPillSignature> {
   }
 
   <template>
-    {{#if @onClickAction}}
+    {{~#if @onClickAction~}}
       <span class="au-c-pill-container">
         <span
           class="au-c-pill {{this.skin}} {{this.size}} {{this.draft}}"
@@ -93,8 +93,8 @@ export default class AuPill extends Component<AuPillSignature> {
           <span class="au-u-hidden-visually">{{@actionText}}</span>
         </button>
       </span>
-    {{else}}
-      {{#if @route}}
+    {{~else~}}
+      {{~#if @route~}}
         <LinkTo
           class="au-c-pill au-c-pill--hover
             {{this.skin}}
@@ -111,7 +111,7 @@ export default class AuPill extends Component<AuPillSignature> {
             @hideText={{@hideText}}
           >{{yield}}</Inner>
         </LinkTo>
-      {{else if @href}}
+      {{~else if @href~}}
         <a
           href={{@href}}
           class="au-c-pill au-c-pill--hover
@@ -126,7 +126,7 @@ export default class AuPill extends Component<AuPillSignature> {
             @hideText={{@hideText}}
           >{{yield}}</Inner>
         </a>
-      {{else}}
+      {{~else~}}
         <span
           class="au-c-pill {{this.skin}} {{this.size}} {{this.draft}}"
           ...attributes
@@ -137,8 +137,8 @@ export default class AuPill extends Component<AuPillSignature> {
             @hideText={{@hideText}}
           >{{yield}}</Inner>
         </span>
-      {{/if}}
-    {{/if}}
+      {{~/if~}}
+    {{~/if~}}
   </template>
 }
 

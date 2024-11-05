@@ -34,9 +34,9 @@ export default class AuTextarea extends Component<AuTextareaSignature> {
     else return '';
   }
 
-  <template>
-    {{~!~}}
-    <textarea
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><textarea
       class="au-c-textarea
         {{this.error}}
         {{this.warning}}
@@ -46,7 +46,5 @@ export default class AuTextarea extends Component<AuTextareaSignature> {
       ...attributes
     >
       {{~yield~}}
-    </textarea>
-    {{~!~}}
-  </template>
+    </textarea></template>
 }

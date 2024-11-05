@@ -19,9 +19,9 @@ export interface AuDateInputSignature {
 }
 
 export default class AuDateInput extends Component<AuDateInputSignature> {
-  <template>
-    {{~!~}}
-    <AuInput
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><AuInput
       @disabled={{@disabled}}
       @error={{@error}}
       @icon={{CalendarIcon}}
@@ -31,7 +31,5 @@ export default class AuDateInput extends Component<AuDateInputSignature> {
       placeholder="DD-MM-JJJJ"
       {{auDateInput value=@value prefillYear=@prefillYear onChange=@onChange}}
       ...attributes
-    />
-    {{~!~}}
-  </template>
+    /></template>
 }

@@ -39,9 +39,9 @@ export default class AuToggleSwitch extends Component<AuToggleSwitchSignature> {
     }
   }
 
-  <template>
-    {{~!~}}
-    <label
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><label
       for={{@identifier}}
       class="au-c-toggle-switch
         {{this.alignmentClass}}
@@ -63,7 +63,5 @@ export default class AuToggleSwitch extends Component<AuToggleSwitchSignature> {
       />
       <span class="au-c-toggle-switch__toggle"></span>
       {{yield}}
-    </label>
-    {{~!~}}
-  </template>
+    </label></template>
 }

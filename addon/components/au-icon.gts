@@ -45,15 +45,15 @@ export default class AuIcon extends Component<AuIconSignature> {
   }
 
   <template>
-    {{#if this.iconComponent}}
-      {{#let this.iconComponent as |Icon|}}
+    {{~#if this.iconComponent~}}
+      {{~#let this.iconComponent as |Icon|~}}
         <Icon
           class="au-c-icon {{this.alignment}} {{this.size}}"
           aria-hidden={{this.ariaHidden}}
           ...attributes
         />
       {{/let}}
-    {{else}}
+    {{~else~}}
       <svg
         role="img"
         class="au-c-icon au-c-icon--{{@icon}} {{this.alignment}} {{this.size}}"
@@ -64,6 +64,6 @@ export default class AuIcon extends Component<AuIconSignature> {
           xlink:href="{{this.iconPrefix}}@appuniversum/ember-appuniversum/appuniversum-symbolset.svg#{{@icon}}"
         ></use>
       </svg>
-    {{/if}}
+    {{~/if~}}
   </template>
 }
