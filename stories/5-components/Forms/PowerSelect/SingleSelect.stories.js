@@ -22,6 +22,7 @@ export default {
 
 const Template = (args) => ({
   template: hbs`
+    <BasicDropdownWormhole />
     <PowerSelect
       @allowClear={{this.allowClear}}
       @renderInPlace={{this.renderInPlace}}

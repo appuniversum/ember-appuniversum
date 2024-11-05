@@ -89,7 +89,8 @@
     "ember-auto-import": "^2.6.3",
     "ember-cli-babel": "^8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
-    "ember-concurrency": "^3.1.0",
+    "ember-cli-version-checker": "^5.1.2",
+    "ember-concurrency": "^3.1.0 || ^4.0.2",
     "ember-data-table": "^2.1.0",
     "ember-file-upload": "^8.4.0",
     "ember-focus-trap": "^1.1.0",
@@ -138,6 +139,7 @@
     "chromatic": "^6.5.4",
     "concurrently": "^8.2.2",
     "ember-auto-import": "^2.7.0",
+    "ember-basic-dropdown": "^8.3.0",
     "ember-cli": "~5.5.0",
     "ember-cli-autoprefixer": "^2.0.0",
     "ember-cli-clean-css": "^3.0.0",
@@ -148,7 +150,7 @@
     "ember-cli-terser": "^4.0.2",
     "ember-load-initializers": "^2.1.2",
     "ember-page-title": "^8.1.0",
-    "ember-power-select": "^7.2.0",
+    "ember-power-select": "^8.0.0",
     "ember-qunit": "^8.0.2",
     "ember-resolver": "^11.0.1",
     "ember-root-url": "^1.0.1",
@@ -180,7 +182,7 @@
     "webpack": "^5.89.0"
   },
   "optionalDependencies": {
-    "ember-power-select": "2.x || 3.x || 4.x || 5.x || 6.x || 7.x"
+    "ember-power-select": "2.x || 3.x || 4.x || 5.x || 6.x || 7.x || 8.x"
   },
   "peerDependencies": {
     "ember-source": "^4.12.0 || ^5.0.0",

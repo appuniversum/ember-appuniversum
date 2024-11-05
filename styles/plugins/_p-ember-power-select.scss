@@ -581,6 +581,14 @@ $ember-power-select-multiple-option-line-height: 1.45;
   }
 }
 
+.ember-power-select-visually-hidden {
+  height: 1px;
+  left: -9999px;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+}
+
 // RTL styles
 .ember-power-select-trigger[dir="rtl"] {
   padding: $ember-power-select-trigger-rtl-padding;
