@@ -79,6 +79,7 @@ const Template = (args) => ({
 
 const OverflowTemplate = (args) => ({
   template: hbs`
+    <BasicDropdownWormhole />
     <AuModalContainer />
     <AuModal
       @modalOpen={{this.modalOpen}}

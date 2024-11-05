@@ -67,6 +67,7 @@ jobs:
           - ember-canary
           - embroider-safe
           - embroider-optimized
+          - ember-concurrency-v3
 
     steps:
       - uses: actions/checkout@v3

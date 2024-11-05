@@ -40,6 +40,18 @@ module.exports = async function () {
       },
       embroiderSafe(),
       embroiderOptimized(),
+      {
+        name: 'ember-concurrency-v3',
+        npm: {
+          dependencies: {
+            'ember-concurrency': '^3.0.0',
+          },
+          devDependencies: {
+            'ember-basic-dropdown': null,
+            'ember-power-select': '^7.0.0',
+          },
+        },
+      },
     ],
   };
 };
