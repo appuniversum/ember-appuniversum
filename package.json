@@ -90,7 +90,7 @@
     "ember-cli-babel": "^8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-concurrency": "^3.1.0",
-    "ember-data-table": "^2.1.0",
+    "ember-data-table": "github:mu-semtech/ember-data-table#feature/enhance-for-ember-4",
     "ember-file-upload": "^8.4.0",
     "ember-focus-trap": "^1.1.0",
     "ember-modifier": "^4.1.0",

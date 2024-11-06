@@ -1,57 +1,337 @@
-<div data-table class="au-c-data-table">
-  {{#if (has-block)}}
-
+{{!-- template-lint-disable no-inline-styles --}}
+<DataTable
+  @content={{@content}}
+  @fields={{@fields}}
+  @autoSearch={{@autoSearch}}
+  @view={{@view}}
+  @page={{@page}}
+  @size={{@size}}
+  @total={{@total}}
+  @sort={{@sort}}
+  @filter={{@filter}}
+  @meta={{@meta}}
+  @hasMenu={{@hasMenu}}
+  @enableSelection={{@enableSelection}}
+  @noDataMessage={{@noDataMessage}}
+  @isLoading={{@isLoading}}
+  @enableLineNumbers={{@enableLineNumbers}}
+  @updatePage={{@updatePage}}
+  @updatePageSize={{@updatePageSize}} {{!-- change to size or vice-versa? --}}
+  @updateFilter={{@updateFilter}}
+  @updateSort={{@updateSort}}
+  @onClickRow={{@onClickRow}}
+  @links={{@links}}
+  @linksModelProperty={{@linksModelProperty}}
+  @rowLink={{@rowLink}}
+  @rowLinkModelProperty={{@rowLinkModelProperty}}
+  @customHeaders={{@customHeaders}}
+  @customFields={{@customFields}}
+  @sortableFields={{@sortableFields}}
+  @attributeToSortParams={{@attributeToSortParams}}
+  as |dt|>
+  {{!-- START: search --}}
+  <div class="au-c-data-table">
     <div class="au-c-data-table__actions au-c-data-table__actions--top">
-      {{#if this.enableSearch}}
-        {{au-data-table-text-search filter=filter auto=autoSearch}}
+      {{#if dt.enableSearch}}
+        <dt.Search as |search|>
+          {{#if (has-block "search")}}
+            {{yield search to="search"}}
+          {{else}}
+            <div class="au-c-data-table__search">
+              <form
+                {{on "submit" search.submitForm}}
+                class="data-table-search">
+                {{#if search.autoSearch}}
+                  <AuInput
+                    value={{search.filter}}
+                    placeholder={{search.placeholder}}
+                    {{on "input" search.handleAutoInput}} />
+                {{else}}
+                  <AuInput
+                    value={{search.filter}}
+                    placeholder={{search.placeholder}}
+                    {{on "input" search.handleDirectInput}} />
+                  <AuButton
+                    type="submit"
+                    @skin="naked"
+                    @size="large"
+                    @icon="search"
+                    @hideText={{true}}>
+                    Zoeken
+                  </AuButton>
+                {{/if}}
+              </form>
+            </div>
+          {{/if}}
+        </dt.Search>
       {{/if}}
-      {{yield
-        (hash menu=(component "au-data-table-menu" data-table=this))
-        this
-      }}
+      {{!-- END: search --}}
+
+      {{!-- START: menu unstyled --}}
+      <dt.Menu as |General Selected enableSelection|>
+        {{#if (has-block "menu")}}
+          {{yield (hash General Selected enableSelection) to="menu"}}
+        {{else}}
+          <div class="data-table-menu">
+            {{!-- either we have a general block or we have to have a menu --}}
+            <General as |general|>
+              {{!-- TODO: shouldn't this be rendered when the result is empty too? Update docs! --}}
+              {{#if general.selectionIsEmpty}}
+                {{yield general to="general-menu"}}
+              {{/if}}
+            </General>
+            {{#if enableSelection}}
+              <Selected as |selected|>
+                {{#unless selected.selectionIsEmpty}}
+                  {{#if (has-block "selection-menu")}}
+                    {{yield selected to="selection-menu"}}
+                  {{else}}
+                    {{#if (has-block "selection-menu-actions")}}
+                      <span class="item-count">{{selected.selectionCount}} item(s) selected</span>
+                      <button type="button" {{on "click" selected.clearSelection}}>Cancel</button>
+                      {{yield selected to="selection-menu-actions"}}
+                    {{/if}}
+                  {{/if}}
+                {{/unless}}
+              </Selected>
+            {{/if}}
+          </div>
+        {{/if}}
+      </dt.Menu>
+      {{!-- END: menu --}}
     </div>
 
-    {{yield
-      (hash
-        content=(component
-          "au-data-table-content"
-          content=this.content
-          noDataMessage=this.noDataMessage
-          enableSelection=this.enableSelection
-          enableLineNumbers=this.enableLineNumbers
-          onClickRow=(optional this.onClickRow)
-          data-table=this
-        )
-      )
-      this
-    }}
-  {{else}}
-    {{#if this.enableSearch}}
-      <div class="au-c-data-table__actions au-c-data-table__actions--top">
-        {{au-data-table-text-search filter=filter auto=autoSearch}}
-      </div>
-    {{/if}}
-    {{component
-      "au-data-table-content"
-      content=this.content
-      noDataMessage=this.noDataMessage
-      enableSelection=this.enableSelection
-      enableLineNumbers=this.enableLineNumbers
-      onClickRow=(optional this.onClickRow)
-      data-table=this
-    }}
-  {{/if}}
+    {{!-- START: content --}}
+    <dt.Content as |content|>
+      {{#if (has-block "content")}}
+        {{yield content to="content"}}
+      {{else}}
+        <div class="au-c-data-table__wrapper">
+          <table class="au-c-data-table__table {{content.dataTable.tableClass}}">
+            {{!-- START: headers --}}
+            <content.Header as |header|>
+              {{#if (has-block "full-header")}}
+                {{yield header to="full-header"}}
+              {{else}}
+                <thead>
+                  <tr class="au-c-data-table__header">
+                    {{#if header.enableSelection}}
+                      <th class="au-c-data-table__header-title is-selectable">
+                        {{!-- Checkbox --}}
+                      </th>
+                    {{/if}}
+                    {{#if header.enableLineNumbers}}
+                      <th class="au-c-data-table__header-title">
+                        {{!-- Linenumbers --}}
+                      </th>
+                    {{/if}}
+                    {{#if (has-block "data-headers")}}
+                      {{yield header.dataHeadersInfo to="data-headers"}}
+                    {{else}}
+                      {{#each header.fields as |field|}}
+                        <header.ThSortable @field={{field}} @hasCustomBlock={{has-block "data-header"}} as |dataHeader|>
+                          {{#if dataHeader.renderCustomBlock}}
+                            {{yield dataHeader to="data-header"}}
+                          {{else}}
+                            {{#if dataHeader.isSortable}}
+                              <th>
+                                <span class={{concat "au-c-data-table__header-title au-c-data-table__header-title--sortable" (if dataHeader.isSorted " is-active" "")}}>
+                                  <span>{{dataHeader.label}}</span>
+                                  <button
+                                    role="button"
+                                    {{on "click" dataHeader.toggleSort}}
+                                    class="au-c-data-table__sort">
+                                    {{#if dataHeader.isAscending}}
+                                      <span class="au-u-hidden-visually">Aflopend sorteren</span>
+                                      <AuIcon @icon="nav-down" />
+                                    {{else if dataHeader.isDescending}}
+                                      <span class="au-u-hidden-visually">Oplopend sorteren</span>
+                                      <AuIcon @icon="nav-up" />
+                                    {{else}}
+                                      <span class="au-u-hidden-visually">Sorteren</span>
+                                      <AuIcon @icon="nav-up-down" />
+                                    {{/if}}
+                                  </button>
+                                </span>
+                              </th>
+                            {{else}}
+                              <th class="au-c-data-table__header-title">
+                                {{dataHeader.label}}
+                              </th>
+                            {{/if}}
+                          {{/if}}
+                        </header.ThSortable>
+                      {{/each}}
+                    {{/if}}
+                    {{#if (has-block "actions-header")}}
+                      {{yield to="actions-header"}}
+                    {{else}}
+                      {{#if (or (has-block "actions") header.hasLinks)}}
+                        <th class="au-c-data-table__header-title"></th>
+                      {{/if}}
+                    {{/if}}
+                  </tr>
+                </thead>
+              {{/if}}
+            </content.Header>
+            {{!-- END: headers --}}
 
-  {{#if this.content}}
-    <div class="au-c-data-table__actions au-c-data-table__actions--bottom">
-      {{au-data-table-number-pagination
-        page=this.page
-        size=this.size
-        nbOfItems=this.content.length
-        sizeOptions=this.sizeOptions
-        total=this.content.meta.count
-        links=this.content.meta.pagination
-      }}
-    </div>
-  {{/if}}
-</div>
+            {{!-- START: body --}}
+            <content.Body as |body|>
+              {{#if (has-block "body")}}
+                {{yield body to="body"}}
+              {{else}}
+                <tbody>
+                  {{#if body.isLoading}}
+                    {{#if (has-block "body-loading")}}
+                      {{yield to="body-loading"}}
+                    {{else}}
+                      <tr>
+                        <td colspan="100%" class="is-loading-data">
+                          Aan het laden...
+                        </td>
+                      </tr>
+                    {{/if}}
+                  {{else}}
+                    {{#if body.content}}
+                      {{#each body.wrappedItems as |wrapper index|}}
+                        <body.Row @wrapper={{wrapper}} @index={{index}} as |row|>
+                          {{#if (has-block "row")}}
+                            {{yield row to="row"}}
+                          {{else}}
+                            <tr role={{if row.hasClickRowAction "button" "row"}}
+                              class="{{if row.isSelected "selected"}} {{if row.hasClickRowAction "clickable"}}"
+                              {{on "click" row.onClickRow}}>
+                              {{#if row.enableSelection}}
+                                <td class="is-selectable">
+                                  {{input type="checkbox" checked=row.isSelected click=row.toggleSelected}}
+                                </td>
+                              {{/if}}
+                              {{#if row.enableLineNumbers}}
+                                <td>{{row.lineNumber}}</td>
+                              {{/if}}
+                              <row.DataCells as |dataCells|>
+                                {{#if (has-block "data-cells")}}
+                                  {{yield dataCells to="data-cells"}}
+                                {{else}}
+                                  {{#each dataCells.fields as |column|}}
+                                    <dataCells.DataCell @column={{column}} @hasCustomBlock={{has-block "data-cell"}} as |cell|>
+                                      {{#if (has-block "rest-data-cell")}}
+                                        {{yield cell to="rest-data-cell"}}
+                                      {{else if cell.renderCustomBlock}}
+                                        {{yield cell to="data-cell"}}
+                                      {{else}}
+                                        {{!-- TODO: This should be based on the type of the field --}}
+                                        {{#if cell.rowLink}}
+                                          <td>
+                                            <AuLink
+                                              @route={{cell.rowLink}}
+                                              @model={{cell.rowLinkModel}}
+                                              style="display: inline-block; width: 100%; height: 100%; margin: 0; padding: 0;" >
+                                              {{cell.value}}
+                                            </AuLink>
+                                          </td>
+                                        {{else}}
+                                          <td>{{cell.value}}</td>
+                                        {{/if}}
+                                      {{/if}}
+                                    </dataCells.DataCell>
+                                  {{/each}}
+                                {{/if}}
+                              </row.DataCells>
+                              {{#if (has-block "actions")}}
+                                {{yield row to="actions"}}
+                              {{else}}
+                                {{#if row.linkedRoutes}}
+                                  <td>
+                                    {{#each row.linkedRoutes as |linkedRoute|}}
+                                      <AuLink
+                                        @route={{linkedRoute.route}}
+                                        @model={{linkedRoute.model}}>
+                                        {{or linkedRoute.label linkedRoute.route}}
+                                      </AuLink>
+                                    {{/each}}
+                                  </td>
+                                {{/if}}
+                              {{/if}}
+                            </tr>
+                          {{/if}}
+                        </body.Row>
+                      {{/each}}
+                    {{else}}
+                      {{#if (has-block "no-data-message")}}
+                        {{yield to="no-data-message"}}
+                      {{else}}
+                        <tr>
+                          <td colspan="100%" class="au-c-data-table__message">
+                            <p>
+                              {{@noDataMessage}}
+                            </p>
+                          </td>
+                        </tr>
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                </tbody>
+              {{/if}}
+            </content.Body>
+            {{!-- END: body --}}
+          </table>
+        </div>
+      {{/if}}
+    </dt.Content>
+    {{!-- END: content --}}
+
+    {{!-- START: pagination --}}
+    <dt.Pagination as |pagination|>
+      {{#if (has-block "pagination")}}
+        {{yield pagination to="pagination"}}
+      {{else}}
+        <div class="au-c-data-table__actions au-c-data-table__actions--bottom">
+          <div class="au-c-pagination">
+            <p>
+              <span class="au-u-hidden-visually">Rij </span>
+              <strong>
+                {{pagination.startItem}} - {{pagination.endItem}}
+              </strong>
+              {{#if pagination.hasTotal}}
+                van
+                {{pagination.total}}
+              {{/if}}
+            </p>
+
+            <ul class="au-c-pagination__list">
+              {{#if pagination.hasMultiplePages}}
+                {{#unless pagination.isFirstPage}}
+                  <li class="au-c-pagination__list-item">
+                    <AuButton
+                      @skin="link"
+                      @icon="nav-left"
+                      {{on "click" (fn (mut pagination.humanPage) pagination.previousPage)}}>
+                      vorige
+                      <span class="au-u-hidden-visually"> {{pagination.pageSize}} rijen</span>
+                    </AuButton>
+                  </li>
+                {{/unless}}
+                {{#unless pagination.isLastPage}}
+                  <li class="au-c-pagination__list-item">
+                    <AuButton
+                      @skin="link"
+                      @icon="nav-right"
+                      @iconAlignment="right"
+                      {{on "click" (fn (mut pagination.humanPage) pagination.nextPage)}}
+                    >
+                      volgende
+                      <span class="au-u-hidden-visually"> {{pagination.pageSize}} rijen</span>
+                    </AuButton>
+                  </li>
+                {{/unless}}
+              {{/if}}
+            </ul>
+          </div>
+        </div>
+      {{/if}}
+    </dt.Pagination>
+    {{!-- END: pagination --}}
+  </div>
+</DataTable>
