@@ -82,9 +82,9 @@ export default class AuLink extends Component<AuLinkSignature> {
     return '';
   }
 
-  <template>
-    {{~!~}}
-    <LinkTo
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><LinkTo
       @route={{@route}}
       @models={{linkToModels @model @models}}
       @query={{this.queryParams}}
@@ -94,7 +94,7 @@ export default class AuLink extends Component<AuLinkSignature> {
         {{this.iconOnlyClass}}"
       ...attributes
     >
-      {{#if this.isIconLeft}}
+      {{~#if this.isIconLeft~}}
         {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
         <AuIcon @icon={{@icon}} />
       {{/if}}
@@ -106,8 +106,6 @@ export default class AuLink extends Component<AuLinkSignature> {
       {{#if this.isIconRight}}
         {{! @glint-expect-error: this.isIconRight ensures that @icon is set }}
         <AuIcon @icon={{@icon}} />
-      {{/if}}
-    </LinkTo>
-    {{~!~}}
-  </template>
+      {{~/if~}}
+    </LinkTo></template>
 }

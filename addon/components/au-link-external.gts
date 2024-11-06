@@ -61,9 +61,9 @@ export default class AuLinkExternal extends Component<AuLinkExternalSignature> {
     return '';
   }
 
-  <template>
-    {{~!~}}
-    <a
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><a
       class="{{this.skinClass}} {{this.widthClass}} {{this.iconOnlyClass}}"
       target="_blank"
       rel="noopener noreferrer"
@@ -83,7 +83,5 @@ export default class AuLinkExternal extends Component<AuLinkExternalSignature> {
         {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
         <AuIcon @icon={{@icon}} />
       {{/if}}
-    </a>
-    {{~!~}}
-  </template>
+    </a></template>
 }

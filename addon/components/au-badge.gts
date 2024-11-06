@@ -37,8 +37,9 @@ export default class AuBadge extends Component<AuBadgeSignature> {
     return '';
   }
 
-  <template>
-    <span
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><span
       class="au-c-badge {{this.skin}} {{this.size}}"
       aria-hidden={{if @iconVisible "false" "true"}}
       ...attributes
@@ -49,6 +50,5 @@ export default class AuBadge extends Component<AuBadgeSignature> {
       {{#if @number}}
         <span class="au-c-badge__number">{{@number}}</span>
       {{/if}}
-    </span>
-  </template>
+    </span></template>
 }

@@ -104,9 +104,9 @@ export default class AuDropdown extends Component<AuDropdownSignature> {
     };
   }
 
-  <template>
-    {{~!~}}
-    <div class="au-c-dropdown" ...attributes>
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><div class="au-c-dropdown" ...attributes>
       <AuButton
         {{this.reference}}
         @skin={{this.skin}}
@@ -153,7 +153,5 @@ export default class AuDropdown extends Component<AuDropdownSignature> {
           </div>
         </div>
       {{/if}}
-    </div>
-    {{~!~}}
-  </template>
+    </div></template>
 }

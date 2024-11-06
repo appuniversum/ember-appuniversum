@@ -117,8 +117,9 @@ More info in the migration guide: https://github.com/appuniversum/ember-appunive
     return '';
   }
 
-  <template>
-    <button
+  // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
+  // prettier-ignore
+  <template><button
       class="au-c-button
         {{this.widthClass}}
         {{this.sizeClass}}
@@ -161,6 +162,5 @@ More info in the migration guide: https://github.com/appuniversum/ember-appunive
           <AuIcon @icon={{@icon}} />
         {{/if}}
       {{/unless}}
-    </button>
-  </template>
+    </button></template>
 }
