@@ -58,6 +58,7 @@ export default ts.config(
    */
   {
     ignores: [
+      'declarations/',
       'dist/',
       '.node_modules.ember-try/',
       'coverage/',

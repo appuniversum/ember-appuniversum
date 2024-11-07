@@ -22,7 +22,11 @@ const Template = (args) => ({
   template: hbs`
     <AuContent class="au-u-max-width-small">
       <p>
-        You can add input masking to the AuInput by applying the <AuPill>{{"{{au-inputmask}}"}}</AuPill> modifier. It is a simple wrapper around the inputmask library. Usage instructions can be found in the <AuLinkExternal href="https://github.com/RobinHerbots/Inputmask">inputmask repo</AuLinkExternal>.
+        You can add input masking to the AuInput by applying the
+        {{! template-lint-disable no-unnecessary-curly-strings}}
+        <AuPill>{{"{{au-inputmask}}"}}</AuPill>
+        modifier. It is a simple wrapper around the inputmask library.
+        Usage instructions can be found in the <AuLinkExternal href="https://github.com/RobinHerbots/Inputmask">inputmask repo</AuLinkExternal>.
       </p>
     </AuContent>
     <br>

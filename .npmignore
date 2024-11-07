@@ -31,9 +31,9 @@
 /jsconfig.json
 /RELEASE.md
 /testem.js
-/tsconfig.json
-/tsconfig.declarations.json
 /tests/
+/tsconfig.declarations.json
+/tsconfig.json
 /yarn-error.log
 /yarn.lock
 .gitkeep
