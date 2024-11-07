@@ -99,77 +99,75 @@ function floatingUi(
     );
   }
 
-  const update = async () => {
-    const { x, y, placement, middlewareData } = await computePosition(
-      referenceElement,
-      floatingElement,
-      {
-        middleware,
-        placement: defaultPlacement,
-      },
-    );
-
-    Object.assign(floatingElement.style, {
-      transform: `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`,
-      visibility: middlewareData.hide?.referenceHidden ? 'hidden' : 'visible',
-    });
-
-    if (middlewareData.arrow) {
-      const { x } = middlewareData.arrow;
-      const [side, alignment] = placement.split('-') as [
-        'top' | 'bottom',
-        'string' | undefined,
-      ];
-      const isAligned = alignment != null;
-
-      const unsetSides = {
-        top: '',
-        bottom: '',
-        left: '',
-        right: '',
-      };
-
-      const rotation = {
-        top: '180deg',
-        bottom: '0deg',
-      }[side];
-
-      Object.assign(arrowElement!.style, {
-        ...unsetSides,
-        transform: `rotate(${rotation})`,
+  const update = () => {
+    void computePosition(referenceElement, floatingElement, {
+      middleware,
+      placement: defaultPlacement,
+    }).then(({ x, y, placement, middlewareData }) => {
+      Object.assign(floatingElement.style, {
+        transform: `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`,
+        visibility: middlewareData.hide?.referenceHidden ? 'hidden' : 'visible',
       });
 
-      if (isAligned) {
-        const crossSide = {
-          'top-start': 'left',
-          'top-end': 'right',
-          'bottom-start': 'left',
-          'bottom-end': 'right',
-        }[placement as 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end'];
+      if (middlewareData.arrow) {
+        const { x } = middlewareData.arrow;
+        const [side, alignment] = placement.split('-') as [
+          'top' | 'bottom',
+          'string' | undefined,
+        ];
+        const isAligned = alignment != null;
+
+        const unsetSides = {
+          top: '',
+          bottom: '',
+          left: '',
+          right: '',
+        };
+
+        const rotation = {
+          top: '180deg',
+          bottom: '0deg',
+        }[side];
 
         Object.assign(arrowElement!.style, {
-          [crossSide]:
-            typeof options.arrow?.position === 'string'
-              ? options.arrow.position
-              : `${options.arrow?.position}px`,
+          ...unsetSides,
+          transform: `rotate(${rotation})`,
         });
-      } else {
-        Object.assign(arrowElement!.style, {
-          left: x != null ? `${x}px` : '',
-        });
+
+        if (isAligned) {
+          const crossSide = {
+            'top-start': 'left',
+            'top-end': 'right',
+            'bottom-start': 'left',
+            'bottom-end': 'right',
+          }[
+            placement as 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end'
+          ];
+
+          Object.assign(arrowElement!.style, {
+            [crossSide]:
+              typeof options.arrow?.position === 'string'
+                ? options.arrow.position
+                : `${options.arrow?.position}px`,
+          });
+        } else {
+          Object.assign(arrowElement!.style, {
+            left: x != null ? `${x}px` : '',
+          });
+        }
+
+        const mainSide = {
+          top: 'bottom',
+          bottom: 'top',
+        }[side];
+
+        if (options.arrow?.offset) {
+          Object.assign(arrowElement!.style, {
+            [mainSide]: `${-options.arrow?.offset}px`,
+          });
+        }
       }
-
-      const mainSide = {
-        top: 'bottom',
-        bottom: 'top',
-      }[side];
-
-      if (options.arrow?.offset) {
-        Object.assign(arrowElement!.style, {
-          [mainSide]: `${-options.arrow?.offset}px`,
-        });
-      }
-    }
+    });
   };
 
   const cleanup = autoUpdate(referenceElement, floatingElement, update);

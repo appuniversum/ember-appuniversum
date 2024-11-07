@@ -91,7 +91,7 @@ export default class AuDatePicker extends Component<AuDatePickerSignature> {
 
   constructor(owner: unknown, args: AuDatePickerSignature['Args']) {
     super(owner, args);
-    this.registerDuetDatePicker();
+    void this.registerDuetDatePicker();
   }
 
   get adapter() {
