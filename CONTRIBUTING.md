@@ -27,7 +27,7 @@
 ## Installation
 
 - `git clone <repository-url>`
-- `cd ember-appuniversum`
+- `cd appuniversum-ember-appuniversum`
 - `npm install`
 
 ### Linting
