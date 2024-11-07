@@ -93,7 +93,7 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
 
   @action
   upload(file: UploadFile): void | undefined {
-    this.uploadTask.perform(file);
+    void this.uploadTask.perform(file);
   }
 
   uploadTask = task(async (file: UploadFile) => {
@@ -114,10 +114,10 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
         const response = await file.upload(this.endPoint, {
           contentType: 'multipart/form-data',
         });
-        const body = await response.json();
+        const body = (await response.json()) as { data: { id: number } };
         const fileId = body?.data?.id;
         return fileId;
-      } catch (e) {
+      } catch {
         this.addError(file);
         this.removeFileFromQueue(file);
         return null;

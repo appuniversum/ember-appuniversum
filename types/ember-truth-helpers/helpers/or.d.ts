@@ -9,7 +9,6 @@ export type Falsy =
   | null
   | false
   | 0
-  | -0
   | 0n
   | ''
   | never[];
@@ -31,7 +30,7 @@ type TruthConvert<T> = T extends {
         : T extends boolean
           ? T
           : T extends number
-            ? T extends 0 | -0
+            ? T extends 0
               ? false
               : number extends T
                 ? boolean
