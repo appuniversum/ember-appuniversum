@@ -14,6 +14,7 @@ export interface AuLinkExternalSignature {
     hideText?: boolean;
     icon?: AuIconSignature['Args']['icon'];
     iconAlignment?: 'left' | 'right';
+    newTab?: boolean;
     skin?:
       | 'primary'
       | 'secondary'
@@ -61,12 +62,16 @@ export default class AuLinkExternal extends Component<AuLinkExternalSignature> {
     return '';
   }
 
+  get newTab() {
+    return typeof this.args.newTab === 'boolean' ? this.args.newTab : true;
+  }
+
   // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
   // prettier-ignore
   <template><a
       class="{{this.skinClass}} {{this.widthClass}} {{this.iconOnlyClass}}"
-      target="_blank"
-      rel="noopener noreferrer"
+      target={{if this.newTab "_blank"}}
+      rel={{if this.newTab "noopener noreferrer"}}
       href=""
       ...attributes
     >
