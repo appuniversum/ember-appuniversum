@@ -176,7 +176,7 @@
     "stylelint-prettier": "^4.1.0",
     "svg-symbols": "^1.0.5",
     "tracked-built-ins": "^3.3.0",
-    "typescript": "~5.5.0",
+    "typescript": "~5.6.3",
     "typescript-eslint": "^8.13.0",
     "webpack": "^5.95.0"
   },
