@@ -28,6 +28,11 @@ export default {
       control: 'boolean',
       description: 'Hides the link text visually',
     },
+    newTab: {
+      control: 'boolean',
+      description:
+        'Should clicking the link open a new tab. Defaults to `true`.',
+    },
     width: {
       control: 'select',
       options: ['', 'block'],
@@ -47,6 +52,7 @@ const Template = (args) => ({
       @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
+      @newTab={{this.newTab}}
       @width={{this.width}}
     >
       {{this.text}}
