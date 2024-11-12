@@ -63,4 +63,7 @@ const DataTable = Component.extend({
 
 export default DataTable.extend({
   tagName: '',
+  showPagination: computed('content', 'hidePagination', function () {
+    return Boolean(this.content) && !this.hidePagination;
+  }),
 });
