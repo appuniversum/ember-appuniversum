@@ -16,6 +16,7 @@ const Template = (args) => ({
       @fields="title description"
       @noDataMessage="Geen documenten"
       @sort={{this.sort}}
+      @hidePagination={{this.hidePagination}}
       as |t|
     >
       <t.menu as |menu|>
@@ -107,4 +108,5 @@ Component.args = {
   page: 0,
   itemsPerPage: 5,
   totalItems: 100,
+  hidePagination: false,
 };
