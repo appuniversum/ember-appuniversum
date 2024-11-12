@@ -6,7 +6,7 @@
   {{#if (eq this.order "desc")}}
     <button
       role="button"
-      {{action "inverseSorting"}}
+      {{on "click" this.inverseSorting}}
       class="au-c-data-table__sort"
     >
       <span class="au-u-hidden-visually">Oplopend sorteren</span>
@@ -15,7 +15,7 @@
   {{else if (eq this.order "asc")}}
     <button
       role="button"
-      {{action "inverseSorting"}}
+      {{on "click" this.inverseSorting}}
       class="au-c-data-table__sort"
     >
       <span class="au-u-hidden-visually">Aflopend sorteren</span>
@@ -24,7 +24,7 @@
   {{else}}
     <button
       role="button"
-      {{action "inverseSorting"}}
+      {{on "click" this.inverseSorting}}
       class="au-c-data-table__sort"
     >
       <span class="au-u-hidden-visually">Sorteren</span>

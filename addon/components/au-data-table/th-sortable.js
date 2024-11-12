@@ -1,6 +1,6 @@
-/* eslint-disable ember/no-actions-hash, ember/no-classic-classes, ember/no-classic-components, ember/require-tagless-components */
+/* eslint-disable ember/no-classic-classes, ember/no-classic-components, ember/require-tagless-components */
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { action, computed } from '@ember/object';
 import { NavDownIcon } from '../icons/nav-down';
 import { NavUpIcon } from '../icons/nav-up';
 import { NavUpDownIcon } from '../icons/nav-up-down';
@@ -41,25 +41,23 @@ const ThSortable = Component.extend({
     }
   }),
 
-  actions: {
-    /**
-       Sets the current sorting parameter.
-       Note: the current sorting parameter may contain another field than the given field.
-       In case the given field is currently sorted ascending, change to descending.
-       In case the given field is currently sorted descending, clean the sorting.
-       Else, set the sorting to ascending on the given field.
-     */
-    inverseSorting() {
-      if (this.order === 'asc') {
-        this.set('currentSorting', this._inverseSorting(this.currentSorting));
-      } else if (this.order === 'desc') {
-        this.set('currentSorting', '');
-      } else {
-        // if currentSorting is not set to this field
-        this.set('currentSorting', this.dasherizedField);
-      }
-    },
-  },
+  /**
+    Sets the current sorting parameter.
+    Note: the current sorting parameter may contain another field than the given field.
+    In case the given field is currently sorted ascending, change to descending.
+    In case the given field is currently sorted descending, clean the sorting.
+    Else, set the sorting to ascending on the given field.
+  */
+  inverseSorting: action(function () {
+    if (this.order === 'asc') {
+      this.set('currentSorting', this._inverseSorting(this.currentSorting));
+    } else if (this.order === 'desc') {
+      this.set('currentSorting', '');
+    } else {
+      // if currentSorting is not set to this field
+      this.set('currentSorting', this.dasherizedField);
+    }
+  }),
 });
 
 export default ThSortable.extend({

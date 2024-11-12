@@ -1,6 +1,6 @@
-/* eslint-disable ember/no-actions-hash, ember/no-classic-classes, ember/no-classic-components, ember/no-get, ember/require-tagless-components */
+/* eslint-disable ember/no-classic-classes, ember/no-classic-components, ember/no-get, ember/require-tagless-components */
 import { set } from '@ember/object';
-import { computed } from '@ember/object';
+import { action, computed } from '@ember/object';
 import Component from '@ember/component';
 
 // Source: https://github.com/mu-semtech/ember-data-table/blob/c690a3948b2d9d5f91d69f0a935c6b5cdb4862ca/addon/components/data-table-content-body.js
@@ -32,16 +32,14 @@ export default Component.extend({
       });
     },
   ),
-  actions: {
-    updateSelection(selectedWrapper, event) {
-      set(selectedWrapper, 'isSelected', event.target.checked);
-      this.wrappedItems.forEach((wrapper) => {
-        if (wrapper.isSelected) {
-          this.get('data-table').addItemToSelection(wrapper.item);
-        } else {
-          this.get('data-table').removeItemFromSelection(wrapper.item);
-        }
-      });
-    },
-  },
+  updateSelection: action(function (selectedWrapper, event) {
+    set(selectedWrapper, 'isSelected', event.target.checked);
+    this.wrappedItems.forEach((wrapper) => {
+      if (wrapper.isSelected) {
+        this.get('data-table').addItemToSelection(wrapper.item);
+      } else {
+        this.get('data-table').removeItemFromSelection(wrapper.item);
+      }
+    });
+  }),
 });

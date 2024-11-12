@@ -1,6 +1,6 @@
-/* eslint-disable ember/no-actions-hash, ember/no-classic-classes, ember/no-classic-components, ember/no-get, ember/require-tagless-components */
+/* eslint-disable ember/no-classic-classes, ember/no-classic-components, ember/no-get, ember/require-tagless-components */
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { action, computed } from '@ember/object';
 import { gt } from '@ember/object/computed';
 import { NavLeftIcon } from '../icons/nav-left';
 import { NavRightIcon } from '../icons/nav-right';
@@ -44,11 +44,9 @@ const NumberPagination = Component.extend({
       (val, index) => this.firstPage + index,
     );
   }),
-  actions: {
-    changePage(link) {
-      this.set('page', link['number'] || 0);
-    },
-  },
+  changePage: action(function (link) {
+    this.set('page', link['number'] || 0);
+  }),
 });
 
 export default NumberPagination.extend({

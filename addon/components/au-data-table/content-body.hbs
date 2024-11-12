@@ -15,7 +15,7 @@
             <input
               type="checkbox"
               checked={{wrapper.isSelected}}
-              {{on "click" (action "updateSelection" wrapper)}}
+              {{on "click" (fn this.updateSelection wrapper)}}
             />
           </td>
         {{/if}}

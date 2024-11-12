@@ -1,4 +1,5 @@
-/* eslint-disable ember/no-actions-hash, ember/no-classic-classes, ember/no-classic-components, ember/no-get, ember/require-tagless-components */
+/* eslint-disable ember/no-classic-classes, ember/no-classic-components, ember/no-get, ember/require-tagless-components */
+import { action } from '@ember/object';
 import { reads } from '@ember/object/computed';
 import Component from '@ember/component';
 
@@ -9,9 +10,7 @@ export default Component.extend({
     this.set('data-table.enableSelection', true);
   },
   selectionCount: reads('data-table.selection.length'),
-  actions: {
-    clearSelection() {
-      this.get('data-table').clearSelection();
-    },
-  },
+  clearSelection: action(function () {
+    this.get('data-table').clearSelection();
+  }),
 });
