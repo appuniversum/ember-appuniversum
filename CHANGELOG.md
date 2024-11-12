@@ -25,6 +25,7 @@
 * [#517](https://github.com/appuniversum/ember-appuniversum/pull/517) Update to inputmask v5.0.9 ([@Windvis](https://github.com/Windvis))
 * [#516](https://github.com/appuniversum/ember-appuniversum/pull/516) Remove our ember-template-tag TS workaround ([@Windvis](https://github.com/Windvis))
    * ⚠️ If you run into issues after updating, be sure that `babel-plugin-ember-template-compilation` is on v2.3.0+. You can check this by running `npm ls babel-plugin-ember-template-compilation`. `npm upgrade babel-plugin-ember-template-compilation` should work, but you might need to regenerate your lock file if it doesn't.
+   * If you use ember-template-imports, it's likely that you need v4+ as well.
 
 #### Committers: 1
 - Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
