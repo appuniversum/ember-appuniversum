@@ -9,6 +9,8 @@
 #### :rocket: Enhancement
 * [#526](https://github.com/appuniversum/ember-appuniversum/pull/526) Add support for hiding the pagination in the `AuDataTable` component ([@Windvis](https://github.com/Windvis))
 * [#525](https://github.com/appuniversum/ember-appuniversum/pull/525) Resolve action helper/modifier deprecations ([@Windvis](https://github.com/Windvis))
+  * ⚠️ This change also removed our `ember-data-table` dependency. If your app imports one of the mixins from that package, be sure it's part of your app's own dependency list.
+ 
 * [#524](https://github.com/appuniversum/ember-appuniversum/pull/524) Add a `@newTab` argument to the `AuLinkExternal` component ([@Windvis](https://github.com/Windvis))
 * [#514](https://github.com/appuniversum/ember-appuniversum/pull/514) Add a `au-u-height-full` utility ([@Windvis](https://github.com/Windvis))
 * [#512](https://github.com/appuniversum/ember-appuniversum/pull/512) Add support for ember-concurrency v4 and ember-power-select v8 ([@Windvis](https://github.com/Windvis))
@@ -22,6 +24,7 @@
 * [#521](https://github.com/appuniversum/ember-appuniversum/pull/521) Update to eslint 9 ([@Windvis](https://github.com/Windvis))
 * [#517](https://github.com/appuniversum/ember-appuniversum/pull/517) Update to inputmask v5.0.9 ([@Windvis](https://github.com/Windvis))
 * [#516](https://github.com/appuniversum/ember-appuniversum/pull/516) Remove our ember-template-tag TS workaround ([@Windvis](https://github.com/Windvis))
+   * ⚠️ If you run into issues after updating, be sure that `babel-plugin-ember-template-compilation` is on v2.3.0+. You can check this by running `npm ls babel-plugin-ember-template-compilation`. `npm upgrade babel-plugin-ember-template-compilation` should work, but you might need to regenerate your lock file if it doesn't.
 
 #### Committers: 1
 - Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
