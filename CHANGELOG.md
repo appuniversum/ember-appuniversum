@@ -3,6 +3,30 @@
 
 
 
+
+## v3.7.0 (2024-11-12)
+
+#### :rocket: Enhancement
+* [#526](https://github.com/appuniversum/ember-appuniversum/pull/526) Add support for hiding the pagination in the `AuDataTable` component ([@Windvis](https://github.com/Windvis))
+* [#525](https://github.com/appuniversum/ember-appuniversum/pull/525) Resolve action helper/modifier deprecations ([@Windvis](https://github.com/Windvis))
+* [#524](https://github.com/appuniversum/ember-appuniversum/pull/524) Add a `@newTab` argument to the `AuLinkExternal` component ([@Windvis](https://github.com/Windvis))
+* [#514](https://github.com/appuniversum/ember-appuniversum/pull/514) Add a `au-u-height-full` utility ([@Windvis](https://github.com/Windvis))
+* [#512](https://github.com/appuniversum/ember-appuniversum/pull/512) Add support for ember-concurrency v4 and ember-power-select v8 ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#515](https://github.com/appuniversum/ember-appuniversum/pull/515) Fix some whitespace issues ([@Windvis](https://github.com/Windvis))
+* [#513](https://github.com/appuniversum/ember-appuniversum/pull/513) Fix a PowerSelect outline issue ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#522](https://github.com/appuniversum/ember-appuniversum/pull/522) Update to the Ember v5.12 blueprint ([@Windvis](https://github.com/Windvis))
+* [#521](https://github.com/appuniversum/ember-appuniversum/pull/521) Update to eslint 9 ([@Windvis](https://github.com/Windvis))
+* [#517](https://github.com/appuniversum/ember-appuniversum/pull/517) Update to inputmask v5.0.9 ([@Windvis](https://github.com/Windvis))
+* [#516](https://github.com/appuniversum/ember-appuniversum/pull/516) Remove our ember-template-tag TS workaround ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 1
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.6.0 (2024-09-06)
 
 #### :rocket: Enhancement
