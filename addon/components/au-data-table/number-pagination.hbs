@@ -13,7 +13,7 @@
           <AuButton
             @skin="link"
             @icon={{this.NavLeftIcon}}
-            {{action "changePage" this.links.prev}}
+            {{on "click" (fn this.changePage this.links.prev)}}
           >
             vorige
             <span class="au-u-hidden-visually"> {{this.pageSize}} rijen</span>
@@ -26,7 +26,7 @@
             @skin="link"
             @icon={{this.NavRightIcon}}
             @iconAlignment="right"
-            {{action "changePage" this.links.next}}
+            {{on "click" (fn this.changePage this.links.next)}}
           >
             volgende
             <span class="au-u-hidden-visually"> {{this.pageSize}} rijen</span>
