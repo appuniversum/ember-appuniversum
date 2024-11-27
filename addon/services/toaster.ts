@@ -1,5 +1,4 @@
 import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
 import { task, timeout } from 'ember-concurrency';
 import { A, type NativeArray } from '@ember/array';
 import type { ComponentLike } from '@glint/template';
@@ -8,29 +7,36 @@ export type ToastData = {
   component?: ComponentLike<CustomToastSignature>;
   title?: string;
   message?: string;
-  options: ToastOptions | Record<string, unknown>;
+  options: ToastOptions | CustomToastOptions;
 };
 
-export type ToastOptions = {
+interface BaseOptions {
   icon?: string | ComponentLike<{ Element: Element }>;
   closable?: boolean;
   timeOut?: number | null;
+}
+
+export interface ToastOptions extends BaseOptions {
   type?: 'error' | 'success' | 'warning';
-};
+}
+
+export interface CustomToastOptions extends BaseOptions {
+  [key: string]: unknown; // Allows additional properties
+}
 
 export interface CustomToastSignature {
   Args: {
-    options: Record<string, unknown>;
+    // ToastOptions shouldn't be needed, but I don't know how to do type assertions in templates
+    options: ToastOptions | CustomToastOptions;
     close: () => void;
   };
 }
 
 export default class ToasterService extends Service {
-  // TS was complaining without the explicit NativeArray import and type here, not sure why.
   // TODO: Replace A with a regular array
-  @tracked toasts: NativeArray<ToastData> = A<ToastData>([]);
+  toasts: NativeArray<ToastData> = A<ToastData>([]);
 
-  displayToast = task(async (toast: ToastData) => {
+  private displayToast = task(async (toast: ToastData) => {
     if (typeof toast.options['timeOut'] === 'undefined') {
       toast.options['timeOut'] = null;
     }
@@ -49,7 +55,7 @@ export default class ToasterService extends Service {
   });
 
   show(
-    component: ComponentLike<unknown>,
+    component: ComponentLike<CustomToastSignature>,
     options: Record<string, unknown> = {},
   ) {
     const toast = {
