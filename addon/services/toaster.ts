@@ -3,6 +3,9 @@ import { task, timeout } from 'ember-concurrency';
 import { A, type NativeArray } from '@ember/array';
 import type { ComponentLike } from '@glint/template';
 
+// Link to a TS Playground where I try to get back to the essence to see if I can solve it in plain TS:
+// https://www.typescriptlang.org/play/?#code/C4TwDgpgBAKg9gQwM7ACIOAqBeKBvAKCigGMBXFOAWwH4AuKAIzjgBsIEA7AbiKmACWwdvSgoATgM4BzXsSoQkSBNIiiJU2XzhhBcTkgYAhMgNbAAkpwDyugfqRQAPlADCFYNVt6DvAL68BFLAEOIAZggk0N72Bvh8xGEs6sCSMv4EQZwh4ZHQJmaWNnYOUBAAHiGcACaOMaWExMSMCOIpaVp+mcGhEVFuHl4lcRVVtVD1cY1NANoA1hAgDBoyALoMZJxznHAA7jxQAPSHUACCrKx7jgjV1UKxCKxQYOI6oYKKBF0EJKzIjvBkDl4k1+IgUIZYOC0BgEDNVjgoPDAqDGKZzFIABSCYRqZapTQAShBoKawAAFgIkAA6TxAmlgCjkzHTUmknHsAA0CTZTR0PkhrN5bJa4gYAHJReKecKurLCXImt9QeRKFQADwwMqVCA1RzuNWTJAAPmxQhE+I6nKg-NikK1uDwfmJQtBFKptOhDKZLJlvNVnioDFSZAg3OFbvNYb9bNtDnDvOdPK63xIDmAYKBoURnAguyhWfEmIVBDpKFC1LRhSx4oK5igUkzKHFJbLOWpAeomPFBsDTeA4uteCgSTgEtHg6YCAAXhKWtPxc7AklxFBMWmDBm2zawv2K22kC6eQJd9joR3BlQj8LjgM1f3rXG4khyXAyKxqkxoHcwmFQrqMzCV4qH4cloCrcwAFpGwAN1CJBYhjI4TgsRwhGeOAlAERh2DBKBtj2KBdnJDAp2nBtHDA8QwzEagIFfXYaCQjckDYCBqUuaQzyBaknxpecS1BPwylYJBoFdJpbzrDNGzbZiHDYji4C4tteOGfjWkEpUviAA
+
 export type ToastData = {
   component?: ComponentLike<CustomToastSignature>;
   title?: string;
