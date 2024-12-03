@@ -23,7 +23,7 @@
           </td>
         {{/if}}
         {{#if this.enableLineNumbers}}
-          <td>{{add index this.offset}}</td>
+          <td>{{this.add index this.offset}}</td>
         {{/if}}
         {{#if (has-block)}}
           {{yield wrapper.item}}

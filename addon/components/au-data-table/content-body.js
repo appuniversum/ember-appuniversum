@@ -42,4 +42,7 @@ export default Component.extend({
       }
     });
   }),
+  add(a, b) {
+    return a + b;
+  }
 });
