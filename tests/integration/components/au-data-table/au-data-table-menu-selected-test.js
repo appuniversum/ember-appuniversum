@@ -12,9 +12,9 @@ module(
       this.set('data-table', { selectionIsEmpty: true });
       // Template block usage:
       await render(hbs`
-      {{#au-data-table-menu-selected data-table=this.data-table}}
+      <AuDataTableMenuSelected @data-table={{this.data-table}}>
         template block text
-      {{/au-data-table-menu-selected}}
+      </AuDataTableMenuSelected>
     `);
       assert.dom('*').hasText('');
     });

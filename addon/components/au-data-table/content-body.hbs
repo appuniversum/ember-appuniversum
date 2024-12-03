@@ -9,6 +9,7 @@
           "selected"
         }}
         {{on "click" (fn (optional this.onClickRow) wrapper.item)}}
+        {{!template-lint-disable no-invalid-interactive}}
       >
         {{#if this.enableSelection}}
           <td class="is-selectable">
@@ -16,6 +17,8 @@
               type="checkbox"
               checked={{wrapper.isSelected}}
               {{on "click" (fn this.updateSelection wrapper)}}
+              {{!TODO: add a label}}
+              {{!template-lint-disable require-input-label}}
             />
           </td>
         {{/if}}
@@ -25,10 +28,10 @@
         {{#if (has-block)}}
           {{yield wrapper.item}}
         {{else}}
-          {{au-data-table/default-data-table-content-body
-            item=wrapper.item
-            data-table=this.data-table
-          }}
+          <AuDataTable::DefaultDataTableContentBody
+            @item={{wrapper.item}}
+            @data-table={{this.data-table}}
+          />
         {{/if}}
       </tr>
     {{/each}}

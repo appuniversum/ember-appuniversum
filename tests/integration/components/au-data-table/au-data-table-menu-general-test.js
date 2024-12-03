@@ -15,19 +15,19 @@ module(
       this.set('data-table', { selectionIsEmpty: true });
       // Template block usage:
       await render(hbs`
-      {{#au-data-table-menu-general data-table=this.data-table}}
-        template block text
-      {{/au-data-table-menu-general}}
-    `);
+        <AuDataTableMenuGeneral @data-table={{this.data-table}}>
+          template block text
+        </AuDataTableMenuGeneral>
+      `);
       assert.dom('*').hasText('template block text');
 
       this.set('data-table', { selectionIsEmpty: false });
       // Template block usage:
       await render(hbs`
-      {{#au-data-table-menu-general data-table=this.data-table}}
-        template block text
-      {{/au-data-table-menu-general}}
-    `);
+        <AuDataTableMenuGeneral @data-table={{this.data-table}}>
+          template block text
+        </AuDataTableMenuGeneral>
+      `);
 
       assert.dom('*').hasText('');
     });
