@@ -25,7 +25,7 @@ module(
       this.set('dataTable.selection', []);
 
       await render(
-        hbs`{{au-data-table-content-body content=this.content data-table=this.dataTable}}`,
+        hbs`<AuDataTableContentBody @content={{this.content}} @data-table={{this.dataTable}} />`,
       );
 
       assert.dom('tr').exists({ count: 2 }, 'displays 2 rows');
@@ -53,7 +53,7 @@ module(
       this.set('data-table.selection', [jane]);
 
       await render(
-        hbs`{{au-data-table-content-body content=this.content data-table=this.data-table enableSelection=true}}`,
+        hbs`<AuDataTableContentBody @content={{this.content}} @data-table={{this.data-table}} @enableSelection={{true}} />`,
       );
 
       assert
@@ -82,7 +82,7 @@ module(
       this.set('data-table.removeItemFromSelection', function () {}); // mock function
 
       await render(
-        hbs`{{au-data-table-content-body content=this.content data-table=this.data-table enableSelection=true}}`,
+        hbs`<AuDataTableContentBody @content={{this.content}} @data-table={{this.data-table}} @enableSelection={{true}} />`,
       );
 
       assert
@@ -106,7 +106,7 @@ module(
       this.set('data-table.selection', []);
 
       await render(
-        hbs`{{au-data-table-content-body content=this.content data-table=this.data-table enableLineNumbers=true}}`,
+        hbs`<AuDataTableContentBody @content={{this.content}} @data-table={{this.data-table}} @enableLineNumbers={{true}} />`,
       );
 
       assert
@@ -125,7 +125,7 @@ module(
       this.set('data-table.page', 2);
       this.set('data-table.size', 5);
       await render(
-        hbs`{{au-data-table-content-body content=this.content data-table=this.data-table enableLineNumbers=true}}`,
+        hbs`<AuDataTableContentBody @content={{this.content}} @data-table={{this.data-table}} @enableLineNumbers={{true}} />`,
       );
 
       assert
@@ -151,7 +151,7 @@ module(
       this.set('data-table.selection', []);
 
       await render(
-        hbs`{{au-data-table-content-body noDataMessage=this.noDataMessage data-table=this.data-table}}`,
+        hbs`<AuDataTableContentBody @noDataMessage={{this.noDataMessage}} @data-table={{this.data-table}} />`,
       );
       assert
         .dom('td.au-c-data-table__message')
@@ -160,7 +160,7 @@ module(
 
       this.set('content', []);
       await render(
-        hbs`{{au-data-table-content-body content=this.content noDataMessage=this.noDataMessage data-table=this.data-table}}`,
+        hbs`<AuDataTableContentBody @content={{this.content}} @noDataMessage={{this.noDataMessage}} @data-table={{this.data-table}} />`,
       );
       assert
         .dom('td.au-c-data-table__message')
@@ -171,7 +171,7 @@ module(
 
       this.set('content', ['foo', 'bar']);
       await render(
-        hbs`{{au-data-table-content-body content=this.content noDataMessage=this.noDataMessage data-table=this.data-table}}`,
+        hbs`<AuDataTableContentBody @content={{this.content}} @noDataMessage={{this.noDataMessage}} @data-table={{this.data-table}} />`,
       );
       assert
         .dom('td.au-c-data-table__message')

@@ -1,6 +1,3 @@
 {{#unless this.data-table.selectionIsEmpty}}
-  {{yield
-    (slice 0 this.selectionCount this.data-table.selection)
-    this.data-table
-  }}
+  {{yield this.selection this.data-table}}
 {{/unless}}

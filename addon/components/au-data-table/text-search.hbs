@@ -2,7 +2,10 @@
   <Input
     @value={{this.value}}
     placeholder={{this.placeholder}}
+    aria-label={{this.placeholder}}
     class="au-c-input au-c-input--block"
+    {{!TODO: deprecate the two-way binding}}
+    {{!template-lint-disable no-builtin-form-components}}
   />
   <span class="au-c-data-table__search-icon">
     <AuIcon @icon={{this.SearchIcon}} @size="large" />

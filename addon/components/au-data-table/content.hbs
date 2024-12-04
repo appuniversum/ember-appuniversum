@@ -16,27 +16,25 @@
             enableSelection=this.enableSelection
             enableLineNumbers=this.enableLineNumbers
             noDataMessage=this.noDataMessage
-            onClickRow=(optional this.onClickRow)
+            onClickRow=this.onClickRow
             data-table=this.data-table
           )
         )
       }}
     {{else}}
-      {{component
-        "au-data-table-content-header"
-        enableSelection=this.enableSelection
-        enableLineNumbers=this.enableLineNumbers
-        data-table=this.data-table
-      }}
-      {{component
-        "au-data-table-content-body"
-        content=this.content
-        enableSelection=this.enableSelection
-        enableLineNumbers=this.enableLineNumbers
-        noDataMessage=this.noDataMessage
-        onClickRow=(optional this.onClickRow)
-        data-table=this.data-table
-      }}
+      <AuDataTableContentHeader
+        @enableSelection={{this.enableSelection}}
+        @enableLineNumbers={{this.enableLineNumbers}}
+        @data-table={{this.data-table}}
+      />
+      <AuDataTableContentBody
+        @content={{this.content}}
+        @enableSelection={{this.enableSelection}}
+        @enableLineNumbers={{this.enableLineNumbers}}
+        @noDataMessage={{this.noDataMessage}}
+        @onClickRow={{this.onClickRow}}
+        @data-table={{this.data-table}}
+      />
     {{/if}}
   </table>
 </div>

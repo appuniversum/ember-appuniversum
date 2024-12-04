@@ -5,27 +5,27 @@
   {{this.label}}
   {{#if (eq this.order "desc")}}
     <button
-      role="button"
-      {{on "click" this.inverseSorting}}
       class="au-c-data-table__sort"
+      type="button"
+      {{on "click" this.inverseSorting}}
     >
       <span class="au-u-hidden-visually">Oplopend sorteren</span>
       <AuIcon @icon={{this.NavUpIcon}} />
     </button>
   {{else if (eq this.order "asc")}}
     <button
-      role="button"
-      {{on "click" this.inverseSorting}}
       class="au-c-data-table__sort"
+      type="button"
+      {{on "click" this.inverseSorting}}
     >
       <span class="au-u-hidden-visually">Aflopend sorteren</span>
       <AuIcon @icon={{this.NavDownIcon}} />
     </button>
   {{else}}
     <button
-      role="button"
-      {{on "click" this.inverseSorting}}
       class="au-c-data-table__sort"
+      type="button"
+      {{on "click" this.inverseSorting}}
     >
       <span class="au-u-hidden-visually">Sorteren</span>
       <AuIcon @icon={{this.NavUpDownIcon}} />

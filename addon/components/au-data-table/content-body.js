@@ -4,7 +4,7 @@ import { action, computed } from '@ember/object';
 import Component from '@ember/component';
 
 // Source: https://github.com/mu-semtech/ember-data-table/blob/c690a3948b2d9d5f91d69f0a935c6b5cdb4862ca/addon/components/data-table-content-body.js
-export default Component.extend({
+const ContentBody = Component.extend({
   tagName: 'tbody',
   init() {
     this._super(...arguments);
@@ -42,4 +42,16 @@ export default Component.extend({
       }
     });
   }),
+});
+
+export default ContentBody.extend({
+  add(a, b) {
+    return a + b;
+  },
+  includes(array, item) {
+    return array.includes(item);
+  },
+  optional(maybeFunction) {
+    return typeof maybeFunction === 'function' ? maybeFunction : () => {};
+  },
 });

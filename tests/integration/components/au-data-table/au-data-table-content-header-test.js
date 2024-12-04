@@ -16,9 +16,9 @@ module(
 
       // Template block usage:
       await render(hbs`
-      {{#au-data-table-content-header}}
+      <AuDataTableContentHeader>
         template block text
-      {{/au-data-table-content-header}}
+      </AuDataTableContentHeader>
     `);
 
       assert.dom('*').hasText('template block text');
@@ -29,7 +29,7 @@ module(
       this.set('data-table.parsedFields', ['firstName', 'lastName', 'age']);
 
       await render(
-        hbs`{{au-data-table-content-header data-table=this.data-table}}`,
+        hbs`<AuDataTableContentHeader @data-table={{this.data-table}} />`,
       );
       assert.dom('tr').exists({ count: 1 }, 'displays 1 header row');
       assert
@@ -54,7 +54,7 @@ module(
       this.set('data-table.parsedFields', ['firstName', 'lastName', 'age']);
 
       await render(
-        hbs`{{au-data-table-content-header data-table=this.data-table enableSelection=true}}`,
+        hbs`<AuDataTableContentHeader @data-table={{this.data-table}} @enableSelection={{true}} />`,
       );
 
       assert.dom('tr').exists({ count: 1 }, 'displays 1 header row');
@@ -71,7 +71,7 @@ module(
       this.set('data-table.parsedFields', ['firstName', 'lastName', 'age']);
 
       await render(
-        hbs`{{au-data-table-content-header data-table=this.data-table enableLineNumbers=true}}`,
+        hbs`<AuDataTableContentHeader @data-table={{this.data-table}} @enableLineNumbers={{true}} />`,
       );
 
       assert.dom('tr').exists({ count: 1 }, 'displays 1 header row');

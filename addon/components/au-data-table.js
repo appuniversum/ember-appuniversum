@@ -3,12 +3,13 @@ import { typeOf } from '@ember/utils';
 import { computed, observer } from '@ember/object';
 import { bool, equal, oneWay } from '@ember/object/computed';
 import Component from '@ember/component';
+import { A } from '@ember/array';
 
 // Source: https://github.com/mu-semtech/ember-data-table/blob/c690a3948b2d9d5f91d69f0a935c6b5cdb4862ca/addon/components/data-table.js
 const DataTable = Component.extend({
   init() {
     this._super(...arguments);
-    if (this.selection === undefined) this.set('selection', []);
+    if (this.selection === undefined) this.set('selection', A());
   },
   noDataMessage: 'No data',
   isLoading: false,
