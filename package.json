@@ -93,7 +93,6 @@
     "ember-focus-trap": "^1.1.0",
     "ember-modifier": "^4.1.0",
     "ember-template-imports": "^4.1.1",
-    "ember-test-selectors": "^6.0.0",
     "ember-truth-helpers": "^3.1.1 || ^4.0.3",
     "inputmask": "^5.0.9",
     "merge-anything": "^5.1.3",
