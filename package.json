@@ -90,7 +90,6 @@
     "ember-cli-babel": "^8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
     "ember-cli-version-checker": "^5.1.2",
-    "ember-composable-helpers": "^5.0.0",
     "ember-concurrency": "^3.1.0 || ^4.0.2",
     "ember-file-upload": "^8.4.0",
     "ember-focus-trap": "^1.1.0",

@@ -22,7 +22,7 @@
           noDataMessage=this.noDataMessage
           enableSelection=this.enableSelection
           enableLineNumbers=this.enableLineNumbers
-          onClickRow=(optional this.onClickRow)
+          onClickRow=this.onClickRow
           data-table=this
         )
       )
@@ -42,7 +42,7 @@
       @noDataMessage={{this.noDataMessage}}
       @enableSelection={{this.enableSelection}}
       @enableLineNumbers={{this.enableLineNumbers}}
-      @onClickRow={{optional this.onClickRow}}
+      @onClickRow={{this.onClickRow}}
       @data-table={{this}}
     />
   {{/if}}

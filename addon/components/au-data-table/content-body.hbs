@@ -5,10 +5,10 @@
     {{#each this.wrappedItems as |wrapper index|}}
       <tr
         class={{if
-          (includes wrapper.item this.data-table.selection)
+          (this.includes this.data-table.selection wrapper.item)
           "selected"
         }}
-        {{on "click" (fn (optional this.onClickRow) wrapper.item)}}
+        {{on "click" (fn (this.optional this.onClickRow) wrapper.item)}}
         {{!template-lint-disable no-invalid-interactive}}
       >
         {{#if this.enableSelection}}
