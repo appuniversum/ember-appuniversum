@@ -9,6 +9,7 @@ const SKINS = [
   'naked',
   'link',
   'link-secondary',
+  'link-bold',
 ] as const;
 
 export interface AuButtonSignature {

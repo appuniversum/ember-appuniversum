@@ -6,6 +6,7 @@ import linkToModels from '../private/helpers/link-to-models';
 const SKIN_CLASSES = {
   primary: 'au-c-link',
   secondary: 'au-c-link au-c-link--secondary',
+  bold: 'au-c-link au-c-link--bold',
   button: 'au-c-button au-c-button--primary',
   'button-secondary': 'au-c-button au-c-button--secondary',
   'button-naked': 'au-c-button au-c-button--naked',
@@ -17,6 +18,7 @@ export interface AuLinkSignature {
     skin?:
       | 'primary'
       | 'secondary'
+      | 'bold'
       | 'button'
       | 'button-secondary'
       | 'button-naked';
