@@ -80,6 +80,16 @@ $au-link-secondary-active-color: var(--au-gray-900) !default;
   }
 }
 
+.au-c-link--bold {
+  text-decoration: none;
+  font-weight: var(--au-medium);
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
 .au-c-link--icon-only {
   .au-c-icon {
     width: 1.8rem;

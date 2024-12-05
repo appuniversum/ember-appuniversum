@@ -191,7 +191,8 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
 }
 
 // Link button
-.au-c-button--link {
+.au-c-button--link,
+.au-c-button--link-bold {
   font-size: inherit;
   border-color: transparent;
   padding: 0 $au-unit-tiny 0;
@@ -233,6 +234,17 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
     background-color: transparent;
     border-color: transparent;
     text-decoration: none;
+  }
+}
+
+.au-c-button--link-bold {
+  font-weight: var(--au-medium);
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    text-decoration: underline;
   }
 }
 
@@ -364,7 +376,8 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
   }
 
   &.au-c-button--link,
-  &.au-c-button--link-secondary {
+  &.au-c-button--link-secondary,
+  &.au-c-button--link-bold {
     background-color: transparent;
 
     &,
