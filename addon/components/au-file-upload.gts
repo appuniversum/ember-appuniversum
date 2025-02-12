@@ -20,6 +20,7 @@ export interface AuFileUploadSignature {
     helpTextDragDrop?: string;
     helpTextFileNotSupported?: string;
     maxFileSizeMB?: number;
+    minFileSizeMB?: number;
     multiple?: boolean;
     onFinishUpload?: (uploadedFile: number, queueInfo: QueueInfo) => void;
     onQueueUpdate?: (queueInfo: QueueInfo) => void;
@@ -87,6 +88,10 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
     return this.args.maxFileSizeMB || 20;
   }
 
+  get minFileSizeMB() {
+    return this.args.minFileSizeMB || 0;
+  }
+
   get hasErrors() {
     return this.uploadErrorData.length > 0;
   }
@@ -138,8 +143,12 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
       }
     }
 
-    if (!isValidFileSize(file.size, this.maxFileSizeMB)) {
-      this.addError(file, `Bestand is te groot (max ${this.maxFileSizeMB} MB)`);
+    if (!isValidFileSize(file.size, this.minFileSizeMB, this.maxFileSizeMB)) {
+      if (file.size < this.minFileSizeMB * Math.pow(1024, 2)) {
+        this.addError(file, `Bestand is te klein (min ${this.minFileSizeMB} MB)`);
+      } else {
+        this.addError(file, `Bestand is te groot (max ${this.maxFileSizeMB} MB)`);
+      }
       return false;
     }
 
@@ -302,6 +311,6 @@ function isValidExtension(
   return validExtensions.includes(extension);
 }
 
-function isValidFileSize(fileSize: number, maximumSize: number): boolean {
-  return fileSize < maximumSize * Math.pow(1024, 2);
+function isValidFileSize(fileSize: number, minimumSize: number, maximumSize: number): boolean {
+  return fileSize >= minimumSize * Math.pow(1024, 2) && fileSize < maximumSize * Math.pow(1024, 2);
 }
