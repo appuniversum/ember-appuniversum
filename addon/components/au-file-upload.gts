@@ -144,18 +144,12 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
     }
 
     if (file.size < this.minFileSizeKB * 1024) {
-      this.addError(
-        file,
-        `Bestand is te klein (min ${this.minFileSizeKB} KB)`,
-      );
+      this.addError(file, `Bestand is te klein (min ${this.minFileSizeKB} KB)`);
       return false;
     }
 
     if (file.size >= this.maxFileSizeMB * Math.pow(1024, 2)) {
-      this.addError(
-        file,
-        `Bestand is te groot (max ${this.maxFileSizeMB} MB)`,
-      );
+      this.addError(file, `Bestand is te groot (max ${this.maxFileSizeMB} MB)`);
       return false;
     }
 
