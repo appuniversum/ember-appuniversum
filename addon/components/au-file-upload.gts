@@ -145,9 +145,15 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
 
     if (!isValidFileSize(file.size, this.minFileSizeMB, this.maxFileSizeMB)) {
       if (file.size < this.minFileSizeMB * Math.pow(1024, 2)) {
-        this.addError(file, `Bestand is te klein (min ${this.minFileSizeMB} MB)`);
+        this.addError(
+          file,
+          `Bestand is te klein (min ${this.minFileSizeMB} MB)`,
+        );
       } else {
-        this.addError(file, `Bestand is te groot (max ${this.maxFileSizeMB} MB)`);
+        this.addError(
+          file,
+          `Bestand is te groot (max ${this.maxFileSizeMB} MB)`,
+        );
       }
       return false;
     }
@@ -311,6 +317,13 @@ function isValidExtension(
   return validExtensions.includes(extension);
 }
 
-function isValidFileSize(fileSize: number, minimumSize: number, maximumSize: number): boolean {
-  return fileSize >= minimumSize * Math.pow(1024, 2) && fileSize < maximumSize * Math.pow(1024, 2);
+function isValidFileSize(
+  fileSize: number,
+  minimumSize: number,
+  maximumSize: number,
+): boolean {
+  return (
+    fileSize >= minimumSize * Math.pow(1024, 2) &&
+    fileSize < maximumSize * Math.pow(1024, 2)
+  );
 }
