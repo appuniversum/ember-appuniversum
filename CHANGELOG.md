@@ -4,6 +4,21 @@
 
 
 
+## v3.8.0 (2025-02-13)
+
+#### :rocket: Enhancement
+* [#532](https://github.com/appuniversum/ember-appuniversum/pull/532) Add a `@minFileSizeKB` argument to the `<AuFileUpload>` component ([@aatauil](https://github.com/aatauil))
+* [#529](https://github.com/appuniversum/ember-appuniversum/pull/529) Add support for ember-source v6 ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#530](https://github.com/appuniversum/ember-appuniversum/pull/530) Dependency maintenance ([@Windvis](https://github.com/Windvis))
+* [#528](https://github.com/appuniversum/ember-appuniversum/pull/528) AuTable improvements ([@Windvis](https://github.com/Windvis))
+
+#### Committers: 2
+- Achraf Atauil ([@aatauil](https://github.com/aatauil))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.7.0 (2024-11-12)
 
 #### :rocket: Enhancement
