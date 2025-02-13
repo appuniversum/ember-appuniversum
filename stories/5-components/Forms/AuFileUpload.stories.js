@@ -25,6 +25,10 @@ export default {
       control: 'number',
       description: 'Maximum filesize allowed (in MB)',
     },
+    minFileSizeKB: {
+      control: 'number',
+      description: 'Minimum filesize allowed (in KB)',
+    },
     multiple: {
       control: 'boolean',
       description: 'Whether multiple files can be selected when uploading',
@@ -52,6 +56,7 @@ const Template = (args) => ({
       @helpTextDragDrop={{this.helpTextDragDrop}}
       @helpTextFileNotSupported={{this.helpTextFileNotSupported}}
       @maxFileSizeMB={{this.maxFileSizeMB}}
+      @minFileSizeKB={{this.minFileSizeKB}}
       @multiple={{this.multiple}}
       @onFinishUpload={{this.onFinishUpload}}
       @onQueueUpdate={{this.onQueueUpdate}}
@@ -67,6 +72,7 @@ Component.args = {
   helpTextDragDrop: 'Sleep de bestanden naar hier om toe te voegen',
   helpTextFileNotSupported: 'Dit bestandsformaat wordt niet ondersteund.',
   maxFileSizeMB: 20,
+  minFileSizeKB: 0,
   multiple: false,
   onFinishUpload: null,
   onQueueUpdate: null,
