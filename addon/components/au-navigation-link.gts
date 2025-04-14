@@ -3,6 +3,7 @@ import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import { LinkTo } from '@ember/routing';
 import Component from '@glimmer/component';
+import { ensureRoot } from '../services/ensure-root';
 
 export interface AuNavigationLinkSignature {
   Args: {
@@ -28,8 +29,10 @@ export default class AuNavigationLink extends Component<AuNavigationLinkSignatur
   }
 
   @action
-  linkFocus() {
-    document.querySelector<HTMLElement>('#content')?.focus?.();
+  linkFocus(event: MouseEvent) {
+    ensureRoot(event.target as HTMLElement)
+      .querySelector<HTMLElement>('#content')
+      ?.focus?.();
   }
 
   <template>

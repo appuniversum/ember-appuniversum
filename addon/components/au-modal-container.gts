@@ -1,11 +1,20 @@
-import type { TOC } from '@ember/component/template-only';
+import Component from '@glimmer/component';
+import { modifier } from 'ember-modifier';
+import type ModalContainerService from '../services/modal-container';
+import { service } from '@ember/service';
 
 export interface AuModalContainerSignature {
   Element: HTMLDivElement;
 }
 
-const AuModalContainer: TOC<AuModalContainerSignature> = <template>
-  <div data-au-modal-container ...attributes></div>
-</template>;
+export default class AuModalContainer extends Component<AuModalContainerSignature> {
+  @service declare modalContainer: ModalContainerService;
 
-export default AuModalContainer;
+  registerModalContainer = modifier((element: HTMLElement) => {
+    this.modalContainer.setElement(element);
+  });
+
+  <template>
+    <div {{this.registerModalContainer}} ...attributes></div>
+  </template>
+}
