@@ -4,6 +4,7 @@ import AuIcon, { type AuIconSignature } from './au-icon';
 const SKIN_CLASSES = {
   primary: 'au-c-link',
   secondary: 'au-c-link au-c-link--secondary',
+  bold: 'au-c-link au-c-link--bold',
   button: 'au-c-button au-c-button--primary',
   'button-secondary': 'au-c-button au-c-button--secondary',
   'button-naked': 'au-c-button au-c-button--naked',
@@ -18,6 +19,7 @@ export interface AuLinkExternalSignature {
     skin?:
       | 'primary'
       | 'secondary'
+      | 'bold'
       | 'button'
       | 'button-secondary'
       | 'button-naked';
