@@ -5,7 +5,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import AuBadge from './au-badge';
 import AuButton from './au-button';
-import AuContent, { type AuContentSignature } from './au-content';
+import { MaybeAuContent, type MaybeAuContentSignature } from '../private/components/maybe-au-content';
 import AuIcon, { type AuIconSignature } from './au-icon';
 import { AddIcon } from './icons/add';
 import { NavDownIcon } from './icons/nav-down';
@@ -260,15 +260,15 @@ interface ContentSignature {
   Blocks: {
     default: [];
   };
-  Element: AuContentSignature['Element'];
+  Element: MaybeAuContentSignature['Element'];
 }
 
 class Content extends Component<ContentSignature> {
   <template>
     {{#if (has-block)}}
-      <AuContent class="au-c-card__content" ...attributes>
+      <MaybeAuContent @useAuContent={{true}} @deprecationMessage="foo" class="au-c-card__content" ...attributes>
         {{yield}}
-      </AuContent>
+      </MaybeAuContent>
     {{/if}}
   </template>
 }
@@ -277,15 +277,15 @@ interface FooterSignature {
   Blocks: {
     default: [];
   };
-  Element: AuContentSignature['Element'];
+  Element: MaybeAuContentSignature['Element'];
 }
 
 class Footer extends Component<FooterSignature> {
   <template>
     {{#if (has-block)}}
-      <AuContent class="au-c-card__footer" ...attributes>
+      <MaybeAuContent @useAuContent={{true}} @deprecationMessage="foo" class="au-c-card__footer" ...attributes>
         {{yield}}
-      </AuContent>
+      </MaybeAuContent>
     {{/if}}
   </template>
 }
