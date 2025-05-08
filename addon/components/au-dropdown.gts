@@ -9,6 +9,7 @@ import { ChevronDownIcon } from './icons/chevron-down';
 import AuButton from './au-button';
 import type { AuButtonSignature } from './au-button';
 import floatingUi from '../private/modifiers/floating-ui';
+import { ensureRoot } from '../services/ensure-root';
 
 export interface AuDropdownSignature {
   Args: {
@@ -37,6 +38,9 @@ export default class AuDropdown extends Component<AuDropdownSignature> {
   reference = modifier((element: HTMLElement) => {
     this.referenceElement = element;
   });
+  get docRoot(): HTMLElement {
+    return ensureRoot(this.referenceElement);
+  }
 
   arrow = modifier((element: HTMLElement) => {
     this.arrowElement = element;

@@ -12,6 +12,10 @@ import AuIcon from './au-icon';
 // TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
 import not from 'ember-truth-helpers/helpers/not';
 import or from 'ember-truth-helpers/helpers/or';
+import type ApplicationInstance from '@ember/application/instance';
+import type ModalContainerService from '../services/modal-container';
+import { service } from '@ember/service';
+import { ensureRoot } from '../services/ensure-root';
 
 const FOCUS_TRAP_ADDITIONAL_ELEMENTS = ['#ember-basic-dropdown-wormhole'];
 
@@ -44,17 +48,19 @@ export interface AuModalSignature {
 export default class AuModal extends Component<AuModalSignature> {
   destinationElement: HTMLElement;
 
-  constructor(owner: unknown, args: AuModalSignature['Args']) {
+  @service declare modalContainer: ModalContainerService;
+  constructor(owner: ApplicationInstance, args: AuModalSignature['Args']) {
     super(owner, args);
 
-    this.destinationElement = document.querySelector(
-      '[data-au-modal-container]',
-    ) as HTMLElement;
-
+    const modalContainer = this.modalContainer.element;
     assert(
       'au-modal: No target element was found. Please add the `<AuModalContainer />` component where appropriate.',
-      this.destinationElement,
+      modalContainer,
     );
+    this.destinationElement = modalContainer;
+  }
+  get docRoot() {
+    return ensureRoot(this.destinationElement);
   }
 
   get size() {
@@ -76,14 +82,31 @@ export default class AuModal extends Component<AuModalSignature> {
   get initialFocus() {
     return this.args.initialFocus ?? '.au-c-modal__title';
   }
+  getInitialFocus = () => {
+    return (
+      this.docRoot.querySelector<HTMLElement>(this.initialFocus) ?? undefined
+    );
+  };
 
   get fallbackFocus() {
     return '.au-c-modal';
   }
+  getFallbackFocus = () => {
+    const fallback = this.docRoot.querySelector<HTMLElement>(
+      this.fallbackFocus,
+    );
+    if (!fallback) {
+      throw new Error(
+        `could not find fallbackFocus with selector ${this.fallbackFocus}`,
+      );
+    }
+    return fallback;
+  };
 
   get additionalElements() {
     return FOCUS_TRAP_ADDITIONAL_ELEMENTS.filter(
-      (element) => document.querySelector(element) !== null,
+      (element) =>
+        ensureRoot(this.destinationElement).querySelector(element) !== null,
     );
   }
 
@@ -134,8 +157,8 @@ export default class AuModal extends Component<AuModalSignature> {
             isActive=@modalOpen
             additionalElements=this.additionalElements
             focusTrapOptions=(hash
-              initialFocus=this.initialFocus
-              fallbackFocus=this.fallbackFocus
+              initialFocus=this.getInitialFocus
+              fallbackFocus=this.getFallbackFocus
               escapeDeactivates=this.handleEscapePress
               allowOutsideClick=true
             )
