@@ -4,6 +4,14 @@
 
 
 
+## v3.9.0 (2025-05-14)
+
+#### :rocket: Enhancement
+* [#538](https://github.com/appuniversum/ember-appuniversum/pull/538) Add a new `@onUpload` action to the `AuFileUpload` component ([@Windvis](https://github.com/Windvis))
+* [#537](https://github.com/appuniversum/ember-appuniversum/pull/537) Resolve the "import inject from `@ember/service`" deprecation ([@Windvis](https://github.com/Windvis))
+* [#531](https://github.com/appuniversum/ember-appuniversum/pull/531) Add a "bold" link skin ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.8.0 (2025-02-13)
 
 #### :rocket: Enhancement
