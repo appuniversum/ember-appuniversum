@@ -1,6 +1,10 @@
 export const icons = [
   'add',
   'alert-triangle',
+  'align-center',
+  'align-justify',
+  'align-left',
+  'align-right',
   'archive',
   'arrow-down',
   'arrow-left',
@@ -86,6 +90,7 @@ export const icons = [
   'logout',
   'mail',
   'manual',
+  'menu',
   'message',
   'minimize',
   'nav-down',
