@@ -4,6 +4,12 @@
 
 
 
+## v3.10.0 (2025-05-19)
+
+#### :rocket: Enhancement
+* [#539](https://github.com/appuniversum/ember-appuniversum/pull/539) Add new icons from wu and update some existing ones ([@lagartoverde](https://github.com/lagartoverde))
+
+
 ## v3.9.0 (2025-05-14)
 
 #### :rocket: Enhancement
