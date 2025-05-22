@@ -6,18 +6,11 @@ module.exports = function (defaults) {
   const app = new EmberAddon(defaults, {
     'ember-cli-babel': { enableTypeScriptTransform: true },
     sassOptions: {
-      sourceMapEmbed: true,
       includePaths: ['./styles'], // This ensures that the /styles folder is watched and auto-reloading works.
     },
-    autoprefixer: {
-      enabled: true,
-      cascade: true,
-      sourcemap: true,
-    },
-    autoImport: {
-      alias: {
-        '@duetds/date-picker/loader':
-          '@duetds/date-picker/dist/loader/index.cjs',
+    '@embroider/macros': {
+      setOwnConfig: {
+        disableInternalAuContentUsage: true,
       },
     },
     fingerprint: {
