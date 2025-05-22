@@ -4,12 +4,12 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
 import AuButton from './au-button';
-import AuContent from './au-content';
 import AuIcon, { type AuIconSignature } from './au-icon';
 import AuLoader from './au-loader';
 import AuToolbar from './au-toolbar';
 import { NavDownIcon } from './icons/nav-down';
 import { NavRightIcon } from './icons/nav-right';
+import { MaybeAuContent } from '../private/components/maybe-au-content';
 
 const autofocus = modifier(function autofocus(element: HTMLElement) {
   element.focus();
@@ -25,6 +25,8 @@ export interface AuAccordionSignature {
     reverse?: boolean;
     skin?: 'border';
     subtitle?: string;
+    // TODO: remove in v4
+    disableAuContent?: boolean;
   };
   Blocks: {
     default: [];
@@ -112,13 +114,18 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
         </Group>
       </AuToolbar>
       {{#if this.isOpen}}
-        <AuContent tabindex="0" data-test-accordion-content {{autofocus}}>
+        <MaybeAuContent
+          @useAuContent={{if @disableAuContent false true}}
+          tabindex="0"
+          data-test-accordion-content
+          {{autofocus}}
+        >
           {{#if this.loading}}
             <AuLoader data-test-accordion-loader />
           {{else}}
             {{yield}}
           {{/if}}
-        </AuContent>
+        </MaybeAuContent>
       {{/if}}
     </div>
   </template>
