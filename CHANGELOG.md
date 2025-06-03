@@ -4,6 +4,13 @@
 
 
 
+## v3.11.0 (2025-06-03)
+
+#### :rocket: Enhancement
+* [#541](https://github.com/appuniversum/ember-appuniversum/pull/541) Add a `paragraph` icon ([@lagartoverde](https://github.com/lagartoverde))
+* [#535](https://github.com/appuniversum/ember-appuniversum/pull/535) Deprecate the internal `AuContent` usage ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.10.0 (2025-05-19)
 
 #### :rocket: Enhancement
