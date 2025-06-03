@@ -102,6 +102,7 @@ export default class AuIconList extends Component {
     { name: 'no-sign' },
     { name: 'not-visible' },
     { name: 'ordered-list' },
+    { name: 'paragraph' },
     { name: 'paperclip' },
     { name: 'pdf-dot' },
     { name: 'pdf-plus' },
