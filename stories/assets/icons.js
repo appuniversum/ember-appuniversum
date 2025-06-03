@@ -105,6 +105,7 @@ export const icons = [
   'no-sign',
   'not-visible',
   'ordered-list',
+  'paragraph',
   'paperclip',
   'pdf-dot',
   'pdf-plus',
