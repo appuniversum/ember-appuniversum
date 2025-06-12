@@ -4,6 +4,12 @@
 
 
 
+## v3.12.0 (2025-06-12)
+
+#### :rocket: Enhancement
+* [#543](https://github.com/appuniversum/ember-appuniversum/pull/543) Add `check-filled` and `close-filled` icons ([@lagartoverde](https://github.com/lagartoverde))
+
+
 ## v3.11.0 (2025-06-03)
 
 #### :rocket: Enhancement
