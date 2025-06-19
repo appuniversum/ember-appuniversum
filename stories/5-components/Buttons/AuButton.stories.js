@@ -7,7 +7,14 @@ export default {
     text: { control: 'text', description: '' },
     skin: {
       control: 'select',
-      options: ['primary', 'secondary', 'naked', 'link', 'link-secondary'],
+      options: [
+        'primary',
+        'secondary',
+        'naked',
+        'link',
+        'link-bold',
+        'link-secondary',
+      ],
       description: 'Defines the style of the button',
     },
     size: {
@@ -126,6 +133,21 @@ export const SecondaryLink = Template.bind({});
 SecondaryLink.args = {
   text: 'Secondary link',
   skin: 'link-secondary',
+  size: '',
+  icon: '',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  wrap: '',
+  alert: false,
+  disabled: false,
+  loading: false,
+};
+
+export const BoldLink = Template.bind({});
+BoldLink.args = {
+  text: 'Bold link',
+  skin: 'link-bold',
   size: '',
   icon: '',
   iconAlignment: 'left',

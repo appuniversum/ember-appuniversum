@@ -11,6 +11,7 @@ export default {
       options: [
         'primary',
         'secondary',
+        'bold',
         'button',
         'button-secondary',
         'button-naked',
@@ -78,6 +79,18 @@ Secondary.args = {
   href: 'https://www.vlaanderen.be/',
   route: 'index',
   skin: 'secondary',
+  icon: 'manual',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+};
+
+export const Bold = Template.bind({});
+Bold.args = {
+  text: 'External link',
+  href: 'https://www.vlaanderen.be/',
+  route: 'index',
+  skin: 'bold',
   icon: 'manual',
   iconAlignment: 'left',
   hideText: false,

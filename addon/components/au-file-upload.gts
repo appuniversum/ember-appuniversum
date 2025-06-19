@@ -1,6 +1,6 @@
 import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { task } from 'ember-concurrency';
@@ -23,6 +23,7 @@ export interface AuFileUploadSignature {
     minFileSizeKB?: number;
     multiple?: boolean;
     onFinishUpload?: (uploadedFile: number, queueInfo: QueueInfo) => void;
+    onUpload?: (data: { fileId: unknown; file: UploadFile }) => void;
     onQueueUpdate?: (queueInfo: QueueInfo) => void;
     title?: string;
   };
@@ -103,12 +104,17 @@ export default class AuFileUpload extends Component<AuFileUploadSignature> {
 
   uploadTask = task(async (file: UploadFile) => {
     this.resetErrors();
-    const uploadedFile = await this.uploadFileTask.perform(file);
+    const uploadedFileId = await this.uploadFileTask.perform(file);
 
     this.notifyQueueUpdate();
 
-    if (uploadedFile && this.args.onFinishUpload)
-      this.args.onFinishUpload(uploadedFile, this.calculateQueueInfo());
+    if (uploadedFileId) {
+      this.args.onFinishUpload?.(uploadedFileId, this.calculateQueueInfo());
+      this.args.onUpload?.({
+        fileId: uploadedFileId,
+        file,
+      });
+    }
   });
 
   uploadFileTask = task(

@@ -14,6 +14,7 @@ export default {
       options: [
         'primary',
         'secondary',
+        'bold',
         'button',
         'button-secondary',
         'button-naked',
@@ -95,6 +96,21 @@ Secondary.args = {
   active: false,
 };
 Secondary.parameters = {
+  chromatic: { disableSnapshot: true },
+};
+
+export const Bold = Template.bind({});
+Bold.args = {
+  text: 'Bold',
+  route: 'index',
+  skin: 'bold',
+  icon: 'login',
+  iconAlignment: 'left',
+  hideText: false,
+  width: '',
+  active: false,
+};
+Bold.parameters = {
   chromatic: { disableSnapshot: true },
 };
 

@@ -4,6 +4,33 @@
 
 
 
+## v3.12.0 (2025-06-12)
+
+#### :rocket: Enhancement
+* [#543](https://github.com/appuniversum/ember-appuniversum/pull/543) Add `check-filled` and `close-filled` icons ([@lagartoverde](https://github.com/lagartoverde))
+
+
+## v3.11.0 (2025-06-03)
+
+#### :rocket: Enhancement
+* [#541](https://github.com/appuniversum/ember-appuniversum/pull/541) Add a `paragraph` icon ([@lagartoverde](https://github.com/lagartoverde))
+* [#535](https://github.com/appuniversum/ember-appuniversum/pull/535) Deprecate the internal `AuContent` usage ([@Windvis](https://github.com/Windvis))
+
+
+## v3.10.0 (2025-05-19)
+
+#### :rocket: Enhancement
+* [#539](https://github.com/appuniversum/ember-appuniversum/pull/539) Add new icons from wu and update some existing ones ([@lagartoverde](https://github.com/lagartoverde))
+
+
+## v3.9.0 (2025-05-14)
+
+#### :rocket: Enhancement
+* [#538](https://github.com/appuniversum/ember-appuniversum/pull/538) Add a new `@onUpload` action to the `AuFileUpload` component ([@Windvis](https://github.com/Windvis))
+* [#537](https://github.com/appuniversum/ember-appuniversum/pull/537) Resolve the "import inject from `@ember/service`" deprecation ([@Windvis](https://github.com/Windvis))
+* [#531](https://github.com/appuniversum/ember-appuniversum/pull/531) Add a "bold" link skin ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.8.0 (2025-02-13)
 
 #### :rocket: Enhancement
