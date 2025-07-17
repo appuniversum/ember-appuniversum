@@ -45,6 +45,7 @@ import type AuTextarea from '@appuniversum/ember-appuniversum/components/au-text
 import type AuTimePicker from '@appuniversum/ember-appuniversum/components/au-time-picker';
 import type AuToggleSwitch from '@appuniversum/ember-appuniversum/components/au-toggle-switch';
 import type AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
+import type AuTooltip from '@appuniversum/ember-appuniversum/components/au-tooltip';
 
 // Modifiers
 import type AuDateInputModifier from '@appuniversum/ember-appuniversum/modifiers/au-date-input';
@@ -98,6 +99,7 @@ export default interface AppuniversumRegistry {
   AuTimePicker: typeof AuTimePicker;
   AuToggleSwitch: typeof AuToggleSwitch;
   AuToolbar: typeof AuToolbar;
+  AuTooltip: typeof AuTooltip;
 
   // Modifiers
   'au-date-input': typeof AuDateInputModifier;

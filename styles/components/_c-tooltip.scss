@@ -1,0 +1,151 @@
+// Based on the styles from the @govflanders/vl-ui-tooltip@22.0.5 package
+
+// We use a mixin so the variables are "locally" scoped
+@mixin tooltip {
+  // These variables names are copied from Webuniversum to make it clear where they come from.
+  $vl-page-bg: var(--au-page-bg);
+  $vl-mine-shaft: #333332;
+  $vl-text-color: $vl-mine-shaft;
+  $vl-base-font-size--small: 1.6rem;
+  $vl-mischka: #cfd5dd;
+  $vl-input-border-color-alt: $vl-mischka;
+
+  $au-c-tooltip-border: $vl-input-border-color-alt;
+  $au-c-tooltip-arrow-width: 0.5rem;
+  $au-c-tooltip-arrow-outer-width: ($au-c-tooltip-arrow-width + 0.1rem);
+  $au-c-tooltip-translate: ($au-c-tooltip-arrow-width + 0.3rem);
+  $au-c-tooltip-shadow: 0 0 2rem 0 rgba($vl-text-color, 0.15);
+
+  .au-c-tooltip {
+    max-width: 27rem;
+    background: $vl-page-bg;
+    border: 1px $au-c-tooltip-border solid;
+    text-align: center;
+    font-size: $vl-base-font-size--small;
+    line-height: 1.25;
+    font-weight: 400;
+    color: $vl-text-color;
+    // font-family: $vl-base-font;
+    padding: 0.3rem 1rem;
+    z-index: z("popover");
+    position: relative;
+    box-shadow: $au-c-tooltip-shadow;
+
+    //to catch the mouse when it leaves the trigger element
+    &::before {
+      content: "";
+      position: absolute;
+      top: -($au-c-tooltip-translate + 0.1rem);
+      right: -($au-c-tooltip-translate + 0.1rem);
+      bottom: -($au-c-tooltip-translate + 0.1rem);
+      left: -($au-c-tooltip-translate + 0.1rem);
+      z-index: 0;
+    }
+
+    .tooltip__inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    &[data-tooltip-placement^="top"] {
+      .au-c-tooltip__arrow {
+        left: 50%;
+        margin-left: -$au-c-tooltip-arrow-outer-width;
+        border-bottom-width: 0;
+        border-top-color: $vl-input-border-color-alt;
+        bottom: -$au-c-tooltip-arrow-outer-width;
+
+        &::after {
+          content: " ";
+          bottom: 1px;
+          margin-left: -$au-c-tooltip-arrow-width;
+          border-bottom-width: 0;
+          border-top-color: $vl-page-bg;
+        }
+      }
+    }
+
+    &[data-tooltip-placement^="right"] {
+      .au-c-tooltip__arrow {
+        top: 50%;
+        left: -$au-c-tooltip-arrow-outer-width;
+        margin-top: -$au-c-tooltip-arrow-outer-width;
+        border-left-width: 0;
+        border-right-color: $vl-input-border-color-alt;
+
+        &::after {
+          content: " ";
+          left: 1px;
+          bottom: -$au-c-tooltip-arrow-width;
+          border-left-width: 0;
+          border-right-color: $vl-page-bg;
+        }
+      }
+    }
+
+    &[data-tooltip-placement^="bottom"] {
+      .au-c-tooltip__arrow {
+        left: 50%;
+        margin-left: -$au-c-tooltip-arrow-outer-width;
+        border-top-width: 0;
+        border-bottom-color: $vl-input-border-color-alt;
+        top: -$au-c-tooltip-arrow-outer-width;
+
+        &::after {
+          content: " ";
+          top: 1px;
+          margin-left: -$au-c-tooltip-arrow-width;
+          border-top-width: 0;
+          border-bottom-color: $vl-page-bg;
+        }
+      }
+    }
+
+    &[data-tooltip-placement^="left"] {
+      .au-c-tooltip__arrow {
+        top: 50%;
+        right: -$au-c-tooltip-arrow-outer-width;
+        margin-top: -$au-c-tooltip-arrow-outer-width;
+        border-right-width: 0;
+        border-left-color: $vl-input-border-color-alt;
+
+        &::after {
+          content: " ";
+          right: 1px;
+          border-right-width: 0;
+          border-left-color: $vl-page-bg;
+          bottom: -$au-c-tooltip-arrow-width;
+        }
+      }
+    }
+  }
+
+  .au-c-tooltip--large {
+    font-size: 1.4rem;
+    padding: 2rem 3.2rem 2rem 2rem;
+
+    .au-c-tooltip__content {
+      text-align: left;
+    }
+  }
+
+  // Arrows
+  //
+  .au-c-tooltip__arrow {
+    border-width: $au-c-tooltip-arrow-outer-width;
+
+    &,
+    &::after {
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: $au-c-tooltip-arrow-width;
+      content: "";
+    }
+  }
+}
+
+@include tooltip();

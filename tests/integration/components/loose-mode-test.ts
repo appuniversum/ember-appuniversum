@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, triggerEvent } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
 // We can use this test to verify that all components still resolve as expected in loose mode templates
@@ -325,6 +325,24 @@ module('Integration | Component | Loose mode', function (hooks) {
       <AuToolbar data-test-toolbar></AuToolbar>
     `);
     assert.dom('[data-test-toolbar]').exists();
+  });
+
+  test('<AuTooltip resolves in loose mode', async function (assert) {
+    await render(hbs`
+      <AuTooltip as |tooltip|>
+        <button type="button" {{tooltip.target}}>Some button</button>
+        <tooltip.Content data-test-tooltip-content>
+          Tooltip content
+        </tooltip.Content>
+      </AuTooltip>
+    `);
+
+    assert.dom('[data-test-tooltip-content]').doesNotExist();
+    await triggerEvent('button', 'mouseenter');
+
+    assert
+      .dom('[data-test-tooltip-content]')
+      .exists('it displays the tooltip when hovering the target element');
   });
 });
 
