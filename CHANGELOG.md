@@ -4,6 +4,12 @@
 
 
 
+## v3.13.0 (2025-07-17)
+
+#### :rocket: Enhancement
+* [#544](https://github.com/appuniversum/ember-appuniversum/pull/544) Add a `AuTooltip` component ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.12.0 (2025-06-12)
 
 #### :rocket: Enhancement
