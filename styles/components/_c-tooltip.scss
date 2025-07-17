@@ -25,9 +25,8 @@
     line-height: 1.25;
     font-weight: 400;
     color: $vl-text-color;
-    // font-family: $vl-base-font;
     padding: 0.3rem 1rem;
-    z-index: z("popover");
+    z-index: var(--au-z-index-beta);
     position: relative;
     box-shadow: $au-c-tooltip-shadow;
 
