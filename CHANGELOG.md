@@ -4,6 +4,13 @@
 
 
 
+## v3.14.0 (2025-10-07)
+
+#### :rocket: Enhancement
+* [#547](https://github.com/appuniversum/ember-appuniversum/pull/547) Add support for ember-truth-helpers v5 ([@Windvis](https://github.com/Windvis))
+* [#546](https://github.com/appuniversum/ember-appuniversum/pull/546) Add support for ember-concurrency v5 ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.13.0 (2025-07-17)
 
 #### :rocket: Enhancement
