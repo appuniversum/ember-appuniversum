@@ -225,7 +225,7 @@ const maybeLargeTooltip = modifier(function (tooltipElement: HTMLElement) {
   const contentElement = tooltipElement.querySelector<HTMLElement>(
     '.au-c-tooltip__content',
   );
-  if (contentElement?.innerText?.length ?? 0 > LARGE_TOOLTIP_BREAKPOINT) {
+  if ((contentElement?.innerText?.length ?? 0) > LARGE_TOOLTIP_BREAKPOINT) {
     tooltipElement.classList.add('au-c-tooltip--large');
   }
 });
