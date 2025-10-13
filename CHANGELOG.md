@@ -4,6 +4,12 @@
 
 
 
+## v3.14.1 (2025-10-13)
+
+#### :bug: Bug Fix
+* [#548](https://github.com/appuniversum/ember-appuniversum/pull/548) Fix an issue where the tooltip always displayed the "large" variant ([@brenner-company](https://github.com/brenner-company))
+
+
 ## v3.14.0 (2025-10-07)
 
 #### :rocket: Enhancement
