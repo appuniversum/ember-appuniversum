@@ -80,7 +80,26 @@ module('Integration | Component | au-tooltip', function (hooks) {
     assert.dom('[data-test-tooltip-content]').doesNotExist();
   });
 
-  test('it switches to the "large" variant of the tooltip when there is a lot of text in the content component', async function (assert) {
+  test('it enables the "large" variant of the tooltip when there is a lot of text in the content component', async function (assert) {
+    await render(
+      <template>
+        <AuTooltip as |tooltip|>
+          <button type="button" {{tooltip.target}}>Some button</button>
+          <tooltip.Content data-test-tooltip-content>
+            Foo
+          </tooltip.Content>
+        </AuTooltip>
+      </template>,
+    );
+
+    await triggerEvent('button', 'mouseenter');
+    assert
+      .dom('[data-test-tooltip-content]')
+      .hasNoClass(
+        'au-c-tooltip--large',
+        "it doesn't add the class when the minimum character breakpoint hasn't been reached",
+      );
+
     await render(
       <template>
         <AuTooltip as |tooltip|>
