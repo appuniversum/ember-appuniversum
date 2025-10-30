@@ -87,7 +87,7 @@
     "@babel/core": "^7.25.2",
     "@duetds/date-picker": "^1.4.0",
     "@embroider/macros": "^1.9.0",
-    "@floating-ui/dom": "^1.1.0",
+    "@floating-ui/dom": "^1.7.4",
     "ember-auto-import": "^2.8.1",
     "ember-cli-babel": "^8.2.0",
     "ember-cli-htmlbars": "^6.3.0",
