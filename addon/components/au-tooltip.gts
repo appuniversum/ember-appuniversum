@@ -1,18 +1,11 @@
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { isTesting } from '@embroider/macros';
-import {
-  autoUpdate,
-  computePosition,
-  flip,
-  hide,
-  offset,
-  type Placement,
-} from '@floating-ui/dom';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import type { ModifierLike, WithBoundArgs } from '@glint/template';
 import { modifier } from 'ember-modifier';
+import floatingUi from '../private/modifiers/floating-ui';
 
 // We use a small delay when opening and closing the tooltip for a couple of reasons:
 // - When opening this ensures that users intentionally open the tooltip instead of just shortly moving their mouse over the target
@@ -131,6 +124,12 @@ interface TooltipContentSignature {
 }
 
 class TooltipContent extends Component<TooltipContentSignature> {
+  @tracked declare arrowElement: HTMLElement;
+
+  arrow = modifier((element: HTMLElement) => {
+    this.arrowElement = element;
+  });
+
   closeOnEscapePress = modifier(() => {
     const listener = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -145,79 +144,37 @@ class TooltipContent extends Component<TooltipContentSignature> {
     };
   });
 
+  get floatingUiOptions() {
+    return {
+      floater: {
+        offset: 7,
+      },
+    };
+  }
+
   <template>
     {{#if @isShown}}
       <div
         class="au-c-tooltip"
         role="tooltip"
         ...attributes
-        {{floatingUi @targetElement defaultPlacement=@placement}}
+        {{floatingUi
+          @targetElement
+          this.arrowElement
+          defaultPlacement=@placement
+          options=this.floatingUiOptions
+        }}
         {{on "mouseenter" @show}}
         {{on "mouseleave" @hide}}
         {{this.closeOnEscapePress}}
         {{maybeLargeTooltip}}
       >
-        <div class="au-c-tooltip__arrow"></div>
+        <div {{this.arrow}} class="au-c-tooltip__arrow"></div>
         <div class="au-c-tooltip__content">{{yield}}</div>
       </div>
     {{/if}}
   </template>
 }
-
-type TearDown = () => unknown;
-
-interface NamedArgs {
-  defaultPlacement: Placement;
-}
-
-const floatingUi = modifier(function floatingUi(
-  tooltipElement: HTMLElement,
-  positional: [HTMLElement],
-  { defaultPlacement }: NamedArgs,
-): TearDown {
-  const [referenceElement] = positional;
-
-  Object.assign(tooltipElement.style, {
-    position: 'fixed',
-    top: '0',
-    left: '0',
-  });
-
-  const middleware = [
-    offset(6),
-    flip(),
-    hide({ strategy: 'referenceHidden' }),
-    hide({ strategy: 'escaped' }),
-  ];
-
-  const update = async () => {
-    const { x, y, placement, middlewareData } = await computePosition(
-      referenceElement,
-      tooltipElement,
-      {
-        middleware,
-        placement: defaultPlacement,
-      },
-    );
-
-    Object.assign(tooltipElement.style, {
-      transform: `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`,
-      visibility: middlewareData.hide?.referenceHidden ? 'hidden' : 'visible',
-    });
-
-    tooltipElement.setAttribute('data-tooltip-placement', placement);
-  };
-
-  const cleanup = autoUpdate(
-    referenceElement,
-    tooltipElement,
-    () => void update(),
-  );
-
-  return () => {
-    cleanup();
-  };
-});
 
 // The Webuniversum tooltip has some logic to switch to the "large" styling if there are more than 80 characters.
 const LARGE_TOOLTIP_BREAKPOINT = 80;
