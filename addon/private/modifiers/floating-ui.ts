@@ -161,7 +161,7 @@ function floatingUi(
           bottom: 'top',
         }[side];
 
-        if (options.arrow?.offset) {
+        if (typeof options.arrow?.offset !== 'undefined') {
           Object.assign(arrowElement!.style, {
             [mainSide]: `${-options.arrow?.offset}px`,
           });
