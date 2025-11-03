@@ -20,7 +20,13 @@ type PositionalArgs =
 
 interface NamedArgs {
   // These aren't all the options, but the only ones we are using right now
-  defaultPlacement?: 'top' | 'right' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left';
+  defaultPlacement?:
+    | 'top'
+    | 'right'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left';
   options?: {
     arrow?: {
       offset?: number;
@@ -75,7 +81,10 @@ function floatingUi(
 
   assert(
     `FloatingUI (modifier): @placement must start with either 'top', 'right', 'bottom' or 'left'.`,
-    defaultPlacement.startsWith('top') || defaultPlacement.startsWith('right') || defaultPlacement.startsWith('bottom') || defaultPlacement.startsWith('left'),
+    defaultPlacement.startsWith('top') ||
+      defaultPlacement.startsWith('right') ||
+      defaultPlacement.startsWith('bottom') ||
+      defaultPlacement.startsWith('left'),
   );
 
   Object.assign(floatingElement.style, {
@@ -106,7 +115,6 @@ function floatingUi(
       middleware,
       placement: defaultPlacement,
     }).then(({ x, y, placement, middlewareData }) => {
-
       Object.assign(floatingElement.style, {
         transform: `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`,
         visibility: middlewareData.hide?.referenceHidden ? 'hidden' : 'visible',
@@ -131,7 +139,7 @@ function floatingUi(
           top: '180deg',
           right: '270deg',
           bottom: '0deg',
-          left: '90deg'
+          left: '90deg',
         }[side];
 
         Object.assign(arrowElement!.style, {
@@ -150,7 +158,15 @@ function floatingUi(
             'left-start': 'top',
             'left-end': 'bottom',
           }[
-            placement as 'top-start' | 'top-end' | 'right-start' | 'right-end' | 'bottom-start' | 'bottom-end' | 'left-start' | 'left-end'
+            placement as
+              | 'top-start'
+              | 'top-end'
+              | 'right-start'
+              | 'right-end'
+              | 'bottom-start'
+              | 'bottom-end'
+              | 'left-start'
+              | 'left-end'
           ];
 
           Object.assign(arrowElement!.style, {
