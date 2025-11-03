@@ -144,14 +144,6 @@ class TooltipContent extends Component<TooltipContentSignature> {
     };
   });
 
-  get floatingUiOptions() {
-    return {
-      floater: {
-        offset: 7,
-      },
-    };
-  }
-
   <template>
     {{#if @isShown}}
       <div
@@ -162,7 +154,6 @@ class TooltipContent extends Component<TooltipContentSignature> {
           @targetElement
           this.arrowElement
           defaultPlacement=@placement
-          options=this.floatingUiOptions
         }}
         {{on "mouseenter" @show}}
         {{on "mouseleave" @hide}}
