@@ -6,6 +6,7 @@ import {
   hide,
   offset,
   arrow,
+  shift,
 } from '@floating-ui/dom';
 import { modifier } from 'ember-modifier';
 import { merge } from 'merge-anything';
@@ -88,6 +89,7 @@ function floatingUi(
     flip(),
     hide({ strategy: 'referenceHidden' }),
     hide({ strategy: 'escaped' }),
+    shift(),
   ];
 
   if (arrowElement) {
