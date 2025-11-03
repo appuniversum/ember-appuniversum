@@ -79,3 +79,10 @@ $au-c-tooltip-translate: ($au-c-tooltip-caret-size + 0.3rem);
     border-bottom-color: var(--au-white);
   }
 }
+
+.au-c-tooltip--large {
+  padding: 2rem 3.2rem 2rem 2rem;
+
+  font-size: 1.4rem;
+  text-align: left;
+}
