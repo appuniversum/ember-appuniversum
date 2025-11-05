@@ -69,9 +69,9 @@ function floatingUi(
       padding: 3,
       position: 'min(15%, 12px)',
     },
-    shift:{
+    shift: {
       padding: 6,
-    }
+    },
   };
   options = merge(defaultOptions, options);
 
