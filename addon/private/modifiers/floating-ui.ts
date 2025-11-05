@@ -36,6 +36,9 @@ interface NamedArgs {
     floater?: {
       offset?: number;
     };
+    shift?: {
+      padding?: number;
+    };
   };
 }
 
@@ -66,6 +69,9 @@ function floatingUi(
       padding: 3,
       position: 'min(15%, 12px)',
     },
+    shift:{
+      padding: 6,
+    }
   };
   options = merge(defaultOptions, options);
 
@@ -94,11 +100,11 @@ function floatingUi(
   });
 
   const middleware = [
-    offset(options.floater?.offset),
+    offset(options.floater?.offset || 0),
     flip(),
     hide({ strategy: 'referenceHidden' }),
     hide({ strategy: 'escaped' }),
-    shift(),
+    shift({ padding: options.shift?.padding || 0 }),
   ];
 
   if (arrowElement) {
