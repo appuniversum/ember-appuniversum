@@ -4,6 +4,12 @@
 
 
 
+## v3.15.0 (2025-11-06)
+
+#### :rocket: Enhancement
+* [#549](https://github.com/appuniversum/ember-appuniversum/pull/549) Addition of conditional placement of tooltip component ([@brenner-company](https://github.com/brenner-company))
+
+
 ## v3.14.1 (2025-10-13)
 
 #### :bug: Bug Fix
