@@ -4,6 +4,12 @@
 
 
 
+## v3.15.1 (2026-01-14)
+
+#### :bug: Bug Fix
+* [#550](https://github.com/appuniversum/ember-appuniversum/pull/550) Fix yield in AuCard to pass @disableAuContent correctly ([@piemonkey](https://github.com/piemonkey))
+
+
 ## v3.15.0 (2025-11-06)
 
 #### :rocket: Enhancement
