@@ -126,6 +126,24 @@ $au-flex-utilities-reverse-responsive-breakpoints: false !default;
   align-self: stretch !important;
 }
 
+// Child elements growing
+.au-u-flex-self-grow {
+  flex-grow: 1 !important;
+}
+
+.au-u-flex-self-grow-0 {
+  flex-grow: 0 !important;
+}
+
+// Child elements shrinking
+.au-u-flex-self-shrink {
+  flex-shrink: 1 !important;
+}
+
+.au-u-flex-self-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
 // Responsive utilities
 // ---
 @if ($au-flex-utilities-responsive == true) {
