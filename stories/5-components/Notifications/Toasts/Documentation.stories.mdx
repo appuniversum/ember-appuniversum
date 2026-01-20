@@ -37,7 +37,8 @@ All these methods have the same API. The only difference is the default icon and
 ```ts
 interface ToastOptions {
   type?: "info" | "success" | "warning" | "error"; // Default depends on the used display method
-  icon?: string; // Any valid Appuniversum icon name, default depends on the used display method
+  icon?: string | Component<Record<string, never>>; // Any valid Appuniversum icon name, default
+  // depends on the used display method, or an ember component requiring no arguments
   timeOut?: number; // delay in milliseconds after which the toast auto-closes
   closable?: boolean; // Can the toast be closed by users, defaults to `true`
 }

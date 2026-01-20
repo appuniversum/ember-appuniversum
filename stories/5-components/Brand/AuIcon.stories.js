@@ -42,6 +42,17 @@ const Template = (args) => ({
   context: args,
 });
 
+const CustomIconTemplate = (args) => ({
+  template: hbs`
+    <AuIcon
+      @icon={{component 'au-icon' icon=this.icon}}
+      @size={{this.size}}
+      @alignment={{this.alignment}}
+      @ariaHidden={{this.ariaHidden}}
+    />`,
+  context: args,
+});
+
 const IconList = (args) => ({
   template: hbs`
     <AuIconList />
@@ -51,6 +62,14 @@ const IconList = (args) => ({
 
 export const Component = Template.bind({});
 Component.args = {
+  icon: 'info-circle',
+  size: 'large',
+  alignment: '',
+  ariaHidden: true,
+};
+
+export const WithCustomIcon = CustomIconTemplate.bind({});
+WithCustomIcon.args = {
   icon: 'info-circle',
   size: 'large',
   alignment: '',
