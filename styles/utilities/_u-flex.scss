@@ -267,6 +267,18 @@ Set the global `$au-flex-utilities-reverse-responsive-breakpoints` variable to `
         .au-u-flex-self-stretch\@#{$au-bp-name} {
           align-self: stretch !important;
         }
+        .au-u-flex-grow\@#{$au-bp-name} {
+          flex-grow: 1 !important;
+        }
+        .au-u-flex-grow-0\@#{$au-bp-name} {
+          flex-grow: 0 !important;
+        }
+        .au-u-flex-shrink\@#{$au-bp-name} {
+          flex-shrink: 1 !important;
+        }
+        .au-u-flex-shrink-0\@#{$au-bp-name} {
+          flex-shrink: 0 !important;
+        }
       }
     }
   }
