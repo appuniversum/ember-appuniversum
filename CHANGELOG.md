@@ -4,6 +4,12 @@
 
 
 
+## v3.16.0 (2026-01-21)
+
+#### :rocket: Enhancement
+* [#551](https://github.com/appuniversum/ember-appuniversum/pull/551) Add `flex-grow` and `flex-shrink` classes ([@kobemertens](https://github.com/kobemertens))
+
+
 ## v3.15.1 (2026-01-14)
 
 #### :bug: Bug Fix
