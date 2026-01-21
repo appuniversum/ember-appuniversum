@@ -1,3 +1,4 @@
+import { ensureRoot } from '@appuniversum/ember-appuniversum/services/ensure-root';
 import { assert } from '@ember/debug';
 import {
   autoUpdate,
@@ -49,15 +50,16 @@ function floatingUi(
   positional: PositionalArgs,
   { defaultPlacement = 'bottom', options = {} }: NamedArgs,
 ): TearDown {
+  const elementRoot: HTMLElement = ensureRoot(floatingElement);
   const [maybeReferenceElement, maybeArrowElement] = positional;
   const referenceElement =
     typeof maybeReferenceElement === 'string'
-      ? document.querySelector<HTMLElement>(maybeReferenceElement)
+      ? elementRoot.querySelector<HTMLElement>(maybeReferenceElement)
       : maybeReferenceElement;
 
   const arrowElement =
     typeof maybeArrowElement === 'string'
-      ? document.querySelector<HTMLElement>(maybeArrowElement)
+      ? elementRoot.querySelector<HTMLElement>(maybeArrowElement)
       : maybeArrowElement;
 
   const defaultOptions = {

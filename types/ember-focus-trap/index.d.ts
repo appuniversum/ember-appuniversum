@@ -1,8 +1,18 @@
 import Modifier from 'ember-modifier';
 
 type FocusTrapOptions = {
-  initialFocus?: string;
-  fallbackFocus?: string;
+  initialFocus?:
+    | HTMLElement
+    | SVGElement
+    | string
+    | false
+    | undefined
+    | (() => HTMLElement | SVGElement | string | false | undefined);
+  fallbackFocus?:
+    | HTMLElement
+    | SVGElement
+    | string
+    | (() => HTMLElement | SVGElement | string);
   escapeDeactivates?: () => boolean;
   allowOutsideClick?: boolean;
   clickOutsideDeactivates?: (Event) => boolean;
