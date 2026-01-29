@@ -4,6 +4,15 @@
 
 
 
+## v3.17.0 (2026-01-29)
+
+#### :rocket: Enhancement
+* [#554](https://github.com/appuniversum/ember-appuniversum/pull/554) Add support for `tracked-built-ins` v4 ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#553](https://github.com/appuniversum/ember-appuniversum/pull/553) Fix some tooltip inconsistencies with the Webuniversum version ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.16.0 (2026-01-21)
 
 #### :rocket: Enhancement
