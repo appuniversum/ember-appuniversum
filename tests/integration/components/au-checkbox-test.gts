@@ -71,7 +71,7 @@ module('Integration | Component | au-checkbox', function (hooks) {
   });
 
   test('it adds any extra attributes to the input element', async function (assert) {
-    await render(<template><AuCheckbox foo="bar" /></template>);
-    assert.dom('input').hasAttribute('foo', 'bar');
+    await render(<template><AuCheckbox data-foo="bar" /></template>);
+    assert.dom('input').hasAttribute('data-foo', 'bar');
   });
 });
