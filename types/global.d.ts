@@ -10,6 +10,5 @@ declare module '@glint/environment-ember-loose/registry' {
 }
 
 declare global {
-  // eslint-disable-next-line no-var
   var FastBoot: unknown; // it needs to be a `var` for the types to work, not sure why exactly..
 }

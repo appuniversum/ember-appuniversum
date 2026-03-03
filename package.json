@@ -128,8 +128,8 @@
     "@types/inputmask": "^5.0.7",
     "@types/qunit": "^2.19.10",
     "@types/rsvp": "^4.0.9",
-    "@typescript-eslint/eslint-plugin": "^8.13.0",
-    "@typescript-eslint/parser": "^8.13.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
     "broccoli-asset-rev": "^3.0.0",
     "change-case": "^5.4.3",
     "chromatic": "^6.5.4",
@@ -153,7 +153,7 @@
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^6.0.0",
     "ember-try": "^3.0.0",
-    "eslint": "^9.14.0",
+    "eslint": "^9.39.3",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-ember": "^12.3.1",
     "eslint-plugin-n": "^17.13.0",
@@ -175,7 +175,7 @@
     "svg-symbols": "^1.0.5",
     "tracked-built-ins": "^4.1.0",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.13.0",
+    "typescript-eslint": "^8.56.1",
     "webpack": "^5.95.0"
   },
   "optionalDependencies": {
