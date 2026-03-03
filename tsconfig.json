@@ -23,9 +23,5 @@
     "noEmitOnError": false,
     "rootDir": ".",
     "skipLibCheck": true // The duet-date-picker types cause issues on our TypeScript version and the library is no longer maintained..
-  },
-  "glint": {
-    "environment": ["ember-loose", "ember-template-imports"],
-    "checkStandaloneTemplates": false
   }
 }

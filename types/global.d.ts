@@ -1,4 +1,4 @@
-import '@glint/environment-ember-loose';
+import '@glint/ember-tsc/types';
 import type AppuniversumRegistry from '@appuniversum/ember-appuniversum/template-registry';
 
 declare module '@glint/environment-ember-loose/registry' {
