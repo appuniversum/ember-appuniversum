@@ -12,41 +12,59 @@
  *     npx eslint --inspect-config
  *
  */
-import babelParser from '@babel/eslint-parser/experimental-worker';
-import js from '@eslint/js';
-import { defineConfig, globalIgnores } from 'eslint/config';
-import prettier from 'eslint-config-prettier';
-import ember from 'eslint-plugin-ember/recommended';
-import n from 'eslint-plugin-n';
-import qunit from 'eslint-plugin-qunit';
+
 import globals from 'globals';
+import js from '@eslint/js';
+
 import ts from 'typescript-eslint';
 
-const esmParserOptions = {
-  ecmaFeatures: { modules: true },
-  ecmaVersion: 'latest',
+import ember from 'eslint-plugin-ember/recommended';
+
+import qunit from 'eslint-plugin-qunit';
+import n from 'eslint-plugin-n';
+
+import babelParser from '@babel/eslint-parser';
+
+const parserOptions = {
+  esm: {
+    js: {
+      ecmaFeatures: { modules: true },
+      ecmaVersion: 'latest',
+      requireConfigFile: false,
+      babelOptions: {
+        plugins: [
+          [
+            '@babel/plugin-proposal-decorators',
+            { decoratorsBeforeExport: true },
+          ],
+        ],
+      },
+    },
+    ts: {
+      projectService: true,
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
 };
 
-const tsParserOptions = {
-  projectService: true,
-  tsconfigRootDir: import.meta.dirname,
-};
-
-export default defineConfig([
-  globalIgnores([
-    'dist/',
-    'dist-*/',
-    'declarations/',
-    'coverage/',
-    '!**/.*',
-    'storybook-static',
-  ]),
+export default ts.config(
   js.configs.recommended,
-  prettier,
   ember.configs.base,
   ember.configs.gjs,
   ember.configs.gts,
-
+  /**
+   * Ignores must be in their own object
+   * https://eslint.org/docs/latest/use/configure/ignore
+   */
+  {
+    ignores: [
+      'declarations/',
+      'dist/',
+      '.node_modules.ember-try/',
+      'coverage/',
+      'storybook-static/',
+    ],
+  },
   /**
    * https://eslint.org/docs/latest/use/configure/configuration-files#configuring-linter-options
    */
@@ -59,46 +77,31 @@ export default defineConfig([
     files: ['**/*.js'],
     languageOptions: {
       parser: babelParser,
-      parserOptions: {
-        requireConfigFile: false,
-        babelOptions: {
-          plugins: [
-            [
-              '@babel/plugin-proposal-decorators',
-              { decoratorsBeforeExport: true },
-            ],
-          ],
-        },
-      },
     },
   },
   {
     files: ['**/*.{js,gjs}'],
     languageOptions: {
-      parserOptions: esmParserOptions,
+      parserOptions: parserOptions.esm.js,
       globals: {
         ...globals.browser,
       },
     },
   },
   {
-    files: ['**/*.{ts,gts}'],
+    files: ['**/*.ts'],
+    languageOptions: {
+      parserOptions: parserOptions.esm.ts,
+    },
+    extends: [ember.configs.base, ...ts.configs.recommendedTypeChecked],
+  },
+  {
+    files: ['**/*.gts'],
     languageOptions: {
       parser: ember.parser,
-      parserOptions: tsParserOptions,
-      globals: {
-        ...globals.browser,
-      },
+      parserOptions: parserOptions.esm.ts,
     },
-    extends: [
-      ...ts.configs.recommendedTypeChecked,
-      // https://github.com/ember-cli/ember-addon-blueprint/issues/119
-      {
-        ...ts.configs.eslintRecommended,
-        files: undefined,
-      },
-      ember.configs.gts,
-    ],
+    extends: [...ts.configs.recommendedTypeChecked, ember.configs.gts],
     rules: {
       // This works around an issue in Glint https://github.com/typed-ember/glint/issues/697
       // It also makes adding state to a component easier, since no other code changes would be needed.
@@ -152,10 +155,10 @@ export default defineConfig([
     languageOptions: {
       sourceType: 'module',
       ecmaVersion: 'latest',
-      parserOptions: esmParserOptions,
+      parserOptions: parserOptions.esm.js,
       globals: {
         ...globals.node,
       },
     },
   },
-]);
+);
