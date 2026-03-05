@@ -45,6 +45,7 @@ export { default as AuTimePicker } from '@appuniversum/ember-appuniversum/compon
 export { default as AuToaster } from '@appuniversum/ember-appuniversum/components/au-toaster';
 export { default as AuToggleSwitch } from '@appuniversum/ember-appuniversum/components/au-toggle-switch';
 export { default as AuToolbar } from '@appuniversum/ember-appuniversum/components/au-toolbar';
+export { default as AuTooltip } from '@appuniversum/ember-appuniversum/components/au-tooltip';
 
 // Modifiers
 export { default as auDateInput } from '@appuniversum/ember-appuniversum/modifiers/au-date-input';

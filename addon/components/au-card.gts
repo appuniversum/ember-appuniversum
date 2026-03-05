@@ -195,7 +195,11 @@ export default class AuCard extends Component<AuCardSignature> {
         {{/if}}
         {{#if this.sectionOpen}}
           <div tabindex="0">
-            {{yield (hash content=Content)}}
+            {{yield
+              (hash
+                content=(component Content disableAuContent=@disableAuContent)
+              )
+            }}
           </div>
         {{/if}}
       {{else}}

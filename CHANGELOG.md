@@ -4,6 +4,52 @@
 
 
 
+## v3.17.0 (2026-01-29)
+
+#### :rocket: Enhancement
+* [#554](https://github.com/appuniversum/ember-appuniversum/pull/554) Add support for `tracked-built-ins` v4 ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#553](https://github.com/appuniversum/ember-appuniversum/pull/553) Fix some tooltip inconsistencies with the Webuniversum version ([@Windvis](https://github.com/Windvis))
+
+
+## v3.16.0 (2026-01-21)
+
+#### :rocket: Enhancement
+* [#551](https://github.com/appuniversum/ember-appuniversum/pull/551) Add `flex-grow` and `flex-shrink` classes ([@kobemertens](https://github.com/kobemertens))
+
+
+## v3.15.1 (2026-01-14)
+
+#### :bug: Bug Fix
+* [#550](https://github.com/appuniversum/ember-appuniversum/pull/550) Fix yield in AuCard to pass @disableAuContent correctly ([@piemonkey](https://github.com/piemonkey))
+
+
+## v3.15.0 (2025-11-06)
+
+#### :rocket: Enhancement
+* [#549](https://github.com/appuniversum/ember-appuniversum/pull/549) Addition of conditional placement of tooltip component ([@brenner-company](https://github.com/brenner-company))
+
+
+## v3.14.1 (2025-10-13)
+
+#### :bug: Bug Fix
+* [#548](https://github.com/appuniversum/ember-appuniversum/pull/548) Fix an issue where the tooltip always displayed the "large" variant ([@brenner-company](https://github.com/brenner-company))
+
+
+## v3.14.0 (2025-10-07)
+
+#### :rocket: Enhancement
+* [#547](https://github.com/appuniversum/ember-appuniversum/pull/547) Add support for ember-truth-helpers v5 ([@Windvis](https://github.com/Windvis))
+* [#546](https://github.com/appuniversum/ember-appuniversum/pull/546) Add support for ember-concurrency v5 ([@Windvis](https://github.com/Windvis))
+
+
+## v3.13.0 (2025-07-17)
+
+#### :rocket: Enhancement
+* [#544](https://github.com/appuniversum/ember-appuniversum/pull/544) Add a `AuTooltip` component ([@Windvis](https://github.com/Windvis))
+
+
 ## v3.12.0 (2025-06-12)
 
 #### :rocket: Enhancement

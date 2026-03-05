@@ -100,14 +100,6 @@ export default class AuDropdown extends Component<AuDropdownSignature> {
     else return 'right';
   }
 
-  get floatingUiOptions() {
-    return {
-      arrow: {
-        offset: 0,
-      },
-    };
-  }
-
   // We don't want whitespace between our component and the outer template tag since that's visible in the app (inline element): https://github.com/emberjs/rfcs/issues/982
   // prettier-ignore
   <template><div class="au-c-dropdown" ...attributes>
@@ -136,7 +128,6 @@ export default class AuDropdown extends Component<AuDropdownSignature> {
             this.referenceElement
             this.arrowElement
             defaultPlacement=this.alignment
-            options=this.floatingUiOptions
           }}
           class="au-c-dropdown__floater"
         >

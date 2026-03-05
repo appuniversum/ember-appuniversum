@@ -26,6 +26,7 @@
 /.template-lintrc.js
 /.travis.yml
 /.watchmanconfig
+/.woodpecker/
 /CONTRIBUTING.md
 /ember-cli-build.js
 /jsconfig.json

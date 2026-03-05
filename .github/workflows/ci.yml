@@ -69,6 +69,7 @@ jobs:
           - embroider-safe
           - embroider-optimized
           - ember-concurrency-v3
+          - ember-concurrency-v4
 
     steps:
       - uses: actions/checkout@v3

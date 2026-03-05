@@ -126,6 +126,24 @@ $au-flex-utilities-reverse-responsive-breakpoints: false !default;
   align-self: stretch !important;
 }
 
+// Child elements growing
+.au-u-flex-grow {
+  flex-grow: 1 !important;
+}
+
+.au-u-flex-grow-0 {
+  flex-grow: 0 !important;
+}
+
+// Child elements shrinking
+.au-u-flex-shrink {
+  flex-shrink: 1 !important;
+}
+
+.au-u-flex-shrink-0 {
+  flex-shrink: 0 !important;
+}
+
 // Responsive utilities
 // ---
 @if ($au-flex-utilities-responsive == true) {
@@ -248,6 +266,18 @@ Set the global `$au-flex-utilities-reverse-responsive-breakpoints` variable to `
 
         .au-u-flex-self-stretch\@#{$au-bp-name} {
           align-self: stretch !important;
+        }
+        .au-u-flex-grow\@#{$au-bp-name} {
+          flex-grow: 1 !important;
+        }
+        .au-u-flex-grow-0\@#{$au-bp-name} {
+          flex-grow: 0 !important;
+        }
+        .au-u-flex-shrink\@#{$au-bp-name} {
+          flex-shrink: 1 !important;
+        }
+        .au-u-flex-shrink-0\@#{$au-bp-name} {
+          flex-shrink: 0 !important;
         }
       }
     }

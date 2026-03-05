@@ -1,0 +1,87 @@
+/* ==================================
+   #TOOLTIP
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-c-tooltip-border: var(--au-gray-300);
+$au-c-tooltip-border-width: 1px;
+$au-c-tooltip-shadow-color: #333332;
+$au-c-tooltip-shadow: 0 0 2rem 0 rgba($au-c-tooltip-shadow-color, 0.15);
+
+$au-c-tooltip-caret-size: 0.5rem !default;
+$au-c-tooltip-translate: ($au-c-tooltip-caret-size + 0.3rem);
+
+/* Component
+  ========================================================================== */
+
+.au-c-tooltip {
+  position: relative;
+  z-index: var(--au-z-index-beta);
+
+  width: auto;
+  max-width: 27rem;
+  box-shadow: $au-c-tooltip-shadow;
+  border: $au-c-tooltip-border-width $au-c-tooltip-border solid;
+  background-color: var(--au-page-bg);
+  padding: 0.3rem 1rem;
+
+  @include au-font-size(var(--au-para-small), 1.25);
+  font-family: var(--au-font);
+  font-weight: var(--au-regular);
+  color: var(--au-gray-900);
+  text-align: center;
+
+  //to catch the mouse when it leaves the trigger element
+  &::before {
+    content: "";
+    position: absolute;
+    top: -($au-c-tooltip-translate + 0.1rem);
+    right: -($au-c-tooltip-translate + 0.1rem);
+    bottom: -($au-c-tooltip-translate + 0.1rem);
+    left: -($au-c-tooltip-translate + 0.1rem);
+    z-index: 0;
+  }
+}
+
+.au-c-tooltip__arrow {
+  position: absolute;
+  width: $au-c-tooltip-caret-size * 2;
+  height: $au-c-tooltip-caret-size * 2;
+
+  &:before,
+  &:after {
+    position: absolute;
+    left: 0;
+    height: 0;
+    width: 0;
+
+    border: solid transparent;
+    border-width: $au-c-tooltip-caret-size;
+
+    content: "";
+    pointer-events: none;
+  }
+
+  &:before {
+    bottom: calc(100% + #{$au-c-tooltip-border-width});
+
+    border-color: rgba($au-white, 0);
+    border-bottom-color: $au-c-tooltip-border;
+  }
+
+  &:after {
+    bottom: 100%;
+
+    border-color: rgba($au-white, 0);
+    border-bottom-color: var(--au-white);
+  }
+}
+
+.au-c-tooltip--large {
+  padding: 2rem 3.2rem 2rem 2rem;
+
+  font-size: 1.4rem;
+  text-align: left;
+}

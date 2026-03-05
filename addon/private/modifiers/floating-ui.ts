@@ -7,6 +7,7 @@ import {
   hide,
   offset,
   arrow,
+  shift,
 } from '@floating-ui/dom';
 import { modifier } from 'ember-modifier';
 import { merge } from 'merge-anything';
@@ -20,7 +21,13 @@ type PositionalArgs =
 
 interface NamedArgs {
   // These aren't all the options, but the only ones we are using right now
-  defaultPlacement?: 'bottom' | 'bottom-start' | 'bottom-end';
+  defaultPlacement?:
+    | 'top'
+    | 'right'
+    | 'bottom'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left';
   options?: {
     arrow?: {
       offset?: number;
@@ -30,6 +37,9 @@ interface NamedArgs {
     floater?: {
       offset?: number;
     };
+    shift?: {
+      padding?: number;
+    };
   };
 }
 
@@ -38,7 +48,7 @@ export default modifier(floatingUi);
 function floatingUi(
   floatingElement: HTMLElement,
   positional: PositionalArgs,
-  { defaultPlacement = 'bottom-start', options = {} }: NamedArgs,
+  { defaultPlacement = 'bottom', options = {} }: NamedArgs,
 ): TearDown {
   const elementRoot: HTMLElement = ensureRoot(floatingElement);
   const [maybeReferenceElement, maybeArrowElement] = positional;
@@ -57,9 +67,12 @@ function floatingUi(
       offset: 6,
     },
     arrow: {
-      offset: 4,
+      offset: 0,
       padding: 3,
       position: 'min(15%, 12px)',
+    },
+    shift: {
+      padding: 6,
     },
   };
   options = merge(defaultOptions, options);
@@ -75,8 +88,11 @@ function floatingUi(
   );
 
   assert(
-    `FloatingUI (modifier): @placement must start with either 'bottom' or 'top'.`,
-    defaultPlacement.startsWith('bottom') || defaultPlacement.startsWith('top'),
+    `FloatingUI (modifier): @placement must start with either 'top', 'right', 'bottom' or 'left'.`,
+    defaultPlacement.startsWith('top') ||
+      defaultPlacement.startsWith('right') ||
+      defaultPlacement.startsWith('bottom') ||
+      defaultPlacement.startsWith('left'),
   );
 
   Object.assign(floatingElement.style, {
@@ -86,10 +102,11 @@ function floatingUi(
   });
 
   const middleware = [
-    offset(options.floater?.offset),
+    offset(options.floater?.offset || 0),
     flip(),
     hide({ strategy: 'referenceHidden' }),
     hide({ strategy: 'escaped' }),
+    shift({ padding: options.shift?.padding || 0 }),
   ];
 
   if (arrowElement) {
@@ -112,10 +129,10 @@ function floatingUi(
       });
 
       if (middlewareData.arrow) {
-        const { x } = middlewareData.arrow;
+        const { x, y } = middlewareData.arrow;
         const [side, alignment] = placement.split('-') as [
-          'top' | 'bottom',
-          'string' | undefined,
+          'top' | 'right' | 'bottom' | 'left',
+          'start' | 'end' | undefined,
         ];
         const isAligned = alignment != null;
 
@@ -128,7 +145,9 @@ function floatingUi(
 
         const rotation = {
           top: '180deg',
+          right: '270deg',
           bottom: '0deg',
+          left: '90deg',
         }[side];
 
         Object.assign(arrowElement!.style, {
@@ -140,10 +159,22 @@ function floatingUi(
           const crossSide = {
             'top-start': 'left',
             'top-end': 'right',
+            'right-start': 'top',
+            'right-end': 'bottom',
             'bottom-start': 'left',
             'bottom-end': 'right',
+            'left-start': 'top',
+            'left-end': 'bottom',
           }[
-            placement as 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end'
+            placement as
+              | 'top-start'
+              | 'top-end'
+              | 'right-start'
+              | 'right-end'
+              | 'bottom-start'
+              | 'bottom-end'
+              | 'left-start'
+              | 'left-end'
           ];
 
           Object.assign(arrowElement!.style, {
@@ -155,15 +186,18 @@ function floatingUi(
         } else {
           Object.assign(arrowElement!.style, {
             left: x != null ? `${x}px` : '',
+            top: y != null ? `${y}px` : '',
           });
         }
 
         const mainSide = {
           top: 'bottom',
+          right: 'left',
           bottom: 'top',
+          left: 'right',
         }[side];
 
-        if (options.arrow?.offset) {
+        if (typeof options.arrow?.offset !== 'undefined') {
           Object.assign(arrowElement!.style, {
             [mainSide]: `${-options.arrow?.offset}px`,
           });

@@ -6,8 +6,7 @@ import { A } from '@ember/array';
 export default class ToasterService extends Service {
   @tracked toasts = A([]);
 
-  @task
-  *displayToast(toast) {
+  displayToast = task(async (toast) => {
     if (typeof toast.options.timeOut === 'undefined') {
       toast.options.timeOut = null;
     }
@@ -19,11 +18,11 @@ export default class ToasterService extends Service {
     this.toasts.pushObject(toast);
 
     if (toast.options.timeOut) {
-      yield timeout(toast.options.timeOut);
+      await timeout(toast.options.timeOut);
 
       this.close(toast);
     }
-  }
+  });
 
   show(component, options = {}) {
     const toast = {

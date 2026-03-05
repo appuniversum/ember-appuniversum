@@ -60,6 +60,14 @@ module.exports = async function () {
           },
         },
       },
+      {
+        name: 'ember-concurrency-v4',
+        npm: {
+          dependencies: {
+            'ember-concurrency': '^4.0.0',
+          },
+        },
+      },
     ],
   };
 };
