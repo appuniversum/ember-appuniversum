@@ -2,7 +2,7 @@ import AuToaster from '@appuniversum/ember-appuniversum/components/au-toaster';
 import type ToasterService from '@appuniversum/ember-appuniversum/services/toaster';
 import type {
   CustomToastSignature,
-  CustomToastOptions,
+  BaseOptions,
 } from '@appuniversum/ember-appuniversum/services/toaster';
 import type { TOC } from '@ember/component/template-only';
 import { on } from '@ember/modifier';
@@ -148,7 +148,7 @@ module('Integration | Component | au-toaster', function (hooks) {
   test<TestContext>('custom toast components can be used', async function (assert) {
     const CUSTOM_TOAST = '[data-test-custom-toast]';
 
-    type ToastOptionsWithFoo = CustomToastOptions & { foo: string };
+    type ToastOptionsWithFoo = BaseOptions & { foo: string };
 
     // specify the option shape via the generic parameter; this exposes `options`
     // with a `foo` property and keeps `close` available

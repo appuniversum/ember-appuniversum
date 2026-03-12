@@ -5,7 +5,7 @@ import type { ComponentLike } from '@glint/template';
 import type { AuAlertSignature } from '../components/au-alert';
 
 // shared configuration that both built–in and user supplied toasts may use
-interface BaseOptions {
+export interface BaseOptions {
   icon?: string | ComponentLike<{ Element: Element }>;
   closable?: boolean;
   timeOut?: number | null;
@@ -15,13 +15,8 @@ export interface ToastOptions extends BaseOptions {
   type?: AuAlertSignature['Args']['skin'];
 }
 
-export interface CustomToastOptions extends BaseOptions {
-  // arbitrary extra data is allowed; specific components will refine this
-  [key: string]: unknown;
-}
-
 // generic signature so consumers can plug in their own option shape
-export interface CustomToastSignature<Options extends CustomToastOptions = CustomToastOptions> {
+export interface CustomToastSignature<Options extends BaseOptions = BaseOptions> {
   Args: {
     options: Options;
     close: () => void;
@@ -37,7 +32,7 @@ export type DefaultToastData = {
   options: ToastOptions;
 };
 
-export type CustomToastData<Options extends CustomToastOptions = CustomToastOptions> = {
+export type CustomToastData<Options extends BaseOptions = BaseOptions> = {
   component: ComponentLike<CustomToastSignature<Options>>;
   title?: string;
   message?: string;
@@ -46,11 +41,11 @@ export type CustomToastData<Options extends CustomToastOptions = CustomToastOpti
 
 // whenever the store needs to hold toasts we don't care about the particular
 // option type; making this alias allows the generic `show` method to still work
-export type AnyToastData = DefaultToastData | CustomToastData<any>;
+export type AnyToastData<Options extends BaseOptions = BaseOptions> = DefaultToastData | CustomToastData<Options>;
 
 // public API type – kept for backwards compatibility with consumers of the
 // service who might have directly referenced `ToastData`
-export type ToastData = AnyToastData;
+export type ToastData<Options extends BaseOptions = BaseOptions> = AnyToastData<Options>;
 
 export default class ToasterService extends Service {
   // TODO: Replace A with a regular array
@@ -78,7 +73,7 @@ export default class ToasterService extends Service {
 
   // generic helper for custom components – the `Options` type is inferred from
   // the component signature and ensures callers pass matching data
-  show<Options extends CustomToastOptions = CustomToastOptions>(
+  show<Options extends BaseOptions = BaseOptions>(
     component: ComponentLike<CustomToastSignature<Options>>,
     options: Options = {} as Options,
   ): CustomToastData<Options> {
@@ -88,7 +83,7 @@ export default class ToasterService extends Service {
     };
 
     // widen the argument so the task can accept any option shape
-    void this.displayToast.perform(toast as AnyToastData);
+    void this.displayToast.perform(toast as unknown as AnyToastData);
     return toast;
   }
 
@@ -179,9 +174,9 @@ export default class ToasterService extends Service {
     return toast;
   }
 
-  close(toast: ToastData) {
-    if (this.toasts.includes(toast)) {
-      this.toasts.removeObject(toast);
+  close<Options extends BaseOptions = BaseOptions>(toast: ToastData<Options>) {
+    if (this.toasts.includes(toast as unknown as AnyToastData)) {
+      this.toasts.removeObject(toast as unknown as AnyToastData);
     }
   }
 }
