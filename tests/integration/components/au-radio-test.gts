@@ -62,8 +62,8 @@ module('Integration | Component | au-radio', function (hooks) {
   });
 
   test('it adds any extra attributes to the input element', async function (assert) {
-    await render(<template><AuRadio data-foo="bar" /></template>);
-    assert.dom('input').hasAttribute('data-foo', 'bar');
+    await render(<template><AuRadio foo="bar" /></template>);
+    assert.dom('input').hasAttribute('foo', 'bar');
   });
 });
 

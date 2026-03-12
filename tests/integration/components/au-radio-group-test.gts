@@ -97,12 +97,12 @@ module('Integration | Component | au-radio-group', function (hooks) {
   test('it adds any extra attributes to the group element', async function (assert) {
     await render(
       <template>
-        <AuRadioGroup data-test-radio-group as |Group|>
+        <AuRadioGroup foo="bar" data-test-radio-group as |Group|>
           <Group.Radio>Foo</Group.Radio>
         </AuRadioGroup>
       </template>,
     );
-    assert.dom('[data-test-radio-group]').exists();
+    assert.dom('[data-test-radio-group]').hasAttribute('foo', 'bar');
   });
 });
 

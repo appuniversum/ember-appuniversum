@@ -85,11 +85,11 @@ module('Integration | Component | au-checkbox-group', function (hooks) {
   test('it adds any extra attributes to the group element', async function (assert) {
     await render(
       <template>
-        <AuCheckboxGroup data-test-checkbox-group as |Group|>
+        <AuCheckboxGroup foo="bar" data-test-checkbox-group as |Group|>
           <Group.Checkbox>Foo</Group.Checkbox>
         </AuCheckboxGroup>
       </template>,
     );
-    assert.dom('[data-test-checkbox-group]').exists();
+    assert.dom('[data-test-checkbox-group]').hasAttribute('foo', 'bar');
   });
 });
