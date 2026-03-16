@@ -1,0 +1,28 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+import * as iconStories from "../5-components/Brand/AuIcon.stories";
+
+<Meta title="Utilities/Icons" />
+
+# Icons
+
+Appuniversum includes many SVG icons that can be used by passing the name of the icon into the component, e.g.
+
+```
+<AuButton @icon="book">Button Text</AuButton>
+```
+
+Alternatively, wherever you can pass an icon name you can instead pass an Ember component that will be rendered instead of the default SVG in the AuIcon component.
+This can be used, for example, to use inline SVGs or PNG icons.
+
+Although the Ember component will not be passed any arguments, it's possible to pass them using the `component` helper.
+See [AuIcon docs](/docs/components-brand-auicon--with-custom-icon) for a live example.
+
+```
+<AuButton @icon={{component 'custom-icon' iconName='some-name'}}>Button Text</AuButton>
+```
+
+All the available icons are listed here:
+
+<Canvas>
+  <Story story={iconStories.Icons} />
+</Canvas>
