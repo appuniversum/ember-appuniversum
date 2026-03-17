@@ -41,22 +41,15 @@ export type CustomToastData<Options extends BaseOptions = BaseOptions> = {
   options: Options;
 };
 
-// whenever the store needs to hold toasts we don't care about the particular
-// option type; making this alias allows the generic `show` method to still work
-export type AnyToastData<Options extends BaseOptions = BaseOptions> =
+export type ToastData<Options extends BaseOptions = BaseOptions> =
   | DefaultToastData
   | CustomToastData<Options>;
 
-// public API type – kept for backwards compatibility with consumers of the
-// service who might have directly referenced `ToastData`
-export type ToastData<Options extends BaseOptions = BaseOptions> =
-  AnyToastData<Options>;
-
 export default class ToasterService extends Service {
   // TODO: Replace A with a regular array
-  toasts: NativeArray<AnyToastData> = A<AnyToastData>([]);
+  toasts: NativeArray<ToastData> = A<ToastData>([]);
 
-  private displayToast = task(async (toast: AnyToastData) => {
+  private displayToast = task(async (toast: ToastData) => {
     // the task treats the union of possible options; the callers ensure the
     // correct shape, so we can safely index on the base properties here
     if (typeof toast.options['timeOut'] === 'undefined') {
@@ -88,7 +81,7 @@ export default class ToasterService extends Service {
     };
 
     // widen the argument so the task can accept any option shape
-    void this.displayToast.perform(toast as unknown as AnyToastData);
+    void this.displayToast.perform(toast as unknown as ToastData);
     return toast;
   }
 
@@ -180,14 +173,14 @@ export default class ToasterService extends Service {
   }
 
   close<Options extends BaseOptions = BaseOptions>(toast: ToastData<Options>) {
-    if (this.toasts.includes(toast as unknown as AnyToastData)) {
-      this.toasts.removeObject(toast as unknown as AnyToastData);
+    if (this.toasts.includes(toast as unknown as ToastData)) {
+      this.toasts.removeObject(toast as unknown as ToastData);
     }
   }
 }
 
 declare module '@ember/service' {
   interface Registry {
-    'toaster': ToasterService;
+    toaster: ToasterService;
   }
 }
