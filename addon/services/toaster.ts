@@ -16,7 +16,9 @@ export interface ToastOptions extends BaseOptions {
 }
 
 // generic signature so consumers can plug in their own option shape
-export interface CustomToastSignature<Options extends BaseOptions = BaseOptions> {
+export interface CustomToastSignature<
+  Options extends BaseOptions = BaseOptions,
+> {
   Args: {
     options: Options;
     close: () => void;
@@ -41,11 +43,14 @@ export type CustomToastData<Options extends BaseOptions = BaseOptions> = {
 
 // whenever the store needs to hold toasts we don't care about the particular
 // option type; making this alias allows the generic `show` method to still work
-export type AnyToastData<Options extends BaseOptions = BaseOptions> = DefaultToastData | CustomToastData<Options>;
+export type AnyToastData<Options extends BaseOptions = BaseOptions> =
+  | DefaultToastData
+  | CustomToastData<Options>;
 
 // public API type – kept for backwards compatibility with consumers of the
 // service who might have directly referenced `ToastData`
-export type ToastData<Options extends BaseOptions = BaseOptions> = AnyToastData<Options>;
+export type ToastData<Options extends BaseOptions = BaseOptions> =
+  AnyToastData<Options>;
 
 export default class ToasterService extends Service {
   // TODO: Replace A with a regular array
