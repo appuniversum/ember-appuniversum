@@ -12,34 +12,34 @@ $au-accordion-spacing: $au-unit !default;
 
 .au-c-accordion {
   padding-bottom: $au-accordion-spacing;
+
+  .au-c-accordion__toggle {
+    margin-bottom: $au-unit-tiny;
+    cursor: pointer;
+  }
+
+  .au-c-accordion__button {
+    padding-left: 0;
+    text-align: left;
+    white-space: initial;
+    overflow: visible;
+    height: auto;
+  }
+
+  .au-c-accordion__icon {
+    color: var(--au-blue-700);
+    transition: color var(--au-transition);
+    margin-top: 0.4rem;
+
+    &:hover,
+    &:focus-within {
+      color: var(--au-blue-900);
+    }
+  }
 }
 
 .au-c-accordion__subtitle {
   margin-left: $au-accordion-spacing;
-}
-
-.au-c-accordion .au-c-toolbar {
-  margin-bottom: $au-unit-tiny;
-  cursor: pointer;
-}
-
-.au-c-accordion .au-c-button {
-  padding-left: 0;
-  text-align: left;
-  white-space: initial;
-  overflow: visible;
-  height: auto;
-}
-
-.au-c-accordion .au-c-toolbar .au-c-icon {
-  color: var(--au-blue-700);
-  transition: color var(--au-transition);
-  margin-top: 0.4rem;
-
-  &:hover,
-  &:focus-within {
-    color: var(--au-blue-900);
-  }
 }
 
 .au-c-accordion .au-c-content {
@@ -53,7 +53,7 @@ $au-accordion-spacing: $au-unit !default;
 }
 
 // Border
-.au-c-accordion--border .au-c-toolbar {
+.au-c-accordion--border .au-c-accordion__toggle {
   border: 0.1rem solid var(--au-divider-color);
   border-radius: var(--au-radius);
   padding: $au-unit-tiny;
@@ -66,6 +66,6 @@ $au-accordion-spacing: $au-unit !default;
 }
 
 // Reversed
-.au-c-accordion--reverse .au-c-toolbar {
+.au-c-accordion--reverse .au-c-accordion__toggle {
   justify-content: flex-end;
 }

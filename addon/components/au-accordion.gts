@@ -84,6 +84,7 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
       <AuToolbar
         @nowrap={{true}}
         @reverse={{@reverse}}
+        class="au-c-accordion__toggle"
         {{on "click" this.toggleAccordion}}
         data-test-accordion-toggle
         as |Group|
@@ -93,6 +94,7 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
             <AuButton
               @skin="link"
               aria-expanded="{{if this.isOpen 'true' 'false'}}"
+              class="au-c-accordion__button"
               data-test-accordion-button
             >
               {{@buttonLabel}}
@@ -110,6 +112,7 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
             @alignment="left"
             @size="large"
             @ariaHidden={{true}}
+            class="au-c-accordion__icon"
           />
         </Group>
       </AuToolbar>
