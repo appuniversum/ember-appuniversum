@@ -185,3 +185,9 @@ export default class ToasterService extends Service {
     }
   }
 }
+
+declare module '@ember/service' {
+  interface Registry {
+    'toaster': ToasterService;
+  }
+}

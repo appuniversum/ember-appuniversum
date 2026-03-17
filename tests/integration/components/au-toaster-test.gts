@@ -32,7 +32,7 @@ module('Integration | Component | au-toaster', function (hooks) {
   setupRenderingTest(hooks);
 
   hooks.beforeEach<TestContext>(async function () {
-    this.toaster = this.owner.lookup('service:toaster') as ToasterService;
+    this.toaster = this.owner.lookup('service:toaster');
     await renderToasterContainer();
   });
 
