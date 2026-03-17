@@ -4,6 +4,16 @@
 
 
 
+## v3.18.0 (2026-03-17)
+
+#### :rocket: Enhancement
+* [#490](https://github.com/appuniversum/ember-appuniversum/pull/490) Toaster types ([@Windvis](https://github.com/Windvis))
+
+#### :bug: Bug Fix
+* [#559](https://github.com/appuniversum/ember-appuniversum/pull/559) Fix an issue with the `<AuAccordion>` styles ([@Windvis](https://github.com/Windvis))
+* [#558](https://github.com/appuniversum/ember-appuniversum/pull/558) Fix AuButton inside AuAccordion cursor issue ([@kobemertens](https://github.com/kobemertens))
+
+
 ## v3.17.0 (2026-01-29)
 
 #### :rocket: Enhancement
