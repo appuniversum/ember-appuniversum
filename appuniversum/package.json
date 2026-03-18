@@ -1,0 +1,186 @@
+{
+  "name": "@appuniversum/ember-appuniversum",
+  "version": "3.18.0",
+  "description": "Ember addon wrapping the appuniversum components.",
+  "keywords": [
+    "ember-addon"
+  ],
+  "homepage": "https://appuniversum.github.io/ember-appuniversum",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appuniversum/ember-appuniversum"
+  },
+  "license": "MIT",
+  "author": "",
+  "typesVersions": {
+    "*": {
+      "test-support": [
+        "declarations/addon-test-support/index.d.ts"
+      ],
+      "test-support/*": [
+        "declarations/addon-test-support/*",
+        "declarations/addon-test-support/*/index.d.ts"
+      ],
+      "*": [
+        "declarations/addon/*",
+        "declarations/addon/*/index.d.ts"
+      ]
+    }
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "pnpm run build:icons && ember build --environment=production",
+    "build:icons": "concurrently \"node lib/generate-icon-components.mjs\" \"svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg\"",
+    "build:types": "glint -d",
+    "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:css": "stylelint --allow-empty-input \"**/*.css\"",
+    "lint:css:fix": "concurrently \"npm:lint:css -- --fix\"",
+    "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
+    "lint:format": "prettier . --check --cache --plugin prettier-plugin-ember-template-tag",
+    "lint:format:fix": "prettier . --write --cache --plugin prettier-plugin-ember-template-tag",
+    "lint:hbs": "ember-template-lint .",
+    "lint:hbs:fix": "ember-template-lint . --fix",
+    "lint:js": "eslint . --cache",
+    "lint:js:fix": "eslint . --fix",
+    "lint:types": "glint",
+    "prepack": "run-s build:icons build:types",
+    "postpack": "rimraf declarations",
+    "start": "npm run build:icons && ember serve",
+    "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
+    "test:ember": "ember test",
+    "test:ember-compatibility": "ember try:each",
+    "release": "release-it"
+  },
+  "browserslist": [
+    "last 1 Chrome version",
+    "last 1 Android version",
+    "last 1 Firefox version",
+    "last 1 FirefoxAndroid version",
+    "last 1 Safari version",
+    "last 1 iOS version",
+    "last 1 Edge version"
+  ],
+  "packageManager": "pnpm@10.32.0",
+  "dependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/eslint-parser": "^7.25.2",
+    "@duetds/date-picker": "^1.4.0",
+    "@embroider/macros": "^1.9.0",
+    "@floating-ui/dom": "^1.7.4",
+    "ember-auto-import": "^2.8.1",
+    "ember-cli-babel": "^8.2.0",
+    "ember-cli-htmlbars": "^6.3.0",
+    "ember-cli-version-checker": "^5.1.2",
+    "ember-concurrency": "^3.1.0 || ^4.0.2 || ^5.0.0",
+    "ember-file-upload": "^9.1.0",
+    "ember-focus-trap": "^1.1.0",
+    "ember-modifier": "^4.1.0",
+    "ember-template-imports": "^4.1.1",
+    "ember-truth-helpers": "^3.1.1 || ^4.0.3 || ^5.0.0",
+    "inputmask": "^5.0.9",
+    "merge-anything": "^6.0.2",
+    "tracked-toolbox": "^2.0.0"
+  },
+  "devDependencies": {
+    "@ember/optional-features": "^2.1.0",
+    "@ember/test-helpers": "^5.4.1",
+    "@embroider/test-setup": "^4.0.0",
+    "@eslint/js": "^9.12.0",
+    "@glimmer/component": "^1.1.2",
+    "@glimmer/tracking": "^1.1.2",
+    "@glint/core": "^1.5.0",
+    "@glint/environment-ember-loose": "^1.5.0",
+    "@glint/environment-ember-template-imports": "^1.5.0",
+    "@glint/template": "^1.5.0",
+    "@testing-library/dom": "^9.3.1",
+    "@tsconfig/ember": "^3.0.8",
+    "@types/inputmask": "^5.0.7",
+    "@types/qunit": "^2.19.10",
+    "@types/rsvp": "^4.0.9",
+    "@typescript-eslint/eslint-plugin": "^8.13.0",
+    "@typescript-eslint/parser": "^8.13.0",
+    "broccoli-asset-rev": "^3.0.0",
+    "change-case": "^5.4.3",
+    "concurrently": "^8.2.2",
+    "ember-basic-dropdown": "^8.3.0",
+    "ember-cli": "~5.12.0",
+    "ember-cli-autoprefixer": "^2.0.0",
+    "ember-cli-clean-css": "^3.0.0",
+    "ember-cli-dependency-checker": "^3.3.2",
+    "ember-cli-inject-live-reload": "^2.1.0",
+    "ember-cli-sass": "^10.0.1",
+    "ember-cli-sri": "^2.1.1",
+    "ember-cli-terser": "^4.0.2",
+    "ember-load-initializers": "^2.1.2",
+    "ember-page-title": "^8.2.3",
+    "ember-power-select": "^8.11.0",
+    "ember-qunit": "^8.1.0",
+    "ember-resolver": "^12.0.1",
+    "ember-root-url": "^1.0.1",
+    "ember-source": "~5.12.0",
+    "ember-source-channel-url": "^3.0.0",
+    "ember-template-lint": "^6.0.0",
+    "ember-try": "^3.0.0",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-ember": "^12.3.1",
+    "eslint-plugin-n": "^17.13.0",
+    "eslint-plugin-qunit": "^8.1.2",
+    "globals": "^15.12.0",
+    "loader.js": "^4.7.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.3.3",
+    "prettier-plugin-ember-template-tag": "^2.0.4",
+    "qunit": "^2.22.0",
+    "qunit-dom": "^3.2.1",
+    "release-it": "^14.14.0",
+    "release-it-lerna-changelog": "^4.0.1",
+    "rimraf": "^5.0.1",
+    "sass": "^1.56.1",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-prettier": "^4.1.0",
+    "svg-symbols": "^1.0.5",
+    "tracked-built-ins": "^4.1.0",
+    "typescript": "~5.5.0",
+    "typescript-eslint": "^8.13.0",
+    "webpack": "^5.95.0"
+  },
+  "peerDependencies": {
+    "ember-source": "^4.12.0 || ^5.0.0 || ^6.0.0",
+    "tracked-built-ins": "^3.3.0 || ^4.1.0"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    },
+    "npm": {
+      "publish": false
+    }
+  },
+  "volta": {
+    "node": "18.20.2"
+  }
+}

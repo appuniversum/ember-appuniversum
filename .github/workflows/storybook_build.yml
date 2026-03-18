@@ -16,13 +16,15 @@ jobs:
           cache: pnpm
       - name: Install Dependencies
         run:  pnpm install --frozen-lockfile
-      - name: Build
-        run: pnpm build
+      - name: Build addon
+        run: pnpm --filter @appuniversum/ember-appuniversum build
+      - name: Build docs app
+        run: pnpm --filter docs-app build
       - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
         with:
           target_branch: gh-pages
-          build_dir: storybook-static
+          build_dir: docs-app/storybook-static
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

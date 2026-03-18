@@ -30,11 +30,11 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
       - name: Build icons
-        run: pnpm build:icons
+        run: pnpm --filter @appuniversum/ember-appuniversum build:icons
       - name: Lint
-        run: pnpm lint
+        run: pnpm -r lint
       - name: Run Tests
-        run: pnpm test:ember
+        run: pnpm --filter @appuniversum/ember-appuniversum test:ember
 
   floating:
     name: "Floating Dependencies"
@@ -53,9 +53,9 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --no-lockfile
       - name: Build icons
-        run: pnpm build:icons
+        run: pnpm --filter @appuniversum/ember-appuniversum build:icons
       - name: Run Tests
-        run: pnpm test:ember
+        run: pnpm --filter @appuniversum/ember-appuniversum test:ember
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -90,6 +90,7 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
       - name: Build icons
-        run: pnpm build:icons
+        run: pnpm --filter @appuniversum/ember-appuniversum build:icons
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        working-directory: appuniversum

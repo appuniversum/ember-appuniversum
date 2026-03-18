@@ -13,11 +13,6 @@ module.exports = function (defaults) {
         disableInternalAuContentUsage: true,
       },
     },
-    fingerprint: {
-      // Disable fingerprinting for now until this ember-cli-storybook issue is resolved:
-      // https://github.com/storybookjs/ember-cli-storybook/issues/158
-      enabled: false,
-    },
   });
 
   /*
