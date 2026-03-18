@@ -1,4 +1,15 @@
 {
   "name": "appuniversum",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appuniversum/ember-appuniversum"
+  },
+  "scripts": {
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "test": "pnpm --filter '*' test",
+    "test:ember": "pnpm --filter '*' test:ember",
+    "release": "pnpm --filter @appuniversum/ember-appuniversum release"
+  },
   "private": true
 }
