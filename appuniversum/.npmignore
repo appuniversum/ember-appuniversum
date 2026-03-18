@@ -4,7 +4,6 @@
 # compiled output
 /dist/
 /tmp/
-/storybook-static/
 # We don't want to publish the declaration files for the tests folder, but we can't prevent it
 # with only a single tsconfig file and Glint doesn't support multiple tsconfig files yet.
 /declarations/tests/
@@ -38,9 +37,7 @@
 /yarn-error.log
 /yarn.lock
 .gitkeep
-/.storybook
-/stories/
-/build-storybook.log
+
 # These types are local types that are only needed for development of the addon
 /types/
 /unpublished-development-types/

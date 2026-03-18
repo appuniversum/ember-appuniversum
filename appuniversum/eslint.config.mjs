@@ -62,7 +62,6 @@ export default ts.config(
       'dist/',
       '.node_modules.ember-try/',
       'coverage/',
-      'storybook-static/',
     ],
   },
   /**
@@ -129,7 +128,6 @@ export default ts.config(
       '.template-lintrc.js',
       'ember-cli-build.js',
       'tests/dummy/config/**/*.js',
-      '.storybook/main.js',
     ],
     plugins: {
       n,
