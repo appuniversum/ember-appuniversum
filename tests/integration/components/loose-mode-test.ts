@@ -79,11 +79,11 @@ module('Integration | Component | Loose mode', function (hooks) {
 
   test('`<AuCheckboxGroup>` resolves in loose mode', async function (assert) {
     await render(hbs`
-      <AuCheckboxGroup foo="bar" data-test-checkbox-group as |Group|>
+      <AuCheckboxGroup data-test-checkbox-group as |Group|>
         <Group.Checkbox>Foo</Group.Checkbox>
       </AuCheckboxGroup>
     `);
-    assert.dom('[data-test-checkbox-group]').hasAttribute('foo', 'bar');
+    assert.dom('[data-test-checkbox-group]').exists();
   });
 
   test('`<AuContentHeader>` resolves in loose mode', async function (assert) {

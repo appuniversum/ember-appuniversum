@@ -9,6 +9,7 @@
 /coverage/
 !.*
 .*/
+pnpm-lock.yaml
 
 # This is updated by lerna-changelog which doesn't confirm with the prettier formatting. Since we can't easily run prettier during releases we disable the formatting for now.
 CHANGELOG.md

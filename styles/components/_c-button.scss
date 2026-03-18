@@ -448,16 +448,20 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
   padding: 0
     calc(
       (
-          #{$au-button-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)
-        ) / 2
+          #{$au-button-icon-only-width -
+            ($au-button-border * 2)} - var(--au-icon-size-medium)
+        ) /
+        2
     ); // calculate padding automatically to create square icon-only buttons
 
   &.au-c-button--link {
     padding: 0
       calc(
         (
-            #{$au-button-link-icon-only-width - ($au-button-border * 2)} - var(--au-icon-size-medium)
-          ) / 2
+            #{$au-button-link-icon-only-width -
+              ($au-button-border * 2)} - var(--au-icon-size-medium)
+          ) /
+          2
       );
   }
 
@@ -471,8 +475,10 @@ $au-button-link-icon-only-width: $au-button-link-height !default;
   padding: 0
     calc(
       (
-          #{$au-button-icon-only-width-large - ($au-button-border * 2)} - var(--au-icon-size-large)
-        ) / 2
+          #{$au-button-icon-only-width-large -
+            ($au-button-border * 2)} - var(--au-icon-size-large)
+        ) /
+        2
     ); // calculate padding automatically to create square icon-only buttons
 
   .au-c-icon {

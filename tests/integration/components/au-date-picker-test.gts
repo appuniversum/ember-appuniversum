@@ -15,9 +15,7 @@ module('Integration | Component | au-date-picker', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders a label', async function (assert) {
-    await render(
-      <template><AuDatePicker @label="Some label" data-test /></template>,
-    );
+    await render(<template><AuDatePicker @label="Some label" /></template>);
 
     assert.dom('[data-test-au-date-picker-label]').containsText('Some label');
   });

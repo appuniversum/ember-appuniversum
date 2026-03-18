@@ -1,0 +1,8 @@
+overrides:
+  # https://github.com/emberjs/ember.js/issues/20502
+  "@glimmer/validator": "0.92.3"
+  "@glimmer/util": "0.92.3"
+  # "cheerio v1.1.0+ include undici v7, which does not run on node 18, we can remove the override once we drop node 18 support
+  "@storybook/ember-cli-storybook>cheerio": "1.0.0"
+  #  storybook/ember and focus-trap all depend on ember-source peerDeps that don't match all our test scenarios
+  "ember-source": "$ember-source"

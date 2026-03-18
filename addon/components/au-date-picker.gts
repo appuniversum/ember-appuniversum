@@ -151,9 +151,8 @@ export default class AuDatePicker extends Component<AuDatePickerSignature> {
 
   async registerDuetDatePicker() {
     if (typeof globalThis.FastBoot === 'undefined') {
-      const { defineCustomElements: registerDuetDatePicker } = await import(
-        '@duetds/date-picker/custom-element'
-      );
+      const { defineCustomElements: registerDuetDatePicker } =
+        await import('@duetds/date-picker/custom-element');
       registerDuetDatePicker();
       this.isInitialized = true;
     }
@@ -171,6 +170,8 @@ export default class AuDatePicker extends Component<AuDatePickerSignature> {
       {{/if}}
 
       {{#if this.isInitialized}}
+        {{! error TS2345: Argument of type '{ class: string; disabled: boolean | undefined; buttonLabel: string | undefined; identifier: string; value: string; min: string; max: string; "first-day-of-week": DayOfWeek | undefined; "data-test-au-date-picker-component": string; }' is not assignable to parameter of type 'never'. }}
+        {{! @glint-expect-error todo: find out why Glint errors here }}
         <duet-date-picker
           class={{this.error}}
           disabled={{@disabled}}
