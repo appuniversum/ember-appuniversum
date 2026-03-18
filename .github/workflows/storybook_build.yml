@@ -23,6 +23,8 @@ jobs:
         run: pnpm --filter @appuniversum/ember-appuniversum build
       - name: Build docs app
         run: pnpm --filter docs-app build
+      - name: Build Storybook
+        run: pnpm --filter docs-app build-storybook
       - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v3
