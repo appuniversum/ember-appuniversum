@@ -6,10 +6,6 @@ import { tracked } from '@glimmer/tracking';
 import type { WithBoundArgs } from '@glint/template';
 import AuBadge from './au-badge';
 import AuButton from './au-button';
-import {
-  MaybeAuContent,
-  type MaybeAuContentSignature,
-} from '../private/components/maybe-au-content';
 import AuIcon, { type AuIconSignature } from './au-icon';
 import { AddIcon } from './icons/add';
 import { NavDownIcon } from './icons/nav-down';
@@ -29,8 +25,6 @@ export interface AuCardSignature {
     shadow?: boolean;
     standOut?: boolean;
     textCenter?: boolean;
-    // TODO: remove in v4
-    disableAuContent?: boolean;
   };
   Blocks: {
     default: [
@@ -193,23 +187,15 @@ export default class AuCard extends Component<AuCardSignature> {
         {{/if}}
         {{#if this.sectionOpen}}
           <div tabindex="0">
-            {{yield
-              (hash
-                content=(component Content disableAuContent=@disableAuContent)
-              )
-            }}
+            {{yield (hash content=Content)}}
           </div>
         {{/if}}
       {{else}}
         {{yield (hash header=Header)}}
-        {{yield
-          (hash content=(component Content disableAuContent=@disableAuContent))
-        }}
+        {{yield (hash content=Content)}}
       {{/if}}
 
-      {{yield
-        (hash footer=(component Footer disableAuContent=@disableAuContent))
-      }}
+      {{yield (hash footer=Footer)}}
     </article>
   </template>
 }
@@ -275,19 +261,15 @@ interface ContentSignature {
   Blocks: {
     default: [];
   };
-  Element: MaybeAuContentSignature['Element'];
+  Element: HTMLDivElement;
 }
 
 class Content extends Component<ContentSignature> {
   <template>
     {{#if (has-block)}}
-      <MaybeAuContent
-        @useAuContent={{if @disableAuContent false true}}
-        class="au-c-card__content"
-        ...attributes
-      >
+      <div class="au-c-card__content" ...attributes>
         {{yield}}
-      </MaybeAuContent>
+      </div>
     {{/if}}
   </template>
 }
@@ -299,19 +281,15 @@ interface FooterSignature {
   Blocks: {
     default: [];
   };
-  Element: MaybeAuContentSignature['Element'];
+  Element: HTMLDivElement;
 }
 
 class Footer extends Component<FooterSignature> {
   <template>
     {{#if (has-block)}}
-      <MaybeAuContent
-        @useAuContent={{if @disableAuContent false true}}
-        class="au-c-card__footer"
-        ...attributes
-      >
+      <div class="au-c-card__footer" ...attributes>
         {{yield}}
-      </MaybeAuContent>
+      </div>
     {{/if}}
   </template>
 }
