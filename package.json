@@ -93,7 +93,7 @@
   },
   "devDependencies": {
     "@ember/optional-features": "^2.1.0",
-    "@ember/test-helpers": "^3.3.1",
+    "@ember/test-helpers": "^5.4.1",
     "@embroider/test-setup": "^4.0.0",
     "@eslint/js": "^9.12.0",
     "@etchteam/storybook-addon-status": "^4.2.1",
