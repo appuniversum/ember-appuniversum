@@ -27,22 +27,23 @@
 ## Installation
 
 - `git clone <repository-url>`
-- `cd appuniversum-ember-appuniversum`
-- `npm install`
+- `cd ember-appuniversum`
+- `pnpm install`
 
-### Linting
+## Linting
 
-- `npm run lint`
-- `npm run lint:fix`
+- `pnpm lint`
+- `pnpm lint:fix`
 
-### Running tests
+## Running tests
 
-- start the development server `npm run ember` and go to the `/tests` route
-- `npm run test:ember` – Runs the test suite on the current Ember version
+- `pnpm test` – Runs the test suite on the current Ember version
+- `pnpm test:ember --server` – Runs the test suite in "watch mode"
+- `pnpm test:ember-compatibility` – Runs the test suite against multiple Ember versions
 
-### Running the dummy application
+## Running the dummy application
 
-- `npm start`
+- `pnpm start`
 - Visit the storybook application at [http://localhost:6006](http://localhost:6006).
 
 For more information on using ember-cli, visit [https://cli.emberjs.com/release/](https://cli.emberjs.com/release/).

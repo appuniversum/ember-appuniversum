@@ -13,11 +13,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: npm
+          cache: pnpm
       - name: Install Dependencies
-        run: npm ci
+        run:  pnpm install --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: pnpm build
       - name: Deploy
         if: success()
         uses: crazy-max/ghaction-github-pages@v3

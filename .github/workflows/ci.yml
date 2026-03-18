@@ -19,19 +19,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 10
       - name: Install Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: npm
+          cache: pnpm
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build icons
-        run: npm run build:icons
+        run: pnpm build:icons
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
       - name: Run Tests
-        run: npm run test:ember
+        run: pnpm test:ember
 
   floating:
     name: "Floating Dependencies"
@@ -40,16 +43,19 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 10
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: npm
+          cache: pnpm
       - name: Install Dependencies
-        run: npm install --no-shrinkwrap
+        run: pnpm install --no-lockfile
       - name: Build icons
-        run: npm run build:icons
+        run: pnpm build:icons
       - name: Run Tests
-        run: npm run test:ember
+        run: pnpm test:ember
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -73,14 +79,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 10
       - name: Install Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: npm
+          cache: pnpm
       - name: Install Dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
       - name: Build icons
-        run: npm run build:icons
+        run: pnpm build:icons
       - name: Run Tests
         run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
