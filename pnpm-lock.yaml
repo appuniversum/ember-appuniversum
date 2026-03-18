@@ -201,6 +201,9 @@ importers:
       ember-page-title:
         specifier: ^8.2.3
         version: 8.2.4(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.29.0))(@glint/template@1.7.7)(rsvp@4.8.5)(webpack@5.105.4))
+      ember-power-select:
+        specifier: ^8.11.0
+        version: 8.12.1(cec48e782db722404911ecee2e45c5c5)
       ember-qunit:
         specifier: ^8.1.0
         version: 8.1.1(@babel/core@7.29.0)(@ember/test-helpers@5.4.1(@babel/core@7.29.0)(@glint/template@1.7.7))(@glint/template@1.7.7)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.29.0))(@glint/template@1.7.7)(rsvp@4.8.5)(webpack@5.105.4))(qunit@2.25.0)
@@ -294,10 +297,6 @@ importers:
       webpack:
         specifier: ^5.95.0
         version: 5.105.4
-    optionalDependencies:
-      ember-power-select:
-        specifier: 2.x || 3.x || 4.x || 5.x || 6.x || 7.x || 8.x
-        version: 8.12.1(cec48e782db722404911ecee2e45c5c5)
 
 packages:
 
@@ -16860,7 +16859,6 @@ snapshots:
       '@embroider/addon-shim': 1.10.2
     transitivePeerDependencies:
       - supports-color
-    optional: true
 
   ember-auto-import@2.12.1(@glint/template@1.7.7)(webpack@5.105.4):
     dependencies:
@@ -17462,7 +17460,6 @@ snapshots:
       - '@glint/template'
       - ember-source
       - supports-color
-    optional: true
 
   ember-qunit@8.1.1(@babel/core@7.29.0)(@ember/test-helpers@5.4.1(@babel/core@7.29.0)(@glint/template@1.7.7))(@glint/template@1.7.7)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.29.0))(@glint/template@1.7.7)(rsvp@4.8.5)(webpack@5.105.4))(qunit@2.25.0):
     dependencies:
