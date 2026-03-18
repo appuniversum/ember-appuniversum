@@ -424,8 +424,7 @@ $au-toggle-switch-background-color-on: $say-primary-600 !default;
   }
 }
 
-[property="http://lblod.data.gift/vocabularies/editor/isLumpNode"]
-{
+[property="http://lblod.data.gift/vocabularies/editor/isLumpNode"] {
   padding: $au-unit-small;
   position: relative;
   background-color: var(--au-gray-200);

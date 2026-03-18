@@ -151,9 +151,8 @@ export default class AuDatePicker extends Component<AuDatePickerSignature> {
 
   async registerDuetDatePicker() {
     if (typeof globalThis.FastBoot === 'undefined') {
-      const { defineCustomElements: registerDuetDatePicker } = await import(
-        '@duetds/date-picker/custom-element'
-      );
+      const { defineCustomElements: registerDuetDatePicker } =
+        await import('@duetds/date-picker/custom-element');
       registerDuetDatePicker();
       this.isInitialized = true;
     }
