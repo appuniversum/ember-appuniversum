@@ -7,8 +7,8 @@ module('Integration | Component | au-modal-container', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it passes through attributes', async function (assert) {
-    await render(<template><AuModalContainer foo="bar" /></template>);
+    await render(<template><AuModalContainer data-foo="bar" /></template>);
 
-    assert.dom('[foo]').hasAttribute('foo', 'bar');
+    assert.dom('[data-foo]').hasAttribute('data-foo', 'bar');
   });
 });
