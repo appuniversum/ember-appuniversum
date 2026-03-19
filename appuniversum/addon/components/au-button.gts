@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import { deprecate } from '@ember/debug';
 import AuIcon, { type AuIconSignature } from './au-icon';
 import { LoadingAnimation } from '../private/components/loading-animation';
 
@@ -19,12 +18,12 @@ export interface AuButtonSignature {
     hideText?: boolean;
     icon?: AuIconSignature['Args']['icon'];
     iconAlignment?: 'left' | 'right';
-    loading?: boolean;
-    loadingMessage?: string;
     size?: 'large';
     skin?: (typeof SKINS)[number];
     width?: 'block';
     wrap?: boolean;
+    loading?: boolean;
+    loadingMessage?: string;
   };
   Blocks: {
     default: [];
@@ -72,34 +71,6 @@ export default class AuButton extends Component<AuButtonSignature> {
     else return '';
   }
 
-  get loadingMessage() {
-    if (this.args.loadingMessage) {
-      return this.args.loadingMessage;
-    }
-
-    deprecate(
-      `[AuButton] Not providing \`@loadingMessage\` when setting \`@loading\` to \`true\` is deprecated. Add the \`@loadingMessage\` argument explicitly.
-
-Use \`@loadingMessage="Aan het laden"\` to get the same behavior as before.
-
-More info in the migration guide: https://github.com/appuniversum/ember-appuniversum/pull/497
-
-`,
-      false,
-      {
-        id: '@appuniversum/ember-appuniversum.au-button-loading-message',
-        until: '4.0.0',
-        for: '@appuniversum/ember-appuniversum',
-        since: {
-          available: '3.5.0',
-          enabled: '3.5.0',
-        },
-      },
-    );
-
-    return 'Aan het laden';
-  }
-
   get isIconLeft() {
     return !!this.args.icon && this.iconAlignment === 'left';
   }
@@ -143,14 +114,14 @@ More info in the migration guide: https://github.com/appuniversum/ember-appunive
 
       {{#if @hideText}}
         {{#if @loading}}
-          <span class="au-u-hidden-visually">{{this.loadingMessage}}</span>
+          <span class="au-u-hidden-visually">{{@loadingMessage}}</span>
           <LoadingAnimation />
         {{else}}
           <span class="au-u-hidden-visually">{{yield}}</span>
         {{/if}}
       {{else}}
         {{#if @loading}}
-          {{this.loadingMessage}}
+          {{@loadingMessage}}
           <LoadingAnimation />
         {{else}}
           {{yield}}

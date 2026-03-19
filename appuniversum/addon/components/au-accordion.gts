@@ -9,7 +9,6 @@ import AuLoader from './au-loader';
 import AuToolbar from './au-toolbar';
 import { NavDownIcon } from './icons/nav-down';
 import { NavRightIcon } from './icons/nav-right';
-import { MaybeAuContent } from '../private/components/maybe-au-content';
 
 const autofocus = modifier(function autofocus(element: HTMLElement) {
   element.focus();
@@ -25,8 +24,6 @@ export interface AuAccordionSignature {
     reverse?: boolean;
     skin?: 'border';
     subtitle?: string;
-    // TODO: remove in v4
-    disableAuContent?: boolean;
   };
   Blocks: {
     default: [];
@@ -117,18 +114,13 @@ export default class AuAccordion extends Component<AuAccordionSignature> {
         </Group>
       </AuToolbar>
       {{#if this.isOpen}}
-        <MaybeAuContent
-          @useAuContent={{if @disableAuContent false true}}
-          tabindex="0"
-          data-test-accordion-content
-          {{autofocus}}
-        >
+        <div tabindex="0" data-test-accordion-content {{autofocus}}>
           {{#if this.loading}}
             <AuLoader data-test-accordion-loader />
           {{else}}
             {{yield}}
           {{/if}}
-        </MaybeAuContent>
+        </div>
       {{/if}}
     </div>
   </template>
