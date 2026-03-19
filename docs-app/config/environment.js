@@ -44,5 +44,10 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  console.log('rootURL:', process.env.ROOT_URL);
+  if (process.env.ROOT_URL) {
+    ENV.rootURL = process.env.ROOT_URL;
+  }
+
   return ENV;
 };
