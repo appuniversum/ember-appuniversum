@@ -21,6 +21,8 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+      - name: Build addon
+        run: pnpm --filter @appuniversum/ember-appuniversum build
       - name: Build
         run: pnpm --filter docs-app prep-chromatic
       - name: Publish to Chromatic
