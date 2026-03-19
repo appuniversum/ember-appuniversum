@@ -1,12 +1,14 @@
+import type { TOC } from '@ember/component/template-only';
 import Component from '@glimmer/component';
+import type { ComponentLike } from '@glint/template';
 
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import eq from 'ember-truth-helpers/helpers/eq';
+type Level = '1' | '2' | '3' | '4' | '5' | '6';
+type Skin = '1' | '2' | '3' | '4' | '5' | '6' | 'functional';
 
 export interface AuHeadingSignature {
   Args: {
-    level?: '1' | '2' | '3' | '4' | '5' | '6';
-    skin?: '1' | '2' | '3' | '4' | '5' | '6' | 'functional';
+    level?: Level;
+    skin?: Skin;
   };
   Blocks: {
     default: [];
@@ -26,35 +28,57 @@ export default class AuHeading extends Component<AuHeadingSignature> {
     else return 'au-c-heading--1';
   }
 
+  get Heading() {
+    if (!this.args.level) {
+      return Heading1;
+    }
+
+    const HEADING: Record<Level, ComponentLike<HeadingSignature>> = {
+      '1': Heading1,
+      '2': Heading2,
+      '3': Heading3,
+      '4': Heading4,
+      '5': Heading5,
+      '6': Heading6,
+    };
+
+    return HEADING[this.args.level] ?? Heading1;
+  }
+
   <template>
-    {{#if (eq @level "1")}}
-      <h1 class="au-c-heading {{this.skin}}" ...attributes>
-        {{yield}}
-      </h1>
-    {{else if (eq @level "2")}}
-      <h2 class="au-c-heading {{this.skin}}" ...attributes>
-        {{yield}}
-      </h2>
-    {{else if (eq @level "3")}}
-      <h3 class="au-c-heading {{this.skin}}" ...attributes>
-        {{yield}}
-      </h3>
-    {{else if (eq @level "4")}}
-      <h4 class="au-c-heading {{this.skin}}" ...attributes>
-        {{yield}}
-      </h4>
-    {{else if (eq @level "5")}}
-      <h5 class="au-c-heading {{this.skin}}" ...attributes>
-        {{yield}}
-      </h5>
-    {{else if (eq @level "6")}}
-      <h6 class="au-c-heading {{this.skin}}" ...attributes>
-        {{yield}}
-      </h6>
-    {{else}}
-      <h1 class="au-c-heading {{this.skin}}" ...attributes>
-        {{yield}}
-      </h1>
-    {{/if}}
+    <this.Heading class="au-c-heading {{this.skin}}" ...attributes>
+      {{yield}}
+    </this.Heading>
   </template>
 }
+
+interface HeadingSignature {
+  Blocks: {
+    default: [];
+  };
+  Element: HTMLHeadingElement;
+}
+
+const Heading1 = <template>
+  <h1 ...attributes>{{yield}}</h1>
+</template> satisfies TOC<HeadingSignature>;
+
+const Heading2 = <template>
+  <h2 ...attributes>{{yield}}</h2>
+</template> satisfies TOC<HeadingSignature>;
+
+const Heading3 = <template>
+  <h3 ...attributes>{{yield}}</h3>
+</template> satisfies TOC<HeadingSignature>;
+
+const Heading4 = <template>
+  <h4 ...attributes>{{yield}}</h4>
+</template> satisfies TOC<HeadingSignature>;
+
+const Heading5 = <template>
+  <h5 ...attributes>{{yield}}</h5>
+</template> satisfies TOC<HeadingSignature>;
+
+const Heading6 = <template>
+  <h6 ...attributes>{{yield}}</h6>
+</template> satisfies TOC<HeadingSignature>;

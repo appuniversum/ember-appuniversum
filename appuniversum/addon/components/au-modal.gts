@@ -9,10 +9,6 @@ import { CrossIcon } from './icons/cross';
 import { cn } from '../private/helpers/class-names';
 import AuIcon from './au-icon';
 
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import not from 'ember-truth-helpers/helpers/not';
-import or from 'ember-truth-helpers/helpers/or';
-
 const FOCUS_TRAP_ADDITIONAL_ELEMENTS = ['#ember-basic-dropdown-wormhole'];
 
 export interface AuModalSignature {
@@ -159,7 +155,7 @@ export default class AuModal extends Component<AuModalSignature> {
             <button
               class="au-c-modal__close {{unless this.isClosable 'is-disabled'}}"
               type="button"
-              disabled={{not this.isClosable}}
+              disabled={{if this.isClosable false true}}
               data-test-modal-close
               {{on "click" this.handleCloseClick}}
             >
@@ -169,7 +165,9 @@ export default class AuModal extends Component<AuModalSignature> {
           </div>
 
           {{#if
-            (or (has-block "title") (has-block "body") (has-block "footer"))
+            (isSomeValueTruthy
+              (has-block "title") (has-block "body") (has-block "footer")
+            )
           }}
             {{#if (has-block "body")}}
               <div class="au-c-modal__body" data-test-modal-body>
@@ -190,6 +188,7 @@ export default class AuModal extends Component<AuModalSignature> {
     {{/if}}
   </template>
 }
+
 const Body: TOC<{ Blocks: { default: [] } }> = <template>
   <div class="au-c-modal__body" data-test-modal-body>
     {{yield}}
@@ -201,3 +200,7 @@ const Footer: TOC<{ Blocks: { default: [] } }> = <template>
     {{yield}}
   </div>
 </template>;
+
+function isSomeValueTruthy(...values: boolean[]) {
+  return values.some(Boolean);
+}

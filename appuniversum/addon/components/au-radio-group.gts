@@ -4,9 +4,6 @@ import Component from '@glimmer/component';
 import type { WithBoundArgs } from '@glint/template';
 import AuRadio, { type AuRadioSignature } from './au-radio';
 
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import or from 'ember-truth-helpers/helpers/or';
-
 export interface AuRadioGroupSignature {
   Args: {
     alignment?: 'inline';
@@ -36,6 +33,10 @@ export default class AuRadioGroup extends Component<AuRadioGroupSignature> {
     else return '';
   }
 
+  get name() {
+    return this.args.name || this.uniqueName;
+  }
+
   <template>
     <div
       class="au-c-control-group {{this.alignmentClass}}"
@@ -46,7 +47,7 @@ export default class AuRadioGroup extends Component<AuRadioGroupSignature> {
         (hash
           Radio=(component
             AuRadio
-            name=(or @name this.uniqueName)
+            name=this.name
             inGroup=true
             groupValue=@selected
             disabled=@disabled

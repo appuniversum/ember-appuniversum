@@ -52,9 +52,6 @@ importers:
       ember-template-imports:
         specifier: ^4.1.1
         version: 4.4.0
-      ember-truth-helpers:
-        specifier: ^3.1.1 || ^4.0.3 || ^5.0.0
-        version: 5.0.0
       inputmask:
         specifier: ^5.0.9
         version: 5.0.9

@@ -1,10 +1,7 @@
 import { on } from '@ember/modifier';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
-
-// TODO: replace these with the named imports from ember-truth-helpers v4 once our dependencies support that version
-import and from 'ember-truth-helpers/helpers/and';
-import not from 'ember-truth-helpers/helpers/not';
+import { and, not } from '../private/helpers/simple-truth-helpers';
 
 export interface AuToggleSwitchSignature {
   Args: {
