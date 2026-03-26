@@ -23,8 +23,7 @@
     "start": "ember serve",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build-ember-chromatic": "ember build --environment=chromatic",
-    "prep-chromatic": "pnpm build-ember-chromatic",
+    "prep-chromatic": "pnpm build",
     "test": "concurrently \"npm:lint\" \"npm:test:*\" --names \"lint,test:\"",
     "test:ember": "ember test",
     "chromatic": "chromatic --exit-zero-on-changes"
