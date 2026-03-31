@@ -1,6 +1,6 @@
-import AuModalContainer from '@appuniversum/ember-appuniversum/components/au-modal-container';
+import AuModalContainer from '#src/components/au-modal-container.gts';
 import { render } from '@ember/test-helpers';
-import { setupRenderingTest } from 'dummy/tests/helpers';
+import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 module('Integration | Component | au-modal-container', function (hooks) {

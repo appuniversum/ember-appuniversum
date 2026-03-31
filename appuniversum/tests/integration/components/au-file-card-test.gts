@@ -1,4 +1,4 @@
-import AuFileCard from '@appuniversum/ember-appuniversum/components/au-file-card';
+import AuFileCard from '#src/components/au-file-card.gts';
 import { settled } from '@ember/test-helpers';
 import { click, render } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';

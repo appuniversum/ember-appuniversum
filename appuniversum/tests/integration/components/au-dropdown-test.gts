@@ -1,4 +1,4 @@
-import AuDropdown from '@appuniversum/ember-appuniversum/components/au-dropdown';
+import AuDropdown from '#src/components/au-dropdown.gts';
 import { click, render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

@@ -1,0 +1,60 @@
+import { hash } from '@ember/helper';
+import { guidFor } from '@ember/object/internals';
+import Component from '@glimmer/component';
+import type { WithBoundArgs } from '@glint/template';
+import AuRadio, { type AuRadioSignature } from './au-radio.gts';
+
+export interface AuRadioGroupSignature {
+  Args: {
+    alignment?: 'inline';
+    disabled?: AuRadioSignature['Args']['disabled'];
+    name?: AuRadioSignature['Args']['name'];
+    onChange?: AuRadioSignature['Args']['onChangeGroup'];
+    selected?: AuRadioSignature['Args']['groupValue'];
+  };
+  Blocks: {
+    default: [
+      {
+        Radio: WithBoundArgs<
+          typeof AuRadio,
+          'name' | 'inGroup' | 'groupValue' | 'disabled' | 'onChangeGroup'
+        >;
+      },
+    ];
+  };
+  Element: HTMLDivElement;
+}
+
+export default class AuRadioGroup extends Component<AuRadioGroupSignature> {
+  uniqueName = guidFor(this);
+
+  get alignmentClass() {
+    if (this.args.alignment == 'inline') return 'au-c-control-group--inline';
+    else return '';
+  }
+
+  get name() {
+    return this.args.name || this.uniqueName;
+  }
+
+  <template>
+    <div
+      class="au-c-control-group {{this.alignmentClass}}"
+      role="group"
+      ...attributes
+    >
+      {{yield
+        (hash
+          Radio=(component
+            AuRadio
+            name=this.name
+            inGroup=true
+            groupValue=@selected
+            disabled=@disabled
+            onChangeGroup=@onChange
+          )
+        )
+      }}
+    </div>
+  </template>
+}

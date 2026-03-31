@@ -1,4 +1,4 @@
-import linkToModels from '@appuniversum/ember-appuniversum/private/helpers/link-to-models';
+import linkToModels from '#src/private/helpers/link-to-models.ts';
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 

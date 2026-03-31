@@ -1,3 +1,17 @@
+# Docs: https://pnpm.io/settings
+# https://github.com/emberjs/rfcs/pull/907
+
 packages:
   - 'appuniversum'
   - 'docs-app'
+
+# we don't want addons to be bad citizens of the ecosystem
+autoInstallPeers: false
+patchedDependencies:
+  ember-basic-dropdown: patches/ember-basic-dropdown.patch
+  ember-power-select: patches/ember-power-select.patch
+  object-inspect: patches/object-inspect.patch
+
+# we want true isolation,
+# if a dependency is not declared, we want an error
+resolvePeersFromWorkspaceRoot: false

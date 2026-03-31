@@ -1,8 +1,8 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'dummy/tests/helpers';
+import { setupRenderingTest } from 'ember-qunit';
 import { click, render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
-import AuCheckboxGroup from '@appuniversum/ember-appuniversum/components/au-checkbox-group';
+import AuCheckboxGroup from '#src/components/au-checkbox-group.gts';
 
 class TestState {
   @tracked groupValue: string[] = [];

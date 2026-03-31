@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
-import { setupRenderingTest } from 'dummy/tests/helpers';
+import { setupRenderingTest } from 'ember-qunit';
 import { typeIn, fillIn, render, triggerKeyEvent } from '@ember/test-helpers';
-import AuDateInput from '@appuniversum/ember-appuniversum/components/au-date-input';
+import AuDateInput from '#src/components/au-date-input.gts';
 import { tracked } from '@glimmer/tracking';
 import { settled } from '@ember/test-helpers';
 

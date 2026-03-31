@@ -1,4 +1,4 @@
-import inputmask from '@appuniversum/ember-appuniversum/modifiers/au-inputmask';
+import inputmask from '#src/modifiers/au-inputmask.ts';
 import { hash } from '@ember/helper';
 import { on } from '@ember/modifier';
 import { fillIn, find, render } from '@ember/test-helpers';

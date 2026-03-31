@@ -1,4 +1,4 @@
-import AuFileUpload from '@appuniversum/ember-appuniversum/components/au-file-upload';
+import AuFileUpload from '#src/components/au-file-upload.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

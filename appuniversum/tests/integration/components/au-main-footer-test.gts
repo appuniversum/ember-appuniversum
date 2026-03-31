@@ -1,4 +1,4 @@
-import AuMainFooter from '@appuniversum/ember-appuniversum/components/au-main-footer';
+import AuMainFooter from '#src/components/au-main-footer.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

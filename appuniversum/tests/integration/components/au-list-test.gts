@@ -1,4 +1,4 @@
-import AuList from '@appuniversum/ember-appuniversum/components/au-list';
+import AuList from '#src/components/au-list.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

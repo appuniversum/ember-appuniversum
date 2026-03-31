@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuFormRow from '@appuniversum/ember-appuniversum/components/au-form-row';
+import AuFormRow from '#src/components/au-form-row.gts';
 
 module('Integration | Component | au-form-row', function (hooks) {
   setupRenderingTest(hooks);

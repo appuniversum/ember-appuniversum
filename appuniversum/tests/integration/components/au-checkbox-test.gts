@@ -1,4 +1,4 @@
-import AuCheckbox from '@appuniversum/ember-appuniversum/components/au-checkbox';
+import AuCheckbox from '#src/components/au-checkbox.gts';
 import { click, render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { module, test } from 'qunit';

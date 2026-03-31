@@ -1,4 +1,4 @@
-import AuMainContainer from '@appuniversum/ember-appuniversum/components/au-main-container';
+import AuMainContainer from '#src/components/au-main-container.gts';
 import { render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'ember-qunit';

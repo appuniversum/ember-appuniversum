@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuFieldset from '@appuniversum/ember-appuniversum/components/au-fieldset';
+import AuFieldset from '#src/components/au-fieldset.gts';
 
 module('Integration | Component | au-fieldset', function (hooks) {
   setupRenderingTest(hooks);

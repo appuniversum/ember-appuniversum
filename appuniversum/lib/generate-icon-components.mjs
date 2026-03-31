@@ -10,7 +10,7 @@ const ICON_FOLDER = join(__dirname, '..', 'public', 'icons');
 const COMPONENT_ICON_FOLDER = join(
   __dirname,
   '..',
-  'addon',
+  'src',
   'components',
   'icons',
 );

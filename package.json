@@ -11,5 +11,6 @@
     "test:ember": "pnpm --filter '*' test:ember",
     "release": "pnpm --filter @appuniversum/ember-appuniversum release"
   },
+  "packageManager": "pnpm@10.33.0",
   "private": true
 }

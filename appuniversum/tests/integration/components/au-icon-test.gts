@@ -2,9 +2,7 @@ import { render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
-
-// TODO: use the "nice" import path once everything is converted to TS.
-import AuIcon from '@appuniversum/ember-appuniversum/components/au-icon';
+import AuIcon from '#src/components/au-icon.gts';
 
 module('Integration | Component | au-icon', function (hooks) {
   setupRenderingTest(hooks);

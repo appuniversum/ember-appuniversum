@@ -1,4 +1,4 @@
-import AuCard from '@appuniversum/ember-appuniversum/components/au-card';
+import AuCard from '#src/components/au-card.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
