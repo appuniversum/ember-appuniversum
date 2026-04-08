@@ -139,6 +139,7 @@ export default class AuIconList extends Component {
     { name: 'table-row-remove' },
     { name: 'table-row-start-add' },
     { name: 'table' },
+    { name: 'tag' },
     { name: 'three-dots' },
     { name: 'trash' },
     { name: 'underlined' },
