@@ -1,7 +1,11 @@
+## v3.19.0 (2026-04-08)
 
+#### :rocket: Enhancement
+* [#574](https://github.com/appuniversum/ember-appuniversum/pull/574) Add `tag` icon from webuniversum ([@lagartoverde](https://github.com/lagartoverde))
 
-
-
+#### :house: Internal
+* [#562](https://github.com/appuniversum/ember-appuniversum/pull/562) Create a dedicated docs app ([@Windvis](https://github.com/Windvis))
+* [#561](https://github.com/appuniversum/ember-appuniversum/pull/561) Switch to pnpm ([@Windvis](https://github.com/Windvis))
 
 
 ## v3.18.0 (2026-03-17)
