@@ -142,6 +142,7 @@ export const icons = [
   'table-row-remove',
   'table-row-start-add',
   'table',
+  'tag',
   'three-dots',
   'trash',
   'underlined',
