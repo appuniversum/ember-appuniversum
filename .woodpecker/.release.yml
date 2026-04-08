@@ -9,7 +9,7 @@ steps:
       - pnpm install --frozen-lockfile
       - npm config set //registry.npmjs.org/:_authToken $NPM_ACCESS_TOKEN
       - cp README.md appuniversum/README.md # Copy the readme before publishing so it's visible on npmjs.com
-      - pnpm --filter @appuniversum/ember-appuniversum publish
+      - pnpm --filter @appuniversum/ember-appuniversum publish --no-git-checks
 when:
   event: tag
   ref: refs/tags/v*
