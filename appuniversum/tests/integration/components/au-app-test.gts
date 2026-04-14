@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuApp from '@appuniversum/ember-appuniversum/components/au-app';
+import AuApp from '#src/components/au-app.gts';
 
 module('Integration | Component | au-app', function (hooks) {
   setupRenderingTest(hooks);

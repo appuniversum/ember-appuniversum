@@ -1,4 +1,4 @@
-import AuBrand from '@appuniversum/ember-appuniversum/components/au-brand';
+import AuBrand from '#src/components/au-brand.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

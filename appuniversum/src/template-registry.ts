@@ -1,0 +1,107 @@
+// Components
+import type AuAccordion from '#src/components/au-accordion.gts';
+import type AuAlert from '#src/components/au-alert.gts';
+import type AuApp from '#src/components/au-app.gts';
+import type AuBadge from '#src/components/au-badge.gts';
+import type AuBodyContainer from '#src/components/au-body-container.gts';
+import type AuBrand from '#src/components/au-brand.gts';
+import type AuButtonGroup from '#src/components/au-button-group.gts';
+import type AuButton from '#src/components/au-button.gts';
+import type AuCard from '#src/components/au-card.gts';
+import type AuCheckbox from '#src/components/au-checkbox.gts';
+import type AuCheckboxGroup from '#src/components/au-checkbox-group.gts';
+import type AuContentHeader from '#src/components/au-content-header.gts';
+import type AuContent from '#src/components/au-content.gts';
+import type AuDateInput from '#src/components/au-date-input.gts';
+import type AuDatePicker from '#src/components/au-date-picker.gts';
+import type AuDropdown from '#src/components/au-dropdown.gts';
+import type AuFieldset from '#src/components/au-fieldset.gts';
+import type AuFileCard from '#src/components/au-file-card.gts';
+import type AuFileUpload from '#src/components/au-file-upload.gts';
+import type AuFormRow from '#src/components/au-form-row.gts';
+import type AuHeading from '#src/components/au-heading.gts';
+import type AuHelpText from '#src/components/au-help-text.gts';
+import type AuHr from '#src/components/au-hr.gts';
+import type AuIcon from '#src/components/au-icon.gts';
+import type AuInput from '#src/components/au-input.gts';
+import type AuLabel from '#src/components/au-label.gts';
+import type AuLinkExternal from '#src/components/au-link-external.gts';
+import type AuLink from '#src/components/au-link.gts';
+import type AuList from '#src/components/au-list.gts';
+import type AuLoader from '#src/components/au-loader.gts';
+import type AuMainContainer from '#src/components/au-main-container.gts';
+import type AuMainFooter from '#src/components/au-main-footer.gts';
+import type AuMainHeader from '#src/components/au-main-header.gts';
+import type AuModalContainer from '#src/components/au-modal-container.gts';
+import type AuModal from '#src/components/au-modal.gts';
+import type AuNavigationLink from '#src/components/au-navigation-link.gts';
+import type AuPanel from '#src/components/au-panel.gts';
+import type AuPill from '#src/components/au-pill.gts';
+import type AuRadioGroup from '#src/components/au-radio-group.gts';
+import type AuRadio from '#src/components/au-radio.gts';
+import type AuTable from '#src/components/au-table.gts';
+import type AuTabs from '#src/components/au-tabs.gts';
+import type AuTextarea from '#src/components/au-textarea.gts';
+import type AuTimePicker from '#src/components/au-time-picker.gts';
+import type AuToggleSwitch from '#src/components/au-toggle-switch.gts';
+import type AuToolbar from '#src/components/au-toolbar.gts';
+import type AuTooltip from '#src/components/au-tooltip.gts';
+
+// Modifiers
+import type AuDateInputModifier from '#src/modifiers/au-date-input.ts';
+import type AuInputMaskModifier from '#src/modifiers/au-inputmask.ts';
+
+export default interface AppuniversumRegistry {
+  // Components
+  AuAccordion: typeof AuAccordion;
+  AuAlert: typeof AuAlert;
+  AuApp: typeof AuApp;
+  AuBadge: typeof AuBadge;
+  AuBodyContainer: typeof AuBodyContainer;
+  AuBrand: typeof AuBrand;
+  AuButtonGroup: typeof AuButtonGroup;
+  AuButton: typeof AuButton;
+  AuCard: typeof AuCard;
+  AuCheckbox: typeof AuCheckbox;
+  AuCheckboxGroup: typeof AuCheckboxGroup;
+  AuContentHeader: typeof AuContentHeader;
+  AuContent: typeof AuContent;
+  AuDateInput: typeof AuDateInput;
+  AuDatePicker: typeof AuDatePicker;
+  AuDropdown: typeof AuDropdown;
+  AuFieldset: typeof AuFieldset;
+  AuFileCard: typeof AuFileCard;
+  AuFileUpload: typeof AuFileUpload;
+  AuFormRow: typeof AuFormRow;
+  AuHeading: typeof AuHeading;
+  AuHelpText: typeof AuHelpText;
+  AuHr: typeof AuHr;
+  AuIcon: typeof AuIcon;
+  AuInput: typeof AuInput;
+  AuLabel: typeof AuLabel;
+  AuLinkExternal: typeof AuLinkExternal;
+  AuLink: typeof AuLink;
+  AuList: typeof AuList;
+  AuLoader: typeof AuLoader;
+  AuMainContainer: typeof AuMainContainer;
+  AuMainFooter: typeof AuMainFooter;
+  AuMainHeader: typeof AuMainHeader;
+  AuModalContainer: typeof AuModalContainer;
+  AuModal: typeof AuModal;
+  AuNavigationLink: typeof AuNavigationLink;
+  AuPanel: typeof AuPanel;
+  AuPill: typeof AuPill;
+  AuRadioGroup: typeof AuRadioGroup;
+  AuRadio: typeof AuRadio;
+  AuTable: typeof AuTable;
+  AuTabs: typeof AuTabs;
+  AuTextarea: typeof AuTextarea;
+  AuTimePicker: typeof AuTimePicker;
+  AuToggleSwitch: typeof AuToggleSwitch;
+  AuToolbar: typeof AuToolbar;
+  AuTooltip: typeof AuTooltip;
+
+  // Modifiers
+  'au-date-input': typeof AuDateInputModifier;
+  'au-inputmask': typeof AuInputMaskModifier;
+}

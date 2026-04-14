@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, settled } from '@ember/test-helpers';
-import AuButton from '@appuniversum/ember-appuniversum/components/au-button';
+import AuButton from '#src/components/au-button.gts';
 import { tracked } from '@glimmer/tracking';
 
 class TestState {

@@ -1,4 +1,4 @@
-import AuTextarea from '@appuniversum/ember-appuniversum/components/au-textarea';
+import AuTextarea from '#src/components/au-textarea.gts';
 import { on } from '@ember/modifier';
 import { fillIn, render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';

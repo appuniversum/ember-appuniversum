@@ -1,6 +1,6 @@
 import AuHeading, {
   type AuHeadingSignature,
-} from '@appuniversum/ember-appuniversum/components/au-heading';
+} from '#src/components/au-heading.gts';
 import { settled } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';

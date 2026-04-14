@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuButtonGroup from '@appuniversum/ember-appuniversum/components/au-button-group';
+import AuButtonGroup from '#src/components/au-button-group.gts';
 
 module('Integration | Component | au-button-group', function (hooks) {
   setupRenderingTest(hooks);

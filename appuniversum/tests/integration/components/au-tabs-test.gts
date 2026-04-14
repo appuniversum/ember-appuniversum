@@ -1,4 +1,4 @@
-import AuTabs from '@appuniversum/ember-appuniversum/components/au-tabs';
+import AuTabs from '#src/components/au-tabs.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

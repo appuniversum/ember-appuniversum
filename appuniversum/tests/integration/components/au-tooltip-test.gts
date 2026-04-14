@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render, triggerEvent, triggerKeyEvent } from '@ember/test-helpers';
-import AuTooltip from '@appuniversum/ember-appuniversum/components/au-tooltip';
+import AuTooltip from '#src/components/au-tooltip.gts';
 
 module('Integration | Component | au-tooltip', function (hooks) {
   setupRenderingTest(hooks);

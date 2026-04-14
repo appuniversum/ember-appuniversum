@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuToolbar from '@appuniversum/ember-appuniversum/components/au-toolbar';
+import AuToolbar from '#src/components/au-toolbar.gts';
 
 module('Integration | Component | au-toolbar', function (hooks) {
   setupRenderingTest(hooks);

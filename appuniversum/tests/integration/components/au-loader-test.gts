@@ -1,4 +1,4 @@
-import AuLoader from '@appuniversum/ember-appuniversum/components/au-loader';
+import AuLoader from '#src/components/au-loader.gts';
 import { getRootElement, render } from '@ember/test-helpers';
 import { queryByText } from '@testing-library/dom';
 import { setupRenderingTest } from 'ember-qunit';

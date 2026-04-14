@@ -1,4 +1,4 @@
-import floatingUi from '@appuniversum/ember-appuniversum/private/modifiers/floating-ui';
+import floatingUi from '#src/private/modifiers/floating-ui.ts';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';

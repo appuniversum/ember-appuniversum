@@ -5,12 +5,13 @@ import {
   setupOnerror,
   triggerKeyEvent,
 } from '@ember/test-helpers';
-import AuModalContainer from '@appuniversum/ember-appuniversum/components/au-modal-container';
-import AuModal from '@appuniversum/ember-appuniversum/components/au-modal';
+import AuModalContainer from '#src/components/au-modal-container.gts';
+import AuModal from '#src/components/au-modal.gts';
 import { on } from '@ember/modifier';
 import { tracked } from '@glimmer/tracking';
 import PowerSelect from 'ember-power-select/components/power-select';
 import { selectChoose } from 'ember-power-select/test-support';
+import BasicDropdownWormhole from 'ember-basic-dropdown/components/basic-dropdown-wormhole';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
@@ -237,6 +238,7 @@ module('Integration | Component | au-modal', function (hooks) {
     await render(
       <template>
         <AuModalContainer />
+        <BasicDropdownWormhole />
         <AuModal @modalOpen={{state.isOpen}} @closeModal={{handleClose}}>
           <:body>
             {{! @glint-ignore: ember-power-select doesn't have full Glint support yet, Block and Element types are missing }}
