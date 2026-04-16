@@ -1,4 +1,4 @@
-import AuAlert from '@appuniversum/ember-appuniversum/components/au-alert';
+import AuAlert from '#src/components/au-alert.gts';
 import { click, render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'ember-qunit';

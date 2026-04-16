@@ -1,4 +1,4 @@
-import { isValidFileType } from '@appuniversum/ember-appuniversum/components/au-file-upload';
+import { isValidFileType } from '#src/components/au-file-upload.gts';
 import { module, test } from 'qunit';
 
 // Source: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types

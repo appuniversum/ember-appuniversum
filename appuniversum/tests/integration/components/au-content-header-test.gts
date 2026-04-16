@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuContentHeader from '@appuniversum/ember-appuniversum/components/au-content-header';
+import AuContentHeader from '#src/components/au-content-header.gts';
 
 module('Integration | Component | au-content-header', function (hooks) {
   setupRenderingTest(hooks);

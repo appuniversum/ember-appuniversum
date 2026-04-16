@@ -1,4 +1,4 @@
-import AuLink from '@appuniversum/ember-appuniversum/components/au-link';
+import AuLink from '#src/components/au-link.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

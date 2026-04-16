@@ -1,9 +1,9 @@
-import AuToaster from '@appuniversum/ember-appuniversum/components/au-toaster';
-import type ToasterService from '@appuniversum/ember-appuniversum/services/toaster';
+import AuToaster from '#src/components/au-toaster.gts';
+import type ToasterService from '#src/services/toaster.ts';
 import type {
   CustomToastSignature,
   BaseOptions,
-} from '@appuniversum/ember-appuniversum/services/toaster';
+} from '#src/services/toaster.ts';
 import type { TOC } from '@ember/component/template-only';
 import { on } from '@ember/modifier';
 import {
@@ -15,7 +15,7 @@ import {
   type TestContext as BaseTestContext,
 } from '@ember/test-helpers';
 import { queryByText } from '@testing-library/dom';
-import { setupRenderingTest } from 'dummy/tests/helpers';
+import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 const TOASTER = {

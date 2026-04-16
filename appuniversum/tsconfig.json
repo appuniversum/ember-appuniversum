@@ -1,31 +1,23 @@
+/**
+ * This tsconfig is not used for publishing.
+ * It's only for the local editing experience
+ * (and linting)
+ */
 {
-  "extends": "@tsconfig/ember/tsconfig.json",
+  "extends": "@ember/app-tsconfig",
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "unpublished-development-types/**/*",
+    "demo-app/**/*"
+  ],
   "compilerOptions": {
-    // The combination of `baseUrl` with `paths` allows Ember's classic package
-    // layout, which is not resolvable with the Node resolution algorithm, to
-    // work with TypeScript.
-    "baseUrl": ".",
-    "paths": {
-      "dummy/tests/*": ["tests/*"],
-      "dummy/*": ["tests/dummy/app/*", "app/*"],
-      "@appuniversum/ember-appuniversum": ["addon"],
-      "@appuniversum/ember-appuniversum/*": ["addon/*"],
-      "@appuniversum/ember-appuniversum/test-support": ["addon-test-support"],
-      "@appuniversum/ember-appuniversum/test-support/*": [
-        "addon-test-support/*"
-      ],
-      "*": ["types/*"]
-    },
-    //These are copied from the tsconfig.declarations.json file since glint doesn't support different configs yet
-    "declarationDir": "declarations",
-    "emitDeclarationOnly": true, // This probably isn't doing anything under Glint
-    "noEmit": false,
-    "noEmitOnError": false,
     "rootDir": ".",
-    "skipLibCheck": true // The duet-date-picker types cause issues on our TypeScript version and the library is no longer maintained..
-  },
-  "glint": {
-    "environment": ["ember-loose", "ember-template-imports"],
-    "checkStandaloneTemplates": false
+    "types": [
+      "ember-source/types",
+      "vite/client",
+      "@embroider/core/virtual",
+      "@glint/ember-tsc/types"
+    ]
   }
 }

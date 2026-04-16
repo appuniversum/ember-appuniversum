@@ -1,4 +1,4 @@
-import AuNavigationLink from '@appuniversum/ember-appuniversum/components/au-navigation-link';
+import AuNavigationLink from '#src/components/au-navigation-link.gts';
 import { click, getRootElement, render } from '@ember/test-helpers';
 import { queryByText } from '@testing-library/dom';
 import { setupRenderingTest } from 'ember-qunit';

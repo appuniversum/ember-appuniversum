@@ -2,7 +2,7 @@ import { settled, render } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
-import { cn } from '@appuniversum/ember-appuniversum/private/helpers/class-names';
+import { cn } from '#src/private/helpers/class-names.ts';
 
 module('Integration | Private Helper | class-names', function (hooks) {
   setupRenderingTest(hooks);

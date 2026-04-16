@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuHr from '@appuniversum/ember-appuniversum/components/au-hr';
+import AuHr from '#src/components/au-hr.gts';
 
 module('Integration | Component | au-hr', function (hooks) {
   setupRenderingTest(hooks);

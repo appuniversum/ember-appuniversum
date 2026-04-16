@@ -1,4 +1,4 @@
-import AuAccordion from '@appuniversum/ember-appuniversum/components/au-accordion';
+import AuAccordion from '#src/components/au-accordion.gts';
 import { click, settled, render } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'ember-qunit';

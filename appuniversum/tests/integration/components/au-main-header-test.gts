@@ -1,4 +1,4 @@
-import AuMainHeader from '@appuniversum/ember-appuniversum/components/au-main-header';
+import AuMainHeader from '#src/components/au-main-header.gts';
 import { getRootElement } from '@ember/test-helpers';
 import { click } from '@ember/test-helpers';
 import { render } from '@ember/test-helpers';

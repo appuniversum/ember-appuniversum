@@ -1,8 +1,8 @@
-import AuRadioGroup from '@appuniversum/ember-appuniversum/components/au-radio-group';
+import AuRadioGroup from '#src/components/au-radio-group.gts';
 import { settled } from '@ember/test-helpers';
 import { click, render } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
-import { setupRenderingTest } from 'dummy/tests/helpers';
+import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 module('Integration | Component | au-radio-group', function (hooks) {

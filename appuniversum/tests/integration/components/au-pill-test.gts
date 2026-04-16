@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { click, render } from '@ember/test-helpers';
-import AuPill from '@appuniversum/ember-appuniversum/components/au-pill';
+import AuPill from '#src/components/au-pill.gts';
 
 module('Integration | Component | au-pill', function (hooks) {
   setupRenderingTest(hooks);

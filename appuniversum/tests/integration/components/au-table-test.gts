@@ -1,4 +1,4 @@
-import AuTable from '@appuniversum/ember-appuniversum/components/au-table';
+import AuTable from '#src/components/au-table.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

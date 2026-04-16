@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import { AddIcon } from '@appuniversum/ember-appuniversum/components/icons/add';
+import { AddIcon } from '#src/components/icons/add.gts';
 
 module('Integration | Icon components', function (hooks) {
   setupRenderingTest(hooks);

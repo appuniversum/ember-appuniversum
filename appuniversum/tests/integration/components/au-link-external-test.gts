@@ -1,9 +1,9 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuLinkExternal from '@appuniversum/ember-appuniversum/components/au-link-external';
 import { tracked } from '@glimmer/tracking';
 import { settled } from '@ember/test-helpers';
+import AuLinkExternal from '#src/components/au-link-external.gts';
 
 module('Integration | Component | au-link-external', function (hooks) {
   setupRenderingTest(hooks);

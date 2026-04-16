@@ -1,4 +1,4 @@
-import auDateInput from '@appuniversum/ember-appuniversum/modifiers/au-date-input';
+import auDateInput from '#src/modifiers/au-date-input.ts';
 import { find } from '@ember/test-helpers';
 import {
   typeIn,
@@ -22,7 +22,12 @@ module('Integration | Modifier | au-date-input', function (hooks) {
     state.value = '2023-02-02';
 
     await render(
-      <template><input {{auDateInput value=state.value}} /></template>,
+      <template>
+        <input
+          {{auDateInput value=state.value}}
+          {{!template-lint-disable require-input-label}}
+        />
+      </template>,
     );
 
     assert.dom('input').hasValue('02-02-2023');
@@ -43,7 +48,12 @@ module('Integration | Modifier | au-date-input', function (hooks) {
     };
 
     await render(
-      <template><input {{auDateInput onChange=onChange}} /></template>,
+      <template>
+        <input
+          {{auDateInput onChange=onChange}}
+          {{!template-lint-disable require-input-label}}
+        />
+      </template>,
     );
 
     await fillIn('input', '0202202');
@@ -63,7 +73,10 @@ module('Integration | Modifier | au-date-input', function (hooks) {
 
     await render(
       <template>
-        <input {{auDateInput value="2023-02-02" onChange=onChange}} />
+        <input
+          {{auDateInput value="2023-02-02" onChange=onChange}}
+          {{!template-lint-disable require-input-label}}
+        />
       </template>,
     );
 

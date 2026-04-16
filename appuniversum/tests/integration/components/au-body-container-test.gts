@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuBodyContainer from '@appuniversum/ember-appuniversum/components/au-body-container';
+import AuBodyContainer from '#src/components/au-body-container.gts';
 
 module('Integration | Component | au-body-container', function (hooks) {
   setupRenderingTest(hooks);

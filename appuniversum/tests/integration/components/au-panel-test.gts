@@ -1,4 +1,4 @@
-import AuPanel from '@appuniversum/ember-appuniversum/components/au-panel';
+import AuPanel from '#src/components/au-panel.gts';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

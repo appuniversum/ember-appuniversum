@@ -1,4 +1,4 @@
-import AuDatePicker from '@appuniversum/ember-appuniversum/components/au-date-picker';
+import AuDatePicker from '#src/components/au-date-picker.gts';
 import {
   click,
   find,

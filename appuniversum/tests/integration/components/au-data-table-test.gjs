@@ -1,4 +1,4 @@
-import AuDataTable from '@appuniversum/ember-appuniversum/components/au-data-table';
+import AuDataTable from '#src/components/au-data-table';
 import { render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';

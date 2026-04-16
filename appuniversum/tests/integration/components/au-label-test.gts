@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
-import AuLabel from '@appuniversum/ember-appuniversum/components/au-label';
+import AuLabel from '#src/components/au-label.gts';
 
 module('Integration | Component | au-label', function (hooks) {
   setupRenderingTest(hooks);

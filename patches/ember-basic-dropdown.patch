@@ -1,0 +1,28 @@
+diff --git a/dist/components/basic-dropdown.js b/dist/components/basic-dropdown.js
+index 28fc56e9141be446caadbc8f64c99bbf298a7ec1..cbe164c05bc9f6cc8a6a93413c0d5120e306af04 100644
+--- a/dist/components/basic-dropdown.js
++++ b/dist/components/basic-dropdown.js
+@@ -5,7 +5,6 @@ import { guidFor } from '@ember/object/internals';
+ import calculatePosition from '../utils/calculate-position.js';
+ import { getOwner } from '@ember/application';
+ import { schedule } from '@ember/runloop';
+-import { ensureSafeComponent } from '@embroider/util';
+ import { hash } from '@ember/helper';
+ import BasicDropdownTrigger from './basic-dropdown-trigger.js';
+ import BasicDropdownContent from './basic-dropdown-content.js';
+@@ -408,13 +407,13 @@ class BasicDropdown extends Component {
+   }
+   get triggerComponent() {
+     if (this.args.triggerComponent) {
+-      return ensureSafeComponent(this.args.triggerComponent, this);
++      return this.args.triggerComponent;
+     }
+     return BasicDropdownTrigger;
+   }
+   get contentComponent() {
+     if (this.args.contentComponent) {
+-      return ensureSafeComponent(this.args.contentComponent, this);
++      return this.args.contentComponent;
+     }
+     return BasicDropdownContent;
+   }
