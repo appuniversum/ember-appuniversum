@@ -5,8 +5,12 @@
     "url": "https://github.com/appuniversum/ember-appuniversum"
   },
   "scripts": {
+    "build:addon": "pnpm --filter @appuniversum/ember-appuniversum build",
     "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
+    "start:addon": "pnpm --filter @appuniversum/ember-appuniversum start",
+    "start:docs": "pnpm --filter docs-app start",
+    "start:storybook": "pnpm --filter docs-app storybook",
     "test": "pnpm --filter '*' test",
     "test:ember": "pnpm --filter '*' test:ember",
     "release": "pnpm --filter @appuniversum/ember-appuniversum release"

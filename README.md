@@ -23,36 +23,6 @@ To get started using this addon in your Ember.js app, follow the [Getting starte
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-## Development
-
-### Running the local development setup
-
-- Start the ember app: `npm run ember`
-- Run the documentation site: `npm run storybook` (make sure the `npm run ember` command is finished)
-- Generate the icons: `npm run icons`
-
-> We use the "template tag" (.gjs/.gts) format for component authoring which has been described in detail in the [RFC](https://github.com/emberjs/rfcs/blob/master/text/0779-first-class-component-templates.md).
-> A summarized version can be found in the ember-template-imports library which also has some information about [how to setup your dev environment](https://github.com/ember-template-imports/ember-template-imports#editor-integrations) for a better experience.
->
-> We're also converting the code to TypeScript and [Glint](https://typed-ember.gitbook.io/glint/).
-
-### Testing:
-
-- the `/tests` route allows you to run the tests in your browser.
-- Specific ember-try scenarios can be run if you want to debug them locally: `npx ember try:one scenario-name`. `--skip-cleanup` can be used to debug the scenario from the `/tests` route
-- PR previews and testing is available on [Chromatic](https://www.chromatic.com/build?appId=61e5835e5fbce3003a653ee6)
-
-### Testing changes in apps
-
-#### npm link
-
-- In the addon: `npm link`
-- In the your project: `npm link @appuniversum/ember-appuniversum`
-
-#### yalc
-
-[yalc](https://github.com/wclr/yalc) is a good alternative if the npm link setup doesn't work as expected.
-
 ### Releases:
 
 > Make sure all the merged PRs have the correct label, so they show up in the changelog
