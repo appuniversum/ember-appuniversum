@@ -47,7 +47,8 @@
     "lint:types": "ember-tsc --noEmit",
     "prepack": "pnpm build",
     "start": "vite dev",
-    "test": "vite build --mode=development --out-dir dist-tests && testem --file testem.cjs ci --port 0"
+    "test": "vite build --mode=development --out-dir dist-tests && testem --file testem.cjs ci --port 0",
+    "release": "release-it"
   },
   "packageManager": "pnpm@10.32.0",
   "dependencies": {
