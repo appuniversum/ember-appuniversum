@@ -1,3 +1,22 @@
+## v4.0.0 (2026-04-16)
+
+Upgrade guide: https://github.com/appuniversum/ember-appuniversum/pull/566
+
+#### :boom: Breaking Change
+* [#573](https://github.com/appuniversum/ember-appuniversum/pull/573) V2 addon conversion ([@Windvis](https://github.com/Windvis))
+* [#568](https://github.com/appuniversum/ember-appuniversum/pull/568) Drop ember-concurrency v3 and v4 support ([@Windvis](https://github.com/Windvis))
+* [#564](https://github.com/appuniversum/ember-appuniversum/pull/564) Remove deprecated v3 features ([@Windvis](https://github.com/Windvis))
+* [#565](https://github.com/appuniversum/ember-appuniversum/pull/565) Drop support for all Ember versions below v5.12 ([@Windvis](https://github.com/Windvis))
+
+#### :rocket: Enhancement
+* [#575](https://github.com/appuniversum/ember-appuniversum/pull/575) Update to ember-file-upload v10 ([@Windvis](https://github.com/Windvis))
+* [#570](https://github.com/appuniversum/ember-appuniversum/pull/570) Update to ember-focus-trap v2 ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* [#567](https://github.com/appuniversum/ember-appuniversum/pull/567) Remove ember-truth-helpers ([@Windvis](https://github.com/Windvis))
+
+
+
 ## v3.19.0 (2026-04-08)
 
 #### :rocket: Enhancement
