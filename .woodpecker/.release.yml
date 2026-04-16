@@ -1,6 +1,6 @@
 steps:
   release:
-    image: node:18
+    image: node:22
     environment:
       NPM_ACCESS_TOKEN:
         from_secret: npm_access_token
