@@ -14,6 +14,7 @@ export interface AuDropdownSignature {
   Args: {
     alignment?: 'left' | 'right';
     alert?: boolean;
+    disabled?: boolean;
     hideText?: boolean;
     icon?: AuButtonSignature['Args']['icon'];
     iconAlignment?: AuButtonSignature['Args']['iconAlignment'];
@@ -107,6 +108,7 @@ export default class AuDropdown extends Component<AuDropdownSignature> {
         @iconAlignment={{this.iconAlignment}}
         @hideText={{@hideText}}
         @alert={{@alert}}
+        @disabled={{@disabled}}
         aria-haspopup="true"
         aria-expanded="{{if this.dropdownOpen 'true' 'false'}}"
         type="button"
