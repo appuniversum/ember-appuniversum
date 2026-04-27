@@ -84,4 +84,23 @@ module('Integration | Component | au-dropdown', function (hooks) {
 
     assert.verifySteps(['@onClose']);
   });
+
+  test('it does not do anything when clicked and @disabled is set to true', async function (assert) {
+
+    await render(
+      <template>
+        <AuDropdown @title="foo" @disabled={{true}}>
+          <button type="button" data-test-button>baz</button>
+        </AuDropdown>
+      </template>,
+    );
+
+    await click('[data-test-dropdown-button]'); // open
+
+    assert
+      .dom('[data-test-button]')
+      .isNotVisible(
+        'it does not open when the dropdown is disabled',
+      );
+  });
 });
