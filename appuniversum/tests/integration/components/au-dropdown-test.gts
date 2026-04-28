@@ -1,7 +1,13 @@
 import AuDropdown from '#src/components/au-dropdown.gts';
-import { click, render } from '@ember/test-helpers';
+import { click, render, settled } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
+import { tracked } from '@glimmer/tracking';
+
+class TestState {
+  @tracked isDisabled?: boolean;
+  @tracked isLoading?: boolean;
+}
 
 module('Integration | Component | au-dropdown', function (hooks) {
   setupRenderingTest(hooks);
@@ -85,22 +91,22 @@ module('Integration | Component | au-dropdown', function (hooks) {
     assert.verifySteps(['@onClose']);
   });
 
-  test('it does not do anything when clicked and @disabled is set to true', async function (assert) {
+  test('it disables the dropdown when `@disabled` is true', async function (assert) {
+    const state = new TestState();
+    state.isDisabled = false;
 
     await render(
       <template>
-        <AuDropdown @title="foo" @disabled={{true}}>
+        <AuDropdown @title="foo" @disabled={{state.isDisabled}}>
           <button type="button" data-test-button>baz</button>
         </AuDropdown>
       </template>,
     );
 
-    await click('[data-test-dropdown-button]'); // open
+    assert.dom('[data-test-dropdown-button]').isNotDisabled();
 
-    assert
-      .dom('[data-test-button]')
-      .isNotVisible(
-        'it does not open when the dropdown is disabled',
-      );
+    state.isDisabled = true;
+    await settled();
+    assert.dom('[data-test-dropdown-button]').isDisabled();
   });
 });
