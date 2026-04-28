@@ -1,0 +1,85 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Utilities/Overflow" />
+
+<style>{`
+  .sbdocs-p,
+  .sbdocs-ul,
+  .sbdocs-li,
+  .sbdocs-p code {
+    font-weight: 400;
+    font-size: 1.6rem;
+  }
+
+  .sbdocs-a {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--au-font);
+    transition: color var(--au-transition), text-decoration var(--au-transition);
+    font-weight: var(--au-regular);
+    text-decoration: underline;
+    text-decoration-color: var(--au-blue-300);
+    color: var(--au-blue-700);
+  }
+
+  .sbdocs-a:visited {
+    color: var(--au-blue-700);
+  }
+
+  .sbdocs-a:hover,
+  .sbdocs-a:focus {
+    color: var(--au-blue-900);
+    text-decoration-color: var(--au-blue-200);
+  }
+
+  .sbdocs-a:focus {
+    outline: var(--au-outline);
+    outline-offset: var(--au-outline-offset);
+  }
+
+  code {
+    font-family: courier, monospace;
+  }
+
+  .os-content {
+    background-color: var(--au-gray-100);
+  }
+`}</style>
+
+# Overflow
+
+## General
+
+`.au-u-overflow--auto`
+
+`.au-u-overflow--hidden`
+
+`.au-u-overflow--clip`
+
+`.au-u-overflow--visible`
+
+`.au-u-overflow--scroll`
+
+## Vertical
+
+`.au-u-overflow-y--auto`
+
+`.au-u-overflow-y--hidden`
+
+`.au-u-overflow-y--clip`
+
+`.au-u-overflow-y--visible`
+
+`.au-u-overflow-y--scroll`
+
+## Horizontal
+
+`.au-u-overflow-x--auto`
+
+`.au-u-overflow-x--hidden`
+
+`.au-u-overflow-x--clip`
+
+`.au-u-overflow-x--visible`
+
+`.au-u-overflow-x--scroll`
