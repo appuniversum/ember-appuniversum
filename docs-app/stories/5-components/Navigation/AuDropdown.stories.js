@@ -35,6 +35,10 @@ export default {
       control: 'boolean',
       description: 'Adds an alert state to the button',
     },
+    disabled: {
+      control: 'boolean',
+      description: 'Adds a disabled state to the dropdown',
+    },
     onClose: {
       action: 'closed',
       description: 'Called after the dropdown is closed',
@@ -57,6 +61,7 @@ const Template = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @alert={{this.alert}}
+      @disabled={{this.disabled}}
       @onClose={{this.onClose}}
     >
       <AuButton @skin="link" @icon="switch" role="menuitem">
@@ -83,6 +88,7 @@ const TemplateSeparator = (args) => ({
       @iconAlignment={{this.iconAlignment}}
       @hideText={{this.hideText}}
       @alert={{this.alert}}
+      @disabled={{this.disabled}}
       @onClose={{this.onClose}}
     >
       <AuButton @skin="link" role="menuitem">
@@ -122,6 +128,7 @@ Component.args = {
   iconAlignment: 'right',
   hideText: false,
   alert: false,
+  disabled: false,
 };
 
 export const Separator = TemplateSeparator.bind({});
@@ -134,4 +141,5 @@ Separator.args = {
   iconAlignment: 'right',
   hideText: false,
   alert: false,
+  disabled: false,
 };
