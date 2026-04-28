@@ -1,3 +1,9 @@
+## v4.1.0 (2026-04-28)
+
+#### :rocket: Enhancement
+* [#577](https://github.com/appuniversum/ember-appuniversum/pull/577) Add a `@disabled` option to `AuDropdown` ([@kobemertens](https://github.com/kobemertens))
+
+
 ## v4.0.0 (2026-04-16)
 
 Upgrade guide: https://github.com/appuniversum/ember-appuniversum/pull/566
