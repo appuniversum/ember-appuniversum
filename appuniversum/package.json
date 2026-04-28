@@ -356,6 +356,7 @@
       "./public/icons/table-row-remove.svg": "/@appuniversum/ember-appuniversum/icons/table-row-remove.svg",
       "./public/icons/table-row-start-add.svg": "/@appuniversum/ember-appuniversum/icons/table-row-start-add.svg",
       "./public/icons/table.svg": "/@appuniversum/ember-appuniversum/icons/table.svg",
+      "./public/icons/tag.svg": "/@appuniversum/ember-appuniversum/icons/tag.svg",
       "./public/icons/three-dots.svg": "/@appuniversum/ember-appuniversum/icons/three-dots.svg",
       "./public/icons/trash.svg": "/@appuniversum/ember-appuniversum/icons/trash.svg",
       "./public/icons/underlined.svg": "/@appuniversum/ember-appuniversum/icons/underlined.svg",
