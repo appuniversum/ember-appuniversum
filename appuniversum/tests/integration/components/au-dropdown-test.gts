@@ -6,7 +6,6 @@ import { tracked } from '@glimmer/tracking';
 
 class TestState {
   @tracked isDisabled?: boolean;
-  @tracked isLoading?: boolean;
 }
 
 module('Integration | Component | au-dropdown', function (hooks) {
