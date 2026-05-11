@@ -481,8 +481,4 @@ export default class AuIconList extends Component {
     { name: 'zoom-in' },
     { name: 'zoom-out' },
   ];
-  constructor() {
-    super(...arguments);
-    debugger;
-  }
 }
