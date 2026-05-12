@@ -1,3 +1,10 @@
+## v4.2.0 (2026-05-12)
+
+#### :rocket: Enhancement
+* [#579](https://github.com/appuniversum/ember-appuniversum/pull/579) bulk import webuniversum icons ([@kobemertens](https://github.com/kobemertens))
+
+
+
 ## v4.1.0 (2026-04-28)
 
 #### :rocket: Enhancement
