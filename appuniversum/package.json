@@ -18,38 +18,44 @@
   "exports": {
     "./addon-main.js": "./addon-main.cjs",
     "./styles": {
-      "sass": "./styles/_index.scss"
+      "sass": "./styles/_index.scss",
+      "default": "./styles/_index.scss"
     },
     "./styles/*": {
-      "sass": "./styles/_*.scss"
+      "sass": "./styles/_*.scss",
+      "default": "./styles/_*.scss"
     },
     "./styles/components/*": {
-      "sass": "./styles/components/_*.scss"
+      "sass": "./styles/components/_*.scss",
+      "default": "./styles/components/_*.scss"
     },
     "./styles/elements/*": {
-      "sass": "./styles/elements/_*.scss"
+      "sass": "./styles/elements/_*.scss",
+      "default": "./styles/elements/_*.scss"
     },
     "./styles/generic/*": {
-      "sass": "./styles/generic/_*.scss"
+      "sass": "./styles/generic/_*.scss",
+      "default": "./styles/generic/_*.scss"
     },
     "./styles/objects/*": {
-      "sass": "./styles/objects/_*.scss"
+      "sass": "./styles/objects/_*.scss",
+      "default": "./styles/objects/_*.scss"
     },
     "./styles/plugins/*": {
-      "sass": "./styles/plugins/_*.scss"
+      "sass": "./styles/plugins/_*.scss",
+      "default": "./styles/plugins/_*.scss"
     },
     "./styles/settings/*": {
-      "sass": "./styles/settings/_*.scss"
+      "sass": "./styles/settings/_*.scss",
+      "default": "./styles/settings/_*.scss"
     },
     "./styles/tools/*": {
-      "sass": "./styles/tools/_*.scss"
+      "sass": "./styles/tools/_*.scss",
+      "default": "./styles/tools/_*.scss"
     },
     "./styles/utilities/*": {
-      "sass": "./styles/utilities/_*.scss"
-    },
-    "./*": {
-      "types": "./declarations/*.d.ts",
-      "default": "./dist/*.js"
+      "sass": "./styles/utilities/_*.scss",
+      "default": "./styles/utilities/_*.scss"
     }
   },
   "files": [
