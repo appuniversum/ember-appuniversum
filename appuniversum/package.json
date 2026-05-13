@@ -17,7 +17,36 @@
   },
   "exports": {
     "./addon-main.js": "./addon-main.cjs",
-    "./styles/*.scss": "./styles/*.scss",
+    "./styles": {
+      "sass": "./styles/_index.scss"
+    },
+    "./styles/*": {
+      "sass": "./styles/_*.scss"
+    },
+    "./styles/components/*": {
+      "sass": "./styles/components/_*.scss"
+    },
+    "./styles/elements/*": {
+      "sass": "./styles/elements/_*.scss"
+    },
+    "./styles/generic/*": {
+      "sass": "./styles/generic/_*.scss"
+    },
+    "./styles/objects/*": {
+      "sass": "./styles/objects/_*.scss"
+    },
+    "./styles/plugins/*": {
+      "sass": "./styles/plugins/_*.scss"
+    },
+    "./styles/settings/*": {
+      "sass": "./styles/settings/_*.scss"
+    },
+    "./styles/tools/*": {
+      "sass": "./styles/tools/_*.scss"
+    },
+    "./styles/utilities/*": {
+      "sass": "./styles/utilities/_*.scss"
+    },
     "./*": {
       "types": "./declarations/*.d.ts",
       "default": "./dist/*.js"
