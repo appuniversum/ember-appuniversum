@@ -1,3 +1,9 @@
+## v4.2.1 (2026-05-13)
+
+#### :bug: Bug Fix
+* [#580](https://github.com/appuniversum/ember-appuniversum/pull/580) Fix the styles exports config ([@kobemertens](https://github.com/kobemertens))
+
+
 ## v4.2.0 (2026-05-12)
 
 #### :rocket: Enhancement
