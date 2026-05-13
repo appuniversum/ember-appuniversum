@@ -56,6 +56,10 @@
     "./styles/utilities/*": {
       "sass": "./styles/utilities/_*.scss",
       "default": "./styles/utilities/_*.scss"
+    },
+    "./*": {
+      "types": "./declarations/*.d.ts",
+      "default": "./dist/*.js"
     }
   },
   "files": [
