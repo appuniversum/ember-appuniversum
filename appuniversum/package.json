@@ -183,6 +183,7 @@
       "./components/au-content-header.js": "./dist/_app_/components/au-content-header.js",
       "./components/au-content.js": "./dist/_app_/components/au-content.js",
       "./components/au-data-table-number-pagination.js": "./dist/_app_/components/au-data-table-number-pagination.js",
+      "./components/au-data-table-text-search.js": "./dist/_app_/components/au-data-table-text-search.js",
       "./components/au-data-table-th-sortable.js": "./dist/_app_/components/au-data-table-th-sortable.js",
       "./components/au-data-table.js": "./dist/_app_/components/au-data-table.js",
       "./components/au-data-table/content-body.js": "./dist/_app_/components/au-data-table/content-body.js",
