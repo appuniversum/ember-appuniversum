@@ -1,3 +1,9 @@
+## v4.2.2 (2026-05-28)
+
+#### :bug: Bug Fix
+* [#581](https://github.com/appuniversum/ember-appuniversum/pull/581) reexport `AuDataTableTextSearch` ([@kobemertens](https://github.com/kobemertens))
+
+
 ## v4.2.1 (2026-05-13)
 
 #### :bug: Bug Fix
