@@ -14,5 +14,5 @@ module.exports = {
     '@storybook/addon-storysource',
     '@etchteam/storybook-addon-status',
   ],
-  staticDirs: ['../dist', '../stories/assets'],
+  staticDirs: ['../dist', '../stories/assets', './assets'],
 };
