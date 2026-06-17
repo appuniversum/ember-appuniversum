@@ -8,7 +8,7 @@ export interface AuIconSignature {
     // TODO: We should deprecate the non-boolean versions since there is no reason to support them
     ariaHidden?: boolean | 'true' | 'false';
     icon: string | ComponentLike<{ Element: Element }>;
-    size?: 'large';
+    size?: 'medium' | 'large';
   };
   Element: Element;
 }
@@ -22,6 +22,7 @@ export default class AuIcon extends Component<AuIconSignature> {
   }
 
   get size() {
+    if (this.args.size == 'medium') return 'au-c-icon--medium';
     if (this.args.size == 'large') return 'au-c-icon--large';
     else return '';
   }
