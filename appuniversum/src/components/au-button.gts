@@ -17,7 +17,8 @@ export interface AuButtonSignature {
     disabled?: boolean;
     hideText?: boolean;
     icon?: AuIconSignature['Args']['icon'];
-    iconAlignment?: 'left' | 'right';
+    iconAlignment?: AuIconSignature['Args']['alignment'];
+    iconSize?: AuIconSignature['Args']['size'];
     size?: 'large';
     skin?: (typeof SKINS)[number];
     width?: 'block';
@@ -108,7 +109,7 @@ export default class AuButton extends Component<AuButtonSignature> {
       {{#unless @loading}}
         {{#if this.isIconLeft}}
           {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
-          <AuIcon @icon={{@icon}} />
+          <AuIcon @icon={{@icon}} @size={{@iconSize}} />
         {{/if}}
       {{/unless}}
 
@@ -131,7 +132,7 @@ export default class AuButton extends Component<AuButtonSignature> {
       {{#unless @loading}}
         {{#if this.isIconRight}}
           {{! @glint-expect-error: this.isIconRight ensures that @icon is set }}
-          <AuIcon @icon={{@icon}} />
+          <AuIcon @icon={{@icon}} @size={{@iconSize}} />
         {{/if}}
       {{/unless}}
     </button></template>

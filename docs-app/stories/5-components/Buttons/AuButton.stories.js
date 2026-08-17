@@ -29,6 +29,10 @@ export default {
       description:
         'Choose the position of the icon, adds correct margin next to the icon',
     },
+    iconSize: {
+      control: 'select',
+      options: ['default', 'medium', 'large'],
+    },
     hideText: {
       control: 'boolean',
       description: 'Hides the button text visually',
@@ -71,6 +75,7 @@ const Template = (args) => ({
       @size={{this.size}}
       @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
+      @iconSize={{this.iconSize}}
       @hideText={{this.hideText}}
       @width={{this.width}}
       @wrap={{this.wrap}}
@@ -91,6 +96,7 @@ Primary.args = {
   size: '',
   icon: '',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   wrap: '',
@@ -106,6 +112,7 @@ Secondary.args = {
   size: '',
   icon: '',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   wrap: '',
@@ -121,6 +128,7 @@ PrimaryLink.args = {
   size: '',
   icon: '',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   wrap: '',
@@ -136,6 +144,7 @@ SecondaryLink.args = {
   size: '',
   icon: '',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   wrap: '',
@@ -151,6 +160,7 @@ BoldLink.args = {
   size: '',
   icon: '',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   wrap: '',

@@ -25,6 +25,10 @@ export default {
       description:
         'hoose the position of the icon, adds correct margin next to the icon',
     },
+    iconSize: {
+      control: 'select',
+      options: ['default', 'medium', 'large'],
+    },
     hideText: {
       control: 'boolean',
       description: 'Hides the link text visually',
@@ -52,6 +56,7 @@ const Template = (args) => ({
       @skin={{this.skin}}
       @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
+      @iconSize={{this.iconSize}}
       @hideText={{this.hideText}}
       @newTab={{this.newTab}}
       @width={{this.width}}
@@ -69,6 +74,7 @@ Primary.args = {
   skin: 'primary',
   icon: 'manual',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
 };
@@ -81,6 +87,7 @@ Secondary.args = {
   skin: 'secondary',
   icon: 'manual',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
 };
@@ -93,6 +100,7 @@ Bold.args = {
   skin: 'bold',
   icon: 'manual',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
 };
@@ -105,6 +113,7 @@ PrimaryButton.args = {
   skin: 'button',
   icon: 'manual',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
 };
@@ -117,6 +126,7 @@ SecondaryButton.args = {
   skin: 'button-secondary',
   icon: 'manual',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
 };
@@ -129,6 +139,7 @@ NakedButton.args = {
   skin: 'button-naked',
   icon: 'manual',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
 };

@@ -24,12 +24,13 @@ export interface AuLinkSignature {
       | 'button-naked';
     width?: 'block';
     query?: Record<string, unknown>;
-    icon?: AuIconSignature['Args']['icon'];
     route: string;
     hideText?: boolean;
     model?: unknown;
     models?: unknown[];
-    iconAlignment?: 'left' | 'right';
+    icon?: AuIconSignature['Args']['icon'];
+    iconAlignment?: AuIconSignature['Args']['alignment'];
+    iconSize?: AuIconSignature['Args']['size'];
   };
   Blocks: {
     default: [];
@@ -98,7 +99,7 @@ export default class AuLink extends Component<AuLinkSignature> {
     >
       {{~#if this.isIconLeft~}}
         {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
-        <AuIcon @icon={{@icon}} />
+        <AuIcon @icon={{@icon}} @size={{@iconSize}} />
       {{/if}}
       {{#if @hideText}}
         <span class="au-u-hidden-visually">{{yield}}</span>
@@ -107,7 +108,7 @@ export default class AuLink extends Component<AuLinkSignature> {
       {{/if}}
       {{#if this.isIconRight}}
         {{! @glint-expect-error: this.isIconRight ensures that @icon is set }}
-        <AuIcon @icon={{@icon}} />
+        <AuIcon @icon={{@icon}} @size={{@iconSize}} />
       {{~/if~}}
     </LinkTo></template>
 }

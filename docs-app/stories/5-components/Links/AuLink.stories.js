@@ -28,6 +28,10 @@ export default {
       description:
         'hoose the position of the icon, adds correct margin next to the icon',
     },
+    iconSize: {
+      control: 'select',
+      options: ['default', 'medium', 'large'],
+    },
     hideText: {
       control: 'boolean',
       description: 'Hides the link text visually',
@@ -60,6 +64,7 @@ const Template = (args) => ({
       @skin={{this.skin}}
       @icon={{this.icon}}
       @iconAlignment={{this.iconAlignment}}
+      @iconSize={{this.iconSize}}
       @hideText={{this.hideText}}
       @width={{this.width}}
       @active={{this.active}}
@@ -79,6 +84,7 @@ Primary.args = {
   skin: 'primary',
   icon: 'login',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   active: false,
@@ -91,6 +97,7 @@ Secondary.args = {
   skin: 'secondary',
   icon: 'login',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   active: false,
@@ -106,6 +113,7 @@ Bold.args = {
   skin: 'bold',
   icon: 'login',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   active: false,
@@ -121,6 +129,7 @@ PrimaryButton.args = {
   skin: 'button',
   icon: 'login',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   active: false,
@@ -133,6 +142,7 @@ SecondaryButton.args = {
   skin: 'button-secondary',
   icon: 'login',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   active: false,
@@ -148,6 +158,7 @@ NakedButton.args = {
   skin: 'button-naked',
   icon: 'login',
   iconAlignment: 'left',
+  iconSize: 'default',
   hideText: false,
   width: '',
   active: false,

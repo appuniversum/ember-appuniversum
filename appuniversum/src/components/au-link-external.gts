@@ -14,7 +14,8 @@ export interface AuLinkExternalSignature {
   Args: {
     hideText?: boolean;
     icon?: AuIconSignature['Args']['icon'];
-    iconAlignment?: 'left' | 'right';
+    iconAlignment?: AuIconSignature['Args']['alignment'];
+    iconSize?: AuIconSignature['Args']['size'];
     newTab?: boolean;
     skin?:
       | 'primary'
@@ -79,7 +80,7 @@ export default class AuLinkExternal extends Component<AuLinkExternalSignature> {
     >
       {{#if this.isIconLeft}}
         {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
-        <AuIcon @icon={{@icon}} />
+        <AuIcon @icon={{@icon}} @size={{@iconSize}} />
       {{/if}}
       {{#if @hideText}}
         <span class="au-u-hidden-visually">{{yield}}</span>
@@ -88,7 +89,7 @@ export default class AuLinkExternal extends Component<AuLinkExternalSignature> {
       {{/if}}
       {{#if this.isIconRight}}
         {{! @glint-expect-error: this.isIconLeft ensures that @icon is set }}
-        <AuIcon @icon={{@icon}} />
+        <AuIcon @icon={{@icon}} @size={{@iconSize}} />
       {{/if}}
     </a></template>
 }
