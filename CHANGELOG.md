@@ -1,3 +1,9 @@
+## v4.3.1 (2026-08-17)
+
+#### :bug: Bug Fix
+* [#586](https://github.com/appuniversum/ember-appuniversum/pull/586) Fix a whitespace issue in the `AuIcon` component ([@Windvis](https://github.com/Windvis))
+
+
 ## v4.3.0 (2026-08-17)
 
 #### :rocket: Enhancement
