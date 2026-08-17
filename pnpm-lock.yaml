@@ -52,8 +52,8 @@ importers:
         specifier: ^6.0.2
         version: 6.0.6
       tracked-toolbox:
-        specifier: ^2.0.0
-        version: 2.2.0(@babel/core@7.29.0)
+        specifier: ^2.0.0 || ^3.0.0
+        version: 3.0.0(@babel/core@7.29.0)
     devDependencies:
       '@babel/core':
         specifier: ^7.25.2
@@ -5620,10 +5620,6 @@ packages:
       '@ember/test-helpers': ^2.9.4 || ^3.2.1 || ^4.0.2 || ^5.0.0
       '@glimmer/component': ^1.1.2 || ^2.0.0
 
-  ember-cache-primitive-polyfill@1.0.1:
-    resolution: {integrity: sha512-hSPcvIKarA8wad2/b6jDd/eU+OtKmi6uP+iYQbzi5TQpjsqV6b4QdRqrLk7ClSRRKBAtdTuutx+m+X+WlEd2lw==}
-    engines: {node: 10.* || >= 12}
-
   ember-cli-addon-docs-yuidoc@1.1.0:
     resolution: {integrity: sha512-Cx8znIPNJA/mlpKdS/F+lRTExuTzvUIkk1Nr6FNWfaNJlrFAtaN6QgSEcGi09lHdjNOcgFvuriPMoW1Y9XHAiA==}
     engines: {node: 10.* || >= 12}
@@ -10907,8 +10903,8 @@ packages:
   tracked-built-ins@4.1.2:
     resolution: {integrity: sha512-KiiV/Pzi7VNKTn9Fip6Ic54AjKgFfqows1Jq3L0WLVqZcvfswdhVxQ9yqqhTXsmgLhVzIgtdzNBH4ExqWf34BQ==}
 
-  tracked-toolbox@2.2.0:
-    resolution: {integrity: sha512-YknotXj74U0nCqBk9nh1Uv1IWTnVOgt8sXIecNkyEq4oFOU70niQUlozO4E3kMKx7ae/rNlOtoF+1ALcHYzCrQ==}
+  tracked-toolbox@3.0.0:
+    resolution: {integrity: sha512-9Q5SH+0jevfB07oL2bsjxIDv0jQ2A6IgminkvnMMzGLc2EqCFm/yKuqNeUFvN3n+TOAQk+PZcePtIaxIo/1now==}
 
   tree-kill@1.2.2:
     resolution: {integrity: sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==}
@@ -19064,16 +19060,6 @@ snapshots:
       - ember-source
       - supports-color
 
-  ember-cache-primitive-polyfill@1.0.1(@babel/core@7.29.0):
-    dependencies:
-      ember-cli-babel: 7.26.11
-      ember-cli-version-checker: 5.1.2
-      ember-compatibility-helpers: 1.2.7(@babel/core@7.29.0)
-      silent-error: 1.1.1
-    transitivePeerDependencies:
-      - '@babel/core'
-      - supports-color
-
   ember-cli-addon-docs-yuidoc@1.1.0:
     dependencies:
       broccoli-caching-writer: 3.1.0
@@ -26288,11 +26274,10 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  tracked-toolbox@2.2.0(@babel/core@7.29.0):
+  tracked-toolbox@3.0.0(@babel/core@7.29.0):
     dependencies:
       '@embroider/addon-shim': 1.10.2
       decorator-transforms: 2.3.1(@babel/core@7.29.0)
-      ember-cache-primitive-polyfill: 1.0.1(@babel/core@7.29.0)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
