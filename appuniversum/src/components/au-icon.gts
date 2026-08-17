@@ -52,7 +52,7 @@ export default class AuIcon extends Component<AuIconSignature> {
           aria-hidden={{this.ariaHidden}}
           ...attributes
         />
-      {{/let}}
+      {{~/let~}}
     {{~else~}}
       <svg
         role="img"
