@@ -1,3 +1,9 @@
+## v4.3.0 (2026-08-17)
+
+#### :rocket: Enhancement
+* [#585](https://github.com/appuniversum/ember-appuniversum/pull/585) Add support for tracked-toolbox v3 ([@Windvis](https://github.com/Windvis))
+
+
 ## v4.2.2 (2026-05-28)
 
 #### :bug: Bug Fix
