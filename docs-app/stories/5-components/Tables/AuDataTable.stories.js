@@ -17,6 +17,7 @@ const Template = (args) => ({
       @noDataMessage="Geen documenten"
       @sort={{this.sort}}
       @hidePagination={{this.hidePagination}}
+      @showPaginationBoundaryLinks={{this.showPaginationBoundaryLinks}}
       as |t|
     >
       <t.menu as |menu|>
@@ -109,4 +110,5 @@ Component.args = {
   itemsPerPage: 5,
   totalItems: 100,
   hidePagination: false,
+  showPaginationBoundaryLinks: false,
 };
