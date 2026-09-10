@@ -40,8 +40,8 @@ const Base = Component.extend({
   startItem: computed('size', 'currentPage', function () {
     return this.size * (this.currentPage - 1) + 1;
   }),
-  endItem: computed('startItem', 'nbOfItems', function () {
-    return this.startItem + this.nbOfItems - 1;
+  endItem: computed('startItem', 'size', 'totalItems', function () {
+    return Math.min(this.startItem + this.size - 1, this.totalItems);
   }),
   pageOptions: computed('firstPage', 'lastPage', function () {
     const nbOfPages = this.lastPage - this.firstPage + 1;
