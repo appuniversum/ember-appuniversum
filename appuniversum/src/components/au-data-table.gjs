@@ -123,6 +123,7 @@ export default class AuDataTable extends DataTable {
             @sizeOptions={{this.sizeOptions}}
             @total={{this.content.meta.count}}
             @links={{this.content.meta.pagination}}
+            @showBoundaryLinks={{this.showPaginationBoundaryLinks}}
           />
         </div>
       {{/if}}
