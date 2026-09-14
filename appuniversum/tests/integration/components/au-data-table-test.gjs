@@ -1,7 +1,8 @@
 import AuDataTable from '#src/components/au-data-table';
-import { render } from '@ember/test-helpers';
+import { getRootElement, render } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
+import { queryByText } from '@testing-library/dom';
 
 module('Integration | Component | au-data-table', function (hooks) {
   setupRenderingTest(hooks);
@@ -61,5 +62,50 @@ module('Integration | Component | au-data-table', function (hooks) {
       .doesNotExist(
         'the pagination bar is hidden when `@hidePagination` is true',
       );
+  });
+
+  test('it conditionally shows the first and last pagination links', async function (assert) {
+    const content = [{ name: 'foo' }, { name: 'bar' }];
+    content.meta = {
+      pagination: {
+        first: { number: 1 },
+        last: { number: 10 },
+      },
+    };
+
+    await render(
+      <template>
+        <AuDataTable @fields="name" @content={{content}} @enableSizes="false" />
+      </template>,
+    );
+
+    const root = getRootElement();
+    let firstButton = queryByText(root, 'Eerste');
+    let lastButton = queryByText(root, 'Laatste');
+
+    assert.notOk(
+      firstButton,
+      'The "Eerste" pagination link is hidden by default',
+    );
+    assert.notOk(
+      lastButton,
+      'The "Laatste" pagination link is hidden by default',
+    );
+
+    await render(
+      <template>
+        <AuDataTable
+          @fields="name"
+          @content={{content}}
+          @showPaginationBoundaryLinks={{true}}
+        />
+      </template>,
+    );
+
+    firstButton = queryByText(root, 'Eerste');
+    lastButton = queryByText(root, 'Laatste');
+
+    assert.dom(firstButton).exists();
+    assert.dom(lastButton).exists();
   });
 });

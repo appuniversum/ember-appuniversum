@@ -10,10 +10,10 @@
 
 .au-c-pagination {
   @include au-font-size(var(--au-h6));
-  color: var(--au-gray-700);
   display: flex;
   justify-content: space-between;
   width: 100%;
+  container-type: inline-size;
 }
 
 .au-c-pagination__list {
@@ -21,10 +21,9 @@
   justify-content: flex-start;
 }
 
-.au-c-pagination__list-item {
-  & + & {
-    margin-left: $au-unit-tiny;
-    padding-left: $au-unit-tiny;
-    border-left: 0.1rem solid var(--au-divider-color);
+@container (width < 500px) {
+  // On very small container sizes we hide the first/last page links since they are less useful than the next/previous links.
+  .au-c-pagination-boundary-link {
+    display: none;
   }
 }

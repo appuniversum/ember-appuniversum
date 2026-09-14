@@ -15,7 +15,7 @@ module(
   function (hooks) {
     setupRenderingTest(hooks);
 
-    test('it conditionally shows buttons to change the page', async function (assert) {
+    test('it conditionally disables buttons to change the page', async function (assert) {
       const baseLinks = {
         first: {
           number: 0,
@@ -45,21 +45,32 @@ module(
             @size={{10}}
             @nbOfItems={{10}}
             @total={{100}}
+            @showBoundaryLinks={{true}}
           />
         </template>,
       );
 
       const root = getRootElement();
-      let prevButton = queryByText(root, 'vorige');
-      let nextButton = queryByText(root, 'volgende');
+      const firstButton = queryByText(root, 'Eerste');
+      const prevButton = queryByText(root, 'Vorige');
+      const nextButton = queryByText(root, 'Volgende');
+      const lastButton = queryByText(root, 'Laatste');
 
       assert.ok(
         prevButton,
         "It shows a button to go to the previous page when we aren't on the first page",
       );
       assert.ok(
+        firstButton,
+        "It shows a button to go to the first page when we aren't on the first page",
+      );
+      assert.ok(
         nextButton,
         "It shows a button to go to the next page when we aren't on the last page",
+      );
+      assert.ok(
+        lastButton,
+        "It shows a button to go to the last page when we aren't on the first page",
       );
 
       await click(prevButton);
@@ -78,14 +89,19 @@ module(
 
       await settled();
 
-      prevButton = queryByText(root, 'vorige');
-      assert.notOk(
-        prevButton,
-        'It hides the button to go to the previous page when we are on the first page',
-      );
+      assert
+        .dom(firstButton)
+        .isDisabled(
+          'It disables the button to go to the first page when we are on the first page',
+        );
+      assert
+        .dom(prevButton)
+        .isDisabled(
+          'It disables the button to go to the previous page when we are on the first page',
+        );
 
-      nextButton = queryByText(root, 'volgende');
-      assert.ok(nextButton);
+      assert.dom(nextButton).isNotDisabled();
+      assert.dom(lastButton).isNotDisabled();
 
       await click(nextButton);
       assert.equal(
@@ -106,8 +122,8 @@ module(
 
       await settled();
 
-      prevButton = queryByText(root, 'vorige');
-      assert.ok(prevButton);
+      assert.dom(firstButton).isNotDisabled();
+      assert.dom(prevButton).isNotDisabled();
 
       state.page = 9;
       state.links = {
@@ -119,11 +135,20 @@ module(
 
       await settled();
 
-      nextButton = queryByText(root, 'volgende');
-      assert.notOk(
-        nextButton,
-        'It hides the button to go to the next page when we are on the last page',
-      );
+      assert
+        .dom(nextButton)
+        .isDisabled(
+          'It disables the button to go to the next page when we are on the last page',
+        );
+
+      assert
+        .dom(lastButton)
+        .isDisabled(
+          'It disables the button to go to the last page when we are on the last page',
+        );
+
+      assert.dom(firstButton).isNotDisabled();
+      assert.dom(prevButton).isNotDisabled();
     });
   },
 );
