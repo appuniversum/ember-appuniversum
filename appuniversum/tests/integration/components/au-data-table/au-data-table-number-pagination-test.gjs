@@ -150,5 +150,39 @@ module(
       assert.dom(firstButton).isNotDisabled();
       assert.dom(prevButton).isNotDisabled();
     });
+
+    test('it disables all links when there is only a single page', async function (assert) {
+      const state = new TestState();
+      state.page = 0;
+      state.links = {
+        // It seems mu-cl-resources doesn't add the number to the first and last link url in this scenario, and does not include the next/prev links either
+        first: {},
+        last: {},
+      };
+
+      await render(
+        <template>
+          <AuDataTableNumberPagination
+            @page={{state.page}}
+            @links={{state.links}}
+            @size={{10}}
+            @nbOfItems={{10}}
+            @total={{100}}
+            @showBoundaryLinks={{true}}
+          />
+        </template>,
+      );
+
+      const root = getRootElement();
+      const firstButton = queryByText(root, 'Eerste');
+      const prevButton = queryByText(root, 'Vorige');
+      const nextButton = queryByText(root, 'Volgende');
+      const lastButton = queryByText(root, 'Laatste');
+
+      assert.dom(firstButton).isDisabled();
+      assert.dom(prevButton).isDisabled();
+      assert.dom(nextButton).isDisabled();
+      assert.dom(lastButton).isDisabled();
+    });
   },
 );
