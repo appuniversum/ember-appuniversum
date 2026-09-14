@@ -1,3 +1,9 @@
+## v4.4.0 (2026-09-14)
+
+#### :rocket: Enhancement
+* [#587](https://github.com/appuniversum/ember-appuniversum/pull/587) `AuDataTable` pagination improvements ([@Windvis](https://github.com/Windvis))
+
+
 ## v4.3.1 (2026-08-17)
 
 #### :bug: Bug Fix
