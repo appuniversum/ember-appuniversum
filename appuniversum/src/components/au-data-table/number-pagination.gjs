@@ -33,9 +33,16 @@ const Base = Component.extend({
   isFirstPage: computed('firstPage', 'currentPage', function () {
     return this.firstPage == this.currentPage;
   }),
-  isLastPage: computed('lastPage', 'currentPage', function () {
-    return this.lastPage == this.currentPage;
-  }),
+  isLastPage: computed(
+    'lastPage',
+    'currentPage',
+    'hasMultiplePages',
+    function () {
+      // Something strange is going on with the lastPage and currentPage check which only happened after we removed the `hasMultiplePages check from the template.
+      // We now do the check here as a quick solution. There are some off-by-one shenanigans going on here..
+      return !this.hasMultiplePages || this.lastPage == this.currentPage;
+    },
+  ),
   hasMultiplePages: gt('lastPage', 0),
   startItem: computed('size', 'currentPage', function () {
     return this.size * (this.currentPage - 1) + 1;
