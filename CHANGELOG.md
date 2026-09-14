@@ -1,3 +1,9 @@
+## v4.4.1 (2026-09-14)
+
+#### :bug: Bug Fix
+* [#588](https://github.com/appuniversum/ember-appuniversum/pull/588) Fix an issue with the pagination buttons on single pages ([@Windvis](https://github.com/Windvis))
+
+
 ## v4.4.0 (2026-09-14)
 
 #### :rocket: Enhancement
