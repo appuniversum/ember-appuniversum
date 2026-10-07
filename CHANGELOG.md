@@ -1,3 +1,9 @@
+## v4.5.0 (2026-10-07)
+
+#### :rocket: Enhancement
+* [#591](https://github.com/appuniversum/ember-appuniversum/pull/591) Import new WebUniversum icons ([@wolfderechter](https://github.com/wolfderechter))
+
+
 ## v4.4.1 (2026-09-14)
 
 #### :bug: Bug Fix
