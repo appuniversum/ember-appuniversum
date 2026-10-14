@@ -41,7 +41,7 @@ $au-c-tooltip-translate: ($au-c-tooltip-caret-size + 0.3rem);
     right: -($au-c-tooltip-translate + 0.1rem);
     bottom: -($au-c-tooltip-translate + 0.1rem);
     left: -($au-c-tooltip-translate + 0.1rem);
-    z-index: 0;
+    z-index: -1;
   }
 }
 
