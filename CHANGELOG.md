@@ -1,3 +1,9 @@
+## v4.5.1 (2026-10-14)
+
+#### :bug: Bug Fix
+* [#592](https://github.com/appuniversum/ember-appuniversum/pull/592) fix the tooltip content not being clickable ([@wolfderechter](https://github.com/wolfderechter))
+
+
 ## v4.5.0 (2026-10-07)
 
 #### :rocket: Enhancement
